@@ -24,8 +24,7 @@ De personalidad proactiva, curiosa e inquieta.
 
 
 
-Buzzin Alfredo
-Soy Alfredo Buzzin, tengo 35 años. Soy desarrollador de firmware de sistemas embebidos. (MCU, ARM, PIC, AVR...)
+Buzzin Alfredo: tengo 35 años, soy desarrollador de firmware de sistemas embebidos. (MCU, ARM, PIC, AVR...)
 Me especializo en la programación de dispositivos electrónicos de baja potencia para telemetría (LoRa, LoRaWAN, SigFox) 
 y en el Diseño de sistemas de medición y control que incorporan algoritmos de aprendizaje automático (machine learning, tinyML)
 
