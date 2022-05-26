@@ -93,6 +93,10 @@ y en el Diseño de sistemas de medición y control que incorporan algoritmos de 
 
 
 Caudillo Ramírez Nataly Estefanía
+Soy Mexicana tengo 23 años, estudiante de ing. en sistemas computacionales, 
+con conocimientos básicos en SQLServer, MySQL, HTML y CSS.
+Me gusta socializar, soy un poco tímida, me considero una persona persistente. 
+
 
 
 
