@@ -1,8 +1,8 @@
 {
   "name": "grupo_3_papa-hoe",
   "version": "1.0.0",
-  "description": "TEMÁTICA DEL SITIO\r Venta de tablas de surf y otros artículos para surfistas.",
-  "main": "index.js",
+  "description": "E-commerce. Tablas de surf y otros artículos para surfistas.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
