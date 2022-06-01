@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa Hoe</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a99dce3628.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="/images/" alt="Logo" class="logo">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-language"></i>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-moon"></i>
+    </header>
+    
+    <main>
+        <h2>Vamos a necesitar tus datos</h2>
+        <form class="registro" action="/views/register.html" method="post" >
+            <div class="datos">
+                <label for="nombre"></label> Nombre
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required > 
+            </div> 
+
+            <div class="datos">
+                <label for="apellido"></label> Apellido
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" required> 
+            </div> 
+
+            <div class="datos">
+                <label for="usuario"></label> Usuario
+                <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuari@" required> 
+            </div> 
+
+            <div class="datos">
+                <label for="email"></label> Correo Electrónico
+                <input type="email" name="email" id="email" placeholder="Correo Electrónico" required> 
+            </div> 
+
+            <div class="datos">
+                <label for="contraseña"></label> Contraseña
+                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+            </div>
+
+            <button class="boton" type="submit">Registrate</button>
+
+            <h5>O ingresá con:</h5>
+
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-google"></i>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
