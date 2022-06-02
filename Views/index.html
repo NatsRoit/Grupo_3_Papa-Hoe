@@ -12,6 +12,12 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/a99dce3628.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
 </head>
 
 <body>
@@ -25,7 +31,26 @@
     </header>
 
     <main>
-        <h1>Hola Mundo!</h1>
+        <!--h1>Hola Mundo!</h1-->
+        <!-- Main Container -->
+    <div id="main">
+
+        <!-- An aside -->
+        <!-- This is for holding the 3D object -->
+        <div id="tabla">
+
+            <!-- 3D objsect -->
+            <!-- This inserts the 3D object inside the aside container -->
+            <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar ios-src="assets/surf3.gltf">
+            </model-viewer>
+        </div>
+
+        <div id="content">
+            <h2>TABLA DE SURF</h2>
+            <p>Comprala ahora!</p>
+            <button>Shop</button>
+        </div>
+    </div>
     </main>
 
     <footer>
