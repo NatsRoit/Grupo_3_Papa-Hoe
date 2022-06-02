@@ -72,3 +72,62 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         color: #001728;
     }
 }
+
+/*
+--------------------------------------------------------
+Login / Register
+------------------------------------------------------ */
+main {
+    border: 2px black solid;
+    background-color: #8CD8D5;
+    
+}
+
+.registro {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    margin: 5px 20px;
+    padding: 5px 20px;
+}
+
+.titular {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.datos input {
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+    padding: 1px 10px
+}
+
+.boton { 
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 1px 10px
+}
+
+.ingreso {
+    text-align: center;
+    margin: 20px;
+}
+
+.logo-ingreso {
+    display: block;
+
+}
+.fa-facebook {
+    background-color: #335cb1;
+    color: white;
+    padding: 5px;
+    
+}

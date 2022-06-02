@@ -23,8 +23,11 @@
 
     
     <main>
-        <h2>Vamos a necesitar tus datos</h2>
+        <h2 class="titular">Vamos a necesitar tus datos</h2>
+        <a href="/login"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="90%"></a>
+
         <form class="registro" action="/views/register.html" method="post" >
+
             <div class="datos">
                 <label for="nombre"></label> Nombre
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" required > 
@@ -52,10 +55,12 @@
 
             <button class="boton" type="submit">Registrate</button>
 
-            <h5>O ingresá con:</h5>
+            <h5 class="ingreso">O ingresá con:</h5>
 
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-google"></i>
+            <div class="logo-ingreso">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-google"></i>
+            </div>
     </main>
 
     <footer>
