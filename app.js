@@ -22,6 +22,7 @@ app.get('/productDetail', (req,res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
 });
 
-app.listen(process.env.PORT || 3030, () => {console.log("Server running on port 3030");
+app.listen(process.env.PORT || 3030, () => {
+    console.log("Server running on port 3030");
 }
 );
