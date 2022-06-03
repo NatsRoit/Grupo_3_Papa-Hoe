@@ -9,42 +9,116 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /*---------------------------------------------
         HEADER
 ---------------------------------------------*/
-header {
+.main-header {
     background-color: #001728;
+    position: sticky;
+    z-index: 100;
+    top: 0px;
 }
-ul {
-    list-style: none;
-}
-li {
-    display: inline;
-    margin: 20px 10px 20px 0;
+.main-header-top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
 }
 #logo-header {
-    display: block;
-    height: 100px;
+    width: 20%;
     padding: 20px;
 }
-i {
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    flex-shrink: 1;
+    background-color: #fff;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.search-box input {
+    overflow: auto;
+    flex-grow: 0.8;
+    background: transparent;
+    font-size: 12px;
+    padding: 8px;
+    border: transparent;
+}
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box button[type="submit"] {
+    flex-grow: 0;
+    background-color: transparent;
+    color: #222;
+    margin-right: 5px;
+    padding: 5px;
+    border: 0px solid #666;
+}
+.search-box button[type="submit"]:hover {
+    color: #0756c6;
+}
+.search-box button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* -------------------------------------------------------*/
+
+.main-header ul {
+    list-style: none;
+}
+.main-header li {
+    display: inline;
+}
+.main-header a {
+    text-decoration: none;
+    color: white;
+}
+.sections-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main-header .sections-navbar a {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 0 40px 0 0;
+}
+
+.main-header i {
     color: #f4f5ec;
     padding: 20px;
 }
 
+.main-navbar {
+    background-color: #001f37;
+    padding: 15px;
+}
+.sections-navbar {
+
+}
 /*---------------------------------------------
         MAIN
 ---------------------------------------------*/
+
 main {
-    padding: 20px;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     background: #f7f7f7;
 }
-
-
+main .main-index {
+    width: 95%;
+}
 
 #content {
     height: 500px;
@@ -57,8 +131,9 @@ main {
 
 
 #content h2 {
-    font-size: 140px;
-    color: grey;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 100px;
+    color: #001728;
 }
 
 
@@ -106,6 +181,35 @@ main {
     left: 0;
     border: none;
 }
+.slider-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80vh;
+    overflow-y: hidden;
+    position: relative;
+}
+.slider-image {
+    width: 100%;
+    position: absolute;
+    bottom: -280px;
+}
+
+.categorias-index {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.categorias-image {
+    width: 33.33%;
+    height: 300px;
+}
+.categorias-image img {
+    width: 100%;
+    height: 100%;
+}
 
 /*---------------------------------------------
         FOOTER
@@ -142,7 +246,7 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 Login / Register
 ------------------------------------------------------ */
 main {
-    border: 2px black solid;
+/*    border: 2px black solid; */
     background-color: #8CD8D5;
     
 }
