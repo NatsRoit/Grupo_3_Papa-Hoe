@@ -1,0 +1,301 @@
+/* @media (min-width: 360px) {
+    footer {
+        color: #001728;
+    }
+}*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*---------------------------------------------
+        HEADER
+---------------------------------------------*/
+.main-header {
+    background-color: #001728;
+    position: sticky;
+    z-index: 100;
+    top: 0px;
+}
+.main-header-top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#logo-header {
+    width: 20%;
+    padding: 20px;
+}
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    flex-shrink: 1;
+    background-color: #fff;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.search-box input {
+    overflow: auto;
+    flex-grow: 0.8;
+    background: transparent;
+    font-size: 12px;
+    padding: 8px;
+    border: transparent;
+}
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box button[type="submit"] {
+    flex-grow: 0;
+    background-color: transparent;
+    color: #222;
+    margin-right: 5px;
+    padding: 5px;
+    border: 0px solid #666;
+}
+.search-box button[type="submit"]:hover {
+    color: #0756c6;
+}
+.search-box button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* -------------------------------------------------------*/
+
+.main-header ul {
+    list-style: none;
+}
+.main-header li {
+    display: inline;
+}
+.main-header a {
+    text-decoration: none;
+    color: white;
+}
+.sections-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main-header .sections-navbar a {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 0 40px 0 0;
+}
+
+.main-header i {
+    color: #f4f5ec;
+    padding: 20px;
+}
+
+.main-navbar {
+    background-color: #001f37;
+    padding: 15px;
+}
+.sections-navbar {
+
+}
+/*---------------------------------------------
+        MAIN
+---------------------------------------------*/
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #f7f7f7;
+}
+main .main-index {
+    width: 95%;
+}
+
+#content {
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    left: 12%;
+    top: calc(50% - 250px);
+}
+
+
+
+#content h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 100px;
+    color: #001728;
+}
+
+
+
+
+#content p {
+    font-size: 20px;
+    color: grey;
+}
+
+
+
+#content button {
+    width: 35%;
+    height: 40px;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 5vh;
+    margin-left: center;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: dodgerblue;
+    color: white;
+}
+
+
+#content button:hover {
+    background: navy;
+}
+
+#tabla {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: calc(50% - 250px);
+    right: 7%;
+}
+
+#tabla model-viewer {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
+.slider-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80vh;
+    overflow-y: hidden;
+    position: relative;
+}
+.slider-image {
+    width: 100%;
+    position: absolute;
+    bottom: -280px;
+}
+
+.categorias-index {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.categorias-image {
+    width: 33.33%;
+    height: 300px;
+}
+.categorias-image img {
+    width: 100%;
+    height: 100%;
+}
+
+/*---------------------------------------------
+        FOOTER
+---------------------------------------------*/
+footer {
+    padding: 20px;
+}
+
+
+/* .................. MEDIA QUERIES ...................
+--------------------------------------------------------
+Navegación en TABLETS (ancho mínimo 768px px)
+------------------------------------------------------ */
+
+@media (min-width: 768px) {
+    footer {
+        color: #001728;
+    }
+}
+
+/*
+--------------------------------------------------------
+Navegación en DESKTOP (ancho mínimo 1200 px)
+------------------------------------------------------ */
+
+@media (min-width: 1200px) {
+    footer {
+        color: #001728;
+    }
+}
+
+/*
+--------------------------------------------------------
+Login / Register
+------------------------------------------------------ */
+main {
+/*    border: 2px black solid; */
+    background-color: #8CD8D5;
+    
+}
+
+.registro {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    margin: 5px 20px;
+    padding: 5px 20px;
+}
+
+.titular {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.datos input {
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+    padding: 1px 10px
+}
+
+.boton { 
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 1px 10px
+}
+
+.ingreso {
+    text-align: justify;
+    margin: 20px;
+}
+
+.logo-ingreso {
+    display: block;
+
+}
+.fa-facebook {
+    background-color: #335cb1;
+    color: white;
+    padding: 5px;
+    
+}
