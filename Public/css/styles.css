@@ -103,9 +103,7 @@
     background-color: #001f37;
     padding: 15px;
 }
-.sections-navbar {
 
-}
 /*---------------------------------------------
         MAIN
 ---------------------------------------------*/
@@ -116,7 +114,7 @@ main {
     position: relative;
     background: #f7f7f7;
 }
-main .main-index {
+main .main-home {
     width: 95%;
 }
 
@@ -181,7 +179,7 @@ main .main-index {
     left: 0;
     border: none;
 }
-.slider-index {
+.slider-home {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -195,7 +193,7 @@ main .main-index {
     bottom: -280px;
 }
 
-.categorias-index {
+.categorias-home {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
