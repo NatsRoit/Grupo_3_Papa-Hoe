@@ -12,29 +12,69 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/a99dce3628.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
 </head>
 
 <body>
     <header>
-        <a href="/"><img id="logo-header" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-language"></i>
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-moon"></i>
+        <header class="main-header">
+            <div class="main-header-top-bar">
+                <a id="logo" href="/"><img id="logo-header" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png"
+                        alt="PapaHoe Logo"></a>
+                <ul class="right-navbar">
+                    <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
+                    <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
+                </ul>
+                <!-- <form class="search-box">
+                    <input type="text" placeholder="Buscar productos, marcas">
+                    <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                -->
+            </div>
+            <nav class="main-navbar">
+                <ul class="sections-navbar">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Registro</a></li>
+                    <li><a href="/productCart">Shop</a></li>
+                    <li><a href="/productDetail">Board Builder</a></li>
+                </ul>
+            </nav>
+            </div>
     </header>
 
-    <main>
-        <h1>ProductDetail</h1>
+    <main class="product-detail">
+        <!--h1>Hola Mundo!</h1-->
+        <!-- Main Container -->
+    <div id="main">
+
+        <!-- An aside -->
+        <!-- This is for holding the 3D object -->
+        <div id="tabla">
+
+            <!-- 3D objsect -->
+            <!-- This inserts the 3D object inside the aside container -->
+            <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar ios-src="assets/surf3.gltf">
+            </model-viewer>
+        </div>
+
+        <div id="content">
+            <h2>TABLA DE SURF</h2>
+            <p>Comprala ahora!</p>
+            <button>Shop</button>
+        </div>
+    </div>
     </main>
 
     <footer>
-        <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/productCart">productCart</a></li>
-            <li><a href="/productDetail">productDetail</a></li>
-        </ul>
+
     </footer>
 </body>
 
