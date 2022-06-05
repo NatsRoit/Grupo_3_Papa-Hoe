@@ -286,6 +286,7 @@ main {
     
 }
 
+<<<<<<< HEAD
 .fa-google {
     background-color: white;
     color: black;
@@ -339,3 +340,35 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 }
 
 
+=======
+
+
+/******************** Detalles del productCart ********************
+*******************************************************************/
+/*.shop {
+    flex-direction: row;
+    font-family: inherit;
+    font-size: 100%;
+}*/
+
+.shop div.textbox {
+    display: flex;
+    margin: 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+.shop div.button input {
+    display: flex;
+    color: #fff;
+    background-color: #0049f4;  
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shop div.button input:hover {
+    background-color: #4cad69;
+}
+>>>>>>> 3e64753c5c8196149ff47cb0dbe603d45739b1ec
