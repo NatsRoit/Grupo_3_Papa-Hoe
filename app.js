@@ -22,6 +22,6 @@ app.get('/productDetail', (req,res) => {
 });
 
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3030, function () {
     console.log('Servidor corriendo');
 });
