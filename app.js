@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 
 app.use( express.static(path.resolve(__dirname, './public')));
+app.use( express.static(path.resolve(__dirname, './views')));
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo');
