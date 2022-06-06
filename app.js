@@ -7,7 +7,7 @@ const app = express();
 app.use( express.static(path.resolve(__dirname, './public')));
 
 app.get('/', (req,res) => {
-    res.sendFile('home.html', {root: '/'});
+    res.sendFile('home.html', {root: '/views'});
 });
     
 app.get('/register', (req,res) => {
