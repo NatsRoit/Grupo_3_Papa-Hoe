@@ -21,60 +21,108 @@
 </head>
 
 <body>
-    <header>
-        <header class="main-header">
-            <div class="main-header-top-bar">
-                <a id="logo" href="/"><img id="logo-header" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png"
-                        alt="PapaHoe Logo"></a>
-                <ul class="right-navbar">
-                    <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
-                    <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
-                </ul>
-                <!-- <form class="search-box">
-                    <input type="text" placeholder="Buscar productos, marcas">
-                    <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-                -->
-            </div>
-            <nav class="main-navbar">
-                <ul class="sections-navbar">
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Registro</a></li>
-                    <li><a href="/productCart">Shop</a></li>
-                    <li><a href="/productDetail">Board Builder</a></li>
-                </ul>
-            </nav>
-            </div>
+    <header class="main-header">
+        <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
+        <nav class="main-navbar">
+            <ul>
+                <li><a href="#">Surfboards</a></li>
+                <li><a href="#">Complementos</a></li>
+                <li><a href="/productDetail">Board Builder</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+        <nav class="icons-navbar">
+            <ul>
+                <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
+                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+                <li><a href="#"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="product-detail">
-        <!--h1>Hola Mundo!</h1-->
         <!-- Main Container -->
-    <div id="main">
+        <div id="main-builder">
+            <div id="content">
+                <h2>TABLA DE SURF</h2>
+                <p>Comprala ahora!</p>
+                <button>Shop</button>
+            </div>
 
-        <!-- An aside -->
-        <!-- This is for holding the 3D object -->
-        <div id="tabla">
-
-            <!-- 3D objsect -->
-            <!-- This inserts the 3D object inside the aside container -->
-            <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar ios-src="assets/surf3.gltf">
-            </model-viewer>
+            <!-- An aside -->
+            <!-- This is for holding the 3D object -->
+            <div id="tabla">
+                <!-- 3D objsect -->
+                <!-- This inserts the 3D object inside the aside container -->
+                <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar
+                    ios-src="assets/surf3.gltf">
+                </model-viewer>
+            </div>
         </div>
-
-        <div id="content">
-            <h2>TABLA DE SURF</h2>
-            <p>Comprala ahora!</p>
-            <button>Shop</button>
-        </div>
-    </div>
     </main>
 
     <footer>
+        <div class="grid-menu-footer">
+            <div class="social-footer">
 
+                <form class="suscripcion-box">
+                    <input type="email" placeholder="Unite a la tribu">
+                    <button class="sobre" type="submit"><i class="fa-solid fa-envelope"></i></button>
+                </form>
+
+                <div class="iconos-social-footer">
+                    <button class="instagram-footer" type="button"><i class="fa-brands fa-instagram"></i></button>
+                    <button class="facebook-footer" type="button"><i class="fa-brands fa-facebook-f"></i></button>
+                    <button class="youtube-footer" type="button"><i class="fa-brands fa-youtube"></i></button>
+                    <button class="vimeo-footer" type="button"><i class="fa-brands fa-vimeo-v"></i></button>
+                </div>
+
+                <img class="detalles-design" src="/brand/PapaHoe-ELEMENTS-LosPuntitos.png" alt="PapaHoe Brand elements">
+
+                <div class="copyright">
+                    <img id="logo-footer" src="/brand/PapaHoe-logo-min-white.svg" alt="PapaHoe Logo">
+                    Copyright © 2022 Papa Hoe
+                </div>
+
+            </div>
+
+            <ul class="navegacion-footer">
+                <li>
+                    <h3>Papa Hoe</h3>
+                </li>
+                <li>About</li>
+                <li>Team Riders</li>
+                <li>Contacto</li>
+                <li>Privacidad</li>
+            </ul>
+
+            <ul class="navegacion-footer">
+                <li>
+                    <h3>Ayuda</h3>
+                </li>
+                <li>CustomBoard Tracker</li>
+                <li>Volume Calculator</li>
+                <li>FAQ's</li>
+                <li>Envíos y Devoluciones</li>
+                <li>Términos y Condiciones</li>
+            </ul>
+
+            <ul class="info-footer">
+                <li>
+                    <h3>Servicio al Cliente</h3>
+                </li>
+                <li>info@papahoe.com</li>
+                <li>ARG +54 11 4395 859<br>MEX +52 00 4395 859</li>
+                <li>
+                    <h4>Surfboard Factory</h4>
+                    Calle Cualca 27<br>Villa Gesell, Argentina?
+                </li>
+                <li>
+                    <h4>DF Showroom</h4>
+                    San Tlatelolco 123<br>Colonia Roma, DF
+                </li>
+            </ul>
+        </div>
     </footer>
 </body>
 
