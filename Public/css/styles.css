@@ -397,6 +397,58 @@ Login / Register
     
 }
 
+/* HEAD*/
+.fa-google {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    height: 25px;
+}
+
+/* .................. MEDIA QUERIES ...................
+--------------------------------------------------------
+Navegación en TABLETS (ancho mínimo 768px px)
+------------------------------------------------------ */
+
+@media (min-width: 768px) {
+    .main-navbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .completar {
+        padding: 20px 5px;
+    }
+    .registro {
+        display: flex;
+        flex-direction: column;
+        align-items:stretch ;
+    }
+    .boton { 
+        width: 200px;
+        height: 40px;
+        left: 40%;
+        font-size: 18px;
+
+    }
+    .ingreso {
+        font-size: 20px;
+    }
+    footer {
+        color: #001728;
+    }
+}
+
+/*
+--------------------------------------------------------
+Navegación en DESKTOP (ancho mínimo 1200 px)
+------------------------------------------------------ */
+
+@media (min-width: 1200px) {
+    footer {
+        color: #001728;
+    }
+}
 
 
 /******************** Detalles del productCart ********************
