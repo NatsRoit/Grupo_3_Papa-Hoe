@@ -44,34 +44,39 @@
     </header>
 
     <main class="completar">
-        <h2 class="titular">Antes de empezar, ¡necesitamos tus datos!</h2>
-        <a class="Linea" href="/login"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="90%"></a>
+        <div class="bienvenida">
+            <h2 class="titular">Antes de empezar, ¡necesitamos tus datos!</h2>
+            <a class="shaka" href="/register"><img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"></a>
+        </div>
+        <a class="Linea" href="/login"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%"></a>
         
         <form action="/views/login.html" method="post">
             <div class="registro">
                 <div class="datos">
-                    <span>
+                    <div>
                     <label class="titulo" for="email"></label> Correo Electrónico / Usuari@ 
+                    </div>
                     <input class="caja" type="email" name="email" id="email" placeholder="Correo Electrónico / Usuari@"required>
-                    </span>
+                   
                 </div>
 
                 <div class="datos">
-                    <span>
+                    <div>
                     <label class="titulo" for="contraseña"></label> Contraseña
+                    </div>
                     <input class="caja" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
-                    </span>
+
                 </div>
             </div>
             <button class="boton" type="submit">Ingresar</button>
 
-            <a class="Linea" href="/login"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="90%"></a>
+            <a class="Linea" href="/login"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%"></a>
 
             <h5 class="ingreso">O ingresá con:</h5>
 
             <div class="logo-ingreso">
                 <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-google"></i>
+                <a href="/register"><img id="google" src="/img/google_icon-icons.com_62736.svg" alt="Logo-Google" width="20%"></a>
             </div>
     </main>
 

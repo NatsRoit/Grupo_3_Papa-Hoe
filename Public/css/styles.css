@@ -26,11 +26,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
 }
 #logo-header {
-    width: 20%;
-    padding: 20px;
+    width: 30%;
+    padding: 20px 5px;
 }
 .search-box {
     display: flex;
@@ -226,12 +225,19 @@ Login / Register
 .main-navbar {
     display: none;
 }
-
 main {
     border: 2px black solid;
     background-color: #8CD8D5;
+    padding-top: 20px;
 }
-
+.bienvenida {
+    display: flex;
+    flex-direction: column;
+}
+div a #shaka {
+    width: 100px;
+    border: solid transparent 0px;
+    margin-left: 35%;}
 .registro {
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
@@ -265,7 +271,7 @@ main {
     margin: 10px 0px;
     padding: 1px 10px;
     position: relative;
-    left: 30%;
+    left: 33%;
 }
 
 .ingreso {
@@ -275,23 +281,24 @@ main {
 
 .logo-ingreso {
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    padding-bottom: 30px;
 }
 .fa-facebook {
     background-color: #335cb1;
     color: white;
     padding: 5px;
-    max-height: 25px;
-    
+    height: 30px;
+    font-size: 20px;
+    margin-left: 120px;
 }
 
-<<<<<<< HEAD
-.fa-google {
-    background-color: white;
-    color: black;
-    padding: 5px;
-    height: 25px;
+div img {
+    width: 15%;
+    padding: 1px;
+    border: black solid 1px;
+    margin-left: 50px;
+
 }
 
 /* .................. MEDIA QUERIES ...................
@@ -300,28 +307,66 @@ Navegación en TABLETS (ancho mínimo 768px px)
 ------------------------------------------------------ */
 
 @media (min-width: 768px) {
+    #logo-header {
+        width: 40%;
+        padding: 20px;
+    }
     .main-navbar {
         display: flex;
         justify-content: center;
     }
-
     .completar {
         padding: 20px 5px;
     }
+    .titular {
+        font-size: 35px;
+    }
+    div a #shaka {
+        width: 200px;
+        border: solid transparent 0px;
+        margin-left: 35%;
+    }
+    div a #imagen-header {
+        height: 50px;
+    }
     .registro {
-        display: flex;
-        flex-direction: column;
-        align-items:stretch ;
+        font-size: 25px;
+        margin: 50px;
+        padding: 0px 50px;
+    }
+    .caja {
+        width: 500px;
+        height: 40px;
+        border-radius: 10px;
     }
     .boton { 
         width: 200px;
         height: 40px;
-        left: 40%;
+        left: 35%;
         font-size: 18px;
-
+        margin-bottom: 40px;
     }
     .ingreso {
-        font-size: 20px;
+        font-size: 30px;
+        margin: 40px 0px;
+    }
+    .logo-ingreso {
+        display: flex;
+        justify-content: space-around;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+    .fa-facebook {
+        height: 50px;
+        font-size: 40px;
+        margin-top: 13px;
+        margin-left: 280px;
+    }
+    div img {
+        width: 15%;
+        padding: 5px;
+        border: black solid 2px;
+        margin-top: 13px;
     }
     footer {
         color: #001728;
@@ -334,13 +379,65 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 ------------------------------------------------------ */
 
 @media (min-width: 1200px) {
+    .logo-ingreso {
+        display: flex;
+        justify-content: space-around;
+        font-size: 60px;
+        padding-bottom: 30px;
+    }
+    .completar {
+        padding: 20px 5px;
+    }
+    .titular {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+    div a #shaka {
+        width: 300px;
+        border: solid transparent 0px;
+        margin-left: 35%;}
+
+    .registro {
+        font-size: 35px;
+        margin: 100px;
+        padding: 20px 50px;
+    }
+    .caja {
+        width: 900px;
+        height: 70px;
+        border-radius: 15px;
+    }
+    .boton { 
+        width: 400px;
+        height: 70px;
+        left: 35%;
+        font-size: 38px;
+        margin-bottom: 60px;
+        border-radius: 10px;
+    }
+    .ingreso {
+        font-size: 40px;
+        margin: 80px 0px;
+    }
+
+    .fa-facebook {
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        font-size: 90px;
+        padding-top: 8px 0px;
+    }
+    div img {
+        width: 25%;
+        padding: 5px;
+        border: black solid 2px;
+    }
+
     footer {
         color: #001728;
+        font-size: 20px;
     }
 }
-
-
-=======
 
 
 /******************** Detalles del productCart ********************
@@ -371,4 +468,5 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 .shop div.button input:hover {
     background-color: #4cad69;
 }
->>>>>>> 3e64753c5c8196149ff47cb0dbe603d45739b1ec
+
+
