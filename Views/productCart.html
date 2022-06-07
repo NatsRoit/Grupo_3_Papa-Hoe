@@ -15,17 +15,40 @@
 </head>
 
 <body>
-    <header>
-        <a href="/"><img id="logo-header" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-language"></i>
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-moon"></i>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <a id="logo" href="/"><img id="logo-header" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png"
+                    alt="PapaHoe Logo"></a>
+            <ul class="right-navbar">
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
+                <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
+            </ul>
+            <!-- <form class="search-box">
+                <input type="text" placeholder="Buscar productos, marcas">
+                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            -->
+        </div>
+        <nav class="main-navbar">
+            <ul class="sections-navbar">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Registro</a></li>
+                <li><a href="/productCart">Shop</a></li>
+                <li><a href="/productDetail">Board Builder</a></li>
+            </ul>
+        </nav>
+        </div>
     </header>
-
     <main>
         <h1>CART SHOPPING</h1>
+
+        <div class="img-product">
+            <p><img src="/public/brand/PapaHoe-ICON-RosaSummer.png" alt="Imagen del producto"></p>
+        </div>
+
         <form class="shop" action="/" method="POST">
             <div class="textbox">
                 <label for="name-product">Nombre del producto</label>
