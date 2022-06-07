@@ -1,19 +1,19 @@
 {
-  "name": "grupo_3_papa-hoe",
+  "name": "dh-papahoe",
   "version": "1.0.0",
-  "description": "E-commerce. Tablas de surf y otros artículos para surfistas.",
+  "description": "TEMÁTICA DEL SITIO Venta de tablas de surf y otros artículos para surfistas",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NatsRoit/Grupo_3_Papa-Hoe.git"
-  },
-  "author": "grupo3",
-  "license": "ISC",
 
+  "author": "Grupo 3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NatsRoit/Grupo_3_Papa-Hoe/issues"
+  },
+  "homepage": "https://github.com/NatsRoit/Grupo_3_Papa-Hoe#readme",
   "dependencies": {
     "express": "^4.18.1"
   }
