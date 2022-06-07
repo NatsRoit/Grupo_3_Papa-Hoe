@@ -434,9 +434,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .ingreso {
         font-size: 20px;
     }
-    footer {
-        color: #001728;
-    }
 }
 
 /*
@@ -445,9 +442,7 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 ------------------------------------------------------ */
 
 @media (min-width: 1200px) {
-    footer {
-        color: #001728;
-    }
+
 }
 
 
