@@ -88,7 +88,7 @@ body {
 }
 
 #carrito-icon {
-    background-color: #0049f4;
+    background-color: hsl(220, 100%, 45%);
 }
 #carrito-icon,
 #usuario-icon,
@@ -129,7 +129,7 @@ body {
     border: 0px solid #666;
 }
 .search-box button[type="submit"]:hover {
-    color: #0756c6;
+    color: #335cb1;
 }
 .search-box button[type="submit"]:active {
     transform: translateY(1px);
@@ -144,6 +144,20 @@ main {
     background: #f7f7f7;
     margin: auto;
 }
+* main h1 {
+    font-weight: 300;
+    font-size: 40pt;
+    color: #001728;
+    margin-bottom: 10px;
+}
+* main h2 {
+    letter-spacing: 1px;
+    font-size: 18pt;
+    color: #001728;
+    font-family: 'Bebas Neue';
+}
+
+
 /* -------------------------------------------------------*/
 #main-builder {
     position: relative;
@@ -202,20 +216,72 @@ main {
     left: 0;
 }
 
+/* -------------------------------------------------------*/
 
+.main-home {
+}
 .slider-home {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     height: 80vh;
     overflow-y: hidden;
     position: relative;
 }
 .slider-image {
     width: 100%;
-    position: absolute;
-    bottom: -280px;
 }
+.overlay-header {
+    position: absolute;
+    z-index: 50;
+    left: 100px;
+    bottom: 250px;
+}
+
+/* -------------------------------------------------------*/
+
+.producto-destacado {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.producto-destacado div {
+    padding: 40px;
+}
+.contenedor-producto {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    height: 400px;
+    /* object-fit: cover; */
+    overflow: hidden;
+}
+.contenedor-producto img {
+    width: 200%;
+    margin-left:-90%;
+    transform: rotate(90deg);
+} 
+
+.producto-destacado .descripcion-producto {
+    width: 33%;
+    flex-grow: 0.1;
+}
+
+.producto-destacado .destacado-tabla {
+    width: 33%;
+    flex-grow: 0.1;
+}
+.producto-destacado .destacado-tabla p {
+    display: block;
+    width: 20vw;
+    line-height: 20px;
+    padding: 20px;
+}
+
+/* -------------------------------------------------------*/
 
 .categorias-home {
     display: flex;
@@ -226,13 +292,13 @@ main {
 }
 .categorias-image {
     width: 33.33%;
-    height: 300px;
+    min-width: 200px;
+    height: 400px;
+    overflow: hidden;
 }
 .categorias-image img {
-    width: 100%;
-    height: 100%;
+    width: 200%;
 }
-
 /*---------------------------------------------
         FOOTER
 ---------------------------------------------*/
@@ -246,6 +312,7 @@ footer {
     padding-top: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    column-gap: 10px;
 }
 
 
@@ -268,6 +335,8 @@ footer {
     height: 40px;
     padding: 8px;
     color: #f4f5ec;
+    width: 90%;
+    overflow: hidden;
 }
 input::placeholder {
     color: #b3b1b3;
@@ -280,12 +349,14 @@ input::placeholder {
     font-size: 20px;
 }
 .suscripcion-box button[type="submit"]:hover {
-    color: #0756c6;
+    color: #335cb1;
 }
 .suscripcion-box button[type="submit"]:active {
     transform: translateY(1px);
 }
-
+.suscripcion-box input:focus {
+    outline: none;
+}
 
 .iconos-social-footer {
     border-bottom: 1px solid #f4f5ec;
@@ -296,9 +367,15 @@ input::placeholder {
 .iconos-social-footer button {
     background-color: transparent;
     color: #f4f5ec;
-    padding: 5px;
+    padding: 10px;
     border: 0px solid #666;
     font-size: 20px;
+}
+.iconos-social-footer button:hover {
+    color: #335cb1;
+}
+.iconos-social-footer button:active {
+    transform: translateY(1px);
 }
 
 .copyright {
@@ -311,25 +388,31 @@ input::placeholder {
     font-size: 10px;
     font-weight: bold;
     color: #f4f5ec;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
 }
 #logo-footer {
     width: 20px;
     margin: 0 10px 0 0;
 }
 
-img.detalles-design {
+
+.detalles-design {
     width: 120px;
     position: absolute;
-    left: -60px;
-    bottom: -40px;
+    z-index: 0;
+}
+img.detalles-design {
+    left: -75px;
+    bottom: -10px;
     transform: rotate(170deg);
 }
-
 
 .navegacion-footer,
 .info-footer {
     font-size: 12px;
-    line-height: 24px;
+    line-height: 18px;
 }
 .navegacion-footer li, 
 .info-footer li {
