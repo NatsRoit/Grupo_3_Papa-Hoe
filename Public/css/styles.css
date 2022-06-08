@@ -1,3 +1,24 @@
+/* COLORES
+AZUL MARINO: # 001728
+AZUL TÉCNICO: # 335cb1 
+ROSA SUMMER: # fad6d1
+
+SECUNDARIOS
+Azul Técnico clarito: #4884ef
+Verde agua: #8cd8d5
+Arena Claro: #f4f5ec
+Arena Oscuro: #b3b1b3
+
+ESCALA DE AZULES (del marino al arena)
+#001728 <--- (azul marino)
+#293c49
+#516169
+#7a868a
+#a3abab
+#cbd0cb
+#f4f5ec  <--- (arena)
+*/
+
 * {
     box-sizing: border-box;
     margin: 0px;
