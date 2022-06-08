@@ -363,6 +363,19 @@ header.slider {
     background-color: #00172843;
 }
 
+.product-cart .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contenedor .img-product  {
+    flex-basis: 40%;
+}
+.contenedor .shop {
+    flex-basis: 60%;
+}
+
 /*---------------------------------------------
         FOOTER
 ---------------------------------------------*/
