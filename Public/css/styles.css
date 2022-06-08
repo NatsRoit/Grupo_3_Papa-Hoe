@@ -1,15 +1,9 @@
-/* @media (min-width: 360px) {
-    footer {
-        color: #001728;
-    }
-}*/
-
-
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
 }
 
 body {
@@ -130,13 +124,14 @@ body {
 }
 
 /*---------------------------------------------
-        MAIN
+        MAIN HOME
 ---------------------------------------------*/
 
-main {
+* main {
     width: 100%;
     background: #f7f7f7;
     margin: auto;
+    padding: 20px;
 }
 
 * main h1 {
@@ -155,71 +150,6 @@ main {
     font-family: 'Bebas Neue';
 }
 
-
-/* -------------------------------------------------------*/
-#main-builder {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-}
-
-#content {
-    height: 500px;
-    width: 40%;
-    position: relative;
-    /* left: 7%; */
-    top: 60px;
-    /* top: calc(50% - 250px); */
-}
-
-#content h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 100px;
-    color: #001728;
-}
-
-
-
-#content p {
-    font-size: 20px;
-    color: grey;
-}
-
-#content button {
-    width: 35%;
-    height: 40px;
-    font-size: 16px;
-    font-family: sans-serif;
-    margin-top: 5vh;
-    margin-left: center;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    background: dodgerblue;
-    color: white;
-}
-
-#content button:hover {
-    background: navy;
-}
-
-#tabla {
-    height: 600px;
-    width: 40%;
-    position: relative;
-    /* top: calc(50% - 250px); */
-    /* right: 7%; */
-    top: 60px;
-}
-
-#tabla model-viewer {
-    height: 600px;
-    width: 600px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 /* -------------------------------------------------------*/
 
@@ -363,17 +293,198 @@ header.slider {
     background-color: #00172843;
 }
 
+/*---------------------------------------------
+        MAIN: CUSTOM BOARD
+---------------------------------------------*/
+#main-builder {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#content {
+    height: 500px;
+    width: 40%;
+    position: relative;
+    /* left: 7%; */
+    top: 60px;
+    /* top: calc(50% - 250px); */
+}
+
+#content h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    color: #001728;
+}
+
+#content p {
+    font-size: 20px;
+    color: grey;
+}
+
+#content button {
+    width: 35%;
+    height: 40px;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 5vh;
+    margin-left: center;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: #335cb1;
+    color: white;
+}
+#content button:hover {
+    background: #001728;
+}
+
+#tabla {
+    height: 600px;
+    width: 40%;
+    position: relative;
+    /* top: calc(50% - 250px); */
+    /* right: 7%; */
+    top: 60px;
+}
+
+#tabla model-viewer {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*---------------------------------------------
+*************** MAIN: PRODUCT CART  ************
+---------------------------------------------*/
+
+/*.shop {
+    flex-direction: row;
+    font-family: inherit;
+    font-size: 100%;
+}*/
+
 .product-cart .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
 }
 .contenedor .img-product  {
-    flex-basis: 40%;
+    flex-grow: .4;
 }
 .contenedor .shop {
-    flex-basis: 60%;
+    flex-grow: .6;
+}
+
+
+.shop .textbox input,
+textarea {
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+    padding: 1px 10px;
+    width: 250px;
+}
+
+.shop .button input {
+    color: #fff;
+    background-color: #335cb1;  
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.shop .button input:hover {
+    background-color: #001728;
+}
+
+/*
+--------------------------------------------------------
+    MAIN Login / Register
+------------------------------------------------------ */
+
+main.completar {
+    border: 2px black solid;
+    background-color: #8CD8D5;
+    padding-top: 20px;
+}
+
+.bienvenida {
+    display: flex;
+    flex-direction: column;
+}
+
+div a #shaka {
+    width: 100px;
+    border: solid transparent 0px;
+    margin-left: 35%;
+}
+
+.registro {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    margin: 5px 20px;
+    padding: 5px 20px;
+}
+
+.titular {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.caja {
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+    padding: 1px 10px;
+    width: 250px;
+}
+
+.boton {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 1px 10px;
+    position: relative;
+    left: 33%;
+}
+
+.ingreso {
+    text-align: center;
+    margin: 20px;
+}
+
+.logo-ingreso {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.fa-facebook {
+    background-color: #335cb1;
+    color: white;
+    padding: 5px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 120px;
+}
+
+div img.completar {
+    width: 15%;
+    padding: 1px;
+    border: black solid 1px;
+    margin-left: 50px;
+
 }
 
 /*---------------------------------------------
@@ -473,7 +584,7 @@ input::placeholder {
     align-items: center;
     margin-top: 95px;
     font-size: 10px;
-    font-weight: bold;
+    font-weight: 700;
     color: #f4f5ec;
     position: absolute;
     bottom: 0;
@@ -508,142 +619,6 @@ img.detalles-design {
 .info-footer li {
     list-style: none;
     margin-bottom: 15px;
-}
-
-
-/*
---------------------------------------------------------
-Login / Register
------------------------------------------------------- */
-/* NATUUUU! USÁ CLASES POR FAVOR!! Pq si no, se cambian los contenidos de todos! */
-
-
-main.completar {
-    border: 2px black solid;
-    background-color: #8CD8D5;
-    padding-top: 20px;
-}
-
-.bienvenida {
-    display: flex;
-    flex-direction: column;
-}
-
-div a #shaka {
-    width: 100px;
-    border: solid transparent 0px;
-    margin-left: 35%;
-}
-
-.registro {
-    font-family: "Quicksand", sans-serif;
-    font-weight: 400;
-    margin: 5px 20px;
-    padding: 5px 20px;
-}
-
-.titular {
-    font-family: "Quicksand", sans-serif;
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.caja {
-    border-radius: 5px;
-    height: 30px;
-    margin: 10px 0px;
-    padding: 1px 10px;
-    width: 250px;
-}
-
-.boton {
-    background-color: #335cb1;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    color: #f4f5ec;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 10px 0px;
-    padding: 1px 10px;
-    position: relative;
-    left: 33%;
-}
-
-.ingreso {
-    text-align: center;
-    margin: 20px;
-}
-
-.logo-ingreso {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 30px;
-}
-
-.fa-facebook {
-    background-color: #335cb1;
-    color: white;
-    padding: 5px;
-    height: 30px;
-    font-size: 20px;
-    margin-left: 120px;
-}
-
-div img.completar {
-    width: 15%;
-    padding: 1px;
-    border: black solid 1px;
-    margin-left: 50px;
-
-}
-
-/******************** estilos del productCart ********************
-*******************************************************************/
-/*.shop {
-    flex-direction: row;
-    font-family: inherit;
-    font-size: 100%;
-}*/
-
-div.img-product {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border-radius: 8%;
-}
-
-.shop div.textbox {
-    display: flex;
-    margin: 5px;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.shop div.textbox input,
-textarea {
-    border-radius: 5px;
-    height: 30px;
-    margin: 10px 0px;
-    padding: 1px 10px;
-    width: 250px;
-}
-
-.shop div.button input {
-    display: flex;
-    color: #fff;
-    background-color: #0049f4;  
-    border-radius: 5px;
-    padding: 10px;
-    margin: 20px 20px;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.shop div.button input:hover {
-    background-color: #4cad69;
 }
 
 /* .................. MEDIA QUERIES ...................
@@ -755,72 +730,71 @@ Navegación en TABLETS (ancho mínimo 768px px)
     object-fit: cover;
     object-position: center center;
 }
+ /* -------------------------------------------------------*/
 
-/* -------------------------------------------------------*/
+ .completar {
+    padding: 20px 5px;
+}
 
-    .completar {
-        padding: 20px 5px;
-    }
+.titular {
+    font-size: 35px;
+}
 
-    .titular {
-        font-size: 35px;
-    }
+div a #shaka {
+    width: 200px;
+    border: solid transparent 0px;
+    margin-left: 35%;
+}
 
-    div a #shaka {
-        width: 200px;
-        border: solid transparent 0px;
-        margin-left: 35%;
-    }
+div a #imagen-header {
+    height: 50px;
+}
 
-    div a #imagen-header {
-        height: 50px;
-    }
+.registro {
+    font-size: 25px;
+    margin: 50px;
+    padding: 0px 50px;
+}
 
-    .registro {
-        font-size: 25px;
-        margin: 50px;
-        padding: 0px 50px;
-    }
+.caja {
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+}
 
-    .caja {
-        width: 500px;
-        height: 40px;
-        border-radius: 10px;
-    }
+.boton {
+    width: 200px;
+    height: 40px;
+    left: 35%;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
 
-    .boton {
-        width: 200px;
-        height: 40px;
-        left: 35%;
-        font-size: 18px;
-        margin-bottom: 40px;
-    }
+.ingreso {
+    font-size: 30px;
+    margin: 40px 0px;
+}
 
-    .ingreso {
-        font-size: 30px;
-        margin: 40px 0px;
-    }
+.logo-ingreso {
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
 
-    .logo-ingreso {
-        display: flex;
-        justify-content: space-around;
-        font-size: 40px;
-        padding-bottom: 30px;
-    }
+.fa-facebook {
+    height: 50px;
+    font-size: 40px;
+    margin-top: 13px;
+    margin-left: 280px;
+}
 
-    .fa-facebook {
-        height: 50px;
-        font-size: 40px;
-        margin-top: 13px;
-        margin-left: 280px;
-    }
-
-    div img.completar {
-        width: 15%;
-        padding: 5px;
-        border: black solid 2px;
-        margin-top: 13px;
-    }
+div img.completar {
+    width: 15%;
+    padding: 5px;
+    border: black solid 2px;
+    margin-top: 13px;
+}
 }
 
 /*
@@ -896,18 +870,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     .icons-navbar i {
         padding: 0 30px;
     }
-
-    /* -------------------------------------------------------*/
-
-    /* -------------------------------------------------------*/
-
-    .logo-ingreso {
-        display: flex;
-        justify-content: space-around;
-        font-size: 60px;
-        padding-bottom: 30px;
-    }
-
     .completar {
         padding: 20px 5px;
     }
@@ -962,7 +924,5 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         padding: 5px;
         border: black solid 2px;
     }
+
 }
-
-
-
