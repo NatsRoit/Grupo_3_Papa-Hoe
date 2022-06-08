@@ -105,3 +105,5 @@ Tengo 36 años, tengo una Licenciatura en Diseño Gráfico y una Diplomatura en 
 Desde hace más de 10 años me especializo en Branding para pequeñas y medianas empresas y actualmente estoy buscando ampliar mis conocimientos sobre Tecnologías de la Información y Desarrollo Web para reorientar mi carrera profesional.
 Curiosa, entusiasta, emprendedora, apasionada por la fotografía y por los aspectos éticos y estéticos de la comunicación.
 PORTFOLIO >>> www.coroflot.com/nats  //  natsroit-blog.tumblr.com
+
+Magdalena Belaustegui: Soy Magdalena Belaustegui, tengo 43 años, vivo en la Ciudad de Azul, provincia de Buenos Aires.- Considero que los resultados del trabajo en equipo son mas amplios y eficientes. Mis fortalezas para aportar al grupo es mi capacidad de ordenar y establecer prioridades. Tengo facilidad para integrar a los participantes y asi generar un espacio dinamico de comunicacion. Soy artista plastica (arte conceptual) y eso me da una mirada amplia para poder transmitir con claridad una idea.
