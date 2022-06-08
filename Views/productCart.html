@@ -29,12 +29,14 @@
             <ul>
                 <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
                 <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <li><a href="#"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
+                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
             </ul>
         </nav>
     </header>
+
+    
     <main class="product-cart">
-        <h1>CART SHOPPING</h1>
+        <h1>Shopping Cart</h1>
         <div class="contenedor">
             <div class="img-product">
                 <img src="/brand/PapaHoe-ICON-RosaSummer.png" alt="Imagen del producto">
@@ -43,19 +45,23 @@
             <form class="shop" action="/" method="POST">
                 <div class="textbox">
                     <label for="name-product">Nombre del producto</label>
+                    <br>
                     <input type="text" name="name-product" id="name-product">
                 </div>
                 <div class="textbox">
                     <label for="description-product">Descripción del producto </label>
+                    <br>
                     <textarea name="description-product"
                         id="description-product">Aquí enlazar la descripción del producto</textarea>
                 </div>
                 <div class="textbox">
                     <label for="price">Precio</label>
+                    <br>
                     <input type="number" name="price" id="price">
                 </div>
                 <div class="textbox">
                     <label for="quantify">Cantidad</label>
+                    <br>
                     <input type="number" name="quantify" id="quantify">
                 </div>
                 <div class="button">
