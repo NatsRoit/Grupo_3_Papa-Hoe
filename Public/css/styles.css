@@ -6,7 +6,8 @@ ROSA SUMMER: #fad6d1
 SECUNDARIOS
 Azul Técnico clarito: #4884ef
 Verde agua: #8cd8d5
-Arena Claro: #f4f5ec
+Arena Claro: #f8f8f3
+Arena Medio: #f4f5ec
 Arena Oscuro: #b3b1b3
 
 ESCALA DE AZULES (del marino al arena)
@@ -16,7 +17,7 @@ ESCALA DE AZULES (del marino al arena)
 #7a868a
 #a3abab
 #cbd0cb
-#f4f5ec  <--- (arena)
+#f4f5ec  <--- (arena medio)
 */
 
 * {
@@ -157,8 +158,8 @@ body {
 
 * main h1 {
     font-weight: 300;
-    font-size: 40pt;
-    line-height: 48px;
+    font-size: 35px;
+    line-height: 32px;
     color: #001728;
     margin-bottom: 20px;
 }
@@ -171,8 +172,11 @@ body {
     font-family: 'Bebas Neue';
 }
 
+/* -------- HOME SLIDER ---------------------------*/
 
-/* -------------------------------------------------------*/
+.main-home {
+    padding: 0px;
+}
 
 header.slider {
     align-items: center;
@@ -220,7 +224,7 @@ header.slider {
     object-position: 50% 50%;
 }
 
-/* -------------------------------------------------------*/
+/* ------ PRODUCTO DESTACADO ----------------------*/
 
 .producto-destacado {
     display: grid;
@@ -267,7 +271,7 @@ header.slider {
     line-height: 20px;
 }
 
-/* -------------------------------------------------------*/
+/* ------ CATEGORÍAS PRODUCTOS ---------------------*/
 
 .categorias-home {
     display: flex;
@@ -314,6 +318,77 @@ header.slider {
     background-color: #00172843;
 }
 
+/* -------------MODEL FINDER -----------------------*/
+.model-finder {
+    width: 100%;
+    height: 500px;
+    background-color: #fad6d1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.model-finder .descripcion {
+    padding: 60px;
+    flex-basis: 50%;
+    align-self: center;
+    transform: translateY(-40px);
+}
+.model-finder a {
+    text-decoration: none;
+    color: #001728;
+    display: inline-block;
+    width: 100px;
+    margin: 30px 40px 0 0;
+    background-image: url(PapaHoe-ELEMENTS-Fondito-Arena.png);
+    background-color: #f4f5ec;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+}
+.model-finder #la-linea {
+    position: absolute;
+    width: 270px;
+    bottom: 40px;
+    left: -30px;
+}
+
+.imagen-model-finder {
+    flex-basis: 50%;
+    flex-grow: .5;
+    background-image: url(/img/surfboard-construction.jpg);
+    background-color: #fad6d1;
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: cover;
+    background-blend-mode: screen;
+    opacity: 30%;
+}
+
+/* ----------VOLUME CALCULATOR HOME ----------------*/
+
+.volume-calculator {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.title-calculator {
+    padding: 60px;
+    flex-basis: 50%;
+    align-self: flex-start;
+}
+.form-calculator {
+    flex-basis: 50%;
+    align-self: center;
+}
+.form-calculator div {
+    display: inline-block;
+    min-width: 30%;
+    margin-bottom: 20px;
+}
 /*---------------------------------------------
         MAIN: CUSTOM BOARD
 ---------------------------------------------*/
@@ -524,7 +599,6 @@ footer {
     column-gap: 10px;
 }
 
-
 .social-footer {
     margin: 0 0 0 7%;
     width: 100%;
@@ -616,7 +690,6 @@ input::placeholder {
     width: 20px;
     margin: 0 10px 0 0;
 }
-
 
 .detalles-design {
     width: 120px;
@@ -731,6 +804,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
     /* -------------------------------------------------------*/
 
 .categorias-home {
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
