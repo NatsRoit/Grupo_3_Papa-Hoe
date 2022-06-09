@@ -38,63 +38,80 @@
             </ul>
         </nav>
     </header>
-    
-    <main class="completar">
-        <div class="bienvenida">
-            <h2 class="titular">Vamos a necesitar tus datos</h2>
-            <a class="shaka" href="/register"><img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"></a>
-        </div>
-        <a href="/register"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%"></a>
 
-        <form action="/views/register.html" method="post" >
-            <div class="registro">
-                <div class="datos">
-                    <div>
-                    <label for="nombre"></label> Nombre
-                    </div>
-                    <input class="caja" type="text" name="nombre" id="nombre" placeholder="Nombre" required > 
-                </div> 
 
-                <div class="datos">
-                    <div>
-                    <label for="apellido"></label> Apellido
-                    </div>
-                    <input class="caja" type="text" name="apellido" id="apellido" placeholder="Apellido" required> 
-                </div> 
+    <main class="en-construccion">
+        <h1>
+            Página en construcción
+        </h1>
 
-                <div class="datos">
-                    <div>
-                    <label for="usuario"></label> Usuari@
-                    </div>
-                    <input class="caja" type="text" name="usuario" id="usuario" placeholder="Nombre de usuari@" required> 
-                </div> 
-
-                <div class="datos">
-                    <div>
-                    <label for="email"></label> Correo Electrónico
-                    </div>
-                    <input class="caja" type="email" name="email" id="email" placeholder="Correo Electrónico" required> 
-                </div> 
-
-                <div class="datos">
-                    <div>
-                    <label for="contraseña"></label> Contraseña
-                    </div>
-                    <input class="caja" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
-                </div>
+            <div class="title-calculator">
+                <h1>Volume Calculator</h1>
+                <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
+                <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
             </div>
+            <div class="form-calculator">
+                <form action="/volumeCalculator" method="GET">
+                    <div class="volume-container">
+                        <label for="peso">Peso</label><br>
+                        <datalist id="opciones-calculator">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </datalist>
+                        <input type="range" min="15" max="150" value="0" step="50" id="peso" list="opciones-calculator"
+                            name="peso">
 
-            <button class="boton" type="submit">Registrate</button>
+                    </div>
+                    <div>
+                        <label for="altura">Altura</label><br>
+                        <input id="altura" type="range" min="1" max="2" value="0" step="0.05" list="tickmarks"
+                            name="altura">
+                        <datalist id="tickmarks">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label><br>
+                        <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks" name="edad">
+                        <datalist id="tickmarks">
 
-            <a href="/register"><img id="imagen-header" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%"></a>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="entrenamiento">Entreno</label><br>
+                        <select name="entrenamiento" id="entrenamiento">
+                            <option value="bajo">Mmmhhh</option>
+                            <option value="medio">Podría entrenar más</option>
+                            <option value="alto">Bastante</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="frecuencia">Frecuencia</label><br>
+                        <select name="frecuencia" id="frecuencia">
+                            <option value="nunca">3/5 veces por semana</option>
+                            <option value="mensualmente">1 vez por semana</option>
+                            <option value="semanalmente">1/2 veces por mes</option>
+                            <option value="diariamente">1/2 veces por año</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="experiencia">experiencia</label><br>
+                        <select name="experiencia" id="experiencia">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                            <option value="experto">Experto</option>
+                        </select>
+                    </div>
+                    <button type="submit">Calculá mi talla</button>
+                </form>
 
-            <h5 class="ingreso">O ingresá con:</h5>
-
-            <div class="logo-ingreso">
-                <i class="fa-brands fa-facebook"></i>
-                <a href="/register"><img id="google" src="/img/google_icon-icons.com_62736.svg" alt="Logo-Google" width="20%"></a>
-            </div>
     </main>
+
+
+
+
 
     <footer>
         <div class="grid-menu-footer">
@@ -126,21 +143,21 @@
                 <li>
                     <h3>Papa Hoe</h3>
                 </li>
-                <li>About</li>
-                <li>Team Riders</li>
-                <li>Contacto</li>
-                <li>Privacidad</li>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Team Riders</li></a>
+                <a href="#"><li>Contacto</li></a>
+                <a href="#"><li>Privacidad</li></a>
             </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <li>CustomBoard Tracker</li>
-                <li>Volume Calculator</li>
-                <li>FAQ's</li>
-                <li>Envíos y Devoluciones</li>
-                <li>Términos y Condiciones</li>
+                <a href="#"><li>CustomBoard Tracker</li></a>
+                <a href="/volumeCalculator"><li>Volume Calculator</li></a>
+                <a href="#"><li>FAQ's</li></a>
+                <a href="#"><li>Envíos y Devoluciones</li></a>
+                <a href="#"><li>Términos y Condiciones</li></a>
             </ul>
 
             <ul class="info-footer">
@@ -161,4 +178,5 @@
         </div>
     </footer>
 </body>
+
 </html>
