@@ -27,9 +27,17 @@ ESCALA DE AZULES (del marino al arena)
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
-
+* a {
+    text-decoration: none;
+    color: #001728;
+}
 body {
     width: 100vw;
+}
+
+.en-construccion {
+    padding: 30vh 0;
+    text-align: center;
 }
 
 /*---------------------------------------------
@@ -145,14 +153,14 @@ body {
         MAIN HOME
 ---------------------------------------------*/
 
-* main {
+main {
     width: 100%;
     background: #f7f7f7;
     margin: auto;
     padding: 20px;
 }
 
-* main h1 {
+main h1 {
     font-weight: 300;
     font-size: 35px;
     line-height: 32px;
@@ -160,12 +168,18 @@ body {
     margin-bottom: 20px;
 }
 
-* main h2 {
-    letter-spacing: 1px;
-    font-size: 18pt;
+main h2 {
+    letter-spacing: 0.02em;
+    font-size: 16pt;
     line-height: 20px;
     color: #001728;
     font-family: 'Bebas Neue';
+}
+main p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #516169;
 }
 
 /* -------- HOME SLIDER ---------------------------*/
@@ -243,10 +257,7 @@ header.slider {
     grid-area: box1;
     padding: 25px 20px 0;
 }
-.producto-destacado .descripcion-producto h1 {
-    font-size: 35px;
-    line-height: 32px;
-}
+
 .producto-destacado .descripcion-producto p {
     /* display: none; */
     margin-top: 8px;
@@ -331,17 +342,42 @@ header.slider {
     transform: translateY(-40px);
 }
 .model-finder a {
-    text-decoration: none;
-    color: #001728;
     display: inline-block;
+    transform: translateY(0px);
     width: 100px;
-    margin: 30px 40px 0 0;
-    background-image: url(PapaHoe-ELEMENTS-Fondito-Arena.png);
-    background-color: #f4f5ec;
-    font-size: 16px;
+    height: 60px;
+    margin: 20px 30px 0 0;
+    font-size: 20px;
     line-height: 32px;
     text-align: center;
+    position: relative;
+    background-image: url(/brand/PapaHoe-ELEMENTS-Fondito-Arena2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 8px;
 }
+.model-finder a:link {
+    color: #001728;
+}
+.model-finder a:visited {
+    color: #001728;
+}
+.model-finder a:hover {
+    background-color: #fad6d1;
+    background-blend-mode: hard-light;
+    font-weight: 600;
+}
+.model-finder a:active {
+    color: #335cb1;
+    transform: translateY(1.5px);
+    font-weight: 600;
+    font-size: 19.5px;
+}
+
+/* .model-finder #boton-explora {
+    background: element(scaleX/-1);
+} */
+
 .model-finder #la-linea {
     position: absolute;
     width: 270px;
@@ -597,6 +633,9 @@ footer {
     color: #f4f5ec;
     padding: 20px;
 }
+footer a {
+    color: #f4f5ec;
+}
 
 .grid-menu-footer {
     padding-top: 30px;
@@ -752,15 +791,15 @@ Navegación en TABLETS (ancho mínimo 768px px)
 /* -------------------------------------------------------*/
 
     header.slider {
-        height: 690px;
+        height: 600px;
     }
     .slides img {
-        height: 690px;
+        height: 600px;
     }
 
     .overlay-text {
         left: 100px;
-        bottom: 180px;
+        top: 45%;
         font-size: 50px;
         line-height: 45px;
     }
@@ -904,6 +943,11 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 ------------------------------------------------------ */
 
 @media (min-width: 1200px) {
+    main p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
     #logo {
         flex-basis: 200px;
     }
@@ -953,7 +997,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     .producto-destacado .descripcion-producto p {
         margin-top: 10px;
         font-size: 14px;
-        line-height: 20x;
     }
     .producto-destacado .destacado-tabla p {
         display: block;
