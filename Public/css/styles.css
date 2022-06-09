@@ -92,10 +92,6 @@ body {
     padding: 0 20px;
 }
 
-#carrito-icon {
-    background-color: hsl(220, 100%, 45%);
-}
-
 #carrito-icon,
 #usuario-icon,
 #lupa-icon {
@@ -503,42 +499,48 @@ textarea {
 ------------------------------------------------------ */
 
 main.completar {
-    border: 2px black solid;
-    background-color: #8CD8D5;
-    padding-top: 20px;
+    padding: 20px 20px;
 }
 
 .bienvenida {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+    margin: 0px 20px
 }
 
 div a #shaka {
-    width: 100px;
+    width: 25%;
     border: solid transparent 0px;
-    margin-left: 35%;
+    margin-left: 10%;
 }
 
-.registro {
+form .registro {
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
-    margin: 5px 20px;
     padding: 5px 20px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .titular {
     font-family: "Quicksand", sans-serif;
+    font-size: 50px;
     font-weight: 600;
-    text-align: center;
-    padding-bottom: 20px;
 }
 
 .caja {
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 250px;
+    width: 280px;
+    border:#335cb1 solid 1.5px;
 }
 
 .boton {
@@ -546,18 +548,24 @@ div a #shaka {
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #f4f5ec;
-    width: 100px;
+    width: 280px;
     height: 30px;
     border-radius: 5px;
-    margin: 10px 0px;
+    margin: 5px 0px ;
     padding: 1px 10px;
     position: relative;
-    left: 33%;
+
+}
+
+.registrarse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ingreso {
     text-align: center;
-    margin: 20px;
+    margin-bottom: ;
 }
 
 .logo-ingreso {
@@ -580,7 +588,6 @@ div img.completar {
     padding: 1px;
     border: black solid 1px;
     margin-left: 50px;
-
 }
 
 /*---------------------------------------------
