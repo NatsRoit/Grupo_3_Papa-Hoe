@@ -376,6 +376,135 @@ header.slider {
     flex-basis: 60%;
 }
 
+/* -------------------------------------------
+       PRODUCT DETAIL
+---------------------------------------------*/
+aside{
+    flex-basis: 18%;
+}
+
+#columna-foto{
+    flex-basis: 60%;
+
+}
+
+#detalle-producto{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 30px
+}
+#detalle-producto h1{
+    text-transform: uppercase;
+}
+
+#producto-izquierda{
+    flex-basis: 60%;
+}
+#producto-derecha{
+    flex-basis: 40%;
+    padding-right: 10%;
+   
+    
+}
+
+#producto-derecha h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+#producto-derecha .precio{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#producto-derecha h2{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+#producto-derecha p{
+    margin-bottom: 20px;
+}
+  
+
+#botones-extras {
+    margin-top: 80px;
+}
+#agregar-carrito input.boton{
+    text-transform: uppercase;
+    display: block;
+    background-color: #335cb1;
+    color: white;    
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+    height: 15%;
+    border: 0;
+    font-size: 15px;
+    left: 0
+ 
+}
+
+#botones-extras a{
+    text-transform: uppercase;
+    display: block;
+    background-color: #E287C4;
+    color: white;    
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+}
+
+#cantidad {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#cantidad span{
+
+    background-color: #E287C4;
+    padding: 2px 9px;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    vertical-align: middle;
+    
+}
+
+#cantidad input{
+    width: 43px;
+    padding: 7px;
+    text-align: center;
+    border: 0;
+    display: inline-block;
+
+}
+
+
+@media screen and (max-width:768px) {
+    .container,
+    #detalle-producto{
+        display: block;
+    }
+    #producto-izquierda h1{ display: block;}
+    #producto-derecha h1{ display: none;}
+    #botones-extras {
+        margin-top: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------
         FOOTER
 ---------------------------------------------*/
