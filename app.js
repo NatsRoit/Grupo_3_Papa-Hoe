@@ -34,6 +34,10 @@ app.get('/shop', (req,res) => {
     res.sendFile(path.resolve(__dirname, './views/shop.html'))
 });
 
+app.get('/productDetail1', (req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/productDetail1.html'))
+});
+
 app.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo');
 });
