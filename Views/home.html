@@ -19,41 +19,31 @@
         <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
         <nav class="main-navbar">
             <ul>
-                <li><a href="#">Surfboards</a></li>
-                <li><a href="#">Complementos</a></li>
+                <li><a href="/shop">Surfboards</a></li>
+                <li><a href="/shop">Complementos</a></li>
                 <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
             <ul>
                 <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
-                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
-            </ul>
-        </nav>
-
-
-        <!--<ul>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li>
-                <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
-                <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
-            </ul>
-            <form class="search-box">
+                <!-- <form class="search-box">
                 <input type="text" placeholder="Buscar productos, marcas">
                 <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>-->
+                </form> -->
+                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!--- SLIDER HEADER --->
     <header class="slider">
         <div class="overlay-text">
             <p>PapaHoe: nuestro <br> compromiso <br>con el océano.</p>
-
-            <button type="button">leer más</button>
-
+            <a class="button-link" href="/shop">leer más</a>
         </div>
         <div class="slider-controller">
             <button type="button" name="prev" id="prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
@@ -90,25 +80,107 @@
         <!--- CATEGORÍAS SURFBOARDS --->
         <div class="categorias-home">
             <div class="categorias-image">
-                <button>shortboards</button>
-                <img src="./img/jeremy-bishop-_CFv3bntQlQ-unsplash.jpg" alt="PapaHoe Tablas">
+                <form action="/shop" method="GET">
+                    <button type="submit" value="shortboards">shortboards</button>
+                    <img src="./img/jeremy-bishop-_CFv3bntQlQ-unsplash.jpg" alt="PapaHoe Tablas">
+                </form>
             </div>
             <div class="categorias-image">
-                <button>mid-length</button>
-                <img src="./img/paje-victoria-FXB79QuRX3M-unsplash.jpg" alt="PapaHoe Complementos">
+                <form action="/shop" method="GET">
+                    <button type="submit" value="mid-length">mid-length</button>
+                    <img src="./img/paje-victoria-FXB79QuRX3M-unsplash.jpg" alt="PapaHoe Complementos">
+                </form>
             </div>
             <div class="categorias-image">
-                <button>longboards</button>
-                <img src="./img/jeremy-bishop-E55BPtMqh2I-unsplash.jpg" alt="PapaHoe Accesorios">
+                <form action="/shop" method="GET">
+                    <button type="submit" value="longboards">longboards</button>
+                    <img src="./img/jeremy-bishop-E55BPtMqh2I-unsplash.jpg" alt="PapaHoe Accesorios">
+                </form>
             </div>
         </div>
+
+
+        <!--- MODEL FINDER --->
+        <div class="model-finder">
+            <div class="descripcion">
+                <h1>Model Finder</h1>
+                <h2>No sabés por dónde empezar?</h2>
+                <p>Dejáte llevar por la corriente y echale un vistazo a nuestras últimas colecciones o comenzá a
+                    diseñar tu tabla personalizada.</p>
+
+                <a class="button-link" href="/shop">explorá</a>
+                <a class="button-link" href="/boardBuilder">creá</a>
+            </div>
+            <img id="la-linea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="">
+            <div class="imagen-model-finder">
+                <!-- <img src="/img/surfboard-construction.jpg" alt=""> -->
+            </div>
+        </div>
+
         <!--- VOLUME CALCULATOR --->
-        <div>
-            <h1>Volume Calculator</h1>
-            <form action="/volumeCalculator" method="GET">
-                <label for="objetivo"></label>
-                <input type="text">
-            </form>
+        <div class="volume-calculator">
+            <div class="title-calculator">
+                <h1>Volume Calculator</h1>
+                <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
+                <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
+            </div>
+            <div class="form-calculator">
+                <form action="/volumeCalculator" method="GET">
+                    <div class="volume-container">
+                        <label for="peso">Peso</label><br>
+                        <datalist id="opciones-calculator">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </datalist>
+                        <input type="range" min="15" max="150" value="0" step="50" id="peso" list="opciones-calculator"
+                            name="peso">
+
+                    </div>
+                    <div>
+                        <label for="altura">Altura</label><br>
+                        <input id="altura" type="range" min="1" max="2" value="0" step="0.05" list="tickmarks"
+                            name="altura">
+                        <datalist id="tickmarks">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label><br>
+                        <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks" name="edad">
+                        <datalist id="tickmarks">
+
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="entrenamiento">Entreno</label><br>
+                        <select name="entrenamiento" id="entrenamiento">
+                            <option value="bajo">Mmmhhh</option>
+                            <option value="medio">Podría entrenar más</option>
+                            <option value="alto">Bastante</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="frecuencia">Frecuencia</label><br>
+                        <select name="frecuencia" id="frecuencia">
+                            <option value="nunca">3/5 veces por semana</option>
+                            <option value="mensualmente">1 vez por semana</option>
+                            <option value="semanalmente">1/2 veces por mes</option>
+                            <option value="diariamente">1/2 veces por año</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="experiencia">experiencia</label><br>
+                        <select name="experiencia" id="experiencia">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                            <option value="experto">Experto</option>
+                        </select>
+                    </div>
+                    <button type="submit">Calculá mi talla</button>
+                </form>
+            </div>
 
         </div>
     </main>
@@ -143,21 +215,39 @@
                 <li>
                     <h3>Papa Hoe</h3>
                 </li>
-                <li>About</li>
-                <li>Team Riders</li>
-                <li>Contacto</li>
-                <li>Privacidad</li>
+                <a href="#">
+                    <li>About</li>
+                </a>
+                <a href="#">
+                    <li>Team Riders</li>
+                </a>
+                <a href="#">
+                    <li>Contacto</li>
+                </a>
+                <a href="#">
+                    <li>Privacidad</li>
+                </a>
             </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <li>CustomBoard Tracker</li>
-                <li>Volume Calculator</li>
-                <li>FAQ's</li>
-                <li>Envíos y Devoluciones</li>
-                <li>Términos y Condiciones</li>
+                <a href="#">
+                    <li>CustomBoard Tracker</li>
+                </a>
+                <a href="/volumeCalculator">
+                    <li>Volume Calculator</li>
+                </a>
+                <a href="#">
+                    <li>FAQ's</li>
+                </a>
+                <a href="#">
+                    <li>Envíos y Devoluciones</li>
+                </a>
+                <a href="#">
+                    <li>Términos y Condiciones</li>
+                </a>
             </ul>
 
             <ul class="info-footer">

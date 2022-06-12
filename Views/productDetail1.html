@@ -25,45 +25,80 @@
         <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
         <nav class="main-navbar">
             <ul>
-                <li><a href="/shop">Surfboards</a></li>
-                <li><a href="/shop">Complementos</a></li>
+                <li><a href="#">Surfboards</a></li>
+                <li><a href="#">Complementos</a></li>
                 <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#">Nosotros</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
             <ul>
                 <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
-                <!-- <form class="search-box">
-                <input type="text" placeholder="Buscar productos, marcas">
-                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form> -->
                 <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
-                </li>
+                <li><a href="#"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
             </ul>
         </nav>
-    </header>
-    
-    <main class="product-detail">
-        <!-- Main Container -->
-        <div id="main-builder">
-            <div id="content">
-                <h2>TABLA DE SURF</h2>
-                <p>Comprala ahora!</p>
-                <button>Shop</button>
-            </div>
 
-            <!-- An aside -->
-            <!-- This is for holding the 3D object -->
-            <div id="tabla">
-                <!-- 3D objsect -->
-                <!-- This inserts the 3D object inside the aside container -->
-                <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar
-                    ios-src="assets/surf3.gltf">
-                </model-viewer>
-            </div>
-        </div>
+
+        <!--<ul>
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
+                <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
+            </ul>
+            <form class="search-box">
+                <input type="text" placeholder="Buscar productos, marcas">
+                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>-->
+    </header>  
+    <main>
+        <div class="container">                
+            <div id="columna-foto">             
+            <section id="detalle-producto">
+                    <div id="producto-izquierda">                      
+                        <div id="imagen-producto"> 
+                            <div id="imagen-ppal">
+                                <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
+                            </div>                                             
+                        </div>
+                    </div>
+                    <div id="producto-derecha">
+                        <div>
+                            <h1>SANDMAN</h1>
+                            <div class="precio">    
+                                $30.00
+                            </div> 
+                           <h2>Especificaciones</h2>
+
+                           <p>Nuestro objetivo para el proyecto Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.</p>
+                           <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
+                           <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
+                           <p><strong>Tipo de ola:</strong> todas las condiciones</p>
+                                                                                  
+                           <form id="agregar-carrito">
+                                                         
+                                <input class="boton" value="Agregar al Carrito" type="submit" >       
+                                
+                                <div id="cantidad">
+                                    <span>-</span>
+                                    <input type="number">
+                                    <span>+</span>
+                                </div> 
+                            </form>     
+                        
+                            <div id="botones-extras">
+                            <a href="">Leer fragmento</a>
+                            <a href="">Agregar a favoritos</a>
+                            <a href="">Compartir</a>
+                        </div>
+    
+                        </div>
+                    </div>
+                    
+                </section>
+
+    
     </main>
 
     <footer>

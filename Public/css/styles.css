@@ -6,7 +6,8 @@ ROSA SUMMER: #fad6d1
 SECUNDARIOS
 Azul Técnico clarito: #4884ef
 Verde agua: #8cd8d5
-Arena Claro: #f4f5ec
+Arena Claro: #f8f8f3
+Arena Medio: #f4f5ec
 Arena Oscuro: #b3b1b3
 
 ESCALA DE AZULES (del marino al arena)
@@ -16,7 +17,7 @@ ESCALA DE AZULES (del marino al arena)
 #7a868a
 #a3abab
 #cbd0cb
-#f4f5ec  <--- (arena)
+#f4f5ec  <--- (arena medio)
 */
 
 * {
@@ -26,10 +27,68 @@ ESCALA DE AZULES (del marino al arena)
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
-
+* a {
+    text-decoration: none;
+    color: #001728;
+}
 body {
     width: 100vw;
 }
+
+.en-construccion {
+    padding: 30vh 0;
+    text-align: center;
+}
+.view-header {
+    margin: 0px;
+    width: 100vw;
+    height: 300px;
+}
+.view-header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/*-------CLASE PARA LINKS CON FORMA DE BOTÓN IRREGULAR------------- */
+a.button-link {
+    display: inline-block;
+    transform: translateY(0px);
+    /* padding: 0 30px 0 30px; */
+    width: 130px;
+    height: 60px;
+    margin: 20px 30px 0 0;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    position: relative;
+    background-image: url(/brand/PapaHoe-ELEMENTS-Fondito-Arena2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 1px;
+    transition: all 1ms;
+}
+a.button-link:link {
+    color: #001728;
+}
+a.button-link:visited {
+    color: #001728;
+}
+a.button-link:hover {
+    filter: opacity(90%);
+    background-blend-mode: hard-light;
+    font-weight: 600;
+}
+a.button-link:active {
+    color: #335cb1;
+    transform: translateY(1.5px);
+    font-weight: 600;
+    font-size: 19.5px;
+}
+/* .button-link a:active {
+    background: element(scaleX/-1);
+} */
 
 /*---------------------------------------------
         HEADER
@@ -144,31 +203,40 @@ body {
         MAIN HOME
 ---------------------------------------------*/
 
-* main {
+main {
     width: 100%;
     background: #f7f7f7;
     margin: auto;
     padding: 20px;
 }
 
-* main h1 {
+main h1 {
     font-weight: 300;
-    font-size: 40pt;
-    line-height: 48px;
+    font-size: 35px;
+    line-height: 32px;
     color: #001728;
     margin-bottom: 20px;
 }
 
-* main h2 {
-    letter-spacing: 1px;
-    font-size: 18pt;
+main h2 {
+    letter-spacing: 0.02em;
+    font-size: 16pt;
     line-height: 20px;
     color: #001728;
     font-family: 'Bebas Neue';
 }
+main p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #516169;
+}
 
+/* -------- HOME SLIDER ---------------------------*/
 
-/* -------------------------------------------------------*/
+.main-home {
+    padding: 0px;
+}
 
 header.slider {
     align-items: center;
@@ -197,9 +265,9 @@ header.slider {
 
 .overlay-text {
     position: absolute;
-    z-index: 10;
+    z-index: 30;
     left: 60px;
-    bottom: 50px;
+    top: 45%;
     font-size: 30px;
     line-height: 28px;
     color: #f4f5ec;
@@ -216,7 +284,7 @@ header.slider {
     object-position: 50% 50%;
 }
 
-/* -------------------------------------------------------*/
+/* ------ PRODUCTO DESTACADO ----------------------*/
 
 .producto-destacado {
     display: grid;
@@ -239,10 +307,7 @@ header.slider {
     grid-area: box1;
     padding: 25px 20px 0;
 }
-.producto-destacado .descripcion-producto h1 {
-    font-size: 35px;
-    line-height: 32px;
-}
+
 .producto-destacado .descripcion-producto p {
     /* display: none; */
     margin-top: 8px;
@@ -263,7 +328,7 @@ header.slider {
     line-height: 20px;
 }
 
-/* -------------------------------------------------------*/
+/* ------ CATEGORÍAS PRODUCTOS ---------------------*/
 
 .categorias-home {
     display: flex;
@@ -310,6 +375,66 @@ header.slider {
     background-color: #00172843;
 }
 
+/* -------------MODEL FINDER -----------------------*/
+.model-finder {
+    width: 100%;
+    height: 500px;
+    background-color: #fad6d1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.model-finder .descripcion {
+    padding: 60px;
+    flex-basis: 50%;
+    align-self: center;
+    transform: translateY(-40px);
+}
+
+.model-finder #la-linea {
+    position: absolute;
+    width: 270px;
+    bottom: 40px;
+    left: -30px;
+}
+
+.imagen-model-finder {
+    flex-basis: 50%;
+    flex-grow: .5;
+    background-image: url(/img/surfboard-construction.jpg);
+    background-color: #fad6d1;
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: cover;
+    background-blend-mode: screen;
+    opacity: 30%;
+}
+
+/* ----------VOLUME CALCULATOR HOME ----------------*/
+
+.volume-calculator {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.title-calculator {
+    padding: 60px;
+    flex-basis: 50%;
+    align-self: flex-start;
+}
+.form-calculator {
+    flex-basis: 50%;
+    align-self: center;
+}
+.form-calculator div {
+    display: inline-block;
+    min-width: 30%;
+    margin-bottom: 20px;
+}
 /*---------------------------------------------
         MAIN: CUSTOM BOARD
 ---------------------------------------------*/
@@ -373,6 +498,83 @@ header.slider {
     top: 0;
     left: 0;
 }
+
+/*--------------------------------------------------
+         MAIN: SHOP (surfboards y complementos)
+----------------------------------------------------*/
+.titulo-seccion-main {
+    margin-bottom: 10px;
+    color: #666;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.contenedor-productos {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.producto {
+    margin-bottom: 25px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.1);
+    position: relative;
+}
+.producto:hover {
+        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.7);
+}
+
+.info-producto {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid #ebebeb;
+    line-height: 12px;
+    position: relative;
+}
+
+.producto img {
+    width: 100%;
+    padding: 10px;
+}
+.precio {
+    font-size: 18px;
+    line-height: 20px;
+    flex-grow: 0.30;
+}
+.descuento {
+    font-size: 16px;
+    line-height: 20px;
+    color: #335cb1;
+    flex-grow: 0.70;
+}
+
+.detalle-producto {
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    height: 84.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    opacity: 0;
+    transition: all 450ms;
+}
+.detalle-producto:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+
 
 /*---------------------------------------------
 *************** MAIN: PRODUCT CART  ************
@@ -670,6 +872,135 @@ article {
     margin-top: 20px;
 }
 
+/* -------------------------------------------
+       PRODUCT DETAIL
+---------------------------------------------*/
+aside{
+    flex-basis: 18%;
+}
+
+#columna-foto{
+    flex-basis: 60%;
+
+}
+
+#detalle-producto{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 30px
+}
+#detalle-producto h1{
+    text-transform: uppercase;
+}
+
+#producto-izquierda{
+    flex-basis: 60%;
+}
+#producto-derecha{
+    flex-basis: 40%;
+    padding-right: 10%;
+   
+    
+}
+
+#producto-derecha h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+#producto-derecha .precio{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#producto-derecha h2{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+#producto-derecha p{
+    margin-bottom: 20px;
+}
+  
+
+#botones-extras {
+    margin-top: 80px;
+}
+#agregar-carrito input.boton{
+    text-transform: uppercase;
+    display: block;
+    background-color: #335cb1;
+    color: white;    
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+    height: 15%;
+    border: 0;
+    font-size: 15px;
+    left: 0
+ 
+}
+
+#botones-extras a{
+    text-transform: uppercase;
+    display: block;
+    background-color: #E287C4;
+    color: white;    
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+}
+
+#cantidad {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#cantidad span{
+
+    background-color: #E287C4;
+    padding: 2px 9px;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    vertical-align: middle;
+    
+}
+
+#cantidad input{
+    width: 43px;
+    padding: 7px;
+    text-align: center;
+    border: 0;
+    display: inline-block;
+
+}
+
+
+@media screen and (max-width:768px) {
+    .container,
+    #detalle-producto{
+        display: block;
+    }
+    #producto-izquierda h1{ display: block;}
+    #producto-derecha h1{ display: none;}
+    #botones-extras {
+        margin-top: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------
         FOOTER
 ---------------------------------------------*/
@@ -678,6 +1009,9 @@ footer {
     color: #f4f5ec;
     padding: 20px;
 }
+footer a {
+    color: #f4f5ec;
+}
 
 .grid-menu-footer {
     padding-top: 30px;
@@ -685,7 +1019,6 @@ footer {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     column-gap: 10px;
 }
-
 
 .social-footer {
     margin: 0 0 0 7%;
@@ -779,7 +1112,6 @@ input::placeholder {
     margin: 0 10px 0 0;
 }
 
-
 .detalles-design {
     width: 120px;
     position: absolute;
@@ -835,15 +1167,14 @@ Navegación en TABLETS (ancho mínimo 768px px)
 /* -------------------------------------------------------*/
 
     header.slider {
-        height: 690px;
+        height: 600px;
     }
     .slides img {
-        height: 690px;
+        height: 600px;
     }
 
     .overlay-text {
         left: 100px;
-        bottom: 180px;
         font-size: 50px;
         line-height: 45px;
     }
@@ -893,6 +1224,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
     /* -------------------------------------------------------*/
 
     .categorias-home {
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -990,6 +1322,11 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 ------------------------------------------------------ */
 
 @media (min-width: 1200px) {
+    main p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
     #logo {
         flex-basis: 200px;
     }
@@ -1039,7 +1376,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     .producto-destacado .descripcion-producto p {
         margin-top: 10px;
         font-size: 14px;
-        line-height: 20x;
     }
     .producto-destacado .destacado-tabla p {
         display: block;
@@ -1049,6 +1385,14 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     }    
 
     /* -------------------------------------------------------*/
+
+    .producto {
+        width: 24%;
+        }
+    /* -------------------------------------------------------*/
+
+        
+
 
     .icons-navbar a {
         font-size: 18px;

@@ -12,12 +12,6 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/a99dce3628.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-
-    <!--Imports a model-viewer JavaScript code -->
-    <!--It helps to handle how the 3D Object would be displayed -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-
 </head>
 
 <body>
@@ -44,34 +38,25 @@
             </ul>
         </nav>
     </header>
-    
-    <main class="product-detail">
-        <!-- Main Container -->
-        <div id="main-builder">
-            <div id="content">
-                <h2>TABLA DE SURF</h2>
-                <p>Comprala ahora!</p>
-                <button>Shop</button>
-            </div>
 
-            <!-- An aside -->
-            <!-- This is for holding the 3D object -->
-            <div id="tabla">
-                <!-- 3D objsect -->
-                <!-- This inserts the 3D object inside the aside container -->
-                <model-viewer src="assets/surf3.gltf" alt="Tabla de Surf" auto-rotate camera-controls ar
-                    ios-src="assets/surf3.gltf">
-                </model-viewer>
-            </div>
-        </div>
+    <main class="en-construccion">
+        <h1>
+            Página en construcción
+        </h1>
+
     </main>
+
+
+
+
 
     <footer>
         <div class="grid-menu-footer">
             <div class="social-footer">
 
                 <form class="suscripcion-box">
-                    <input type="email" placeholder="Unite a la tribu">
+                    <label for="newsletter"></label>
+                    <input id="newsletter" name="newsletter" type="email" placeholder="Unite a la tribu">
                     <button class="sobre" type="submit"><i class="fa-solid fa-envelope"></i></button>
                 </form>
 
@@ -95,21 +80,21 @@
                 <li>
                     <h3>Papa Hoe</h3>
                 </li>
-                <li>About</li>
-                <li>Team Riders</li>
-                <li>Contacto</li>
-                <li>Privacidad</li>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Team Riders</li></a>
+                <a href="#"><li>Contacto</li></a>
+                <a href="#"><li>Privacidad</li></a>
             </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <li>CustomBoard Tracker</li>
-                <li>Volume Calculator</li>
-                <li>FAQ's</li>
-                <li>Envíos y Devoluciones</li>
-                <li>Términos y Condiciones</li>
+                <a href="#"><li>CustomBoard Tracker</li></a>
+                <a href="/volumeCalculator"><li>Volume Calculator</li></a>
+                <a href="#"><li>FAQ's</li></a>
+                <a href="#"><li>Envíos y Devoluciones</li></a>
+                <a href="#"><li>Términos y Condiciones</li></a>
             </ul>
 
             <ul class="info-footer">

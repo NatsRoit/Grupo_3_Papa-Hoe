@@ -19,17 +19,22 @@
         <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
         <nav class="main-navbar">
             <ul>
-                <li><a href="#">Surfboards</a></li>
-                <li><a href="#">Complementos</a></li>
+                <li><a href="/shop">Surfboards</a></li>
+                <li><a href="/shop">Complementos</a></li>
                 <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
             <ul>
                 <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
+                <!-- <form class="search-box">
+                <input type="text" placeholder="Buscar productos, marcas">
+                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form> -->
                 <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <li><a href="#"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
+                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -65,8 +70,8 @@
 
             </div>
             <div class="registrarse">
-                <h5>¿Nuevo en Papa Hoe?</h5>
-                <a href="register">Crear cuenta</a> 
+                <h5 class="ingreso">¿Todavía no estas registrado?</h5>
+                <a href="/register">Crear cuenta</a> 
             </div>
 
             <img id="LaLinea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%">
@@ -93,7 +98,8 @@
             <div class="social-footer">
 
                 <form class="suscripcion-box">
-                    <input type="email" placeholder="Unite a la tribu">
+                    <label for="newsletter"></label>
+                    <input id="newsletter" name="newsletter" type="email" placeholder="Unite a la tribu">
                     <button class="sobre" type="submit"><i class="fa-solid fa-envelope"></i></button>
                 </form>
 
