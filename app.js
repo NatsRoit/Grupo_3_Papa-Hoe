@@ -21,7 +21,9 @@ app.get('/productCart', (req,res) => {
 app.get('/productDetail', (req,res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
 });
-
+app.get('/shop', (req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/shop.html'))
+});
 app.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo');
 });

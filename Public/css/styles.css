@@ -437,10 +437,13 @@ main.completar {
     margin: 0px 20px
 }
 
-div a #shaka {
-    width: 25%;
-    border: solid transparent 0px;
+.bienvenida img#shaka {
+    width: 22%;
     margin-left: 10%;
+}
+
+.completar img#LaLinea {
+    height: 40px;
 }
 
 form .registro {
@@ -449,8 +452,7 @@ form .registro {
     padding: 5px 20px;
     margin: 20px 0px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .titular {
@@ -464,7 +466,7 @@ form .registro {
     height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 280px;
+    width: 80vw;
     border:#335cb1 solid 1.5px;
 }
 
@@ -473,30 +475,41 @@ form .registro {
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #f4f5ec;
-    width: 280px;
-    height: 30px;
+    width: 80vw;
+    height: 35px;
     border-radius: 5px;
-    margin: 5px 0px ;
+    margin: 15px 0px;
     padding: 1px 10px;
     position: relative;
 
+}
+
+.registro a {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .registrarse {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 25px 0px;
+    line-height: 4px;
 }
 
-.ingreso {
+h5 {
     text-align: center;
-    margin-bottom: ;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .logo-ingreso {
     display: flex;
+    flex-direction: row;
+    width: 40%;
     justify-content: space-between;
-    padding-bottom: 30px;
+    margin: auto;
 }
 
 .fa-facebook {
@@ -505,14 +518,156 @@ form .registro {
     padding: 5px;
     height: 30px;
     font-size: 20px;
-    margin-left: 120px;
 }
 
-div img.completar {
-    width: 15%;
-    padding: 1px;
-    border: black solid 1px;
-    margin-left: 50px;
+.logo-ingreso img#google {
+    width: 22%;
+}
+
+.reCAPTCHA {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+/*
+--------------------------------------------------------
+    MAIN Register
+------------------------------------------------------ */
+.bienvenida-registro {
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0px 20px
+}
+
+.titular-registro {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 33px;
+}
+
+
+.bienvenida-registro img#shaka {
+    width: 22%;
+    margin-left: 10%;
+    flex-grow: .6;
+}
+
+/*
+--------------------------------------------------------
+    MAIN shop
+------------------------------------------------------ */
+main.shopify-checkout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+    border-left: solid 2px #dcdfe3;
+    padding: 20px;
+}
+.shopify-contact {
+    display: flex;
+    font-size: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.informacion {
+    font-weight: bold;
+}
+.shopify-contact i {
+    margin-right: 10px;
+}
+.chequeo {
+    justify-content: center;
+    border: #b3b1b3 solid 1px;
+    position: relative;
+    padding: 0px 20px;
+}
+.shopify-checkout h4 {
+    position: absolute;
+    top: -13px;
+    left: 38%;
+}
+.boton-chequeo {
+    background-color: #fad6d1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: black;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+    position: relative;
+}
+
+.division {
+    border-top: #b3b1b3 solid 1px;
+    margin: 20px 0px;
+    text-align: center;
+    position: relative;
+}
+
+.division p {
+    position: absolute;
+    top: -13px;
+    left: 47%;
+}
+.contacto {
+    display: flex;
+    margin: 10px 0px;
+}
+
+form {
+    padding: 10px 0px;
+    margin: 10px 0px;
+}
+.caja-shop {
+    border-radius: 5px;
+    height: 35px;
+    margin: 10px 0px;
+    padding: 1px 10px;
+    width: 90%;
+    border:#335cb1 solid 1px;
+}
+.direccion-envio {
+    margin: 20px 0px;
+    padding: 20px 0px;
+}
+.direccion-envio h2 {
+    margin-bottom: 20px;
+}
+form .direccion {
+    display: flex;
+    flex-direction: row;
+}
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+.data-product #prod img {
+    width: 10vw;
+}
+.boton-shop {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+    position: relative;
+
+}
+
+.recomendado-shop {
+    background-color: #fad6d1  ;
+    margin-top: 20px;
 }
 
 /*---------------------------------------------
@@ -737,7 +892,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
 
     /* -------------------------------------------------------*/
 
-.categorias-home {
+    .categorias-home {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -746,13 +901,13 @@ Navegación en TABLETS (ancho mínimo 768px px)
     align-items: center;
 }
 
-.categorias-image {
+    .categorias-image {
     width: 30%;
     height: 500px;
     flex-grow: 2;
 }
 
-.categorias-image img {
+    .categorias-image img {
     width: 100%;
     height: 500px;
     object-fit: cover;
@@ -760,69 +915,73 @@ Navegación en TABLETS (ancho mínimo 768px px)
 }
  /* -------------------------------------------------------*/
 
- .completar {
-    padding: 20px 5px;
-}
+    .completar {
+        padding: 20px 5px;
+        border-left: solid #dcdfe3 2px;
+        border-right: solid #dcdfe3 2px;
+        width: 50vw;
+    }
 
-.titular {
-    font-size: 35px;
-}
+    .titular {
+        font-size: 35px;
+    }
 
-div a #shaka {
-    width: 200px;
-    border: solid transparent 0px;
-    margin-left: 35%;
-}
+    .bienvenida {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+        margin: 10px 20px
+    }
+    .bienvenida img#shaka {
+        width: 18%;
+        margin-left: 10%;
+    }
 
-div a #imagen-header {
-    height: 50px;
-}
+    img#LaLinea {
+        height: 10px;
+    }
 
-.registro {
-    font-size: 25px;
-    margin: 50px;
-    padding: 0px 50px;
-}
+    form .registro {
+        font-size: 15px;
+    }
 
-.caja {
-    width: 500px;
-    height: 40px;
-    border-radius: 10px;
-}
+    form .registro .caja {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+    }
 
-.boton {
-    width: 200px;
-    height: 40px;
-    left: 35%;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
+    .boton {
+        height: 30px;
+        font-size: 18px;
+        margin-bottom: 40px;
+        width: 100%;
+        margin: 15px 0px;
+    }
 
-.ingreso {
-    font-size: 30px;
-    margin: 40px 0px;
-}
+    .loguearse {
+        margin: 15px 0px;
+    }
+    h5 {
+        font-size: 15px;
+        font-weight: 600;
+    }
 
-.logo-ingreso {
-    display: flex;
-    justify-content: space-around;
-    font-size: 40px;
-    padding-bottom: 30px;
-}
+    .registrarse a {
+        font-size: 13px;
+    }
 
-.fa-facebook {
-    height: 50px;
-    font-size: 40px;
-    margin-top: 13px;
-    margin-left: 280px;
-}
+    .logo-ingreso {
+        align-items: center;
+    }
 
-div img.completar {
-    width: 15%;
-    padding: 5px;
-    border: black solid 2px;
-    margin-top: 13px;
-}
+    .logo-ingreso img#google {
+        width: 30%;
+        padding: 5px;
+    }
 }
 
 /*
@@ -898,59 +1057,28 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     .icons-navbar i {
         padding: 0 30px;
     }
-    .completar {
-        padding: 20px 5px;
-    }
 
+/* -------------------------------------------------------*/
+
+    .completar {
+        width: 40vw;
+    }
     .titular {
         font-size: 50px;
-        margin-top: 20px;
     }
-
-    div a #shaka {
-        width: 300px;
-        border: solid transparent 0px;
-        margin-left: 35%;
+    .bienvenida img#shaka {
+        width: 15%;
     }
-
-    .registro {
-        font-size: 35px;
-        margin: 100px;
-        padding: 20px 50px;
+    .completar img#LaLinea {
+        height: 50px;
     }
-
-    .caja {
-        width: 900px;
-        height: 70px;
-        border-radius: 15px;
+    form .registro {
+        font-size: 17px;
     }
-
-    .boton {
-        width: 400px;
-        height: 70px;
-        left: 35%;
-        font-size: 38px;
-        margin-bottom: 60px;
-        border-radius: 10px;
-    }
-
-    .ingreso {
-        font-size: 40px;
-        margin: 80px 0px;
-    }
-
-    .fa-facebook {
-        height: 100px;
-        width: 100px;
-        text-align: center;
-        font-size: 90px;
-        padding-top: 8px 0px;
-    }
-
-    div img.completar {
-        width: 25%;
+    .logo-ingreso img#google {
+        width: 22%;
         padding: 5px;
-        border: black solid 2px;
     }
+
 
 }
