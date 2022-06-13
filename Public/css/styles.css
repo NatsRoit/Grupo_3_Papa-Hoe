@@ -25,26 +25,26 @@ ESCALA DE AZULES (del marino al arena)
     margin: 0px;
     padding: 0px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    /* font-weight: 400; */
 }
 * a {
     text-decoration: none;
-    color: #001728;
+    color: inherit;
 }
 body {
     width: 100vw;
 }
 
 .en-construccion {
-    padding: 30vh 0;
+    padding: 25vh 0;
     text-align: center;
 }
-.view-header {
+.section-header {
     margin: 0px;
     width: 100vw;
     height: 300px;
 }
-.view-header img {
+.section-header img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -52,25 +52,34 @@ body {
 }
 
 /*-------CLASE PARA LINKS CON FORMA DE BOTÓN IRREGULAR------------- */
-a.button-link {
-    display: inline-block;
-    transform: translateY(0px);
-    /* padding: 0 30px 0 30px; */
-    width: 130px;
-    height: 60px;
-    margin: 20px 30px 0 0;
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
-    position: relative;
-    background-image: url(/brand/PapaHoe-ELEMENTS-Fondito-Arena2.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0 1px;
-    transition: all 1ms;
+
+a.button-link.arena {
+    background-image: url(/brand/Fondito-Arena.svg);
 }
-a.button-link:link {
-    color: #001728;
+a.button-link.azul-marino {
+    background-image: url(/brand/Fondito-AzulMarino.svg);
+    color: #f4f5ec !important;
+}
+a.button-link.azul-tecnico {
+    background-image: url(/brand/Fondito-AzulTecnico.svg);
+}
+a.button-link.rosa {
+    background-image: url(/brand/Fondito-RosaSummer.svg);
+}
+
+a.button-link {
+    font-weight: 300;
+    display: inline-block;
+    padding: 10px;
+    margin: 20px 10px 0 0;
+    font-size: 20px;
+    text-align: center;
+    /* position: relative; */
+    background-image: url(/brand/Fondito-Arena.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 30px;
+    background-position: center center;
+    transition: all 1ms;
 }
 a.button-link:visited {
     color: #001728;
@@ -202,14 +211,11 @@ a.button-link:active {
 /*---------------------------------------------
         MAIN HOME
 ---------------------------------------------*/
-
 main {
     width: 100%;
     background: #f7f7f7;
     margin: auto;
-    padding: 20px;
 }
-
 main h1 {
     font-weight: 300;
     font-size: 35px;
@@ -217,7 +223,6 @@ main h1 {
     color: #001728;
     margin-bottom: 20px;
 }
-
 main h2 {
     letter-spacing: 0.02em;
     font-size: 16pt;
@@ -261,6 +266,10 @@ header.slider {
     padding: 10px;
     border: 0px solid #666;
     font-size: 25px;
+}
+
+.overlay-text a.button-link {
+    width: 120px;
 }
 
 .overlay-text {
@@ -378,63 +387,95 @@ header.slider {
 /* -------------MODEL FINDER -----------------------*/
 .model-finder {
     width: 100%;
-    height: 500px;
+    height: 300px;
     background-color: #fad6d1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
+    z-index: 10;
+}
+.model-finder::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: 0%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 30%;
+    background-color: #fad6d1;
+    background-image: url(/img/surfboard-construction.jpg);
+    background-repeat: no-repeat;
+    background-position-x: 60vw;
+    background-size: auto 100%;
+    background-blend-mode: screen;
 }
 .model-finder .descripcion {
-    padding: 60px;
-    flex-basis: 50%;
-    align-self: center;
-    transform: translateY(-40px);
+    padding: 30px 0 0 40px;
+    flex-basis: 80%;
+    align-self: flex-start;
+    position: relative;
+    z-index: 10;
+}
+.model-finder #crea,
+.model-finder #explora {
+    width: 100px;
 }
 
 .model-finder #la-linea {
     position: absolute;
-    width: 270px;
-    bottom: 40px;
-    left: -30px;
+    z-index: 90;
+    width: 45vw;
+    bottom: 20px;
+    right: -30px;
 }
 
 .imagen-model-finder {
-    flex-basis: 50%;
-    flex-grow: .5;
-    background-image: url(/img/surfboard-construction.jpg);
-    background-color: #fad6d1;
-    background-repeat: no-repeat;
-    background-position: 2%;
-    background-size: cover;
-    background-blend-mode: screen;
-    opacity: 30%;
+    /* display: none; */
+    flex-basis: 20%;
+    position: relative;
+    z-index: 10;
 }
 
 /* ----------VOLUME CALCULATOR HOME ----------------*/
 
 .volume-calculator {
     width: 100%;
-    height: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
+    padding: 30px 25px 30px 40px;
 }
 .title-calculator {
-    padding: 60px;
-    flex-basis: 50%;
+    flex-basis: 100%;
     align-self: flex-start;
 }
 .form-calculator {
-    flex-basis: 50%;
+    flex-basis: 100%;
     align-self: center;
+    padding: 40px;
 }
 .form-calculator div {
-    display: inline-block;
-    min-width: 30%;
+    padding: 0;
+    display: block;
+    width: 100%;
+    max-width: 410px;
     margin-bottom: 20px;
 }
+.form-calculator select,
+.form-calculator input {
+    width: 100%;
+}
+.form-calculator button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+}
+
 /*---------------------------------------------
         MAIN: CUSTOM BOARD
 ---------------------------------------------*/
@@ -502,6 +543,12 @@ header.slider {
 /*--------------------------------------------------
          MAIN: SHOP (surfboards y complementos)
 ----------------------------------------------------*/
+.shop .shop-filters {
+    width: 100vw;
+    height: 40px;
+    background-color: #fad6d1;
+}
+
 .titulo-seccion-main {
     margin-bottom: 10px;
     color: #666;
@@ -509,25 +556,25 @@ header.slider {
     margin-left: 40px;
 }
 
-.contenedor-productos {
+.shop .contenedor-productos {
     margin: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.producto {
+.shop .producto-shop {
     margin-bottom: 25px;
     background-color: #fff;
     width: 100%;
     box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.1);
     position: relative;
 }
-.producto:hover {
+.shop .producto-shop:hover {
         box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.7);
 }
 
-.info-producto {
+.shop .info-producto {
     display: flex;
     justify-content: flex-start;
     background-color: #fff;
@@ -537,23 +584,23 @@ header.slider {
     position: relative;
 }
 
-.producto img {
+.shop .producto-shop img {
     width: 100%;
     padding: 10px;
 }
-.precio {
+.shop .precio {
     font-size: 18px;
     line-height: 20px;
     flex-grow: 0.30;
 }
-.descuento {
+.shop .descuento {
     font-size: 16px;
     line-height: 20px;
     color: #335cb1;
     flex-grow: 0.70;
 }
 
-.detalle-producto {
+.shop .detalle-producto {
     padding: 15px;
     font-size: 16px;
     color: white;
@@ -568,7 +615,7 @@ header.slider {
     opacity: 0;
     transition: all 450ms;
 }
-.detalle-producto:hover {
+.shop .detalle-producto:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0, 0.7);
     opacity: 1;
@@ -735,7 +782,8 @@ aside{
     padding: 30px
 }
 #detalle-producto h1{
-    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #producto-izquierda{
@@ -746,11 +794,6 @@ aside{
     padding-right: 10%;
    
     
-}
-
-#producto-derecha h1{
-    font-size: 30px;
-    font-weight: bold;
 }
 
 
@@ -823,49 +866,25 @@ aside{
 
 }
 
-
-@media screen and (max-width:768px) {
-    .container,
-    #detalle-producto{
-        display: block;
-    }
-    #producto-izquierda h1{ display: block;}
-    #producto-derecha h1{ display: none;}
-    #botones-extras {
-        margin-top: 40px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------------
         FOOTER
 ---------------------------------------------*/
 footer {
     background-color: #001728;
     color: #f4f5ec;
-    padding: 20px;
 }
-footer a {
-    color: #f4f5ec;
+footer li{
+    text-align: center;
 }
 
 .grid-menu-footer {
-    padding-top: 30px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    column-gap: 10px;
+    padding: 30px 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .social-footer {
-    margin: 0 0 0 7%;
     width: 100%;
     position: relative;
 }
@@ -873,16 +892,15 @@ footer a {
 .suscripcion-box {
     display: flex;
     justify-content: space-between;
-    /* flex-shrink: 1; */
-    width: 60%;
+    width: 100%;
     border-bottom: 1px solid #f4f5ec;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .suscripcion-box input {
     background: transparent;
     border: none;
-    height: 40px;
+    height: 30px;
     padding: 8px;
     color: #f4f5ec;
     width: 90%;
@@ -898,7 +916,7 @@ input::placeholder {
     color: #f4f5ec;
     padding: 5px;
     border: 0px solid #666;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .suscripcion-box button[type="submit"]:hover {
@@ -916,16 +934,16 @@ input::placeholder {
 .iconos-social-footer {
     border-bottom: 1px solid #f4f5ec;
     margin-bottom: 30px;
-    width: 60%;
-    text-align: right;
+    width: 100%;
+    text-align: center;
 }
 
 .iconos-social-footer button {
     background-color: transparent;
     color: #f4f5ec;
-    padding: 10px;
+    padding: 8px;
     border: 0px solid #666;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .iconos-social-footer button:hover {
@@ -936,17 +954,36 @@ input::placeholder {
     transform: translateY(1px);
 }
 
+.navegacion-footer,
+.info-footer {
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.navegacion-footer li,
+.info-footer li {
+    display: block;
+    list-style: none;
+    margin-top: 10px;
+}
+
 .copyright {
     width: 100%;
     height: 40px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    margin-top: 95px;
+    /* margin-top: 95px; */
     font-size: 10px;
     font-weight: 700;
     color: #f4f5ec;
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 10;
 }
@@ -964,26 +1001,27 @@ input::placeholder {
 
 img.detalles-design {
     left: -75px;
-    bottom: -10px;
+    bottom: 300px;
     transform: rotate(170deg);
-}
-
-.navegacion-footer,
-.info-footer {
-    font-size: 12px;
-    line-height: 18px;
-}
-
-.navegacion-footer li,
-.info-footer li {
-    list-style: none;
-    margin-bottom: 15px;
 }
 
 /* .................. MEDIA QUERIES ...................
 --------------------------------------------------------
 Navegación en TABLETS (ancho mínimo 768px px)
 ------------------------------------------------------ */
+
+@media screen and (max-width:768px) {
+    .container,
+    #detalle-producto{
+        display: block;
+    }
+    #producto-izquierda h1{ display: block;}
+    #producto-derecha h1{ display: none;}
+    #botones-extras {
+        margin-top: 40px;
+    }
+}
+
 
 @media (min-width: 768px) {
     
@@ -1011,14 +1049,13 @@ Navegación en TABLETS (ancho mínimo 768px px)
 /* -------------------------------------------------------*/
 
     header.slider {
-        height: 600px;
+        height: 500px;
     }
     .slides img {
-        height: 600px;
+        height: 500px;
     }
-
     .overlay-text {
-        left: 100px;
+        left: 60px;
         font-size: 50px;
         line-height: 45px;
     }
@@ -1047,7 +1084,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .contenedor-producto {
         flex-shrink: 2;
     }
-
     .contenedor-producto img {
         height: 400px;
         width: 250px;
@@ -1064,11 +1100,9 @@ Navegación en TABLETS (ancho mínimo 768px px)
         line-height: 20px;
         padding: 20px;
     }  
-
     /* -------------------------------------------------------*/
 
 .categorias-home {
-    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -1076,51 +1110,75 @@ Navegación en TABLETS (ancho mínimo 768px px)
     justify-content: space-between;
     align-items: center;
 }
-
 .categorias-image {
     width: 30%;
-    height: 500px;
+    height: 300px;
     flex-grow: 2;
 }
-
 .categorias-image img {
     width: 100%;
-    height: 500px;
+    height: 300px;
     object-fit: cover;
     object-position: center center;
+}
+ /* -------------------------------------------------------*/
+
+ .model-finder {
+    height: 350px;
+    
+}
+.model-finder .descripcion {
+    padding: 40px 60px;
+    flex-basis: 80%;
+}
+.model-finder p {
+    width: 40%;
+}
+.model-finder #la-linea {
+    width: 20vw;
+    bottom: 40px;
+}
+/* ------------------------------------------------------*/
+
+.volume-calculator div {
+    padding: 10px 20px;
+}
+.title-calculator {
+    flex-basis: 50%;
+    align-self: flex-start;
+}
+.form-calculator {
+    flex-basis: 50%;
+}
+.form-calculator div {
+    padding: 0;
 }
  /* -------------------------------------------------------*/
 
  .completar {
     padding: 20px 5px;
 }
-
 .titular {
     font-size: 35px;
 }
-
 div a #shaka {
     width: 200px;
     border: solid transparent 0px;
     margin-left: 35%;
 }
-
 div a #imagen-header {
     height: 50px;
 }
-
 .registro {
     font-size: 25px;
     margin: 50px;
     padding: 0px 50px;
 }
-
 .caja {
     width: 500px;
     height: 40px;
     border-radius: 10px;
 }
-
 .boton {
     width: 200px;
     height: 40px;
@@ -1128,44 +1186,65 @@ div a #imagen-header {
     font-size: 18px;
     margin-bottom: 40px;
 }
-
 .ingreso {
     font-size: 30px;
     margin: 40px 0px;
 }
-
 .logo-ingreso {
     display: flex;
     justify-content: space-around;
     font-size: 40px;
     padding-bottom: 30px;
 }
-
 .fa-facebook {
     height: 50px;
     font-size: 40px;
     margin-top: 13px;
     margin-left: 280px;
 }
-
 div img.completar {
     width: 15%;
     padding: 5px;
     border: black solid 2px;
     margin-top: 13px;
 }
+
  /* -------------------------------------------------------*/
- .producto {
+ .producto-shop {
     width: 49%;
 }
+/*--------------------------------------------------------*/
 
+footer li{
+    text-align: start;
 }
+.social-footer {
+    width: 40%;
+    padding: 0 7% 0 3%;
+}
+.iconos-social-footer {
+    text-align: right;
+}
+.navegacion-footer,
+.info-footer {
+    align-items: flex-start;
+    margin-bottom: 0px;
+    width: 20%;
+}
+
+.copyright {
+    justify-content: flex-start;
+}
+img.detalles-design {
+    bottom: 10px;
+}
+}
+
 
 /*
 --------------------------------------------------------
 Navegación en DESKTOP (ancho mínimo 1200 px)
 ------------------------------------------------------ */
-
 @media (min-width: 1200px) {
     main p {
         margin-top: 10px;
@@ -1230,14 +1309,28 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     }    
 
     /* -------------------------------------------------------*/
+    .categorias-image {
+        height: 400px;
+    }
+    .categorias-image img {
+        height: 400px;
+    }
 
-    .producto {
+/* -------------------------------------------------------*/
+
+    .model-finder .descripcion {
+        padding: 60px;
+    }
+    .model-finder::after {
+        background-size: auto 150%;
+        background-position-x: 40vw;
+    }
+    /* -------------------------------------------------------*/
+    
+    .shop .producto-shop {
         width: 24%;
         }
     /* -------------------------------------------------------*/
-
-        
-
 
     .icons-navbar a {
         font-size: 18px;
@@ -1246,6 +1339,7 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     .icons-navbar i {
         padding: 0 30px;
     }
+    /* -------------------------------------------------------*/
     .completar {
         padding: 20px 5px;
     }

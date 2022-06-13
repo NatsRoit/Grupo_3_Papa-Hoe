@@ -25,80 +25,74 @@
         <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
         <nav class="main-navbar">
             <ul>
-                <li><a href="#">Surfboards</a></li>
-                <li><a href="#">Complementos</a></li>
-                <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="/shop">Surfboards</a></li>
+                <li><a href="/shop">Complementos</a></li>
+                <li><a href="/boardBuilder">Board Builder</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
             <ul>
                 <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
-                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <li><a href="#"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a></li>
-            </ul>
-        </nav>
-
-
-        <!--<ul>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li>
-                <li><a href="#"><i class="fa-solid fa-language"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-flag"></i></a></li>
-                <li><a href="#"> <i class="fa-solid fa-moon"></i></a></li>
-            </ul>
-            <form class="search-box">
+                <!-- <form class="search-box">
                 <input type="text" placeholder="Buscar productos, marcas">
                 <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>-->
-    </header>  
+                </form> -->
+                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <div class="container">                
-            <div id="columna-foto">             
+        <div class="container">
             <section id="detalle-producto">
-                    <div id="producto-izquierda">                      
-                        <div id="imagen-producto"> 
-                            <div id="imagen-ppal">
-                                <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
-                            </div>                                             
+                <div id="producto-izquierda">
+                    <div id="imagen-producto">
+                        <div id="imagen-ppal">
+                            <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
                         </div>
                     </div>
-                    <div id="producto-derecha">
-                        <div>
-                            <h1>SANDMAN</h1>
-                            <div class="precio">    
-                                $30.00
-                            </div> 
-                           <h2>Especificaciones</h2>
+                </div>
+                <div id="producto-derecha">
+                    <div>
+                        <h1>Sandman</h1>
+                        <div class="precio">
+                            $30.00
+                        </div>
+                        <h2>Especificaciones</h2>
 
-                           <p>Nuestro objetivo para el proyecto Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.</p>
-                           <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
-                           <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
-                           <p><strong>Tipo de ola:</strong> todas las condiciones</p>
-                                                                                  
-                           <form id="agregar-carrito">
-                                                         
-                                <input class="boton" value="Agregar al Carrito" type="submit" >       
-                                
-                                <div id="cantidad">
-                                    <span>-</span>
-                                    <input type="number">
-                                    <span>+</span>
-                                </div> 
-                            </form>     
-                        
-                            <div id="botones-extras">
+                        <p>Nuestro objetivo para el proyecto Sandman era desarrollar una tabla que hiciera que el
+                            surf fuera más fácil para la persona 'normal', pero que también tuviera cierta
+                            versatilidad para ser utilizada como una tabla semiescalonada para el surfista más
+                            regular.</p>
+                        <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
+                        <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
+                        <p><strong>Tipo de ola:</strong> todas las condiciones</p>
+
+                        <form id="agregar-carrito">
+
+                            <input class="boton" value="Agregar al Carrito" type="submit">
+
+                            <div id="cantidad">
+                                <span>-</span>
+                                <input type="number">
+                                <span>+</span>
+                            </div>
+                        </form>
+
+                        <div id="botones-extras">
                             <a href="">Leer fragmento</a>
                             <a href="">Agregar a favoritos</a>
                             <a href="">Compartir</a>
                         </div>
-    
-                        </div>
-                    </div>
-                    
-                </section>
 
-    
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <footer>
@@ -106,7 +100,8 @@
             <div class="social-footer">
 
                 <form class="suscripcion-box">
-                    <input type="email" placeholder="Unite a la tribu">
+                    <label for="newsletter"></label>
+                    <input id="newsletter" name="newsletter" type="email" placeholder="Unite a la tribu">
                     <button class="sobre" type="submit"><i class="fa-solid fa-envelope"></i></button>
                 </form>
 
@@ -130,21 +125,39 @@
                 <li>
                     <h3>Papa Hoe</h3>
                 </li>
-                <li>About</li>
-                <li>Team Riders</li>
-                <li>Contacto</li>
-                <li>Privacidad</li>
+                <a href="/about">
+                    <li>About</li>
+                </a>
+                <a href="/about">
+                    <li>Team Riders</li>
+                </a>
+                <a href="#">
+                    <li>Contacto</li>
+                </a>
+                <a href="#">
+                    <li>Privacidad</li>
+                </a>
             </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <li>CustomBoard Tracker</li>
-                <li>Volume Calculator</li>
-                <li>FAQ's</li>
-                <li>Envíos y Devoluciones</li>
-                <li>Términos y Condiciones</li>
+                <a href="#">
+                    <li>CustomBoard Tracker</li>
+                </a>
+                <a href="/volumeCalculator">
+                    <li>Volume Calculator</li>
+                </a>
+                <a href="#">
+                    <li>FAQ's</li>
+                </a>
+                <a href="#">
+                    <li>Envíos y Devoluciones</li>
+                </a>
+                <a href="#">
+                    <li>Términos y Condiciones</li>
+                </a>
             </ul>
 
             <ul class="info-footer">

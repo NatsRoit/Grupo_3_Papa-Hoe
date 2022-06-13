@@ -21,8 +21,8 @@
             <ul>
                 <li><a href="/shop">Surfboards</a></li>
                 <li><a href="/shop">Complementos</a></li>
-                <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/boardBuilder">Board Builder</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
@@ -43,7 +43,7 @@
     <header class="slider">
         <div class="overlay-text">
             <p>PapaHoe: nuestro <br> compromiso <br>con el océano.</p>
-            <a class="button-link" href="/shop">leer más</a>
+            <a class="button-link rosa" href="/shop">leer más</a>
         </div>
         <div class="slider-controller">
             <button type="button" name="prev" id="prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
@@ -108,8 +108,8 @@
                 <p>Dejáte llevar por la corriente y echale un vistazo a nuestras últimas colecciones o comenzá a
                     diseñar tu tabla personalizada.</p>
 
-                <a class="button-link" href="/shop">explorá</a>
-                <a class="button-link" href="/boardBuilder">creá</a>
+                <a class="button-link" id="explora" href="/shop">explorá</a>
+                <a class="button-link" id="crea" href="/boardBuilder">creá</a>
             </div>
             <img id="la-linea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="">
             <div class="imagen-model-finder">
@@ -136,7 +136,6 @@
                         </datalist>
                         <input type="range" min="15" max="150" value="0" step="50" id="peso" list="opciones-calculator"
                             name="peso">
-
                     </div>
                     <div>
                         <label for="altura">Altura</label><br>
@@ -178,7 +177,9 @@
                             <option value="experto">Experto</option>
                         </select>
                     </div>
-                    <button type="submit">Calculá mi talla</button>
+                    <div>
+                        <button type="submit">Calculá mi talla</button>
+                    </div>
                 </form>
             </div>
 
@@ -201,53 +202,27 @@
                     <button class="youtube-footer" type="button"><i class="fa-brands fa-youtube"></i></button>
                     <button class="vimeo-footer" type="button"><i class="fa-brands fa-vimeo-v"></i></button>
                 </div>
-
-                <img class="detalles-design" src="/brand/PapaHoe-ELEMENTS-LosPuntitos.png" alt="PapaHoe Brand elements">
-
-                <div class="copyright">
-                    <img id="logo-footer" src="/brand/PapaHoe-logo-min-white.svg" alt="PapaHoe Logo">
-                    Copyright © 2022 Papa Hoe
-                </div>
-
             </div>
-
-            <ul class="navegacion-footer">
-                <li>
-                    <h3>Papa Hoe</h3>
-                </li>
-                <a href="#">
-                    <li>About</li>
-                </a>
-                <a href="#">
-                    <li>Team Riders</li>
-                </a>
-                <a href="#">
-                    <li>Contacto</li>
-                </a>
-                <a href="#">
-                    <li>Privacidad</li>
-                </a>
-            </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <a href="#">
-                    <li>CustomBoard Tracker</li>
-                </a>
-                <a href="/volumeCalculator">
-                    <li>Volume Calculator</li>
-                </a>
-                <a href="#">
-                    <li>FAQ's</li>
-                </a>
-                <a href="#">
-                    <li>Envíos y Devoluciones</li>
-                </a>
-                <a href="#">
-                    <li>Términos y Condiciones</li>
-                </a>
+                <li><a href="#">CustomBoard Tracker</a></li>
+                <li><a href="/volumeCalculator">Volume Calculator</a></li>
+                <li><a href="#">FAQ's</a></li>
+                <li><a href="#">Envíos y Devoluciones</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+
+            <ul class="navegacion-footer">
+                <li>
+                    <h3>Papa Hoe</h3>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/about">Team Riders</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Privacidad</a></li>
             </ul>
 
             <ul class="info-footer">
@@ -258,13 +233,22 @@
                 <li>ARG +54 11 4395 859<br>MEX +52 00 4395 859</li>
                 <li>
                     <h4>Surfboard Factory</h4>
-                    Calle Cualca 27<br>Villa Gesell, Argentina?
+                    <p>Calle Cualca 27 <br>
+                        Villa Gesell, Argentina</p>
                 </li>
                 <li>
                     <h4>DF Showroom</h4>
-                    San Tlatelolco 123<br>Colonia Roma, DF
+                    <p>San Tlatelolco 123 <br>
+                        Colonia Roma, DF</p>
                 </li>
             </ul>
+
+            <div class="copyright">
+                <img class="detalles-design" src="/brand/PapaHoe-ELEMENTS-LosPuntitos.png" alt="PapaHoe Brand elements">
+
+                <img id="logo-footer" src="/brand/PapaHoe-logo-min-white.svg" alt="PapaHoe Logo">
+                Copyright © 2022 Papa Hoe
+            </div>
         </div>
     </footer>
 </body>
