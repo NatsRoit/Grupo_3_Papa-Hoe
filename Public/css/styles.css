@@ -1466,15 +1466,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
 
     /*--------------------------------------------------------*/
 
-    /* footer li{
-    text-align: start;
-    .completar {
-        padding: 20px 5px;
-        border-left: solid #dcdfe3 2px;
-        border-right: solid #dcdfe3 2px;
-        width: 50vw;
-    } */
-
     .titular {
         font-size: 35px;
     }
@@ -1538,7 +1529,11 @@ Navegación en TABLETS (ancho mínimo 768px px)
         padding: 5px;
     }
 
-/*--------------------------------------------------------*/
+    /*--------------------------------------------------------*/
+
+    footer li {
+        text-align: left;
+    }
 
     .social-footer {
         width: 40%;
