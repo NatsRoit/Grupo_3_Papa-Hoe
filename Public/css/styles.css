@@ -27,10 +27,12 @@ ESCALA DE AZULES (del marino al arena)
     font-family: 'Quicksand', sans-serif;
     /* font-weight: 400; */
 }
+
 * a {
     text-decoration: none;
     color: inherit;
 }
+
 body {
     width: 100vw;
 }
@@ -39,11 +41,13 @@ body {
     padding: 25vh 0;
     text-align: center;
 }
+
 .section-header {
     margin: 0px;
     width: 100vw;
     height: 300px;
 }
+
 .section-header img {
     width: 100%;
     height: 300px;
@@ -56,13 +60,16 @@ body {
 a.button-link.arena {
     background-image: url(/brand/Fondito-Arena.svg);
 }
+
 a.button-link.azul-marino {
     background-image: url(/brand/Fondito-AzulMarino.svg);
     color: #f4f5ec !important;
 }
+
 a.button-link.azul-tecnico {
     background-image: url(/brand/Fondito-AzulTecnico.svg);
 }
+
 a.button-link.rosa {
     background-image: url(/brand/Fondito-RosaSummer.svg);
 }
@@ -81,20 +88,24 @@ a.button-link {
     background-position: center center;
     transition: all 1ms;
 }
+
 a.button-link:visited {
     color: #001728;
 }
+
 a.button-link:hover {
     filter: opacity(90%);
     background-blend-mode: hard-light;
     font-weight: 600;
 }
+
 a.button-link:active {
     color: #335cb1;
     transform: translateY(1.5px);
     font-weight: 600;
     font-size: 19.5px;
 }
+
 /* .button-link a:active {
     background: element(scaleX/-1);
 } */
@@ -126,6 +137,7 @@ a.button-link:active {
     flex-basis: 150px;
     display: block;
 }
+
 #logo-img {
     width: 100%;
     padding: 12px 20px;
@@ -216,6 +228,7 @@ main {
     background: #f7f7f7;
     margin: auto;
 }
+
 main h1 {
     font-weight: 300;
     font-size: 35px;
@@ -223,6 +236,7 @@ main h1 {
     color: #001728;
     margin-bottom: 20px;
 }
+
 main h2 {
     letter-spacing: 0.02em;
     font-size: 16pt;
@@ -230,6 +244,7 @@ main h2 {
     color: #001728;
     font-family: 'Bebas Neue';
 }
+
 main p {
     margin-top: 8px;
     font-size: 14px;
@@ -297,21 +312,25 @@ header.slider {
 
 .producto-destacado {
     display: grid;
-    grid-template-areas: "foto box1 box1" "foto box2 box2";
+    grid-template-areas: "foto box1 box1""foto box2 box2";
     vertical-align: middle;
     padding: 20px;
 }
+
 .producto-destacado div {
     padding: 0 10px 0;
 }
+
 .contenedor-producto {
     grid-area: foto;
 }
+
 .contenedor-producto img {
     height: 400px;
     width: 100px;
     object-fit: cover;
 }
+
 .producto-destacado .descripcion-producto {
     grid-area: box1;
     padding: 25px 20px 0;
@@ -331,6 +350,7 @@ header.slider {
     display: flex;
     flex-direction: column;
 }
+
 .producto-destacado .destacado-tabla p {
     display: block;
     width: 100%;
@@ -380,6 +400,7 @@ header.slider {
     left: 0px;
     transition: all 450ms;
 }
+
 .categorias-image button:hover {
     background-color: #00172843;
 }
@@ -395,6 +416,7 @@ header.slider {
     position: relative;
     z-index: 10;
 }
+
 .model-finder::after {
     content: " ";
     position: absolute;
@@ -412,6 +434,7 @@ header.slider {
     background-size: auto 100%;
     background-blend-mode: screen;
 }
+
 .model-finder .descripcion {
     padding: 30px 0 0 40px;
     flex-basis: 80%;
@@ -419,6 +442,7 @@ header.slider {
     position: relative;
     z-index: 10;
 }
+
 .model-finder #crea,
 .model-finder #explora {
     width: 100px;
@@ -449,15 +473,18 @@ header.slider {
     position: relative;
     padding: 30px 25px 30px 40px;
 }
+
 .title-calculator {
     flex-basis: 100%;
     align-self: flex-start;
 }
+
 .form-calculator {
     flex-basis: 100%;
     align-self: center;
     padding: 40px;
 }
+
 .form-calculator div {
     padding: 0;
     display: block;
@@ -465,10 +492,12 @@ header.slider {
     max-width: 410px;
     margin-bottom: 20px;
 }
+
 .form-calculator select,
 .form-calculator input {
     width: 100%;
 }
+
 .form-calculator button {
     display: block;
     width: 100%;
@@ -519,6 +548,7 @@ header.slider {
     background: #335cb1;
     color: white;
 }
+
 #content button:hover {
     background: #001728;
 }
@@ -570,8 +600,9 @@ header.slider {
     box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.1);
     position: relative;
 }
+
 .shop .producto-shop:hover {
-        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.7);
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.7);
 }
 
 .shop .info-producto {
@@ -588,11 +619,13 @@ header.slider {
     width: 100%;
     padding: 10px;
 }
+
 .shop .precio {
     font-size: 18px;
     line-height: 20px;
     flex-grow: 0.30;
 }
+
 .shop .descuento {
     font-size: 16px;
     line-height: 20px;
@@ -615,6 +648,7 @@ header.slider {
     opacity: 0;
     transition: all 450ms;
 }
+
 .shop .detalle-producto:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0, 0.7);
@@ -638,9 +672,11 @@ header.slider {
     flex-wrap: wrap;
     justify-content: center;
 }
-.contenedor .img-product  {
+
+.contenedor .img-product {
     flex-grow: .4;
 }
+
 .contenedor .shop {
     flex-grow: .6;
 }
@@ -657,7 +693,7 @@ textarea {
 
 .shop .button input {
     color: #fff;
-    background-color: #335cb1;  
+    background-color: #335cb1;
     border-radius: 5px;
     padding: 10px;
     margin: 20px 0;
@@ -680,16 +716,19 @@ main.completar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     padding-bottom: 20px;
     margin: 0px 20px
 }
 
-div a #shaka {
-    width: 25%;
-    border: solid transparent 0px;
+.bienvenida img#shaka {
+    width: 22%;
     margin-left: 10%;
+}
+
+.completar img#LaLinea {
+    height: 40px;
 }
 
 form .registro {
@@ -698,8 +737,7 @@ form .registro {
     padding: 5px 20px;
     margin: 20px 0px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .titular {
@@ -713,8 +751,8 @@ form .registro {
     height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 280px;
-    border:#335cb1 solid 1.5px;
+    width: 80vw;
+    border: #335cb1 solid 1.5px;
 }
 
 .boton {
@@ -722,29 +760,41 @@ form .registro {
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #f4f5ec;
-    width: 280px;
-    height: 30px;
+    width: 80vw;
+    height: 35px;
     border-radius: 5px;
-    margin: 5px 0px ;
+    margin: 15px 0px;
     padding: 1px 10px;
     position: relative;
 
+}
+
+.registro a {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .registrarse {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 25px 0px;
+    line-height: 4px;
 }
 
-.ingreso {
+h5 {
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .logo-ingreso {
     display: flex;
+    flex-direction: row;
+    width: 40%;
     justify-content: space-between;
-    padding-bottom: 30px;
+    margin: auto;
 }
 
 .fa-facebook {
@@ -753,73 +803,233 @@ form .registro {
     padding: 5px;
     height: 30px;
     font-size: 20px;
-    margin-left: 120px;
 }
 
-div img.completar {
-    width: 15%;
-    padding: 1px;
-    border: black solid 1px;
-    margin-left: 50px;
+.logo-ingreso img#google {
+    width: 22%;
+}
+
+.reCAPTCHA {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+/*
+--------------------------------------------------------
+    MAIN Register
+------------------------------------------------------ */
+.bienvenida-registro {
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0px 20px
+}
+
+.titular-registro {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 33px;
+}
+
+
+.bienvenida-registro img#shaka {
+    width: 22%;
+    margin-left: 10%;
+    flex-grow: .6;
+}
+
+/*
+--------------------------------------------------------
+    MAIN shop
+------------------------------------------------------ */
+main.shopify-checkout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+    border-left: solid 2px #dcdfe3;
+    padding: 20px;
+}
+
+.shopify-contact {
+    display: flex;
+    font-size: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.informacion {
+    font-weight: bold;
+}
+
+.shopify-contact i {
+    margin-right: 10px;
+}
+
+.chequeo {
+    justify-content: center;
+    border: #b3b1b3 solid 1px;
+    position: relative;
+    padding: 0px 20px;
+}
+
+.shopify-checkout h4 {
+    position: absolute;
+    top: -13px;
+    left: 38%;
+}
+
+.boton-chequeo {
+    background-color: #fad6d1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: black;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+    position: relative;
+}
+
+.division {
+    border-top: #b3b1b3 solid 1px;
+    margin: 20px 0px;
+    text-align: center;
+    position: relative;
+}
+
+.division p {
+    position: absolute;
+    top: -13px;
+    left: 47%;
+}
+
+.contacto {
+    display: flex;
+    margin: 10px 0px;
+}
+
+form {
+    padding: 10px 0px;
+    margin: 10px 0px;
+}
+
+.caja-shop {
+    border-radius: 5px;
+    height: 35px;
+    margin: 10px 0px;
+    padding: 1px 10px;
+    width: 90%;
+    border: #335cb1 solid 1px;
+}
+
+.direccion-envio {
+    margin: 20px 0px;
+    padding: 20px 0px;
+}
+
+.direccion-envio h2 {
+    margin-bottom: 20px;
+}
+
+form .direccion {
+    display: flex;
+    flex-direction: row;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+.data-product #prod img {
+    width: 10vw;
+}
+
+.boton-shop {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+    position: relative;
+
+}
+
+.recomendado-shop {
+    background-color: #fad6d1;
+    margin-top: 20px;
 }
 
 /* -------------------------------------------
        PRODUCT DETAIL
 ---------------------------------------------*/
-aside{
+aside {
     flex-basis: 18%;
 }
 
-#columna-foto{
+#columna-foto {
     flex-basis: 60%;
 
 }
 
-#detalle-producto{
+#detalle-producto {
     display: flex;
     justify-content: space-between;
     background-color: white;
     padding: 30px
 }
-#detalle-producto h1{
+
+#detalle-producto h1 {
     font-size: 30px;
     font-weight: bold;
 }
 
-#producto-izquierda{
+#producto-izquierda {
     flex-basis: 60%;
 }
-#producto-derecha{
+
+#producto-derecha {
     flex-basis: 40%;
     padding-right: 10%;
-   
-    
+
+
 }
 
 
-#producto-derecha .precio{
+#producto-derecha .precio {
     font-size: 24px;
     margin-bottom: 20px;
 }
-#producto-derecha h2{
+
+#producto-derecha h2 {
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 20px;
 }
 
-#producto-derecha p{
+#producto-derecha p {
     margin-bottom: 20px;
 }
-  
+
 
 #botones-extras {
     margin-top: 80px;
 }
-#agregar-carrito input.boton{
+
+#agregar-carrito input.boton {
     text-transform: uppercase;
     display: block;
     background-color: #335cb1;
-    color: white;    
+    color: white;
     text-align: center;
     padding: 5px;
     width: 30%;
@@ -827,14 +1037,13 @@ aside{
     border: 0;
     font-size: 15px;
     left: 0
- 
 }
 
-#botones-extras a{
+#botones-extras a {
     text-transform: uppercase;
     display: block;
     background-color: #E287C4;
-    color: white;    
+    color: white;
     text-align: center;
     max-width: 300px;
     margin: 0 auto 10px auto;
@@ -846,7 +1055,7 @@ aside{
     margin-bottom: 20px;
 }
 
-#cantidad span{
+#cantidad span {
 
     background-color: #E287C4;
     padding: 2px 9px;
@@ -854,10 +1063,10 @@ aside{
     color: #fff;
     font-size: 20px;
     vertical-align: middle;
-    
+
 }
 
-#cantidad input{
+#cantidad input {
     width: 43px;
     padding: 7px;
     text-align: center;
@@ -873,7 +1082,8 @@ footer {
     background-color: #001728;
     color: #f4f5ec;
 }
-footer li{
+
+footer li {
     text-align: center;
 }
 
@@ -1011,12 +1221,20 @@ Navegación en TABLETS (ancho mínimo 768px px)
 ------------------------------------------------------ */
 
 @media screen and (max-width:768px) {
+
     .container,
-    #detalle-producto{
+    #detalle-producto {
         display: block;
     }
-    #producto-izquierda h1{ display: block;}
-    #producto-derecha h1{ display: none;}
+
+    #producto-izquierda h1 {
+        display: block;
+    }
+
+    #producto-derecha h1 {
+        display: none;
+    }
+
     #botones-extras {
         margin-top: 40px;
     }
@@ -1024,18 +1242,20 @@ Navegación en TABLETS (ancho mínimo 768px px)
 
 
 @media (min-width: 768px) {
-    
+
     .main-navbar {
         display: flex;
         justify-content: flex-start;
         flex-grow: .7;
     }
+
     .main-navbar ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
+
     .main-navbar a {
         line-height: 60px;
         text-decoration: none;
@@ -1046,21 +1266,23 @@ Navegación en TABLETS (ancho mínimo 768px px)
         margin-right: 25px;
     }
 
-/* -------------------------------------------------------*/
+    /* -------------------------------------------------------*/
 
     header.slider {
         height: 500px;
     }
+
     .slides img {
         height: 500px;
     }
+
     .overlay-text {
         left: 60px;
         font-size: 50px;
         line-height: 45px;
     }
-    
-/* -------------------------------------------------------*/
+
+    /* -------------------------------------------------------*/
     .producto-destacado {
         height: 400px;
         display: flex;
@@ -1069,6 +1291,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
         align-items: center;
         padding: 0px;
     }
+
     .contenedor-producto {
         padding: 0;
         display: flex;
@@ -1077,169 +1300,270 @@ Navegación en TABLETS (ancho mínimo 768px px)
         width: 33%;
         height: 400px;
     }
+
     .producto-destacado div {
         padding: 0 10px;
         flex-grow: 1;
-    } 
+    }
+
     .contenedor-producto {
         flex-shrink: 2;
     }
+
     .contenedor-producto img {
         height: 400px;
         width: 250px;
         object-fit: cover;
         object-position: right 50% top 50%;
-        }
+    }
+
     .producto-destacado .descripcion-producto {
         width: 33%;
         padding: 0px;
     }
+
     .producto-destacado .destacado-tabla p {
         display: block;
         width: 20vw;
         line-height: 20px;
         padding: 20px;
-    }  
+    }
+
     /* -------------------------------------------------------*/
 
-.categorias-home {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-.categorias-image {
-    width: 30%;
-    height: 300px;
-    flex-grow: 2;
-}
-.categorias-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center center;
-}
- /* -------------------------------------------------------*/
+    .categorias-home {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
 
- .model-finder {
-    height: 350px;
-    
-}
-.model-finder .descripcion {
-    padding: 40px 60px;
-    flex-basis: 80%;
-}
-.model-finder p {
-    width: 40%;
-}
-.model-finder #la-linea {
-    width: 20vw;
-    bottom: 40px;
-}
-/* ------------------------------------------------------*/
+    .categorias-image {
+        width: 30%;
+        height: 300px;
+        flex-grow: 2;
+    }
 
-.volume-calculator div {
-    padding: 10px 20px;
-}
-.title-calculator {
-    flex-basis: 50%;
-    align-self: flex-start;
-}
-.form-calculator {
-    flex-basis: 50%;
-}
-.form-calculator div {
-    padding: 0;
-}
- /* -------------------------------------------------------*/
+    .categorias-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center center;
+    }
 
- .completar {
-    padding: 20px 5px;
-}
-.titular {
-    font-size: 35px;
-}
-div a #shaka {
-    width: 200px;
-    border: solid transparent 0px;
-    margin-left: 35%;
-}
-div a #imagen-header {
-    height: 50px;
-}
-.registro {
-    font-size: 25px;
-    margin: 50px;
-    padding: 0px 50px;
-}
-.caja {
-    width: 500px;
-    height: 40px;
-    border-radius: 10px;
-}
-.boton {
-    width: 200px;
-    height: 40px;
-    left: 35%;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-.ingreso {
-    font-size: 30px;
-    margin: 40px 0px;
-}
-.logo-ingreso {
-    display: flex;
-    justify-content: space-around;
-    font-size: 40px;
-    padding-bottom: 30px;
-}
-.fa-facebook {
-    height: 50px;
-    font-size: 40px;
-    margin-top: 13px;
-    margin-left: 280px;
-}
-div img.completar {
-    width: 15%;
-    padding: 5px;
-    border: black solid 2px;
-    margin-top: 13px;
-}
+    /* -------------------------------------------------------*/
 
- /* -------------------------------------------------------*/
- .producto-shop {
-    width: 49%;
-}
+
+    .model-finder {
+        height: 350px;
+    }
+
+    .model-finder .descripcion {
+        padding: 40px 60px;
+        flex-basis: 80%;
+    }
+
+    .model-finder p {
+        width: 40%;
+    }
+
+    .model-finder #la-linea {
+        width: 20vw;
+        bottom: 40px;
+    }
+
+    /* ------------------------------------------------------*/
+
+    .volume-calculator div {
+        padding: 10px 20px;
+    }
+
+    .title-calculator {
+        flex-basis: 50%;
+        align-self: flex-start;
+    }
+
+    .form-calculator {
+        flex-basis: 50%;
+    }
+
+    .form-calculator div {
+        padding: 0;
+    }
+
+    /* -------------------------------------------------------*/
+
+    .completar {
+        padding: 20px 5px;
+    }
+
+    .titular {
+        font-size: 35px;
+    }
+
+    div a #shaka {
+        width: 200px;
+        border: solid transparent 0px;
+        margin-left: 35%;
+    }
+
+    div a #imagen-header {
+        height: 50px;
+    }
+
+    .registro {
+        font-size: 25px;
+        margin: 50px;
+        padding: 0px 50px;
+    }
+
+    .caja {
+        width: 500px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .boton {
+        width: 200px;
+        height: 40px;
+        left: 35%;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .ingreso {
+        font-size: 30px;
+        margin: 40px 0px;
+    }
+
+    .logo-ingreso {
+        display: flex;
+        justify-content: space-around;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+
+    .fa-facebook {
+        height: 50px;
+        font-size: 40px;
+        margin-top: 13px;
+        margin-left: 280px;
+    }
+
+    div img.completar {
+        width: 15%;
+        padding: 5px;
+        border: black solid 2px;
+        margin-top: 13px;
+    }
+
+    /* -------------------------------------------------------*/
+    .producto-shop {
+        width: 49%;
+    }
+
+    /*--------------------------------------------------------*/
+
+    /* footer li{
+    text-align: start;
+    .completar {
+        padding: 20px 5px;
+        border-left: solid #dcdfe3 2px;
+        border-right: solid #dcdfe3 2px;
+        width: 50vw;
+    } */
+
+    .titular {
+        font-size: 35px;
+    }
+
+    .bienvenida {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+        margin: 10px 20px
+    }
+
+    .bienvenida img#shaka {
+        width: 18%;
+        margin-left: 10%;
+    }
+
+    img#LaLinea {
+        height: 10px;
+    }
+
+    form .registro {
+        font-size: 15px;
+    }
+
+    form .registro .caja {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+    }
+
+    .boton {
+        height: 30px;
+        font-size: 18px;
+        margin-bottom: 40px;
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .loguearse {
+        margin: 15px 0px;
+    }
+
+    h5 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .registrarse a {
+        font-size: 13px;
+    }
+
+    .logo-ingreso {
+        align-items: center;
+    }
+
+    .logo-ingreso img#google {
+        width: 30%;
+        padding: 5px;
+    }
+
 /*--------------------------------------------------------*/
 
-footer li{
-    text-align: start;
-}
-.social-footer {
-    width: 40%;
-    padding: 0 7% 0 3%;
-}
-.iconos-social-footer {
-    text-align: right;
-}
-.navegacion-footer,
-.info-footer {
-    align-items: flex-start;
-    margin-bottom: 0px;
-    width: 20%;
-}
+    .social-footer {
+        width: 40%;
+        padding: 0 7% 0 3%;
+    }
 
-.copyright {
-    justify-content: flex-start;
-}
-img.detalles-design {
-    bottom: 10px;
-}
-}
+    .iconos-social-footer {
+        text-align: right;
+    }
 
+    .navegacion-footer,
+    .info-footer {
+        align-items: flex-start;
+        margin-bottom: 0px;
+        width: 20%;
+    }
+
+    .copyright {
+        justify-content: flex-start;
+    }
+
+    img.detalles-design {
+        bottom: 10px;
+    }
+}
 
 /*
 --------------------------------------------------------
@@ -1254,22 +1578,26 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     #logo {
         flex-basis: 200px;
     }
+
     #logo-img {
         padding: 10px 30px;
     }
-/* -------------------------------------------------------*/
+
+    /* -------------------------------------------------------*/
 
     .main-navbar {
         display: flex;
         justify-content: flex-start;
         flex-grow: .7;
     }
+
     .main-navbar ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
+
     .main-navbar a {
         line-height: 80px;
         text-decoration: none;
@@ -1279,7 +1607,8 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         font-weight: 500;
         margin-right: 40px;
     }
-/* -------------------------------------------------------*/
+
+    /* -------------------------------------------------------*/
 
     .producto-destacado {
         height: 400px;
@@ -1288,7 +1617,7 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         justify-content: space-between;
         align-items: center;
     }
- 
+
     .contenedor-producto img {
         height: 1000px;
         width: 1000px;
@@ -1301,98 +1630,77 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         margin-top: 10px;
         font-size: 14px;
     }
+
     .producto-destacado .destacado-tabla p {
         display: block;
         width: 20vw;
         line-height: 20px;
         /* padding: 20px; */
-    }    
+    }
 
     /* -------------------------------------------------------*/
     .categorias-image {
         height: 400px;
     }
+
     .categorias-image img {
         height: 400px;
     }
 
-/* -------------------------------------------------------*/
+    /* -------------------------------------------------------*/
 
     .model-finder .descripcion {
         padding: 60px;
     }
+
     .model-finder::after {
         background-size: auto 150%;
         background-position-x: 40vw;
     }
+
     /* -------------------------------------------------------*/
-    
+
     .shop .producto-shop {
         width: 24%;
-        }
+    }
+
     /* -------------------------------------------------------*/
 
     .icons-navbar a {
         font-size: 18px;
         line-height: 80px;
     }
+
     .icons-navbar i {
         padding: 0 30px;
     }
+
     /* -------------------------------------------------------*/
+
     .completar {
-        padding: 20px 5px;
+        width: 40vw;
     }
 
     .titular {
         font-size: 50px;
-        margin-top: 20px;
     }
 
-    div a #shaka {
-        width: 300px;
-        border: solid transparent 0px;
-        margin-left: 35%;
+    .bienvenida img#shaka {
+        width: 15%;
     }
 
-    .registro {
-        font-size: 35px;
-        margin: 100px;
-        padding: 20px 50px;
+    .completar img#LaLinea {
+        height: 50px;
     }
 
-    .caja {
-        width: 900px;
-        height: 70px;
-        border-radius: 15px;
+    form .registro {
+        font-size: 17px;
     }
 
-    .boton {
-        width: 400px;
-        height: 70px;
-        left: 35%;
-        font-size: 38px;
-        margin-bottom: 60px;
-        border-radius: 10px;
-    }
-
-    .ingreso {
-        font-size: 40px;
-        margin: 80px 0px;
-    }
-
-    .fa-facebook {
-        height: 100px;
-        width: 100px;
-        text-align: center;
-        font-size: 90px;
-        padding-top: 8px 0px;
-    }
-
-    div img.completar {
-        width: 25%;
+    .logo-ingreso img#google {
+        width: 22%;
         padding: 5px;
-        border: black solid 2px;
     }
+
 
 }
