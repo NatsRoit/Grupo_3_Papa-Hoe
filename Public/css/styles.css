@@ -79,7 +79,7 @@ a.button-link {
     display: inline-block;
     padding: 10px;
     margin: 20px 10px 0 0;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     /* position: relative; */
     background-image: url(/brand/Fondito-Arena.svg);
@@ -103,7 +103,7 @@ a.button-link:active {
     color: #335cb1;
     transform: translateY(1.5px);
     font-weight: 600;
-    font-size: 19.5px;
+    font-size: 15.5px;
 }
 
 /* .button-link a:active {
@@ -1210,38 +1210,46 @@ input::placeholder {
 }
 
 img.detalles-design {
-    left: -75px;
+    left: -55px;
     bottom: 300px;
     transform: rotate(170deg);
 }
 
-/* .................. MEDIA QUERIES ...................
---------------------------------------------------------
-Navegación en TABLETS (ancho mínimo 768px px)
------------------------------------------------------- */
 
 @media screen and (max-width:768px) {
-
     .container,
     #detalle-producto {
         display: block;
     }
-
+    
     #producto-izquierda h1 {
         display: block;
     }
-
+    
     #producto-derecha h1 {
         display: none;
     }
-
+    
     #botones-extras {
         margin-top: 40px;
     }
 }
 
 
+/* .................. MEDIA QUERIES ...................
+--------------------------------------------------------
+Navegación en TABLETS (ancho mínimo 768px px)
+------------------------------------------------------ */
+
 @media (min-width: 768px) {
+
+
+    a.button-link {
+        font-size: 20px;
+    }
+    a.button-link:active {
+        font-size: 20px;
+    }
 
     .main-navbar {
         display: flex;
@@ -1556,6 +1564,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
     }
 
     img.detalles-design {
+        left: -75px;
         bottom: 10px;
     }
 }
