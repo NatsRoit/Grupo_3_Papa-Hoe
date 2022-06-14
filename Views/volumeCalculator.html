@@ -21,8 +21,8 @@
             <ul>
                 <li><a href="/shop">Surfboards</a></li>
                 <li><a href="/shop">Complementos</a></li>
-                <li><a href="/productDetail">Board Builder</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/boardBuilder">Board Builder</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
         <nav class="icons-navbar">
@@ -40,76 +40,72 @@
     </header>
 
 
-    <main class="en-construccion">
-        <h1>
-            Página en construcción
-        </h1>
+    <main class="volume-calculator">
 
-            <div class="title-calculator">
-                <h1>Volume Calculator</h1>
-                <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
-                <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
-            </div>
-            <div class="form-calculator">
-                <form action="/volumeCalculator" method="GET">
-                    <div class="volume-container">
-                        <label for="peso">Peso</label><br>
-                        <datalist id="opciones-calculator">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </datalist>
-                        <input type="range" min="15" max="150" value="0" step="50" id="peso" list="opciones-calculator"
-                            name="peso">
+        <div class="title-calculator">
+            <h1>Volume Calculator</h1>
+            <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
+            <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
+        </div>
+        <div class="form-calculator">
+            <form action="/volumeCalculator" method="GET">
+                <div class="volume-container">
+                    <label for="peso">Peso</label><br>
+                    <datalist id="opciones-calculator">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </datalist>
+                    <input type="range" min="15" max="150" value="0" step="50" id="peso" list="opciones-calculator"
+                        name="peso">
+                </div>
+                <div>
+                    <label for="altura">Altura</label><br>
+                    <input id="altura" type="range" min="1" max="2" value="0" step="0.05" list="tickmarks"
+                        name="altura">
+                    <datalist id="tickmarks">
+                    </datalist>
+                </div>
+                <div>
+                    <label for="edad">Edad</label><br>
+                    <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks" name="edad">
+                    <datalist id="tickmarks">
 
-                    </div>
-                    <div>
-                        <label for="altura">Altura</label><br>
-                        <input id="altura" type="range" min="1" max="2" value="0" step="0.05" list="tickmarks"
-                            name="altura">
-                        <datalist id="tickmarks">
-                        </datalist>
-                    </div>
-                    <div>
-                        <label for="edad">Edad</label><br>
-                        <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks" name="edad">
-                        <datalist id="tickmarks">
-
-                        </datalist>
-                    </div>
-                    <div>
-                        <label for="entrenamiento">Entreno</label><br>
-                        <select name="entrenamiento" id="entrenamiento">
-                            <option value="bajo">Mmmhhh</option>
-                            <option value="medio">Podría entrenar más</option>
-                            <option value="alto">Bastante</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="frecuencia">Frecuencia</label><br>
-                        <select name="frecuencia" id="frecuencia">
-                            <option value="nunca">3/5 veces por semana</option>
-                            <option value="mensualmente">1 vez por semana</option>
-                            <option value="semanalmente">1/2 veces por mes</option>
-                            <option value="diariamente">1/2 veces por año</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="experiencia">experiencia</label><br>
-                        <select name="experiencia" id="experiencia">
-                            <option value="beginner">Beginner</option>
-                            <option value="intermedio">Intermedio</option>
-                            <option value="avanzado">Avanzado</option>
-                            <option value="experto">Experto</option>
-                        </select>
-                    </div>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="entrenamiento">Entreno</label><br>
+                    <select name="entrenamiento" id="entrenamiento">
+                        <option value="bajo">Mmmhhh</option>
+                        <option value="medio">Podría entrenar más</option>
+                        <option value="alto">Bastante</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="frecuencia">Frecuencia</label><br>
+                    <select name="frecuencia" id="frecuencia">
+                        <option value="nunca">3/5 veces por semana</option>
+                        <option value="mensualmente">1 vez por semana</option>
+                        <option value="semanalmente">1/2 veces por mes</option>
+                        <option value="diariamente">1/2 veces por año</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="experiencia">experiencia</label><br>
+                    <select name="experiencia" id="experiencia">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                        <option value="experto">Experto</option>
+                    </select>
+                </div>
+                <div>
                     <button type="submit">Calculá mi talla</button>
-                </form>
-
+                </div>
+            </form>
+        </div>
     </main>
-
-
 
 
 
@@ -143,21 +139,39 @@
                 <li>
                     <h3>Papa Hoe</h3>
                 </li>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Team Riders</li></a>
-                <a href="#"><li>Contacto</li></a>
-                <a href="#"><li>Privacidad</li></a>
+                <a href="/about">
+                    <li>About</li>
+                </a>
+                <a href="/about">
+                    <li>Team Riders</li>
+                </a>
+                <a href="#">
+                    <li>Contacto</li>
+                </a>
+                <a href="#">
+                    <li>Privacidad</li>
+                </a>
             </ul>
 
             <ul class="navegacion-footer">
                 <li>
                     <h3>Ayuda</h3>
                 </li>
-                <a href="#"><li>CustomBoard Tracker</li></a>
-                <a href="/volumeCalculator"><li>Volume Calculator</li></a>
-                <a href="#"><li>FAQ's</li></a>
-                <a href="#"><li>Envíos y Devoluciones</li></a>
-                <a href="#"><li>Términos y Condiciones</li></a>
+                <a href="#">
+                    <li>CustomBoard Tracker</li>
+                </a>
+                <a href="/volumeCalculator">
+                    <li>Volume Calculator</li>
+                </a>
+                <a href="#">
+                    <li>FAQ's</li>
+                </a>
+                <a href="#">
+                    <li>Envíos y Devoluciones</li>
+                </a>
+                <a href="#">
+                    <li>Términos y Condiciones</li>
+                </a>
             </ul>
 
             <ul class="info-footer">
