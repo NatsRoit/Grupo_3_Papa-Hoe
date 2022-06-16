@@ -28,7 +28,11 @@ ESCALA DE AZULES (del marino al arena)
     /* font-weight: 400; */
 }
 
-* a {
+img{
+    max-width: 100%;
+}
+
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -353,7 +357,7 @@ header.slider {
 
 .producto-destacado .destacado-tabla p {
     display: block;
-    width: 100%;
+    width: 100vw;
     line-height: 20px;
 }
 
@@ -404,6 +408,14 @@ header.slider {
 .categorias-image button:hover {
     background-color: #00172843;
 }
+.main-image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
 
 /* -------------MODEL FINDER -----------------------*/
 .model-finder {
@@ -587,7 +599,7 @@ header.slider {
 }
 
 .shop .contenedor-productos {
-    margin: 40px;
+    margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -597,13 +609,8 @@ header.slider {
     margin-bottom: 25px;
     background-color: #fff;
     width: 100%;
-    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.1);
-    position: relative;
 }
 
-.shop .producto-shop:hover {
-    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.7);
-}
 
 .shop .info-producto {
     display: flex;
@@ -914,6 +921,7 @@ main.shopify-checkout {
 form {
     padding: 10px 0px;
     margin: 10px 0px;
+    margin-bottom: 40px;
 }
 
 .caja-shop {
@@ -985,23 +993,32 @@ aside {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 30px
+    padding: 20px;
+  
 }
-
+#detalle-producto p{
+    margin-top:25px;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+}
 #detalle-producto h1 {
+    text-transform: uppercase;
     font-size: 30px;
     font-weight: bold;
+    padding-top: 12px;
 }
 
 #producto-izquierda {
-    flex-basis: 60%;
+    flex-basis: 40%;
+    font-size: 15px;
+    border-right: solid 2px #fad6d1
+    
 }
 
+
 #producto-derecha {
-    flex-basis: 40%;
-    padding-right: 10%;
-
-
+    flex-basis: 54%;
 }
 
 
@@ -1010,45 +1027,57 @@ aside {
     margin-bottom: 20px;
 }
 
-#producto-derecha h2 {
-    font-size: 20px;
-    font-weight: lighter;
+
+.mas-informacion {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
     margin-bottom: 20px;
+    size: 80%;
+    
 }
 
-#producto-derecha p {
-    margin-bottom: 20px;
+#producto-derecha .mas-info{
+    position: absolute;
+    top: 50px;
+    text-align: right;
+    padding: 40px;
+   
 }
 
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 22px;
+}
+.opciones > div{
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
 
-#botones-extras {
-    margin-top: 80px;
+}
+
+.opciones option{
+    text-transform: uppercase;
+    font-size: 15px;
+
 }
 
 #agregar-carrito input.boton {
     text-transform: uppercase;
     display: block;
-    background-color: #335cb1;
+    background-color: #293c49;
     color: white;
-    text-align: center;
-    padding: 5px;
-    width: 30%;
-    height: 15%;
     border: 0;
-    font-size: 15px;
-    left: 0
+    font-size: 18px;
+    height: 64px;
+    width: 300px;
+    left: 40px;
 }
 
-#botones-extras a {
-    text-transform: uppercase;
-    display: block;
-    background-color: #E287C4;
-    color: white;
-    text-align: center;
-    max-width: 300px;
-    margin: 0 auto 10px auto;
-    padding: 10px;
-}
 
 #cantidad {
     margin-top: 20px;
@@ -1056,7 +1085,6 @@ aside {
 }
 
 #cantidad span {
-
     background-color: #E287C4;
     padding: 2px 9px;
     display: inline-block;
@@ -1072,6 +1100,71 @@ aside {
     text-align: center;
     border: 0;
     display: inline-block;
+
+}
+
+.product-container {
+    display: flex;
+  }
+
+
+.titulo-extras{
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: #dfe7df;
+  }
+  
+
+  .product {
+    display: flex;
+    margin-bottom: 25px;
+    background-color: #fff;
+    width: 100%;
+  }
+  .product img:hover {
+    filter: opacity(.5);;
+  }
+  
+  
+  .product .product-info {
+    display: flex;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 12px;
+
+  }
+  
+  .product .product-info h5 {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: -5px;
+}
+  
+
+  @media screen and (min-width: 768px) {
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .product-container article {
+      flex-basis: 48%;
+    }
+
+  }
+  @media screen and (min-width: 1200px) {
+    .product-container article {
+      flex-basis: 24%;
+    }
+  }
+
+
+@media screen and (max-width:768px){
+    #producto-izquierda{
+        border:0;
+    }
 
 }
 
@@ -1224,14 +1317,44 @@ img.detalles-design {
     
     #producto-izquierda h1 {
         display: block;
+    }   
+    .product .product-info h5 { 
+        font-size: 9px;
+        margin-top: 0px;
+        margin-left: -5px;    
+    }
+     
+  
+    .titulo-extras {
+        padding: 4px;
+        font-size: 15px;
+        text-align: center;
+        
     }
     
-    #producto-derecha h1 {
+    #producto-derecha .mas-info {
         display: none;
+        position: absolute;
+        top: 50px;
+        text-align: right;
+        padding: 40px;
     }
-    
-    #botones-extras {
-        margin-top: 40px;
+    #agregar-carrito input.boton {
+        text-transform: uppercase;
+        display: block;
+        background-color: #293c49;
+        color: white;
+        border: 0;
+        font-size: 17px;
+        height: 49px;
+    }
+    .opciones > div {
+        text-transform: uppercase;
+        padding: 2px;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        
     }
 }
 
