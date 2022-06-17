@@ -1,5 +1,7 @@
 # Grupo_3_Papa-Hoe
 
+TABLERO DE TRABAJO: https://app.clickup.com/31083892
+
 TEMÁTICA DEL SITIO
 Venta de tablas de surf y otros artículos para surfistas.
 
