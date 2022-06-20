@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+
+    <main class="completar">
+        <div class="bienvenida-registro">
+            <h2 class="titular-registro">Vamos a necesitar tus datos</h2>
+            <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka">
+        </div>
+        <img id="LaLinea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%">
+
+        <form action="/views/register.html" method="post" >
+            <div class="registro">
+                <div>
+                    <div>
+                    <label for="nombre"></label> Nombre
+                    </div>
+                    <input class="caja" type="text" name="nombre" id="nombre" placeholder="Nombre" required > 
+                </div> 
+
+                <div>
+                    <div>
+                    <label for="apellido"></label> Apellido
+                    </div>
+                    <input class="caja" type="text" name="apellido" id="apellido" placeholder="Apellido" required> 
+                </div> 
+
+                <div>
+                    <div>
+                    <label for="usuario"></label> Usuari@
+                    </div>
+                    <input class="caja" type="text" name="usuario" id="usuario" placeholder="Nombre de usuari@" required> 
+                </div> 
+
+                <div>
+                    <div>
+                    <label for="email"></label> Correo Electrónico
+                    </div>
+                    <input class="caja" type="email" name="email" id="email" placeholder="Correo Electrónico" required> 
+                </div> 
+
+                <div>
+                    <div>
+                    <label for="contraseña"></label> Contraseña
+                    </div>
+                    <input class="caja" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <button class="boton" type="submit">Registrate</button>
+            </div>
+
+
+            <img id="LaLinea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%">
+
+            <div class="loguearse"></div>
+                <h5 class="ingreso">O ingresá con:</h5>
+
+                <div class="logo-ingreso">
+                    <i class="fa-brands fa-facebook"></i>
+                    <img id="google" src="/img/google_icon-icons.com_62736.svg" alt="Logo-Google" width="20%">
+                </div>
+            </div>
+
+            <div class="reCAPTCHA">
+                <p> Protegido por reCAPTCHA -
+                    <a href="#">Privacidad -</a> 
+                    <a href="#">Condiciones</a> 
+                </p>
+            </div>
+        </form>
+    </main>
+    <%- include("./partials/footer") %>
+</body>
+</html>

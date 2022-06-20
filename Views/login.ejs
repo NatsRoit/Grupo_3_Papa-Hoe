@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+
+            <main class="completar">
+                <div class="bienvenida">
+                    <h2 class="titular">¡Hola!</h2>
+                    <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka">
+                </div>
+                <img id="LaLinea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%">
+
+                <form action="/views/login.html" method="post">
+
+                    <div class="registro">
+                        <div>
+                            <div>
+                                <label class="titulo" for="email"></label> Correo Electrónico / Usuari@
+                            </div>
+                            <input class="caja" type="email" name="email" id="email"
+                                placeholder="Correo Electrónico / Usuari@" required>
+                        </div>
+
+                        <div>
+                            <div>
+                                <label class="titulo" for="contraseña"></label> Contraseña
+                            </div>
+                            <input class="caja" type="password" name="contraseña" id="contraseña"
+                                placeholder="Contraseña" required>
+                        </div>
+
+                        <button class="boton" type="submit">Ingresar</button>
+                        <a href="xxxxx">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+
+                <div class="registrarse">
+                    <h5 class="ingreso">¿Todavía no estas registrado?</h5>
+                    <a href="/register">Crear cuenta</a>
+                </div>
+
+                <img id="LaLinea" src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea" width="100%">
+
+                <div class="loguearse">
+                    <h5>O ingresá con:</h5>
+
+                    <div class="logo-ingreso">
+                        <i class="fa-brands fa-facebook"></i>
+                        <img id="google" src="/img/google_icon-icons.com_62736.svg" alt="Logo-Google" width="20%">
+                    </div>
+                </div>
+
+                <div class="reCAPTCHA">
+                    <p> Protegido por reCAPTCHA-
+                        <a href="xxxxx">Privacidad</a>
+                        <a href="xxxxx">Condiciones</a>
+                    </p>
+                </div>
+            </main>
+            <%- include("./partials/footer") %>
+    </body>
+
+</html>
