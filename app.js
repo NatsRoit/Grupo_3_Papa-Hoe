@@ -9,37 +9,33 @@ app.use( express.static(path.resolve(__dirname, './public')));
 
 
 app.get('/', (req,res) => {
-    res.render('home')
+    res.sendFile(path.resolve(__dirname, './views/home.html'))
 });
 app.get('/register', (req,res) => {
-    res.render(path.resolve(__dirname, './views/register.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/register.html'))
 });
 app.get('/login', (req,res) => {
-    res.render(path.resolve(__dirname, './views/login.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/login.html'))
 });
 app.get('/productCart', (req,res) => {
-    res.render(path.resolve(__dirname, './views/productCart.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/productCart.html'))
 });
-
 app.get('/productDetail1', (req,res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail1.html'))
 });
-app.get('/productDetail', (req,res) => {
-    res.render(path.resolve(__dirname, './views/productDetail.ejs'))
-});
 
 app.get('/boardBuilder', (req,res) => {
-    res.render(path.resolve(__dirname, './views/boardBuilder.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/boardBuilder.html'))
 });
 app.get('/volumeCalculator', (req,res) => {
-    res.render(path.resolve(__dirname, './views/volumeCalculator.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/volumeCalculator.html'))
 });
 app.get('/shop', (req,res) => {
-    res.render(path.resolve(__dirname, './views/shop.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/shop.html'))
 });
 
 app.get('/about', (req,res) => {
-    res.render(path.resolve(__dirname, './views/about.ejs'))
+    res.sendFile(path.resolve(__dirname, './views/about.html'))
 });
 
 app.listen(process.env.PORT || 3000, function () {
