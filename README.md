@@ -1,5 +1,7 @@
 # Grupo_3_Papa-Hoe
 
+TABLERO DE TRABAJO: https://app.clickup.com/31083892
+
 TEMÁTICA DEL SITIO
 Venta de tablas de surf y otros artículos para surfistas.
 
@@ -79,31 +81,25 @@ https://www.tpattersonsurfboards.com
 DESCRIPCIÓN INTEGRANTES
 ------------------------------------------------------------------------------
 
-Arakaki Natalia 
+Natalia Arakaki 
 Soy Lic. en Administración y apasionada por la tecnología. Actualmente estoy reorientándome al mundo digital, sistemas de información y sus aplicaciones a través de la carrera de la Lic. en Sistemas de Información.
 De personalidad proactiva, curiosa e inquieta. 
 
 
 
-Buzzin Alfredo
+Alfredo Buzzin
 Tengo 35 años, soy desarrollador de firmware de sistemas embebidos. (MCU, ARM, PIC, AVR...)
 Me especializo en la programación de dispositivos electrónicos de baja potencia para telemetría (LoRa, LoRaWAN, SigFox) 
 y en el Diseño de sistemas de medición y control que incorporan algoritmos de aprendizaje automático (machine learning, tinyML).
 
 
 
-Caudillo Ramírez Nataly Estefanía
-Soy Mexicana tengo 23 años, estudiante de ing. en sistemas computacionales, 
-con conocimientos básicos en SQLServer, MySQL, HTML y CSS.
-Me gusta socializar, soy un poco tímida, me considero una persona persistente. 
-
-
-
-
-Roitman Natalia
+Natalia Roitman
 Tengo 36 años, tengo una Licenciatura en Diseño Gráfico y una Diplomatura en Gestión Cultural. Vivo entre Italia y Argentina.
 Desde hace más de 10 años me especializo en Branding para pequeñas y medianas empresas y actualmente estoy buscando ampliar mis conocimientos sobre Tecnologías de la Información y Desarrollo Web para reorientar mi carrera profesional.
 Curiosa, entusiasta, emprendedora, apasionada por la fotografía y por los aspectos éticos y estéticos de la comunicación.
 PORTFOLIO >>> www.coroflot.com/nats  //  natsroit-blog.tumblr.com
+
+
 
 Magdalena Belaustegui: Soy Magdalena Belaustegui, tengo 43 años, vivo en la Ciudad de Azul, provincia de Buenos Aires.- Considero que los resultados del trabajo en equipo son mas amplios y eficientes. Mis fortalezas para aportar al grupo es mi capacidad de ordenar y establecer prioridades. Tengo facilidad para integrar a los participantes y asi generar un espacio dinamico de comunicacion. Soy artista plastica (arte conceptual) y eso me da una mirada amplia para poder transmitir con claridad una idea.
