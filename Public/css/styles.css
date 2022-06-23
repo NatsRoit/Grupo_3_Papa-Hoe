@@ -641,7 +641,7 @@ input[type=range]::-moz-range-progress {
     top: 60px;
 }
 
-.titulo-seccion-main {
+.shop .titulo-seccion-main {
     color: #666;
     text-align: left;
     margin-left: 40px;
@@ -849,8 +849,7 @@ form .registro {
 .fa-facebook {
     background-color: #335cb1;
     color: white;
-    padding: 5px;
-    height: 30px;
+    padding: 7px;
     font-size: 20px;
 }
 
@@ -1712,7 +1711,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .boton {
         width: 200px;
         height: 40px;
-        left: 35%;
         font-size: 18px;
         margin-bottom: 40px;
     }
@@ -1730,16 +1728,13 @@ Navegación en TABLETS (ancho mínimo 768px px)
     }
 
     .fa-facebook {
-        height: 50px;
-        font-size: 40px;
-        margin-top: 13px;
-        margin-left: 280px;
+        font-size: 30px;
     }
 
     div img.completar {
         width: 15%;
         padding: 5px;
-        border: black solid 2px;
+        border: red solid 2px;
         margin-top: 13px;
     }
 
