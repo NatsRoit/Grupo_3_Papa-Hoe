@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("./partials/head") %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa Hoe</title>
 
-    <body>
-        <%- include("./partials/header") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a99dce3628.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a id="logo" href="/"><img id="logo-img" src="/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
+        <nav class="main-navbar">
+            <ul>
+                <li><a href="/shop">Surfboards</a></li>
+                <li><a href="/shop">Complementos</a></li>
+                <li><a href="/boardBuilder">Board Builder</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+        <nav class="icons-navbar">
+            <ul>
+                <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
+                <!-- <form class="search-box">
+                <input type="text" placeholder="Buscar productos, marcas">
+                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form> -->
+                <li><a href="/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+                <li><a href="/productCart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <header class="section-header">
         <img id="carrousel-image-1" src="./img/jeremy-bishop-pikyGuAmwpM-unsplash.jpg" alt="PapaHoe foto1">
@@ -96,22 +129,84 @@
                 tabla tiene una forma diferente, dos tablas de surf con las mismas dimensiones pueden tener un volumen
                 completamente diferente. debido a estos parámetros que se utilizan en el cálculo del volumen.<br><br>
 
-                El volumen da un índice de flotación de la tabla de surf y se calcula en litros. Hoy en día, este
-                volumen
+                El volumen da un índice de flotación de la tabla de surf y se calcula en litros. Hoy en día, este volumen
                 se puede calcular fácilmente a través de un software especializado.<br><br>
 
-                Un mayor volumen te permitirá remar más fácilmente y un estilo de surf más rápido: montarás más olas y
-                con menos esfuerzo. ¡Pero cuidado! Si tu tabla tiene demasiado volumen, flotarás demasiado y será más
-                difícil hacer giros y maniobras en las olas.<br><br>
+                Un mayor volumen te permitirá remar más fácilmente y un estilo de surf más rápido: montarás más olas y con menos esfuerzo. ¡Pero cuidado! Si tu tabla tiene demasiado volumen, flotarás demasiado y será más difícil hacer giros y maniobras en las olas.<br><br>
 
                 Por el contrario, si no tenés suficiente volumen en tu tabla, no flotarás lo suficiente, tu surf será
-                más lento, arrancar en las olas será más difícil y tendrás que gastar más energía para poder remarla.
-                Una vez
+                más lento, arrancar en las olas será más difícil y tendrás que gastar más energía para poder remarla. Una vez
                 de pie en la tabla, un surfista inexperto tendrá más dificultades para mantener su velocidad sobre la
                 ola.</p>
         </div>
     </main>
-    <%- include("./partials/footer") %>
+
+
+    <footer>
+        <div class="grid-menu-footer">
+            <div class="social-footer">
+
+                <form class="suscripcion-box">
+                    <label for="newsletter"></label>
+                    <input id="newsletter" name="newsletter" type="email" placeholder="Unite a la tribu">
+                    <button class="sobre" type="submit"><i class="fa-solid fa-envelope"></i></button>
+                </form>
+
+                <div class="iconos-social-footer">
+                    <button class="instagram-footer" type="button"><i class="fa-brands fa-instagram"></i></button>
+                    <button class="facebook-footer" type="button"><i class="fa-brands fa-facebook-f"></i></button>
+                    <button class="youtube-footer" type="button"><i class="fa-brands fa-youtube"></i></button>
+                    <button class="vimeo-footer" type="button"><i class="fa-brands fa-vimeo-v"></i></button>
+                </div>
+            </div>
+
+            <ul class="navegacion-footer">
+                <li>
+                    <h3>Ayuda</h3>
+                </li>
+                <li><a href="#">CustomBoard Tracker</a></li>
+                <li><a href="/volumeCalculator">Volume Calculator</a></li>
+                <li><a href="#">FAQ's</a></li>
+                <li><a href="#">Envíos y Devoluciones</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+
+            <ul class="navegacion-footer">
+                <li>
+                    <h3>Papa Hoe</h3>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/about">Team Riders</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Privacidad</a></li>
+            </ul>
+
+            <ul class="info-footer">
+                <li>
+                    <h3>Servicio al Cliente</h3>
+                </li>
+                <li>info@papahoe.com</li>
+                <li>ARG +54 11 4395 859<br>MEX +52 00 4395 859</li>
+                <li>
+                    <h4>Surfboard Factory</h4>
+                    <p>Calle Cualca 27 <br>
+                        Villa Gesell, Argentina</p>
+                </li>
+                <li>
+                    <h4>DF Showroom</h4>
+                    <p>San Tlatelolco 123 <br>
+                        Colonia Roma, DF</p>
+                </li>
+            </ul>
+
+            <div class="copyright">
+                <img class="detalles-design" src="/brand/PapaHoe-ELEMENTS-LosPuntitos.png" alt="PapaHoe Brand elements">
+
+                <img id="logo-footer" src="/brand/PapaHoe-logo-min-white.svg" alt="PapaHoe Logo">
+                Copyright © 2022 Papa Hoe
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
