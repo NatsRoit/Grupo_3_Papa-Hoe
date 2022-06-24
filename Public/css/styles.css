@@ -38,7 +38,7 @@ a {
 }
 
 body {
-    width: 100vw;
+    width: 100%;
 }
 
 .en-construccion {
@@ -48,7 +48,7 @@ body {
 
 .section-header {
     margin: 0px;
-    width: 100vw;
+    width: 100%;
     height: 300px;
 }
 
@@ -82,7 +82,7 @@ a.button-link {
     font-weight: 300;
     display: inline-block;
     padding: 10px;
-    margin: 20px 10px 0 0;
+    margin: 10px 10px 0 0;
     font-size: 16px;
     text-align: center;
     /* position: relative; */
@@ -282,7 +282,7 @@ header.slider {
 .slider-controller button {
     background-color: transparent;
     color: #f4f5ec;
-    padding: 10px;
+    padding: 20px;
     border: 0px solid #666;
     font-size: 25px;
 }
@@ -320,7 +320,7 @@ header.slider {
     "foto box2";
     vertical-align: middle;
     padding: 20px;
-    width: 100vw;
+    width: 100%;
 }
 
 .producto-destacado div {
@@ -468,11 +468,17 @@ header.slider {
     width: 100px;
 }
 
-.model-finder #la-linea {
+.contenedor-linea{
+    width: 200px;
     position: absolute;
     z-index: 90;
-    width: 45vw;
     bottom: 20px;
+    right: 0px;
+    overflow: hidden;
+}
+.model-finder #la-linea {
+    width: 100%;
+    position: relative;
     right: -30px;
 }
 
@@ -631,7 +637,7 @@ input[type=range]::-moz-range-progress {
          MAIN: SHOP (surfboards y complementos)
 ----------------------------------------------------*/
 .shop .shop-filters {
-    width: 100vw;
+    width: 100%;
     height: 40px;
     background-color: #fad6d1;
     padding: 40px;
@@ -756,113 +762,98 @@ textarea {
 
 /*
 --------------------------------------------------------
-    MAIN Login / Register
+    MAIN Login
 ------------------------------------------------------ */
-
-/* main.completar {
-    padding: 20px 20px;
-} */
-
-.bienvenida {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding-bottom: 20px;
-    margin: 0px 20px
+.login {
+    width: 95%;
+    height: 85vh;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
 }
-
-.bienvenida img#shaka {
-    width: 22%;
-    margin-left: 10%;
-}
-
-.completar img#LaLinea {
-    height: 40px;
-}
-
-form .registro {
-    padding: 5px 20px;
-    margin: 20px 0px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.titular {
-    font-family: "Quicksand", sans-serif;
+.login h2 {
+    padding: 30px 0;
     font-size: 50px;
-    font-weight: 600;
+    letter-spacing: 2px;
+}
+.login-img {
+    display: none;
+    position: absolute;
+    z-index: 90;
+    width: 300px;
+    right: 0px;
+    top: 140px;
+    overflow: hidden;
+}
+.login-img img {
+    width: 100%;
+    position: relative;
+    right: -100px;
 }
 
-.caja {
-    border-radius: 5px;
-    height: 35px;
-    margin: 10px 0px;
+.login-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+}
+.login-input a {
+    font-size: 12px;
+    font-weight: 400;
+    align-self: center;
+}
+
+.login-formulario input {
+    border-radius: 2px;
+    height: 50px;
+    margin: 7px 0 40px 0;
     padding: 1px 10px;
     width: 100%;
-    border: #335cb1 solid 1.5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: #001728 solid .5px;
 }
 
-.boton {
-    background-color: #335cb1;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
+.submit-button {
+    background-color: #001728;
     color: #f4f5ec;
     width: 100%;
-    height: 35px;
-    border-radius: 5px;
+    height: 50px;
+    border: 1px solid transparent;
+    border-radius: 2px;
     margin: 15px 0px;
-    padding: 1px 10px;
-    position: relative;
-
+    padding: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
-
-.registro a {
-    font-size: 13px;
-    text-align: center;
-    margin-bottom: 10px;
+.submit-button:hover{
+    font-weight: 700;
 }
-
-.registrarse {
+.login-redirect a:hover {
+    font-weight: 700;
+}
+/* 
+.alternative-login {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 25px 0px;
-}
-
-.loguearse h5 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.logo-ingreso {
-    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 40%;
-    justify-content: space-between;
-    margin: auto;
+    width: 100%;
+    justify-content: center;
 }
-
 .fa-facebook {
-    background-color: #335cb1;
-    color: white;
-    padding: 7px;
-    font-size: 20px;
+    color: #335cb1;
+    font-size: 30px;
+    margin: 20px;
 }
-
-.logo-ingreso img#google {
-    width: 22%;
+.alternative-login img#google {
+    width: 30px;
+    margin: 20px;
 }
-
 .reCAPTCHA p {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 20px;
-    padding-left: 10px;
-}
+} */
 
 /*
 --------------------------------------------------------
@@ -1825,9 +1816,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .model-finder p {
         width: 40%;
     }
-
-    .model-finder #la-linea {
-        width: 20vw;
+    .contenedor-linea{
         bottom: 40px;
     }
 
@@ -1850,60 +1839,13 @@ Navegación en TABLETS (ancho mínimo 768px px)
         padding: 0;
     }
 
-    /* -------------------------------------------------------*/
+    /* --------- LOGIN ---------------------------*/
 
-    .completar {
-        padding: 20px 5px;
+    .login {
+        width: 50%;
     }
-
-    .titular {
-        font-size: 35px;
-    }
-
-    .registro {
-        font-size: 25px;
-        margin: 50px;
-        padding: 0px 50px;
-    }
-
-    .caja {
-        width: 500px;
-        height: 40px;
-        border-radius: 10px;
-    }
-
-    .boton {
-        width: 200px;
-        height: 40px;
-        font-size: 18px;
-        margin-bottom: 40px;
-    }
-
-    .ingreso {
-        font-size: 30px;
-        margin: 40px 0px;
-    }
-
-    .logo-ingreso {
-        display: flex;
-        justify-content: space-around;
-        font-size: 40px;
-        padding-bottom: 30px;
-    }
-
-    .fa-facebook {
-        font-size: 30px;
-    }
-
-    div img.completar {
-        width: 15%;
-        padding: 5px;
-        border: red solid 2px;
-        margin-top: 13px;
-    }
-
-    .reCAPTCHA p {
-        font-size: 15px;
+    .login-img {
+        display: block;
     }
     
 
@@ -1959,23 +1901,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
         margin: 15px 0px;
     }
 
-    .ingreso h5 {
-        font-size: 15px;
-        font-weight: 600;
-    }
-
-    .registrarse a {
-        font-size: 13px;
-    }
-
-    .logo-ingreso {
-        align-items: center;
-    }
-
-    .logo-ingreso img#google {
-        width: 30%;
-        padding: 5px;
-    }
 
     /*--------------------------------------------------------*/
 
@@ -2121,7 +2046,12 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         padding: 0 30px;
     }
 
-    /* -------------------------------------------------------*/
+    /* ------------- LOGIN / REGISTER -------------------------------*/
+    
+    .login {
+        width: 40%;
+    }
+    
     main.shopify-checkout {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -2129,27 +2059,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         border-left: solid 2px #dcdfe3;
         padding: 20px;
         
-    }
-
-    .completar {
-        width: 40vw;
-    }
-
-    .titular {
-        font-size: 50px;
-    }
-
-    .completar img#LaLinea {
-        height: 50px;
-    }
-
-    form .registro {
-        font-size: 17px;
-    }
-
-    .logo-ingreso img#google {
-        width: 22%;
-        padding: 5px;
     }
 
     .data-product {
