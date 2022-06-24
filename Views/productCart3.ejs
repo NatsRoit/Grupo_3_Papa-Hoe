@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+            <main class="shopify-checkout-payment">
+                <section class="data-user">
+                    <div class="shopify-contact">
+                        <p> Carrito
+                            <i class="fa-solid fa-angle-right"></i>
+                        </p>
+                        <p> Información
+                            <i class="fa-solid fa-angle-right"></i>
+                        </p>
+                        <p class="resaltar"> Pago
+                            <i class="fa-solid fa-angle-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="chequeo">
+                        <div>
+                            <p>Contacto</p>
+                            <p>pepito@gmail.com</p>
+                            <a href="login">Cambiar</a>
+                        </div>
+                        
+                        <div class="division"></div>
+                        
+                        <div>
+                            <p>Envío a </p>
+                            <p>Av. Monroe 860 - (C1428) - C.A.B.A. </p>
+                            <a href="/productCart">Cambiar</a>
+                        </div>
+
+                        <div class="division"></div>
+
+                        <div>
+                            <p>Método de envío </p>
+                            <p>Normal </p>
+                            <a href="/productCart2">Cambiar</a>
+                        </div>
+                    </div>
+
+                    <div class="payment">
+                            <h2>Datos del pago</h2>
+                            <P>Todas las transacciones son seguras y encriptadas</P>
+                    </div>
+
+                    <div class="contenedor">
+                        <div >   
+                            <div class="titulos">
+                                <div>
+                                <input type="radio" name="metodoPago" value="metodoPago" required> Tarjeta de crédito
+                                </div>
+                                <div class="card">
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                    <i class="fa-brands fa-cc-amex"></i>
+                                    <a href="#">y otras...</a>
+                                </div>
+                            </div>
+                                <form action="">
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <label for="numeroTarjeta"></label> Número de tajeta
+                                            </div>
+                                            <input class="caja-shop" type="number" name="numeroTarjeta" id="numeroTarjeta"
+                                                placeholder="Número de tajeta" required>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="nombre"></label> Nombre y Apellido
+                                            </div>
+                                            <input class="caja-shop" type="text" name="nombre" id="nombre"
+                                                placeholder="Nombre y Apellido" required>
+                                        </div>
+                                        <div class="datosVencimiento">
+                                            <div>
+                                                <div>
+                                                    <label for="vencimiento"></label> Fecha de vencimiento (MM/AA)
+                                                </div>
+                                                <input class="caja-shop" type="text" name="vencimiento" id="vencimiento"
+                                                    placeholder="Fecha de vencimiento (MM/AA)" required>
+                                            </div>
+            
+                                            <div>
+                                                <div>
+                                                    <label for="seguridad"></label> Código de seguridad
+                                                </div>
+                                                <input class="caja-shop" type="number" name="seguridad" id="seguridad"
+                                                    placeholder="Código de seguridad" required>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </form>
+                        </div>
+
+                        <div class="">
+                            <div class="titulos">
+                                <div>
+                                    <input type="radio" name="metodoPago" value="metodoPago" required> Tarjeta de débito
+                                </div>
+                                <div>
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                    <a href="#">y otras...</a>
+                                </div>
+                            </div>
+                            <form action="">
+                                <div>
+                                    <div>
+                                        <div>
+                                            <label for="numeroTarjeta"></label> Número de tajeta
+                                        </div>
+                                        <input class="caja-shop" type="number" name="numeroTarjeta" id="numeroTarjeta"
+                                            placeholder="Número de tajeta" required>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for="nombre"></label> Nombre y Apellido
+                                        </div>
+                                        <input class="caja-shop" type="text" name="nombre" id="nombre"
+                                            placeholder="Nombre y Apellido" required>
+                                    </div>
+                                    <div class="datosVencimiento">
+                                        <div>
+                                            <div>
+                                                <label for="vencimiento"></label> Fecha de vencimiento (MM/AA)
+                                            </div>
+                                            <input class="caja-shop" type="text" name="vencimiento" id="vencimiento"
+                                                placeholder="Fecha de vencimiento (MM/AA)" required>
+                                        </div>
+        
+                                        <div>
+                                            <div>
+                                                <label for="seguridad"></label> Código de seguridad
+                                            </div>
+                                            <input class="caja-shop" type="number" name="seguridad" id="seguridad"
+                                                placeholder="Código de seguridad" required>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="">
+                            <div class="titulos">
+                                <input type="radio" name="metodoPago" value="metodoPago" required> Transferencia bancaria
+                            </div>
+                                <form action="">
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <label for="numeroCuenta"></label> Número de cuenta
+                                            </div>
+                                            <input class="caja-shop" type="number" name="numeroCuenta" id="numeroCuenta"
+                                                placeholder="Número de cuenta">
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="cbu"></label> CBU
+                                            </div>
+                                            <input class="caja-shop" type="number" name="cbu" id="cbu"
+                                                placeholder="CBU (Clave bancaria única)">
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="alias"></label> Alias
+                                            </div>
+                                            <input class="caja-shop" type="text" name="alias" id="alias"
+                                                placeholder="Alias">
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="cvu"></label> CVU
+                                            </div>
+                                            <input class="caja-shop" type="number" name="cvu" id="cvu"
+                                                placeholder="CVU (Clave virtual única)">
+                                        </div>
+            
+                                    </div>
+                                </form>
+                        </div>
+
+                        <div class="">
+                            <div class="titulos">
+                                <input type="radio" name="metodoPago" value="metodoPago" required> Tarjeta Mercado Pago
+                            </div>
+                        </div>
+
+                        <div class="">                            
+                            <div class="titulos">
+                                <input type="radio" name="metodoPago" value="metodoPago" required> Efectivo en puntos de Pago
+                                <p>Pago Facil o Rapipago</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <form action="#">
+                        <div class="direccion-facturación">
+                            <h2>Dirección de facturación</h2>
+
+                            <div class="direccion">
+                                <div>
+                                    <label for="dirección"></label> Dirección
+                                </div>
+                                <input class="caja-shop" type="text" name="dirección" id="dirección"
+                                    placeholder="Dirección" required>
+
+                                <div>
+                                    <div>
+                                        <label for="departamento"></label> Piso, departamento
+                                    </div>
+                                    <input class="caja-shop" type="text" name="departamento" id="departamento"
+                                        placeholder="Piso, departamento" required>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <label for="localidad"></label> Localidad
+                                    </div>
+                                    <input class="caja-shop" type="text" name="localidad" id="localidad"
+                                        placeholder="Localidad" required>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <label for="codigo-postal"></label> Código Postal
+                                    </div>
+                                    <input class="caja-shop" type="text" name="codigo-postal" id="codigo-postal"
+                                        placeholder="Código Postal" required>
+                                </div>
+                            </div>
+
+                        <div>
+                            <a href="productCart">
+                                <i class="fa-solid fa-angle-left"></i> Volver a envío
+                            </a>
+                            <button class="boton-shop" type="submit">Pagar ahora</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="data-product">
+                    <div class="mostrar">
+                        <a href="#">Mostrar detalle del pedido</a>
+                        <p>$XXXX,XX</p>
+                    </div>
+                    <div class="ocultar" >
+                        <a href="#">Ocultar detalle del pedido</a>
+                    </div>
+                    <div class="detallePedido">
+                    <article id="prod">
+                        <img src="/img/Surfboards/img_9758-1b.png" alt="producto">
+                        <p>Tabla Pipona</p>
+                        <p>U$525,00</p>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </article>
+                    <article id="prod">
+                        <img src="/img/accesorios/Fins/pyzel_c_fins_bc8db4a4-7135-4dbc-afa2-af81f9c25f6a.webp"
+                            alt="producto">
+                        <p>Fin Pipon</p>
+                        <p>U$225,00</p>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </article>
+                    </div>
+                    
+                    <form class="giftCard" action="# //gift card// ">
+                        <input class="caja-shop" type="text" name="giftCard" id="giftCard"
+                        placeholder="Gift Card o Código de descuento">
+                        <button class="boton-descuento" type="submit">Aplicar</button>
+                    </form>
+                    <div>
+                        <div class="importes">
+                            <h6>Subtotal</h6>
+                            <p>$XXXX,XX</p>
+                        </div>
+                        <div class="importes">
+                            <h6>Envío</h6>
+                            <p>$XXXX,XX</p>
+                        </div>
+                        
+                        <div class="division"></div>
+
+                        <div class="importes">
+                            <h5>Total</h5>
+                            <p> <strong>$XXXX,XX</strong></p>
+                        </div>
+
+                </section>
+            </main>
+            <%- include("./partials/footer") %>
+    </body>
+
+</html>

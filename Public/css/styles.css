@@ -787,6 +787,7 @@ form .registro {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
+
 }
 
 .titular {
@@ -800,7 +801,7 @@ form .registro {
     height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 80vw;
+    width: 100%;
     border: #335cb1 solid 1.5px;
 }
 
@@ -809,7 +810,7 @@ form .registro {
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #f4f5ec;
-    width: 80vw;
+    width: 100%;
     height: 35px;
     border-radius: 5px;
     margin: 15px 0px;
@@ -829,7 +830,6 @@ form .registro {
     flex-direction: column;
     align-items: center;
     margin: 25px 0px;
-    line-height: 4px;
 }
 
 .loguearse h5 {
@@ -858,7 +858,7 @@ form .registro {
     width: 22%;
 }
 
-.reCAPTCHA {
+.reCAPTCHA p {
     text-align: center;
     font-size: 10px;
     margin-top: 20px;
@@ -891,14 +891,18 @@ form .registro {
 
 /*
 --------------------------------------------------------
-    MAIN shop
+    MAIN ProductCart
 ------------------------------------------------------ */
 main.shopify-checkout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 10px;
+    display: flex;
     border-left: solid 2px #dcdfe3;
     padding: 20px;
+
+}
+
+.shopify-checkout .resaltar {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .shopify-contact {
@@ -906,10 +910,6 @@ main.shopify-checkout {
     font-size: 10px;
     justify-content: center;
     margin-bottom: 30px;
-}
-
-.informacion {
-    font-weight: bold;
 }
 
 .shopify-contact i {
@@ -931,15 +931,14 @@ main.shopify-checkout {
 
 .boton-chequeo {
     background-color: #fad6d1;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    color: black;
-    width: 90%;
+    width: 100%;
     height: 35px;
     border-radius: 5px;
     margin: 15px 0px;
     padding: 1px 10px;
-    position: relative;
+}
+.fa-cc-paypal {
+    font-size: 30px;
 }
 
 .division {
@@ -951,12 +950,15 @@ main.shopify-checkout {
 
 .division p {
     position: absolute;
-    top: -13px;
+    top: -15px;
     left: 47%;
 }
 
 .contacto {
     display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
     margin: 10px 0px;
 }
 
@@ -971,7 +973,7 @@ form {
     height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 90%;
+    width: 95%;
     border: #335cb1 solid 1px;
 }
 
@@ -984,20 +986,35 @@ form {
     margin-bottom: 20px;
 }
 
-form .direccion {
+.shopify-checkout .direccion {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 article {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: auto;
+    padding: 5px ;
+}
+
+#prod i {
+    padding-left: 10px;
 }
 
 .data-product #prod img {
     width: 10vw;
+}
+
+.data-product .mostrar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.data-product .ocultar {
+    display: none;
 }
 
 .boton-shop {
@@ -1005,18 +1022,175 @@ article {
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #f4f5ec;
-    width: 90%;
+    width: 50%;
     height: 35px;
     border-radius: 5px;
     margin: 15px 0px;
     padding: 1px 10px;
-    position: relative;
+}
+
+.shopify-checkout .giftCard {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+}
+.boton-descuento {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+}
+
+.data-product .boton {
+    background-color: #fad6d1;
+    color: black
 
 }
 
-.recomendado-shop {
-    background-color: #fad6d1;
+/*
+--------------------------------------------------------
+    MAIN ProductCart2
+------------------------------------------------------ */
+main.shopify-checkout-shipping {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+    border-left: solid 2px #dcdfe3;
+    padding: 20px;
+}
+
+.shopify-checkout-shipping .resaltar {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.shopify-checkout-shipping .chequeo div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+
+.shopify-checkout-shipping .division {
+    border-top: #b3b1b3 solid 1px;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.shopify-checkout-shipping h2 {
+    padding: 20px 0px;
+    margin-top: 10px;
+}
+
+.shopify-checkout-shipping .metodoEnvio {
+    border: #b3b1b3 solid 1px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.shopify-checkout-shipping .radio {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopify-checkout-shipping .boton-envio {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+    right: 15%;
+}
+
+.shopify-checkout-shipping .giftCard {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+}
+
+.shopify-checkout-shipping .importes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*
+--------------------------------------------------------
+    MAIN ProductCart3
+------------------------------------------------------ */
+main.shopify-checkout-payment {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+    border-left: solid 2px #dcdfe3;
+    padding: 20px;
+}
+
+.shopify-checkout-payment .resaltar {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.shopify-checkout-payment .chequeo div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20 px;
+}
+
+.shopify-checkout-payment .payment {
     margin-top: 20px;
+}
+
+.shopify-checkout-payment .titulos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #dcdfe3; /* sólo quise resaltar que iría en otro color*/
+    padding: 10px 0px;
+}
+
+.shopify-checkout-payment .datosVencimiento {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.shopify-checkout-payment .direccion-facturación {
+    margin: 10px 0px;
+}
+
+.shopify-checkout-payment .giftCard {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+}
+
+.shopify-checkout-payment .boton-descuento {
+    background-color: #335cb1;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: #f4f5ec;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    padding: 1px 10px;
+}
+
+.shopify-checkout-payment .importes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* -------------------------------------------
@@ -1687,16 +1861,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
         font-size: 35px;
     }
 
-    div a #shaka {
-        width: 200px;
-        border: solid transparent 0px;
-        margin-left: 35%;
-    }
-
-    div a #imagen-header {
-        height: 50px;
-    }
-
     .registro {
         font-size: 25px;
         margin: 50px;
@@ -1712,7 +1876,6 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .boton {
         width: 200px;
         height: 40px;
-        left: 35%;
         font-size: 18px;
         margin-bottom: 40px;
     }
@@ -1743,6 +1906,11 @@ Navegación en TABLETS (ancho mínimo 768px px)
         margin-top: 13px;
     }
 
+    .reCAPTCHA p {
+        font-size: 15px;
+    }
+    
+
     /* -------------------------------------------------------*/
     .shop .producto-shop {
         width: 24%;
@@ -1765,7 +1933,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
     }
 
     .bienvenida img#shaka {
-        width: 18%;
+        width: 15%;
         margin-left: 10%;
     }
 
@@ -1795,7 +1963,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
         margin: 15px 0px;
     }
 
-    h5 {
+    .ingreso h5 {
         font-size: 15px;
         font-weight: 600;
     }
@@ -1958,6 +2126,14 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     }
 
     /* -------------------------------------------------------*/
+    main.shopify-checkout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 10px;
+        border-left: solid 2px #dcdfe3;
+        padding: 20px;
+        
+    }
 
     .completar {
         width: 40vw;
@@ -1965,10 +2141,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 
     .titular {
         font-size: 50px;
-    }
-
-    .bienvenida img#shaka {
-        width: 15%;
     }
 
     .completar img#LaLinea {
@@ -1984,5 +2156,12 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
         padding: 5px;
     }
 
+    .data-product {
+        margin-top: 40px;
+    }
+    .data-product a {
+        display: none;
+    }
 
 }
+

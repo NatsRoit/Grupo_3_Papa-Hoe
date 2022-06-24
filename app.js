@@ -21,8 +21,16 @@ app.get('/productCart', (req,res) => {
     res.render(path.resolve(__dirname, './views/productCart.ejs'))
 });
 
+app.get('/productCart2', (req,res) => {
+    res.render(path.resolve(__dirname, './views/productCart2.ejs'))
+});
+
+app.get('/productCart3', (req,res) => {
+    res.render(path.resolve(__dirname, './views/productCart3.ejs'))
+});
+
 app.get('/productDetail1', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail1.html'))
+    res.sendFile(path.resolve(__dirname, './views/productDetail1.html')) //este va?//
 });
 app.get('/productDetail', (req,res) => {
     res.render(path.resolve(__dirname, './views/productDetail.ejs'))

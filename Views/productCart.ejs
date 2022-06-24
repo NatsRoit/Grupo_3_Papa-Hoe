@@ -8,7 +8,10 @@
             <main class="shopify-checkout">
                 <section class="data-user">
                     <div class="shopify-contact">
-                        <p class="informacion"> Información
+                        <p> Carrito
+                            <i class="fa-solid fa-angle-right"></i>
+                        </p>
+                        <p class="resaltar"> Información
                             <i class="fa-solid fa-angle-right"></i>
                         </p>
                         <p> Pago
@@ -18,7 +21,9 @@
 
                     <div class="chequeo">
                         <h4>Chequeo rápido</h4>
-                        <button class="boton-chequeo" type="submit">Aceptar</button>
+                        <button class="boton-chequeo" type="submit">
+                            <i class="fa-brands fa-cc-paypal"></i>
+                        </button>
                     </div>
 
                     <div class="division">
@@ -26,16 +31,18 @@
                     </div>
 
 
-                    <form action="/views/shop.html" method="post">
+                    <form action="/views/productCart.ejs" method="post">
                         <div class="contacto">
                             <h2>Información de contacto</h2>
-                            <P>¿Ya tiene una cuenta?</P>
-                            <a href="login.html">Iniciar sesión</a>
+                            <P>¿Ya tiene una cuenta?
+                            <a href="login">Iniciar sesión</a>
+                            </P>
                         </div>
                         <input class="caja-shop" type="email" name="email" id="email"
                             placeholder="Correo Electrónico / Usuari@" required>
+                    </form>
 
-
+                    <form action="/views/productCart.ejs">
                         <div class="direccion-envio">
                             <h2>Dirección de envío</h2>
 
@@ -89,32 +96,49 @@
                         </div>
 
                         <div>
+                            <a href="productCart">
+                                <i class="fa-solid fa-angle-left"></i> Volver a XXXXX
+                            </a>
                             <button class="boton-shop" type="submit">Continuar con el envío</button>
                         </div>
                     </form>
                 </section>
 
                 <section class="data-product">
+                    <div class="mostrar">
+                        <a href="#">Mostrar detalle del pedido</a>
+                        <p>$XXXX,XX</p>
+                    </div>
+                    <div class="ocultar" >
+                        <a href="#">Ocultar detalle del pedido</a>
+                    </div>
+                    <div class="detallePedido">
                     <article id="prod">
                         <img src="/img/Surfboards/img_9758-1b.png" alt="producto">
                         <p>Tabla Pipona</p>
                         <p>U$525,00</p>
+                        <i class="fa-solid fa-trash-can"></i>
                     </article>
                     <article id="prod">
                         <img src="/img/accesorios/Fins/pyzel_c_fins_bc8db4a4-7135-4dbc-afa2-af81f9c25f6a.webp"
                             alt="producto">
                         <p>Fin Pipon</p>
                         <p>U$225,00</p>
+                        <i class="fa-solid fa-trash-can"></i>
                     </article>
-                    <div class="recomendado-shop">
-                        <h5>Recomendado</h5>
-                        <article id="prod">
-                            <img src="/img/accesorios/LegRopes/01 FREEDOM HELIX ALL ROUND LEASH/fcs_legropes_freedom-helix-all-round_blue-black_a_1080x.webp"
-                                alt="producto">
-                            <p>Leg Ropres Pipon</p>
-                            <p>U$175,00</p>
-                        </article>
                     </div>
+                    
+                    <button class="boton" type="submit">Seguir comprando
+                        <a href="shop"></a>
+                    </button>
+
+                    <form class="giftCard" action="# //gift card// ">
+                        <input class="caja-shop" type="text" name="giftCard" id="giftCard"
+                        placeholder="Gift Card o Código de descuento">
+                        <button class="boton-descuento" type="submit">Aplicar</button>
+                    </form>
+
+
                 </section>
             </main>
             <%- include("./partials/footer") %>
