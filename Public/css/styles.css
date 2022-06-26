@@ -764,14 +764,14 @@ textarea {
 --------------------------------------------------------
     MAIN Login
 ------------------------------------------------------ */
-.login {
+.login-register {
     width: 95%;
-    height: 85vh;
+    min-height: 85vh;
     margin: auto;
     padding: 60px 20px;
     text-align: center;
 }
-.login h2 {
+.login-register h2 {
     padding: 30px 0;
     font-size: 50px;
     letter-spacing: 2px;
@@ -797,6 +797,7 @@ textarea {
     justify-content: space-between;
     font-size: 14px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 .login-input a {
     font-size: 12px;
@@ -807,7 +808,7 @@ textarea {
 .login-formulario input {
     border-radius: 2px;
     height: 50px;
-    margin: 7px 0 40px 0;
+    margin: 7px 0 30px 0;
     padding: 1px 10px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.4);
@@ -1841,7 +1842,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
 
     /* --------- LOGIN ---------------------------*/
 
-    .login {
+    .login-register {
         width: 50%;
     }
     .login-img {
@@ -2048,10 +2049,10 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 
     /* ------------- LOGIN / REGISTER -------------------------------*/
     
-    .login {
+    .login-register {
         width: 40%;
     }
-    
+
     main.shopify-checkout {
         display: grid;
         grid-template-columns: 2fr 1fr;
