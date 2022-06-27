@@ -52,7 +52,17 @@ app.get('/tracker', (req,res) => {
     res.render(path.resolve(__dirname, './views/tracker.ejs'))
 });
 
+app.get('/faqs', (req,res) => {
+    res.render(path.resolve(__dirname, './views/faqs.ejs'))
+});
 
+app.get('/politica-cancelacion', (req,res) => {
+    res.render(path.resolve(__dirname, './views/politica-cancelacion.ejs'))
+});
+
+app.get('/devoluciones', (req,res) => {
+    res.render(path.resolve(__dirname, './views/devoluciones.ejs'))
+});
 app.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo');
 });
