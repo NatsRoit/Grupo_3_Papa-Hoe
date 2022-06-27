@@ -8,9 +8,9 @@
             <main class="shopify-checkout">
                 <section class="data-user">
                     <div class="shopify-contact">
-                        <p> Carrito
+                        <a href="productDetail"> Carrito
                             <i class="fa-solid fa-angle-right"></i>
-                        </p>
+                        </a>
                         <p class="resaltar"> Información
                             <i class="fa-solid fa-angle-right"></i>
                         </p>
@@ -19,12 +19,12 @@
                         </p>
                     </div>
 
-                    <div class="chequeo">
+                    <form class="chequeo" action="#">
                         <h4>Chequeo rápido</h4>
                         <button class="boton-chequeo" type="submit">
                             <i class="fa-brands fa-cc-paypal"></i>
                         </button>
-                    </div>
+                    </form>
 
                     <div class="division">
                         <p>o</p>
@@ -42,7 +42,7 @@
                             placeholder="Correo Electrónico / Usuari@" required>
                     </form>
 
-                    <form action="/views/productCart.ejs">
+                    <form action="/views/productCart" method="post">
                         <div class="direccion-envio">
                             <h2>Dirección de envío</h2>
 
@@ -91,15 +91,17 @@
                             <div>
                                 <label for="telefono"></label> Teléfono
                             </div>
-                            <input class="caja-shop" type="number" name="telefono" id="telefono" placeholder="Teléfono"
+                            <input class="caja-shop" type="text" name="telefono" id="telefono" placeholder="Teléfono"
                                 required>
                         </div>
 
                         <div>
-                            <a href="productCart">
+                            <a href="productDetail">
                                 <i class="fa-solid fa-angle-left"></i> Volver a XXXXX
                             </a>
+                            <a href="productCart2">
                             <button class="boton-shop" type="submit">Continuar con el envío</button>
+                            </a>
                         </div>
                     </form>
                 </section>
