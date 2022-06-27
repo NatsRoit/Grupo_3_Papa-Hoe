@@ -50,6 +50,11 @@ app.get('/about', (req,res) => {
     res.render(path.resolve(__dirname, './views/about.ejs'))
 });
 
+app.get('/tracker', (req,res) => {
+    res.render(path.resolve(__dirname, './views/tracker.ejs'))
+});
+
+
 app.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo');
 });
