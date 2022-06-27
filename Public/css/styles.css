@@ -1016,12 +1016,12 @@ form {
 } */
 
 .caja-shop {
-    border-radius: 5px;
+    border-radius: 2px;
     height: 35px;
     margin: 10px 0px;
     padding: 1px 10px;
-    width: 95%;
-    border: #335cb1 solid 1px;
+    width: 100%;
+    border: #001728 solid 1px;
 }
 
 .direccion-envio {
