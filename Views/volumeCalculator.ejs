@@ -1,117 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("./partials/head") %>
+<%- include("./partials/head") %>
 
     <body>
         <%- include("./partials/header") %>
 
-    <header class="section-header">
-        <img id="carrousel-image-1" src="./img/jeremy-bishop-pikyGuAmwpM-unsplash.jpg" alt="PapaHoe foto1">
-    </header>
+            <header class="section-header">
+                <img id="carrousel-image-1" src="./img/jeremy-bishop-pikyGuAmwpM-unsplash.jpg" alt="PapaHoe foto1">
+            </header>
 
-    <main class="volume-calculator-view">
-        <div class="title-calculator-view">
-            <h1>Volume Calculator</h1>
-            <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
-            <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
-        </div>
+            <main class="volume-calculator-view">
+                <div class="title-calculator-view">
+                    <h1>Volume Calculator</h1>
+                    <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
+                    <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
+                </div>
 
-        <form action="/volumeCalculator" method="GET">
-            <div class="form-calculator-view">
-                <div class="volume-container-view">
-                    <label for="peso">Peso</label>
-                    <datalist id="peso-marks">
-                        <option value="0" label="20">20</option>
-                        <option value="10"></option>
-                        <option value="20"></option>
-                        <option value="30" label="50">50</option>
-                        <option value="40"></option>
-                        <option value="50"></option>
-                        <option value="60" label="80">80</option>
-                    </datalist>
-                    <input type="range" min="0" max="150" value="50" step="5" id="peso" list="peso-marks" name="peso">
-                </div>
-                <div class="volume-container-view">
-                    <label for="altura">Altura</label><br>
-                    <input id="altura" type="range" min="1" max="10" value="0" step="0.5" list="tickmarks"
-                        name="altura">
-                    <datalist id="tickmarks">
-                    </datalist>
-                </div>
-                <div class="volume-container-view">
-                    <label for="edad">Edad</label><br>
-                    <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks" name="edad">
-                    <datalist id="tickmarks">
-                    </datalist>
-                </div>
-                <div class="volume-container-view">
-                    <label for="entrenamiento">Entrenamiento</label><br>
-                    <input id="entrenamiento" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
-                        name="entrenamiento">
-                    <datalist id="tickmarks">
-                    </datalist>
-                    <!-- <option value="bajo">Mmmhhh</option>
+                <form action="/volumeCalculator" method="GET">
+                    <div class="form-calculator-view">
+                        <div class="volume-container-view">
+                            <label for="peso">Peso</label>
+                            <datalist id="peso-marks">
+                                <option value="0" label="20">20</option>
+                                <option value="10"></option>
+                                <option value="20"></option>
+                                <option value="30" label="50">50</option>
+                                <option value="40"></option>
+                                <option value="50"></option>
+                                <option value="60" label="80">80</option>
+                            </datalist>
+                            <input type="range" min="0" max="150" value="50" step="5" id="peso" list="peso-marks"
+                                name="peso">
+                        </div>
+                        <div class="volume-container-view">
+                            <label for="altura">Altura</label><br>
+                            <input id="altura" type="range" min="1" max="10" value="0" step="0.5" list="tickmarks"
+                                name="altura">
+                            <datalist id="tickmarks">
+                            </datalist>
+                        </div>
+                        <div class="volume-container-view">
+                            <label for="edad">Edad</label><br>
+                            <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
+                                name="edad">
+                            <datalist id="tickmarks">
+                            </datalist>
+                        </div>
+                        <div class="volume-container-view">
+                            <label for="entrenamiento">Entrenamiento</label><br>
+                            <input id="entrenamiento" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
+                                name="entrenamiento">
+                            <datalist id="tickmarks">
+                            </datalist>
+                            <!-- <option value="bajo">Mmmhhh</option>
                         <option value="medio">Podría entrenar más</option>
                         <option value="alto">Bastante</option> -->
-                </div>
-                <div class="volume-container-view">
-                    <label for="frecuencia">Frecuencia</label><br>
-                    <input id="frecuencia" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
-                        name="frecuencia">
-                    <datalist id="tickmarks">
-                    </datalist>
-                    <!-- <select name="frecuencia" id="frecuencia">
+                        </div>
+                        <div class="volume-container-view">
+                            <label for="frecuencia">Frecuencia</label><br>
+                            <input id="frecuencia" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
+                                name="frecuencia">
+                            <datalist id="tickmarks">
+                            </datalist>
+                            <!-- <select name="frecuencia" id="frecuencia">
                         <option value="nunca">3/5 veces por semana</option>
                         <option value="mensualmente">1 vez por semana</option>
                         <option value="semanalmente">1/2 veces por mes</option>
                         <option value="diariamente">1/2 veces por año</option>
                     </select> -->
-                </div>
-                <div class="volume-container-view">
-                    <label for="experiencia">experiencia</label><br>
-                    <input id="experiencia" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
-                        name="experiencia">
-                    <datalist id="tickmarks">
-                    </datalist>
-                    <!-- <select name="experiencia" id="experiencia">
+                        </div>
+                        <div class="volume-container-view">
+                            <label for="experiencia">experiencia</label><br>
+                            <input id="experiencia" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
+                                name="experiencia">
+                            <datalist id="tickmarks">
+                            </datalist>
+                            <!-- <select name="experiencia" id="experiencia">
                         <option value="beginner">Beginner</option>
                         <option value="intermedio">Intermedio</option>
                         <option value="avanzado">Avanzado</option>
                         <option value="experto">Experto</option>
                     </select> -->
+                        </div>
+                    </div>
+                    <button type="submit">Calculá mi talla</button>
+                </form>
+
+                <div class="result-calculator">
+                    <h2>Tu volumen recomendado</h2>
+                    <div>
+                        <br><br><br><br><br><br>
+                    </div>
+
+                    <h1>Volumen & Dimensiones</h1>
+                    <p>El volumen de una tabla de surf se calcula a partir de su longitud, ancho y espesor, Pero visto
+                        que cada
+                        tabla tiene una forma diferente, dos tablas de surf con las mismas dimensiones pueden tener un
+                        volumen
+                        completamente diferente. debido a estos parámetros que se utilizan en el cálculo del
+                        volumen.<br><br>
+
+                        El volumen da un índice de flotación de la tabla de surf y se calcula en litros. Hoy en día,
+                        este
+                        volumen
+                        se puede calcular fácilmente a través de un software especializado.<br><br>
+
+                        Un mayor volumen te permitirá remar más fácilmente y un estilo de surf más rápido: montarás más
+                        olas y
+                        con menos esfuerzo. ¡Pero cuidado! Si tu tabla tiene demasiado volumen, flotarás demasiado y
+                        será más
+                        difícil hacer giros y maniobras en las olas.<br><br>
+
+                        Por el contrario, si no tenés suficiente volumen en tu tabla, no flotarás lo suficiente, tu surf
+                        será
+                        más lento, arrancar en las olas será más difícil y tendrás que gastar más energía para poder
+                        remarla.
+                        Una vez
+                        de pie en la tabla, un surfista inexperto tendrá más dificultades para mantener su velocidad
+                        sobre la
+                        ola.</p>
                 </div>
-            </div>
-            <button type="submit">Calculá mi talla</button>
-        </form>
-
-        <div class="result-calculator">
-            <h2>Tu volumen recomendado</h2>
-            <div>
-                <br><br><br><br><br><br>
-            </div>
-
-            <h1>Volumen & Dimensiones</h1>
-            <p>El volumen de una tabla de surf se calcula a partir de su longitud, ancho y espesor, Pero visto que cada
-                tabla tiene una forma diferente, dos tablas de surf con las mismas dimensiones pueden tener un volumen
-                completamente diferente. debido a estos parámetros que se utilizan en el cálculo del volumen.<br><br>
-
-                El volumen da un índice de flotación de la tabla de surf y se calcula en litros. Hoy en día, este
-                volumen
-                se puede calcular fácilmente a través de un software especializado.<br><br>
-
-                Un mayor volumen te permitirá remar más fácilmente y un estilo de surf más rápido: montarás más olas y
-                con menos esfuerzo. ¡Pero cuidado! Si tu tabla tiene demasiado volumen, flotarás demasiado y será más
-                difícil hacer giros y maniobras en las olas.<br><br>
-
-                Por el contrario, si no tenés suficiente volumen en tu tabla, no flotarás lo suficiente, tu surf será
-                más lento, arrancar en las olas será más difícil y tendrás que gastar más energía para poder remarla.
-                Una vez
-                de pie en la tabla, un surfista inexperto tendrá más dificultades para mantener su velocidad sobre la
-                ola.</p>
-        </div>
-    </main>
-    <%- include("./partials/footer") %>
-</body>
+            </main>
+            <%- include("./partials/footer") %>
+    </body>
 
 </html>
