@@ -2267,9 +2267,9 @@ button:active {
 button:focus {
   outline: none;
 }
-button {
+/* button {
   margin-top: 50vh;
-}
+} */
 
 .d-table-row {
   text-align: right;
