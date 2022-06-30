@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main>
+                <div id="main-image">
+                    <img src="/img/surfboards/tabla-main.jpeg" alt="Tabla">
+                </div>
+
+                <section id="detalle-producto">
+
+                    <div id="producto-izquierda">
+                        <div id="imagen-producto">
+                            <div id="imagenes-secundarias">
+                                <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
+                                <img src="/img/surfboards/short-bord-example2.jpg" alt="Short board">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="producto-derecha">
+                        <div>
+                            <h1>Sandman</h1>
+                            <div class="precio">
+                                $30.00
+                            </div>
+                            <h2>Especificaciones</h2>
+                            <div id="descripcion">
+                                <p>Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que
+                                    el
+                                    surf fuera más fácil para la persona 'normal', pero que también tuviera cierta
+                                    versatilidad para ser utilizada como una tabla semiescalonada para el surfista más
+                                    regular.</p>
+                                <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
+                                <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
+                                <p><strong>Tipo de ola:</strong> todas las condiciones</p>
+                            </div>
+
+                            <!-- form -->
+                            <form id="agregar-carrito">
+                                <div class="opciones">
+                                    <div>
+                                        <h5>Dimensiones</h5>
+                                        <select name="" id="opciones-desplegable">
+                                            <option value="">5'10--19 1/2--2 9/16--31</option>
+                                            <option value="">5'11--19 5/8--2 5/8--32</option>
+                                            <option value="">6'0--19 3/4--2 11/16--33</option>
+                                            <option value="">6'0--19 3/4--2 11/16--33</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <h5>Fin System</h5>
+                                        <select name="" id="opciones-desplegable"">
+                                    <option value="">CS SII</option>
+                                    <option value="">Futures</option>
+                                </select>                                    
+                            </div>
+                            <div>
+                                <h5>Cantidad</h5>                            
+                                <div>
+                                    <span>-</span>
+                                    <input type=" number">
+                                            <span>+</span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div>
+                            <input class="boton" value="Agregar al Carrito" type="submit">
+                        </div>
+                        </form>
+                        <!-- /form -->
+
+                        <div class="features">
+                            <h2>Features</h2>
+                            <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
+                            <p><strong>Rocker — </strong>Flat entry rocker into a slight tail lift.</p>
+                            <p><strong>Concave — </strong>Slight Single into slight Double Concave</p>
+                            <p><strong>Tail — </strong>Round tail</p>
+                            <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
+                        </div>
+                        <div class="mas-informacion">
+                            <img src="/img/surfboards/tabla.webp" alt="Tabla">
+                            <div>
+                                <p class="mas-info"><strong> Darren designed the Sandman with the wide point moved
+                                        forward 2 inches and the deck rolled into a sleek medium low rail.
+                                        This design provides easy paddling without losing the signature DHD performance.
+                                        The rounded pin tail allows smooth rail to rail surfing, the slight single to
+                                        double concave with a flat entry rocker generates the speed that you are looking
+                                        for.</strong></p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="/img/size.jpeg" alt="Sizes">
+                        </div>
+
+                    </div>
+                    </div>
+                </section>
+
+                <h1 class="titulo-extras">Tambien te puede interesar</h1>
+                <section class="product-container">
+                    <article class="product">
+                        <a href="#">
+                            <img src="/img/accesorios/Tractions/06-CHIPPA-WILSON-FRONT-TRACTION/Chippa-Wilson-Front-Foot-Traction_1080x.webp"
+                                alt="Fin" width="100%">
+                            <div class="product-info">
+                                <h5>Chippa Wilson front foot</h5>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product">
+                        <a href="">
+                            <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_blue-black_a_1080x.webp"
+                                alt="Leg rope blue" width="100%">
+                            <div class="product-info">
+                                <h5>Leg Rope Blue</h5>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product">
+                        <a href="">
+                            <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_natural-black_a_1080x.webp"
+                                alt="Leg rope black" width="100%">
+                            <div class="product-info">
+                                <h5>Leg Rope Black</h5>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product">
+                        <a href="">
+                            <img src="/img/accesorios/Tractions/01-T-3-TRACTION/fcs_grips_t3_black-blue_a_1080x.webp"
+                                alt="Traction" width="100%">
+                            <div class="product-info">
+                                <h5>Traction</h5>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>
