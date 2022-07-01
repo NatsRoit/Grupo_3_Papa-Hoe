@@ -98,20 +98,20 @@ main p {
 /*-------CLASE PARA LINKS CON FORMA DE BOTÓN IRREGULAR------------- */
 
 a.button-link.arena {
-  background-image: url(/brand/Fondito-Arena.svg);
+  background-image: url(/images/brand/Fondito-Arena.svg);
 }
 
 a.button-link.azul-marino {
-  background-image: url(/brand/Fondito-AzulMarino.svg);
+  background-image: url(/images/brand/Fondito-AzulMarino.svg);
   color: #f4f5ec !important;
 }
 
 a.button-link.azul-tecnico {
-  background-image: url(/brand/Fondito-AzulTecnico.svg);
+  background-image: url(/images/brand/Fondito-AzulTecnico.svg);
 }
 
 a.button-link.rosa {
-  background-image: url(/brand/Fondito-RosaSummer.svg);
+  background-image: url(/images/brand/Fondito-RosaSummer.svg);
 }
 
 a.button-link {
@@ -122,7 +122,7 @@ a.button-link {
   font-size: 16px;
   text-align: center;
   /* position: relative; */
-  background-image: url(/brand/Fondito-Arena.svg);
+  background-image: url(/images/brand/Fondito-Arena.svg);
   background-repeat: no-repeat;
   background-size: 100% 30px;
   background-position: center center;
@@ -454,7 +454,7 @@ header.slider {
   z-index: 1;
   opacity: 30%;
   background-color: #fad6d1;
-  background-image: url(/img/surfboard-construction.jpg);
+  background-image: url(/images/stock/surfboard-construction.jpg);
   background-repeat: no-repeat;
   background-position-x: 60vw;
   background-size: auto 100%;
@@ -730,11 +730,13 @@ input[type="range"]::-moz-range-progress {
   margin: auto;
   padding: 50px 20px;
   text-align: center;
+
 }
 .login-register h2 {
-  padding: 30px 0;
+  padding: 30px 0 60px;
   font-size: 50px;
   letter-spacing: 2px;
+  text-align: center;
 }
 .login-img {
   display: none;
@@ -760,35 +762,46 @@ input[type="range"]::-moz-range-progress {
   border: 1px solid #f58172;
   font-weight: 600;
 }
-
+.login-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.login-formulario form{
+  width: 100%;
+}
 .login-input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
   font-size: 14px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-align: left;
+  /* text-transform: uppercase; */
 }
 .login-input a {
   font-size: 12px;
   font-weight: 400;
-  align-self: center;
+  color: #293c49;
 }
-
-.login-formulario input {
+.login-input input {
   border-radius: 2px;
   height: 45px;
-  margin: 5px 0 25px 0;
+  margin: 4px 0 20px 0;
   padding: 1px 10px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.4);
   border: #001728 solid 0.5px;
 }
+.login-input.nombre,
+.login-input.apellido {
+  display: inline-block;
+  width: 49%;
+}
 
-.submit-button {
-  background-color: #001728;
-  color: #f4f5ec;
-  width: 100%;
+button.submit-button {
   height: 50px;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -796,12 +809,18 @@ input[type="range"]::-moz-range-progress {
   padding: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
+  background-color: #001728;
+  color: #f4f5ec;
+  width: 100%;
 }
-.submit-button:hover {
+.submit-button {
+  width: 100%;
+}
+.submit-button button:hover {
   font-weight: 700;
 }
 .login-redirect p {
-  margin-top: 30px;
+  margin-top: 10px;
   font-weight: 400;
 }
 .login-redirect a {

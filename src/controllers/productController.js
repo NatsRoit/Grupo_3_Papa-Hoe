@@ -11,7 +11,9 @@ const product = {
         res.render(path.resolve(__dirname, '../views/product/shop'),{surfboards});
     },
     detail: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/detail'),{surfboards});
+        let idProducto = req.params.id;
+        let showProduct = surfboards.find(item => item.id == idProducto);
+        res.render(path.resolve(__dirname, '../views/product/detail'),{surfboards: showProduct});
     },
     // surfboards: function(req,res){
     //     res.render(path.resolve(__dirname, '../views/product/shop'),{surfboards});
