@@ -4,12 +4,7 @@ const path = require("path");
 const multer = require("multer");
 
 // Acá requeriremos el controller correspondiente a las rutas de admin
-let adminController = require(path.join(
-  __dirname,
-  "../controllers/adminController.js"
-));
-
-
+let adminController = require(path.join(__dirname, "../controllers/adminController.js"));
 
 //Requerir el middleware Ruta Acceso
 const acceso = require(path.resolve(__dirname, "../middlewares/acceso"));

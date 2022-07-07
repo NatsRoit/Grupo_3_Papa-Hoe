@@ -2,11 +2,15 @@
 [
     {
       "id": "1",
-      "nombre": "Moto honda c125c",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": "150.000",
-      "descuento": "30",
-      "imagen": "color-rojo-wave.jpg"
+      "marca": "FCS",
+      "modelo": "T-3",
+      "clase": "Traction",
+      "nombre": "Tracción FCS T-3",
+      "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+      "características": "",
+      "precio": "59.95",
+      "descuento": "0",
+      "imagen": "img/accesorios/Tractions/01-T-3-TRACTION/fcs_grips_t3_black-blue_a_1080x.webp",
     },
     {
       "id": 2,
