@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 
 let surfboards =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/surfboards.json')));
-let accesorios =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/accesorios.json')));
-let complementos =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/complementos.json')));
+// let accesorios =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/accesorios.json')));
+// let complementos =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/complementos.json')));
 
 
 const product = {
