@@ -2,8 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-let archivoUser = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"))
+let archivoUser = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"))
 );
 
 let acceso = (req, res, next) => {
