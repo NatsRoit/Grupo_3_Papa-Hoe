@@ -1,7 +1,6 @@
 let express = require('express');
 let router = express.Router();
 const path = require('path');
-const fs = require('fs');
 
 let productController = require(path.join(__dirname, '../controllers/productController.js'));
 

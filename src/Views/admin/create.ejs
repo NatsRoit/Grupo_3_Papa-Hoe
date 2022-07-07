@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("../partials/head") %>
+
+<%- include("./partials/head") %>
 
     <body>
-        <%- include("../partials/header") %>
-            <main class="en-construccion">
-                <h1>Página en construcción</h1>
-                <a class="rosa button-link" href="#">Hola como estas</a>
+        <%- include("./partials/header") %>
+
+            <main>
+                <div class="newProducts">
+                    <h2>Ingresar nuevos productos</h2>
+                    <div>
+                        <!-- <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"> -->
+                        <img src="/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
+                    </div>
+
+                    <div class="login-formulario">
+                        <form action="/views/newProducts" method="post">
+                            <div class="login-input">
+                                <label for="id">ID del producto</label>
+                                <input type="text" name="id" id="id" placeholder="ID" required>
+                            </div>
+                            <div class="login-input">
+                                <label for="modelo">Modelo</label>
+                                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required>
+                            </div>
+                            <div class="login-input">
+                                <label for="descripcion">Descripción</label>
+                                <textarea type="text" name="nombre" id="nombre" placeholder="Descripción" required></textarea>
+                            </div>
+
+                            <div class="login-input">
+                                <label for="habilidad">Habilidad</label>
+                                <select name="habilidad" id="habilidad">
+                                    <option value="principiante">Principiante</option>
+                                    <option value="intermedio">Intermedio</option>
+                                    <option value="experto">Experto</option>
+                                </select>             
+                            </div>
+                            <div class="login-input">
+                                <label for="dimensiones">Dimensiones</label>
+                                <select name="dimensiones" id="dimensiones">
+                                    <option value="1">5'10--19 1/2--2 9/16--31</option>
+                                    <option value="2">5'11--19 5/8--2 5/8--32</option>
+                                    <option value="3">6'0--19 3/4--2 11/16--33</option>
+                                    <option value="4">6'0--19 3/4--2 11/16--33</option>
+                                </select>
+                            </div>
+                            <div class="login-input">
+                                <label for="finSystem">Fin System</label>
+                                <select name="finSystem" id="finSystem">
+                            <option value="5">CS SII</option>
+                            <option value="6">Futures</option>
+                        </select>                                    
+                    </div>
+                            <div class="login-input">
+                                <label for="img">Imagen del Producto</label>
+                                <input type="file" name="imageProduct" id="imageProduct" placeholder="Imagen del Producto"
+                                    required>
+                            </div>
+                            <div>
+                                <button class="submit-button" type="submit">Crear</button>
+                                <br><br><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </main>
-            <%- include("../partials/footer") %>
+            <%- include("./partials/footer") %>
     </body>
 
 </html>
