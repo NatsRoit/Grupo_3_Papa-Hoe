@@ -16,12 +16,12 @@ const multer = require('multer');
 let userController = require(path.join(__dirname, '../controllers/userController.js'));
 
 router.get('/login',userController.login);
-router.post('/login',userController.ingresar);
+//router.post('/login',userController.ingresar);
 
 router.get('/register',userController.register);
-router.post('/register',userController.create);
+//router.post('/register',userController.create);
 
 //ACÁ DEBERIAMOS AGREGAR:  ruta que se activa al momento que el usuario desea salir dela página
-router.get('/logout', userController.logout);
+//router.get('/logout', userController.logout);
 
 module.exports = router;
