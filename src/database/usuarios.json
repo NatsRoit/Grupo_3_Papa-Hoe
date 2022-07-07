@@ -14,5 +14,14 @@
     "password": "$2a$10$X2J4.UdK7SAdc6JfhloTlOtZgMYuwGpuXY95x32Xm3/Ikr7StGJJq",
     "role": 1,
     "usuario": "pepe"
+  },
+  {
+    "nombre": "untipo",
+    "apellido": "notiene",
+    "email": "untipo@outlook.com",
+    "password": "$2a$10$txpyOW1qf8IPAOsG0cf77OYyKdCkyGPap3R9Wo4BkA2bIu2KtlC.m",
+    "role": 1,
+    "usuario": "untipazo"
   }
+
 ]
