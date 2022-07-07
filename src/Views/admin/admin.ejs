@@ -3,7 +3,7 @@
   <%- include('../partials/head.ejs') %>    
 <body>
     <main class="container-fluid">
-      <%- include('../partials/navBar.ejs') %>
+      <%- //include('../partials/navBar.ejs') %>
       <!--Administrador de productos-->
       <br>
       <section class="row">
@@ -25,7 +25,7 @@
               </tr>
             </thead>
             <tbody>
-              <% motos.forEach(moto => { %>
+              <% productos.forEach(moto => { %>
               <tr>
                 <td><%= moto.id%> </td>
                 <td><%= moto.nombre%> </td>

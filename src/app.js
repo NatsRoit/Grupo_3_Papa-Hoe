@@ -6,6 +6,18 @@ const path = require('path');
 //Indico la carpeta donde se encuentran los archivos estáticos
 app.use( express.static(path.resolve(__dirname, '../public')));
 
+
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+app.use(session({
+    secret : 'topSecret',
+    resave: true,
+    saveUninitialized: true,
+}))
+app.use(cookieParser());
+
+
 //Indico el motor de plantillas que estamos usando EJS
 app.set('view engine','ejs');
 app.set("views", path.join(__dirname, "./views"));
@@ -29,7 +41,6 @@ app.use('/', mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
 app.use('/admin', adminRoutes);
-
 
 //Levanto el servidor
 app.listen(process.env.PORT || 3000, function () {
