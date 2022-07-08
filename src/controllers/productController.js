@@ -1,29 +1,20 @@
 const path = require('path');
 const fs = require('fs');
 
-let surfboards =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/surfboards.json')));
-// let accesorios =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/accesorios.json')));
-// let complementos =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/complementos.json')));
+let productos =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 
 const product = {
     index: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/shop'),{surfboards});
+        res.render(path.resolve(__dirname, '../views/product/shop'),{productos});
     },
+
     detail: function(req,res){
-        let idProducto = req.params.id;
-        let showProduct = surfboards.find(item => item.id == idProducto);
-        res.render(path.resolve(__dirname, '../views/product/detail'),{surfboards: showProduct});
+        let idProducto = req.params.id;  //1
+        let showProduct = productos.find(item => item.id == idProducto);
+        res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
     },
-    // surfboards: function(req,res){
-    //     res.render(path.resolve(__dirname, '../views/product/shop'),{surfboards});
-    // },
-    // accesorios: function(req,res){
-    //     res.render(path.resolve(__dirname, '../views/product/shop'),{accesorios});
-    // },
-    // complementos: function(req,res){
-    //     res.render(path.resolve(__dirname, '../views/product/shop'),{complementos});
-    // },
+
     boardBuilder: function(req,res){
         res.render(path.resolve(__dirname, '../views/product/boardBuilder'));
     },

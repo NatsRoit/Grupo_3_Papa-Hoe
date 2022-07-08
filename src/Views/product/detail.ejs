@@ -16,7 +16,7 @@
                         <div id="imagen-producto">
                             <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
-                                <img src="/img/surfboards/short-bord-example2.jpg" alt="Short board">
+                                <img src="/img/surfboards/<%= producto.imagen%>" alt="Short board"> 
                             </div>
                         </div>
                     </div>
@@ -25,15 +25,11 @@
                         <div>
                             <h1>Sandman</h1>
                             <div class="precio">
-                                $30.00
+                                <p><%= producto.precio%></p>
                             </div>
                             <h2>Especificaciones</h2>
                             <div id="descripcion">
-                                <p>Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que
-                                    el
-                                    surf fuera más fácil para la persona 'normal', pero que también tuviera cierta
-                                    versatilidad para ser utilizada como una tabla semiescalonada para el surfista más
-                                    regular.</p>
+                                <p><%= producto.caracteristicas%></p>
                                 <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
                                 <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
                                 <p><strong>Tipo de ola:</strong> todas las condiciones</p>
@@ -53,7 +49,7 @@
                                     </div>
                                     <div>
                                         <h5>Fin System</h5>
-                                        <select name="" id="opciones-desplegable"">
+                                        <select name="" id="opciones-desplegable">
                                     <option value="">CS SII</option>
                                     <option value="">Futures</option>
                                 </select>                                    

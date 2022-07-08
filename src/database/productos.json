@@ -1,19 +1,88 @@
 
 [
-    {
-      "id": "1",
-      "nombre": "Moto honda c125c",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": "150.000",
-      "descuento": "30",
-      "imagen": "color-rojo-wave.jpg"
-    },
-    {
-      "id": 2,
-      "nombre": "Moto honda xr150",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": "250.000",
-      "descuento": "30",
-      "imagen": "roja-xr150-color.jpg"
-    }
+  {
+    "id": 1,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "FREEDOM-HELIX-ALL-ROUND-LEASH",
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "59.95",
+    "descuento": "0",
+    "imagen": "fcs_legrope.webp"
+  },
+  {
+    "id": 2,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "SUPERLITE COMP LEASH", 
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "70.00",
+    "descuento": "0",
+    "imagen": "Creatures-Superlite-Comp-6-Carbon-Lime_1080x.webp"
+  },
+  {
+    "id": 3,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "FCS BIG WAVE ESSENTIAL LEASH",
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "60.33",
+    "descuento": "0",
+    "imagen": "fcs_legropes_bigwave-essential_black_a_f7c9d21a-79eb-46c9-8434-6cdd8ad57223_1080x.webp"
+  },
+  {
+    "id": 4,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "FCS ALL ROUND ESSENTIAL LEASH",
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "33.93",
+    "descuento": "0",
+    "imagen": "fcs_legropes_allround-essential_charcoal-blood-orange_a_1080x.webp"
+  },
+  {
+    "id": 4,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "FCS ALL ROUND ESSENTIAL LEASH",
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "33.93",
+    "descuento": "0",
+    "imagen": "fcs_legropes_allround-essential_charcoal-blood-orange_a_1080x.webp"
+  },
+  {
+    "id": 4,
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
+    "titulo": "FCS ALL ROUND ESSENTIAL LEASH",
+    "marca": "FCS",
+    "modelo": "T-3",
+    "nombre": "Tracción FCS T-3",
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "33.93",
+    "descuento": "0",
+    "imagen": "fcs_legropes_allround-essential_charcoal-blood-orange_a_1080x.webp"
+  }
+
 ]
