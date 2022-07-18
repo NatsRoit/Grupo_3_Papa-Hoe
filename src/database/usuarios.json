@@ -22,6 +22,21 @@
     "password": "$2a$10$txpyOW1qf8IPAOsG0cf77OYyKdCkyGPap3R9Wo4BkA2bIu2KtlC.m",
     "role": 1,
     "usuario": "untipazo"
+  },
+  {
+    "nombre": "Moni",
+    "apellido": "Argento",
+    "email": "moniargento@pepeteamo.com",
+    "password": "$2a$10$EolhZt4bL6rlAht.O5N5..Qu1QqoxroFpLYoIjbx3EY1u6hzYqiHG",
+    "role": 1,
+    "usuario": "Moniargento"
+  },
+  {
+    "nombre": "Magdalena",
+    "apellido": "Belaustegui",
+    "email": "malebelaustegui@yahoo.com.ar",
+    "password": "$2a$10$m7jk64qkDddcAvK83RDtOesh6LezcIcscKuqIs3T.wJyEDgSchnCi",
+    "role": 1,
+    "usuario": "malebe"
   }
-
 ]
