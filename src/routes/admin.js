@@ -32,4 +32,10 @@ router.get("/edit/:id", adminController.edit);
 router.put("/edit/:id", upload.single("imagen"), adminController.update);
 router.get("/admin/delete/:id", adminController.destroy);
 
+
+
+
+
+
+
 module.exports = router;

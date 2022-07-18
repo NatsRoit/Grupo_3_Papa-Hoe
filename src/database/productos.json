@@ -2,16 +2,19 @@
 [
   {
     "id": 1,
-    "categoria": "accesorios",
-    "subcategoria": "LegRopes",
+    "category": "accesorios",
+    "sub-category": "LegRopes",
     "titulo": "FREEDOM-HELIX-ALL-ROUND-LEASH",
-    "marca": "FCS",
-    "modelo": "T-3",
+    "brand": "FCS",
+    "model": "T-3",
     "nombre": "Tracción FCS T-3",
-    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
-    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "precio": "59.95",
-    "descuento": "0",
+    "descripction": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "features": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "hability":"medium",
+    "dimensions": "5'10--19 1/2--2 9/16--31",
+    "finSystem": "CS SII",
+    "price": "59.95",
+    "discount": "0",
     "imagen": "fcs_legrope.webp"
   },
   {

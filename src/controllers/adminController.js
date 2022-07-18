@@ -17,8 +17,15 @@ let admin = {
         console.log();
         let nuevoProducto = {
             id: ultimoProducto.id +1,
-            nombre : req.body.nombre,
-            descripcion: req.body.descripcion,
+            titulo : req.body.titulo,
+            category: req.body.category,
+            brand: req.body.brand,
+            model: req.body.model,
+            features: req.body.features,
+            hability: req.body.hability,
+            dimensions: req.body.dimensions,
+            finally: req.body.finSystem,
+            description: req.body.description,
             precio: req.body.precio,
             descuento: req.body.descuento,
             imagen: req.file.filename

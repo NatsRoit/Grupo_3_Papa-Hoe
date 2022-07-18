@@ -38,5 +38,13 @@
     "password": "$2a$10$m7jk64qkDddcAvK83RDtOesh6LezcIcscKuqIs3T.wJyEDgSchnCi",
     "role": 1,
     "usuario": "malebe"
+  },
+  {
+    "nombre": "Moni",
+    "apellido": "rossi",
+    "email": "magdalena@gessato.com",
+    "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
+    "role": 1,
+    "usuario": "Moniargento"
   }
 ]

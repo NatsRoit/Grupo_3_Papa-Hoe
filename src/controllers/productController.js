@@ -14,7 +14,11 @@ const product = {
         let showProduct = productos.find(item => item.id == idProducto);
         res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
     },
-
+    newproduct: function(req,res){
+        let idProducto = req.params.id;  
+        let showProduct = productos.find(item => item.id == idProducto);
+        res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
+    },
     boardBuilder: function(req,res){
         res.render(path.resolve(__dirname, '../views/product/boardBuilder'));
     },
