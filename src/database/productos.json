@@ -2,8 +2,8 @@
 [
   {
     "id": 1,
-    "category": "accesorios",
-    "sub-category": "LegRopes",
+    "categoria": "accesorios",
+    "subcategoria": "LegRopes",
     "titulo": "FREEDOM-HELIX-ALL-ROUND-LEASH",
     "brand": "FCS",
     "model": "T-3",
@@ -95,24 +95,24 @@
   {
     "id": 7,
     "categoria": "surfboards",
-    "subcategoria": "longboard",
+    "subcategoria": "Longboards",
     "titulo": "SANDMAN 90210",
-    "nombre": "Tabla Pipona Longboard",
-    "marca": "FCS",
+    "nombre": "SANDMAN 90210 WheatPLus",
+    "marca": "Papa Hoe",
     "modelo": "Ejemplo 123",
     "color": "blanco",
     "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
     "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
     "precio": "70.000,00",
     "descuento": "40",
-    "imagen": "long-bord-example.jpg"
+    "imagen": "long-bord-example.png"
   },
   {
     "id": 8,
     "categoria": "surfboards",
-    "subcategoria": "longboard",
+    "subcategoria": "Longboards",
     "titulo": "SANDMAN 90210",
-    "nombre": "Tabla Pipona Longboard",
+    "nombre": "SANDMAN 90210 OtraMas",
     "marca": "FCS Premium",
     "modelo": "Ejemplo 123",
     "color": "blanco",
@@ -120,7 +120,7 @@
     "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
     "precio": "3.000,00",
     "descuento": "0",
-    "imagen": "long-bord-example2.jpg"
+    "imagen": "long-bord-example2.png"
   },
   {
     "id": 9,
@@ -136,6 +136,20 @@
     "precio": "3.000",
     "descuento": "50",
     "imagen": "PapaHoe-complementos-gorra.jpg"
+  },
+  {
+    "id": 10,
+    "categoria": "surfboards",
+    "subcategoria": "Longboards",
+    "titulo": "PIPONA Mono1",
+    "nombre": "Tabla Pipona Longboard",
+    "marca": "Papa Hoe",
+    "modelo": "Ejemplo 123",
+    "color": "blanco, verde, azul",
+    "descripcion": "PIPONA Mono1 Longboard is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "40.000,00",
+    "descuento": "0",
+    "imagen": "midlenght-bord-example2.png"
   }
-
 ]

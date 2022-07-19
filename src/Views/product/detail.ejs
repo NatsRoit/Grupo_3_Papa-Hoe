@@ -8,14 +8,21 @@
 
 
             <header class="section-header">
-                <img id="carrousel-image-1" src="/img/surfboards/tabla-main.jpeg" alt="PapaHoe foto1">
+                <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
             </header>
 
             <main class="productDetail">
-                <section class="producto">
-                    <div class="producto-izquierda">
-                        <div class="imagen-producto">
-                            <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product"><%= producto.categoria%></a></li>
+                    <li><a href="/product"><%= producto.subcategoria%></a></li>
+                    <li class="active"><%= producto.nombre%></li>
+                </ul>
+                <section class="main-container">
+                    <div class="left-wrapper">
+                        <div class="img-slider">
+                            <img src="/img/<%= producto.categoria %>/<%= producto.subcategoria %>/<%= producto.titulo %>/<%= producto.imagen %>"
+                                        alt="<%= producto.titulo %>">
                             <!-- <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
                                 <img src="/img/surfboards/<%= producto.imagen%>" alt="Short board"> 
@@ -23,21 +30,88 @@
                         </div>
                     </div>
 
-                    <div class="producto-derecha">
-                        <div>
-                            <p>
-                                <%= producto.marca%>
-                            </p>
-                            <h1>
-                                <%= producto.nombre%>
-                            </h1>
-                            <p>
-                                <%= producto.precio%>
-                            </p>
+                    <div class="right-wrapper">
+                        <div class="product-header">
+                            <h2><%= producto.marca%></h2>
+                            <h1><%= producto.nombre%></h1>
+                            <p>$<%= producto.precio%> ARS</p>
+                        </div>
 
-                            <br>
+                        <form class="product-shop">
+                            <div class="opciones">
+                                <div>
+                                    <!-- <h5>Dimensiones</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title" value="">Dimensiones</option>
+                                        <option value="">5'10--19 1/2--2 9/16--31</option>
+                                        <option value="">5'11--19 5/8--2 5/8--32</option>
+                                        <option value="">6'0--19 3/4--2 11/16--33</option>
+                                        <option value="">6'0--19 3/4--2 11/16--33</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Fin System</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title" value="">Fin System</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Tecnología</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Tecnología</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Tail Type</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Tail Type</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Acabado</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Acabado</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <!-- <div>
+                                    <h5>Cantidad</h5>
+                                    <div>
+                                        <span>-</span>
+                                        <input type=" number">
+                                        <span>+</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div>
+                                <input class="boton" value="Agregar al Carrito" type="submit">
+                            </div>
+                        </form>
+                        <!-- /form -->
+                        <div class="product-summary">
+                            <p><%= producto.nombre%></p>
+                            <ul>
+                                <li>Dimensiones</li>
+                                <li>Fins</li>
+                                <li>Tecnologia</li>
+                                <li>Tail</li>
+                                <li>Finnish</li>
+                            </ul>
+                            <hr>
+                            <p>CANTIDAD</p>
+                            <hr>
+                            <p>TOTAL</p>
+                        </div>
 
-                            <div id="descripcion">
+                        <div class="descripcion">
+                            <div class="especificaciones">
                                 <h2>Especificaciones</h2>
                                 <p><%= producto.caracteristicas%></p>
                                 <br>
@@ -47,41 +121,7 @@
                                     <li><strong>Tipo de ola:</strong>todas las condiciones</li>
                                 </ul>
                             </div>
-
-                            <!-- form -->
-                            <form id="agregar-carrito">
-                                <div class="opciones">
-                                    <div>
-                                        <h5>Dimensiones</h5>
-                                        <select name="" id="opciones-desplegable">
-                                            <option value="">5'10--19 1/2--2 9/16--31</option>
-                                            <option value="">5'11--19 5/8--2 5/8--32</option>
-                                            <option value="">6'0--19 3/4--2 11/16--33</option>
-                                            <option value="">6'0--19 3/4--2 11/16--33</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <h5>Fin System</h5>
-                                        <select name="" id="opciones-desplegable">
-                                            <option value="">CS SII</option>
-                                            <option value="">Futures</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <h5>Cantidad</h5>
-                                        <div>
-                                            <span>-</span>
-                                            <input type=" number">
-                                            <span>+</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <input class="boton" value="Agregar al Carrito" type="submit">
-                                </div>
-                            </form>
-                            <!-- /form -->
-
+                            <br>
                             <div class="features">
                                 <h2>Features</h2>
                                 <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
@@ -90,30 +130,18 @@
                                 <p><strong>Tail — </strong>Round tail</p>
                                 <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
                             </div>
+                            <br>
                             <div class="mas-informacion">
-                                <img src="/img/surfboards/tabla.webp" alt="Tabla">
-                                <div>
-                                    <p class="mas-info"><strong> Darren designed the Sandman with the wide point moved
-                                            forward 2 inches and the deck rolled into a sleek medium low rail.
-                                            This design provides easy paddling without losing the signature DHD
-                                            performance.
-                                            The rounded pin tail allows smooth rail to rail surfing, the slight single
-                                            to
-                                            double concave with a flat entry rocker generates the speed that you are
-                                            looking
-                                            for.</strong></p>
-                                </div>
+                                <p class="mas-info"><strong> Darren designed the Sandman with the wide point moved forward 2 inches and the deck rolled into a sleek medium low rail. This design provides easy paddling without losing the signature DHD performance. The rounded pin tail allows smooth rail to rail surfing, the slight single to double concave with a flat entry rocker generates the speed that you are looking for.</strong></p>
                             </div>
-                            <div>
-                                <img src="/img/size.jpeg" alt="Sizes">
-                            </div>
-
+                            <img src="/images/stock/size.jpeg" alt="Sizes">
                         </div>
                     </div>
                 </section>
 
                 <h1 class="titulo-extras">Tambien te puede interesar</h1>
                 <section class="product-container">
+                    <!-- Acá agregaría un poco de EJS con productos relaciones de acuerdo al nivel de habilidad. Por lo cual agregaría en el JSON también una clave que sea "Habilidad", ¨Nivel de Experiencia", etc -->
                     <article class="product">
                         <a href="#">
                             <img src="/img/accesorios/Tractions/06-CHIPPA-WILSON-FRONT-TRACTION/Chippa-Wilson-Front-Foot-Traction_1080x.webp"
