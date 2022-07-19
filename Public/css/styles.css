@@ -2357,5 +2357,35 @@ button:focus {
   text-decoration: underline;
 }
 
+/*----------------ABOUT US -------------------------------------*/
 
+.about-h1 {
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img{ 
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+.about-p {
+  padding-bottom: 20px;
+}
+
+
+/*----------------------NEW PRODUCT FORM ------------------*/
+
+.NP-1{
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+  }
+  
 
