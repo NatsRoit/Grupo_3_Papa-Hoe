@@ -14,7 +14,7 @@ const product = {
         let showProduct = productos.find(item => item.id == idProducto);
         res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
     },
-    newproduct: function(req,res){
+    newProduct: function(req,res){
         let idProducto = req.params.id;  
         let showProduct = productos.find(item => item.id == idProducto);
         res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
