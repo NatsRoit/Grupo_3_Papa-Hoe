@@ -5,34 +5,47 @@
 
     <body>
         <%- include("../partials/header") %>
-            <main>
-                <div id="main-image">
-                    <img src="/img/surfboards/tabla-main.jpeg" alt="Tabla">
-                </div>
 
-                <section id="detalle-producto">
 
-                    <div id="producto-izquierda">
-                        <div id="imagen-producto">
-                            <div id="imagenes-secundarias">
+            <header class="section-header">
+                <img id="carrousel-image-1" src="/img/surfboards/tabla-main.jpeg" alt="PapaHoe foto1">
+            </header>
+
+            <main class="productDetail">
+                <section class="producto">
+                    <div class="producto-izquierda">
+                        <div class="imagen-producto">
+                            <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
+                            <!-- <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
                                 <img src="/img/surfboards/<%= producto.imagen%>" alt="Short board"> 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
-                    <div id="producto-derecha">
+                    <div class="producto-derecha">
                         <div>
-                            <h1>Sandman</h1>
-                            <div class="precio">
-                                <p><%= producto.precio%></p>
-                            </div>
-                            <h2>Especificaciones</h2>
+                            <p>
+                                <%= producto.marca%>
+                            </p>
+                            <h1>
+                                <%= producto.nombre%>
+                            </h1>
+                            <p>
+                                <%= producto.precio%>
+                            </p>
+
+                            <br>
+
                             <div id="descripcion">
+                                <h2>Especificaciones</h2>
                                 <p><%= producto.caracteristicas%></p>
-                                <p><strong>Habilidad</strong> — Principiante a Intermedio</p>
-                                <p><strong>Tamaño de onda ideal</strong>— 1-6 pies</p>
-                                <p><strong>Tipo de ola:</strong> todas las condiciones</p>
+                                <br>
+                                <ul class="caracteristicas">
+                                    <li><strong>Habilidad: </strong>Principiante a Intermedio</li>
+                                    <li><strong>Tamaño de onda ideal: </strong>1-6 pies</li>
+                                    <li><strong>Tipo de ola:</strong>todas las condiciones</li>
+                                </ul>
                             </div>
 
                             <!-- form -->
@@ -50,49 +63,52 @@
                                     <div>
                                         <h5>Fin System</h5>
                                         <select name="" id="opciones-desplegable">
-                                    <option value="">CS SII</option>
-                                    <option value="">Futures</option>
-                                </select>                                    
-                            </div>
-                            <div>
-                                <h5>Cantidad</h5>                            
-                                <div>
-                                    <span>-</span>
-                                    <input type=" number">
+                                            <option value="">CS SII</option>
+                                            <option value="">Futures</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <h5>Cantidad</h5>
+                                        <div>
+                                            <span>-</span>
+                                            <input type=" number">
                                             <span>+</span>
+                                        </div>
                                     </div>
                                 </div>
-                        </div>
-                        <div>
-                            <input class="boton" value="Agregar al Carrito" type="submit">
-                        </div>
-                        </form>
-                        <!-- /form -->
+                                <div>
+                                    <input class="boton" value="Agregar al Carrito" type="submit">
+                                </div>
+                            </form>
+                            <!-- /form -->
 
-                        <div class="features">
-                            <h2>Features</h2>
-                            <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
-                            <p><strong>Rocker — </strong>Flat entry rocker into a slight tail lift.</p>
-                            <p><strong>Concave — </strong>Slight Single into slight Double Concave</p>
-                            <p><strong>Tail — </strong>Round tail</p>
-                            <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
-                        </div>
-                        <div class="mas-informacion">
-                            <img src="/img/surfboards/tabla.webp" alt="Tabla">
-                            <div>
-                                <p class="mas-info"><strong> Darren designed the Sandman with the wide point moved
-                                        forward 2 inches and the deck rolled into a sleek medium low rail.
-                                        This design provides easy paddling without losing the signature DHD performance.
-                                        The rounded pin tail allows smooth rail to rail surfing, the slight single to
-                                        double concave with a flat entry rocker generates the speed that you are looking
-                                        for.</strong></p>
+                            <div class="features">
+                                <h2>Features</h2>
+                                <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
+                                <p><strong>Rocker — </strong>Flat entry rocker into a slight tail lift.</p>
+                                <p><strong>Concave — </strong>Slight Single into slight Double Concave</p>
+                                <p><strong>Tail — </strong>Round tail</p>
+                                <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
                             </div>
-                        </div>
-                        <div>
-                            <img src="/img/size.jpeg" alt="Sizes">
-                        </div>
+                            <div class="mas-informacion">
+                                <img src="/img/surfboards/tabla.webp" alt="Tabla">
+                                <div>
+                                    <p class="mas-info"><strong> Darren designed the Sandman with the wide point moved
+                                            forward 2 inches and the deck rolled into a sleek medium low rail.
+                                            This design provides easy paddling without losing the signature DHD
+                                            performance.
+                                            The rounded pin tail allows smooth rail to rail surfing, the slight single
+                                            to
+                                            double concave with a flat entry rocker generates the speed that you are
+                                            looking
+                                            for.</strong></p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/img/size.jpeg" alt="Sizes">
+                            </div>
 
-                    </div>
+                        </div>
                     </div>
                 </section>
 
@@ -109,7 +125,7 @@
                     </article>
 
                     <article class="product">
-                        <a href="">
+                        <a href="#">
                             <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_blue-black_a_1080x.webp"
                                 alt="Leg rope blue" width="100%">
                             <div class="product-info">
@@ -119,7 +135,7 @@
                     </article>
 
                     <article class="product">
-                        <a href="">
+                        <a href="#">
                             <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_natural-black_a_1080x.webp"
                                 alt="Leg rope black" width="100%">
                             <div class="product-info">

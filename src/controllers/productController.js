@@ -9,6 +9,7 @@ const product = {
         res.render(path.resolve(__dirname, '../views/product/shop'),{productos});
     },
 
+    // PARA VISTAS DE SHOP DINÁMICAS x CATEGORÍA> Usar filter en vez de .find
     detail: function(req,res){
         let idProducto = req.params.id;  //1
         let showProduct = productos.find(item => item.id == idProducto);

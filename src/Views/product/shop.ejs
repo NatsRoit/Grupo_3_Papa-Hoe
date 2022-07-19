@@ -1,55 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head") %>
+<%- include("../partials/head") %>
 
     <body>
         <%- include("../partials/header") %>
 
-    <header class="section-header">
-        <img id="carrousel-image-1" src="/images/stock/guille-pozzi-2xkAA5Ez_oU-unsplash.jpg" alt="PapaHoe foto1">
-    </header>
+            <header class="section-header">
+                <img id="carrousel-image-1" src="/images/stock/guille-pozzi-2xkAA5Ez_oU-unsplash.jpg"
+                    alt="PapaHoe foto1">
+            </header>
 
-    <main class="shop">
-        <div class="shop-filters">
-            <p>Acá podríamos poner algunos filtros?</p>
-        </div>
+            <main class="shop">
+                <div class="shop-filters">
+                    <p class="titulo-seccion-main accesorios">Home > Shop > Surfboards</p>
+                    <p>Acá podríamos poner algunos filtros</p>
+                </div>
 
-        <h1 class="titulo-seccion-main accesorios">Algún título?</h1>
-        <section class="contenedor-productos">
-            <% for(let i= 0; i < productos.length; i++){ %>
-                <div class="producto-shop">
-                    <a href="/product/detail/<%= productos[i].id %>">
-                        <div class="imagen-producto">
-                            <img src="/img/<%= productos[i].categoria %>/<%= productos[i].subcategoria %>/<%= productos[i].titulo %>/<%= productos[i].imagen %>"
-                            alt="<%= productos[i].titulo %>">  
+                <br>
+
+                <h2 class="titulo-seccion-main accesorios">Surfboards</h2>
+                <section class="contenedor-productos">
+                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="surfboards" ){ %>
+                        <div class="producto-shop">
+                            <a href="/product/detail/<%= productos[i].id %>">
+                                <div class="imagen-producto">
+                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].subcategoria %>/<%= productos[i].titulo %>/<%= productos[i].imagen %>"
+                                        alt="<%= productos[i].titulo %>">
+                                </div>
+                                <div class="detalle-producto">
+                                    <h2><%= productos[i].titulo %></h2>
+                                    <p><%= productos[i].nombre %></p>
+                                </div>
+                                <div class="info-producto">
+                                    <p class="precio">$ <%= productos[i].precio %></p>
+                                    <% if (productos[i].descuento !=0) { %>
+                                    <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                        <% }else { %>
+                                            <p> </p>
+                                            <% } %>
+                                    <p class="compare"><i class="fa-solid fa-square-check"></i></p>
+                                        <!-- <span><i class="fa-solid fa-check"></i></span> -->
+                                        <!-- <span><i class="fa-solid fa-square-check"></i></span> -->
+                                </div>
+                            </a>
                         </div>
-                        <div class="info-producto">
-                            <h2 class="detalle-producto"><%= productos[i].titulo %></h2>
-                            <p class="precio">$ <%= productos[i].precio %></p>
+                        <% }; } %>
+                </section>
+
+                <h2 class="titulo-seccion-main accesorios">Accesorios</h2>
+                <section class="contenedor-productos">
+                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="accesorios" ){ %>
+                        <div class="producto-shop">
+                            <a href="/product/detail/<%= productos[i].id %>">
+                                <div class="imagen-producto">
+                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].subcategoria %>/<%= productos[i].titulo %>/<%= productos[i].imagen %>"
+                                        alt="<%= productos[i].titulo %>">
+                                </div>
+                                <div class="detalle-producto">
+                                    <h2><%= productos[i].titulo %></h2>
+                                    <p><%= productos[i].nombre %></p>
+                                </div>
+                                <div class="info-producto">
+                                    <p class="precio">$ <%= productos[i].precio %></p>
+                                    <% if (productos[i].descuento !=0) { %>
+                                        <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                        <% }else { %>
+                                            <p> </p>
+                                            <% } %>
+                                    <p class="compare"><i class="fa-solid fa-square-check"></i></p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <% } %>
-        </section>
+                        <% }; } %>
+                </section>
+
+                <h2 class="titulo-seccion-main accesorios">Complementos</h2>
+                <section class="contenedor-productos">
+                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="complementos" ){ %>
+                        <div class="producto-shop">
+                            <a href="/product/detail/<%= productos[i].id %>">
+                                <div class="imagen-producto">
+                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].imagen %>"
+                                        alt="<%= productos[i].titulo %>">
+                                </div>
+                                <div class="detalle-producto">
+                                    <h2><%= productos[i].titulo %></h2>
+                                    <p><%= productos[i].nombre %></p>
+                                </div>
+
+                                <div class="info-producto">
+                                    <p class="precio">$ <%= productos[i].precio %></p>
+                                    <% if (productos[i].descuento !=0) { %>
+                                    <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                        <% }else { %>
+                                            <p> </p>
+                                            <% } %>
+                                    <p class="compare"><i class="fa-solid fa-square-check"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <% }; } %>
+                </section>
+            </main>
 
 
-        <h1 class="titulo-seccion-main complementos">Complementos</h1>
-        <section class="contenedor-productos">
-            <div class="producto-shop">
-                <div class="imagen-producto">
-                    <img src="/img/complementos/PapaHoe-complementos-gorra.jpg" alt="Gorra PapaHoe">
-                </div>
-                <div class="info-producto">
-                    <p class="precio">$6.770</p>
-                    <p class="descuento">40% off</p>
-                </div>
-                <p class="detalle-producto">Gorra Papa Hoe</p>
-            </div>
-
-
-        </section>
-    </main>
-    <%- include("../partials/footer") %>
-</body>
+            <%- include("../partials/footer") %>
+    </body>
 
 </html>
