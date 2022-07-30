@@ -9,4 +9,3 @@
 
     Dejar de hacer: Evitar divagues. Menos vueltas y más resultados.
 
-- Sprint 2
