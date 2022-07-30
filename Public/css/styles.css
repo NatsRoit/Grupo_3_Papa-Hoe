@@ -867,6 +867,12 @@ button.submit-button {
   color: #335cb1;
   border-bottom: #001728 solid 1px;
 }
+
+.login-register .direccion {
+  display: flex;
+  
+}
+
 /* 
 .alternative-login {
     display: flex;
@@ -1263,7 +1269,7 @@ main.shopify-checkout-payment {
 
 .shopify-checkout-payment .datosVencimiento {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 
 .shopify-checkout-payment .direccion-facturación {
@@ -1295,6 +1301,33 @@ main.shopify-checkout-payment {
   align-items: center;
 }
 
+.shopify-checkout-payment .chequeo div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+
+.shopify-checkout-payment .division {
+  border-top: #b3b1b3 solid 1px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.shopify-checkout-payment h2 {
+  padding: 20px 0px;
+  margin-top: 10px;
+}
+
+.shopify-checkout-payment .metodoEnvio {
+  border: #b3b1b3 solid 1px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.shopify-checkout-payment .radio {
+  display: flex;
+  justify-content: space-around;
+}
 /* -------------------------------------------
        PRODUCT DETAIL
 ---------------------------------------------*/

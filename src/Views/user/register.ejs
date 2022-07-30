@@ -35,45 +35,34 @@
                             <label for="contraseña">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Contraseña" required>
                         </div>
-                        <div class="direccion-envio">
-                            <h2>Dirección de envío</h2>
-                            <div>
-                                <label for="nombre">Nombre y Apellido</label>
-                                <input class="caja-shop" type="text" name="nombre" id="nombre"
-                                    placeholder="Nombre y Apellido" required>
-                            </div>
-                            <div>
-                                <label for="dirección">Dirección</label>
-                                <input class="caja-shop" type="text" name="dirección" id="dirección"
-                                    placeholder="Dirección" required>
-                            </div>
+                        <div class="login-input">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="login-input">
+                            <label for="dirección">Dirección</label>
+                            <input type="text" name="dirección" id="dirección" placeholder="Dirección" required>
+                        </div>
                             <div class="direccion">
-                                <div>
+                                <div class="login-input">
                                     <label for="departamento"></label> Piso, departamento
-                                    <input class="caja-shop" type="text" name="departamento" id="departamento"
-                                        placeholder="Piso, departamento" required>
+                                    <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento" required>
                                 </div>
-                                <div>
+                                <div class="login-input">
                                     <label for="localidad"></label> Localidad
-                                    <input class="caja-shop" type="text" name="localidad" id="localidad"
-                                        placeholder="Localidad" required>
+                                    <input type="text" name="localidad" id="localidad" placeholder="Localidad" required>
                                 </div>
-                                <div>
-                                    <label for="codigo-postal"></label> Código Postal
-                                    <input class="caja-shop" type="text" name="codigo-postal" id="codigo-postal"
-                                        placeholder="Código Postal" required>
+                                <div class="login-input">
+                                    <label for="codigoPostal"></label> Código Postal
+                                    <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" required>
                                 </div>
                             </div>
-                            <label for="telefono"></label> Teléfono
-                            <input class="caja-shop" type="number" name="telefono" id="telefono"
-                                placeholder="Teléfono" required>
                         </div>
 
                         <div class="submit-button">
                             <button class="submit-button" type="submit">Crear</button>
-                            <br><br><br>
                         </div>
-                    </form>
+                </form>
                 </div>
             </main>
             <%- include("../partials/footer") %>
