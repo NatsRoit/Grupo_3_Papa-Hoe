@@ -5,7 +5,12 @@
     "email": "andychami@gmail.com",
     "password": "testtests",
     "role": 1,
-    "usuario": "andycha"
+    "usuario": "andycha",
+    "telefono": "12345678",
+    "direccion": "Monroe 1234",
+    "departamento": "2 B",
+    "localidad": "Nuñez",
+    "codigoPostal": "1430"
   },
   {
     "nombre": "pepe",
@@ -13,7 +18,12 @@
     "email": "pepe@gmail.com",
     "password": "$2a$10$X2J4.UdK7SAdc6JfhloTlOtZgMYuwGpuXY95x32Xm3/Ikr7StGJJq",
     "role": 1,
-    "usuario": "pepe"
+    "usuario": "pepe",
+    "telefono": "23456789",
+    "direccion": "Santa Fe 1234",
+    "departamento": "0",
+    "localidad": "Belgrano",
+    "codigoPostal": "1425"
   },
   {
     "nombre": "untipo",
@@ -21,7 +31,12 @@
     "email": "untipo@outlook.com",
     "password": "$2a$10$txpyOW1qf8IPAOsG0cf77OYyKdCkyGPap3R9Wo4BkA2bIu2KtlC.m",
     "role": 1,
-    "usuario": "untipazo"
+    "usuario": "untipazo",
+    "telefono": "12345678",
+    "direccion": "Cangallo 1234",
+    "departamento": "4 F",
+    "localidad": "C.A.B.A",
+    "codigoPostal": "1432"
   },
   {
     "nombre": "Moni",
@@ -29,7 +44,12 @@
     "email": "moniargento@pepeteamo.com",
     "password": "$2a$10$EolhZt4bL6rlAht.O5N5..Qu1QqoxroFpLYoIjbx3EY1u6hzYqiHG",
     "role": 1,
-    "usuario": "Moniargento"
+    "usuario": "Moniargento",
+    "telefono": "34567812",
+    "direccion": "San Martín 1234",
+    "departamento": "PB",
+    "localidad": "San Martín",
+    "codigoPostal": "1650"
   },
   {
     "nombre": "Magdalena",
@@ -37,7 +57,12 @@
     "email": "malebelaustegui@yahoo.com.ar",
     "password": "$2a$10$m7jk64qkDddcAvK83RDtOesh6LezcIcscKuqIs3T.wJyEDgSchnCi",
     "role": 1,
-    "usuario": "malebe"
+    "usuario": "malebe",
+    "telefono": "12345678",
+    "direccion": "Nazca 1234",
+    "departamento": "4 A",
+    "localidad": "Urquiza",
+    "codigoPostal": "1420"
   },
   {
     "nombre": "Moni",
@@ -45,6 +70,7 @@
     "email": "magdalena@gessato.com",
     "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
     "role": 1,
+<<<<<<< HEAD
     "usuario": "Moniargento"
   },
   {
@@ -54,5 +80,25 @@
     "password": "$2a$10$pQkRCQoFz/1.b2STd6LVdOW/oRjWpD1a2VhUlIWn6l1/cC/1t9Ng.",
     "role": 1,
     "usuario": "nats;lkd"
+=======
+    "usuario": "Moniargento",
+    "telefono": "56781234",
+    "direccion": "Av. Congreso 1234",
+    "departamento": "0",
+    "localidad": "Villa Pueyrredon",
+    "codigoPostal": "1428"
+  },
+  {
+    "nombre": "Natalia",
+    "apellido": "Arakaki",
+    "email": "natalia.arakaka@yahoo.com.ar",
+    "password": "$2a$10$V/UA.jPSs9Q9jzFuQ9xyTej1TDYxLMaBjcrI867j2mzgADtpu9wYS",
+    "role": 1,
+    "usuario": "natuArakaki",
+    "telefono": "1555661227",
+    "departamento": "1",
+    "localidad": "Nuñez",
+    "codigoPostal": "1430"
+>>>>>>> fb6dc2588ff4a2d5204e830b2b02d8b26bf1382d
   }
 ]

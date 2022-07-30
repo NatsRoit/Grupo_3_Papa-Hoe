@@ -1042,6 +1042,36 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
+<<<<<<< HEAD
+=======
+.login-register .direccion {
+  display: flex;
+  
+}
+
+/* 
+.alternative-login {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.fa-facebook {
+    color: #335cb1;
+    font-size: 30px;
+    margin: 20px;
+}
+.alternative-login img#google {
+    width: 30px;
+    margin: 20px;
+}
+.reCAPTCHA p {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+} */
+>>>>>>> fb6dc2588ff4a2d5204e830b2b02d8b26bf1382d
 
 /*
 --------------------------------------------------------
@@ -1422,7 +1452,7 @@ main.shopify-checkout-payment {
 
 .shopify-checkout-payment .datosVencimiento {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 
 .shopify-checkout-payment .direccion-facturación {
@@ -1454,6 +1484,155 @@ main.shopify-checkout-payment {
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+.shopify-checkout-payment .chequeo div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+
+.shopify-checkout-payment .division {
+  border-top: #b3b1b3 solid 1px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.shopify-checkout-payment h2 {
+  padding: 20px 0px;
+  margin-top: 10px;
+}
+
+.shopify-checkout-payment .metodoEnvio {
+  border: #b3b1b3 solid 1px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.shopify-checkout-payment .radio {
+  display: flex;
+  justify-content: space-around;
+}
+/* -------------------------------------------
+       PRODUCT DETAIL
+---------------------------------------------*/
+
+.productDetail .producto {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  position: relative;
+}
+
+.productDetail .producto-izquierda {
+  display: flex;
+  flex-basis: 30%;
+  padding: 20px;
+  justify-content: center;
+  /* border-right: solid 2px #fad6d1; */
+}
+
+.productDetail .producto-izquierda .imagen-producto {
+  height: 85vh;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  overflow: hidden;
+  position: sticky;
+  z-index: 80;
+  top: 80px;
+}
+.productDetail .producto-izquierda img {
+mix-blend-mode: multiply;
+height: 100%;
+}
+
+
+.producto-derecha {
+  /* background-color: #f7f7f7; */
+  flex-basis: 60%;
+  padding: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.productDetail .caracteristicas li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+
+.mas-informacion {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  margin-bottom: 20px;
+  size: 80%;
+}
+
+#producto-derecha .mas-info {
+  position: absolute;
+  top: 50px;
+  text-align: right;
+  padding: 40px;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 22px;
+}
+
+.opciones > div {
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.opciones option {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+#agregar-carrito input.boton {
+  text-transform: uppercase;
+  display: block;
+  background-color: #293c49;
+  color: white;
+  border: 0;
+  font-size: 18px;
+  height: 64px;
+  width: 300px;
+  left: 40px;
+}
+
+#cantidad {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#cantidad span {
+  background-color: #e287c4;
+  padding: 2px 9px;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+#cantidad input {
+  width: 43px;
+  padding: 7px;
+  text-align: center;
+  border: 0;
+  display: inline-block;
+}
+
+>>>>>>> fb6dc2588ff4a2d5204e830b2b02d8b26bf1382d
 /*---------------------------------------------
         VOLUME CALCULATOR VIEW
 ---------------------------------------------*/

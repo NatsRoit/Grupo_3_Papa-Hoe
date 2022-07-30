@@ -19,7 +19,7 @@
                     <div class="chequeo">
                         <div>
                             <p>Contacto</p>
-                            <p>pepito@gmail.com</p>
+                            <p>pepito@gmail.com (EJS) </p>
                             <a href="login">Cambiar</a>
                         </div>
 
@@ -27,19 +27,30 @@
 
                         <div>
                             <p>Envío a </p>
-                            <p>Av. Monroe 860 - (C1428) - C.A.B.A. </p>
+                            <p>Av. Monroe 860 - (C1428) - C.A.B.A. (EJS) </p>
                             <a href="/product/cart">Cambiar</a>
                         </div>
-
-                        <div class="division"></div>
-
-                        <div>
-                            <p>Método de envío </p>
-                            <p>Normal </p>
-                            <a href="/product/cart2">Cambiar</a>
-                        </div>
                     </div>
+                    
+                    <div class="division"></div>
+                    
+                    <form action="/views/product/cart.ejs" method = "post"> 
+                        <h2>Método en envío</h2>
+                        <div class="metodoEnvio">
+                            <div class="radio">
+                                <input type="radio" name="metodoEnvio" value="Normal" required> Normal
+                                <p>$400,00</p>
+                            </div>
 
+                            <div class="division"></div>
+
+                            <div class="radio">
+                                <input type="radio" name="metodoEnvio" value="LlegaHoy" required> Llega Hoy
+                                <p>$1000,00</p>
+                            </div>
+                        </div>
+                    </form>
+                    
                     <div class="payment">
                         <h2>Datos del pago</h2>
                         <P>Todas las transacciones son seguras y encriptadas</P>

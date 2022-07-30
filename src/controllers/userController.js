@@ -19,7 +19,13 @@ const user = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             role: 1,
-            usuario: req.body.usuario
+            usuario: req.body.usuario,
+            telefono: req.body.telefono,
+            direccion: req.body.direccion,
+            departamento: req.body.departamento,
+            localidad: req.body.localidad,
+            codigoPostal: req.body.codigoPostal,
+
         }
         users.push(nuevoUsuario);
 
