@@ -66,7 +66,7 @@ main h2 {
   font-size: 16pt;
   line-height: 20px;
   color: #001728;
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue", cursive;
 }
 
 main p {
@@ -646,7 +646,7 @@ input[type="range"]::-moz-range-progress {
 }
 
 /*--------------------------------------------------
-         MAIN: SHOP (surfboards y complementos)
+      MAIN: SHOP (surfboards y complementos)
 ----------------------------------------------------*/
 .shop .shop-filters {
   display: flex;
@@ -750,6 +750,180 @@ input[type="range"]::-moz-range-progress {
   right: 0px;
   z-index: 50;
 }
+
+
+/* -------------------------------------------
+       PRODUCT DETAIL
+---------------------------------------------*/
+
+.productDetail .main-container {
+  width: 100%;
+  padding: 30px 5% 0 0;
+  padding-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.productDetail .left-wrapper {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.productDetail .left-wrapper .img-slider {
+  height: 90vh;
+  width: 100%;
+  position: sticky;
+  z-index: 80;
+  top: 80px;
+  /* background-color: whitesmoke; */
+  text-align: center;
+  padding: 20px;
+}
+.productDetail .left-wrapper .img-slider img {
+/* mix-blend-mode: multiply; */
+height: 100%;
+/* width: 100%; */
+object-fit: contain;
+object-position: 0 0;
+}
+
+
+.productDetail .right-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 20px;
+}
+.product-header {
+  width: 100%;
+  border-bottom: 1px solid #fad6d1;
+}
+.product-header h2 {
+  font-size: 20px;
+  color: #001728be;
+}
+.product-header h1 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.5pt;
+  font-size: 40px;
+  line-height: 50px;
+  margin: 0;
+}
+.product-header p {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #7a7a7a
+}
+
+
+.product-shop {
+  width: 50%;
+  flex-grow: 1;
+  margin-right: 30px;
+}
+.product-shop .opciones {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 0 0;
+}
+.opciones > div {
+  padding: 0 0 20px 0 ;
+  width: 100%;
+}
+.opciones select {
+  font-size: 15px;
+  font-family: "BebasNeue";
+  letter-spacing: 0.5pt;
+  color: #001728;
+  padding: 10px;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #fad6d1;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* #opciones-desplegable:first-child .option-title   {
+  color: rebeccapurple;
+} */
+/* #cantidad {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#cantidad span {
+  background-color: #e287c4;
+  padding: 2px 9px;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  vertical-align: middle;
+}
+#cantidad input {
+  width: 43px;
+  padding: 7px;
+  text-align: center;
+  border: 0;
+  display: inline-block;
+} */
+.product-shop input.boton {
+  font-family: "Bebas Neue", cursive;
+  font-size: 16px;
+  letter-spacing: 1pt;
+  background-color: #001728;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+}
+
+.product-summary {
+  width: 40%;
+  padding: 20px;
+  margin: 20px 0 0;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 14px;
+}
+.product-summary ul {
+  margin-bottom: 20px;
+}
+
+
+.productDetail .descripcion {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #fad6d1;
+}
+.productDetail .caracteristicas li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.mas-informacion {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  margin-bottom: 20px;
+  size: 80%;
+}
+
+#producto-derecha .mas-info {
+  position: absolute;
+  top: 50px;
+  text-align: right;
+  padding: 40px;
+}
+
 
 
 /*
@@ -867,28 +1041,7 @@ button.submit-button {
   color: #335cb1;
   border-bottom: #001728 solid 1px;
 }
-/* 
-.alternative-login {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-}
-.fa-facebook {
-    color: #335cb1;
-    font-size: 30px;
-    margin: 20px;
-}
-.alternative-login img#google {
-    width: 30px;
-    margin: 20px;
-}
-.reCAPTCHA p {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
-} */
+
 
 /*
 --------------------------------------------------------
@@ -1015,16 +1168,22 @@ input:focus {
 
 /* Código para crear una barra de navegación interna dinámica */
 ul.breadcrumb {
-  margin: 30px 0;
+  padding: 20px;
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
 }
 ul.breadcrumb li {
   display: inline;
-  font-size: 14px;
+  font-size: 12px;
   color: #b3b1b3;
 }
 ul.breadcrumb li + li:before {
   padding: 10px;
   content: "> ";
+  color: #b3b1b3;
+}
+ul.breadcrumb li.active {
+  color: #001728;
 }
 ul.breadcrumb li a:hover {
   color: #001728;
@@ -1295,125 +1454,6 @@ main.shopify-checkout-payment {
   align-items: center;
 }
 
-/* -------------------------------------------
-       PRODUCT DETAIL
----------------------------------------------*/
-
-.productDetail .producto {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  position: relative;
-}
-
-.productDetail .producto-izquierda {
-  display: flex;
-  flex-basis: 30%;
-  padding: 20px;
-  justify-content: center;
-  /* border-right: solid 2px #fad6d1; */
-}
-
-.productDetail .producto-izquierda .imagen-producto {
-  height: 85vh;
-  width: auto;
-  max-width: 250px;
-  object-fit: contain;
-  overflow: hidden;
-  position: sticky;
-  z-index: 80;
-  top: 80px;
-}
-.productDetail .producto-izquierda img {
-mix-blend-mode: multiply;
-height: 100%;
-}
-
-
-.producto-derecha {
-  /* background-color: #f7f7f7; */
-  flex-basis: 60%;
-  padding: 20px;
-  font-size: 24px;
-  line-height: 30px;
-  margin-bottom: 20px;
-}
-.productDetail .caracteristicas li {
-  font-size: 14px;
-  line-height: 30px;
-}
-
-
-.mas-informacion {
-  position: relative;
-  display: inline-block;
-  font-size: 24px;
-  margin-bottom: 20px;
-  size: 80%;
-}
-
-#producto-derecha .mas-info {
-  position: absolute;
-  top: 50px;
-  text-align: right;
-  padding: 40px;
-}
-
-.opciones {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 22px;
-}
-
-.opciones > div {
-  text-transform: uppercase;
-  padding: 10px;
-  font-size: 15px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.opciones option {
-  text-transform: uppercase;
-  font-size: 15px;
-}
-
-#agregar-carrito input.boton {
-  text-transform: uppercase;
-  display: block;
-  background-color: #293c49;
-  color: white;
-  border: 0;
-  font-size: 18px;
-  height: 64px;
-  width: 300px;
-  left: 40px;
-}
-
-#cantidad {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#cantidad span {
-  background-color: #e287c4;
-  padding: 2px 9px;
-  display: inline-block;
-  color: #fff;
-  font-size: 20px;
-  vertical-align: middle;
-}
-
-#cantidad input {
-  width: 43px;
-  padding: 7px;
-  text-align: center;
-  border: 0;
-  display: inline-block;
-}
-
 /*---------------------------------------------
         VOLUME CALCULATOR VIEW
 ---------------------------------------------*/
@@ -1511,68 +1551,6 @@ input[type="range"]::-moz-range-progress {
   line-height: 24px;
 }
 
-/*---------------------------------------------
-        PRODUCT DETAIL
----------------------------------------------*/
-.titulo-extras .product-container {
-  display: flex;
-}
-
-.titulo-extras {
-  padding: 20px;
-  text-transform: uppercase;
-  background-color: #dfe7df;
-}
-
-.product {
-  display: flex;
-  margin-bottom: 25px;
-  background-color: #fff;
-  width: 100%;
-}
-
-.product img:hover {
-  filter: opacity(0.5);
-}
-
-.product .product-info {
-  display: flex;
-  background-color: #fff;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 12px;
-}
-
-.product .product-info h5 {
-  font-size: 23px;
-  font-weight: bold;
-  margin-top: 8px;
-  margin-left: -5px;
-}
-
-@media screen and (min-width: 768px) {
-  .product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .product-container article {
-    flex-basis: 48%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .product-container article {
-    flex-basis: 24%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .productDetail .producto-izquierda {
-    border: 0;
-  }
-}
 
 /*---------------------------------------------
         FOOTER
@@ -1716,54 +1694,6 @@ img.detalles-design {
 
 /*----------------------------------------------------------*/
 
-@media screen and (max-width: 768px) {
-  .container,
-  .detalle-producto {
-    display: block;
-  }
-
-  .productDetail .producto-izquierda h1 {
-    display: block;
-  }
-
-  .product .product-info h5 {
-    font-size: 9px;
-    margin-top: 0px;
-    margin-left: -5px;
-  }
-
-  .titulo-extras {
-    padding: 4px;
-    font-size: 15px;
-    text-align: center;
-  }
-
-  #producto-derecha .mas-info {
-    display: none;
-    position: absolute;
-    top: 50px;
-    text-align: right;
-    padding: 40px;
-  }
-
-  #agregar-carrito input.boton {
-    text-transform: uppercase;
-    display: block;
-    background-color: #293c49;
-    color: white;
-    border: 0;
-    font-size: 17px;
-    height: 49px;
-  }
-
-  .opciones > div {
-    text-transform: uppercase;
-    padding: 2px;
-    font-size: 15px;
-    text-align: center;
-    font-weight: bold;
-  }
-}
 
 /* .................. MEDIA QUERIES ...................
 --------------------------------------------------------
@@ -2146,25 +2076,9 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
   .login-register {
     width: 40%;
   }
-  /* 
-    .productCart {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        column-gap: 10px;
-        border-left: solid 2px #dcdfe3;
-        padding: 20px;
-        
-    } */
-  /* 
-    .cart-product {
-        margin-top: 40px;
-    }
-    .cart-product a {
-        display: none;
-    } */
 }
 
-/* ------------- COSTUM TRUCKER -------------------------------*/
+/* ------------- COSTUM TRACKER -------------------------------*/
 .bodytrack {
   min-height: 50vh;
   font-family: "Exo 2";
@@ -2387,5 +2301,3 @@ button:focus {
     font-weight: 500;
     text-align: left;
   }
-  
-

@@ -46,5 +46,13 @@
     "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
     "role": 1,
     "usuario": "Moniargento"
+  },
+  {
+    "nombre": "Nats",
+    "apellido": "R",
+    "email": "nats.roitman@gmail.com",
+    "password": "$2a$10$pQkRCQoFz/1.b2STd6LVdOW/oRjWpD1a2VhUlIWn6l1/cC/1t9Ng.",
+    "role": 1,
+    "usuario": "nats;lkd"
   }
 ]

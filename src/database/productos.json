@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -10,7 +9,7 @@
     "nombre": "Tracción FCS T-3",
     "descripction": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
     "features": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "hability":"medium",
+    "hability": "medium",
     "dimensions": "5'10--19 1/2--2 9/16--31",
     "finSystem": "CS SII",
     "price": "59.95",
@@ -21,7 +20,7 @@
     "id": 2,
     "categoria": "accesorios",
     "subcategoria": "LegRopes",
-    "titulo": "SUPERLITE COMP LEASH", 
+    "titulo": "SUPERLITE COMP LEASH",
     "nombre": "Tracción FCS T-3",
     "marca": "FCS",
     "modelo": "T-3",
@@ -31,21 +30,6 @@
     "precio": "70,00",
     "descuento": "0",
     "imagen": "Creatures-Superlite-Comp-6-Carbon-Lime_1080x.webp"
-  },
-  {
-    "id": 3,
-    "categoria": "accesorios",
-    "subcategoria": "LegRopes",
-    "titulo": "FCS BIG WAVE ESSENTIAL LEASH",
-    "nombre": "Tracción FCS T-3",
-    "marca": "FCS",
-    "modelo": "T-3",
-    "color": "blanco",
-    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
-    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "precio": "60,33",
-    "descuento": "0",
-    "imagen": "fcs_legropes_bigwave-essential_black_a_f7c9d21a-79eb-46c9-8434-6cdd8ad57223_1080x.webp"
   },
   {
     "id": 4,
@@ -118,7 +102,7 @@
     "color": "blanco",
     "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
     "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "precio": "3.000,00",
+    "precio": "30.000,00",
     "descuento": "0",
     "imagen": "long-bord-example2.png"
   },
@@ -145,11 +129,36 @@
     "nombre": "Tabla Pipona Longboard",
     "marca": "Papa Hoe",
     "modelo": "Ejemplo 123",
-    "color": "blanco, verde, azul",
+    "color": [
+      "blanco",
+      "verde",
+      "azul"
+    ],
     "descripcion": "PIPONA Mono1 Longboard is a 3 piece traction, designed to suit performance boards.",
     "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
     "precio": "40.000,00",
     "descuento": "0",
-    "imagen": "midlenght-bord-example2.png"
+    "imagen": "midlenght-bord-example2.png",
+    "nivelExperiencia": "expert"
+  },
+  {
+    "id": 11,
+    "categoria": "surfboards",
+    "subcategoria": "Longboards",
+    "titulo": "PIPONA POPONA 33",
+    "nombre": "Tabla Pipona Longboard",
+    "marca": "Papa Hoe",
+    "modelo": "Ejemplo 123",
+    "color": [
+      "blanco",
+      "verde",
+      "azul"
+    ],
+    "descripcion": "PIPONA Mono1 Longboard is a 3 piece traction, designed to suit performance boards.",
+    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "precio": "40.000,00",
+    "descuento": "0",
+    "imagen": "midlenght-bord-example2.png",
+    "nivelExperiencia": "expert"
   }
 ]

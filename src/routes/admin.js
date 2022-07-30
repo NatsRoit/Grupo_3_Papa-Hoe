@@ -24,13 +24,16 @@ const upload = multer({ storage });
 // Acá escribiremos las rutas para las tareas de Administrador
 // POR EJEMPLO:  router.get('/admin', adminController.create);
 
-router.get("/", acceso, adminController.index);
+// ESTO TENDRÍA QUE IR EN PRODUCTS?????
+// router.get("/", acceso, adminController.index);
+
 router.get("/create", adminController.create);
 router.post("/create", upload.single("imagen"), adminController.save);
 router.get("/detail/:id", adminController.show);
 router.get("/edit/:id", adminController.edit);
 router.put("/edit/:id", upload.single("imagen"), adminController.update);
-router.get("/admin/delete/:id", adminController.destroy);
+
+// router.get("/admin/delete/:id", adminController.destroy);
 
 
 
