@@ -70,35 +70,6 @@
     "email": "magdalena@gessato.com",
     "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
     "role": 1,
-<<<<<<< HEAD
     "usuario": "Moniargento"
-  },
-  {
-    "nombre": "Nats",
-    "apellido": "R",
-    "email": "nats.roitman@gmail.com",
-    "password": "$2a$10$pQkRCQoFz/1.b2STd6LVdOW/oRjWpD1a2VhUlIWn6l1/cC/1t9Ng.",
-    "role": 1,
-    "usuario": "nats;lkd"
-=======
-    "usuario": "Moniargento",
-    "telefono": "56781234",
-    "direccion": "Av. Congreso 1234",
-    "departamento": "0",
-    "localidad": "Villa Pueyrredon",
-    "codigoPostal": "1428"
-  },
-  {
-    "nombre": "Natalia",
-    "apellido": "Arakaki",
-    "email": "natalia.arakaka@yahoo.com.ar",
-    "password": "$2a$10$V/UA.jPSs9Q9jzFuQ9xyTej1TDYxLMaBjcrI867j2mzgADtpu9wYS",
-    "role": 1,
-    "usuario": "natuArakaki",
-    "telefono": "1555661227",
-    "departamento": "1",
-    "localidad": "Nuñez",
-    "codigoPostal": "1430"
->>>>>>> fb6dc2588ff4a2d5204e830b2b02d8b26bf1382d
   }
 ]
