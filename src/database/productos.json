@@ -9,7 +9,7 @@
     "nombre": "Tracción FCS T-3",
     "descripction": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
     "features": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "hability": "medium",
+    "ability": "medium",
     "dimensions": "5'10--19 1/2--2 9/16--31",
     "finSystem": "CS SII",
     "price": "59.95",
@@ -142,10 +142,10 @@
     "nivelExperiencia": "expert"
   },
   {
-    "id": 11,
+    "id": 12,
     "categoria": "surfboards",
     "subcategoria": "Longboards",
-    "titulo": "PIPONA POPONA 33",
+    "titulo": "PIPONA Mono1",
     "nombre": "Tabla Pipona Longboard",
     "marca": "Papa Hoe",
     "modelo": "Ejemplo 123",
@@ -160,5 +160,35 @@
     "descuento": "0",
     "imagen": "midlenght-bord-example2.png",
     "nivelExperiencia": "expert"
+  },
+  {
+    "id": 13,
+    "categoria": "Surfboards",
+    "subcategoria": "Longboards",
+    "titulo": "TablaDelOrto",
+    "marca": "ok",
+    "modelo": "jhg",
+    "caracteristicas": "ni",
+    "dimensions": "1",
+    "finSystem": "CS SII",
+    "description": "ok",
+    "precio": "100",
+    "descuento": "0",
+    "imagen": "req.file.filename"
+  },
+  {
+    "id": 14,
+    "categoria": "complementos",
+    "subcategoria": "Longboards",
+    "titulo": "TablaDelOrto",
+    "marca": "sd",
+    "modelo": "jhg",
+    "caracteristicas": "",
+    "dimensions": "1",
+    "finSystem": "CS SII",
+    "description": "",
+    "precio": "100",
+    "descuento": "0",
+    "imagen": "1659236114459-Winter Botanicals - Seamless Pattern-03.jpg"
   }
 ]

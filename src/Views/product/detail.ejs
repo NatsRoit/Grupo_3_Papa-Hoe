@@ -21,8 +21,12 @@
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
-                            <img src="/img/<%= producto.categoria %>/<%= producto.subcategoria %>/<%= producto.titulo %>/<%= producto.imagen %>"
-                                        alt="<%= producto.titulo %>">
+                            <img <% if (producto.categoria == 'accesorios') {%>
+                                src="/img/<%= producto.categoria %>/<%= producto.subcategoria %>/<%= producto.titulo %>/<%= producto.imagen %>"
+                            <%} else { %>
+                                src="/img/<%= producto.imagen %>"
+                            <%}%>
+                                alt="<%= producto.titulo %>">
                             <!-- <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
                                 <img src="/img/surfboards/<%= producto.imagen%>" alt="Short board"> 

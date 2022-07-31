@@ -12,8 +12,8 @@
 
             <main class="shop">
                 <div class="shop-filters">
-                    <p class="titulo-seccion-main accesorios">Home > Shop > Surfboards</p>
-                    <p>Acá podríamos poner algunos filtros</p>
+                    <p class="titulo-seccion-main accesorios">Acá podríamos poner las opciones extra que tiene el User admin</p>
+                    <p> <a href="/product/create"> <strong>Crear Producto </strong></a>|  Editar Producto |  Borrar Producto </p>
                 </div>
 
                 <br>
@@ -24,7 +24,7 @@
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
-                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].subcategoria %>/<%= productos[i].titulo %>/<%= productos[i].imagen %>"
+                                    <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
                                 </div>
                                 <div class="detalle-producto">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
-                                    <p><%= productos[i].nombre %></p>
+                                    <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
                                 </div>
                                 <div class="info-producto">
                                     <p class="precio">$ <%= productos[i].precio %></p>
@@ -80,12 +80,12 @@
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
-                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].imagen %>"
+                                    <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
                                 </div>
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
-                                    <p><%= productos[i].nombre %></p>
+                                    <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
                                 </div>
 
                                 <div class="info-producto">
