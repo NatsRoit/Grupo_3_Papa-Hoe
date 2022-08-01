@@ -1,36 +1,36 @@
-<!doctype html>
-<html lang="es">
-  <%- include('../partials/head') %>
-  <body>
-    <main class="container-fluid">
-      <%- include('../partials/header') %>  
-        
-        <!-- Cuerpo principal -->
-        <section class="row">
-          <article class="col-12  card" >
-                  <div class="card-body">
-                    <h2 class="display-4 text-white bg-info text-center pt-2">Actualizar un Producto</h2>
-                  </div>
-          </article>
-      </section>
+<!DOCTYPE html>
+<html lang="en">
 
-        <section class="bg-home pt-4">
-            <div class="container">
-                <div class="row" >
-                    <div class="col-8 mx-auto bg-light ">
-                        <div class="create-form">
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+
+            <main>
+                <div class="login-register">
+                    <h2>Editar Producto</h2>
+                    <div>
+                        <!-- <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"> -->
+                        <img src="/images/brand/LOGO-PapaHoe-LogoWord.png" alt="Logo">
+                    </div>
+                    <div class="login-formulario">
                             <form action="/product/edit/<%= productEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required" value="<%= productEditar.nombre%>">
+                                <div class="product-form">
+                                  <label for="titulo">Nombre</label>
+                                    <input type="text" name="nombre" placeholder="Nombre" required="required" value="<%= productEditar.nombre%>">
                                 </div>	
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="descripcion" placeholder="Descripción" required="required" value="<%= productEditar.descripcion%>">
+                                <div class="product-form">
+                                  <label for="description">Descripción</label>
+                    
+                                    <input type="text" name="descripcion" placeholder="Descripción" required="required" value="<%= productEditar.descripcion%>">
                                 </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="<%= productEditar.precio%>">
+                                <div class="product-form">
+                                  <label for="precio">Price</label>
+                                    <input type="number" name="precio" placeholder="Indique el precio" required="required" value="<%= productEditar.precio%>">
                                 </div>
-                                <div class="form-group">
-                                    <select  name="descuento" class="custom-select" id="validationCustom04" required>
+                                <div class="product-form">
+                                  <label for="precio">Descuento</label>
+                                    <select  name="descuento" id="validationCustom04" required>
                                       <option disabled value="#">Seleccione un descuento"</option>
                                       <option value="0" <%= productEditar.descuento == 0 ? "selected" : null %>
                                         >Sin descuento</option>
@@ -40,7 +40,7 @@
                                 </div>
                                 <!--Aquí solicito la imagen-->
                                 <div class="custom-file">
-                                    <figure class="form-group">
+                                    <figure class="product-form">
                                         <img  class="w-100" src="/img/<%= productEditar.categoria%>/<%= productEditar.imagen%>" alt="moto <%= productEditar.nombre%>">
                                     </figure>
                                     <input type="hidden"  name="oldImagen"  value="<%= productEditar.imagen%>">
@@ -50,7 +50,7 @@
 
                                     <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
                                   </div>
-                                <div class="form-group">
+                                <div class="product-form">
                                     <button type="submit" class="btn btn btn-info">Actualizar</button>
                                     <a href="/administrar" class="btn btn-danger">Volver</a>
                                 </div>

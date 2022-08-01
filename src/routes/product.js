@@ -36,6 +36,8 @@ router.post("/create", upload.single("imagen"), productController.processCreate)
 router.get("/edit/:id", productController.edit);
 router.put("/edit/:id", upload.single("imagen"), productController.processEdit);
 
+
+
 // DELETE PRODUCTOS
 router.get("/delete/:id", productController.destroy);
 
