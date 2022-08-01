@@ -71,5 +71,17 @@
     "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
     "role": 1,
     "usuario": "Moniargento"
+  },
+  {
+    "nombre": "carmelo",
+    "apellido": "el perrito",
+    "email": "perro_panda@outlook.com",
+    "password": "$2a$10$paJistqOSEWNsfGDK6i3cuGlV62JMQ19ObXEJjPmGkN.1b1Wj3g/G",
+    "role": 1,
+    "usuario": "carmelo_el_perrito",
+    "telefono": "123456",
+    "departamento": "1,13",
+    "localidad": "ciudad",
+    "codigoPostal": "5500"
   }
 ]
