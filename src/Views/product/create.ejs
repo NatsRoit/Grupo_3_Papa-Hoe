@@ -18,11 +18,11 @@
                         <form action="/product/create" method="POST" enctype="multipart/form-data">
                             <div class="NP-1">
                                 
-                                <div class="login-input">
+                                <div class="product-form">
                                     <label for="titulo">Nombre</label>
                                     <input type="text" name="titulo" id="titulo" placeholder="titulo" required>
                                 </div>
-                                <div class="login-input">
+                                <div class="product-form">
                                     <label for="categoria">Category</label>
                                     <select name="categoria" id="categoria" required>
                                         <option value="accesorios">Accesorios</option>
@@ -31,38 +31,40 @@
                                     </select>
                             <!-- <input type="text" name="categoria" id="categoria" placeholder="Categoría" required> -->
                                 </div>
-                                <div class="login-input">
+                                <div class="product-form">
                                     <label for="subCategoria">Subcategoría</label>
                                     <input type="text" name="subCategoria" id="subCategoria" placeholder="Subcategoria" required>
                                 </div>
                                 </div>
                                 <div class="NP-1">
-                                    <div class="login-input">
+                                    <div class="product-form">
                                         <label for="brand">Marca del producto</label>
                                         <input type="text" name="brand" brand="brand" placeholder="brand" required>
                                     </div>
-                                    <div class="login-input">
+                                    <div class="product-form">
                                         <label for="model">Model</label>
                                         <input type="text" name="model" id="model" placeholder="model" required>
                                     </div>
-                                    <div class="login-input">
+                                    <div class="product-form">
                                         <label for="precio">Price</label>
                                         <input type="text" name="precio" id="precio" placeholder="Precio" required>
                                         </div>
-                                        <div>
+
+                                        <div class="product-form">
+
                                         <label for="descuento">Discount</label>
                                         <input type="text" name="descuento" id="descuento" placeholder="Descuento" required>
                                     </div>
                                     </div>
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="description">Descripción</label>
                                 <textarea class="NP-desc" type="text" name="description" id="description" placeholder="Descripción"></textarea>
                             </div>
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="features">Features</label>
                                 <textarea class="NP-desc" type="text" name="features" id="features" placeholder="Features"></textarea>
                             </div>
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="ability">Ability</label>
                                 <select name="ability" id="ability">
                                     <option value="principiante">Principiante</option>
@@ -70,7 +72,7 @@
                                     <option value="experto">Experto</option>
                                 </select>             
                             </div>
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="dimensions">Dimensions</label>
                                 <select name="dimensions" id="dimensions">
                                     <option value="1">5'10--19 1/2--2 9/16--31</option>
@@ -79,14 +81,14 @@
                                     <option value="4">6'0--19 3/4--2 11/16--33</option>
                                 </select>
                             </div>
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="finSystem">Fin System</label>
                                 <select name="finSystem" id="finSystem">
                             <option value="CS SII">CS SII</option>
                             <option value="Futures">Futures</option>
                         </select>                                    
                             </div>        
-                            <div class="login-input">
+                            <div class="product-form">
                                 <label for="imagen">Imagen del Producto</label>
                                 <input type="file" name="imagen" id="imagen" placeholder="Imagen del Producto">
                             </div>
