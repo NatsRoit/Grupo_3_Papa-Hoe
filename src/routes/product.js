@@ -20,10 +20,9 @@ const upload = multer({ storage : multerDiskstorage });
 
 
 // MIDDLEWARES ???
+//verifica si el usuario está logueado, sino redirige a login
 const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
-
 // ---------------------------
-
 
 
 let productController = require(path.join(__dirname, '../controllers/productController.js'));

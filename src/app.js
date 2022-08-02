@@ -1,19 +1,14 @@
 const express = require('express');
+const app = express();
 const path = require('path');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
 const methodOverride = require('method-override');
 
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+//Requerir el middleware que controla si el usuario está o no Logueado
 const acceso = require('./middlewares/acceso');
 
-
-// REQUIERO LOS ROUTERS
-const mainRoutes = require('./routes/main');
-const productRoutes = require('./routes/product');
-const userRoutes = require('./routes/user');
-// const adminRoutes = require('./routes/admin');
-
-const app = express();
 
 // TEMPLATE ENGINE SETUP
 app.set('view engine','ejs');
@@ -30,15 +25,22 @@ app.use(methodOverride('_method'));
 app.use( express.static(path.resolve(__dirname, '../public')));
 
 app.use(session({
-    secret : 'topSecret',
+    secret : 'whatever',
     resave: true,
     saveUninitialized: true,
-}))
+}));
 
 app.use(cookieParser());
 
+//Middleware de aplicación que se encarga de controlar si el usuario está logueado o no.
 app.use(acceso);
 
+
+// REQUIERO LOS ROUTERS
+const mainRoutes = require('./routes/main');
+const productRoutes = require('./routes/product');
+const userRoutes = require('./routes/user');
+// const adminRoutes = require('./routes/admin');
 
 // USO LAS RUTAS
 app.use('/', mainRoutes);

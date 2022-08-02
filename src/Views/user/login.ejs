@@ -10,22 +10,28 @@
                 <div class="login-register">
                     <h2>Login</h2>
                     <div class="login-img">
-                        <!-- <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"> -->
-                        <img src="images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
+                        <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                     </div>
 
-                    <div class="auth-error-message">
-                        <p>Oops! Controlá tus datos</p>
-                    </div>
+                    <% if (typeof errors != 'undefined') { %>
+                        <div class="auth-error-message">
+                            <p>Oops! Controlá tus datos</p>
+                        </div>
+                        <% } %>
 
                     <div class="login-formulario-wrapper">
                         <form class="login-formulario" action="/user/login" method="POST">
                             <div class="login-input">
-                                <label for="email">Email</label>
+                                <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
+                                    <span class="under"><%= errors.email.msg %> </span>
+                                <% } %></label>
                                 <input type="email" name="email" id="email" placeholder="Email" required>
+                        
                             </div>
                             <div class="login-input">
-                                <label for="password">Contraseña</label>
+                                <label for="password">Contraseña <% if (typeof errors != 'undefined' && errors.password) { %>
+                                    <span class="under"><%= errors.password.msg %> </span>
+                                <% } %></label>
                                 <a href="#">¿Olvidaste tu contraseña?</a>
                                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
                             </div>

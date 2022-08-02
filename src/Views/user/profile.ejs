@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+
+
+            <header class="section-header">
+                <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
+            </header>
+
+            <main class="productDetail">
+                <section class="main-container">
+                    <div class="left-wrapper">
+                        <div class="img-slider">
+                            <img src="/images/usuarios/<%= user.avatar %>" alt="imagen de perfil">
+                        </div>
+                    </div>
+
+                    <div class="right-wrapper">
+                        <div class="product-header">
+                            <h2>
+                                <%= 'Hola ' + user.nombre + ' ' + user.apellido%>
+                            </h2>
+                        </div>
+
+                        <div class="product-summary">
+                            <p>
+                                <%= user.nombre%>
+                            </p>
+                            <p>
+                                <%= user.direccion%>
+                            </p>
+                            <ul>
+                                <li>Dimensiones</li>
+                                <li>Fins</li>
+                                <li>Tecnologia</li>
+                                <li>Tail</li>
+                                <li>Finnish</li>
+                            </ul>
+                            <hr>
+                            <p>CANTIDAD</p>
+                            <hr>
+                            <p>TOTAL</p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>

@@ -2,18 +2,76 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 
-let users =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/usuarios.json')));
+
+//Aquí requiero a la función que trae los errores desde la ruta, de llegar a existir
+const { validationResult } = require('express-validator');
+
+let archivoUsers =  fs.readFileSync(path.resolve(__dirname,'../database/usuarios.json'), {encoding: 'utf-8'});
+let users;
+  if (archivoUsers == "") {
+    users = [];
+  } else {
+    users = JSON.parse(archivoUsers);
+  };
 
 
-const user = {
-    login: function(req,res){
+
+const userController = {
+
+    profile: function(req,res){
+        let idUsuario = req.params.id;  //7
+        let showUser = users.find(item => item.id == idUsuario);
+        res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser});
+    },
+
+
+
+    loginView: function(req,res){
         res.render(path.resolve(__dirname, '../views/user/login'),{users});
     },
-    register: function(req,res){
+
+
+
+    login: (req,res) => {
+        const errors = validationResult(req);
+        console.log(errors.array())
+
+        if(errors.isEmpty()) {
+            let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
+            console.log(usuarioLogueado);
+            //Como podemos modificar nuestros req.body
+            delete usuarioLogueado.password;
+            console.log(usuarioLogueado);
+            req.session.usuario = usuarioLogueado;
+
+//Aquí voy a guardar las cookies del usuario que se loguea del lado del servidor
+console.log('hasta acá funciona 2');
+        if(req.body.keepSession){
+          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+        }
+        console.log('hasta acá funciona3');
+        return res.redirect('/');
+    } else {
+        //Devolver a la vista los errores
+        console.log(errors.array())
+        return res.render(path.resolve(__dirname, '../views/user/login'),{errors : errors.mapped(), old : req.body});        
+      }
+    },
+
+
+    registerView: function(req,res){
         res.render(path.resolve(__dirname, '../views/user/register'));
     },
-    create: function (req, res){
-        let nuevoUsuario = {
+
+
+    register: function (req, res) {
+        let ultimoUsuario = users.pop();
+        users.push(ultimoUsuario);
+
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          let nuevoUsuario = {
+            id: ultimoUsuario.id +1,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
@@ -27,29 +85,23 @@ const user = {
             codigoPostal: req.body.codigoPostal,
             avatar:  req.file ? req.file.filename : ''
         }
+        // console.log('hay errores en el create user')
         users.push(nuevoUsuario);
 
-        let usersJSON = JSON.stringify(users, null, 2);
-
+        let usersJSON = JSON.stringify(users);
         fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'), usersJSON);
+        // console.log('hay errores en el write user')
+        res.redirect('/user/profile/' + nuevoUsuario.id)
 
-        res.redirect('/user/login')
-    },
-    ingresar: (req,res) =>{
-  
-          let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
-          let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
-          //return res.send(usuarioLogueado);
-          //Como podemos modificar nuestros req.body
-          delete usuarioLogueado.password;
-          req.session.usuario = usuarioLogueado;  //Guardar del lado del servidor
-          //Aquí voy a guardar las cookies del usuario que se loguea
-          if(req.body.keepSession){
-            res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
-          }
-          return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home - a donde deseen)
+    } else { 
+        console.log('hay errores en el else')
+        return res.render(path.resolve(__dirname, '../views/user/register'), {
+            errors: errors.array(),  old: req.body
+          });
+    }
+},
 
-      },
+
       logout: (req,res) =>{
         req.session.destroy();
         res.cookie('email',null,{maxAge: -1});
@@ -57,4 +109,4 @@ const user = {
       }
 };
 
-module.exports = user;
+module.exports = userController;
