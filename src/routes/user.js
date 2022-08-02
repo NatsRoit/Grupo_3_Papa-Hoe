@@ -26,6 +26,7 @@ const upload = multer({ storage });
 const acceso = require(path.resolve(__dirname, "../middlewares/acceso"));
 
 
+
 let userController = require(path.join(__dirname, '../controllers/userController.js'));
 
 //Aquí ejecuto mis validaciones
