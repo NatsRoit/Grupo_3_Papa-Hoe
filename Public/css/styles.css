@@ -2412,12 +2412,18 @@ button:focus {
 
 /*----------------------NEW PRODUCT FORM ------------------*/
 
-.NP-1{
-    display: flex;
-    justify-content: space-between;
-    display: flex;
-    width: 100%;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: left;
-  }
+/*----------------------NEW PRODUCT FORM ------------------*/
+
+.product-form{
+  display: flex;
+  padding: 20 px;
+  align-content: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 20px;
+}
+
+.product-form label{
+  text-align: left;
+  margin-bottom: 10px;
+}
