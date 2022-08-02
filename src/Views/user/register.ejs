@@ -6,15 +6,19 @@
     <body>
         <%- include("../partials/header") %>
 
-            <main>
-                <div class="login-register">
+            <main class="register" >
+                <div class="register-title">
                     <h2>Crear Cuenta</h2>
+                </div>
+                <div class="login-register">
                     <div class="login-img">
                         <!-- <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"> -->
                         <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                     </div>
 
                     <form class="login-formulario" action="/user/register" method="post" enctype="multipart/form-data">
+                        <section class="datos-section">
+                            <h4>Datos Personales</h4>
                         <div class="login-input nombre">
                             <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
@@ -35,37 +39,42 @@
                             <label for="contraseña">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Contraseña" required>
                         </div>
-                        <div class="login-input">
-                            <label for="telefono">Teléfono</label>
-                            <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
-                        </div>
-                        <div class="login-input">
-                            <label for="dirección">Dirección</label>
-                            <input type="text" name="dirección" id="dirección" placeholder="Dirección" required>
-                        </div>
+                    </section>
+                        <section class="datos-section">
+                            <h4>Datos de Envío</h4>
+                            <div class="login-input">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                            </div>
+                            <div class="login-input">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                            </div>
                             <div class="direccion">
                                 <div class="login-input">
-                                    <label for="departamento"></label> Piso, departamento
-                                    <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento" required>
+                                    <label for="departamento">Piso, departamento</label>
+                                    <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento">
                                 </div>
                                 <div class="login-input">
-                                    <label for="localidad"></label> Localidad
+                                    <label for="localidad">Localidad</label>
                                     <input type="text" name="localidad" id="localidad" placeholder="Localidad" required>
                                 </div>
                                 <div class="login-input">
-                                    <label for="codigoPostal"></label> Código Postal
+                                    <label for="codigoPostal">Código Postal</label>
                                     <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" required>
-                                </div> 
+                                </div>
                             </div>
-                            <div class="custom-file">
-                                <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">
-                            </div>  
-                        </div>
-
-                        <div>
+                        </section>
+                        <br>
+                        <div class="login-input custom-file">
+                            <label for="avatar">Elige una imagen de perfil</label>
+                            <br>
+                            <input type="file" name="avatar" id="avatar">
+                        </div>  
+                        <div class="submit-button">
                             <button class="submit-button" type="submit">Crear</button>
                         </div>
-                </form>
+                    </form>
                 </div>
             </main>
             <%- include("../partials/footer") %>
