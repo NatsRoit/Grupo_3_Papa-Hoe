@@ -1007,7 +1007,6 @@ object-position: 0 0;
 }
 
 .auth-error-message p {
-  /* display: none; */
   margin: 20px 0;
   padding: 10px;
   color: #f58172;
@@ -1015,6 +1014,12 @@ object-position: 0 0;
   border: 1px solid #f58172;
   font-weight: 600;
 }
+
+.under {
+  color: #ff5d48;
+  padding-left: 20px;
+}
+
 .login-formulario {
   display: flex;
   flex-wrap: wrap;
@@ -1090,33 +1095,86 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
-.login-register .direccion {
-  display: flex;
-  
+/*--------------------------------------------------------
+    MAIN Register
+------------------------------------------------------ */
+
+.register {
+  padding: 30px 0;
+}
+.register-title {
+  width: 95%;
+  margin: auto;
+}
+.register .login-register {
+  width: 95%;
+  min-height: 85vh;
+  margin: auto;
+  padding: 20px 40px 40px;
+  text-align: center;
+  background-color: #fff;
+
+}
+.register-title h2 {
+  padding: 30px 0 40px;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-align: left;
 }
 
-/* 
-.alternative-login {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
+.register .login-input input {
+  border-style: none;
+  background-blend-mode: multiply;
+  border-radius: 2px;
+  height: 45px;
+  margin: 4px 0 20px 0;
+  padding: 1px 10px;
+  width: 100%;
+  background-color: #00172815;
+  /* border: #001728 solid 0.5px; */
 }
-.fa-facebook {
-    color: #335cb1;
-    font-size: 30px;
-    margin: 20px;
+.register .login-input.nombre,
+.register .login-input.apellido {
+  display: inline-block;
+  width: 49%;
 }
-.alternative-login img#google {
-    width: 30px;
-    margin: 20px;
+
+.datos-section {
+  width: 100%;
+  margin: 0 0 20px 0;
+  /* margin-bottom: 30px; */
 }
-.reCAPTCHA p {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
-} */
+.datos-section h4 {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.register .login-register .direccion {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.register .login-register .direccion div {
+  width: 32%;
+}
+.register .login-register .direccion label {
+  display: none;
+}
+
+.register button.submit-button {
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  margin: 0;
+  margin-top: 15px;
+  padding: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: #001728;
+  color: #f4f5ec;
+  width: 100%;
+}
+
 
 /*
 --------------------------------------------------------
@@ -1978,9 +2036,9 @@ Navegación en TABLETS (ancho mínimo 768px px)
   }
 
   /* --------- LOGIN ---------------------------*/
-
+  .register .login-register,
   .login-register {
-    width: 50%;
+    width: 80%;
   }
   .login-img {
     display: block;
@@ -2208,9 +2266,11 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 
   /* ------------- LOGIN / REGISTER -------------------------------*/
 
+  .register .login-register {
+    width: 60%;
+  }
   .login-register {
     width: 40%;
-  }
 }
 
 /* ------------- COSTUM TRACKER -------------------------------*/
@@ -2441,4 +2501,5 @@ button:focus {
 .product-form label{
   text-align: left;
   margin-bottom: 10px;
+}
 }

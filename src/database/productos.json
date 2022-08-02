@@ -205,5 +205,20 @@
     "precio": "25000",
     "descuento": "0",
     "imagen": "1659393908805-img_9758-1b.png"
+  },
+  {
+    "id": 16,
+    "categoria": "complementos",
+    "subcategoria": "LegRope",
+    "titulo": "TablaDelOrto",
+    "marca": "7",
+    "modelo": "K 33",
+    "caracteristicas": "asd",
+    "dimensions": "1",
+    "finSystem": "CS SII",
+    "description": "asd",
+    "precio": "asd",
+    "descuento": "asdasd",
+    "imagen": "1659434841244-8a0a80534b3f65e49a1f00ba0e06ff80.jpeg"
   }
 ]
