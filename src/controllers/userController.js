@@ -31,7 +31,6 @@ const userController = {
     },
 
 
-
     login: (req,res) => {
         const errors = validationResult(req);
         console.log(errors.array())
@@ -85,12 +84,17 @@ console.log('hasta acá funciona 2');
             codigoPostal: req.body.codigoPostal,
             avatar:  req.file ? req.file.filename : ''
         }
-        // console.log('hay errores en el create user')
+
         users.push(nuevoUsuario);
 
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'), usersJSON);
-        // console.log('hay errores en el write user')
+        
+        let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
+
+        delete usuarioLogueado.password;
+        req.session.usuario = usuarioLogueado;
+        
         res.redirect('/user/profile/' + nuevoUsuario.id)
 
     } else { 
