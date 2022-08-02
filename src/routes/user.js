@@ -32,17 +32,17 @@ let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../da
 
 const validacionesLogin = [
   body('email').isEmail().withMessage('Agregar un email válido'),
-  // body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
   body('email').custom( (value) =>{
     for (let i = 0; i < archivoUsuarios.length; i++) {
-        if (archivoUsuarios[i].email == value) {
-            return true    
-        }
+      if (archivoUsuarios[i].email == value) {
+        return true    
+      }
     }
     return false
   }).withMessage('¿Estás seguro de haber usado ese email para registrarte?'),
-
+  
   //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
+  // body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
   body('password').custom( (value, {req}) =>{
       for (let i = 0; i < archivoUsuarios.length; i++) {
           if (archivoUsuarios[i].email == req.body.email) {
@@ -64,7 +64,7 @@ const validacionesRegistro = [
   body('email').isEmail().withMessage('Agregar un email válido'),
 
 //Aquí valido el Password   
-  body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
+  // body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
   body('avatar').custom((value, {req}) =>{
         // console.log(req.file);
         if(req.file != undefined){

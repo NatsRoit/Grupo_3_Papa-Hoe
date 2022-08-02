@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const multer = require("multer");
+const multer = require('multer');
 
 // MULTER CONFIG
 const multerDiskstorage = multer.diskStorage({
