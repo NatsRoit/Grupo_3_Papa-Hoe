@@ -6,6 +6,9 @@ const multer = require("multer");
 // MULTER CONFIG
 const multerDiskstorage = multer.diskStorage({
   destination: function (req, file, cb) {
+    // let accesorios;
+    // let surfboards;
+    // let complementos;
     cb (null, path.resolve(__dirname, "../../public/img"));
   },
   filename: function (req, file, cb) {

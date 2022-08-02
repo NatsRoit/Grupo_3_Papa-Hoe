@@ -22,11 +22,13 @@
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="surfboards" ){ %>
                         <div class="producto-shop">
-                            <a href="/product/detail/<%= productos[i].id %>">
+                            <a class="shop-wraper-img" href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
                                     <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
                                 </div>
+                            </a>
+                            <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
                                     <p><%= productos[i].nombre %></p>
@@ -51,11 +53,13 @@
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="accesorios" ){ %>
                         <div class="producto-shop">
-                            <a href="/product/detail/<%= productos[i].id %>">
+                            <a class="shop-wraper-img" href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
-                                    <img src="/img/<%= productos[i].categoria %>/<%= productos[i].subcategoria %>/<%= productos[i].titulo %>/<%= productos[i].imagen %>"
+                                    <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
                                 </div>
+                            </a>
+                            <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
                                     <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
@@ -80,9 +84,13 @@
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
+                                    <div class="complementos-img">
                                     <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
+                                    </div>
                                 </div>
+                            </a>
+                            <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
                                     <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
