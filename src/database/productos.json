@@ -142,24 +142,24 @@
     "nivelExperiencia": "expert"
   },
   {
-    "id": 12,
-    "categoria": "surfboards",
-    "subcategoria": "Longboards",
-    "titulo": "PIPONA Mono1",
     "nombre": "Tabla Pipona Longboard",
-    "marca": "Papa Hoe",
-    "modelo": "Ejemplo 123",
-    "color": [
-      "blanco",
-      "verde",
-      "azul"
+    "categoria": "accesorios",
+    "subCategoria": "Longboards",
+    "brand": "Papa Hoe",
+    "model": "Ejemplo 123",
+    "precio": "40.000,00",
+    "descuento": [
+      "0",
+      "0"
     ],
     "descripcion": "PIPONA Mono1 Longboard is a 3 piece traction, designed to suit performance boards.",
-    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
-    "precio": "40.000,00",
-    "descuento": "0",
-    "imagen": "midlenght-bord-example2.png",
-    "nivelExperiencia": "expert"
+    "features": "ew",
+    "ability": "principiante",
+    "dimensions": "1",
+    "finSystem": "CS SII",
+    "oldImagen": "midlenght-bord-example2.png",
+    "id": "12",
+    "imagen": "midlenght-bord-example2.png"
   },
   {
     "id": 13,
