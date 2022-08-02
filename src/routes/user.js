@@ -30,13 +30,6 @@ const acceso = require(path.resolve(__dirname, "../middlewares/acceso"));
 // VALIDACIONES LOGIN
 let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')))
 
-<<<<<<< HEAD
-
-let userController = require(path.join(__dirname, '../controllers/userController.js'));
-
-//Aquí ejecuto mis validaciones
-=======
->>>>>>> a20229b328ee98bd265b516934890aec04d29021
 const validacionesLogin = [
   body('email').isEmail().withMessage('Agregar un email válido'),
   // body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
