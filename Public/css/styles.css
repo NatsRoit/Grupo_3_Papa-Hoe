@@ -183,12 +183,13 @@ a.button-link:active {
 
 
 .main-header {
-  height: 65px;
+  height: 70px;
   background-color: #001728;
   position: sticky;
   z-index: 100;
   top: 0px;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -218,9 +219,10 @@ a.button-link:active {
 
 
 .icons-navbar {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
+  display: none;
 }
 
 .icons-navbar ul {
@@ -1813,9 +1815,13 @@ Navegación en TABLETS (ancho mínimo 768px px)
   
   /*-------- HOME -----------------------------------*/
 
-    
+  .main-header {
+    flex-direction: row;
+  }
+  
   .burger-menu {
     display: none;
+    justify-self: flex-end;
 }
 
   .main-navbar {
@@ -1823,24 +1829,28 @@ Navegación en TABLETS (ancho mínimo 768px px)
     justify-content: flex-start;
     flex-grow: 0.7;
   }
-
   .main-navbar ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-
+  
   .main-navbar a {
     line-height: 60px;
     text-decoration: none;
     color: white;
     letter-spacing: 0.05em;
-    font-size: 0.75em;
+    font-size: 0.85em;
     font-weight: 500;
     margin-right: 25px;
   }
-
+  
+    .icons-navbar {
+      display: flex;
+    }
+    
+  
   /* ------------------------------------------------*/
 
   header.slider {
@@ -2098,6 +2108,11 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     justify-content: flex-start;
     flex-grow: 0.7;
   }
+
+
+.icons-navbar {
+  display: flex;
+}
 
   .main-navbar ul {
     display: flex;
