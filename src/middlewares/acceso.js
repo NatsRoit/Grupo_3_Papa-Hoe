@@ -7,17 +7,17 @@ let archivoUser = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../databas
 
 let acceso = (req, res, next) => {
   //Variable locals (super global - vive en las vistas )
-  res.locals.user = false;  
+  res.locals.usuario = false;  
   
-  if (req.session.user) {
-    res.locals.user = req.session.user;
+  if (req.session.usuario) {
+    res.locals.usuario = req.session.usuario;
     next();
   } else if (req.cookies.email) {
-    let user = archivoUser.find((user) => user.email == req.cookies.email);
+    let usuario = archivoUser.find((usuario) => usuario.email == req.cookies.email);
     //return res.send(user);
     //delete user.password;
-    req.session.user = user;
-    res.locals.user = user;
+    req.session.usuario = usuario;
+    res.locals.usuario = usuario;
     next();
   } else {
     next();

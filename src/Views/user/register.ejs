@@ -14,7 +14,7 @@
                         <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                     </div>
 
-                    <form class="login-formulario" action="/user/register" method="post">
+                    <form class="login-formulario" action="/user/register" method="post" enctype="multipart/form-data">
                         <div class="login-input nombre">
                             <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
@@ -55,8 +55,11 @@
                                 <div class="login-input">
                                     <label for="codigoPostal"></label> Código Postal
                                     <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" required>
-                                </div>
+                                </div> 
                             </div>
+                            <div class="custom-file">
+                                <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">
+                            </div>  
                         </div>
 
                         <div>

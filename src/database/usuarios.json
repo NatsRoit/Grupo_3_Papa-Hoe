@@ -1,87 +1,15 @@
 [
   {
-    "nombre": "Andy",
-    "apellido": "Chami",
-    "email": "andychami@gmail.com",
-    "password": "testtests",
+    "nombre": "Alfredo ",
+    "apellido": "Buzzin",
+    "email": "alfredobuzzin@outlook.com",
+    "password": "$2a$10$Dxu/Wft0eXSBJ1Nu2lpJ1uDh/HklZjr0t1QP7wbv47t7QfkjEwoD6",
     "role": 1,
-    "usuario": "andycha",
-    "telefono": "12345678",
-    "direccion": "Monroe 1234",
-    "departamento": "2 B",
-    "localidad": "Nuñez",
-    "codigoPostal": "1430"
-  },
-  {
-    "nombre": "pepe",
-    "apellido": "argento",
-    "email": "pepe@gmail.com",
-    "password": "$2a$10$X2J4.UdK7SAdc6JfhloTlOtZgMYuwGpuXY95x32Xm3/Ikr7StGJJq",
-    "role": 1,
-    "usuario": "pepe",
-    "telefono": "23456789",
-    "direccion": "Santa Fe 1234",
-    "departamento": "0",
-    "localidad": "Belgrano",
-    "codigoPostal": "1425"
-  },
-  {
-    "nombre": "untipo",
-    "apellido": "notiene",
-    "email": "untipo@outlook.com",
-    "password": "$2a$10$txpyOW1qf8IPAOsG0cf77OYyKdCkyGPap3R9Wo4BkA2bIu2KtlC.m",
-    "role": 1,
-    "usuario": "untipazo",
-    "telefono": "12345678",
-    "direccion": "Cangallo 1234",
-    "departamento": "4 F",
-    "localidad": "C.A.B.A",
-    "codigoPostal": "1432"
-  },
-  {
-    "nombre": "Moni",
-    "apellido": "Argento",
-    "email": "moniargento@pepeteamo.com",
-    "password": "$2a$10$EolhZt4bL6rlAht.O5N5..Qu1QqoxroFpLYoIjbx3EY1u6hzYqiHG",
-    "role": 1,
-    "usuario": "Moniargento",
-    "telefono": "34567812",
-    "direccion": "San Martín 1234",
-    "departamento": "PB",
-    "localidad": "San Martín",
-    "codigoPostal": "1650"
-  },
-  {
-    "nombre": "Magdalena",
-    "apellido": "Belaustegui",
-    "email": "malebelaustegui@yahoo.com.ar",
-    "password": "$2a$10$m7jk64qkDddcAvK83RDtOesh6LezcIcscKuqIs3T.wJyEDgSchnCi",
-    "role": 1,
-    "usuario": "malebe",
-    "telefono": "12345678",
-    "direccion": "Nazca 1234",
-    "departamento": "4 A",
-    "localidad": "Urquiza",
-    "codigoPostal": "1420"
-  },
-  {
-    "nombre": "Moni",
-    "apellido": "rossi",
-    "email": "magdalena@gessato.com",
-    "password": "$2a$10$9QrUWcwt0Ie31oDsbpMKhuFE8Zr0RcZSqhX96n./Vl5PDhBTFggjO",
-    "role": 1,
-    "usuario": "Moniargento"
-  },
-  {
-    "nombre": "carmelo",
-    "apellido": "el perrito",
-    "email": "perro_panda@outlook.com",
-    "password": "$2a$10$paJistqOSEWNsfGDK6i3cuGlV62JMQ19ObXEJjPmGkN.1b1Wj3g/G",
-    "role": 1,
-    "usuario": "carmelo_el_perrito",
-    "telefono": "123456",
+    "usuario": "alfredobuzzin",
+    "telefono": "425415",
     "departamento": "1,13",
     "localidad": "ciudad",
-    "codigoPostal": "5500"
+    "codigoPostal": "5500",
+    "avatar": "user-1659428552338.jpg"
   }
 ]

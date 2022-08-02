@@ -4,6 +4,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
+const acceso = require('./middlewares/acceso');
+
+
 // REQUIERO LOS ROUTERS
 const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/product');
@@ -22,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // Uso el methodOverride para usar PUT y DELETE en nuestros formularios
 app.use(methodOverride('_method'));
-app.use(cookieParser());
+
 // Indico la carpeta donde se encuentran los archivos estáticos
 app.use( express.static(path.resolve(__dirname, '../public')));
 
@@ -31,6 +34,11 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
 }))
+
+app.use(cookieParser());
+
+app.use(acceso);
+
 
 // USO LAS RUTAS
 app.use('/', mainRoutes);

@@ -25,7 +25,7 @@ const user = {
             departamento: req.body.departamento,
             localidad: req.body.localidad,
             codigoPostal: req.body.codigoPostal,
-
+            avatar:  req.file ? req.file.filename : ''
         }
         users.push(nuevoUsuario);
 
@@ -34,8 +34,27 @@ const user = {
         fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'), usersJSON);
 
         res.redirect('/user/login')
+    },
+    ingresar: (req,res) =>{
+  
+          let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+          let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+          //return res.send(usuarioLogueado);
+          //Como podemos modificar nuestros req.body
+          delete usuarioLogueado.password;
+          req.session.usuario = usuarioLogueado;  //Guardar del lado del servidor
+          //Aquí voy a guardar las cookies del usuario que se loguea
+          if(req.body.keepSession){
+            res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
+          }
+          return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home - a donde deseen)
 
-    }
+      },
+      logout: (req,res) =>{
+        req.session.destroy();
+        res.cookie('email',null,{maxAge: -1});
+        res.redirect('/')
+      }
 };
 
 module.exports = user;
