@@ -1029,6 +1029,7 @@ object-position: 0 0;
 .login-formulario form{
   width: 100%;
 }
+
 .login-input {
   display: flex;
   flex-wrap: wrap;
@@ -1038,6 +1039,9 @@ object-position: 0 0;
   font-weight: 500;
   text-align: left;
   /* text-transform: uppercase; */
+}
+.hidden {
+  display: none;
 }
 .login-input a, 
 .login-input.checkbox {
@@ -1893,10 +1897,9 @@ Navegación en TABLETS (ancho mínimo 768px px)
     justify-content: center;
     align-items: center;
   }
-  
+
   .main-navbar a {
     line-height: 60px;
-    text-decoration: none;
     color: white;
     letter-spacing: 0.05em;
     font-size: 0.85em;
@@ -1907,7 +1910,12 @@ Navegación en TABLETS (ancho mínimo 768px px)
     .icons-navbar {
       display: flex;
     }
-    
+    .nav-link {
+      letter-spacing: 0.05em;
+      font-size: 1.0em;
+      /* font-weight: 500; */
+      /* margin-right: 25px; */
+    }
   
   /* ------------------------------------------------*/
 
@@ -2262,6 +2270,13 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 
   .icons-navbar i {
     padding: 0 30px;
+  }
+
+  .nav-link >i,
+  a.nav-link {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    padding: 5px;
   }
 
   /* ------------- LOGIN / REGISTER -------------------------------*/
