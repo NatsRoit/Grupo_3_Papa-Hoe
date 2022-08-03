@@ -147,44 +147,17 @@
                 <section class="product-container">
                     <!-- Acá agregaría un poco de EJS con productos relaciones de acuerdo al nivel de habilidad. Por lo cual agregaría en el JSON también una clave que sea "Habilidad", ¨Nivel de Experiencia", etc -->
                     <article class="product">
-                        <a href="#">
-                            <img src="/img/accesorios/Tractions/06-CHIPPA-WILSON-FRONT-TRACTION/Chippa-Wilson-Front-Foot-Traction_1080x.webp"
-                                alt="Fin" width="100%">
-                            <div class="product-info">
-                                <h5>Chippa Wilson front foot</h5>
-                            </div>
-                        </a>
+                        <% for(let i=0; i <= 4 ; i++) { %>
+                                <a href="#">
+                                    <img src="/img/<%= productos[i].imagen %>"
+                                        alt="<%= productos[i].nombre%>" width="100%">
+                                        <div class="product-info">
+                                            <h5><%= productos[i].nombre %></h5>
+                                        </div>
+                                </a>    
+                        <% } %>
                     </article>
 
-                    <article class="product">
-                        <a href="#">
-                            <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_blue-black_a_1080x.webp"
-                                alt="Leg rope blue" width="100%">
-                            <div class="product-info">
-                                <h5>Leg Rope Blue</h5>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="product">
-                        <a href="#">
-                            <img src="/img/accesorios/LegRopes/01-FREEDOM-HELIX-ALL-ROUND-LEASH/fcs_legropes_freedom-helix-all-round_natural-black_a_1080x.webp"
-                                alt="Leg rope black" width="100%">
-                            <div class="product-info">
-                                <h5>Leg Rope Black</h5>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="product">
-                        <a href="">
-                            <img src="/img/accesorios/Tractions/01-T-3-TRACTION/fcs_grips_t3_black-blue_a_1080x.webp"
-                                alt="Traction" width="100%">
-                            <div class="product-info">
-                                <h5>Traction</h5>
-                            </div>
-                        </a>
-                    </article>
                 </section>
             </main>
             <%- include("../partials/footer") %>

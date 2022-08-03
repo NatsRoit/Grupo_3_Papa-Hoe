@@ -24,31 +24,28 @@ const userController = {
         res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser});
     },
 
-
-
     loginView: function(req,res){
         res.render(path.resolve(__dirname, '../views/user/login'),{users});
     },
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 420060493be1ce3d04cf03ef13833f9cdace7572
     login: (req,res) => {
         const errors = validationResult(req);
         console.log(errors.array())
 
         if(errors.isEmpty()) {
             let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
-            console.log(usuarioLogueado);
             //Como podemos modificar nuestros req.body
             delete usuarioLogueado.password;
-            console.log(usuarioLogueado);
             req.session.usuario = usuarioLogueado;
 
-//Aquí voy a guardar las cookies del usuario que se loguea del lado del servidor
-console.log('hasta acá funciona 2');
+// SAVE COOKIES (del lado del servidor) del usuario que se loguea
         if(req.body.keepSession){
-          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 30 * 60 * 60 * 24})
         }
-        console.log('hasta acá funciona3');
         return res.redirect('/');
     } else {
         //Devolver a la vista los errores
@@ -61,7 +58,6 @@ console.log('hasta acá funciona 2');
     registerView: function(req,res){
         res.render(path.resolve(__dirname, '../views/user/register'));
     },
-
 
     register: function (req, res) {
         let ultimoUsuario = users.pop();
@@ -84,33 +80,74 @@ console.log('hasta acá funciona 2');
             codigoPostal: req.body.codigoPostal,
             avatar:  req.file ? req.file.filename : ''
         }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 420060493be1ce3d04cf03ef13833f9cdace7572
         users.push(nuevoUsuario);
 
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'), usersJSON);
+<<<<<<< HEAD
+=======
         
         let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
 
         delete usuarioLogueado.password;
         req.session.usuario = usuarioLogueado;
         
+>>>>>>> 420060493be1ce3d04cf03ef13833f9cdace7572
         res.redirect('/user/profile/' + nuevoUsuario.id)
 
-    } else { 
-        console.log('hay errores en el else')
-        return res.render(path.resolve(__dirname, '../views/user/register'), {
-            errors: errors.array(),  old: req.body
-          });
+    } else {
+      return res.render(path.resolve(__dirname, '../views/user/register'), {
+        errors: errors.array(),  old: req.body
+      });
     }
+  },
+  
+  
+  editView: function(req,res) {
+    let idUser = req.params.id;
+    let showUser = users.find(item => item.id == idUser);
+    res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser});
+  },
+
+  edit: (req,res) => {
+    req.body.id = req.params.id;
+    req.body.avatar = req.file ? req.file.filename : req.body.oldImagen;
+    console.log(req.file)
+    let userUpdate = users.map(item =>{
+        if(item.id == req.body.id){
+            return item = {
+            id: req.params.id,
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: req.body.oldPassword ,
+            usuario: req.body.usuario,
+            telefono: req.body.telefono,
+            direccion: req.body.direccion,
+            departamento: req.body.departamento,
+            localidad: req.body.localidad,
+            codigoPostal: req.body.codigoPostal,
+            };
+        }
+        return item;
+    })
+    let userUpdated = JSON.stringify(userUpdate,null,2);
+    fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'),userUpdated)
+    res.redirect('/user/profile/' + req.body.id);
 },
 
 
-      logout: (req,res) =>{
-        req.session.destroy();
-        res.cookie('email',null,{maxAge: -1});
-        res.redirect('/')
-      }
+
+  
+  logout: (req,res) => {
+    req.session.destroy();
+    res.cookie('email',null,{maxAge: -1});
+    res.redirect('/')
+  }
 };
 
 module.exports = userController;
