@@ -17,7 +17,7 @@ const product = {
     detail: function(req,res){
         let idProducto = req.params.id;  //7
         let showProduct = productos.find(item => item.id == idProducto);
-        res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
+        res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct, productos:productos});
     },
 
     create: (req,res) =>{
@@ -57,7 +57,7 @@ const product = {
         let productEditar = productos.find(item=> item.id == productID);
         res.render(path.resolve(__dirname,'../views/product/edit'), {productEditar});
     },
-    processEdit: (req,res) =>{
+    processEdit: (req,res) => {
         req.body.id = req.params.id;
         req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         let productUpdate = productos.map(item =>{

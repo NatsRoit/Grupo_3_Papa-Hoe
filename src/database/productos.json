@@ -92,18 +92,23 @@
     "imagen": "long-bord-example.png"
   },
   {
-    "id": 8,
-    "categoria": "surfboards",
-    "subcategoria": "Longboards",
-    "titulo": "SANDMAN 90210",
     "nombre": "SANDMAN 90210 OtraMas",
-    "marca": "FCS Premium",
-    "modelo": "Ejemplo 123",
-    "color": "blanco",
-    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
-    "caracteristicas": "Nuestro objetivo para el proyecto. Sandman era desarrollar una tabla que hiciera que el surf fuera más fácil para la persona 'normal', pero que también tuviera cierta versatilidad para ser utilizada como una tabla semiescalonada para el surfista más regular.",
+    "categoria": "accesorios",
+    "subCategoria": "Longboards",
+    "brand": "FCS Premium",
+    "model": "Ejemplo 125",
     "precio": "30.000,00",
-    "descuento": "0",
+    "descuento": [
+      "0",
+      "0"
+    ],
+    "descripcion": "FCS T-3 Traction is a 3 piece traction, designed to suit performance boards.",
+    "features": "asdasdasd",
+    "ability": "principiante",
+    "dimensions": "1",
+    "finSystem": "CS SII",
+    "oldImagen": "long-bord-example2.png",
+    "id": "8",
     "imagen": "long-bord-example2.png"
   },
   {

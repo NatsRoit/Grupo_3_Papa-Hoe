@@ -8,59 +8,58 @@
 
             <main class="register" >
                 <div class="register-title">
-                    <h2>Crear Cuenta</h2>
+                    <h2>Editar Perfil</h2>
                 </div>
                 <div class="login-register">
                     <div class="login-img">
                         <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                     </div>
-
-                    <form class="login-formulario" action="/user/register" method="post" enctype="multipart/form-data">
+                    <form class="login-formulario" action="/user/edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <section class="datos-section">
                             <h4>Datos Personales</h4>
                         <div class="login-input nombre">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=user.nombre%>" required>
                         </div>
                         <div class="login-input apellido">
                             <label for="apellido">Apellido</label>
-                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" value="<%=user.apellido%>" required>
                         </div>
                         <div class="login-input">
                             <label for="usuario">Usuario</label>
-                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" value="<%=user.usuario%>" required>
                         </div>
                         <div class="login-input">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Email" required>
+                            <input type="email" name="email" id="email" placeholder="Email" value="<%=user.email%>" required>
                         </div>
-                        <div class="login-input">
+                        <div class="login-input hidden">
                             <label for="contraseña">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" value="<%=user.password%>" required>
                         </div>
                     </section>
                         <section class="datos-section">
                             <h4>Datos de Envío</h4>
                             <div class="login-input">
                                 <label for="telefono">Teléfono</label>
-                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" value="<%=user.telefono%>" required>
                             </div>
                             <div class="login-input">
                                 <label for="direccion">Dirección</label>
-                                <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                                <input type="text" name="direccion" id="direccion" placeholder="Dirección" value="<%=user.direccion%>" required>
                             </div>
                             <div class="direccion">
                                 <div class="login-input">
                                     <label for="departamento">Piso, departamento</label>
-                                    <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento">
+                                    <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento" value="<%=user.departamento%>">
                                 </div>
                                 <div class="login-input">
                                     <label for="localidad">Localidad</label>
-                                    <input type="text" name="localidad" id="localidad" placeholder="Localidad" required>
+                                    <input type="text" name="localidad" id="localidad" placeholder="Localidad" value="<%=user.localidad%>" required>
                                 </div>
                                 <div class="login-input">
                                     <label for="codigoPostal">Código Postal</label>
-                                    <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" required>
+                                    <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" value="<%=user.codigoPostal%>" required>
                                 </div>
                             </div>
                         </section>
@@ -68,10 +67,10 @@
                         <div class="login-input custom-file">
                             <label for="avatar">Elige una imagen de perfil</label>
                             <br>
-                            <input type="file" name="avatar" id="avatar">
+                            <input type="file" name="avatar" id="avatar" value="<%=user.avatar%>" >
                         </div>  
                         <div class="submit-button">
-                            <button class="submit-button" type="submit">Crear</button>
+                            <button class="submit-button" type="submit">Editar</button>
                         </div>
                     </form>
                 </div>
