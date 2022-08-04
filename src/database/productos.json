@@ -93,7 +93,7 @@
   },
   {
     "nombre": "SANDMAN 90210 OtraMas",
-    "categoria": "accesorios",
+    "categoria": "surfboards",
     "subCategoria": "Longboards",
     "brand": "FCS Premium",
     "model": "Ejemplo 125",
@@ -148,7 +148,7 @@
   },
   {
     "nombre": "Tabla Pipona Longboard",
-    "categoria": "accesorios",
+    "categoria": "surfboards",
     "subCategoria": "Longboards",
     "brand": "Papa Hoe",
     "model": "Ejemplo 123",
@@ -168,36 +168,6 @@
   },
   {
     "id": 13,
-    "categoria": "Surfboards",
-    "subcategoria": "Longboards",
-    "titulo": "TablaDelOrto",
-    "marca": "ok",
-    "modelo": "jhg",
-    "caracteristicas": "ni",
-    "dimensions": "1",
-    "finSystem": "CS SII",
-    "description": "ok",
-    "precio": "100",
-    "descuento": "0",
-    "imagen": "req.file.filename"
-  },
-  {
-    "id": 14,
-    "categoria": "complementos",
-    "subcategoria": "Longboards",
-    "titulo": "TablaDelOrto",
-    "marca": "sd",
-    "modelo": "jhg",
-    "caracteristicas": "",
-    "dimensions": "1",
-    "finSystem": "CS SII",
-    "description": "",
-    "precio": "100",
-    "descuento": "0",
-    "imagen": "1659236114459-Winter Botanicals - Seamless Pattern-03.jpg"
-  },
-  {
-    "id": 15,
     "categoria": "surfboards",
     "subcategoria": "Longboards",
     "titulo": "Tabla - Longboard",
@@ -212,18 +182,18 @@
     "imagen": "1659393908805-img_9758-1b.png"
   },
   {
-    "id": 16,
+    "id": 14,
     "categoria": "complementos",
-    "subcategoria": "LegRope",
-    "titulo": "TablaDelOrto",
-    "marca": "7",
-    "modelo": "K 33",
-    "caracteristicas": "asd",
+    "subcategoria": "Longboards",
+    "titulo": "Seamless Pattern",
+    "marca": "sd",
+    "modelo": "jhg",
+    "caracteristicas": "",
     "dimensions": "1",
     "finSystem": "CS SII",
-    "description": "asd",
-    "precio": "asd",
-    "descuento": "asdasd",
-    "imagen": "1659434841244-8a0a80534b3f65e49a1f00ba0e06ff80.jpeg"
+    "description": "",
+    "precio": "100",
+    "descuento": "0",
+    "imagen": "1659236114459-Winter Botanicals - Seamless Pattern-03.jpg"
   }
 ]

@@ -22,12 +22,16 @@
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="surfboards" ){ %>
                         <div class="producto-shop">
-                            <a class="shop-wraper-img" href="/product/detail/<%= productos[i].id %>">
+                           
+                            <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
-                                    <img src="/img/<%= productos[i].imagen %>"
+                                    <div class="complementos-img">
+                                        <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
+                                    </div>
                                 </div>
                             </a>
+                           
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].titulo %></h2>
@@ -53,10 +57,13 @@
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="accesorios" ){ %>
                         <div class="producto-shop">
-                            <a class="shop-wraper-img" href="/product/detail/<%= productos[i].id %>">
+
+                            <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
-                                    <img src="/img/<%= productos[i].imagen %>"
+                                    <div class="complementos-img">
+                                        <img src="/img/<%= productos[i].imagen %>"
                                         alt="<%= productos[i].titulo %>">
+                                    </div>
                                 </div>
                             </a>
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">

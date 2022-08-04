@@ -9,25 +9,23 @@
                 <div class="contenedor">
                     <div class="cartItems">
                         <ul class="breadcrumb">
-                            <li><a href="product/cart">Carrito</a></li>
-                            <li><a href="product/cart1">Información</a></li>
-                            <li><a href="product/cart2">Envío</a></li>
-                            <li><a href="product/cart3">Pago</a></li>
+                            <li><a href="/product/cart">Carrito</a></li>
+                            <li><a href="/product/cart1">Información</a></li>
+                            <li><a href="/product/cart2">Envío</a></li>
+                            <li><a href="/product/cart3">Pago</a></li>
                         </ul>
 
-                        <div class="fast-checkout">
+                        <!-- <div class="fast-checkout">
                             <h5>Chequeo rápido</h5>
                             <button class="boton-chequeo" type="submit">
                                 <i class="fa-brands fa-cc-paypal"></i>
                             </button>
-                        </div>
+                        </div> -->
 
                         <form action="/views/product/cart.ejs" method="post">
                             <div class="contacto">
                                 <h2>Información de contacto</h2>
-                                <P>¿Ya tiene una cuenta?
-                                    <a href="user/login">Iniciar sesión</a>
-                                </P>
+                                <a href="/user/login"><p>¿Ya tiene una cuenta?</p></a>
                             </div>
                             <input class="caja-shop" type="email" name="email" id="email"
                                 placeholder="Correo Electrónico / Usuari@" required>
@@ -104,9 +102,7 @@
                                 <p>U$225,00</p>
                                 <i class="fa-solid fa-trash-can"></i>
                             </article>
-                            <form action="/product/cart1" method="GET">
-                                <button class="submit-button" type="submit">Checkout</button>
-                            </form>
+                            
                             <button class="boton" type="submit">Seguir comprando
                                 <a href="shop"></a>
                             </button>

@@ -32,7 +32,7 @@ app.use(session({
 
 app.use(cookieParser());
 
-//Middleware de aplicación que se encarga de controlar si el usuario está logueado o no.
+// Uso el Middleware de aplicación: Logueado.
 app.use(acceso);
 
 

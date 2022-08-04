@@ -41,7 +41,7 @@
                             <p>$<%= producto.precio%> ARS</p>
                         </div>
 
-                        <form class="product-shop">
+                        <form class="product-detail-form">
                             <div class="opciones">
                                 <div>
                                     <!-- <h5>Dimensiones</h5> -->
@@ -143,22 +143,29 @@
                     </div>
                 </section>
 
-                <h1 class="titulo-extras">Tambien te puede interesar</h1>
-                <section class="product-container">
-                    <!-- Acá agregaría un poco de EJS con productos relaciones de acuerdo al nivel de habilidad. Por lo cual agregaría en el JSON también una clave que sea "Habilidad", ¨Nivel de Experiencia", etc -->
-                    <article class="product">
-                        <% for(let i=0; i <= 4 ; i++) { %>
-                                <a href="#">
-                                    <img src="/img/<%= productos[i].imagen %>"
-                                        alt="<%= productos[i].nombre%>" width="100%">
-                                        <div class="product-info">
-                                            <h5><%= productos[i].nombre %></h5>
-                                        </div>
-                                </a>    
+                <div class="related-products">
+                <h1>Tambien te puede interesar</h1>
+                <section class="contenedor-productos">
+                    <% let arr = Array.from({length: 5}, () => Math.floor(Math.random() * productos.length));
+                            console.log(arr);
+                            %>
+                        <% for (let i = 0; i < arr.length; i++) { %>
+                        <div class="producto-shop">
+                            <a href="/product/detail/ + <%= productos[arr[i]].id%>">
+                                <div class="imagen-producto">
+                                    <div class="complementos-img">
+                                        <img src="/img/<%= productos[arr[i]].imagen %>"
+                                        alt="<%= productos[arr[i]].nombre%>" width="100%">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="product-info">
+                                <h5><%= productos[arr[i]].titulo %></h5>
+                            </div>
+                        </div>
                         <% } %>
-                    </article>
-
                 </section>
+            </div>
             </main>
             <%- include("../partials/footer") %>
     </body>

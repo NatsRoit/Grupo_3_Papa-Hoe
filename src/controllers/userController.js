@@ -30,17 +30,16 @@ const userController = {
 
     login: (req,res) => {
         const errors = validationResult(req);
-        console.log(errors.array())
-
         if(errors.isEmpty()) {
-            let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
+          let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+          let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
             //Como podemos modificar nuestros req.body
             delete usuarioLogueado.password;
             req.session.usuario = usuarioLogueado;
 
 // SAVE COOKIES (del lado del servidor) del usuario que se loguea
         if(req.body.keepSession){
-          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 30 * 60 * 60 * 24})
+          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
         }
         return res.redirect('/');
     } else {
@@ -76,6 +75,14 @@ const userController = {
             codigoPostal: req.body.codigoPostal,
             avatar:  req.file ? req.file.filename : ''
         }
+
+        let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), {
+          encoding: 'utf-8'});
+        let users;
+        if (archivoUsers == "") { users = [];
+        } else {
+          users = JSON.parse(archivoUsers);
+        };
         users.push(nuevoUsuario);
 
         let usersJSON = JSON.stringify(users);

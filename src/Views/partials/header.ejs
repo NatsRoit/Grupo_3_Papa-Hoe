@@ -21,8 +21,8 @@
             <% if(locals.usuario) { %>  
 
                     <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
-                    <li><a href="/user/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></li>
                     <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+                    <li><a href="/user/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i></a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a></li> -->
 
                   <% } else { %>

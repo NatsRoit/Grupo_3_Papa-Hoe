@@ -7,7 +7,7 @@
         <%- include("../partials/header") %>
 
             <main class="register" >
-                <div class="register-title">
+                <div class="form-title">
                     <h2>Crear Cuenta</h2>
                 </div>
                 <div class="login-register">
@@ -18,38 +18,36 @@
                     <form class="login-formulario" action="/user/register" method="post" enctype="multipart/form-data">
                         <section class="datos-section">
                             <h4>Datos Personales</h4>
-                        <div class="login-input nombre">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-                        </div>
-                        <div class="login-input apellido">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
-                        </div>
-                        <div class="login-input">
-                            <label for="usuario">Usuario</label>
-                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
-                        </div>
-                        <div class="login-input">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="login-input">
-                            <label for="contraseña">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                        </div>
-                    </section>
+                            <div class="form-2col">
+                                <div class="login-input">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                                </div>
+                                <div class="login-input">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                                </div>
+                            </div>
+                            <div class="login-input">
+                                <label for="usuario">Usuario</label>
+                                <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+                            </div>
+                            <div class="login-input">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="login-input">
+                                <label for="contraseña">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                            </div>
+                        </section>
                         <section class="datos-section">
                             <h4>Datos de Envío</h4>
-                            <div class="login-input">
-                                <label for="telefono">Teléfono</label>
-                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
-                            </div>
                             <div class="login-input">
                                 <label for="direccion">Dirección</label>
                                 <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
                             </div>
-                            <div class="direccion">
+                            <div class="form-3col">
                                 <div class="login-input">
                                     <label for="departamento">Piso, departamento</label>
                                     <input type="text" name="departamento" id="departamento" placeholder="Piso, departamento">
@@ -62,6 +60,10 @@
                                     <label for="codigoPostal">Código Postal</label>
                                     <input type="text" name="codigoPostal" id="codigoPostal" placeholder="Código Postal" required>
                                 </div>
+                            </div>
+                            <div class="login-input">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
                             </div>
                         </section>
                         <br>

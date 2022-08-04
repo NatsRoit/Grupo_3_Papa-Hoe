@@ -46,9 +46,10 @@ router.put("/edit/:id", upload.single("imagen"), productController.processEdit);
 // DELETE PRODUCTOS
 router.get("/delete/:id", productController.destroy);
 
-
+// BOARDBUILDER
 router.get('/boardBuilder',productController.boardBuilder);
 
+// CHECKOUT
 router.get('/cart',productController.cart);
 router.get('/cart1',productController.cart1);
 router.get('/cart2',productController.cart2);
