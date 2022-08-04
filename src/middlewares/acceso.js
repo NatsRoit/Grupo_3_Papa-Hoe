@@ -8,7 +8,7 @@ module.exports = (req,res,next) =>{
     res.locals.usuario = false;
     if(req.session.usuario){
         res.locals.usuario = req.session.usuario;
-console.log(req.session);
+console.log(req.session + "MIDDLEWARE ACCESO");
         return next();
     // Cookies: Se guardan en el navegador, del lado del cliente
     } else if(req.cookies.email){

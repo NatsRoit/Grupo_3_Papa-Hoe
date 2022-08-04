@@ -19,8 +19,10 @@ let users;
 const userController = {
 
     profile: function(req,res){
+      let user = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+
         let idUsuario = req.params.id;  //7
-        let showUser = users.find(item => item.id == idUsuario);
+        let showUser = user.find(item => item.id == idUsuario);
         res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser});
     },
 
@@ -104,28 +106,22 @@ const userController = {
   },
 
   edit: (req,res) => {
+    let usersToEdit = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+
     req.body.id = req.params.id;
     req.body.avatar = req.file ? req.file.filename : req.body.oldImagen;
     console.log(req.file)
-    let userUpdate = users.map(item =>{
-        if(item.id == req.body.id){
-            return item = {
-            id: req.params.id,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: req.body.oldPassword ,
-            usuario: req.body.usuario,
-            telefono: req.body.telefono,
-            direccion: req.body.direccion,
-            departamento: req.body.departamento,
-            localidad: req.body.localidad,
-            codigoPostal: req.body.codigoPostal,
-            };
-        }
-        return item;
-    })
-    let userUpdated = JSON.stringify(userUpdate,null,2);
+    console.log(req.body.oldImagen)
+
+    let userEdited = usersToEdit.map(item =>{
+      if(item.id == req.body.id){
+        req.body.role = item.role
+
+          return item = req.body;
+      }
+      return item;
+  })
+    let userUpdated = JSON.stringify(userEdited,null,2);
     fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'),userUpdated)
     res.redirect('/user/profile/' + req.body.id);
 },
