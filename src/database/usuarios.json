@@ -73,20 +73,5 @@
     "localidad": "ghjop",
     "codigoPostal": "hjk",
     "avatar": "default-admin.jpg"
-  },
-  {
-    "id": 7,
-    "nombre": "Prueba33",
-    "apellido": "456789",
-    "email": "prueba33@gmail.com",
-    "password": "$2a$10$CJBX8I2g7Y4zKSmTakuoPeGoGhjtycYSt5G7F3KBEPKYG1.otHc96",
-    "role": 1,
-    "usuario": "dfghjkl",
-    "telefono": "prueba33",
-    "direccion": "dfghjkl",
-    "departamento": "fgh",
-    "localidad": "jkl",
-    "codigoPostal": "hjkl;",
-    "avatar": "default-admin.jpg"
   }
 ]
