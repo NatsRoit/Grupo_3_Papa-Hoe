@@ -1,2 +1,5 @@
+# Archivos de Mac
 .DS_Store
-/node_modules
+
+# Dependencias
+node_modules

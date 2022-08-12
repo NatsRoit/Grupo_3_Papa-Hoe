@@ -73,16 +73,16 @@
                                     <!-- <h5>Tail Type</h5> -->
                                     <select name="" id="opciones-desplegable">
                                         <option class="option-title"value="">Tail Type</option>
-                                        <option value="">CS SII</option>
-                                        <option value="">Futures</option>
+                                        <option value="">redonda</option>
+                                        <option value="">doble punta</option>
                                     </select>
                                 </div>
                                 <div>
                                     <!-- <h5>Acabado</h5> -->
                                     <select name="" id="opciones-desplegable">
                                         <option class="option-title"value="">Acabado</option>
-                                        <option value="">CS SII</option>
-                                        <option value="">Futures</option>
+                                        <option value="">opaco</option>
+                                        <option value="">glossy</option>
                                     </select>
                                 </div>
                                 <!-- <div>
@@ -151,7 +151,8 @@
                             %>
                         <% for (let i = 0; i < arr.length; i++) { %>
                         <div class="producto-shop">
-                            <a href="/product/detail/ + <%= productos[arr[i]].id%>">
+
+                            <a href="/product/detail/<%= productos[arr[i]].id%>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
                                         <img src="/img/<%= productos[arr[i]].imagen %>"

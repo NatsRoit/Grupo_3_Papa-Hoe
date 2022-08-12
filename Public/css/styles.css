@@ -84,10 +84,14 @@ main li {
 
 /*----------------------------------------------------------------- */
 .en-construccion {
-  padding: 25vh 0;
+  padding: 20vh 0;
   text-align: center;
+  
 }
-
+.not-found {
+  background: url(../images/stock/not-found.jpeg) center no-repeat, url(../images/stock/not-found.jpeg) center no-repeat;
+  background-size: cover;
+}
 .section-header {
   margin: 0px;
   width: 100%;
@@ -254,9 +258,11 @@ a.button-link:active {
 /* -------------------------------------------------------*/
 
 .search-box {
-  display: flex;
+  display: inline;
+}
+.search-box form {
+  display: inline-flex;
   justify-content: space-between;
-  width: 30%;
   flex-shrink: 1;
   background-color: #fff;
   border: transparent;
@@ -264,8 +270,9 @@ a.button-link:active {
 }
 
 .search-box input {
-  overflow: auto;
-  flex-grow: 0.8;
+  overflow: hidden;
+  flex-basis: 10px;
+  flex-grow: 1;
   background: transparent;
   font-size: 12px;
   padding: 8px;
@@ -278,10 +285,10 @@ a.button-link:active {
 
 .search-box button[type="submit"] {
   flex-grow: 0;
+  flex-shrink: 1;
   background-color: transparent;
   color: #222;
   margin-right: 5px;
-  padding: 5px;
   border: 0px solid #666;
 }
 
@@ -291,6 +298,9 @@ a.button-link:active {
 
 .search-box button[type="submit"]:active {
   transform: translateY(1px);
+}
+.search-box button[type="submit"] i {
+  padding: 7px;
 }
 
 /*---------------------------------------------
@@ -435,7 +445,7 @@ header.slider {
   object-position: center center;
 }
 
-.categorias-image button {
+.categorias-image a {
   background-color: transparent;
   font-family: "Bebas Neue", cursive;
   color: #f4f5ec;
@@ -453,7 +463,7 @@ header.slider {
   transition: all 450ms;
 }
 
-.categorias-image button:hover {
+.categorias-image a:hover {
   background-color: #00172843;
 }
 
@@ -702,7 +712,7 @@ input[type="range"]::-moz-range-progress {
   margin-bottom: 0px;
 }
 
-.shop .contenedor-productos {
+.contenedor-productos {
   margin: auto;
   /* padding-top: 40px; */
   padding-bottom: 40px;
@@ -715,7 +725,7 @@ input[type="range"]::-moz-range-progress {
   justify-content: flex-start
 }
 
-.shop .producto-shop {
+.producto-shop {
   display: flex;
   flex-wrap: wrap;
   padding: 4% 4%;
@@ -736,24 +746,32 @@ input[type="range"]::-moz-range-progress {
 }
 
 
-.shop .imagen-producto {
+.imagen-producto {
   width: 100%;
   transition: all 200ms;
   transition-timing-function: ease-out;
   overflow: hidden;
 }
 
-.shop .imagen-producto:hover {
+.imagen-producto:hover {
   transform: scale(1.05);
   overflow: hidden;
 }
 
-.shop .imagen-producto img {
+.imagen-producto img {
   width: auto;
   object-fit: contain;
-  aspect-ratio: 3 / 4;
 }
-.imagen-producto .complementos-img img {
+.complementos-img {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagen-producto img {
+  max-height: 100% !important;
+  min-height: -webkit-fill-available !important;
+  min-block-size: -webkit-fill-available !important;
   object-fit: cover;
 }
 
@@ -842,22 +860,22 @@ object-position: 0 0;
   width: 50%;
   padding: 20px;
 }
-.product-header {
+.productDetail .product-header {
   width: 100%;
   border-bottom: 1px solid #fad6d1;
 }
-.product-header h2 {
+.productDetail .product-header h2 {
   font-size: 20px;
   color: #001728be;
 }
-.product-header h1 {
+.productDetail .product-header h1 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 0.5pt;
   font-size: 40px;
   line-height: 50px;
   margin: 0;
 }
-.product-header p {
+.productDetail .product-header p {
   font-size: 20px;
   line-height: 30px;
   font-weight: 100;
@@ -867,12 +885,12 @@ object-position: 0 0;
 }
 
 
-.product-shop {
+.product-detail-form {
   width: 50%;
   flex-grow: 1;
   margin-right: 30px;
 }
-.product-shop .opciones {
+.product-detail-form .opciones {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -920,7 +938,7 @@ object-position: 0 0;
   border: 0;
   display: inline-block;
 } */
-.product-shop input.boton {
+.product-detail-form input.boton {
   font-family: "Bebas Neue", cursive;
   font-size: 16px;
   letter-spacing: 1pt;
@@ -943,7 +961,7 @@ object-position: 0 0;
 .product-summary ul {
   margin-bottom: 20px;
 }
-
+/* ------------------------------------------------------*/
 
 .productDetail .descripcion {
   margin-top: 30px;
@@ -969,8 +987,12 @@ object-position: 0 0;
   text-align: right;
   padding: 40px;
 }
+/* ------------------------------------------------------*/
 
-
+.related-products {
+  padding: 30px;
+  padding-bottom: 60px;
+}
 
 /*
 --------------------------------------------------------
@@ -1106,9 +1128,15 @@ button.submit-button {
 .register {
   padding: 30px 0;
 }
-.register-title {
+.form-title {
   width: 95%;
   margin: auto;
+}
+.form-title h2 {
+  padding: 30px 0 40px;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-align: left;
 }
 .register .login-register {
   width: 95%;
@@ -1118,12 +1146,6 @@ button.submit-button {
   text-align: center;
   background-color: #fff;
 
-}
-.register-title h2 {
-  padding: 30px 0 40px;
-  font-size: 50px;
-  letter-spacing: 2px;
-  text-align: left;
 }
 
 .register .login-input input {
@@ -1146,22 +1168,35 @@ button.submit-button {
 .datos-section {
   width: 100%;
   margin: 0 0 20px 0;
-  /* margin-bottom: 30px; */
 }
 .datos-section h4 {
   text-align: left;
   margin: 20px 0;
 }
 
-.register .login-register .direccion {
+.form-2col {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+.register .login-register .form-2col {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.register .login-register .direccion div {
+.register .login-register .form-3col {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.register .login-register .form-2col div {
+  width: 49%;
+}
+.register .login-register .form-3col div {
   width: 32%;
 }
-.register .login-register .direccion label {
+.register .login-register .form-3col label {
   display: none;
 }
 
@@ -1858,13 +1893,13 @@ img.detalles-design {
   transform: rotate(170deg);
 }
 
-/*----------------------------------------------------------*/
 
 
-/* .................. MEDIA QUERIES ...................
---------------------------------------------------------
-Navegación en TABLETS (ancho mínimo 768px px)
------------------------------------------------------- */
+/* ................................ MEDIA QUERIES ......................................
+----------------------------------------------------------------------------------------
+                  Navegación en TABLETS (ancho mínimo 768px px)
+----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------  */
 
 @media (min-width: 768px) {
   a.button-link {
@@ -1875,7 +1910,8 @@ Navegación en TABLETS (ancho mínimo 768px px)
     font-size: 20px;
   }
   
-  /*-------- HOME -----------------------------------*/
+/*--------------------------------- HEADER ---------------------------------
+---------------------------------------------------------------------------*/
 
   .main-header {
     flex-direction: row;
@@ -1917,7 +1953,8 @@ Navegación en TABLETS (ancho mínimo 768px px)
       /* margin-right: 25px; */
     }
   
-  /* ------------------------------------------------*/
+/* ----------------------------- HOME -------------------------------------
+---------------------------------------------------------------------------*/
 
   header.slider {
     height: 500px;
@@ -1932,8 +1969,8 @@ Navegación en TABLETS (ancho mínimo 768px px)
     font-size: 50px;
     line-height: 45px;
   }
-
   /* -------------------------------------------------------*/
+
   .producto-destacado {
     height: 400px;
     display: flex;
@@ -1990,7 +2027,7 @@ Navegación en TABLETS (ancho mínimo 768px px)
   .categorias-image {
     width: 30%;
     height: 300px;
-    flex-grow: 2;
+    flex-grow: 1;
     margin: 0;
   }
 
@@ -2043,77 +2080,37 @@ Navegación en TABLETS (ancho mínimo 768px px)
     padding: 0;
   }
 
-  /* --------- LOGIN ---------------------------*/
-  .register .login-register,
+  /* ----------------------------- LOGIN -------------------------------*/
+  /* ---------------------------------------------------------------------*/
+  .form-title {
+    width: 60%;
+  }
   .login-register {
-    width: 80%;
+    width: 60%;
+  }
+  .register .login-register {
+    width: 60%;
   }
   .login-img {
     display: block;
   }
 
-  /* -------------------------------------------------------*/
-  
+  /* ---------------------- SHOP -----------------------------
+  ---------------------------------------------------------------------*/
 
-  .shop .contenedor-productos {
+.contenedor-productos {
     justify-content: flex-start;
   }
   
-  .shop .producto-shop {
+.producto-shop {
     padding: 2% 2%;
     flex-grow: 0;
     flex-basis: 33%;
     max-width: 33%;
   }
- 
-  /*--------------------------------------------------------*/
 
-  .titular {
-    font-size: 35px;
-  }
-
-  .bienvenida {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-    margin: 10px 20px;
-  }
-
-  .bienvenida img#shaka {
-    width: 15%;
-    margin-left: 10%;
-  }
-
-  img#LaLinea {
-    height: 10px;
-  }
-
-  form .registro {
-    font-size: 15px;
-  }
-
-  form .registro .caja {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-  }
-
-  /* .boton {
-        height: 30px;
-        font-size: 18px;
-        margin-bottom: 40px;
-        width: 100%;
-        margin: 15px 0px;
-    } */
-
-  .loguearse {
-    margin: 15px 0px;
-  }
-
-  /*-------  FOOTER  -----------------------------------*/
+  /* ----------------------------- FOOTER -------------------------------*/
+  /* ---------------------------------------------------------------------*/
 
   footer li {
     text-align: left;
@@ -2146,9 +2143,11 @@ Navegación en TABLETS (ancho mínimo 768px px)
 }
 
 /*
---------------------------------------------------------
-Navegación en DESKTOP (ancho mínimo 1200 px)
------------------------------------------------------- */
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+                   Navegación en DESKTOP (ancho mínimo 1200 px)
+-------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------*/
 @media (min-width: 1200px) {
   .main-header {
     height: 80px;
@@ -2167,18 +2166,13 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     padding: 10px 30px;
   }
 
-  /* -------------------------------------------------------*/
+  /* -------------------  HEADER  ------------------------------------*/
 
   .main-navbar {
     display: flex;
     justify-content: flex-start;
     flex-grow: 0.7;
   }
-
-
-.icons-navbar {
-  display: flex;
-}
 
   .main-navbar ul {
     display: flex;
@@ -2197,7 +2191,28 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     margin-right: 40px;
   }
 
-  /* ----------  HOME  ------------------------------------*/
+  .icons-navbar {
+    display: flex;
+  }
+
+  .icons-navbar a {
+    font-size: 18px;
+    line-height: 80px;
+  }
+
+  .icons-navbar i {
+    padding: 0 30px;
+  }
+
+  .nav-link >i,
+  a.nav-link {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    padding: 5px;
+  }
+  
+
+  /* ----------------------  HOME  ------------------------------------*/
 
   .producto-destacado {
     height: 400px;
@@ -2237,7 +2252,6 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
   .categorias-image img {
     height: 400px;
   }
-
   /* -------------------------------------------------------*/
 
   .model-finder .descripcion {
@@ -2249,67 +2263,47 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
     background-position-x: 40vw;
   }
 
-  /* -------   SHOP    -------------------------------------*/
-  /* -------------------------------------------------------*/
-
-  .shop .shop-filters {
-    top: 80px;
-  }
-
-  .shop .producto-shop {
-    flex-basis: 20%;
-    max-width: 20%;
-  }
-
-  /* -------------------------------------------------------*/
-
-  .icons-navbar a {
-    font-size: 18px;
-    line-height: 80px;
-  }
-
-  .icons-navbar i {
-    padding: 0 30px;
-  }
-
-  .nav-link >i,
-  a.nav-link {
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    padding: 5px;
-  }
-
-  /* ------------- LOGIN / REGISTER -------------------------------*/
-
-  .register .login-register {
+  /* ------------------- LOGIN / REGISTER   -------------------------*/
+  
+  .form-title {
     width: 60%;
   }
   .login-register {
     width: 40%;
-}
-
-/* ------------- COSTUM TRACKER -------------------------------*/
-.bodytrack {
-  min-height: 50vh;
-  font-family: "Exo 2";
-  font-size: 14px;
-  color:#293c49; 
-  background: #eee;
+  }
+  /* ------------------- SHOP  --------------------------------------*/
   
+  .shop .shop-filters {
+    top: 80px;
+  }
+  
+  .producto-shop {
+    flex-basis: 20%;
+    max-width: 20%;
+  }  
+  
+  /* ----------------- COSTUM TRACKER -------------------------------*/
+  .bodytrack {
+    min-height: 50vh;
+    font-size: 14px;
+    color:#293c49; 
+    background: #eee; 
+  }
+  
+  .tracker-content {
+    background-color: #42469d;
+    border-color: #42469d;
+    border-radius: 1rem;
+  }
 }
 
+  /* -----------------------------------------------------------------*/
 
-.tracker-content {
-  background-color: #42469d;
-  border-color: #42469d;
-  border-radius: 1rem;
-}
 @media (min-width: 576px) {
   .tracker-dialog {
     max-width: 750px;
     margin: 1.75rem auto;
   }
-}
 
 .tracker-header {
   padding: 20px;
@@ -2407,37 +2401,37 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
 #three {
   font-size: 1.2rem;
 }
+}
 @media (max-width: 767px) {
   #three {
     font-size: 1rem;
   }
-}
 .details {
   padding: 2rem;
   font-size: 1.4rem;
   line-height: 3.5rem;
 }
+}
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .details {
     padding: 2rem 0;
     font-size: 1rem;
     line-height: 2.5rem;
   }
-}
-@media (max-width: 767px) {
-  .d-table-cell {
+
+  /* .d-table-cell {
     padding-left: 1rem;
-  }
-}
-.col-3 {
+  } */
+
+/* .col-3 {
   display: grid;
   text-align: end;
 }
 .col-3 .d-table-row {
   align-self: flex-end;
-}
-.fa {
+} */
+/* .fa {
   font-size: xx-large;
   text-align: center;
   width: 3rem;
@@ -2447,7 +2441,7 @@ Navegación en DESKTOP (ancho mínimo 1200 px)
   border-radius: 2rem;
   bottom: 0;
   right: 0;
-}
+} */
 button:active {
   outline: none;
 }
@@ -2499,8 +2493,6 @@ button:focus {
   padding-bottom: 20px;
 }
 
-
-/*----------------------NEW PRODUCT FORM ------------------*/
 
 /*----------------------NEW PRODUCT FORM ------------------*/
 

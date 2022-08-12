@@ -17,20 +17,24 @@
                     <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
                 </div>
 
-                <form action="/volumeCalculator" method="GET">
+                <form action="/volumeCalculator" method="POST">
                     <div class="form-calculator-view">
                         <div class="volume-container-view">
                             <label for="peso">Peso</label>
                             <datalist id="peso-marks">
-                                <option value="0" label="20">20</option>
-                                <option value="10"></option>
-                                <option value="20"></option>
-                                <option value="30" label="50">50</option>
-                                <option value="40"></option>
-                                <option value="50"></option>
-                                <option value="60" label="80">80</option>
+                                <option value="0">0</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                                <option value="60">60</option> 
+                                <option value="70">70</option> 
+                                <option value="80">80</option> 
+                                <option value="90">90</option> 
+                                <option value="100">100</option>
                             </datalist>
-                            <input type="range" min="0" max="150" value="50" step="5" id="peso" list="peso-marks"
+                            <input type="range" min="0" max="100" value="10" step="10" id="peso" list="peso-marks"
                                 name="peso">
                         </div>
                         <div class="volume-container-view">

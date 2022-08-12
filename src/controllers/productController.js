@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-let productos =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
+let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 
 const product = {
@@ -45,7 +45,7 @@ const product = {
             descuento: req.body.descuento,
             imagen: req.file.filename,
         };
-        console.log(req.file);
+        console.log('productController > processCreate:' + req.file);
 
         productos.push(nuevoProducto);
         let nuevoProductoGuardar = JSON.stringify(productos);

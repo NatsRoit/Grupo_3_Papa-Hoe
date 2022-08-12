@@ -6,9 +6,6 @@ const multer = require("multer");
 // MULTER CONFIG
 const multerDiskstorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    // let accesorios;
-    // let surfboards;
-    // let complementos;
     cb (null, path.resolve(__dirname, "../../public/img"));
   },
   filename: function (req, file, cb) {
@@ -41,10 +38,10 @@ router.post("/create", upload.single("imagen"), productController.processCreate)
 router.get("/edit/:id", logueado, productController.edit);
 router.put("/edit/:id", upload.single("imagen"), productController.processEdit);
 
-
-
 // DELETE PRODUCTOS
 router.get("/delete/:id", productController.destroy);
+
+
 
 // BOARDBUILDER
 router.get('/boardBuilder',productController.boardBuilder);
