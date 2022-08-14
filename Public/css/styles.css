@@ -685,6 +685,9 @@ input[type="range"]::-moz-range-progress {
 /*--------------------------------------------------
       MAIN: SHOP (surfboards y complementos)
 ----------------------------------------------------*/
+.shop {
+  padding-bottom: 40px;
+}
 .shop .shop-filters {
   display: flex;
   flex-wrap: wrap;
@@ -708,14 +711,14 @@ input[type="range"]::-moz-range-progress {
 .shop .titulo-seccion-main {
   /* color: #666; */
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 0px;
 }
 
 .contenedor-productos {
   margin: auto;
+  margin-left: 20px;
   /* padding-top: 40px; */
-  padding-bottom: 40px;
   width: 100%;
   max-width: 1400px;
   display: flex;
@@ -819,32 +822,32 @@ input[type="range"]::-moz-range-progress {
        PRODUCT DETAIL
 ---------------------------------------------*/
 
+.profile .main-container,
 .productDetail .main-container {
   width: 100%;
-  padding: 30px 5% 0 0;
+  padding: 30px 0;
   padding-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   position: relative;
 }
 
-.productDetail .left-wrapper {
-  width: 50%;
+.left-wrapper {
+  width: 100%;
   padding: 0 20px;
 }
 
-.productDetail .left-wrapper .img-slider {
+.left-wrapper .img-slider {
   height: 90vh;
   width: 100%;
   position: sticky;
   z-index: 80;
   top: 80px;
-  /* background-color: whitesmoke; */
   text-align: center;
   padding: 20px;
 }
-.productDetail .left-wrapper .img-slider img {
+.left-wrapper .img-slider img {
 /* mix-blend-mode: multiply; */
 height: 100%;
 /* width: 100%; */
@@ -852,30 +855,38 @@ object-fit: contain;
 object-position: 0 0;
 }
 
-
-.productDetail .right-wrapper {
+.info-wrapper {
+  padding: 20px;
+}
+.info-wrapper h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+.right-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 50%;
-  padding: 20px;
+  align-items: stretch;
+  width: 100%;
+  padding: 0 4%;
 }
-.productDetail .product-header {
+.product-header {
   width: 100%;
   border-bottom: 1px solid #fad6d1;
 }
-.productDetail .product-header h2 {
+.product-header h2 {
   font-size: 20px;
   color: #001728be;
 }
-.productDetail .product-header h1 {
+.product-header h1 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 0.5pt;
   font-size: 40px;
   line-height: 50px;
   margin: 0;
 }
-.productDetail .product-header p {
+.product-header p {
   font-size: 20px;
   line-height: 30px;
   font-weight: 100;
@@ -2095,8 +2106,7 @@ img.detalles-design {
     display: block;
   }
 
-  /* ---------------------- SHOP -----------------------------
-  ---------------------------------------------------------------------*/
+  /* ---------------------- SHOP -----------------------------*/
 
 .contenedor-productos {
     justify-content: flex-start;
@@ -2109,6 +2119,15 @@ img.detalles-design {
     max-width: 33%;
   }
 
+    /* ------------------- PRODUCT DETAIL ---------------------------*/
+  
+    .left-wrapper {
+      width: 45%;
+    }
+    .right-wrapper {
+      width: 55%;
+    }
+    
   /* ----------------------------- FOOTER -------------------------------*/
   /* ---------------------------------------------------------------------*/
 
@@ -2252,7 +2271,7 @@ img.detalles-design {
   .categorias-image img {
     height: 400px;
   }
-  /* -------------------------------------------------------*/
+  /* ------------------------ MODEL FINDER -------------------------*/
 
   .model-finder .descripcion {
     padding: 60px;
@@ -2281,6 +2300,12 @@ img.detalles-design {
     flex-basis: 20%;
     max-width: 20%;
   }  
+  /* ------------------- PRODUCT DETAIL ---------------------------*/
+  
+  .left-wrapper {
+    width: 45%;
+    padding: 0 20px;
+  }
   
   /* ----------------- COSTUM TRACKER -------------------------------*/
   .bodytrack {

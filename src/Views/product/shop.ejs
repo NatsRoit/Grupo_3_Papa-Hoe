@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("../partials/head") %>
+<%- include("../partials/head", {title: 'PapaHoe Shop' }) %>
 
     <body>
         <%- include("../partials/header") %>
@@ -11,19 +11,16 @@
             </header>
 
             <main class="shop">
-
                 <div class="shop-filters">
                     <p class="titulo-seccion-main accesorios">Acá podríamos poner las opciones extra que tiene el User admin</p>
                     <p> <a href="/product/create"> <strong>Crear Producto </strong></a>|  <a href="/product/create"> <strong>Editar Producto </strong></a> |  Borrar Producto </p>
                 </div>
 
-                <br>
-
-                <h2 class="titulo-seccion-main accesorios">All Surfboards</h2>
+                <h1 class="titulo-seccion-main accesorios"><%= categoria %></h1>
                 <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="surfboards" ){ %>
+                    <% for(let i=0; i < productos.length; i++){
+                        if(productos[i].categoria=="surfboards" ){ %>
                         <div class="producto-shop">
-                           
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
@@ -54,7 +51,7 @@
                         <% }; } %>
                 </section>
 
-                <h2 class="titulo-seccion-main accesorios">Accesorios</h2>
+                <!-- <h2 class="titulo-seccion-main accesorios">Accesorios</h2> -->
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="accesorios" ){ %>
                         <div class="producto-shop">
@@ -83,12 +80,14 @@
                                 </div>
                             </a>
                         </div>
-                        <% }; } %>
+                        <% } %>
+                    <% } %>
                 </section>
 
-                <h2 class="titulo-seccion-main accesorios">Complementos</h2>
+                <!-- <h2 class="titulo-seccion-main accesorios">Complementos</h2> -->
                 <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="complementos" ){ %>
+                    <% for(let i=0; i < productos.length; i++){ 
+                        if(productos[i].categoria=="complementos" ){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
@@ -115,7 +114,8 @@
                                 </div>
                             </a>
                         </div>
-                        <% }; } %>
+                        <% } %>
+                    <% } %>
                 </section>
             </main>
 

@@ -11,7 +11,7 @@
                 <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
             </header>
 
-            <main class="productDetail">
+            <main class="profile">
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
@@ -19,24 +19,23 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="info-wrapper">
                         <div>
-                            <h2><%= 'Hola ' + user.nombre + ' ' + user.apellido%></h2>
-                            <br><br>
+                            <br>
+                            <h2><%= 'Hola ' + user.nombre + ' ' + user.apellido + ' !'%> </h2>
                         </div>
 
                         <div>
-                            <p><%= user.nombre%> <%= user.apellido%></p>
-                            <p><%= user.email%></p>
-                            <p><%= user.direccion%></p>
-                            <p><%= user.telefono%></p>
-                            <p><%= user.localidad%> <%= user.codigoPostal%></p>
+                            <p><strong>Nombre</strong>: <%= user.nombre%> <%= user.apellido%></p>
+                            <p><strong>E-mail</strong>: <%= user.email%></p>
+                            <p><strong>Teléfono</strong>: <%= user.telefono%></p>
+                            <p><strong>Dirección</strong>: <%= user.direccion + ', ' +  user.departamento + '. ' + user.localidad + " \(" + user.codigoPostal + "\)"%></p>
                             <br><br>
                             <hr>
                             <br><br>
-                            <div>
-                                <a href="/user/edit/<%= user.id%>">EDITAR</a>
-                            </div>
+                        </div>
+                        <div>
+                            <a href="/user/edit/<%= user.id%>">EDITAR</a>
                         </div>
                     </div>
                 </section>

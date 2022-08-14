@@ -46,7 +46,7 @@ app.use('/user', userRoutes);
 // app.use('/admin', adminRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).render('not-found')
+    res.status(404).render(path.resolve(__dirname, './views/not-found'));
 })
 
 // Levanto el servidor

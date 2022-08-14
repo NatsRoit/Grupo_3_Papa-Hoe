@@ -14,18 +14,14 @@
             <main class="productDetail">
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/product"><%= producto.categoria%></a></li>
-                    <li><a href="/product"><%= producto.subcategoria%></a></li>
+                    <li><a href="/product/category?cat=<%= producto.categoria%>"><%= producto.categoria%></a></li>
+                    <li><a href="/product/category?cat=<%= producto.categoria%>"><%= producto.subcategoria%></a></li>
                     <li class="active"><%= producto.nombre%></li>
                 </ul>
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
-                            <img <% if (producto.categoria == 'accesorios') {%>
-                                src="/img/<%= producto.categoria %>/<%= producto.subcategoria %>/<%= producto.titulo %>/<%= producto.imagen %>"
-                            <%} else { %>
-                                src="/img/<%= producto.imagen %>"
-                            <%}%>
+                            <img src="/img/<%= producto.imagen %>"
                                 alt="<%= producto.titulo %>">
                             <!-- <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
@@ -144,7 +140,7 @@
                 </section>
 
                 <div class="related-products">
-                <h1>Tambien te puede interesar</h1>
+                <h1>También te puede interesar</h1>
                 <section class="contenedor-productos">
                     <% let arr = Array.from({length: 5}, () => Math.floor(Math.random() * productos.length));
                             console.log(arr);

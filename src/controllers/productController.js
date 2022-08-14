@@ -6,14 +6,21 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const product = {
     indexAll: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/shop'),{productos});
+        findCategory = "Todos los productos"
+        res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria:findCategory});
     },
 // PARA VISTAS DE SHOP DINÁMICAS x CATEGORÍA> Usar filter en vez de .find
-    // indexCategory: function(req,res){
-    //     let idProducto = req.params.id;  
-    //     let showProduct = productos.find(item => item.id == idProducto);
-    //     res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct});
-    // },
+    indexByCategory: function(req,res){
+        let findCategory = req.query.cat;  //surfboards
+        let productByCategory = productos.filter(item => item.categoria == findCategory);
+        if (findCategory){
+            res.render(path.resolve(__dirname, '../views/product/shop'),{productos: productByCategory, categoria:findCategory});
+        } else {
+            findCategory = "Todos los productos";
+            res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria:findCategory});
+
+        };
+    },
 
 
     detail: function(req,res){

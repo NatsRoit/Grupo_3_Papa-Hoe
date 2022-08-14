@@ -45,19 +45,20 @@
     "role": 1
   },
   {
-    "id": 5,
     "nombre": "NataliaAdmin",
     "apellido": "RoitmanAdmin",
+    "usuario": "NatsAdmin",
     "email": "nats.admin@gmail.com",
     "password": "$2a$10$9XMr7nPTp.kkYmDFojHgzeE/Hp5Di1OQz2xkiJruUw3fncywbghoO",
-    "role": "admin",
-    "usuario": "NatsAdmin",
     "telefono": "234567890",
-    "direccion": "4567890-",
-    "departamento": "fghjk",
-    "localidad": "ghjkl",
-    "codigoPostal": "ghjp",
-    "avatar": "user-1659485892485.jpg"
+    "direccion": "Mansilla 1111",
+    "departamento": "3ª B",
+    "localidad": "Godoy Cruz",
+    "codigoPostal": "5501",
+    "oldImagen": "default-admin.jpg",
+    "id": "5",
+    "avatar": "default-admin.jpg",
+    "role": "admin"
   },
   {
     "id": 6,

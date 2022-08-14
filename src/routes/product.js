@@ -25,10 +25,10 @@ const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
 let productController = require(path.join(__dirname, '../controllers/productController.js'));
 
 // READ PRODUCTOS
-router.get('/',productController.indexAll);
+router.get('/all',productController.indexAll);
+router.get('/category',productController.indexByCategory);
 router.get('/detail/:id',productController.detail);
-// router.get('/accesorios',productController.accesorios);
-// router.get('/complementos',productController.complementos);
+
 
 // CREATE NUEVO PRODUCTO
 router.get("/create",logueado, productController.create);
