@@ -13,7 +13,10 @@
             <main class="shop">
                 <div class="shop-filters">
                     <p>Acá podríamos poner las opciones extra que tiene el User admin</p>
-                    <p> <a href="/product/create"> <strong>Crear Producto </strong></a>|  <a href="/product/create"> <strong>Editar Producto </strong></a> |  Borrar Producto </p>
+                    <p> <a href="/admin/create"> <strong>Crear Producto </strong></a>|
+                        <a href="/admin/edit/:id"> <strong>Editar Producto </strong></a> |
+                        <a href="/admin/delete/:id"> <strong>Borrar Producto </strong></a>
+                    </p>
                 </div>
 
                 <h1 class="titulo-seccion-main accesorios"><%= categoria %></h1>

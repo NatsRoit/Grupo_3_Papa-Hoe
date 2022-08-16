@@ -15,11 +15,11 @@
                     </div>
                     <div class="login-formulario">
                             <form action="/product/edit/<%= productEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="titulo">Nombre</label>
                                   <input type="text" name="nombre" placeholder="Nombre" required="required" value="<%= productEditar.nombre%>">
                                 </div>	
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="categoria">Category</label>
                                   <select name="categoria" id="categoria" value="<%= productEditar.categoria %>" required="required">
                                       <option value="accesorios">Accesorios</option>
@@ -27,35 +27,35 @@
                                       <option value="complementos">Complementos</option>
                                   </select>
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="subCategoria">Subcategoría</label>
                                   <input type="text" name="subCategoria" id="subCategoria" placeholder="Subcategoria" value="<%= productEditar.subcategoria %>"required>
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="brand">Marca del producto</label>
                                   <input type="text" name="brand" brand="brand" placeholder="brand" value="<%= productEditar.marca %>" required="required">
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="model">Model</label>
                                   <input type="text" name="model" id="model" placeholder="model" value="<%= productEditar.modelo %>" required="required">
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="precio">Price</label>
                                   <input type="text" name="precio" id="precio" placeholder="Precio" value="<%= productEditar.precio %>" required="required">
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="descuento">Discount</label>
                                   <input type="text" name="descuento" id="descuento" placeholder="Descuento" value="<%= productEditar.descuento %>" required="required">
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="description">Descripción</label>
                                   <input type="text" name="descripcion" placeholder="Descripción" required="required" value="<%= productEditar.descripcion%>">
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="features">Features</label>
                                   <textarea class="NP-desc" type="text" name="features" id="features" placeholder="Features" value="<%= productEditar.caracteristicas %>" required="required"></textarea>
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="ability">Ability</label>
                                   <select name="ability" id="ability">
                                       <option value="principiante">Principiante</option>
@@ -63,7 +63,7 @@
                                       <option value="experto">Experto</option>
                                   </select>             
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="dimensions">Dimensions</label>
                                   <select name="dimensions" id="dimensions">
                                       <option value="1">5'10--19 1/2--2 9/16--31</option>
@@ -72,7 +72,7 @@
                                       <option value="4">6'0--19 3/4--2 11/16--33</option>
                                   </select>
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="finSystem">Fin System</label>
                                   <select name="finSystem" id="finSystem">
                                       <option value="CS SII">CS SII</option>
@@ -80,7 +80,7 @@
                                   </select>                                    
                                 </div>        
                                 <!--Lo dejé por si lo querés usar en vez del nuestro-->
-                                <div class="login-input">
+                                <div class="form-input">
                                   <label for="precio">Descuento</label>
                                     <select  name="descuento" id="validationCustom04" required>
                                       <option disabled value="#">Seleccione un descuento"</option>
@@ -92,7 +92,7 @@
                                 </div>
                                 <!--Aquí solicito la imagen-->
                                 <div class="custom-file">
-                                    <figure class="login-input">
+                                    <figure class="form-input">
                                         <img  class="w-100" src="/img/<%= productEditar.categoria%>/<%= productEditar.imagen%>" alt="moto <%= productEditar.nombre%>">
                                     </figure>
                                     <input type="hidden"  name="oldImagen"  value="<%= productEditar.imagen%>">
@@ -102,7 +102,7 @@
 
                                     <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
                                 </div>
-                                <div class="login-input">
+                                <div class="form-input">
                                     <button type="submit" class="btn btn btn-info">Actualizar</button>
                                     <a href="/administrar" class="btn btn-danger">Volver</a>
                                 </div>

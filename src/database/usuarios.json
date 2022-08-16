@@ -45,8 +45,8 @@
     "role": 1
   },
   {
-    "nombre": "NataliaAdmin",
-    "apellido": "RoitmanAdmin",
+    "nombre": "Natalia",
+    "apellido": "Admin",
     "usuario": "NatsAdmin",
     "email": "nats.admin@gmail.com",
     "password": "$2a$10$9XMr7nPTp.kkYmDFojHgzeE/Hp5Di1OQz2xkiJruUw3fncywbghoO",
@@ -55,7 +55,7 @@
     "departamento": "3ª B",
     "localidad": "Godoy Cruz",
     "codigoPostal": "5501",
-    "province": "Mendoza",
+    "province": "Mendozaaaa",
     "country": "Argentina",
     "oldImagen": "default-admin.jpg",
     "id": "5",

@@ -18,6 +18,11 @@ ESCALA DE AZULES (del marino al arena)
 #a3abab
 #cbd0cb
 #f4f5ec  <--- (arena medio)
+
+FAMILIAS TIPOGRÁFICAS
+font-family: "Quicksand", sans-serif;
+  font-family: "Bebas Neue", cursive;
+
 */
 
 
@@ -43,13 +48,14 @@ a {
 
 body {
   width: 100%;
+  background-color: #f7f7f7;
 }
 
-.container{
+/* .container{
   max-width: 1200px;
   margin: auto;
   padding: 60px 20px
-}
+} */
 
 main {
   width: 100%;
@@ -70,13 +76,13 @@ main h2 {
   font-size: 16pt;
   line-height: 20px;
   color: #001728;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", arial;
 }
 
 main p {
   margin-top: 8px;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
   color: #516169;
 }
 
@@ -87,6 +93,7 @@ main li {
 }
 
 /*----------------------------------------------------------------- */
+
 .en-construccion {
   padding: 20vh 0;
   text-align: center;
@@ -102,6 +109,7 @@ main li {
   margin: 0px;
   width: 100%;
   height: 300px;
+  position: relative;
 }
 
 .section-header img {
@@ -109,6 +117,15 @@ main li {
   height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
+  /* position: absolute; */
+}
+
+img.overlayImg {
+  position: absolute;
+  z-index: 90;
+  object-position: 100% 50%;
+  object-fit: contain;
+  padding: 70px;
 }
 
 /*-------CLASE PARA LINKS CON FORMA DE BOTÓN IRREGULAR------------- */
@@ -735,6 +752,7 @@ input[type="range"]::-moz-range-progress {
 }
 
 .shop .shop-filters p {
+  font-size: 10pt;
   color: #666;
   margin-right: 40px;
   margin-left: 40px;
@@ -1080,7 +1098,7 @@ object-position: 0 0;
   width: 100%;
 }
 
-.login-input {
+.form-input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1093,14 +1111,14 @@ object-position: 0 0;
 .hidden {
   display: none;
 }
-.login-input a, 
-.login-input.checkbox {
+.form-input a, 
+.form-input.checkbox {
   display: inline;
   font-size: 12px;
   font-weight: 400;
   color: #293c49;
 }
-.login-input input {
+.form-input input {
   border-radius: 2px;
   height: 45px;
   margin: 4px 0 20px 0;
@@ -1109,8 +1127,8 @@ object-position: 0 0;
   background-color: rgba(255, 255, 255, 0.4);
   border: #001728 solid 0.5px;
 }
-.login-input.nombre,
-.login-input.apellido {
+.form-input.nombre,
+.form-input.apellido {
   display: inline-block;
   width: 49%;
 }
@@ -1156,27 +1174,8 @@ button.submit-button {
 .register {
   padding: 30px 0;
 }
-.form-title {
-  width: 95%;
-  margin: auto;
-}
-.form-title h2 {
-  padding: 30px 0 40px;
-  font-size: 50px;
-  letter-spacing: 2px;
-  text-align: left;
-}
-.register .login-register {
-  width: 95%;
-  min-height: 85vh;
-  margin: auto;
-  padding: 20px 40px 40px;
-  text-align: center;
-  background-color: #fff;
 
-}
-
-.register .login-input input {
+.register .form-input input {
   border-style: none;
   background-blend-mode: multiply;
   border-radius: 2px;
@@ -1187,8 +1186,8 @@ button.submit-button {
   background-color: #00172815;
   /* border: #001728 solid 0.5px; */
 }
-.register .login-input.nombre,
-.register .login-input.apellido {
+.register .form-input.nombre,
+.register .form-input.apellido {
   display: inline-block;
   width: 49%;
 }
@@ -1208,24 +1207,24 @@ button.submit-button {
   width: 100%; 
 }
 
-.register .login-register .form-2col {
+.form-2col {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.register .login-register .form-3col {
+.form-3col {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.register .login-register .form-2col div {
+.form-2col div {
   width: 49%;
 }
-.register .login-register .form-3col div {
+.form-3col div {
   width: 32%;
 }
-.register .login-register .form-3col label {
-  display: none;
+.form-3col label {
+  /* display: none; */
 }
 
 .register button.submit-button {
@@ -1240,6 +1239,13 @@ button.submit-button {
   background-color: #001728;
   color: #f4f5ec;
   width: 100%;
+}
+  /* 
+  input#avatar {
+    background-color: #001728;
+  } */
+input[type="file" i] {
+  background-color: #001728;
 }
 
 
@@ -1748,6 +1754,10 @@ input[type="range"]::-moz-range-progress {
   background-color: #fff;
 }
 
+.result-calculator h1,
+.result-calculator h2 {
+  margin-bottom: 40px;
+}
 .result-calculator p {
   width: 75%;
   text-align: left;
@@ -1756,6 +1766,69 @@ input[type="range"]::-moz-range-progress {
   line-height: 24px;
 }
 
+/*---------------------------------------------
+        MAIN CONTROLLER VIEWS
+---------------------------------------------*/
+
+.faqs,
+.devoluciones,
+.privacy,
+.team,
+.about {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.faqs h2,
+.devoluciones h2,
+.privacy h2,
+.team,
+.about h2 {
+    /* margin-left: 20px; */
+    font-size: 22pt;
+    margin-bottom: 20px;
+}
+
+.faqs h3,
+.devoluciones h3,
+.privacy h3,
+.team,
+.about h3 {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.devoluciones li {
+  list-style: disc inside;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  color: #516169;
+}
+.devoluciones li > ul li {
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+.bodytrack {
+  min-height: 50vh;
+  font-size: 14px;
+  color:#293c49; 
+  background: #eee; 
+}
+
+.tracker-content {
+  background-color: #42469d;
+  border-color: #42469d;
+  border-radius: 1rem;
+}
+
+.blockText {
+  width: 100%;
+  padding: 50px 0;
+  padding-bottom: 60px;
+}
 
 /*======================================================================*/
 /*------------------------  ADMIN SECTION:--------------------------------*/
@@ -1763,11 +1836,16 @@ input[type="range"]::-moz-range-progress {
 
 /* -------------------  USER PROFILE --------------------------*/
 
+.profileRegister,
+.profileEdit,
 .profile {
   width: 100%;
   padding: 50px 0;
   padding-bottom: 60px;
 }
+
+.profileRegister .main-container,
+.profileEdit .main-container,
 .profile .main-container {
   padding: 20px;
   display: flex;
@@ -1781,6 +1859,8 @@ input[type="range"]::-moz-range-progress {
   font-size: 14px;
 }
 
+.profileRegister h2,
+.profileEdit h2,
 .profile h2 {
   margin-left: 20px;
   font-size: 22pt;
@@ -2214,9 +2294,9 @@ img.detalles-design {
   .login-register {
     width: 60%;
   }
-  .register .login-register {
+  /* .register .login-register {
     width: 60%;
-  }
+  } */
   .login-img {
     display: block;
   }
@@ -2255,13 +2335,21 @@ img.detalles-design {
     
     /* ------------------- USER PROFILE ---------------------------*/
   
+    .profileRegister,
+    .profileEdit,
     .profile {
       padding: 50px 5%;
+      max-width: 1200px;
     }
+    
+    .profileRegister h2,
+    .profileEdit h2,
     .profile h2 {
       margin-left: 0;
       margin-bottom: 30px;
     }
+    .profileRegister .main-container ,
+    .profileEdit .main-container ,
     .profile .main-container {
       /* max-width: 1200px; */
       padding: 0px;
@@ -2468,23 +2556,9 @@ img.detalles-design {
     width: 45%;
     padding: 0 20px;
   }
-  
-  /* ----------------- COSTUM TRACKER -------------------------------*/
-  .bodytrack {
-    min-height: 50vh;
-    font-size: 14px;
-    color:#293c49; 
-    background: #eee; 
-  }
-  
-  .tracker-content {
-    background-color: #42469d;
-    border-color: #42469d;
-    border-radius: 1rem;
-  }
 }
 
-  /* -----------------------------------------------------------------*/
+  /* ------------ CUSTOM TRACK ----------------------------------------*/
 
 @media (min-width: 576px) {
   .tracker-dialog {
@@ -2645,41 +2719,6 @@ button:focus {
   color: grey;
   font-size: 10px;
 }
-
-/* -----------FAQS- POLITICA CANCELACION - ENVIOS-------------- */
-
-
-.container h3{
-
-  margin-top: 15px;
-}
-
-.container p {
-  line-height: 25px;
-}
-
-.container a{
-  text-decoration: underline;
-}
-
-/*----------------ABOUT US -------------------------------------*/
-
-.about-h1 {
-  text-transform: uppercase;
-  padding-bottom: 15px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-img{ 
-    width: 100%;
-    padding: 12px 20px;
-  }
-
-.about-p {
-  padding-bottom: 20px;
-}
-
 
 /*----------------------NEW PRODUCT FORM ------------------*/
 

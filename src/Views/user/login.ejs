@@ -21,14 +21,14 @@
 
                     <div class="login-formulario-wrapper">
                         <form class="login-formulario" action="/user/login" method="POST">
-                            <div class="login-input">
+                            <div class="form-input">
                                 <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
                                     <span class="under"><%= errors.email.msg %> </span>
                                 <% } %></label>
                                 <input type="email" name="email" id="email" placeholder="Email" required>
                         
                             </div>
-                            <div class="login-input">
+                            <div class="form-input">
                                 <label for="password">Contraseña <% if (typeof errors != 'undefined' && errors.password) { %>
                                     <span class="under"><%= errors.password.msg %> </span>
                                 <% } %></label>
@@ -37,7 +37,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="keepSession" id="keepSession" value="keepSession" >
-                                <label class="login-input checkbox" for="keepSession"> Keep me signed in</label>
+                                <label class="form-input checkbox" for="keepSession"> Keep me signed in</label>
                             </div>
                             <div class="submit-button">
                                 <button class="submit-button" type="submit">Ingresar</button>

@@ -68,17 +68,21 @@ const userController = {
             id: ultimoUsuario.id +1,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
+            usuario: req.body.usuario,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             role: 1,
-            usuario: req.body.usuario,
-            telefono: req.body.telefono,
+            province: req.body.province,
+            country: req.body.country,
             direccion: req.body.direccion,
             departamento: req.body.departamento,
             localidad: req.body.localidad,
             codigoPostal: req.body.codigoPostal,
-            avatar:  req.file ? req.file.filename : ''
+            telefono: req.body.telefono,
+            avatar: req.file ? req.file.filename : ''
         }
+
+        console.log(nuevoUsuario);
 
         let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), {
           encoding: 'utf-8'});
@@ -95,8 +99,7 @@ const userController = {
 
     } else {
       return res.render(path.resolve(__dirname, '../views/user/register'), {
-        errors: errors.array(),  old: req.body
-      });
+        errors: errors.array(), old: req.body});
     }
   },
   

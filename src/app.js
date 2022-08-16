@@ -12,7 +12,7 @@ const acceso = require('./middlewares/acceso');
 const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
-// const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 
 
 // TEMPLATE ENGINE SETUP
@@ -43,7 +43,7 @@ app.use(acceso);
 app.use('/', mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
-// app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 
 app.use((req, res, next) => {
     res.status(404).render(path.resolve(__dirname, './views/not-found'));

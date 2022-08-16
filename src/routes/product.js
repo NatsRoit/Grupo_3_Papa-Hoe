@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require("multer");
 
+
 // MULTER CONFIG
 const multerDiskstorage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -16,11 +17,6 @@ const multerDiskstorage = multer.diskStorage({
 const upload = multer({ storage : multerDiskstorage });
 
 
-// MIDDLEWARES ???
-//verifica si el usuario está logueado, sino redirige a login
-const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
-// ---------------------------
-
 
 let productController = require(path.join(__dirname, '../controllers/productController.js'));
 
@@ -28,19 +24,6 @@ let productController = require(path.join(__dirname, '../controllers/productCont
 router.get('/all',productController.indexAll);
 router.get('/category',productController.indexByCategory);
 router.get('/detail/:id',productController.detail);
-
-
-// CREATE NUEVO PRODUCTO
-router.get("/create",logueado, productController.create);
-router.post("/create", upload.single("imagen"), productController.processCreate);
-
-// UPDATE PRODUCTOS
-router.get("/edit/:id", logueado, productController.edit);
-router.put("/edit/:id", upload.single("imagen"), productController.processEdit);
-
-// DELETE PRODUCTOS
-router.get("/delete/:id", productController.destroy);
-
 
 
 // BOARDBUILDER

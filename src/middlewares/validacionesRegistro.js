@@ -40,7 +40,7 @@ const validacionesRegistro = [
 
 
     body('avatar').custom((value, {req}) =>{
-          // console.log(req.file);
+          console.log(req.file);
           if(req.file != undefined){
               return true
           } else {

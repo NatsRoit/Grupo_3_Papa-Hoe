@@ -30,7 +30,6 @@ const validacionesRegistro = require(path.resolve(__dirname, "../middlewares/val
 const adminLog = require(path.resolve(__dirname, "../middlewares/adminLog"));
 
 
-
 let userController = require(path.join(__dirname, '../controllers/userController.js'));
 
 // USER PROFILE

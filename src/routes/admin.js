@@ -4,18 +4,37 @@ const path = require("path");
 const multer = require("multer");
 
 
-//Como podemos indicar para subir el archivo nombre y donde guardarlo
-const storage = multer.diskStorage({
+// MULTER CONFIG
+const multerDiskstorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname, "../../public/img/"));
+    cb (null, path.resolve(__dirname, "../../public/img"));
   },
   filename: function (req, file, cb) {
-    let nombreArchivo = file.originalname + '-' + Date.now() + path.extname(file.originalname)
+    let nombreArchivo = Date.now() + '-' + file.originalname;
     cb(null, nombreArchivo );
   },
 });
+const upload = multer({ storage : multerDiskstorage });
 
-const upload = multer({ storage });
+
+// MIDDLEWARES
+//verifica si el usuario está logueado, sino redirige a login
+const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
+
+
+let adminController = require(path.join(__dirname, '../controllers/adminController.js'));
+
+
+// CREATE NUEVO PRODUCTO
+router.get("/create",logueado, adminController.create);
+router.post("/create", upload.single("imagen"), adminController.processCreate);
+
+// UPDATE PRODUCTOS
+router.get("/edit/:id", logueado, adminController.edit);
+router.put("/edit/:id", upload.single("imagen"), adminController.processEdit);
+
+// DELETE PRODUCTOS
+router.get("/delete/:id", adminController.destroy);
 
 
 
