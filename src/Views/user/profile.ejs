@@ -12,33 +12,51 @@
             </header>
 
             <main class="profile">
+                <h2>Área Personal</h2>
                 <section class="main-container">
-                    <div class="left-wrapper">
+
+                    <div class="wrapper-Col-33">
+                        <h2>Mi perfil</h2>
+
                         <div class="img-slider">
                             <img src="/images/usuarios/<%= user.avatar %>" alt="imagen de perfil">
                         </div>
-                    </div>
 
-                    <div class="info-wrapper">
                         <div>
+                            <p> <strong><%= user.nombre%> <%= user.apellido%></strong> <br>
+                            <!-- <p><strong>E-mail</strong>: <%= user.email%></p> -->
+                            <!-- <p><strong>Teléfono</strong>: <%= user.telefono%></p> -->
+                            <%= user.direccion + ', ' +  user.departamento %>
                             <br>
-                            <h2><%= 'Hola ' + user.nombre + ' ' + user.apellido + ' !'%> </h2>
+                            <%= user.localidad + " \(" + user.codigoPostal + "\)" %>
+                            <br>
+                            <%= user.province + ', ' +  (user.country).toUpperCase() %>
+                            </p>
+                            <div>
+                                <a class="button-link azul-marino" href="/user/edit/<%= user.id%>">editar</a>
+                            </div>
                         </div>
-
-                        <div>
-                            <p><strong>Nombre</strong>: <%= user.nombre%> <%= user.apellido%></p>
-                            <p><strong>E-mail</strong>: <%= user.email%></p>
-                            <p><strong>Teléfono</strong>: <%= user.telefono%></p>
-                            <p><strong>Dirección</strong>: <%= user.direccion + ', ' +  user.departamento + '. ' + user.localidad + " \(" + user.codigoPostal + "\)"%></p>
-                            <br><br>
-                            <hr>
-                            <br><br>
-                        </div>
-                        <div>
-                            <a href="/user/edit/<%= user.id%>">EDITAR</a>
+                    </div>
+                    
+                    <div class="wrapper-Col-66">
+                            <h2>Historial de compras</h2>
+                        <div class="history-items">
+                <!-- Acá tendremos que cambiar por valores dinámicos -->
+                            <div class="img-slider">
+                                <img src="/img/PapaHoe-complementos-gorra.jpg" alt="">
+                            </div>
+                            <div class="prod-info-list">
+                                <p> <strong><%= productos[7].nombre%></strong> <br>
+                                $ <%= productos[7].precio%> ARS <br>
+                                YYY / MM / DD</p>
+                                <div class="edit-buttons">
+                                    <a class="button-link azul-marino" href="/product/all">view</a><a class="button-link rosa" href="/product/all">track</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
+                
 
             </main>
             <%- include("../partials/footer") %>

@@ -14,6 +14,8 @@ let users;
     users = JSON.parse(archivoUsers);
   };
 
+  let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
+
 
 
 const userController = {
@@ -23,7 +25,7 @@ const userController = {
 
         let idUsuario = req.params.id;  //7
         let showUser = user.find(item => item.id == idUsuario);
-        res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser});
+        res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser, productos});
     },
 
     loginView: function(req,res){
