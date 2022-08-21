@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": dhpapahoe,
-    "database": "papaHoe_db",
+    "password": "",
+    "database": "papahoe_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
