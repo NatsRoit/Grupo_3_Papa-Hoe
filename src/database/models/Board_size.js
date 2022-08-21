@@ -18,7 +18,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: "false"
     }
 
-    const Board_sizes = sequelize.define(alias, cols, config);
+    const Board_size = sequelize.define(alias, cols, config);
 
-    return Board_sizes;
+    Board_size.associate = function (models) {
+        Board_size.belongsToMany(models.Products, {
+            as: "products",
+            through: "Products_board_sizes",
+            foreingKey: "board_size_id",
+            otherKey: "product_id", 
+            timestamps: false,
+        });
+    };
+
+    return Board_size;
 };

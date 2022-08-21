@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     const fin_setup = sequelize.define(alias, cols, config);
 
     fin_setup.associate = function (models) {
-        fin_setup.hasMany(models.Product, {
+        fin_setup.hasMany(models.Products, {
             as: "products",
             foreingKey: "fin_system_id"
         });

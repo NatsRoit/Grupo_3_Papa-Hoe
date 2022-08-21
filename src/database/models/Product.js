@@ -36,10 +36,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTERGER,
             allowNull: false,
         },
-        brand_id: {
-            type: dataTypes.INTERGER,
-            allowNull: false,
-        },
         image1: {
             type: dataTypes.STRING(255),
             allowNull: false
@@ -69,25 +65,43 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Category, {
+        Product.belongsTo(models.Categories, {
             as: "categories",
             foreingKey: "category_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Subcategory, {
+        Product.belongsTo(models.Subcategories, {
             as: "subcategories",
             foreingKey: "subcategory_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsTo(models.fin_setup, {
+        Product.belongsTo(models.Fin_setup, {
             as: "fin_setup",
             foreingKey: "fin_system_id"
         });
     };
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Brands, {
+            as: "brands",
+            foreingKey: "brand_id"
+        });
+    };
+
+    Product.associate = function (models) {
+        Product.belongsToMany(models.Board_sizes, {
+            as: "board_sizes",
+            through: "Products_board_sizes",
+            foreingKey: "product_id",
+            otherKey: "board_size_id",
+            timestamps: false,
+        });
+    };
+
 
     return Product;
 };
