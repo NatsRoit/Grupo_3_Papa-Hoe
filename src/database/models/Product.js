@@ -8,15 +8,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         name: {
-            type: DataTypes.STRING(45),
+            type: dataTypes.STRING(45),
             allowNull: false
         },
         price:  {
-            type: DataTypes.DECIMAL(7,2),
+            type: dataTypes.DECIMAL(7,2),
             allowNull: false
         },
         discount:{
-            type: DataTypes.TINYINT,
+            type: dataTypes.TINYINT,
             allowNull: true
         },  
         description: {
@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },  
         active: {
-            type: DataTypes.TINYINT(1),
+            type: dataTypes.TINYINT(1),
             allowNull: false,
             defaultValue: 1,
         },
@@ -98,6 +98,25 @@ module.exports = (sequelize, dataTypes) => {
             through: "Products_board_sizes",
             foreingKey: "product_id",
             otherKey: "board_size_id",
+            timestamps: false,
+        });
+    };
+
+    Product.associate = function (models) {
+        Product.belongsToMany(models.Colors, {
+            as: "colors",
+            through: "Products_has_colors",
+            foreingKey: "product_id",
+            otherKey: "color_id",
+            timestamps: false,
+        });
+    };
+    Product.associate = function (models) {
+        Product.belongsToMany(models.Purchases, {
+            as: "purchases",
+            through: "purchases_has_products",
+            foreingKey: "product_id",
+            otherKey: "purchase_id",
             timestamps: false,
         });
     };

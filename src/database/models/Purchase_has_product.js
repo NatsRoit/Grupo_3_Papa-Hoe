@@ -1,13 +1,17 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Products_board_sizes";
+    let alias = "Purchases_has_products";
     let cols = {
+        id: {
+            type: dataTypes.INTERGER,
+            primaryKey: true,
+            allowNull: false
+        },
         product_id: {
             type: dataTypes.INTERGER,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
-        board_size_id: {
+        purchase_id: {
             type: dataTypes.INTERGER,
             primaryKey: true,
             allowNull: false
@@ -15,11 +19,11 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        tableName: "products_board_sizes",
+        tableName: "purchases_has_products",
         timestamps: "false"
     }
 
-    const Product_board_size = sequelize.define(alias, cols, config);
+    const Purchases_has_products = sequelize.define(alias, cols, config);
 
-    return Product_board_size;
+    return Purchases_has_products;
 };

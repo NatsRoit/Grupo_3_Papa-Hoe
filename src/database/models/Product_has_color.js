@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "products_has_colors";
+    let alias = "Products_has_colors";
     let cols = {
         product_id: {
             type: dataTypes.INTERGER,
@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        tableName: "Products_board_sizes",
+        tableName: "products_board_sizes",
         timestamps: "false"
     }
 

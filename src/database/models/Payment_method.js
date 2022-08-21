@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "fin_setup";
+    let alias = "Payment_methods";
     let cols = {
         id: {
             type: dataTypes.INTERGER,
@@ -11,21 +11,20 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        
     };
     let config = {
-        tableName: "fin_setup",
+        tableName: "payment_methods",
         timestamps: "false"
     }
 
-    const fin_setup = sequelize.define(alias, cols, config);
+    const Payment_method = sequelize.define(alias, cols, config);
 
-    fin_setup.associate = function (models) {
-        fin_setup.hasMany(models.Products, {
-            as: "products",
-            foreingKey: "fin_system_id"
+    Payment_method.associate = function (models) {
+        Payment_method.hasMany(models.Purchases, {
+            as: "purchases",
+            foreingKey: "payment_method_id"
         });
     };
 
-    return fin_setup;
+    return Payment_method;
 };
