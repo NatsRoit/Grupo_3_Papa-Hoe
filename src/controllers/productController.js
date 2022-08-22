@@ -31,17 +31,17 @@ const productController = {
     boardBuilder: function(req,res){
         res.render(path.resolve(__dirname, '../views/product/boardBuilder'));
     },
+
     cart: function(req,res){
         res.render(path.resolve(__dirname, '../views/product/cart'));
     },
-    cart1: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/cart1'));
+
+    
+    checkoutView: function(req,res){
+        res.render(path.resolve(__dirname, '../views/product/checkout'));
     },
-    cart2: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/cart2'));
-    },
-    cart3: function(req,res){
-        res.render(path.resolve(__dirname, '../views/product/cart3'));
+    checkout: function(req,res){
+        res.render(path.resolve(__dirname, '../views/product/checkout'));
     }
 };
 

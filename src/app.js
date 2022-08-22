@@ -47,7 +47,8 @@ app.use('/admin', adminRoutes);
 
 app.use((req, res, next) => {
     res.status(404).render(path.resolve(__dirname, './views/not-found'));
-})
+    next();
+});
 
 // Levanto el servidor
 app.listen(process.env.PORT || 3000, function () {

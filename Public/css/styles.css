@@ -185,9 +185,10 @@ a.button-link:active {
 
 /*------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ------*/
 ul.breadcrumb {
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 0 0 20px 0;
   width: 100%;
-  border-bottom: 1px solid #f9f9f9;
+  /* border-bottom: 1px solid #f9f9f9; */
 }
 ul.breadcrumb li {
   display: inline;
@@ -875,7 +876,7 @@ input[type="range"]::-moz-range-progress {
        PRODUCT DETAIL
 ---------------------------------------------*/
 
-.productDetail .main-container {
+.main-container {
   width: 100%;
   padding: 30px 0;
   padding-bottom: 60px;
@@ -1088,13 +1089,13 @@ object-position: 0 0;
   padding-left: 20px;
 }
 
-.login-formulario {
+.formulario {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
-.login-formulario form{
+.formulario form{
   width: 100%;
 }
 
@@ -1173,6 +1174,7 @@ button.submit-button {
 
 .register {
   padding: 30px 0;
+  width: 100%;
 }
 
 .register .form-input input {
@@ -1201,20 +1203,25 @@ button.submit-button {
   margin: 20px 0;
 }
 
-.form-2col {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; 
-}
-
-.form-2col {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+.form-1col,
+.form-2col,
 .form-3col {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+.form-1col {
+  padding: 15px;
+}
+.form-1col p, label,
+.form-2col p, label,
+.form-3col p, label {
+  margin-top: 0;
+  line-height: initial;
+  font-size: 14px;
+}
+.form-1col div {
   width: 100%;
 }
 .form-2col div {
@@ -1223,8 +1230,20 @@ button.submit-button {
 .form-3col div {
   width: 32%;
 }
-.form-3col label {
-  /* display: none; */
+.form-1col div.sub-col1 {
+  width: 20%;
+  flex-grow: 0;
+  margin: 0 30px 0 0;
+}
+.form-1col div.sub-col2 {
+  width: 50%;
+  flex-grow: 1;
+  margin: 0 30px 0 0;
+}
+.form-1col div.sub-col3 {
+  width: 20%;
+  flex-grow: 0;
+  text-align: end;
 }
 
 .register button.submit-button {
@@ -1269,12 +1288,12 @@ input[type="file" i] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 30px 0;
+  align-items: baseline;
+  /* padding: 30px 0; */
   border-bottom: 1px solid #b3b1b3;
 }
 .cartItems {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1330,7 +1349,7 @@ input[type="file" i] {
   border: none;
   /* border-radius: 5px; */
   text-align: center;
-  width: 60px;
+  width: 45px;
   font-size: 16px;
   line-height: 30px;
   color: #43484d;
@@ -1347,6 +1366,7 @@ button[class*="btn"] {
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  padding: 0 6px;
 }
 button:focus,
 input:focus {
@@ -1364,7 +1384,7 @@ input:focus {
 }
 .productCart .summary {
   position: absolute;
-  width: 30%;
+  width: 40%;
   height: 100%;
   top: 0px;
   right: 0px;
@@ -1372,47 +1392,15 @@ input:focus {
   background-color: #fff;
 }
 
-.fast-checkout {
-  justify-content: center;
-  border: #b3b1b3 solid 1px;
-  padding: 0px 20px;
-  margin-bottom: 40px;
-  position: relative;
-}
-.fast-checkout h5 {
-  position: absolute;
-  background-color: #f8f8f3;
-  padding: 0 20px;
-  left: 35%;
-  top: -13px;
-}
-.boton-chequeo {
-  background-color: #fad6d1;
-  width: 100%;
-  height: 35px;
-  border: 0px;
-  border-radius: 5px;
-  margin: 15px 0px;
-  padding: 1px 10px;
-}
-.fa-cc-paypal {
-  font-size: 30px;
-}
 
-.contacto {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  margin: 10px 0px;
+
+
+
+.radio-dropdown {
+  background-color: rgb(140, 167, 219);
+  /* margin: 40px; */
+
 }
-
-/* 
-form {
-    padding: 10px 0px;
-    margin: 10px 0px;
-} */
-
 .caja-shop {
   border-radius: 2px;
   height: 35px;
@@ -1513,33 +1501,11 @@ main.shopify-checkout-shipping {
   font-weight: bold;
   text-decoration: underline;
 }
-.shopify-checkout-shipping .chequeo div {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0px;
+
+.division {
+  border-bottom: #ebebeb solid 1px;
 }
 
-.shopify-checkout-shipping .division {
-  border-top: #b3b1b3 solid 1px;
-  text-align: center;
-  margin: 10px 0px;
-}
-
-.shopify-checkout-shipping h2 {
-  padding: 20px 0px;
-  margin-top: 10px;
-}
-
-.shopify-checkout-shipping .metodoEnvio {
-  border: #b3b1b3 solid 1px;
-  margin-top: 10px;
-  padding: 20px;
-}
-
-.shopify-checkout-shipping .radio {
-  display: flex;
-  justify-content: space-around;
-}
 
 .shopify-checkout-shipping .boton-envio {
   background-color: #335cb1;
@@ -1584,23 +1550,10 @@ main.shopify-checkout-payment {
   text-decoration: underline;
 }
 
-.shopify-checkout-payment .chequeo div {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20 px;
-}
-
 .shopify-checkout-payment .payment {
   margin-top: 20px;
 }
 
-.shopify-checkout-payment .titulos {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: #dcdfe3; /* sólo quise resaltar que iría en otro color*/
-  padding: 10px 0px;
-}
 
 .shopify-checkout-payment .datosVencimiento {
   display: flex;
@@ -1636,17 +1589,6 @@ main.shopify-checkout-payment {
   align-items: center;
 }
 
-.shopify-checkout-payment .chequeo div {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0px;
-}
-
-.shopify-checkout-payment .division {
-  border-top: #b3b1b3 solid 1px;
-  text-align: center;
-  margin: 10px 0px;
-}
 
 .shopify-checkout-payment h2 {
   padding: 20px 0px;
@@ -1659,9 +1601,9 @@ main.shopify-checkout-payment {
   padding: 20px;
 }
 
-.shopify-checkout-payment .radio {
-  display: flex;
-  justify-content: space-around;
+.form-group {
+  border: 1px solid #dcdfe3;
+  border-radius: 5px;
 }
 
 
@@ -1836,6 +1778,7 @@ input[type="range"]::-moz-range-progress {
 
 /* -------------------  USER PROFILE --------------------------*/
 
+.productCreate,
 .profileRegister,
 .profileEdit,
 .profile {
@@ -1844,6 +1787,7 @@ input[type="range"]::-moz-range-progress {
   padding-bottom: 60px;
 }
 
+.productCreate .main-container,
 .profileRegister .main-container,
 .profileEdit .main-container,
 .profile .main-container {
@@ -1859,6 +1803,7 @@ input[type="range"]::-moz-range-progress {
   font-size: 14px;
 }
 
+.productCreate h2,
 .profileRegister h2,
 .profileEdit h2,
 .profile h2 {
@@ -1875,15 +1820,7 @@ input[type="range"]::-moz-range-progress {
   width: 100%;
 }
 
-.wrapper-Col-66 {
-  /* margin: 10px; */
-  margin-bottom: 20px;
-  background-color: #fff;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-}
+.wrapper-Col-66,
 .wrapper-Col-33 {
   /* margin: 10px; */
   margin-bottom: 20px;
@@ -2335,6 +2272,7 @@ img.detalles-design {
     
     /* ------------------- USER PROFILE ---------------------------*/
   
+    .productCreate,
     .profileRegister,
     .profileEdit,
     .profile {
@@ -2342,12 +2280,14 @@ img.detalles-design {
       max-width: 1200px;
     }
     
+    .productCreate h2,
     .profileRegister h2,
     .profileEdit h2,
     .profile h2 {
       margin-left: 0;
       margin-bottom: 30px;
     }
+    .productCreate .main-container ,
     .profileRegister .main-container ,
     .profileEdit .main-container ,
     .profile .main-container {
@@ -2364,6 +2304,10 @@ img.detalles-design {
     }
     .wrapper-Col-66 {
       width: 60%;
+      flex-grow: 1;
+    }
+    .wrapper-Col-main {
+      width: 100%;
       flex-grow: 1;
     }
 

@@ -12,7 +12,7 @@
         <main class="profileEdit">
             <h2>Mi perfil</h2>
 
-            <section class="main-container">
+            <section class="main-container column ">
                 <div class="wrapper-Col-33">
                     <h2>Editar Avatar</h2>
                     <div class="img-slider">
@@ -25,7 +25,7 @@
                 <div class="wrapper-Col-66">
                     <h2>Editar Perfil</h2>
                     <div class="register">
-                        <form class="login-formulario" action="/user/edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form class="formulario" action="/user/edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <section class="datos-section">
                                 <h4>Datos Personales</h4>
                                 <div class="form-2col">

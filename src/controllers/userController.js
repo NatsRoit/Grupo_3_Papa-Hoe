@@ -79,7 +79,7 @@ const userController = {
             localidad: req.body.localidad,
             codigoPostal: req.body.codigoPostal,
             telefono: req.body.telefono,
-            avatar: req.file ? req.file.filename : ''
+            avatar: req.file ? req.file.filename : 'default-admin.jpg'
         }
 
         console.log(nuevoUsuario);

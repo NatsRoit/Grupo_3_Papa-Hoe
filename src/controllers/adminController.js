@@ -33,7 +33,7 @@ let adminController = {
             descuento: req.body.descuento,
             imagen: req.file.filename,
         };
-        console.log('productController > processCreate:' + req.file);
+        console.log('productController > processCreate: ' + req.file);
 
         productos.push(nuevoProducto);
         let nuevoProductoGuardar = JSON.stringify(productos);

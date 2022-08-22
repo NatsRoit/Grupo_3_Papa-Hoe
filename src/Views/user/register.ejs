@@ -11,8 +11,8 @@
 
             <main class="profileRegister">
                 <h2>Crear Cuenta</h2>
-                
-                                    <!-- <div class="login-img">
+
+                <!-- <div class="login-img">
                                         <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                                     </div> -->
 
@@ -28,91 +28,95 @@
                     <div class="wrapper-Col-66">
                         <h2>Datos Personales</h2>
                         <div class="register">
-                        <form class="login-formulario" action="/user/register" method="post"
-                            enctype="multipart/form-data">
-                            <section class="datos-section">
-                                <h4>Datos Personales</h4>
-                                <div class="form-2col">
-                                    <div class="form-input">
-                                        <label for="nombre">Nombre</label>
-                                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                            <form class="formulario" action="/user/register" method="POST"
+                                enctype="multipart/form-data">
+                                <section class="datos-section">
+                                    <h4>Datos Personales</h4>
+                                    <div class="form-2col">
+                                        <div class="form-input">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="apellido">Apellido</label>
+                                            <input type="text" name="apellido" id="apellido" placeholder="Apellido"
+                                                required>
+                                        </div>
                                     </div>
                                     <div class="form-input">
-                                        <label for="apellido">Apellido</label>
-                                        <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="form-input">
-                                    <label for="usuario">Usuario</label>
-                                    <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"
-                                        required>
-                                </div>
-                                <div class="form-input">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" placeholder="Email" required>
-                                </div>
-                                <div class="form-input">
-                                    <label for="contraseña">Contraseña</label>
-                                    <input type="password" name="password" id="password" placeholder="Contraseña"
-                                        required>
-                                </div>
-                                <div class="form-input">
-                                    <label for="confirm_password">Confirmar contraseña</label>
-                                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar Contraseña"
-                                        required>
-                                </div>
-                            </section>
-                            <section class="datos-section">
-                                <h4>Datos de Envío</h4>
-                                <div class="form-2col">
-                                    <div class="form-input">
-                                        <label for="province">Provincia</label>
-                                        <input type="text" name="province" id="province" placeholder="Provincia" required>
-                                    </div>
-                                    <div class="form-input">
-                                        <label for="country">País</label>
-                                        <input type="text" name="country" id="country" placeholder="País" required>
-                                    </div>
-                                </div>
-                                <div class="form-input">
-                                    <label for="direccion">Dirección</label>
-                                    <input type="text" name="direccion" id="direccion" placeholder="Calle, Nº" required>
-                                </div>
-                                <div class="form-3col">
-                                    <div class="form-input">
-                                        <label for="departamento">Piso, departamento</label>
-                                        <input type="text" name="departamento" id="departamento"
-                                            placeholder="Piso, departamento">
-                                    </div>
-                                    <div class="form-input">
-                                        <label for="localidad">Localidad</label>
-                                        <input type="text" name="localidad" id="localidad" placeholder="Localidad"
+                                        <label for="usuario">Usuario</label>
+                                        <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"
                                             required>
                                     </div>
                                     <div class="form-input">
-                                        <label for="codigoPostal">Código Postal</label>
-                                        <input type="text" name="codigoPostal" id="codigoPostal"
-                                            placeholder="Código Postal" required>
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" placeholder="Email" required>
                                     </div>
+                                    <div class="form-input">
+                                        <label for="contraseña">Contraseña</label>
+                                        <input type="password" name="password" id="password" placeholder="Contraseña"
+                                            required>
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="confirm_password">Confirmar contraseña</label>
+                                        <input type="password" name="confirm_password" id="confirm_password"
+                                            placeholder="Confirmar Contraseña" required>
+                                    </div>
+                                </section>
+                                <section class="datos-section">
+                                    <h4>Datos de Envío</h4>
+                                    <div class="form-2col">
+                                        <div class="form-input">
+                                            <label for="province">Provincia</label>
+                                            <input type="text" name="province" id="province" placeholder="Provincia"
+                                                required>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="country">País</label>
+                                            <input type="text" name="country" id="country" placeholder="País" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="text" name="direccion" id="direccion" placeholder="Calle, Nº"
+                                            required>
+                                    </div>
+                                    <div class="form-3col">
+                                        <div class="form-input">
+                                            <label for="departamento">Piso, departamento</label>
+                                            <input type="text" name="departamento" id="departamento"
+                                                placeholder="Piso, departamento">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="localidad">Localidad</label>
+                                            <input type="text" name="localidad" id="localidad" placeholder="Localidad"
+                                                required>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="codigoPostal">Código Postal</label>
+                                            <input type="text" name="codigoPostal" id="codigoPostal"
+                                                placeholder="Código Postal" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="telefono">Teléfono</label>
+                                        <input type="text" name="telefono" id="telefono" placeholder="Teléfono"
+                                            required>
+                                    </div>
+                                </section>
+                                <div class="form-input custom-file">
+                                    <label for="avatar">Elige una imagen de perfil</label>
+                                    <input type="file" name="avatar" id="avatar">
                                 </div>
-                                <div class="form-input">
-                                    <label for="telefono">Teléfono</label>
-                                    <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                                <div class="submit-button">
+                                    <button class="submit-button" type="submit">Crear</button>
                                 </div>
-                            </section>
-                            <div class="form-input custom-file">
-                                <label for="avatar">Elige una imagen de perfil</label>
-                                <input type="file" name="avatar" id="avatar">
-                            </div>
-                            <div class="submit-button">
-                                <button class="submit-button" type="submit">Crear</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </section>
             </main>
-        <%- include("../partials/footer") %>
+            <%- include("../partials/footer") %>
     </body>
 
 </html>

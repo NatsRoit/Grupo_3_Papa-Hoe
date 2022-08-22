@@ -31,8 +31,9 @@ router.get('/boardBuilder',productController.boardBuilder);
 
 // CHECKOUT
 router.get('/cart',productController.cart);
-router.get('/cart1',productController.cart1);
-router.get('/cart2',productController.cart2);
-router.get('/cart3',productController.cart3);
+router.get('/checkout',productController.checkoutView);
+router.post('/checkout',productController.checkout);
+// router.get('/cart2',productController.cart2);
+// router.get('/cart3',productController.cart3);
 
 module.exports = router;

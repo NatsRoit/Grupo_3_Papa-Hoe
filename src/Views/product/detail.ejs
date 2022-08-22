@@ -21,7 +21,7 @@
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
-                            <img src="/img/<%= producto.imagen %>"
+                            <img src="/img/<%= producto.imagen ? producto.imagen : 'default-product.png' %>"
                                 alt="<%= producto.titulo %>">
                             <!-- <div id="imagenes-secundarias">
                                 <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
@@ -43,10 +43,12 @@
                                     <!-- <h5>Dimensiones</h5> -->
                                     <select name="" id="opciones-desplegable">
                                         <option class="option-title" value="">Dimensiones</option>
-                                        <option value="">5'10--19 1/2--2 9/16--31</option>
-                                        <option value="">5'11--19 5/8--2 5/8--32</option>
-                                        <option value="">6'0--19 3/4--2 11/16--33</option>
-                                        <option value="">6'0--19 3/4--2 11/16--33</option>
+                                        <option value="">5'0" x 19" x 2 1/16" - 21.78L</option>
+                                        <option value="">5'7" x 19" x 2 7/16" - 29.86L</option>
+                                        <option value="">5'10" x 20" x 2 5/8" - 33.73L</option>
+                                        <option value="">6'1" x 20" x 2 3/4" - 37.71L</option>
+                                        <option value="">6'4" x 21" x 3 1/2" - 43.2L</option>
+                                        <option value="">6'10" x 22" x 3 1/4" - 53.95L</option>
                                     </select>
                                 </div>
                                 <div>
