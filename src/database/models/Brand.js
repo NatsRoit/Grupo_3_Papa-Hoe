@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         name: {
             type: dataTypes.STRING(45),
-            allowNull: false
+            // allowNull: false
         }
         
     };
@@ -18,12 +18,12 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Brand = sequelize.define(alias, cols, config);
+    const Brand = sequelize.define(alias, cols, config); 
 
     Brand.associate = function (models) {
         Brand.hasMany(models.Product, {
-            as: "products",
-            foreignKey: "brand_id"
+            foreignKey: "brand_id",
+            as: "products"
         });
     };
 

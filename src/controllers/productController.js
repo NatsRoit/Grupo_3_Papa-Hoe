@@ -9,9 +9,9 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const productController = {
     test: function(req,res){
-        db.Product.findAll({
+        db.Category.findAll({
             include: [
-                {association: 'brands'},
+                {association: "subcategories"},
             ]
         })
         .then(function(cat){

@@ -63,9 +63,9 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
-        Product.belongsToOne(models.Brand, {
-            as: "brands",
-            foreignKey: "brand_id"
+        Product.belongsTo(models.Brand, {
+            foreignKey: "brand_id",
+            as: "marcas"
         });
     };
     

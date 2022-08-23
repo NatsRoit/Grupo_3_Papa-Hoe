@@ -27,12 +27,12 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    // Category.associate = function (models) {
-    //     Category.hasMany(models.Subcategory, {
-    //         as: "subcategories",
-    //         foreignKey: "category_id"
-    //     });
-    // };
+    Category.associate = function (models) {
+        Category.hasMany(models.Subcategory, {
+            foreignKey: "category_id",
+            as: "subcategories",
+        });
+    };
 
     return Category;
 };
