@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "product";
+    let alias = "Product";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -62,6 +62,13 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
+        Product.belongsTo(models.Brand, {
+            as: "brands",
+            foreignKey: "brand_id"
+        });
+    };
+    
+    Product.associate = function (models) {
         Product.belongsTo(models.Category, {
             as: "categories",
             foreignKey: "category_id"
@@ -82,12 +89,6 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.Brand, {
-            as: "brands",
-            foreignKey: "brand_id"
-        });
-    };
 
     Product.associate = function (models) {
         Product.belongsToMany(models.Size, {

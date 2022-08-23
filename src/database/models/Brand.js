@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "brand";
+    let alias = "Brand";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        tableName: "brands",
+        tableName: "brand",
         timestamps: false
     }
 

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "order";
+    let alias = "Order";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -51,12 +51,12 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    // Order.associate = function (models) {
-    //     Order.belongsTo(models.User, {
-    //         as: "users",
-    //         foreignKey: "user_id"
-    //     });
-    // };
+    Order.associate = function (models) {
+        Order.belongsTo(models.User, {
+            as: "users",
+            foreignKey: "user_id"
+        });
+    };
 
 
     return Order;

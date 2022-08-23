@@ -14,12 +14,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'roles',
         timestamps: false
     };
-    const User = sequelize.define(alias, cols, config);
+    const Role = sequelize.define(alias, cols, config);
 
-    User.associate = function(models) {
-
-        
-    }
+    Role.associate = function (models) {
+        Role.hasMany(models.User, {
+            as: "users",
+            foreignKey: "role_id"
+        });
+    };
 
     return Role
 }

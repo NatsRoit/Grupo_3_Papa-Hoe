@@ -1,12 +1,22 @@
 const path = require('path');
 const fs = require('fs');
 const db = require('../database/models');
-const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
+// const sequelize = db.sequelize;
 
 let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 
 const productController = {
+    test: function(req,res){
+        db.Category.findAll({
+            include: [
+                {association: 'subcategories'}]
+        })
+        .then(function(cat){
+            res.send(cat)
+        })
+    },
     indexAll: function(req,res){
         db.Product.findAll({
             include: [
@@ -21,8 +31,8 @@ const productController = {
         })
         .then(function(productos){
             findCategory = "Todos los productos"
-            console.log(item)
-            res.render(path.resolve(__dirname, '../views/product/shop'),{productos : productos, category:findCategory});
+            console.log(productos)
+            return res.render(path.resolve(__dirname, '../views/product/shop'),{productos : productos, category:findCategory});
         })
     },
 
