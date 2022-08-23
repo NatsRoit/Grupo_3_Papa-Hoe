@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Products";
+    let alias = "product";
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -12,28 +12,29 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         price:  {
-            type: dataTypes.DECIMAL(7,2),
+            type: dataTypes.DECIMAL,
             allowNull: false
         },
         discount:{
             type: dataTypes.TINYINT,
-            allowNull: true
+            allowNull: false,
+            defaultValue: 0
         },  
         description: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING,
             allowNull: false
         },
         features: {
-            type: dataTypes.STRING(45),
-            allowNull: true
+            type: dataTypes.STRING,
+            allowNull: false
         },  
         active: {
-            type: dataTypes.TINYINT(1),
+            type: dataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: 1,
+            defaultValue: 1
         },
         stock: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         image1: {
@@ -42,81 +43,77 @@ module.exports = (sequelize, dataTypes) => {
         }, 
         image2: {
             type: dataTypes.STRING(255),
-            allowNull: true
         }, 
         image3: {
             type: dataTypes.STRING(255),
-            allowNull: true
         },
         image4: {
             type: dataTypes.STRING(255),
-            allowNull: true
         },
         image5: {
             type: dataTypes.STRING(255),
-            allowNull: true
         } 
     };
     let config = {
         tableName: "products",
-        timestamps: "false"
+        timestamps: false
     }
 
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Categories, {
+        Product.belongsTo(models.Category, {
             as: "categories",
-            foreingKey: "category_id"
+            foreignKey: "category_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Subcategories, {
+        Product.belongsTo(models.Subcategory, {
             as: "subcategories",
-            foreingKey: "subcategory_id"
+            foreignKey: "subcategory_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Fin_setup, {
-            as: "fin_setup",
-            foreingKey: "fin_system_id"
+        Product.belongsTo(models.Fin, {
+            as: "fins",
+            foreignKey: "fin_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Brands, {
+        Product.belongsTo(models.Brand, {
             as: "brands",
-            foreingKey: "brand_id"
+            foreignKey: "brand_id"
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsToMany(models.Board_sizes, {
-            as: "board_sizes",
-            through: "Products_board_sizes",
-            foreingKey: "product_id",
-            otherKey: "board_size_id",
+        Product.belongsToMany(models.Size, {
+            as: "sizes",
+            through: "product_has_size",
+            foreignKey: "size_id",
+            otherKey: "product_id",
             timestamps: false,
         });
     };
 
     Product.associate = function (models) {
-        Product.belongsToMany(models.Colors, {
+        Product.belongsToMany(models.Color, {
             as: "colors",
-            through: "Products_has_colors",
-            foreingKey: "product_id",
-            otherKey: "color_id",
+            through: "product_has_color",
+            foreignKey: "color_id",
+            otherKey: "product_id",
             timestamps: false,
         });
     };
     Product.associate = function (models) {
-        Product.belongsToMany(models.Purchases, {
-            as: "purchases",
-            through: "purchases_has_products",
-            foreingKey: "product_id",
-            otherKey: "purchase_id",
+        Product.belongsToMany(models.Order, {
+            as: "orders",
+            through: "order_has_product",
+            foreignKey: "order_id",
+            otherKey: "product_id",
             timestamps: false,
         });
     };

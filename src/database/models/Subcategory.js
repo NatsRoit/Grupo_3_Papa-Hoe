@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Subcategories";
+    let alias = "subcategory";
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -11,29 +11,29 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        category_id: {
-            type: dataTypes.INTERGER,
-            allowNull: false
-        },
+        // category_id: {
+        //     type: dataTypes.INTEGER,
+        //     allowNull: false
+        // },
     };
     let config = {
         tableName: "subcategories",
-        timestamps: "false"
+        timestamps: false
     }
 
     const Subcategory = sequelize.define(alias, cols, config);
 
     Subcategory.associate = function (models) {
-        Subcategory.hasMany(models.Products, {
+        Subcategory.hasMany(models.Product, {
             as: "products",
-            foreingKey: "subcategory_id"
+            foreignKey: "subcategory_id"
         });
     };
 
     Subcategory.associate = function (models) {
-        Subcategory.belongsTo(models.Categories, {
+        Subcategory.belongsTo(models.Category, {
             as: "categories",
-            foreingKey: "category_id"
+            foreignKey: "category_id"
         });
     };
 

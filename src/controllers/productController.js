@@ -1,23 +1,39 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
+const sequelize = db.sequelize;
 
 let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 
 const productController = {
     indexAll: function(req,res){
-        findCategory = "Todos los productos"
-        res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria:findCategory});
+        db.Product.findAll({
+            include: [
+                {association: 'categories'},
+                {association: 'subcategories'},
+                {association: 'fins'},
+                {association: 'brands'},
+                {association: 'sizes'},
+                {association: 'colors'},
+                // {association: 'orders'},
+            ]
+        })
+        .then(function(productos){
+            findCategory = "Todos los productos"
+            console.log(item)
+            res.render(path.resolve(__dirname, '../views/product/shop'),{productos : productos, category:findCategory});
+        })
     },
 
     indexByCategory: function(req,res){
         let findCategory = req.query.cat;  //surfboards
         let productByCategory = productos.filter(item => item.categoria == findCategory);
         if (findCategory){
-            res.render(path.resolve(__dirname, '../views/product/shop'),{productos: productByCategory, categoria:findCategory});
+            res.render(path.resolve(__dirname, '../views/product/shop'),{productos: productByCategory, category:findCategory});
         } else {
             findCategory = "Todos los productos";
-            res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria:findCategory});
+            res.render(path.resolve(__dirname, '../views/product/shop'),{productos, category:findCategory});
 
         };
     },

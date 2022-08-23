@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Payment_methods";
+    let alias = "payment";
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -14,17 +14,17 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "payment_methods",
-        timestamps: "false"
+        timestamps: false
     }
 
-    const Payment_method = sequelize.define(alias, cols, config);
+    const Payment = sequelize.define(alias, cols, config);
 
-    Payment_method.associate = function (models) {
-        Payment_method.hasMany(models.Purchases, {
-            as: "purchases",
-            foreingKey: "payment_method_id"
+    Payment.associate = function (models) {
+        Payment.hasMany(models.Order, {
+            as: "orders",
+            foreignKey: "payment_method_id"
         });
     };
 
-    return Payment_method;
+    return Payment;
 };

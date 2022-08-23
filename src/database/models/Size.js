@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "board_sizes";
+    let alias = "size";
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -14,21 +14,21 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        tableName: "board_sizes",
-        timestamps: "false"
+        tableName: "sizes",
+        timestamps: false
     }
 
-    const Board_size = sequelize.define(alias, cols, config);
+    const Size = sequelize.define(alias, cols, config);
 
-    Board_size.associate = function (models) {
-        Board_size.belongsToMany(models.Products, {
+    Size.associate = function (models) {
+        Size.belongsToMany(models.Product, {
             as: "products",
-            through: "Products_board_sizes",
-            foreingKey: "board_size_id",
+            through: "product_has_size",
+            foreignKey: "size_id",
             otherKey: "product_id", 
             timestamps: false,
         });
     };
 
-    return Board_size;
+    return Size;
 };

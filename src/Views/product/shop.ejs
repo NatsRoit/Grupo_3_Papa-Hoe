@@ -19,29 +19,29 @@
                     </p>
                 </div>
 
-                <h1 class="titulo-seccion-main accesorios"><%= categoria %></h1>
+                <h1 class="titulo-seccion-main accesorios"><%= category %></h1>
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){
-                        if(productos[i].categoria=="surfboards" ){ %>
+                        if(productos[i].categories.name=="Surfboards" ){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
-                                        <img src="/img/<%= productos[i].imagen %>"
-                                        alt="<%= productos[i].titulo %>">
+                                        <img src="/img/<%= productos[i].image1 %>"
+                                        alt="<%= productos[i].name %>">
                                     </div>
                                 </div>
                             </a>
                            
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
-                                    <h2><%= productos[i].titulo %></h2>
-                                    <p><%= productos[i].nombre %></p>
+                                    <h2><%= productos[i].name %></h2>
+                                    <p><%= productos[i].brands.name %></p>
                                 </div>
                                 <div class="info-producto">
-                                    <p class="precio">$ <%= productos[i].precio %></p>
-                                    <% if (productos[i].descuento !=0) { %>
-                                    <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                    <p class="precio">$ <%= productos[i].price %></p>
+                                    <% if (productos[i].discount !=0) { %>
+                                    <p class="descuento"><%= productos[i].discount %>% off</p>
                                         <% }else { %>
                                             <p> </p>
                                             <% } %>
@@ -56,26 +56,26 @@
 
                 <!-- <h2 class="titulo-seccion-main accesorios">Accesorios</h2> -->
                 <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria=="accesorios" ){ %>
+                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categories.name=="Accesorios" ){ %>
                         <div class="producto-shop">
 
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
-                                        <img src="/img/<%= productos[i].imagen %>"
-                                        alt="<%= productos[i].titulo %>">
+                                        <img src="/img/<%= productos[i].image1 %>"
+                                        alt="<%= productos[i].name %>">
                                     </div>
                                 </div>
                             </a>
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
-                                    <h2><%= productos[i].titulo %></h2>
-                                    <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
+                                    <h2><%= productos[i].name %></h2>
+                                    <p><%= productos[i].subcategory + ' ' + productos[i].brands.name + ' ' + productos[i].brands.name %></p>
                                 </div>
                                 <div class="info-producto">
-                                    <p class="precio">$ <%= productos[i].precio %></p>
-                                    <% if (productos[i].descuento !=0) { %>
-                                        <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                    <p class="precio">$ <%= productos[i].price %></p>
+                                    <% if (productos[i].discount !=0) { %>
+                                        <p class="descuento"><%= productos[i].discount %>% off</p>
                                         <% }else { %>
                                             <p> </p>
                                             <% } %>
@@ -90,26 +90,26 @@
                 <!-- <h2 class="titulo-seccion-main accesorios">Complementos</h2> -->
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ 
-                        if(productos[i].categoria=="complementos" ){ %>
+                        if(productos[i].categories.name=="Complementos" ){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
-                                    <img src="/img/<%= productos[i].imagen %>"
-                                        alt="<%= productos[i].titulo %>">
+                                    <img src="/img/<%= productos[i].image1 %>"
+                                        alt="<%= productos[i].name %>">
                                     </div>
                                 </div>
                             </a>
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
-                                    <h2><%= productos[i].titulo %></h2>
-                                    <p><%= productos[i].subcategoria + ' ' + productos[i].marca + ' ' + productos[i].modelo %></p>
+                                    <h2><%= productos[i].name %></h2>
+                                    <p><%= productos[i].subcategory + ' ' + productos[i].brands.name + ' ' + productos[i].brands.name %></p>
                                 </div>
 
                                 <div class="info-producto">
-                                    <p class="precio">$ <%= productos[i].precio %></p>
-                                    <% if (productos[i].descuento !=0) { %>
-                                    <p class="descuento"><%= productos[i].descuento %>% off</p>
+                                    <p class="precio">$ <%= productos[i].price %></p>
+                                    <% if (productos[i].discount !=0) { %>
+                                    <p class="descuento"><%= productos[i].discount %>% off</p>
                                         <% }else { %>
                                             <p> </p>
                                             <% } %>
