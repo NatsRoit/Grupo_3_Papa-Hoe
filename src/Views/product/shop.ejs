@@ -22,7 +22,7 @@
                 <h1 class="titulo-seccion-main accesorios"><%= category %></h1>
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){
-                        if(productos[i].categories.name=="Surfboards" ){ %>
+                        if(productos[i].categoria.name=="Surfboards" ){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
@@ -36,7 +36,7 @@
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].name %></h2>
-                                    <p><%= productos[i].brands.name %></p>
+                                    <p><%= productos[i].marca.name %></p>
                                 </div>
                                 <div class="info-producto">
                                     <p class="precio">$ <%= productos[i].price %></p>
@@ -56,7 +56,7 @@
 
                 <!-- <h2 class="titulo-seccion-main accesorios">Accesorios</h2> -->
                 <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categories.name=="Accesorios" ){ %>
+                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria.name=="Accesorios" ){ %>
                         <div class="producto-shop">
 
                             <a href="/product/detail/<%= productos[i].id %>">
@@ -70,7 +70,7 @@
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].name %></h2>
-                                    <p><%= productos[i].subcategory + ' ' + productos[i].brands.name + ' ' + productos[i].brands.name %></p>
+                                    <p><%= productos[i].marca.name %></p>
                                 </div>
                                 <div class="info-producto">
                                     <p class="precio">$ <%= productos[i].price %></p>
@@ -90,7 +90,7 @@
                 <!-- <h2 class="titulo-seccion-main accesorios">Complementos</h2> -->
                 <section class="contenedor-productos">
                     <% for(let i=0; i < productos.length; i++){ 
-                        if(productos[i].categories.name=="Complementos" ){ %>
+                        if(productos[i].categoria.name=="Complementos" ){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
@@ -103,7 +103,7 @@
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].name %></h2>
-                                    <p><%= productos[i].subcategory + ' ' + productos[i].brands.name + ' ' + productos[i].brands.name %></p>
+                                    <p><%= productos[i].marca.name %></p>
                                 </div>
 
                                 <div class="info-producto">

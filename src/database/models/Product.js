@@ -65,54 +65,42 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function (models) {
         Product.belongsTo(models.Brand, {
             foreignKey: "brand_id",
-            as: "marcas"
+            as: "marca"
         });
-    };
     
-    Product.associate = function (models) {
         Product.belongsTo(models.Category, {
-            as: "categories",
+            as: "categoria",
             foreignKey: "category_id"
         });
-    };
 
-    Product.associate = function (models) {
         Product.belongsTo(models.Subcategory, {
-            as: "subcategories",
+            as: "subcategoria",
             foreignKey: "subcategory_id"
         });
-    };
-
-    Product.associate = function (models) {
+        
         Product.belongsTo(models.Fin, {
-            as: "fins",
+            as: "fin",
             foreignKey: "fin_id"
         });
-    };
 
-
-    Product.associate = function (models) {
         Product.belongsToMany(models.Size, {
-            as: "sizes",
+            as: "dimensiones",
             through: "product_has_size",
             foreignKey: "product_id",
             otherKey: "size_id",
             timestamps: false
         });
-    };
 
-    Product.associate = function (models) {
         Product.belongsToMany(models.Color, {
-            as: "colors",
+            as: "colores",
             through: "product_has_color",
             foreignKey: "product_id",
             otherKey: "color_id",
             timestamps: false
         });
-    };
-    Product.associate = function (models) {
+
         Product.belongsToMany(models.Order, {
-            as: "orders",
+            as: "ordenes",
             through: "order_has_product",
             foreignKey: "product_id",
             otherKey: "order_id",
