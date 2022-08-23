@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "categories",
         timestamps: false
-    }
+    };
 
     const Category = sequelize.define(alias, cols, config);
 
@@ -27,12 +27,12 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    Category.associate = function (models) {
-        Category.hasMany(models.Subcategory, {
-            as: "subcategories",
-            foreignKey: "category_id"
-        });
-    };
+    // Category.associate = function (models) {
+    //     Category.hasMany(models.Subcategory, {
+    //         as: "subcategories",
+    //         foreignKey: "category_id"
+    //     });
+    // };
 
     return Category;
 };

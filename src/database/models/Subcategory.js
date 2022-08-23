@@ -11,14 +11,20 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-
     };
+
     let config = {
         tableName: "subcategories",
         timestamps: false
     };
 
     const Subcategory = sequelize.define(alias, cols, config);
+    // Subcategory.associate = function (models) {
+    //     Subcategory.belongsTo(models.Category, {
+    //         as: "categories",
+    //         foreignKey: "category_id"
+    //     });
+    // };
 
     Subcategory.associate = function (models) {
         Subcategory.hasMany(models.Product, {
@@ -27,12 +33,6 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    Subcategory.associate = function (models) {
-        Subcategory.belongsTo(models.Category, {
-            as: "categories",
-            foreignKey: "category_id"
-        });
-    };
 
     return Subcategory;
 };

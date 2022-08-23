@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "colors",
         timestamps: false
-    }
+    };
 
     const Color = sequelize.define(alias, cols, config);
 
@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "product_has_color",
             foreignKey: "color_id",
             otherKey: "product_id",
-            timestamps: false,
+            timestamps: false
         });
     };
 

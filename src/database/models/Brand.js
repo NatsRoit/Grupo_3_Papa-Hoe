@@ -10,13 +10,13 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(45),
             allowNull: false
-        },
+        }
         
     };
     let config = {
-        tableName: "brand",
+        tableName: "brands",
         timestamps: false
-    }
+    };
 
     const Brand = sequelize.define(alias, cols, config);
 

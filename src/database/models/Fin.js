@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "fins",
         timestamps: false
-    }
+    };
 
     const Fin = sequelize.define(alias, cols, config);
 

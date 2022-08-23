@@ -10,13 +10,14 @@ module.exports = (sequelize, dataTypes) => {
         dimension: {
             type: dataTypes.STRING(255),
             allowNull: false
-        },
+        }
         
     };
+
     let config = {
         tableName: "sizes",
         timestamps: false
-    }
+    };
 
     const Size = sequelize.define(alias, cols, config);
 
@@ -26,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "product_has_size",
             foreignKey: "size_id",
             otherKey: "product_id", 
-            timestamps: false,
+            timestamps: false
         });
     };
 
