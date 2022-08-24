@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+
+
+            <header class="section-header">
+                <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
+            </header>
+
+            <main class="productDetail">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product/category?cat=<%= producto.categoria%>"><%= producto.categoria%></a></li>
+                    <li><a href="/product/category?cat=<%= producto.categoria%>"><%= producto.subcategoria%></a></li>
+                    <li class="active"><%= producto.nombre%></li>
+                </ul>
+                <section class="main-container">
+                    <div class="left-wrapper">
+                        <div class="img-slider">
+                            <img src="/img/<%= producto.imagen ? producto.imagen : 'default-product.png' %>"
+                                alt="<%= producto.titulo %>">
+                            <!-- <div id="imagenes-secundarias">
+                                <img src="/img/surfboards/short-bord-example.jpg" alt="Short board">
+                                <img src="/img/surfboards/<%= producto.imagen%>" alt="Short board"> 
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="right-wrapper">
+                        <div class="product-header">
+                            <h2><%= producto.marca%></h2>
+                            <h1><%= producto.titulo%></h1>
+                            <p>$<%= producto.precio%> ARS</p>
+                        </div>
+
+                        <form class="product-detail-form">
+                            <div class="opciones">
+                                <div>
+                                    <!-- <h5>Dimensiones</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title" value="">Dimensiones</option>
+                                        <option value="">5'0" x 19" x 2 1/16" - 21.78L</option>
+                                        <option value="">5'7" x 19" x 2 7/16" - 29.86L</option>
+                                        <option value="">5'10" x 20" x 2 5/8" - 33.73L</option>
+                                        <option value="">6'1" x 20" x 2 3/4" - 37.71L</option>
+                                        <option value="">6'4" x 21" x 3 1/2" - 43.2L</option>
+                                        <option value="">6'10" x 22" x 3 1/4" - 53.95L</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Fin System</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title" value="">Fin System</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Tecnología</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Tecnología</option>
+                                        <option value="">CS SII</option>
+                                        <option value="">Futures</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Tail Type</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Tail Type</option>
+                                        <option value="">redonda</option>
+                                        <option value="">doble punta</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- <h5>Acabado</h5> -->
+                                    <select name="" id="opciones-desplegable">
+                                        <option class="option-title"value="">Acabado</option>
+                                        <option value="">opaco</option>
+                                        <option value="">glossy</option>
+                                    </select>
+                                </div>
+                                <!-- <div>
+                                    <h5>Cantidad</h5>
+                                    <div>
+                                        <span>-</span>
+                                        <input type=" number">
+                                        <span>+</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div>
+                                <input class="boton" value="Agregar al Carrito" type="submit">
+                            </div>
+                        </form>
+                        <!-- /form -->
+                        <div class="product-summary">
+                            <p><%= producto.nombre%></p>
+                            <ul>
+                                <li>Dimensiones</li>
+                                <li>Fins</li>
+                                <li>Tecnologia</li>
+                                <li>Tail</li>
+                                <li>Finnish</li>
+                            </ul>
+                            <hr>
+                            <p>CANTIDAD</p>
+                            <hr>
+                            <p>TOTAL</p>
+                        </div>
+
+                        <div class="descripcion">
+                            <div class="especificaciones">
+                                <h2>Especificaciones</h2>
+                                <p><%= producto.caracteristicas%></p>
+                                <br>
+                                <ul class="caracteristicas">
+                                    <li><strong>Habilidad: </strong>Principiante a Intermedio</li>
+                                    <li><strong>Tamaño de onda ideal: </strong>1-6 pies</li>
+                                    <li><strong>Tipo de ola:</strong>todas las condiciones</li>
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="features">
+                                <h2>Features</h2>
+                                <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
+                                <p><strong>Rocker — </strong>Flat entry rocker into a slight tail lift.</p>
+                                <p><strong>Concave — </strong>Slight Single into slight Double Concave</p>
+                                <p><strong>Tail — </strong>Round tail</p>
+                                <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
+                            </div>
+                            <br>
+                            <div class="mas-informacion">
+                                <p><strong> Darren designed the Sandman with the wide point moved forward 2 inches and the deck rolled into a sleek medium low rail. This design provides easy paddling without losing the signature DHD performance. The rounded pin tail allows smooth rail to rail surfing, the slight single to double concave with a flat entry rocker generates the speed that you are looking for.</strong></p>
+                            </div>
+                            <img src="/images/stock/size.jpeg" alt="Sizes">
+                        </div>
+                    </div>
+                </section>
+
+                <div class="related-products">
+                <h1>También te puede interesar</h1>
+                <section class="contenedor-productos">
+                    <% let arr = Array.from({length: 5}, () => Math.floor(Math.random() * productos.length));
+                            console.log(arr);
+                            %>
+                        <% for (let i = 0; i < arr.length; i++) { %>
+                        <div class="producto-shop">
+
+                            <a href="/product/detail/<%= productos[arr[i]].id%>">
+                                <div class="imagen-producto">
+                                    <div class="complementos-img">
+                                        <img src="/img/<%= productos[arr[i]].imagen %>"
+                                        alt="<%= productos[arr[i]].nombre%>" width="100%">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="product-info">
+                                <h5><%= productos[arr[i]].titulo %></h5>
+                            </div>
+                        </div>
+                        <% } %>
+                </section>
+            </div>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>
