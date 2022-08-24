@@ -2,4 +2,7 @@
 .DS_Store
 
 # Dependencias
-node_modules
+"node_modules"
+
+# Claves
+.env

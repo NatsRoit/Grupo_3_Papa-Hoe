@@ -11,19 +11,12 @@ const productController = {
     test: function(req,res){
         db.Product.findAll({
             include: [
-                {
-                    association: "marca",
-                },
-                {
-                association: "categoria",
-                include: [ {association: 'subcategorias'} ]
-                },
-                {
-                    association: "subcategoria",
-                },
-                {
-                    association: "fin",
-                },
+                { association: "marca" },
+                { association: "categoria", include: [ {association: 'subcategorias'} ] },
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
             ]
         })
         .then(function(cat){
@@ -33,13 +26,12 @@ const productController = {
     indexAll: function(req,res){
         db.Product.findAll({
             include: [
-                {association: 'categoria'},
-                {association: 'subcategoria'},
-                {association: 'fin'},
-                {association: 'marca'},
-                // {association: 'sizes'},
-                // {association: 'colors'},
-                // {association: 'orders'},
+                { association: "marca" },
+                { association: "categoria", include: [ {association: 'subcategorias'} ] },
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
             ]
         })
         .then(function(productos){
