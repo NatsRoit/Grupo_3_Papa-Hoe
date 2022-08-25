@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
-// const sequelize = db.sequelize;
 
 let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
@@ -12,22 +11,7 @@ const productController = {
         db.Product.findAll({
             include: [
                 { association: "marca" },
-                { association: "categoria", include: [ {association: 'subcategorias'} ] },
-                { association: "subcategoria" },
-                { association: "fin" },
-                { association: "dimensiones" },
-                { association: "colores" },
-            ]
-        })
-        .then(function(cat){
-            res.send(cat)
-        })
-    },
-    indexAll: function(req,res){
-        db.Product.findAll({
-            include: [
-                { association: "marca" },
-                { association: "categoria", include: [ {association: 'subcategorias'} ] },
+                { association: "categoria", include: [{association: 'subcategorias'}] },
                 { association: "subcategoria" },
                 { association: "fin" },
                 { association: "dimensiones" },
@@ -35,31 +19,51 @@ const productController = {
             ]
         })
         .then(function(productos){
-            findCategory = "Todos los productos"
-            console.log(productos)
-            return res.render(path.resolve(__dirname, '../views/product/shop'),{productos : productos, category:findCategory});
+            return res.send(productos);
+        })
+        .catch(err => { res.send(err);
         })
     },
 
-    indexByCategory: function(req,res){
-        let findCategory = req.query.cat;  //surfboards
-        let productByCategory = productos.filter(item => item.categoria == findCategory);
-        if (findCategory){
-            res.render(path.resolve(__dirname, '../views/product/shop'),{productos: productByCategory, category:findCategory});
-        } else {
-            findCategory = "Todos los productos";
-            res.render(path.resolve(__dirname, '../views/product/shop'),{productos, category:findCategory});
-
-        };
+    index: function(req,res){
+        db.Product.findAll({
+            include: [ { association: "marca" }, { association: "categoria"}],
+            where : {category_id : req.params.cat || [1,2,3]}
+        })
+        .then(function(productos){
+                if (req.params.cat){
+                    categoria = req.params.cat;
+                } else {
+                 categoria = undefined}
+                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria});
+        })
+        .catch(err => { res.send(err);
+        })
     },
+    
     detail: function(req,res){
-        let idProducto = req.params.id;  //7
-        let showProduct = productos.find(item => item.id == idProducto);
-        res.render(path.resolve(__dirname, '../views/product/detail'),{producto: showProduct, productos:productos});
+        let productDetail = 
+        db.Product.findByPk(req.params.id, {
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}] },
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ],
+        });
+        let prodRelated =
+        db.Product.findAll();
+        Promise.all([productDetail, prodRelated])
+        .then(function([producto, related]){
+            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, related});
+        })
+        .catch(err => { res.send(err);
+        })
     },
 
-
-    boardBuilder: function(req,res){
+    boardBuilder: function(req, res){
         res.render(path.resolve(__dirname, '../views/product/boardBuilder'));
     },
 

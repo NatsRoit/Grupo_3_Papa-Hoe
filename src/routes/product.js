@@ -22,8 +22,8 @@ let productController = require(path.join(__dirname, '../controllers/productCont
 
 // READ PRODUCTOS
 router.get('/test',productController.test);
-router.get('/all',productController.indexAll);
-router.get('/category',productController.indexByCategory);
+// router.get('/all',productController.indexAll);
+router.get('/category:cat?',productController.index);
 router.get('/detail/:id',productController.detail);
 
 
@@ -34,7 +34,5 @@ router.get('/boardBuilder',productController.boardBuilder);
 router.get('/cart',productController.cart);
 router.get('/checkout',productController.checkoutView);
 router.post('/checkout',productController.checkout);
-// router.get('/cart2',productController.cart2);
-// router.get('/cart3',productController.cart3);
 
 module.exports = router;

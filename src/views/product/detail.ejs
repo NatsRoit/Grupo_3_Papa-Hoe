@@ -144,22 +144,22 @@
                 <div class="related-products">
                 <h1>También te puede interesar</h1>
                 <section class="contenedor-productos">
-                    <% let arr = Array.from({length: 5}, () => Math.floor(Math.random() * productos.length));
+                    <% let arr = Array.from({length: 5}, () => Math.floor(Math.random() * related.length));
                             console.log(arr);
                             %>
                         <% for (let i = 0; i < arr.length; i++) { %>
                         <div class="producto-shop">
 
-                            <a href="/product/detail/<%= productos[arr[i]].id%>">
+                            <a href="/product/detail/<%= related[arr[i]].id%>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
-                                        <img src="/img/<%= productos[arr[i]].imagen %>"
-                                        alt="<%= productos[arr[i]].nombre%>" width="100%">
+                                        <img src="/img/<%= related[arr[i]].image1 %>"
+                                        alt="<%= related[arr[i]].name%>" width="100%">
                                     </div>
                                 </div>
                             </a>
                             <div class="product-info">
-                                <h5><%= productos[arr[i]].titulo %></h5>
+                                <h5><%= related[arr[i]].name %></h5>
                             </div>
                         </div>
                         <% } %>
