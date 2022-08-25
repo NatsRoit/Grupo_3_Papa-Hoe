@@ -8,13 +8,13 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const productController = {
     test: function(req,res){
-        db.Product.findAll({
+        db.Product.findByPk(1,{
             include: [
-                { association: "marca" },
-                { association: "categoria", include: [{association: 'subcategorias'}] },
-                { association: "subcategoria" },
-                { association: "fin" },
-                { association: "dimensiones" },
+                // { association: "marca" },
+                // { association: "categoria", include: [{association: 'subcategorias'}] },
+                // { association: "subcategoria" },
+                // { association: "fin" },
+                // { association: "dimensiones" },
                 { association: "colores" },
             ]
         })
@@ -42,7 +42,7 @@ const productController = {
     },
     
     detail: function(req,res){
-        let productDetail = 
+        let producto = 
         db.Product.findByPk(req.params.id, {
             include: [
                 { association: "marca" },
@@ -53,11 +53,13 @@ const productController = {
                 { association: "colores" },
             ],
         });
-        let prodRelated =
-        db.Product.findAll();
-        Promise.all([productDetail, prodRelated])
-        .then(function([producto, related]){
-            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, related});
+        let prodRelated = db.Product.findAll();
+        let size = db.Size.findAll();
+        let fins = db.Fin.findAll();
+        let colors = db.Color.findAll()
+        Promise.all([producto, prodRelated, size, fins, colors])
+        .then(function([producto, related, size, fins, colors ]){
+            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, related, size, fins, colors });
         })
         .catch(err => { res.send(err);
         })
