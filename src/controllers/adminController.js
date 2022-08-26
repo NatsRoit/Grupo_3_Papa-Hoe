@@ -1,19 +1,41 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 
 let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 let adminController = {
+    
+    test: function(req,res){
+        db.User.findByPk(20, {
+            // include: [
+            //     { association: "marca" },
+            //     { association: "categoria", include: [{association: 'subcategorias'}] },
+            //     { association: "subcategoria" },
+            //     { association: "fin" },
+            //     { association: "dimensiones" },
+            //     { association: "colores" },
+            // ]
+        })
+        .then(function(user){
+            return res.send(user);
+        })
+        .catch(err => { res.send(err);
+        })
+    },
+
     index: (req,res) =>{
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));
         res.render(path.resolve(__dirname, '../views/admin/admin'), {productos});
     },
 
         
-    create: (req,res) =>{
+    createView: (req,res) =>{
         res.render(path.resolve(__dirname, '../views/product/create'));
     },
-    processCreate: (req,res) =>{
+    create: (req,res) =>{
         let ultimoProducto = productos.pop();
         productos.push(ultimoProducto);
 
@@ -42,12 +64,12 @@ let adminController = {
     },
 
 
-    edit: (req,res)=>{
+    editView: (req,res)=>{
         const productID = req.params.id;
         let productEditar = productos.find(item=> item.id == productID);
         res.render(path.resolve(__dirname,'../views/product/edit'), {productEditar});
     },
-    processEdit: (req,res) => {
+    edit: (req,res) => {
         req.body.id = req.params.id;
         req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         let productUpdate = productos.map(item =>{

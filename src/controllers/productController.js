@@ -8,13 +8,13 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const productController = {
     test: function(req,res){
-        db.Product.findByPk(1,{
+        db.Product.findAll({
             include: [
-                // { association: "marca" },
-                // { association: "categoria", include: [{association: 'subcategorias'}] },
-                // { association: "subcategoria" },
-                // { association: "fin" },
-                // { association: "dimensiones" },
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}] },
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
                 { association: "colores" },
             ]
         })
@@ -34,7 +34,8 @@ const productController = {
                 if (req.params.cat){
                     categoria = req.params.cat;
                 } else {
-                 categoria = undefined}
+                 categoria = undefined
+                }
                 return res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria});
         })
         .catch(err => { res.send(err);

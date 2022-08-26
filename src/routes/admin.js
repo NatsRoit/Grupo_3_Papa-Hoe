@@ -24,14 +24,17 @@ const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
 
 let adminController = require(path.join(__dirname, '../controllers/adminController.js'));
 
+// TEST
+router.get('/test',adminController.test);
+
 
 // CREATE NUEVO PRODUCTO
-router.get("/create",logueado, adminController.create);
-router.post("/create", upload.single("imagen"), adminController.processCreate);
+router.get("/create",logueado, adminController.createView);
+router.post("/create", upload.single("imagen"), adminController.create);
 
 // UPDATE PRODUCTOS
-router.get("/edit/:id", logueado, adminController.edit);
-router.put("/edit/:id", upload.single("imagen"), adminController.processEdit);
+router.get("/edit/:id", logueado, adminController.editView);
+router.put("/edit/:id", upload.single("imagen"), adminController.edit);
 
 // DELETE PRODUCTOS
 router.get("/delete/:id", adminController.destroy);

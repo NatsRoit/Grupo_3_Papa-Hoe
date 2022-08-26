@@ -44,10 +44,16 @@
                                     <!-- <h5>Dimensiones</h5> -->
                                     <select name="size" class="opciones-desplegable">
                                         <option class="option-title" disabled selected>Dimensiones / Talle</option>
+                                        <% if (producto.dimensiones){ %>
                                         <% for (let i=0; i<producto.dimensiones.length; i++) { %>
                                         <option class="option-title" value="<%= producto.dimensiones[i].id%>">
                                             <%= producto.dimensiones[i].dimension%>
                                         </option>
+                                        <% } %>
+                                        <%} else {%>
+                                            <option class="option-title" value="">
+                                                Talle único
+                                            </option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -68,10 +74,16 @@
                                     <!-- <h5>Color</h5> -->
                                     <select name="colors" class="opciones-desplegable">
                                         <option class="option-title" disabled selected>Color</option>
-                                        <% for (let i =0; i<producto.colores.length; i++) { %>
-                                        <option class="option-title" value="<%= producto.colores[i].id%>">
-                                            <%= producto.colores[i].name%>
-                                        </option>
+                                        <% if (producto.colores){ %>
+                                            <% for (let i =0; i<producto.colores.length; i++) { %>
+                                            <option class="option-title" value="<%= producto.colores[i].id%>">
+                                                <%= producto.colores[i].name%>
+                                            </option>
+                                            <% } %>
+                                        <%} else {%>
+                                            <option class="option-title" value="">
+                                                Color único
+                                            </option>
                                         <% } %>
                                     </select>
                                 </div>

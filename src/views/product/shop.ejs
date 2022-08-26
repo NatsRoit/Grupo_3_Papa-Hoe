@@ -22,8 +22,7 @@
 
                 <h1 class="titulo-seccion-main accesorios"><%= categoria? productos[1].categoria.name : "Todos los productos" %></h1>
                 <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){
-                        if(productos[i].categoria.name=="Surfboards" ){ %>
+                    <% for(let i=0; i < productos.length; i++){ %>
                         <div class="producto-shop">
                             <a href="/product/detail/<%= productos[i].id %>">
                                 <div class="imagen-producto">
@@ -33,7 +32,6 @@
                                     </div>
                                 </div>
                             </a>
-                           
                             <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
                                 <div class="detalle-producto">
                                     <h2><%= productos[i].name %></h2>
@@ -52,74 +50,7 @@
                                 </div>
                             </a>
                         </div>
-                        <% }; } %>
-                </section>
-
-                <!-- <h2 class="titulo-seccion-main accesorios">Accesorios</h2> -->
-                <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ if(productos[i].categoria.name=="Accesorios" ){ %>
-                        <div class="producto-shop">
-
-                            <a href="/product/detail/<%= productos[i].id %>">
-                                <div class="imagen-producto">
-                                    <div class="complementos-img">
-                                        <img src="/img/<%= productos[i].image1 %>"
-                                        alt="<%= productos[i].name %>">
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
-                                <div class="detalle-producto">
-                                    <h2><%= productos[i].name %></h2>
-                                    <p><%= productos[i].marca.name %></p>
-                                </div>
-                                <div class="info-producto">
-                                    <p class="precio">$ <%= productos[i].price %></p>
-                                    <% if (productos[i].discount !=0) { %>
-                                        <p class="descuento"><%= productos[i].discount %>% off</p>
-                                        <% }else { %>
-                                            <p> </p>
-                                            <% } %>
-                                    <p class="compare"><i class="fa-solid fa-square-check"></i></p>
-                                </div>
-                            </a>
-                        </div>
                         <% } %>
-                    <% } %>
-                </section>
-
-                <!-- <h2 class="titulo-seccion-main accesorios">Complementos</h2> -->
-                <section class="contenedor-productos">
-                    <% for(let i=0; i < productos.length; i++){ 
-                        if(productos[i].categoria.name=="Complementos" ){ %>
-                        <div class="producto-shop">
-                            <a href="/product/detail/<%= productos[i].id %>">
-                                <div class="imagen-producto">
-                                    <div class="complementos-img">
-                                    <img src="/img/<%= productos[i].image1 %>"
-                                        alt="<%= productos[i].name %>">
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="shop-wraper-info" href="/product/detail/<%= productos[i].id %>">
-                                <div class="detalle-producto">
-                                    <h2><%= productos[i].name %></h2>
-                                    <p><%= productos[i].marca.name %></p>
-                                </div>
-
-                                <div class="info-producto">
-                                    <p class="precio">$ <%= productos[i].price %></p>
-                                    <% if (productos[i].discount !=0) { %>
-                                    <p class="descuento"><%= productos[i].discount %>% off</p>
-                                        <% }else { %>
-                                            <p> </p>
-                                            <% } %>
-                                    <p class="compare"><i class="fa-solid fa-square-check"></i></p>
-                                </div>
-                            </a>
-                        </div>
-                        <% } %>
-                    <% } %>
                 </section>
             </main>
 
