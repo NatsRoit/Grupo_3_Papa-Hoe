@@ -29,7 +29,8 @@ router.get('/test',adminController.test);
 
 
 // CREATE NUEVO PRODUCTO
-router.get("/create",logueado, adminController.createView);
+// router.get("/create",logueado, adminController.createView);
+router.get("/create", adminController.createView);
 router.post("/create", upload.single("imagen"), adminController.create);
 
 // UPDATE PRODUCTOS

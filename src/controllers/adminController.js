@@ -9,16 +9,13 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 let adminController = {
     
     test: function(req,res){
-        db.User.findByPk(20, {
-            // include: [
-            //     { association: "marca" },
-            //     { association: "categoria", include: [{association: 'subcategorias'}] },
-            //     { association: "subcategoria" },
-            //     { association: "fin" },
-            //     { association: "dimensiones" },
-            //     { association: "colores" },
-            // ]
-        })
+
+        db.Category.findAll()
+        // db.User.findByPk(20, {
+        //     include: [
+        //         { association: "rol" },
+        //     ]
+        // })
         .then(function(user){
             return res.send(user);
         })
@@ -26,15 +23,27 @@ let adminController = {
         })
     },
 
-    index: (req,res) =>{
-        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));
-        res.render(path.resolve(__dirname, '../views/admin/admin'), {productos});
-    },
+    // index: (req,res) =>{
+    //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));
+    //     res.render(path.resolve(__dirname, '../views/admin/admin'), {productos});
+    // },
 
         
-    createView: (req,res) =>{
-        res.render(path.resolve(__dirname, '../views/product/create'));
+    createView: function(req, res) {
+        let brand = db.Brand.findAll();
+        let category = db.Category.findAll();
+        let subcategory = db.Subcategory.findAll();
+        let colors = db.Color.findAll()
+        let fins = db.Fin.findAll();
+        let size = db.Size.findAll()
+        Promise.all([brand, category, subcategory, colors, fins, size])
+        .then(function([brand, category, subcategory, colors, fins, size ]){
+            return res.render(path.resolve(__dirname, '../views/admin/create'),{brand, category, subcategory, colors, fins, size});
+        })
+        .catch(err => { res.send(err);
+        })
     },
+
     create: (req,res) =>{
         let ultimoProducto = productos.pop();
         productos.push(ultimoProducto);
@@ -67,7 +76,7 @@ let adminController = {
     editView: (req,res)=>{
         const productID = req.params.id;
         let productEditar = productos.find(item=> item.id == productID);
-        res.render(path.resolve(__dirname,'../views/product/edit'), {productEditar});
+        res.render(path.resolve(__dirname,'../views/admin/edit'), {productEditar});
     },
     edit: (req,res) => {
         req.body.id = req.params.id;

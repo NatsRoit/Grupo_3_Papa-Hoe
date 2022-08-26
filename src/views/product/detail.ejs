@@ -43,15 +43,15 @@
                                 <div>
                                     <!-- <h5>Dimensiones</h5> -->
                                     <select name="size" class="opciones-desplegable">
-                                        <option class="option-title" disabled selected>Dimensiones / Talle</option>
+                                        <option disabled selected>Dimensiones / Talle</option>
                                         <% if (producto.dimensiones){ %>
                                         <% for (let i=0; i<producto.dimensiones.length; i++) { %>
-                                        <option class="option-title" value="<%= producto.dimensiones[i].id%>">
+                                        <option value="<%= producto.dimensiones[i].id%>">
                                             <%= producto.dimensiones[i].dimension%>
                                         </option>
                                         <% } %>
                                         <%} else {%>
-                                            <option class="option-title" value="">
+                                            <option value="">
                                                 Talle único
                                             </option>
                                         <% } %>
@@ -61,9 +61,9 @@
                                 <div>
                                     <!-- <h5>Fin System</h5> -->
                                     <select name="fins" class="opciones-desplegable">
-                                        <option class="option-title" disabled selected>Fin Setup</option>
+                                        <option disabled selected>Fin Setup</option>
                                         <% for (let i =0; i<fins.length; i++) { %>
-                                        <option class="option-title" value="<%= fins[i].id%>">
+                                        <option value="<%= fins[i].id%>">
                                             <%= fins[i].name%>
                                         </option>
                                         <% } %>
@@ -73,15 +73,15 @@
                                 <div>
                                     <!-- <h5>Color</h5> -->
                                     <select name="colors" class="opciones-desplegable">
-                                        <option class="option-title" disabled selected>Color</option>
+                                        <option disabled selected>Color</option>
                                         <% if (producto.colores){ %>
                                             <% for (let i =0; i<producto.colores.length; i++) { %>
-                                            <option class="option-title" value="<%= producto.colores[i].id%>">
+                                            <option value="<%= producto.colores[i].id%>">
                                                 <%= producto.colores[i].name%>
                                             </option>
                                             <% } %>
                                         <%} else {%>
-                                            <option class="option-title" value="">
+                                            <option value="">
                                                 Color único
                                             </option>
                                         <% } %>
@@ -90,7 +90,7 @@
                                 <div>
                                 <!-- <h5>Acabado</h5> -->
                                     <select name="" class="opciones-desplegable">
-                                        <option class="option-title"value="">Acabado</option>
+                                        <option value="">Acabado</option>
                                         <option value="">opaco</option>
                                         <option value="">glossy</option>
                                     </select>
