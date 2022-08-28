@@ -13,14 +13,6 @@
             <h2>Mi perfil</h2>
 
             <section class="main-container column ">
-                <div class="wrapper-Col-33">
-                    <h2>Editar Avatar</h2>
-                    <div class="img-slider">
-                        <img src="/images/usuarios/<%= user.avatar %>" alt="imagen de perfil">
-                    </div>
-                    Acá podemos poner botones para cambiar la imagen independientemente del resto del formulario
-                    <br>(y sacarlo de abajo!)
-                </div>
 
                 <div class="wrapper-Col-66">
                     <h2>Editar Perfil</h2>
@@ -118,8 +110,16 @@
                                 <button class="submit-button" type="submit">Confirmar</button>
                             </div>
                         </form>
-                        </div>
                     </div>
+                </div>
+                <div class="wrapper-Col-33">
+                    <h2>Editar Avatar</h2>
+                    <div class="img-slider">
+                        <img src="/images/usuarios/<%= user.avatar %>" alt="imagen de perfil">
+                    </div>
+                    Acá podemos poner botones para cambiar la imagen independientemente del resto del formulario
+                    <br>(y sacarlo de abajo!)
+                </div>
 
                 </section>
             </main>

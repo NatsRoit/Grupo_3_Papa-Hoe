@@ -13,13 +13,6 @@
                 <h2>Editor de Productos</h2>
 
                 <section class="main-container">
-                    <div class="wrapper-Col-33">
-                        <h2>Avatar</h2>
-                        <div class="img-slider">
-                            <img src="/images/usuarios/default-admin.jpg" alt="imagen de perfil">
-                        </div>
-                        Espacio para poner botones
-                    </div>
 
                     <div class="wrapper-Col-66">
                         <h2>Nuevo producto</h2>
@@ -85,7 +78,7 @@
                                     </div>
                                     <div class="form-input prod-descuento">
                                         <label> <input type="checkbox" name="discount">Producto en promoción</label>
-                                        <input type="number" name="discount" id="discount" max="100" placeholder="%" required>
+                                        <input type="number" name="discount" id="discount" min="0" max="100" placeholder="Aplicá un descuento" required>
                                     </div>
                                     
                                     <div class="form-input opciones">
@@ -164,6 +157,16 @@
                             </form>
                         </div>
                     </div>
+
+
+                    <div class="wrapper-Col-33">
+                        <h2>Avatar</h2>
+                        <div class="img-slider">
+                            <img src="/images/usuarios/default-admin.jpg" alt="imagen de perfil">
+                        </div>
+                        Espacio para poner botones
+                    </div>
+
                 </section>
             </main>
 
