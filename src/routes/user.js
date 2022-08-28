@@ -37,11 +37,11 @@ router.get("/profile/:id", acceso, userController.profile);
 
 //EDIT PROFILE
 router.get('/edit/:id', acceso, userController.editView);
-router.put('/edit/:id', upload.single('avatar'), validacionesRegistro, userController.edit);
+router.put('/edit/:id', upload.single('avatar'),  userController.edit);// validacionesRegistro, userController.edit);
 
 // LOGIN
 router.get('/login',userController.loginView);
-router.post('/login', validacionesLogin, adminLog, userController.login);
+router.post('/login', userController.login);// validacionesLogin,adminLog, userController.login);
 
 // REGISTER
 router.get('/register',userController.registerView);
