@@ -19,8 +19,8 @@ let users;
 
 // VALIDACIONES LOGIN
 const validacionesLogin = [
-  body('email').isEmail().withMessage('Agregar un email válido'),
-  body('email').custom( async (value) => {   
+  body('email').isEmail().withMessage('Agregar un email válido')
+  .custom( async (value) => {   
       await db.User.findOne({ where: {email: value }}).then(user => {
             if (!user)
             throw new Error('¿Estás seguro de haber usado ese email para registrarte?');
@@ -30,8 +30,10 @@ const validacionesLogin = [
   //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
   body('password').custom( async (value, {req,next}) => { 
        await db.User.findOne({ where: {email: req.body.email }}).then(user => {
+        if(user){
              if (!bcrypt.compareSync(value, user.password)) 
              throw new Error('Contraseña inválida. Hacé memoria!')
+        }
        });
   })
 ];

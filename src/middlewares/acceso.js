@@ -21,8 +21,7 @@ module.exports = (req,res,next) =>{
         })
         //return res.send(usuario);
         //delete usuario.password;
-        
-       
+              
         return next();
     }else{
         return next();

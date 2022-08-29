@@ -63,6 +63,8 @@ const userController = {
 
     register: function (req, res) {
         let errors = validationResult(req);
+        console.log("errores: " + errors.array())
+
           if (errors.isEmpty()) {
             let nuevoUsuario = {
                 first_name: req.body.nombre,
@@ -88,7 +90,8 @@ const userController = {
             .catch(error => res.send(error));
           
           } else {
-              return res.render(path.resolve(__dirname, '../views/user/register'), {errors: errors.array(), old: req.body});
+
+              return res.render(path.resolve(__dirname, '../views/user/register'), {errors: errors.mapped(), old: req.body});
             }
     },
   

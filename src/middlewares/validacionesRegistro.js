@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const { body } = require('express-validator');
 // const bcrypt = require('bcryptjs');
-
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 
 let archivoUsers =  fs.readFileSync(path.resolve(__dirname,'../database/usuarios.json'), {encoding: 'utf-8'});
@@ -20,7 +21,20 @@ let users;
 const validacionesRegistro = [
     body('nombre').isLength({min: 1}).withMessage('El campo nombre no puede estar vacío'),
     body('apellido').isLength({min: 1}).withMessage('El campo apellido no puede estar vacío'),
-    body('email').isEmail().withMessage('Controlá tu email'),
+    body('usuario').custom( async (value, {req}) => {   
+      await db.User.findOne({ where: {user_name: req.body.usuario }}).then(user => {
+            if (user)
+            throw new Error('El nombre de usuario ya ha sido registrado, elije otro');
+      });
+    }),
+    body('email')
+    .isEmail().withMessage('Controlá tu email')
+    .custom( async (value, {req}) => {   
+      await db.User.findOne({ where: {email: req.body.email }}).then(user => {
+            if (user)
+            throw new Error('El correo ya ha sido registrado, elije otro');
+      });
+    }),
     body('password').isLength({min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres'),
 
     //Aquí valido la confimación del password dispuesto por el usuario
