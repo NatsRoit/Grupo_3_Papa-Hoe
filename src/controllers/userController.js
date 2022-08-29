@@ -45,14 +45,15 @@ const userController = {
             req.session.usuario = usuarioLogueado;
             if(req.body.keepSession){
                res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
-               return res.redirect('/');
-            } else {
-                //Devolver a la vista los errores
-               console.log(errors.array())
-               return res.render(path.resolve(__dirname, '../views/user/login'),{errors : errors.mapped(), old : req.body});        
-              }
+            }
+          return res.redirect('/');
           })    
-       } 
+        
+        }else {
+          //Devolver a la vista los errores
+         console.log(errors.array())
+         return res.render(path.resolve(__dirname, '../views/user/login'),{errors : errors.mapped(), old : req.body});        
+        } 
     },
 
 
@@ -124,7 +125,7 @@ const userController = {
 
     db.User.update(user, {where:{id: req.params.id}})
     .then(user =>{
-      res.redirect('/user/profile/' + user.id);
+      res.redirect('/user/profile/' + req.params.id);
     })
 
 

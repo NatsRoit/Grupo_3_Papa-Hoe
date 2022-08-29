@@ -13,11 +13,11 @@ module.exports = (req,res,next) =>{
         return next();
     // Cookies: Se guardan en el navegador, del lado del cliente
     } else if(req.cookies.email){
-        let usuario = archivoUsuarios.find(usuario => usuario.email == req.cookies.email)
+        //let usuario = archivoUsuarios.find(usuario => usuario.email == req.cookies.email)
         db.User.findOne({where: {email: req.cookies.email}})
         .then(user =>{
-            req.session.usuario = usuario; 
-            res.locals.usuario = usuario;
+            req.session.usuario = user; 
+            res.locals.usuario = user;
         })
         //return res.send(usuario);
         //delete usuario.password;
