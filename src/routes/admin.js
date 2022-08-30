@@ -31,11 +31,11 @@ router.get('/test',adminController.test);
 // CREATE NUEVO PRODUCTO
 // router.get("/create",logueado, adminController.createView);
 router.get("/create", adminController.createView);
-router.post("/create", upload.array ('prodImage', 5), adminController.create);
+router.post("/create", upload.array('prodImage', 5), adminController.create);
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);
-router.put("/edit/:id", upload.array ('prodImage', 10), adminController.edit);
+router.put("/edit/:id", upload.array ('prodImage', 5), adminController.edit);
 
 // DELETE PRODUCTOS
 router.get("/delete/:id", adminController.destroy);

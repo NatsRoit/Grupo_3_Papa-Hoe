@@ -107,9 +107,9 @@
                                           <% } else {%>
                                             >
                                           <% } %>
-                                                <input type="file" name="prodImage" id="image1">
-                                                <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
+                                              <input type="file" name="prodImage" id="image1">
                                             </label>
+                                            <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
                                         </div>
                                         <div class="form-input">
                                             <label class="prodImg" for="image2"
@@ -119,8 +119,8 @@
                                               >
                                             <% } %>
                                                 <input type="file" name="prodImage" id="image2">
-                                                <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
-                                            </label>
+                                              </label>
+                                              <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
                                         </div>
                                         <div class="form-input">
                                             <label class="prodImg" for="image3"
@@ -130,8 +130,8 @@
                                                 >
                                               <% } %>
                                                 <input type="file" name="prodImage" id="image3">
-                                                <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
                                               </label>
+                                              <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
                                         </div>
                                         <div class="form-input">
                                             <label class="prodImg" for="image4"
@@ -141,8 +141,8 @@
                                               >
                                             <% } %>
                                                 <input type="file" name="prodImage" id="image4">
-                                                <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
                                               </label>
+                                              <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
                                         </div>
                                         <div class="form-input">
                                             <label class="prodImg" for="image5"
@@ -152,8 +152,8 @@
                                               >
                                             <% } %>
                                                 <input type="file" name="prodImage" id="image5">
-                                                <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
                                               </label>
+                                              <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
                                         </div>
                                     </div>
 
@@ -194,8 +194,10 @@
                                         <div class="opciones">
                                         <h4>Fin Setup</h4>
                                         <% for (let i =0; i<fins.length; i++) { %>
+                                          <%if (producto.fin){%>
                                           <% if (producto.fin.id == fins[i].id) { %>
                                             <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id" checked> <%=fins[i].name%></label><br>
+                                            <%}%>
                                             <% } else {%>
                                               <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id">  <%=fins[i].name%></label><br>
                                             <% }} %>
@@ -213,7 +215,7 @@
 
 
                     <div class="wrapper-Col-33">
-                        <h2>Thumbnail</h2>
+                        <h2>(Thumbnail)</h2>
                         <div class="img-slider">
                             <img src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
                         </div>

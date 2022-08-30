@@ -196,7 +196,16 @@ let adminController = {
             image3: req.files[2] ? req.files[2].filename : req.body.oldImagen3,
             image4: req.files[3] ? req.files[3].filename : req.body.oldImagen4,
             image5: req.files[4] ? req.files[4].filename : req.body.oldImagen5,
-        } 
+        }
+
+        req.body.image1 = productEdit.image1
+        req.body.image2 = productEdit.image2
+        req.body.image3 = productEdit.image3
+        req.body.image4 = productEdit.image4
+        req.body.image5 = productEdit.image5
+
+        // req.body.avatar = productEdit.image1
+
         db.Product.update(productEdit, {where:{id: req.params.id}})
         .then(response => {
             console.log('ATENCIOOOONNNNNNN: productController > req.body.image1' + JSON.stringify(req.body.size_id));

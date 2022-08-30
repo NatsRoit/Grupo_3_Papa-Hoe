@@ -12,6 +12,13 @@
             </header>
 
             <main class="productDetail">
+                <div class="shop-filters">
+                    <p>Acá podríamos poner las opciones extra que tiene el User admin</p>
+                    <p> <a href="/admin/create"> <strong>Crear Producto </strong></a>|
+                        <a href="/admin/edit/<%=producto.id%>"> <strong>Editar Producto </strong></a> |
+                        <a href="/admin/delete/75"> <strong>Borrar Producto </strong></a>
+                    </p>
+                </div>
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
                     <li><a href="/product/category<%= producto.categoria.id%>"><%= producto.categoria.name%></a></li>
