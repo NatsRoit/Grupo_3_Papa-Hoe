@@ -164,6 +164,8 @@ let adminController = {
     },
 
     edit: (req,res) => {
+        console.log('ATENCIOOOONNNNNNN: productController > req.body.image1' + JSON.stringify(req.body.size_id));
+
         // req.body.id = req.params.id;
         // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         // let productUpdate = productos.map(item =>{
@@ -176,12 +178,8 @@ let adminController = {
         // fs.writeFileSync(path.resolve(__dirname,'../database/productos.json'),productActualizar)
         // res.redirect('/product/detail/' + producto.id);
 
-        req.body.prodImage[0] = req.files[0] ? req.files[0].filename : req.body.oldImagen[0];
-        req.body.prodImage[1] = req.files[1] ? req.files[1].filename : req.body.oldImagen[1];
-        req.body.prodImage[2] = req.files[2] ? req.files[2].filename : req.body.oldImagen[2];
-        req.body.prodImage[3] = req.files[3] ? req.files[3].filename : req.body.oldImagen[3];
-        req.body.prodImage[4] = req.files[4] ? req.files[4].filename : req.body.oldImagen[4];
-        
+        // req.body.prodImage = req.files ? req.files.filename : req.body.oldImagen;
+
         let productEdit = {
             name: req.body.name,
             price: req.body.price,
@@ -193,14 +191,15 @@ let adminController = {
             brand_id: req.body.brand_id,
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
-            image1: req.body.prodImage[0],
-            image2: req.body.prodImage[1],
-            image3: req.body.prodImage[2],
-            image4: req.body.prodImage[3],
-            image5: req.body.prodImage[4]
+            image1: req.files[0] ? req.files[0].filename : req.body.oldImagen1,
+            image2: req.files[1] ? req.files[1].filename : req.body.oldImagen1,
+            image3: req.files[2] ? req.files[2].filename : req.body.oldImagen3,
+            image4: req.files[3] ? req.files[3].filename : req.body.oldImagen4,
+            image5: req.files[4] ? req.files[4].filename : req.body.oldImagen5,
         } 
         db.Product.update(productEdit, {where:{id: req.params.id}})
         .then(response => {
+            console.log('ATENCIOOOONNNNNNN: productController > req.body.image1' + JSON.stringify(req.body.size_id));
             return res.redirect('/product/detail/' + req.params.id );
         })
     },

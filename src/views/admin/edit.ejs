@@ -101,29 +101,59 @@
 
                                       
                                         <div class="form-input opciones">
-                                            <label class="prodImg" for="image1" style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image1%>)">
+                                            <label class="prodImg" for="image1" 
+                                            <% if(producto.image1){%>
+                                            style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image1%>)">
+                                          <% } else {%>
+                                            >
+                                          <% } %>
                                                 <input type="file" name="prodImage" id="image1">
+                                                <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
                                             </label>
                                         </div>
                                         <div class="form-input">
-                                            <label class="prodImg" for="image2">
+                                            <label class="prodImg" for="image2"
+                                            <% if(producto.image2){%>
+                                              style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image2%>)">
+                                            <% } else {%>
+                                              >
+                                            <% } %>
                                                 <input type="file" name="prodImage" id="image2">
+                                                <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
                                             </label>
                                         </div>
                                         <div class="form-input">
-                                            <label class="prodImg" for="image3">
+                                            <label class="prodImg" for="image3"
+                                              <% if(producto.image3){%>
+                                                style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image3%>)">
+                                              <% } else {%>
+                                                >
+                                              <% } %>
                                                 <input type="file" name="prodImage" id="image3">
-                                            </label>
+                                                <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
+                                              </label>
                                         </div>
                                         <div class="form-input">
-                                            <label class="prodImg" for="image4">
+                                            <label class="prodImg" for="image4"
+                                            <% if(producto.image4){%>
+                                              style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image4%>)">
+                                            <% } else {%>
+                                              >
+                                            <% } %>
                                                 <input type="file" name="prodImage" id="image4">
-                                            </label>
+                                                <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
+                                              </label>
                                         </div>
                                         <div class="form-input">
-                                            <label class="prodImg" for="image5">
+                                            <label class="prodImg" for="image5"
+                                            <% if(producto.image5){%>
+                                              style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image5%>)">
+                                            <% } else {%>
+                                              >
+                                            <% } %>
                                                 <input type="file" name="prodImage" id="image5">
-                                            </label>
+                                                <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
+                                              </label>
                                         </div>
                                     </div>
 
