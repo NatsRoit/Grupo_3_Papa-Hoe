@@ -11,7 +11,8 @@ const productController = {
         db.Product.findAll({
             include: [
                 { association: "marca" },
-                { association: "categoria", include: [{association: 'subcategorias'}] },
+                { association: "categoria", include: [{association: 'subcategorias'}],
+                raw: true},
                 { association: "subcategoria" },
                 { association: "fin" },
                 { association: "dimensiones" },

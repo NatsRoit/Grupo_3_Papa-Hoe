@@ -51,22 +51,30 @@
                                         </option>
                                         <% } %>
                                         <%} else {%>
-                                            <option value="">
-                                                Talle único
-                                            </option>
+                                            <option value="">Talle único</option>
                                         <% } %>
                                     </select>
                                 </div>
 
-                                <div>
+                                <% if(producto.categoria.id != 1){%>
+                                    <div class="hidden">
+                                <%}else {%>
+                                    <div>
+                                <%}%>
+
                                     <!-- <h5>Fin System</h5> -->
-                                    <select name="fins" class="opciones-desplegable">
+                                        <select name="fins" class="opciones-desplegable">
                                         <option disabled selected>Fin Setup</option>
-                                        <% for (let i =0; i<fins.length; i++) { %>
-                                        <option value="<%= fins[i].id%>">
-                                            <%= fins[i].name%>
+                                        <% if (producto.fin){ %>
+                                        <option value="<%= producto.fin.id%>">
+                                            <%= producto.fin.name%>
                                         </option>
-                                        <% } %>
+                                        <%} else {%>
+                                            <% for (let i =0; i<fins.length; i++) { %>
+                                                <option value="<%= fins[i].id%>">
+                                                    <%= fins[i].name%>
+                                                </option>
+                                        <% }} %>
                                     </select>
                                 </div>
 
@@ -74,20 +82,22 @@
                                     <!-- <h5>Color</h5> -->
                                     <select name="colors" class="opciones-desplegable">
                                         <option disabled selected>Color</option>
-                                        <% if (producto.colores){ %>
+                                        <% if (producto.colores && producto.colores >0){ %>
                                             <% for (let i =0; i<producto.colores.length; i++) { %>
                                             <option value="<%= producto.colores[i].id%>">
                                                 <%= producto.colores[i].name%>
                                             </option>
                                             <% } %>
                                         <%} else {%>
-                                            <option value="">
-                                                Color único
-                                            </option>
+                                            <option value="">Color único</option>
                                         <% } %>
                                     </select>
                                 </div>
-                                <div>
+                                <% if(producto.categoria.id != 1){%>
+                                    <div class="hidden">
+                                <%}else {%>
+                                    <div>
+                                <%}%>
                                 <!-- <h5>Acabado</h5> -->
                                     <select name="" class="opciones-desplegable">
                                         <option value="">Acabado</option>

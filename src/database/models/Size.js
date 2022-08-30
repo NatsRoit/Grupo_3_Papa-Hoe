@@ -11,7 +11,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         }
-        
     };
 
     let config = {
@@ -23,8 +22,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Size.associate = function (models) {
         Size.belongsToMany(models.Product, {
-            as: "products",
-            through: "product_has_size",
+            as: "dimensiones",
+            through: "Product_Size",
             foreignKey: "size_id",
             otherKey: "product_id", 
             timestamps: false

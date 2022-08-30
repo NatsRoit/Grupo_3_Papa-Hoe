@@ -85,9 +85,9 @@ module.exports = (sequelize, dataTypes) => {
 
         Product.belongsToMany(models.Size, {
             as: "dimensiones",
-            through: "product_has_size",
-            foreignKey: "product_id",
-            otherKey: "size_id",
+            through: "Product_Size",
+            foreignKey: "product_id",  // "SourceModel" Key!!!! in the "Through Relation"
+            otherKey: "size_id",  // TargetModel" Key!!!! in the "Through Relation"
             timestamps: false
         });
 

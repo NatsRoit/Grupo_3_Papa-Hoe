@@ -10,7 +10,7 @@ const multerDiskstorage = multer.diskStorage({
     cb (null, path.resolve(__dirname, "../../public/img"));
   },
   filename: function (req, file, cb) {
-    let nombreArchivo = Date.now() + '-' + file.originalname;
+    let nombreArchivo = Date.now() + '_' +  file.fieldname + '-' + file.originalname;
     cb(null, nombreArchivo );
   },
 });
@@ -31,7 +31,7 @@ router.get('/test',adminController.test);
 // CREATE NUEVO PRODUCTO
 // router.get("/create",logueado, adminController.createView);
 router.get("/create", adminController.createView);
-router.post("/create", upload.single("imagen"), adminController.create);
+router.post("/create", upload.array ('prodImage', 5), adminController.create);
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);

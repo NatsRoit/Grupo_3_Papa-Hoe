@@ -904,7 +904,7 @@ input[type="range"]::-moz-range-progress {
   z-index: 80;
   top: 80px;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 .left-wrapper .img-slider img {
 /* mix-blend-mode: multiply; */
@@ -1113,8 +1113,7 @@ object-position: 0 0;
   /* text-transform: uppercase; */
 }
 
-.form-input a, 
-.form-input.checkbox {
+.form-input a {
   display: inline;
   font-size: 12px;
   font-weight: 400;
@@ -1129,6 +1128,7 @@ object-position: 0 0;
   /* background-color: rgba(255, 255, 255, 0.4); */
   border: #b3b1b3 solid 0.5px;
 }
+
 .form-input.nombre,
 .form-input.apellido {
   display: inline-block;
@@ -1187,21 +1187,29 @@ button.submit-button {
   margin: 4px 0 20px 0;
   padding: 1px 10px;
   width: 100%;
-  /* background-color: #00172815; */
+  background-color: rgba(0, 23, 40, 0.03);
   /* border: #b3b1b3 solid 0.5px; */
 }
 
 .form-input.prod-descuento {
   flex-wrap: nowrap;
   align-items: baseline;
-  background-color: #fad6d1;
-  padding: 0 10px;
+  background-color: #4884ef;
+  padding: 0;
   margin: 4px 0 20px 0;
   border-radius: 2px;
 }
 
 .form-input.prod-descuento label {
+  color: white;
   width: 50%;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.5pt;
+}
+.form-input.prod-descuento input{
+  height: 60px;
 }
 .form-input.prod-descuento input[type="number" i]{
   -webkit-appearance: initial;
@@ -1209,6 +1217,16 @@ button.submit-button {
   color: black;
   width: 50%;
   margin: 0;
+}
+.checkbox {
+  display: flex;
+  width: 100%;
+}
+.checkbox .opciones {
+  margin: 20px 0 4px 0;
+  width: 50%;
+  flex-grow: 1;
+  line-height: 20pt;
 }
 
 .form-input.prod-descuento input[type="number" i]::placeholder {
@@ -1842,7 +1860,7 @@ object-position: 0 0;
 
 .productCreate .opciones textarea,
 .productCreate .opciones select {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   font-weight: 500;
   /* font-size: 15px; */
   /* font-family: "BebasNeue"; */
@@ -1856,16 +1874,17 @@ object-position: 0 0;
   background-color: rgba(0, 23, 40, 0.03);
   margin: 4px 0 20px 0
 }
+.productCreate .opciones textarea {
+  resize: none;
+  height: auto;
+  height: auto;
+}
 .productCreate .opciones select:invalid,
 select option[value=""] {
   color: rgba(118, 118, 118, 0.5);
   font-weight: 400;
 }
 
-.productCreate .opciones textarea {
-  resize: none;
-  height: auto;
-}
 
 .form-5col {
   display: flex;

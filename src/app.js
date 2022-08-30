@@ -22,7 +22,7 @@ app.set("views", path.join(__dirname, "./views"));
 
 
 // URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Uso el methodOverride para usar PUT y DELETE en nuestros formularios
 app.use(methodOverride('_method'));
