@@ -107,10 +107,18 @@ let adminController = {
 /* Con base de datos - Pero sin funcionar :( 
 
     editView: function (req,res) {
-        db.Product.findByPk (req.params.id) 
-            .then (function (product){
-                 res.render ("productEditar", {product:product});
-            })
+    let producto = db.Product.findByPk (req,params.id)
+
+    let size = db.Size.findAll();
+    let fins = db.Fin.findAll();
+    let colors = db.Color.findAll();
+    let brands = db.Brand.findAll();
+    let categories = db.Category.findAll();
+    let subcategories = db.Subcategory.findAll();
+    
+    Promise.all([producto, size, fins, colors, brands, categories, subcategories])
+        .then(function([producto, size, fins, colors, brands, categories, subcategories]){
+            res.render ("edit", [producto, size, fins, colors, brands, categories, subcategories]  )
     },
 */
 
@@ -153,7 +161,7 @@ let adminController = {
                 id: req.params.id
             }
         }) 
-        res.redirect ("/productos)
+        res.redirect ("/productos/" + req.params.id")
 
         },
 */
