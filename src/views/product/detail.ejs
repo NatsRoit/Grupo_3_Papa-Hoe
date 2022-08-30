@@ -56,12 +56,12 @@
                                     </select>
                                 </div>
 
+                                
                                 <% if(producto.categoria.id != 1){%>
                                     <div class="hidden">
                                 <%}else {%>
                                     <div>
                                 <%}%>
-
                                     <!-- <h5>Fin System</h5> -->
                                         <select name="fins" class="opciones-desplegable">
                                         <option disabled selected>Fin Setup</option>
@@ -82,7 +82,7 @@
                                     <!-- <h5>Color</h5> -->
                                     <select name="colors" class="opciones-desplegable">
                                         <option disabled selected>Color</option>
-                                        <% if (producto.colores && producto.colores >0){ %>
+                                        <% if (producto.colores){ %>
                                             <% for (let i =0; i<producto.colores.length; i++) { %>
                                             <option value="<%= producto.colores[i].id%>">
                                                 <%= producto.colores[i].name%>
@@ -93,6 +93,8 @@
                                         <% } %>
                                     </select>
                                 </div>
+
+
                                 <% if(producto.categoria.id != 1){%>
                                     <div class="hidden">
                                 <%}else {%>

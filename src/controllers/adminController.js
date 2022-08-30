@@ -70,20 +70,33 @@ let adminController = {
             let responseDimensiones = db.Size.findAll({
                     where: { id:{[Op.or]: req.body.size_id} },
                 });
+            let responseColores = db.Color.findAll({
+                    where: { id:{[Op.or]: req.body.color_id} },
+                });
 
-            Promise.all([responseProducto, responseDimensiones])
-            .then(([producto, dimensiones]) => {
-                console.log('ATENCIOOOONNNNNNNNNNNNNNN!!!!!!! dimensiones:' + JSON.stringify(dimensiones))
+            Promise.all([responseProducto, responseDimensiones, responseColores])
+            .then(([producto, dimensiones, colores]) => {
                 let productsize = [];
                 for (let i=0; i<dimensiones.length; i++){
-                    let data = {
+                    let datasize = {
                         product_id: producto.id,
                         size_id: dimensiones[i].id
                     };
-                    productsize.push(data);
-                    console.log('ATENCIOOOONNNNNNNNNNNNNNN!!!!!!! forrrrrr dimensiones let data:' + JSON.stringify(productsize))
-                }
-                db.Product_Size.bulkCreate (productsize)
+                    productsize.push(datasize);
+                };
+                
+                let productcolor = [];
+                for (let i=0; i<colores.length; i++){
+                    let datacolor = {
+                        product_id: producto.id,
+                        color_id: colores[i].id
+                    };
+                    productcolor.push(datacolor);
+                };
+
+                let newproductsize =  db.Product_Size.bulkCreate (productsize);
+                let newproductcolor =  db.Product_Color.bulkCreate (productcolor);
+                Promise.all([newproductsize, newproductcolor])
                 .then(response => {
                     if (response && nuevoProducto ){
                         // let currency = req.body.currency;
@@ -124,72 +137,74 @@ let adminController = {
 
 
     editView: (req,res)=>{
-        const productID = req.params.id;
-        let productEditar = productos.find(item=> item.id == productID);
-        res.render(path.resolve(__dirname,'../views/admin/edit'), {productEditar});
-
-/* Con base de datos - Pero sin funcionar :( 
-
-    editView: function (req,res) {
-    let producto = db.Product.findByPk (req,params.id)
-
-    let size = db.Size.findAll();
-    let fins = db.Fin.findAll();
-    let colors = db.Color.findAll();
-    let brands = db.Brand.findAll();
-    let categories = db.Category.findAll();
-    let subcategories = db.Subcategory.findAll();
-    
-    Promise.all([producto, size, fins, colors, brands, categories, subcategories])
-        .then(function([producto, size, fins, colors, brands, categories, subcategories]){
-            res.render ("edit", [producto, size, fins, colors, brands, categories, subcategories]  )
-    },
-*/
-
-    },
-    edit: (req,res) => {
-        req.body.id = req.params.id;
-        req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-        let productUpdate = productos.map(item =>{
-            if(item.id == req.body.id){
-                return item = req.body;
-            }
-            return item;
+        // const productID = req.params.id;
+        // let productEditar = productos.find(item=> item.id == productID);
+        // res.render(path.resolve(__dirname,'../views/admin/edit'), {productEditar});
+        let producto = 
+        db.Product.findByPk(req.params.id, {
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}] },
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ],
+        });
+        let brand = db.Brand.findAll();
+        let category = db.Category.findAll({include: [{association: 'subcategorias'}]});
+        let subcategory = db.Subcategory.findAll();
+        let colors = db.Color.findAll()
+        let fins = db.Fin.findAll();
+        let size = db.Size.findAll()
+        Promise.all([producto, brand, category, subcategory, colors, fins, size])
+        .then(function([producto, brand, category, subcategory, colors, fins, size]){
+            res.render (path.resolve(__dirname,'../views/admin/edit'), {producto, brand, category, subcategory, colors, fins, size})
         })
-        let productActualizar = JSON.stringify(productUpdate,null,2);
-        fs.writeFileSync(path.resolve(__dirname,'../database/productos.json'),productActualizar)
-        res.redirect('/product');
+    },
 
-/* Con base de datos - Pero sin funcionar :( 
- edit: function (req, res) {
-        db.Product.update ({
-            name : req.body.name,
-            category: req.body.category_id,
-            subcategory: req.body.subcategory_id,
-            brand: req.body.brand,
-            price: req.body.precio,
-            moneda: req.body.moneda,
-            stock: req.body.stock,
+    edit: (req,res) => {
+        // req.body.id = req.params.id;
+        // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+        // let productUpdate = productos.map(item =>{
+        //     if(item.id == req.body.id){
+        //         return item = req.body;
+        //     }
+        //     return item;
+        // })
+        // let productActualizar = JSON.stringify(productUpdate,null,2);
+        // fs.writeFileSync(path.resolve(__dirname,'../database/productos.json'),productActualizar)
+        // res.redirect('/product/detail/' + producto.id);
+
+        req.body.prodImage[0] = req.files[0] ? req.files[0].filename : req.body.oldImagen[0];
+        req.body.prodImage[1] = req.files[1] ? req.files[1].filename : req.body.oldImagen[1];
+        req.body.prodImage[2] = req.files[2] ? req.files[2].filename : req.body.oldImagen[2];
+        req.body.prodImage[3] = req.files[3] ? req.files[3].filename : req.body.oldImagen[3];
+        req.body.prodImage[4] = req.files[4] ? req.files[4].filename : req.body.oldImagen[4];
+        
+        let productEdit = {
+            name: req.body.name,
+            price: req.body.price,
             discount: req.body.discount,
             description: req.body.description,
             features: req.body.features,
-            image1: req.file.image1,
-            image2: req.file.image2,
-            image3: req.file.image3,
-            image4: req.file.image4,
-            image5: req.file.image5,
-            dimensions: req.body.dimensions,
-            fin: req.body.fins,
-        }, {
-            where: {
-                id: req.params.id
-            }
-        }) 
-        res.redirect ("/productos/" + req.params.id")
-
-        },
-*/
+            stock: req.body.stock,
+            fin_id: req.body.fin_id,
+            brand_id: req.body.brand_id,
+            subcategory_id: req.body.subcategory_id,
+            category_id: req.body.category_id,
+            image1: req.body.prodImage[0],
+            image2: req.body.prodImage[1],
+            image3: req.body.prodImage[2],
+            image4: req.body.prodImage[3],
+            image5: req.body.prodImage[4]
+        } 
+        db.Product.update(productEdit, {where:{id: req.params.id}})
+        .then(response => {
+            return res.redirect('/product/detail/' + req.params.id );
+        })
     },
+
 
 
     destroy: (req,res) =>{

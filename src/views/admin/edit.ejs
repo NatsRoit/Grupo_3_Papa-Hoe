@@ -5,111 +5,195 @@
 
     <body>
         <%- include("../partials/header") %>
+            <header class="section-header">
+                <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
+            </header>
 
-            <main>
-                <div class="login-register">
-                    <h2>Editar Producto</h2>
-                    <div>
-                        <!-- <img id="shaka" src="/img/shakasign_99700.svg" alt="shaka"> -->
-                        <img src="/images/brand/LOGO-PapaHoe-LogoWord.png" alt="Logo">
-                    </div>
-                    <div class="formulario">
-                            <form action="/product/edit/<%= productEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
-                                <div class="form-input">
-                                  <label for="titulo">Nombre</label>
-                                  <input type="text" name="nombre" placeholder="Nombre" required="required" value="<%= productEditar.nombre%>">
-                                </div>	
-                                <div class="form-input">
-                                  <label for="categoria">Category</label>
-                                  <select name="categoria" id="categoria" value="<%= productEditar.categoria %>" required="required">
-                                      <option value="accesorios">Accesorios</option>
-                                      <option value="surfboards">Surfboards</option>
-                                      <option value="complementos">Complementos</option>
-                                  </select>
-                                </div>
-                                <div class="form-input">
-                                  <label for="subCategoria">Subcategoría</label>
-                                  <input type="text" name="subCategoria" id="subCategoria" placeholder="Subcategoria" value="<%= productEditar.subcategoria %>"required>
-                                </div>
-                                <div class="form-input">
-                                  <label for="brand">Marca del producto</label>
-                                  <input type="text" name="brand" brand="brand" placeholder="brand" value="<%= productEditar.marca %>" required="required">
-                                </div>
-                                <div class="form-input">
-                                  <label for="model">Model</label>
-                                  <input type="text" name="model" id="model" placeholder="model" value="<%= productEditar.modelo %>" required="required">
-                                </div>
-                                <div class="form-input">
-                                  <label for="precio">Price</label>
-                                  <input type="text" name="precio" id="precio" placeholder="Precio" value="<%= productEditar.precio %>" required="required">
-                                </div>
-                                <div class="form-input">
-                                  <label for="descuento">Discount</label>
-                                  <input type="text" name="descuento" id="descuento" placeholder="Descuento" value="<%= productEditar.descuento %>" required="required">
-                                </div>
-                                <div class="form-input">
-                                  <label for="description">Descripción</label>
-                                  <input type="text" name="descripcion" placeholder="Descripción" required="required" value="<%= productEditar.descripcion%>">
-                                </div>
-                                <div class="form-input">
-                                  <label for="features">Features</label>
-                                  <textarea class="NP-desc" type="text" name="features" id="features" placeholder="Features" value="<%= productEditar.caracteristicas %>" required="required"></textarea>
-                                </div>
-                                <div class="form-input">
-                                  <label for="ability">Ability</label>
-                                  <select name="ability" id="ability">
-                                      <option value="principiante">Principiante</option>
-                                      <option value="intermedio">Intermedio</option>
-                                      <option value="experto">Experto</option>
-                                  </select>             
-                                </div>
-                                <div class="form-input">
-                                  <label for="dimensions">Dimensions</label>
-                                  <select name="dimensions" id="dimensions">
-                                      <option value="1">5'10--19 1/2--2 9/16--31</option>
-                                      <option value="2">5'11--19 5/8--2 5/8--32</option>
-                                      <option value="3">6'0--19 3/4--2 11/16--33</option>
-                                      <option value="4">6'0--19 3/4--2 11/16--33</option>
-                                  </select>
-                                </div>
-                                <div class="form-input">
-                                  <label for="finSystem">Fin System</label>
-                                  <select name="finSystem" id="finSystem">
-                                      <option value="CS SII">CS SII</option>
-                                      <option value="Futures">Futures</option>
-                                  </select>                                    
-                                </div>        
-                                <!--Lo dejé por si lo querés usar en vez del nuestro-->
-                                <div class="form-input">
-                                  <label for="precio">Descuento</label>
-                                    <select  name="descuento" id="validationCustom04" required>
-                                      <option disabled value="#">Seleccione un descuento"</option>
-                                      <option value="0" <%= productEditar.descuento == 0 ? "selected" : null %>
-                                        >Sin descuento</option>
-                                      <option value="15" <%= productEditar.descuento == 15 ? "selected" : null %>>15%</option>
-                                      <option value="30" <%= productEditar.descuento == 30 ? "selected" : null %>>30%</option>
-                                    </select>
-                                </div>
-                                <!--Aquí solicito la imagen-->
-                                <div class="custom-file">
-                                    <figure class="form-input">
-                                        <img  class="w-100" src="/img/<%= productEditar.categoria%>/<%= productEditar.imagen%>" alt="moto <%= productEditar.nombre%>">
-                                    </figure>
-                                    <input type="hidden"  name="oldImagen"  value="<%= productEditar.imagen%>">
-                                    <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                                    <input type="file" name="imagen" >
-                                    <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
+            <main class="productCreate">
+                <h2>Editor de Productos</h2>
 
-                                    <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
+                <section class="main-container">
+
+                    <div class="wrapper-Col-66">
+                        <h2>Editar producto</h2>
+                        <div class="register">
+                          <form action="/admin/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                                <section class="datos-section">
+
+                                    <div class="form-input">
+                                        <label for="name">Nombre del Producto</label>
+                                        <input type="text" name="name" id="name" placeholder="Ej: Rocker Pocker III" value="<%=producto.name%>" required>
+                                    </div>
+
+                                    <div class="form-2col">
+                                        <div class="form-input opciones">
+                                            <label for="category_id">Categoría</label>
+                                            <select name="category_id" id="category_id" required>
+                                                <option value="<%=producto.categoria.id%>" selected><%=producto.categoria.name%></option>
+                                                <% for (let i =0; i<category.length; i++) { %>
+                                                  <% if(category[i].id != producto.categoria.id){ %>
+                                                    <option value="<%= category[i].id%>"><%= category[i].name%></option>
+                                                <% }} %>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-input opciones">
+                                            <label for="subcategory_id">Subcategoría</label>
+                                            <select name="subcategory_id" id="subcategory_id" required>
+                                              <option value="<%=producto.subcategoria.id%>" selected><%=producto.subcategoria.name%></option>
+                                              <% for (let i =0; i<subcategory.length; i++) { %>
+                                                <% if(subcategory[i].id != producto.subcategoria.id){ %>
+                                              <option value="<%= subcategory[i].id%>"><%= subcategory[i].name%></option>
+                                              <% }} %>
+                                          </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-input opciones">
+                                        <label for="brand_id">Marca</label>
+                                        <select name="brand_id" id="brand_id" required>
+                                          <option value="<%=producto.marca.id%>" selected><%=producto.marca.name%></option>
+                                          <% for (let i =0; i<brand.length; i++) { %>
+                                          <% if(brand[i].name != producto.marca.name){ %>
+                                          <option value="<%= brand[i].id%>"><%= brand[i].name%></option>
+                                          <% }} %>
+                                      </select>
+                                    </div>
+
+                                    <div class="form-2col">
+                                        <div class="form-input">
+                                            <label for="price">Precio Unitario</label>
+                                            <input type="number" name="price" id="price" placeholder="00.000,00" value="<%=producto.price%>" required>
+                                        </div>
+                                        <!-- <div class="form-input opciones">
+                                            <label for="currency">Moneda</label>
+                                            <select name="currency" id="currency" placeholder="ARS">
+                                                <option value="" disabled selected hidden>ARS</option>
+                                                <option selected value="ARS">ARS</option>
+                                                <option disabled value="MXN">MXN</option>
+                                                <option disabled value="EUR">EUR</option>
+                                                <option disabled value="USD">USD</option>
+                                            </select>
+                                        </div> -->
+                                        <div class="form-input">
+                                            <label for="stock">Stock</label>
+                                            <input type="number" name="stock" id="stock" placeholder="Cantidad de unidades disponibles" value="<%=producto.stock%>" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-input prod-descuento">
+                                        <label><input type="checkbox" name="discount">Producto en promoción</label>
+                                        <input type="number" name="discount" id="discount" min="0" max="100" placeholder="Querés aplicar un descuento?" value="<%=producto.discount? producto.discount : 0 %>" required>
+                                    </div>
+                                    
+                                    <div class="form-input opciones">
+                                        <label for="description">Descripción</label>
+                                        <textarea name="description" id="description" maxlength="1500" rows="15"><%=producto.description%></textarea>
+                                    </div>
+                                    
+                                    <div class="form-input opciones">
+                                        <label for="features">Características</label>
+                                        <textarea name="features" id="features" maxlength="500" rows="8"><%=producto.features%></textarea>
+                                    </div>
+
+                                    <div class="form-5col">
+
+
+
+                                      
+                                        <div class="form-input opciones">
+                                            <label class="prodImg" for="image1" style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image1%>)">
+                                                <input type="file" name="prodImage" id="image1">
+                                            </label>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="prodImg" for="image2">
+                                                <input type="file" name="prodImage" id="image2">
+                                            </label>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="prodImg" for="image3">
+                                                <input type="file" name="prodImage" id="image3">
+                                            </label>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="prodImg" for="image4">
+                                                <input type="file" name="prodImage" id="image4">
+                                            </label>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="prodImg" for="image5">
+                                                <input type="file" name="prodImage" id="image5">
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-input opciones">
+                                        <label for="color">Color (PENDIENTE: Aplicar librería React para selección múltiple)</label>
+                                        <select name="color_id[]" id="color_id" multiple>
+                                          <% for (let i =0; i<producto.colores.length; i++) { %>
+                                            <option value="<%=producto.colores[i].id%>" style="display: none;" selected> <%=producto.colores[i].name%> </option>
+                                          <% } %>
+                                          <% for (let i =0; i<colors.length; i++) { %>
+                                            <option value="<%=colors[i].id%>"> <%=colors[i].name%> </option>
+                                          <% } %>
+                                        </select>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <div class="opciones">
+                                            <h4>Talle</h4>
+
+                                            <label for="talle_XS"><input type="checkbox" value="7" name="size_id[]" id="talle_XS" checked> XS</label> <br>
+                                            <label for="talle_S"><input type="checkbox" value="8" name="size_id[]" id="talle_S"> S</label> <br>
+                                            <label for="talle_M"><input type="checkbox" value="9" name="size_id[]" id="talle_M"> M</label> <br>
+                                            <label for="talle_L"><input type="checkbox" value="10" name="size_id[]" id="talle_L"> L</label> <br>
+                                            <label for="talle_XL"><input type="checkbox" value="11" name="size_id[]" id="talle_XL"> XL</label> <br>
+                                            <label for="talle_XXL"><input type="checkbox" value="12" name="size_id[]" id="talle_XXL"> XXL</label> <br>
+                                        </div>
+
+                                        <div class="opciones">
+                                            <h4>Dimensiones / Volumen</h4>
+                                            <label for="dimensions"><input type="checkbox" value="1" name="size_id[]" id="dimensions"> 5'0" x 19" x 2 1/16" -21.78L</label> <br>
+                                            <label for="dimensions"><input type="checkbox" value="2" name="size_id[]" id="dimensions"> 5'7" x 19" x 2 7/16" - 29.86L</label> <br>
+                                            <label for="dimensions"><input type="checkbox" value="3" name="size_id[]" id="dimensions"> 5'10" x 20" x 2 5/8" - 33.73L</label> <br>
+                                            <label for="dimensions"><input type="checkbox" value="4" name="size_id[]" id="dimensions"> 6'1" x 20" x 2 3/4" - 37.71L</label> <br>
+                                            <label for="dimensions"><input type="checkbox" value="5" name="size_id[]" id="dimensions"> 6'4" x 21" x 3 1/2" - 43.2L</label> <br>
+                                            <label for="dimensions"><input type="checkbox" value="6" name="size_id[]" id="dimensions"> 6'10" x 22" x 3 1/4" - 53.95L</label> <br>
+                                        </div>
+
+                                        <div class="opciones">
+                                        <h4>Fin Setup</h4>
+                                        <% for (let i =0; i<fins.length; i++) { %>
+                                          <% if (producto.fin.id == fins[i].id) { %>
+                                            <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id" checked> <%=fins[i].name%></label><br>
+                                            <% } else {%>
+                                              <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id">  <%=fins[i].name%></label><br>
+                                            <% }} %>
+                                          </div>
+                                    </div>
+                                </section>
+
+
+                                <div class="submit-button">
+                                    <button class="submit-button" type="submit">MODIFICAR</button>
                                 </div>
-                                <div class="form-input">
-                                    <button type="submit" class="btn btn btn-info">Actualizar</button>
-                                    <a href="/administrar" class="btn btn-danger">Volver</a>
-                                </div>
-                                
                             </form>
-                    </div>                    
-                </div>
-            </main>  
-</body>
+                        </div>
+                    </div>
+
+
+                    <div class="wrapper-Col-33">
+                        <h2>Thumbnail</h2>
+                        <div class="img-slider">
+                            <img src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
+                        </div>
+                        Espacio para botones (EN CONSTRUCCIÓN)
+                    </div>
+
+                </section>
+            </main>
+
+            <%- include("../partials/footer") %>
+    </body>
+
 </html>

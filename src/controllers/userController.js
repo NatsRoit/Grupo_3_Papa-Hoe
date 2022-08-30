@@ -97,7 +97,6 @@ const userController = {
   
   
   editView: function(req,res) {
-
     db.User.findByPk(req.params.id)
     .then(showUser => {res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser})})
     /*let idUser = req.params.id;
@@ -106,7 +105,6 @@ const userController = {
   },
 
   edit: (req,res) => {
-
     req.body.avatar = req.file ? req.file.filename : req.body.oldImagen
     let user = {
       first_name: req.body.nombre,
@@ -116,18 +114,17 @@ const userController = {
       user_name: req.body.usuario,      
       address: req.body.direccion, 
       floor_apt: req.body.departamento,    
-      city: req.body.localidad, 
+      city: req.body.ciudad, 
       zip_code: req.body.codigoPostal,
       province: req.body.province, 
       country: req.body.country,
-      phone_number: req.body.telefono,  
+      phone_number: req.body.telefono,
       avatar: req.body.avatar
-
     }
-   // 
 
     db.User.update(user, {where:{id: req.params.id}})
-    .then(user =>{
+    .then(user => {
+      console.log("ATENCIONNNNNNNNNNN! Acá va mi usuario editado" + JSON.stringify(user))
       res.redirect('/user/profile/' + req.params.id);
     })
 

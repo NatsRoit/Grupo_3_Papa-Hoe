@@ -1898,9 +1898,9 @@ select option[value=""] {
   width: 19%;
 }
 .productCreate .form-input input[type="file"] {
-  /* display: none; */
+  display: none;
   width: 100%;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .productCreate .prodImg {

@@ -35,7 +35,7 @@ router.post("/create", upload.array ('prodImage', 5), adminController.create);
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);
-router.put("/edit/:id", upload.single("imagen"), adminController.edit);
+router.put("/edit/:id", upload.array ('prodImage', 5), adminController.edit);
 
 // DELETE PRODUCTOS
 router.get("/delete/:id", adminController.destroy);

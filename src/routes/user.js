@@ -37,7 +37,7 @@ router.get("/profile/:id", acceso, userController.profile);
 
 //EDIT PROFILE
 router.get('/edit/:id', acceso, userController.editView);
-router.put('/edit/:id', upload.single('avatar'),  userController.edit);// validacionesRegistro, userController.edit);
+router.put('/edit/:id', upload.single('avatar'), userController.edit);// validacionesRegistro, userController.edit);
 
 // LOGIN
 router.get('/login',userController.loginView);

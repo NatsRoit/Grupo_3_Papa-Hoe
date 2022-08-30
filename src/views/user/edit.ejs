@@ -29,7 +29,7 @@
                                     <div class="form-input">
                                         <label for="apellido">Apellido</label>
                                         <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-                                            value="<%=user.lastname%>" required>
+                                            value="<%=user.last_name%>" required>
                                     </div>
                                 </div>
 
@@ -46,7 +46,7 @@
                                 <div class="form-input hidden">
                                     <label for="contraseña">Contraseña</label>
                                     <input type="password" name="password" id="password" placeholder="Contraseña"
-                                        value="<%=user.password%>" required>
+                                        value="<%=user.password%>">
                                 </div>
                             </section>
 
@@ -76,8 +76,8 @@
                                             placeholder="Piso, departamento" value="<%=user.floor_apt%>">
                                     </div>
                                     <div class="form-input">
-                                        <label for="localidad">Localidad</label>
-                                        <input type="text" name="localidad" id="localidad" placeholder="Localidad"
+                                        <label for="ciudad">Localidad / Ciudad</label>
+                                        <input type="text" name="ciudad" id="ciudad" placeholder="Localidad / Ciudad"
                                             value="<%=user.city%>" required>
                                     </div>
                                     <div class="form-input">
