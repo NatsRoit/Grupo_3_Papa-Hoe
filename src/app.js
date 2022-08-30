@@ -13,7 +13,7 @@ const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
 const adminRoutes = require('./routes/admin');
-const usersApiRoutes = require('./routes/apiUsers');
+//const usersApiRoutes = require('./routes/apiUsers');
 
 
 // TEMPLATE ENGINE SETUP

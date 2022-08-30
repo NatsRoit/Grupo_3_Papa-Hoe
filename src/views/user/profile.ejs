@@ -43,12 +43,12 @@
                         </div>
 
                         <div>
-                            <p> <strong><%= user.nombre%> <%= user.apellido%></strong> <br>
+                            <p> <strong><%= user.first_name%> <%= user.last_name%></strong> <br>
                             <!-- <p><strong>E-mail</strong>: <%= user.email%></p> -->
                             <!-- <p><strong>Teléfono</strong>: <%= user.telefono%></p> -->
-                            <%= user.direccion + ', ' +  user.departamento %>
+                            <%= user.address + ', ' +  user.floor_apt %>
                             <br>
-                            <%= user.localidad + " \(" + user.codigoPostal + "\)" %>
+                            <%= user.city + " \(" + user.zip_code + "\)" %>
                             <br>
                             <%= user.province + ', ' +  (user.country).toUpperCase() %>
                             </p>

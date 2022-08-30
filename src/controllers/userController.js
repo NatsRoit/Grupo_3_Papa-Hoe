@@ -1,5 +1,9 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
+
 const bcrypt = require('bcryptjs');
 
 
@@ -21,36 +25,35 @@ let users;
 const userController = {
 
     profile: function(req,res){
-      let user = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+        db.User.findByPk(req.params.id)
+        .then(showUser => {res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser, productos})})
+        .catch(error => res.send(error));
 
-        let idUsuario = req.params.id;  //7
-        let showUser = user.find(item => item.id == idUsuario);
-        res.render(path.resolve(__dirname, '../views/user/profile'),{user: showUser, productos});
     },
 
     loginView: function(req,res){
-        res.render(path.resolve(__dirname, '../views/user/login'),{users});
+        res.render(path.resolve(__dirname, '../views/user/login'));//,{users});
     },
 
     login: (req,res) => {
         const errors = validationResult(req);
         if(errors.isEmpty()) {
-          let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
-          let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
-            //Como podemos modificar nuestros req.body
-            delete usuarioLogueado.password;
+          db.User.findOne({where: {email: req.body.email}})
+          .then(usuarioLogueado => {
+            console.log(usuarioLogueado)
+            delete usuarioLogueado.password
             req.session.usuario = usuarioLogueado;
-
-// SAVE COOKIES (del lado del servidor) del usuario que se loguea
-        if(req.body.keepSession){
-          res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
-        }
-        return res.redirect('/');
-    } else {
-        //Devolver a la vista los errores
-        console.log(errors.array())
-        return res.render(path.resolve(__dirname, '../views/user/login'),{errors : errors.mapped(), old : req.body});        
-      }
+            if(req.body.keepSession){
+               res.cookie('keepSession', usuarioLogueado.email, {maxAge: 1000 * 60 * 60 * 24})
+            }
+          return res.redirect('/');
+          })    
+        
+        }else {
+          //Devolver a la vista los errores
+         console.log(errors.array())
+         return res.render(path.resolve(__dirname, '../views/user/login'),{errors : errors.mapped(), old : req.body});        
+        } 
     },
 
 
@@ -59,59 +62,78 @@ const userController = {
     },
 
     register: function (req, res) {
-        let ultimoUsuario = users.pop();
-        users.push(ultimoUsuario);
-
         let errors = validationResult(req);
-        if (errors.isEmpty()) {
-          let nuevoUsuario = {
-            id: ultimoUsuario.id +1,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            usuario: req.body.usuario,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            role: 1,
-            province: req.body.province,
-            country: req.body.country,
-            direccion: req.body.direccion,
-            departamento: req.body.departamento,
-            localidad: req.body.localidad,
-            codigoPostal: req.body.codigoPostal,
-            telefono: req.body.telefono,
-            avatar: req.file ? req.file.filename : 'default-admin.jpg'
-        }
+        console.log("errores: " + errors.array())
 
-        console.log(nuevoUsuario);
+          if (errors.isEmpty()) {
+            let nuevoUsuario = {
+                first_name: req.body.nombre,
+                last_name: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                user_name: req.body.usuario,      
+                address: req.body.direccion, 
+                floor_apt: req.body.departamento,    
+                city: req.body.localidad, 
+                zip_code: req.body.codigoPostal,
+                province: req.body.province, 
+                country: req.body.country,
+                phone_number: req.body.telefono,  
+                avatar: req.file ? req.file.filename : 'default-admin.jpg',
+                active: 1,
+                role_id:2 
+            }
 
-        let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), {
-          encoding: 'utf-8'});
-        let users;
-        if (archivoUsers == "") { users = [];
-        } else {
-          users = JSON.parse(archivoUsers);
-        };
-        users.push(nuevoUsuario);
+            db.User.create(nuevoUsuario)
+            .then(db.User.findOne({order: [ [ 'id', 'DESC' ]],}))
+            .then(user =>{res.redirect('/user/profile/' + user.id)})
+            .catch(error => res.send(error));
+          
+          } else {
 
-        let usersJSON = JSON.stringify(users);
-        fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'), usersJSON);
-        res.redirect('/user/profile/' + nuevoUsuario.id)
-
-    } else {
-      return res.render(path.resolve(__dirname, '../views/user/register'), {
-        errors: errors.array(), old: req.body});
-    }
-  },
+              return res.render(path.resolve(__dirname, '../views/user/register'), {errors: errors.mapped(), old: req.body});
+            }
+    },
   
   
   editView: function(req,res) {
-    let idUser = req.params.id;
+
+    db.User.findByPk(req.params.id)
+    .then(showUser => {res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser})})
+    /*let idUser = req.params.id;
     let showUser = users.find(item => item.id == idUser);
-    res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser});
+    res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser});*/
   },
 
   edit: (req,res) => {
-    let usersToEdit = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+
+    req.body.avatar = req.file ? req.file.filename : req.body.oldImagen
+    let user = {
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      email: req.body.email,
+      //password: bcrypt.hashSync(req.body.password, 10),
+      user_name: req.body.usuario,      
+      address: req.body.direccion, 
+      floor_apt: req.body.departamento,    
+      city: req.body.localidad, 
+      zip_code: req.body.codigoPostal,
+      province: req.body.province, 
+      country: req.body.country,
+      phone_number: req.body.telefono,  
+      avatar: req.body.avatar
+
+    }
+   // 
+
+    db.User.update(user, {where:{id: req.params.id}})
+    .then(user =>{
+      res.redirect('/user/profile/' + req.params.id);
+    })
+
+
+
+   /* let usersToEdit = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
 
     req.body.id = req.params.id;
     req.body.avatar = req.file ? req.file.filename : req.body.oldImagen;
@@ -125,15 +147,11 @@ const userController = {
           return item = req.body;
       }
       return item;
-  })
-    let userUpdated = JSON.stringify(userEdited,null,2);
-    fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'),userUpdated)
-    res.redirect('/user/profile/' + req.body.id);
-},
+    })
+      let userUpdated = JSON.stringify(userEdited,null,2);
+      fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'),userUpdated)*/
+  },
 
-
-
-  
   logout: (req,res) => {
     req.session.destroy();
     res.cookie('email',null,{maxAge: -1});

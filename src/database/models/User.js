@@ -54,6 +54,10 @@ module.exports = (sequelize, dataTypes) => {
         active: {
             type: dataTypes.TINYINT(1),
         },
+
+        role_id: {
+            type: dataTypes.TINYINT(1),
+        },
     };
     let config = {
         tableName: 'users',

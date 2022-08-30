@@ -25,10 +25,10 @@ const upload = multer({ storage });
 
 // MIDDLEWARES
 const acceso = require(path.resolve(__dirname, "../middlewares/acceso"));
-const validacionesLogin = require(path.resolve(__dirname, "../middlewares/validacionesLogin"));
-const validacionesRegistro = require(path.resolve(__dirname, "../middlewares/validacionesRegistro"));
+//const validacionesLogin = require(path.resolve(__dirname, "../middlewares/validacionesLogin"));
+//const validacionesRegistro = require(path.resolve(__dirname, "../middlewares/validacionesRegistro"));
 const adminLog = require(path.resolve(__dirname, "../middlewares/adminLog"));
-
+const validaciones = require(path.resolve(__dirname, "../middlewares/validaciones"));
 
 let userController = require(path.join(__dirname, '../controllers/userController.js'));
 
@@ -37,15 +37,15 @@ router.get("/profile/:id", acceso, userController.profile);
 
 //EDIT PROFILE
 router.get('/edit/:id', acceso, userController.editView);
-router.put('/edit/:id', upload.single('avatar'), validacionesRegistro, userController.edit);
+router.put('/edit/:id', upload.single('avatar'),  userController.edit);// validacionesRegistro, userController.edit);
 
 // LOGIN
 router.get('/login',userController.loginView);
-router.post('/login', validacionesLogin, adminLog, userController.login);
+router.post('/login', validaciones.validar('login'), adminLog, userController.login);//  userController.login);
 
 // REGISTER
 router.get('/register',userController.registerView);
-router.post('/register', upload.single('avatar'), validacionesRegistro, userController.register);
+router.post('/register', upload.single('avatar'), validaciones.validar('register'), userController.register);
 
 // LOGOUT (ruta que se activa cuando el usuario desea salir dela página)
 router.get('/logout', userController.logout);

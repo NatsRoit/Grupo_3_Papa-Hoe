@@ -127,6 +127,25 @@ let adminController = {
         const productID = req.params.id;
         let productEditar = productos.find(item=> item.id == productID);
         res.render(path.resolve(__dirname,'../views/admin/edit'), {productEditar});
+
+/* Con base de datos - Pero sin funcionar :( 
+
+    editView: function (req,res) {
+    let producto = db.Product.findByPk (req,params.id)
+
+    let size = db.Size.findAll();
+    let fins = db.Fin.findAll();
+    let colors = db.Color.findAll();
+    let brands = db.Brand.findAll();
+    let categories = db.Category.findAll();
+    let subcategories = db.Subcategory.findAll();
+    
+    Promise.all([producto, size, fins, colors, brands, categories, subcategories])
+        .then(function([producto, size, fins, colors, brands, categories, subcategories]){
+            res.render ("edit", [producto, size, fins, colors, brands, categories, subcategories]  )
+    },
+*/
+
     },
     edit: (req,res) => {
         req.body.id = req.params.id;
@@ -140,6 +159,36 @@ let adminController = {
         let productActualizar = JSON.stringify(productUpdate,null,2);
         fs.writeFileSync(path.resolve(__dirname,'../database/productos.json'),productActualizar)
         res.redirect('/product');
+
+/* Con base de datos - Pero sin funcionar :( 
+ edit: function (req, res) {
+        db.Product.update ({
+            name : req.body.name,
+            category: req.body.category_id,
+            subcategory: req.body.subcategory_id,
+            brand: req.body.brand,
+            price: req.body.precio,
+            moneda: req.body.moneda,
+            stock: req.body.stock,
+            discount: req.body.discount,
+            description: req.body.description,
+            features: req.body.features,
+            image1: req.file.image1,
+            image2: req.file.image2,
+            image3: req.file.image3,
+            image4: req.file.image4,
+            image5: req.file.image5,
+            dimensions: req.body.dimensions,
+            fin: req.body.fins,
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }) 
+        res.redirect ("/productos/" + req.params.id")
+
+        },
+*/
     },
 
 
@@ -149,6 +198,16 @@ let adminController = {
         let productsGuardar = JSON.stringify(productsFinal,null,2)
         fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
         res.redirect('/product');
+
+/* Con base de datos - Pero sin funcionar :( 
+    destroy: (req,res) =>{
+        db.Product.destroy {
+            where: {
+                id: req.params.id
+            }
+        }
+        res.redirect("/shop")
+*/
     },
 
 }

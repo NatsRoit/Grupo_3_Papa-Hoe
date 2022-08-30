@@ -29,7 +29,6 @@
     "avatar": "default-admin.jpg"
   },
   {
-    "id": 3,
     "nombre": "Tommaso",
     "apellido": "Cantini",
     "usuario": "ticca",
@@ -39,10 +38,10 @@
     "direccion": "via del cacio, 3",
     "departamento": "2ª",
     "localidad": "Pistoia",
-    "province": "Pistoia",
-    "country": "Italia",
     "codigoPostal": "51100",
-    "avatar": "default-man.jpg",
+    "oldImagen": "default-admin.jpg",
+    "id": "4",
+    "avatar": "user-1659646267283.jpg",
     "role": 1
   },
   {
