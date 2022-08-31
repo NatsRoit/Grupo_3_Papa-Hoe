@@ -30,12 +30,17 @@ router.get('/test',adminController.test);
 
 // CREATE NUEVO PRODUCTO
 // router.get("/create",logueado, adminController.createView);
-router.get("/create", adminController.createView);
-router.post("/create", upload.array('prodImage', 5), adminController.create);
+router.get("/create", logueado, adminController.createView);
+router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);
-router.put("/edit/:id", upload.array ('prodImage', 5), adminController.edit);
+router.put("/edit/:id", logueado, upload.fields([
+  { name: 'image1', maxCount: 1 },
+  { name: 'image2', maxCount: 1 },
+  { name: 'image3', maxCount: 1 },
+  { name: 'image4', maxCount: 1 },
+  { name: 'image5', maxCount: 1 }]), adminController.edit);
 
 // DELETE PRODUCTOS
 router.get("/delete/:id", adminController.destroy);

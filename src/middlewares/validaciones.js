@@ -18,12 +18,12 @@ module.exports.validar = (method) => {
           
             //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
             body('password').custom( async (value, {req,next}) => { 
-                 await db.User.findOne({ where: {email: req.body.email }}).then(user => {
+                await db.User.findOne({ where: {email: req.body.email }}).then(user => {
                   if(user){
-                       if (!bcrypt.compareSync(value, user.password)) 
-                       throw new Error('Contraseña inválida. Hacé memoria!')
+                      if (!bcrypt.compareSync(value, user.password)) 
+                      throw new Error('Contraseña inválida. Hacé memoria!')
                   }
-                 });
+                });
             })
 
           ]

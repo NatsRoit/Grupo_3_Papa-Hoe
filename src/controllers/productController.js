@@ -8,7 +8,7 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const productController = {
     test: function(req,res){
-        db.Product.findByPk(111, {
+        db.Product.findByPk(3, {
             include: [
                 { association: "marca" },
                 { association: "categoria", include: [{association: 'subcategorias'}],
