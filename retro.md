@@ -26,3 +26,10 @@
 
     HACER MENOS: Perdernos en detalles cuando el tiempo apremia.
 
+
+- Sprint 6
+    LO QUE ESTÁ BIEN: Buen clima y ayuda mutua. Aportes desde las capacidades de cada uno.
+
+    HACER MÁS: Más reuniones cortas y periódicas. Chequear Click up para estar al día con lo que se va terminando y qué falta. Enfocarnos en lo obligatorio.
+
+    HACER MENOS: dedicar tiempo a cosas no pedidas u opcionales. Esto dejarlo para el final, si nos sobrara tiempo
