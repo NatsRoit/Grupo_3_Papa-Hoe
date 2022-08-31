@@ -200,23 +200,16 @@ let adminController = {
         })
     },
 
-
     destroy: (req,res) =>{
-        const productDeleteId = req.params.id;
-        const productsFinal = productos.filter(product => product.id != productDeleteId);
-        let productsGuardar = JSON.stringify(productsFinal,null,2)
-        fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
-        res.redirect('/product');
-
-/* Con base de datos - Pero sin funcionar :( 
-    destroy: (req,res) =>{
-        db.Product.destroy {
-            where: {
-                id: req.params.id
-            }
-        }
-        res.redirect("/shop")
-*/
+        db.Product.destroy ({
+            where: { id: req.params.id }
+        });
+        res.redirect("/product/category")
+        // const productDeleteId = req.params.id;
+        // const productsFinal = productos.filter(product => product.id != productDeleteId);
+        // let productsGuardar = JSON.stringify(productsFinal,null,2)
+        // fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
+        // res.redirect('/product');
     },
 
 }
