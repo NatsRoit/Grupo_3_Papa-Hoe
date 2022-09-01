@@ -130,7 +130,32 @@ let adminController = {
         let sizes = db.Size.findAll()
         Promise.all([producto, brand, category, subcategory, colors, fins, sizes])
         .then(function([producto, brand, category, subcategory, colors, fins, sizes]){
-            res.render (path.resolve(__dirname,'../views/admin/edit'), {producto, brand, category, subcategory, colors, fins, sizes})
+
+// Hago un Array con los ID's de todos los "sizes" y otro Array con los ID's de los "sizes" seleccionados para este producto en particular
+// porque no lograba resolver el tema de iterar sobre un array de Objetos literales, analizando sólo la propiedad "ID".
+// Luego mando a la vista estos dos Arrays que contienen sólo números y los uso para mostrar las opciones seleccionadas en los Input type="select" 
+            let sizesId = []
+            sizes.forEach(function(item){
+                sizesId.push(item.id)
+            });
+
+            let productSizeId = []
+            producto.dimensiones.forEach(function(item){
+                productSizeId.push(item.id)
+            });
+
+// Repito lo mismo para los colores:
+            let colorsId = []
+            colors.forEach(function(item){
+                colorsId.push(item.id)
+            });
+
+            let productColorsId = []
+            producto.colores.forEach(function(item){
+                productColorsId.push(item.id)
+            });
+
+            res.render (path.resolve(__dirname,'../views/admin/edit'), {producto, brand, category, subcategory, colors, fins, sizes, sizesId, productSizeId, colorsId, productColorsId})
         })
     },
 
@@ -165,13 +190,23 @@ let adminController = {
                     where: { id: req.body.color_id? {[Op.or]: req.body.color_id} : '' },
                 });
 
-            Promise.all([responseProducto, responseDimensiones, responseColores])
-            .then(([producto, dimensiones, colores]) => {
+            let emptyColors =
+                db.Product_Color.destroy(
+                    { where: {product_id : req.params.id}}
+                );
+            let emptySizes =
+                db.Product_Size.destroy(
+                    { where: {product_id : req.params.id}}
+                );
+
+            Promise.all([responseProducto, responseDimensiones, responseColores, emptyColors, emptySizes])
+            .then(([producto, dimensiones, colores, emptyColors, emptySizes]) => {
                 let productsize = [];
                 for (let i=0; i<dimensiones.length; i++){
                     let datasize = {
                         product_id: producto.id,
-                        size_id: dimensiones[i].id
+                        size_id: dimensiones[i].id,
+                        isActive: 1
                     };
                     productsize.push(datasize);
                 };
@@ -180,15 +215,16 @@ let adminController = {
                 for (let i=0; i<colores.length; i++){
                     let datacolor = {
                         product_id: producto.id,
-                        color_id: colores[i].id
+                        color_id: colores[i].id,
+                        isActive: 1
                     };
                     productcolor.push(datacolor);
-                };
-
+                }; 
                 let newproductsize =  db.Product_Size.bulkCreate (productsize);
-                let newproductcolor =  db.Product_Color.bulkCreate (productcolor);
+                let newproductcolor =  db.Product_Color.bulkCreate (productcolor)
                 Promise.all([newproductsize, newproductcolor])
                 .then(response => {
+                    console.log(JSON.stringify(response))
                     if (response && productoEditado ){
                         // let currency = req.body.currency;
                         return res.redirect('/product/detail/' + req.params.id );
@@ -204,7 +240,7 @@ let adminController = {
         db.Product.destroy ({
             where: { id: req.params.id }
         });
-        res.redirect("/product/category")
+        res.redirect("/product/category/all")
         // const productDeleteId = req.params.id;
         // const productsFinal = productos.filter(product => product.id != productDeleteId);
         // let productsGuardar = JSON.stringify(productsFinal,null,2)
