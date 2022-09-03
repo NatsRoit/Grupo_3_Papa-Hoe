@@ -99,13 +99,9 @@ const userController = {
   editView: function(req,res) {
     db.User.findByPk(req.params.id)
     .then(showUser => {res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser})})
-    /*let idUser = req.params.id;
-    let showUser = users.find(item => item.id == idUser);
-    res.render(path.resolve(__dirname, '../views/user/edit'),{user: showUser});*/
   },
 
   edit: (req,res) => {
-    req.body.avatar = req.file ? req.file.filename : req.body.oldImagen
     let user = {
       first_name: req.body.nombre,
       last_name: req.body.apellido,
@@ -119,8 +115,10 @@ const userController = {
       province: req.body.province, 
       country: req.body.country,
       phone_number: req.body.telefono,
-      avatar: req.body.avatar
+      avatar: req.file ? req.file.filename : req.body.oldImagen
     }
+
+    req.body.avatar = user.avatar
 
     db.User.update(user, {where:{id: req.params.id}})
     .then(user => {
@@ -128,25 +126,6 @@ const userController = {
       res.redirect('/user/profile/' + req.params.id);
     })
 
-
-
-   /* let usersToEdit = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
-
-    req.body.id = req.params.id;
-    req.body.avatar = req.file ? req.file.filename : req.body.oldImagen;
-    console.log(req.file)
-    console.log(req.body.oldImagen)
-
-    let userEdited = usersToEdit.map(item =>{
-      if(item.id == req.body.id){
-        req.body.role = item.role
-
-          return item = req.body;
-      }
-      return item;
-    })
-      let userUpdated = JSON.stringify(userEdited,null,2);
-      fs.writeFileSync(path.resolve(__dirname,'../database/usuarios.json'),userUpdated)*/
   },
 
   logout: (req,res) => {
