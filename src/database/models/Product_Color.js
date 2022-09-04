@@ -9,10 +9,16 @@ module.exports = (sequelize, dataTypes) => {
         // },
         product_id: {
             type: dataTypes.INTEGER,
+            primaryKey: true,
             allowNull: false
         },
         color_id: {
             type: dataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false
+        },
+        isActive: {
+            type: dataTypes.BOOLEAN,
             allowNull: false
         },
     };

@@ -41,7 +41,7 @@ router.put('/edit/:id', upload.single('avatar'), userController.edit);// validac
 
 // LOGIN
 router.get('/login',userController.loginView);
-router.post('/login', validaciones.validar('login'), adminLog, userController.login);//  userController.login);
+router.post('/login', validaciones.validar('login'), acceso, userController.login);//  userController.login);
 
 // REGISTER
 router.get('/register',userController.registerView);

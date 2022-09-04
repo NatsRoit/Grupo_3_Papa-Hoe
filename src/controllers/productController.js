@@ -8,7 +8,8 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 const productController = {
     test: function(req,res){
-        db.Product.findByPk(111, {
+        let producto =
+        db.Product.findByPk(74, {
             include: [
                 { association: "marca" },
                 { association: "categoria", include: [{association: 'subcategorias'}],
@@ -18,24 +19,24 @@ const productController = {
                 { association: "dimensiones" },
                 { association: "colores" },
             ]
-        })
-        .then(function(productos){
-            return res.send(productos);
-        })
-        .catch(err => { res.send(err);
-        })
+        });
+        let sizes = db.Size.findAll()
+        Promise.all([producto, sizes])
+        .then(function([producto, sizes]){
+            return res.send(producto);        
+        });
     },
 
     index: function(req,res){
         db.Product.findAll({
             include: [ { association: "marca" }, { association: "categoria"}],
-            where : {category_id : req.params.cat || [1,2,3]}
+            where : {category_id : req.params.cat != "all"? req.params.cat : [1,2,3]}
         })
         .then(function(productos){
-                if (req.params.cat){
-                    categoria = req.params.cat;
+                if (req.params.cat == "all"){
+                    categoria = undefined
                 } else {
-                 categoria = undefined
+                    categoria = req.params.cat;
                 }
                 return res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria});
         })

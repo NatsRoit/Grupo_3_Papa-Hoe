@@ -188,12 +188,18 @@ a.button-link:active {
 } */
 
 /*------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ------*/
+
+
 ul.breadcrumb {
   /* padding: 20px; */
   padding: 20px 0;
   width: 100%;
+  margin-left: 40px;
   /* border-bottom: 1px solid #f9f9f9; */
+}.productCart ul.breadcrumb {
+  margin-left: 0px;
 }
+
 ul.breadcrumb li {
   display: inline;
   font-size: 12px;
@@ -749,19 +755,23 @@ input[type="range"]::-moz-range-progress {
   width: 100%;
   height: 60px;
   background-color: #fad6d1;
-  padding: 10px;
+  /* padding: 10px; */
   margin-top: 0px;
   position: sticky;
   z-index: 90;
   top: 65px;
 }
+.shop-filters .admin {
+  background-color: #8cd8d5
+}
 
-.shop .shop-filters p {
-  font-size: 10pt;
+.shop-filters p {
+  /* font-size: 12pt; */
   color: #666;
   margin-right: 40px;
   margin-left: 40px;
   margin-top: 0px;
+  letter-spacing: 0.5pt;
 }
 .shop .titulo-seccion-main {
   /* color: #666; */
@@ -788,8 +798,8 @@ input[type="range"]::-moz-range-progress {
   flex-wrap: wrap;
   padding: 4% 4%;
   flex-grow: 1;
-  flex-basis: 50%;
-  max-width: 50%;
+  flex-basis: 100%;
+  max-width: 100%;
   position: relative;
 }
 
@@ -889,9 +899,9 @@ input[type="range"]::-moz-range-progress {
   justify-content: left;
   position: relative;
 }
-.productDetail {
-  /* padding: 30px; */
-}
+/* .productDetail {
+  padding: 30px;
+} */
 .productDetail .left-wrapper {
   width: 100%;
   padding: 0 20px;
@@ -1347,7 +1357,7 @@ input[type="file" i] {
   flex-direction: column;
   /* padding-top: 30px; */
   padding: 0 15px 0 0;
-  border-bottom: 1px solid #b3b1b3;
+  /* border-bottom: 1px solid #b3b1b3; */
 }
 .cartItems .item {
   width: 100%;
@@ -2086,7 +2096,7 @@ img.detalles-design {
 
   .main-navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-grow: 0.7;
   }
   .main-navbar ul {
@@ -2288,6 +2298,15 @@ img.detalles-design {
     .productDetail .right-wrapper {
       width: 55%;
     }
+
+    .product-detail-form {
+      width: 100%;
+      /* flex-grow: 1; */
+      margin-right: 0px;
+    }
+    .product-summary {
+      width: 100%;
+    }
     
     /* ------------------- USER PROFILE ---------------------------*/
   
@@ -2402,7 +2421,7 @@ img.detalles-design {
 
   .main-navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-grow: 0.7;
   }
 
@@ -2518,6 +2537,15 @@ img.detalles-design {
   .left-wrapper {
     width: 45%;
     padding: 0 20px;
+  }
+
+  .product-detail-form {
+    width: 40%;
+    flex-grow: 1;
+    margin-right: 30px;
+  }
+  .product-summary {
+    width: 40%;
   }
 
   /* ------------ PRODUCT CART ----------------------------------------*/

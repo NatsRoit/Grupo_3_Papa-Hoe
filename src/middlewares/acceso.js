@@ -7,23 +7,28 @@ let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../da
 module.exports = (req,res,next) =>{
     // Variable locals (super global - vive en las vistas )
     res.locals.usuario = false;
+    res.locals.isAdmin = false;
     if(req.session.usuario){
         res.locals.usuario = req.session.usuario;
-        console.log(req.session + " MIDDLEWARE ACCESO");
-        return next();
+        console.log(req.session + " MIDDLEWARE ACCESO PARA USUARIOS LOGUEADOS");
+        if(req.session.usuario.role_id == 1){
+            res.locals.isAdmin = true;
+            console.log(req.session + " MIDDLEWARE ACCESO PARA USUARIOS ADMIN");
+        }
     // Cookies: Se guardan en el navegador, del lado del cliente
-    } else if(req.cookies.email){
+    } else if(req.cookies.email) {
         //let usuario = archivoUsuarios.find(usuario => usuario.email == req.cookies.email)
         db.User.findOne({where: {email: req.cookies.email}})
         .then(user =>{
             req.session.usuario = user; 
             res.locals.usuario = user;
+            
+            if(req.session.usuario.role_id == 1){
+                res.locals.isAdmin = true;
+            }
         })
         //return res.send(usuario);
         //delete usuario.password;
-              
-        return next();
-    }else{
-        return next();
     }
+    next();
 }

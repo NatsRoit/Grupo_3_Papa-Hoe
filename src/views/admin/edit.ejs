@@ -57,7 +57,7 @@
                                           <% if(brand[i].name != producto.marca.name){ %>
                                           <option value="<%= brand[i].id%>"><%= brand[i].name%></option>
                                           <% }} %>
-                                      </select>
+                                        </select>
                                     </div>
 
                                     <div class="form-2col">
@@ -95,11 +95,9 @@
                                         <textarea name="features" id="features" maxlength="500" rows="8"><%=producto.features%></textarea>
                                     </div>
 
+
+
                                     <div class="form-5col">
-
-
-
-                                      
                                         <div class="form-input opciones">
                                             <label class="prodImg" for="image1" 
                                             <% if(producto.image1){%>
@@ -107,10 +105,11 @@
                                           <% } else {%>
                                             >
                                           <% } %>
-                                              <input type="file" name="prodImage" id="image1">
+                                              <input type="file" name="image1" id="image1">
+                                              <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
                                             </label>
-                                            <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
                                         </div>
+
                                         <div class="form-input">
                                             <label class="prodImg" for="image2"
                                             <% if(producto.image2){%>
@@ -118,10 +117,11 @@
                                             <% } else {%>
                                               >
                                             <% } %>
-                                                <input type="file" name="prodImage" id="image2">
+                                                <input type="file" name="image2" id="image2">
+                                                <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
                                               </label>
-                                              <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
                                         </div>
+
                                         <div class="form-input">
                                             <label class="prodImg" for="image3"
                                               <% if(producto.image3){%>
@@ -129,10 +129,11 @@
                                               <% } else {%>
                                                 >
                                               <% } %>
-                                                <input type="file" name="prodImage" id="image3">
+                                                <input type="file" name="image3" id="image3">
+                                                <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
                                               </label>
-                                              <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
                                         </div>
+
                                         <div class="form-input">
                                             <label class="prodImg" for="image4"
                                             <% if(producto.image4){%>
@@ -140,10 +141,11 @@
                                             <% } else {%>
                                               >
                                             <% } %>
-                                                <input type="file" name="prodImage" id="image4">
+                                                <input type="file" name="image4" id="image4">
+                                                <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
                                               </label>
-                                              <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
                                         </div>
+
                                         <div class="form-input">
                                             <label class="prodImg" for="image5"
                                             <% if(producto.image5){%>
@@ -151,57 +153,47 @@
                                             <% } else {%>
                                               >
                                             <% } %>
-                                                <input type="file" name="prodImage" id="image5">
+                                                <input type="file" name="image5" id="image5">
+                                                <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
                                               </label>
-                                              <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
                                         </div>
                                     </div>
 
                                     <div class="form-input opciones">
-                                        <label for="color">Color (PENDIENTE: Aplicar librería React para selección múltiple)</label>
+                                        <label for="color">Color (PENDIENTE: Aplicar librería React para selección múltiple)
+                                          Por ahora se pueden seleccionar múltiples colores manteniendo apretada la tecla Cmd / Ctrl</label>
                                         <select name="color_id[]" id="color_id" multiple>
-                                          <% for (let i =0; i<producto.colores.length; i++) { %>
-                                            <option value="<%=producto.colores[i].id%>" style="display: none;" selected> <%=producto.colores[i].name%> </option>
-                                          <% } %>
-                                          <% for (let i =0; i<colors.length; i++) { %>
+                                          <% for(let i=0; i<colorsId.length; i++){ %>
+                                            <% if (productColorsId.includes(colorsId[i])) { %>
+                                            <option value="<%=colors[i].id%>" selected><%=colors[i].name%></option>
+                                            <% } else { %>
                                             <option value="<%=colors[i].id%>"> <%=colors[i].name%> </option>
-                                          <% } %>
+                                            <% }} %>
                                         </select>
                                     </div>
 
                                     <div class="checkbox">
                                         <div class="opciones">
-                                            <h4>Talle</h4>
-
-                                            <label for="talle_XS"><input type="checkbox" value="7" name="size_id[]" id="talle_XS" checked> XS</label> <br>
-                                            <label for="talle_S"><input type="checkbox" value="8" name="size_id[]" id="talle_S"> S</label> <br>
-                                            <label for="talle_M"><input type="checkbox" value="9" name="size_id[]" id="talle_M"> M</label> <br>
-                                            <label for="talle_L"><input type="checkbox" value="10" name="size_id[]" id="talle_L"> L</label> <br>
-                                            <label for="talle_XL"><input type="checkbox" value="11" name="size_id[]" id="talle_XL"> XL</label> <br>
-                                            <label for="talle_XXL"><input type="checkbox" value="12" name="size_id[]" id="talle_XXL"> XXL</label> <br>
-                                        </div>
-
-                                        <div class="opciones">
-                                            <h4>Dimensiones / Volumen</h4>
-                                            <label for="dimensions"><input type="checkbox" value="1" name="size_id[]" id="dimensions"> 5'0" x 19" x 2 1/16" -21.78L</label> <br>
-                                            <label for="dimensions"><input type="checkbox" value="2" name="size_id[]" id="dimensions"> 5'7" x 19" x 2 7/16" - 29.86L</label> <br>
-                                            <label for="dimensions"><input type="checkbox" value="3" name="size_id[]" id="dimensions"> 5'10" x 20" x 2 5/8" - 33.73L</label> <br>
-                                            <label for="dimensions"><input type="checkbox" value="4" name="size_id[]" id="dimensions"> 6'1" x 20" x 2 3/4" - 37.71L</label> <br>
-                                            <label for="dimensions"><input type="checkbox" value="5" name="size_id[]" id="dimensions"> 6'4" x 21" x 3 1/2" - 43.2L</label> <br>
-                                            <label for="dimensions"><input type="checkbox" value="6" name="size_id[]" id="dimensions"> 6'10" x 22" x 3 1/4" - 53.95L</label> <br>
+                                          <h4>Talle</h4>
+                                          <% for(let i=0; i<sizesId.length; i++){ %>
+                                            <% if (productSizeId.includes(sizesId[i])) { %>
+                                            <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked> <%=sizes[i].dimension%></label> <br>
+                                          <% } else { %>
+                                            <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size"> <%=sizes[i].dimension%></label> <br>
+                                          <% }} %>
                                         </div>
 
                                         <div class="opciones">
                                         <h4>Fin Setup</h4>
                                         <% for (let i =0; i<fins.length; i++) { %>
-                                          <%if (producto.fin){%>
-                                          <% if (producto.fin.id == fins[i].id) { %>
-                                            <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id" checked> <%=fins[i].name%></label><br>
-                                            <%}%>
-                                            <% } else {%>
-                                              <label for="fin_id"><input type="checkbox" value="<%=fins[i].id%>" name="fin_id[]" id="fin_id">  <%=fins[i].name%></label><br>
-                                            <% }} %>
-                                          </div>
+                                          <%if (producto.fin && (producto.fin.id == fins[i].id)){ %>
+                                            <input type="radio" id="fin_id" name="fin_id" value="<%=fins[i].id%>" checked>
+                                            <label for="fin_id"> <%=fins[i].name%> </label><br>
+                                          <% } else {%>
+                                            <input type="radio" id="fin_id" name="fin_id" value="<%=fins[i].id%>">
+                                            <label for="fin_id"> <%=fins[i].name%> </label><br>
+                                          <% }} %>
+                                        </div>
                                     </div>
                                 </section>
 

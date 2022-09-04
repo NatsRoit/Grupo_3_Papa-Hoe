@@ -3,7 +3,8 @@
 <%- include("../partials/head", {title: 'PapaHoe Shop' }) %>
 
     <body>
-        <%- include("../partials/header") %>
+
+            <%- include("../partials/header") %>
 
             <header class="section-header">
                 <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg"
@@ -11,14 +12,20 @@
             </header>
 
             <main class="shop">
-                <div class="shop-filters">
-                    <p>Acá podríamos poner las opciones extra que tiene el User admin</p>
-                    <p> <a href="/admin/create"> <strong>Crear Producto </strong></a>|
-                        <a href="/admin/edit/1"> <strong>Editar Producto </strong></a> |
-                        <a href="/admin/delete/75"> <strong>Borrar Producto </strong></a>
-                    </p>
-                </div>
-
+                    <div class="shop-filters">
+                        <p>
+                            <a href="/product/category/all"> <strong> SHOP </strong></a> |
+                            <a href="/product/category/1"> SURFBOARDS </a> |
+                            <a href="/product/category/2"> ACCESORIOS </a> |
+                            <a href="/product/category/3"> COMPLEMENTOS </a> |
+                        </p>
+                        <%if(locals.isAdmin){%>
+                            <p>
+                                EN CONSTRUCCIÓN! Opciones User admin --->
+                                <a href="/admin/create"> <strong>Crear Producto </strong></a>
+                            </p>
+                            <% }%>
+                    </div>
 
                 <h1 class="titulo-seccion-main accesorios"><%= categoria? productos[1].categoria.name : "Todos los productos" %></h1>
                 <section class="contenedor-productos">
