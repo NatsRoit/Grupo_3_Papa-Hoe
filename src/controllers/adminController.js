@@ -130,10 +130,12 @@ let adminController = {
         let sizes = db.Size.findAll()
         Promise.all([producto, brand, category, subcategory, colors, fins, sizes])
         .then(function([producto, brand, category, subcategory, colors, fins, sizes]){
+            console.log(producto)
+            console.log(JSON.stringify(producto))
 
-// Hago un Array con los ID's de todos los "sizes" y otro Array con los ID's de los "sizes" seleccionados para este producto en particular
+// Hago un Array con los ID's de todos los "sizes" y otro Array con los ID's de los "sizes seleccionados" de este producto
 // porque no lograba resolver el tema de iterar sobre un array de Objetos literales, analizando sólo la propiedad "ID".
-// Luego mando a la vista estos dos Arrays que contienen sólo números y los uso para mostrar las opciones seleccionadas en los Input type="select" 
+// Luego mando a la vista estos dos Arrays que contienen sólo números y los itero para mostrar los talles seleccionados en los Input type="select" 
             let sizesId = []
             sizes.forEach(function(item){
                 sizesId.push(item.id)

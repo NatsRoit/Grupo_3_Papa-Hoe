@@ -907,7 +907,7 @@ input[type="range"]::-moz-range-progress {
   padding: 0 20px;
 }
 
-.productDetail .left-wrapper .img-slider {
+.left-wrapper .img-slider {
   height: 90vh;
   width: 100%;
   position: sticky;
@@ -1844,13 +1844,13 @@ object-position: 0 0;
   border-bottom: 1px solid pink;
 }
 .history-items .img-slider {
-  min-width: 25%;
+  width: 25%;
   text-align: center;
   overflow: hidden;
   padding-right: 20px;
 }
 .history-items .img-slider img {
-  max-width: 110px;
+  width: 110px;
 }
 .history-items .prod-info-list p {
   margin: 0px;

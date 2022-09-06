@@ -183,22 +183,19 @@
                 <div class="related-products">
                 <h1>También te puede interesar</h1>
                 <section class="contenedor-productos">
-                    <% let arr = Array.from({length: 4}, () => Math.floor(Math.random() * related.length));
-                            console.log(arr);
-                            %>
-                        <% for (let i = 0; i < arr.length; i++) { %>
+                        <% for (let i = 0; i < relatedProds.length; i++) { %>
                         <div class="producto-shop">
 
-                            <a href="/product/detail/<%= related[arr[i]].id%>">
+                            <a href="/product/detail/<%= relatedProds[i].id%>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
-                                        <img src="/img/<%= related[arr[i]].image1 %>"
-                                        alt="<%= related[arr[i]].name%>" width="100%">
+                                        <img src="/img/<%= relatedProds[i].image1 %>"
+                                        alt="<%= relatedProds[i].name%>" width="100%">
                                     </div>
                                 </div>
                             </a>
                             <div class="product-info">
-                                <h5><%= related[arr[i]].name %></h5>
+                                <h5><%= relatedProds[i].name %></h5>
                             </div>
                         </div>
                         <% } %>
