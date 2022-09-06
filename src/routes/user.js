@@ -4,13 +4,15 @@ const router = express.Router();
 const path = require('path');
 const multer = require("multer");
 
+const upload = require("../middlewares/multerMiddleware")
+
 
 //Aquí aperturo mi archivo de usuarios, ya que al registrarse un usuario es conveniente buscar que no exista una ya registrado con el mismo email o id o el campo que utlicen para identificar al usuario.
 let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')))
 
 
 // MULTER CONFIG  ( https://www.npmjs.com/package/multer )
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.resolve(__dirname, "../../public/images/usuarios"));
   },
@@ -19,7 +21,7 @@ const storage = multer.diskStorage({
     cb(null, nombreArchivo );
   },
 });
-const upload = multer({ storage });
+const upload = multer({ storage });*/
 
 
 

@@ -110,7 +110,10 @@
                                     </div>
                                 </section>
                                 <div class="form-input custom-file">
-                                    <label for="avatar">Elige una imagen de perfil</label>
+                                    <label for="avatar">Elige una imagen de perfil 
+                                    <% if (locals.errors && errors.avatar) { %>
+                                        <span class="under"><%= errors.avatar.msg %> </span>
+                                    <% } %></label>
                                     <input type="file" name="avatar" id="avatar">
                                 </div>
                                 <div class="submit-button">
