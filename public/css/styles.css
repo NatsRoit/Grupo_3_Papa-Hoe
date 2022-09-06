@@ -1179,6 +1179,13 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
+.is-invalid {
+  display: inline;
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+}
+
 /*--------------------------------------------------------
     MAIN Register
 ------------------------------------------------------ */
