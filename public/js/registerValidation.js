@@ -133,6 +133,28 @@ window.onload = function(){
             telefono.classList.add('form-input')
             telefono.classList.remove('is-invalid')
             }
+
+        // ERRORES    
+        let ulErrors = document.querySelector('.errores')
+        ulErrors.classList.add('.errores')
+        ulErrors.innerHTML = '';     
+        if (errors.length > 0) {
+            
+            for (let i = 0; i< errors.length, i++) {
+                ulErrors.innerHTML += `<li > ${errors[i]} </li> `
+            }
+        }  
+        else {
+            ulErrors.classList('errores')
+            ulErrors.innerHTML = '';
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Te has registrado correctamente',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        } 
  
     })
 }
