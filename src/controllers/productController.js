@@ -9,7 +9,7 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 const productController = {
     test: function(req,res){
         let producto =
-        db.Product.findByPk(74, {
+        db.Product.findByPk(2, {
             include: [
                 { association: "marca" },
                 { association: "categoria", include: [{association: 'subcategorias'}],
@@ -56,13 +56,24 @@ const productController = {
                 { association: "colores" },
             ],
         });
-        let prodRelated = db.Product.findAll();
+        let prodAll = db.Product.findAll();
         let size = db.Size.findAll();
         let fins = db.Fin.findAll();
         let colors = db.Color.findAll()
-        Promise.all([producto, prodRelated, size, fins, colors])
-        .then(function([producto, related, size, fins, colors ]){
-            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, related, size, fins, colors });
+        Promise.all([producto, prodAll, size, fins, colors])
+        .then(function([producto, prodAll, size, fins, colors ]){
+            // Creo una función para seleccionar en modo aleatorio 4 productos del total de productos (prodAll).
+            let randomArr = [];
+            while(randomArr.length < 4)
+            { var r = Math.floor(Math.random() * prodAll.length) + 1;
+                if(randomArr.indexOf(r) === -1) randomArr.push(r)
+            };
+            // Pusheo esos 4 productos en un nuevo array (relatedProds) para pasarlo a la vista
+            let relatedProds = [];
+            for (let i = 0; i < randomArr.length; i++) {
+                relatedProds.push(prodAll[randomArr[i]])
+            }
+            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, relatedProds, size, fins, colors });
         })
         .catch(err => { res.send(err);
         })

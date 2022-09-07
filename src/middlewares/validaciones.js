@@ -1,3 +1,4 @@
+const path = require('path');
 const { body } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
@@ -92,26 +93,8 @@ module.exports.validar = (method) => {
                         }
                         return true
                     }
-                }),
+                })
 
-                body('avatar').custom((value, {req}) => { //Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
-                  let file = req.file;
-                  let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
-                  if (!file){
-                      throw new Error("Tiene que adjuntar una imagen")
-                  }
-                  else{
-                      let fileExtension = path.extname(file.originalname);
-                      if (!acceptedExtensions.includes(fileExtension)){
-                          throw new Error("Extensión de imagen no valida")
-                      }
-                  }
-                  
-                  return true;
-              })
-
-
-              
             ]
         }
     }
