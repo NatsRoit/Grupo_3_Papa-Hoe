@@ -1,11 +1,10 @@
 window.onload = function(){
 
+//para ubicar el cursor en el campo nombre de una
     let formulario = document.querySelector('.formulario');
-
-    //para ubicar el cursor en el campo nombre de una
     formulario.nombre.focus()
     
-    formulario.addEventListener('submit', (e) =>{
+    formulario.addEventListener('submit', async (e) =>{
         e.preventDefault()
         
         let errors = [];
@@ -24,7 +23,7 @@ window.onload = function(){
         let telefono = document.querySelector('#telefono')
 
         //VALIDACION NOMBRE
-        if (nombre.value == ''){
+        if (nombre.value == '' || nombre.length < 2){
             errors.push('El campo nombre no puede estar vacio')
             nombre.classList.add('is-invalid')
             }else{
@@ -35,7 +34,7 @@ window.onload = function(){
         
 
         //VALIDACION APELLIDO
-        if (apellido.value == ''){
+        if (apellido.value == ''|| apellido.length < 2){
             errors.push('El campo apellido no puede estar vacio')
             apellido.classList.add('is-invalid')
             }else{
@@ -44,7 +43,7 @@ window.onload = function(){
             }
 
         //VALIDACION USUARIO
-        if (usuario.value == ''){
+        if (usuario.value == '' || usuario.length < 2){
             errors.push('El campo usuario no puede estar vacio')
             usuario.classList.add('is-invalid')
             }else{
@@ -53,16 +52,16 @@ window.onload = function(){
             }
 
         //VALIDACION EMAIL
-        if (email.value == ''){
-            errors.push('El campo email no puede estar vacio')
-            email.classList.add('is-invalid')
-            }else{
-            email.classList.add('form-input')
-            email.classList.remove('is-invalid')
-            }
+       // if (email.value == '' || (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(value)){
+        //    errors.push('El campo email no puede estar vacio')
+       //     email.classList.add('is-invalid')
+       //     }else{
+        //    email.classList.add('form-input')
+        //    email.classList.remove('is-invalid')
+        //    }
 
         //VALIDACION PASSWORD
-        if (password.value == ''){
+        if (password.value == '' || password.length < 8){
             errors.push('El campo password no puede estar vacio')
             password.classList.add('is-invalid')
             }else{
@@ -71,7 +70,7 @@ window.onload = function(){
             }
 
         //VALIDACION CONFIRMPASSWORD
-        if (confirmPassword.value == ''){
+        if (confirmPassword.value == '' || password.value != confirmPassword.value){
             errors.push('Debes cofirmar la password')
             confirmPassword.classList.add('is-invalid')
             }else{
@@ -154,6 +153,8 @@ window.onload = function(){
                 showConfirmButton: false,
                 timer: 1500
               })
+
+              // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
         } 
  
     })
