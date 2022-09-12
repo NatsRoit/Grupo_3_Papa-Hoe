@@ -1,4 +1,4 @@
-window.onload = function(){
+//window.onload = function(){
 
 //para ubicar el cursor en el campo nombre de una
     let formulario = document.querySelector('.formulario');
@@ -158,4 +158,4 @@ window.onload = function(){
         } 
  
     })
-}
+//}
