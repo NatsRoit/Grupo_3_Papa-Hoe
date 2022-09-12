@@ -1190,8 +1190,53 @@ button.submit-button {
   font-size: 12px;
   font-weight: 400;
   color: red;
-
 }
+
+.login-register .error-input {
+  display: none;
+};
+
+.login-register .error-input-activo {
+  display: block;
+};
+
+.login-register #email-icono,
+#password-icono {
+  position: relative;
+};
+
+.login-register .form-validacion-estado {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  z-index: 100;
+  opacity: 0
+};  
+
+/* Estilos validaciones*/
+.login-register .form-input-correcto .form-validacion-estado {
+  color: green;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto .form-label{
+  color: red;
+};
+
+.login-register .form-input-incorrecto .form-validacion-estado {
+  color: red;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto input {
+  border: red solid 2px;
+};
+
+.input-mensaje-error {
+  display: none;
+};
+
+
 
 /*--------------------------------------------------------
     MAIN Register
