@@ -139,7 +139,7 @@ window.onload = function(){
         ulErrors.innerHTML = '';     
         if (errors.length > 0) {
             
-            for (let i = 0; i< errors.length, i++) {
+            for (let i = 0; i< errors.length; i++) {
                 ulErrors.innerHTML += `<li > ${errors[i]} </li> `
             }
         }  
