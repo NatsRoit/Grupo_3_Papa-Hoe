@@ -1179,14 +1179,9 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
-.is-invalid {
-  display: inline;
-  font-size: 12px;
-  font-weight: 400;
-  color: red;
-}
 
-.errores {
+
+.errors {
   font-size: 12px;
   font-weight: 400;
   color: red;
@@ -1258,6 +1253,9 @@ button.submit-button {
   width: 100%;
   background-color: rgba(0, 23, 40, 0.03);
   /* border: #b3b1b3 solid 0.5px; */
+}
+.register .form-input input.is-invalid {
+  border:1px solid #42469d ;
 }
 
 .form-input.prod-descuento {
@@ -1383,7 +1381,10 @@ input[type="file" i] {
   background-color: #001728;
 }
 
-
+.errores{
+  color:#42469d;
+  font-weight: bold;
+}
 /*
 --------------------------------------------------------
     MAIN ProductCart
