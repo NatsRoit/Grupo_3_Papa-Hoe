@@ -8,13 +8,14 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 let adminController = {
     test: function(req,res){
-        console.log(JSON.parse(5,6,7))
-        db.Size.findAll({
-            where: { id: 
-                {[Op.or]: [5,6,7]} },
-        })
-    .then(function(prod){
-            return res.send(prod);
+        let prod = db.Category.findAll({
+                include: [{association: 'subcategorias'}]
+            });
+        let sub = db.Subcategory.findAll()
+
+        Promise.all([prod, sub])
+        .then(function(response){
+            return res.send(response);
         })
         .catch(err => { res.send(err);
         })
@@ -30,21 +31,19 @@ let adminController = {
         let brand = db.Brand.findAll();
         let category = db.Category.findAll({include: [{association: 'subcategorias'}]});
         let subcategory = db.Subcategory.findAll();
-        let colors = db.Color.findAll()
+        let colors = db.Color.findAll();
         let fins = db.Fin.findAll();
         let size = db.Size.findAll()
         Promise.all([brand, category, subcategory, colors, fins, size])
         .then(function([brand, category, subcategory, colors, fins, size ]){
             console.log(JSON.stringify(category))
-            return res.render(path.resolve(__dirname, '../views/admin/create'),{brand, category, subcategory, colors, fins, size});
+            return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, size});
         })
         .catch(err => { res.send(err);
         })
     },
 
     create: (req,res) => {
-        console.log('ATENCIOOOONNNNNNN: productController > req.body.size_id ' + req.body.size_id);
-        console.log('ATENCIOOOONNNNNNN: productController > req.body.size_id ' + JSON.stringify(req.body.size_id));
         db.Product.create({
             name: req.body.name,
             price: req.body.price,
@@ -157,7 +156,7 @@ let adminController = {
                 productColorsId.push(item.id)
             });
 
-            res.render (path.resolve(__dirname,'../views/admin/edit'), {producto, brand, category, subcategory, colors, fins, sizes, sizesId, productSizeId, colorsId, productColorsId})
+            res.render (path.resolve(__dirname,'../views/admin/productEdit'), {producto, brand, category, subcategory, colors, fins, sizes, sizesId, productSizeId, colorsId, productColorsId})
         })
     },
 
@@ -241,15 +240,16 @@ let adminController = {
     destroy: (req,res) =>{
         db.Product.destroy ({
             where: { id: req.params.id }
-        });
+        })
+        .then(function (productoBorrado) {
         res.redirect("/product/category/all")
         // const productDeleteId = req.params.id;
         // const productsFinal = productos.filter(product => product.id != productDeleteId);
         // let productsGuardar = JSON.stringify(productsFinal,null,2)
         // fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
         // res.redirect('/product');
-    },
-
+    });
+    }
 }
 
 module.exports = adminController;

@@ -85,7 +85,7 @@ main h2 {
 
 main p {
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   color: #516169;
 }
@@ -908,11 +908,11 @@ input[type="range"]::-moz-range-progress {
 }
 
 .left-wrapper .img-slider {
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   position: sticky;
   z-index: 80;
-  top: 80px;
+  top: 145px;
   text-align: center;
   /* padding: 20px; */
 }
@@ -1099,7 +1099,7 @@ object-position: 0 0;
 
 .under {
   color: #ff5d48;
-  padding-left: 20px;
+  padding: 5px 20px;
 }
 
 .formulario {
@@ -1115,13 +1115,18 @@ object-position: 0 0;
 .form-input {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+/* NATS: SI ALGO ESTÁ ROTO, HABILITAR ESTO y LABEL: WIDTH 100%!!! */
+  /* justify-content: space-between; */
+  align-items: baseline;
   width: 100%;
   font-size: 14px;
-  font-weight: 500;
   text-align: left;
-  /* text-transform: uppercase; */
 }
+/* 
+.multiSelect input{
+height: 20px;
+width: auto;
+} */
 
 .form-input a {
   display: inline;
@@ -1179,19 +1184,13 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
-.is-invalid {
-  display: inline;
-  font-size: 12px;
-  font-weight: 400;
-  color: red;
-}
 
 /*--------------------------------------------------------
     MAIN Register
 ------------------------------------------------------ */
 
 .register {
-  padding: 30px 0;
+  padding: 10px 0;
   width: 100%;
 }
 
@@ -1199,22 +1198,17 @@ button.submit-button {
 .productCreate .form-input input {
   border-style: none;
   background-blend-mode: multiply;
-  border-radius: 2px;
-  height: 45px;
-  margin: 4px 0 20px 0;
-  padding: 1px 10px;
-  width: 100%;
   background-color: rgba(0, 23, 40, 0.03);
-  /* border: #b3b1b3 solid 0.5px; */
 }
 
 .form-input.prod-descuento {
   flex-wrap: nowrap;
-  align-items: baseline;
-  background-color: #4884ef;
+  align-items: center;
+  background-color: #b3b1b3;
   padding: 0;
-  margin: 4px 0 20px 0;
+  margin: 40px 0 0px 0;
   border-radius: 2px;
+  height: 60px;
 }
 
 .form-input.prod-descuento label {
@@ -1224,16 +1218,15 @@ button.submit-button {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.5pt;
+  padding: 20px;
 }
-.form-input.prod-descuento input{
-  height: 60px;
-}
+
 .form-input.prod-descuento input[type="number" i]{
-  -webkit-appearance: initial;
-  background-color: transparent;
-  color: black;
-  width: 50%;
+  width: 48%;
+  height: 40px;
   margin: 0;
+  background-color: #f7f8f8db;
+  padding: 15px;
 }
 .checkbox {
   display: flex;
@@ -1258,7 +1251,6 @@ button.submit-button {
 
 .datos-section {
   width: 100%;
-  margin: 0 0 20px 0;
 }
 .datos-section h4 {
   text-align: left;
@@ -1277,12 +1269,16 @@ button.submit-button {
 .form-1col {
   padding: 15px;
 }
-.form-1col p, label,
-.form-2col p, label,
+.form-1col p,
+.form-2col p,
 .form-3col p, label {
   margin-top: 0;
   line-height: initial;
   font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  /* width: 100%; */
+  padding: 5px 0;
 }
 /* .form-1col div {
   width: 100%;
@@ -1872,16 +1868,11 @@ object-position: 0 0;
 
 .productCreate .opciones > div {
   padding: 0 0 200px 0 ;
-  width: 100%;
+  width: 100%;  
 }
-
 .productCreate .opciones textarea,
 .productCreate .opciones select {
-  /* -webkit-appearance: none; */
-  font-weight: 500;
-  /* font-size: 15px; */
-  /* font-family: "BebasNeue"; */
-  /* letter-spacing: 0.5pt; */
+  /* font-weight: 500; */
   color: #001728;
   padding: 10px;
   width: 100%;
@@ -1895,6 +1886,14 @@ object-position: 0 0;
   resize: none;
   height: auto;
   height: auto;
+  padding-right: 45px;
+}
+.productCreate .opciones select {
+  appearance: unset;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 16px;
 }
 .productCreate .opciones select:invalid,
 select option[value=""] {
@@ -1902,33 +1901,55 @@ select option[value=""] {
   font-weight: 400;
 }
 
-
 .form-5col {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   width: 100%;
+  margin: 5px 0 30px 0;
+  position: relative;
 }
 
-.productCreate .form-5col .form-input {
+.productCreate .form-5col div,
+.productCreate .form-5col input {
   flex-direction: column;
-  width: 19%;
-}
-.productCreate .form-input input[type="file"] {
-  display: none;
   width: 100%;
-  /* background-color: transparent; */
+  aspect-ratio: auto 1 / 1 !important;
+  overflow: hidden;
+
 }
 
-.productCreate .prodImg {
-  aspect-ratio: auto 1 / 1 !important; 
-  width: 100%;
-  display: inline-block;
-  cursor: pointer;
-  padding: 10px 2px;
-  background: no-repeat center/100% url(../assets/uploadFIle.png);
-  margin: 4px 0 20px 0;
+.productCreate .form-input .prodImg {
+  width: 19%;
+  background-image: url(../assets/uploadFIle.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  position: relative;
+  border-radius: 5px
 }
+
+.productCreate .form-input .prodImg:focus-within{
+  border : 1.5px solid rgba(0, 23, 40, 0.2);
+  border-radius: 5px;
+}
+.productCreate #priceCurrency {
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  /* width: 85%; */
+  height: 38px;
+  padding: 10px;
+  /* background-color: #f7f8f8; */
+  /* color: #b3b1b3; */
+  opacity: 0%;
+}
+div.secretInput {
+  width: 100%;
+  position: relative;
+} 
+
 /* ------------------------------------------------------*/
 
 
@@ -1974,6 +1995,7 @@ footer li {
   overflow: hidden;
 }
 
+textarea::placeholder,
 input::placeholder {
   color: #b3b1b3;
 }
@@ -2072,6 +2094,93 @@ img.detalles-design {
   transform: rotate(170deg);
 }
 
+
+
+/* ................................ JAVASCRIPT ......................................
+----------------------------------------------------------------------------------------
+                              CLASSLIST.ADD CLASSES
+----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------  */
+
+.is-invalid {
+  display: inline;
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+}
+
+span.errMsg {
+  color: #ff5d48;
+  padding: 5px 20px 5px 0;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.form-input div.invalid-input,
+.form-input input.invalid-input,
+.productCreate .opciones textarea.invalid-input,
+.productCreate .opciones select.invalid-input {
+  background-color: #fad6d180;
+  border: 1px solid #f58172;
+}
+
+.form-input div.valid-input,
+.productCreate .opciones select.valid-input,
+.productCreate .opciones textarea.valid-input,
+.form-input input.valid-input {
+  background-color: #8cd8d50c;
+  border: 1px solid #8cd8d5;
+}
+.productCreate .opciones textarea.valid-input,
+.form-input input.valid-input {
+  background-image: url("/assets/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: right .75rem top 12px;
+  background-size: 20px 20px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+input.visually-hidden:is(:focus, :focus-within) + label {
+  outline: thin dotted;
+}
+.labelImg{
+  height: -webkit-fill-available;
+  border-radius: 2px;
+  width: 100%;
+  position: absolute;
+  z-index: 15;
+}
+
+#imgPreview {
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+}
+#imgPreview img {
+  max-width: fit-content;
+  height: 100%;
+}
+
+.cancelCross{
+  padding: 1px 4px;
+  position: absolute;
+  color: white;
+  top: 4px;
+  right: 4px;
+  margin: 0;
+  font-size: 10pt;
+  line-height: 10pt;
+  background-color: #001728;
+  border-radius: 50%;
+  z-index: 90;
+  display: none;
+}
 
 
 /* ................................ MEDIA QUERIES ......................................

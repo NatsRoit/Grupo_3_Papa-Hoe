@@ -40,7 +40,7 @@ const userController = {
         if(errors.isEmpty()) {
           db.User.findOne({where: {email: req.body.email}})
           .then(usuarioLogueado => {
-            console.log(usuarioLogueado)
+            // console.log(usuarioLogueado)
             delete usuarioLogueado.password
             req.session.usuario = usuarioLogueado;
             if(req.body.keepSession){

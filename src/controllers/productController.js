@@ -9,7 +9,7 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 const productController = {
     test: function(req,res){
         let producto =
-        db.Product.findByPk(2, {
+        db.Product.findByPk(1, {
             include: [
                 { association: "marca" },
                 { association: "categoria", include: [{association: 'subcategorias'}],
@@ -65,9 +65,11 @@ const productController = {
             // Creo una función para seleccionar en modo aleatorio 4 productos del total de productos (prodAll).
             let randomArr = [];
             while(randomArr.length < 4)
-            { var r = Math.floor(Math.random() * prodAll.length) + 1;
-                if(randomArr.indexOf(r) === -1) randomArr.push(r)
-            };
+            { var r = Math.floor(Math.random() * prodAll.length);
+                if(randomArr.indexOf(r) === -1) { 
+                    randomArr.push(r);
+                    console.log(randomArr);
+            }};
             // Pusheo esos 4 productos en un nuevo array (relatedProds) para pasarlo a la vista
             let relatedProds = [];
             for (let i = 0; i < randomArr.length; i++) {

@@ -2,7 +2,7 @@ const db = require('../database/models');
 const Op = db.Sequelize.Op;
 const fs = require('fs');
 const path = require('path');
-let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
+// let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
         
 module.exports = (req,res,next) =>{
     // Variable locals (super global - vive en las vistas )
