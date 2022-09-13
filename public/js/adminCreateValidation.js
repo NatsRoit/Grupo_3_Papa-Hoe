@@ -102,8 +102,10 @@ window.onload = function () {
     // Cuando cambia a categoría:Surfboards, aparecen las opciones para FinSystem
     console.log(prodFins.value)
     if (prodCategory.value == "1") {
+      prodFins.disabled = false;
       (prodFins.parentElement).classList.remove("visually-hidden");
     } else {
+      prodFins.disabled = true;
       prodFins.value = "";
       (prodFins.parentElement).classList.add("visually-hidden");
     }

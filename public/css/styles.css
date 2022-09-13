@@ -1184,16 +1184,11 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
-<<<<<<< HEAD
-=======
-
-
 .errors {
   font-size: 12px;
   font-weight: 400;
   color: red;
 }
->>>>>>> 22fa19918853ed1245090262afa9b4ee16bbb556
 
 .login-register .error-input {
   display: none;
