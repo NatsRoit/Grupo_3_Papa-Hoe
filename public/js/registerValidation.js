@@ -21,6 +21,7 @@ formulario.addEventListener("submit", async (e) => {
   let localidad = document.querySelector("#localidad");
   let codigoPostal = document.querySelector("#codigoPostal");
   let telefono = document.querySelector("#telefono");
+  let imagen = document.querySelector('#avatar')
 
   //VALIDACION NOMBRE
   if (nombre.value == "" || nombre.value.length < 3) {
@@ -62,8 +63,8 @@ formulario.addEventListener("submit", async (e) => {
     email.classList.remove("is-invalid");
   }
 
-  //VALIDACION PASSWORD
-  if (password.value == "" || password.value.length < 8) {
+   //VALIDACION PASSWORD
+   if (password.value == "" || password.value.length < 8) {
     errors.push("El campo password no puede estar vacio y tiene que tener mas de 8 caracteres");
     password.classList.add("is-invalid");
   } else {
@@ -134,6 +135,21 @@ formulario.addEventListener("submit", async (e) => {
     telefono.classList.remove("is-invalid");
   }
 
+  //VALIDACION IMAGEN
+  
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+   // var allowedSize = 1024;
+    if(!allowedExtensions.exec(imagen.value) || imagen.size>allowedSize ){        
+        errors.push('Las extenciones permitidas son .jpeg/.jpg/.png/.gif y no puede superar 1MB');
+        
+        imagen.classList.add("is-invalid");
+    }
+    
+    else{
+      telefono.classList.add("form-input");
+      telefono.classList.remove("is-invalid");
+    }
+
   // ERRORES
   let ulErrors = document.querySelector(".errores");
 
@@ -156,6 +172,7 @@ formulario.addEventListener("submit", async (e) => {
       title: "Te has registrado correctamente",
       showConfirmButton: false,
       timer: 1500,
+      
     });
 
     // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
