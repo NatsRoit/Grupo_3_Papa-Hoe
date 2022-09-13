@@ -1184,6 +1184,62 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
+<<<<<<< HEAD
+=======
+
+
+.errors {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+}
+>>>>>>> 22fa19918853ed1245090262afa9b4ee16bbb556
+
+.login-register .error-input {
+  display: none;
+};
+
+.login-register .error-input-activo {
+  display: block;
+};
+
+.login-register #email-icono,
+#password-icono {
+  position: relative;
+};
+
+.login-register .form-validacion-estado {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  z-index: 100;
+  opacity: 0
+};  
+
+/* Estilos validaciones*/
+.login-register .form-input-correcto .form-validacion-estado {
+  color: green;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto .form-label{
+  color: red;
+};
+
+.login-register .form-input-incorrecto .form-validacion-estado {
+  color: red;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto input {
+  border: red solid 2px;
+};
+
+.input-mensaje-error {
+  display: none;
+};
+
+
 
 /*--------------------------------------------------------
     MAIN Register
@@ -1199,6 +1255,9 @@ button.submit-button {
   border-style: none;
   background-blend-mode: multiply;
   background-color: rgba(0, 23, 40, 0.03);
+}
+.register .form-input input.is-invalid {
+  border:1px solid #42469d ;
 }
 
 .form-input.prod-descuento {
@@ -1327,7 +1386,10 @@ input[type="file" i] {
   background-color: #001728;
 }
 
-
+.errores{
+  color:#42469d;
+  font-weight: bold;
+}
 /*
 --------------------------------------------------------
     MAIN ProductCart
