@@ -96,7 +96,7 @@ function MultiselectDropdown(options){
   var config={
     search:true,
     height:'15rem',
-    placeholder:'Selecciona los colores disponibles',
+    placeholder:'Seleccioná los colores disponibles para este producto',
     txtSelected:'selected',
     txtAll:'All',
     txtRemove: 'Remove',
@@ -121,7 +121,7 @@ function MultiselectDropdown(options){
   
   document.querySelectorAll("select[multiple]").forEach((el,k)=>{
     
-    var div=newEl('div',{class:'multiselect-dropdown',style:{width:config.style?.width??100+'%',height:config.style?.height??45+'px', padding:config.style?.padding??''}});
+    var div=newEl('div',{class:'multiselect-dropdown',style:{width:config.style?.width??el.clientWidth+'px', padding:config.style?.padding??''}});
     el.style.display='none';
     el.parentNode.insertBefore(div,el.nextSibling);
     var listWrap=newEl('div',{class:'multiselect-dropdown-list-wrapper'});
@@ -180,7 +180,7 @@ function MultiselectDropdown(options){
       div.refresh=()=>{
         div.querySelectorAll('span.optext, span.placeholder').forEach(t=>div.removeChild(t));
         var sels=Array.from(el.selectedOptions);
-        if(sels.length>(el.attributes['multiselect-max-items']?.value??5)){
+        if(sels.length>(el.attributes['multiselect-max-items']?.value??15)){
           div.appendChild(newEl('span',{class:['optext','maxselected'],text:sels.length+' '+config.txtSelected}));          
         }
         else{

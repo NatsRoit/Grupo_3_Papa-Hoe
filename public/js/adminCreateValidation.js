@@ -20,6 +20,8 @@ window.onload = function () {
   let prodImage4 = document.querySelector("#image4");
   let prodImage5 = document.querySelector("#image5");
   let prodFins = document.querySelector("#fin_id");
+  prodFins.disabled = true;
+
 
   // Los que no sé cómo resolver
   let prodColor = document.querySelector("#color_id");
@@ -100,7 +102,6 @@ window.onload = function () {
     }
 
     // Cuando cambia a categoría:Surfboards, aparecen las opciones para FinSystem
-    console.log(prodFins.value)
     if (prodCategory.value == "1") {
       prodFins.disabled = false;
       (prodFins.parentElement).classList.remove("visually-hidden");
@@ -319,7 +320,14 @@ return result;
   // Defino la función que se desencadenará al onblur/onchange el campo del input"
   inputImg.addEventListener("blur", setInvalidClass);
   function setInvalidClass(e) {
-    console.log('nada');
+    let imagenes = this.files;
+    if (!hasFiles(prodImageAll)){
+        imgErrMsg.innerHTML = "Una imagen dice más que mil palabras... No olvides agregar al menos una!";
+        for (const box of prodImageAll) {
+          box.classList.remove("valid-input");
+          box.classList.add("invalid-input");
+        }
+    }
   }
 
     // Defino la función que se desencadenará al cambiar el value del input"file"
@@ -380,7 +388,6 @@ return result;
     if (preview) {
       preview.parentElement.style.backgroundColor = ""
       preview.parentNode.removeChild(preview);
-      // preview = null
     }
     input.value = null
     this.style.display = "none"
@@ -450,31 +457,21 @@ prueba.addEventListener("click", (e)=>{
 
 
   form.addEventListener("submit", (e) => {
-    let noErrors = prodName.valid
-    && prodCategory.valid
-    && prodSubcategory.valid 
-    && prodBrand.valid
-    && prodPrice.valid
-    && prodStock.valid
-    && prodDescription.valid
-    && prodFeatures.valid
-    && (prodImage1.value || prodImage2.value || prodImage3.value || prodImage4.value || prodImage5.value)
-    && (prodCategory.value == "1"? prodFins.valid : true);
-      
-    if (!noErrors){
-      e.preventDefault();
-
-      let formElements = document.querySelector(".formulario").elements;
-      let isInvalid = [];
+    let formElements = document.querySelector(".formulario").elements;
+    let isInvalid = [];
       for (let i = 0; i < formElements.length; i++) {
-        let elementos = formElements[i]
-        if (elementos.hasOwnProperty("valid") && !elementos.valid) {
-          isInvalid.push(elementos);
-          elementos.classList.add("invalid-input");
+        let formField = formElements[i]
+        if (formField.hasOwnProperty("valid") && !formField.valid) {
+          isInvalid.push(formField);
+          formField.classList.add("invalid-input");
         }
       };
-      // window.scrollTo({top:0, behavior:'smooth'});
-      isInvalid[0].focus();
+      if (isInvalid.length > 0) {
+        e.preventDefault();
+        for (let i = isInvalid.length -1; i >= 0; i--) {
+          // window.scrollTo({top:0, behavior:'smooth'});
+          isInvalid[i].focus();
+        }
       }
   });
   
