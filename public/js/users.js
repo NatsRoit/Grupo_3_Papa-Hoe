@@ -4,10 +4,10 @@ window.addEventListener ("load", function () {
     const inputs = document.querySelectorAll ("#formulario input")
     const email = document.querySelector ("#email"); 
     const password = document.getElementById ("password"); 
-    
+    const oops = this.document.querySelector(".auth-error-message")
     const expresiones = {
         email: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,12}$/, // 6 a 12 digitos.
+        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([^ ]){6,12}$/ ,  // 6 a 12 digitos y números y un caracter especial
     };
     
     
@@ -40,15 +40,15 @@ window.addEventListener ("load", function () {
                 if(expresiones.email.test(e.target.value)) {
                     email.classList.remove("form-input-incorrecto");
                     email.classList.add("form-input-correcto");
-                    document.querySelector("#form-input-email i").classList.add("fa-circle-check");
-                    document.querySelector("#form-input-email i").classList.remove("fa-circle-xmark");
+                    document.querySelector("i.form-validacion-estado").classList.add("fa-circle-check");
+                    document.querySelector("i.form-validacion-estado").classList.remove("fa-circle-xmark");
                     document.querySelector("#form-input-email .error-input").classList.remove("error-input-activo");
                     campos[email] = true;
                 } else {
                     email.classList.add("form-input-incorrecto");
                     email.classList.remove("form-input-correcto");
-                    document.querySelector("#form-input-email i").classList.add("fa-circle-xmark");
-                    document.querySelector("#form-input-email i").classList.remove("fa-circle-check");
+                    document.querySelector("i.form-validacion-estado").classList.add("fa-circle-xmark");
+                    document.querySelector("i.form-validacion-estado").classList.remove("fa-circle-check");
                     document.querySelector("#form-input-email .error-input").classList.add("error-input-activo");
                     campos [email] = false;
                 }
@@ -75,13 +75,14 @@ window.addEventListener ("load", function () {
     inputs.forEach (function(input) {
         input.addEventListener("keyup", validarFormulario)
         input.addEventListener("blur", validarFormulario)
+        console.log()
 
     })
 
     formulario.addEventListener ("submit", function (e) {
         e.preventDefault ();
         if (campos.email && campos.password) {
-            formulario.reset()
+            formulario.submit()
         };
     })
 

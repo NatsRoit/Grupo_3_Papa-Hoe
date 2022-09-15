@@ -64,7 +64,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION PASSWORD
   if (password.value == "" || password.value.length < 8) {
-    errors.push("El campo password no puede estar vacio y tiene que tener mas de 8 caracteres");
+    errors.push("El campo password no puede estar vacío y tiene que tener mas de 8 caracteres");
     password.classList.add("is-invalid");
   } else {
     password.classList.add("form-input");

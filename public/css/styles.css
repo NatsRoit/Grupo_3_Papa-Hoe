@@ -1134,7 +1134,7 @@ width: auto;
   font-weight: 400;
   color: #293c49;
 }
-.form-input input {
+.form-input input:not(#keepSession):not(#discount) {
   border-radius: 2px;
   height: 45px;
   margin: 4px 0 20px 0;
@@ -1203,12 +1203,13 @@ button.submit-button {
   position: relative;
 };
 
-.login-register .form-validacion-estado {
+.login-register .form-input i {
   position: absolute;
   right: 10px;
   bottom: 35px;
   z-index: 100;
-  opacity: 0
+  opacity: 0;
+  background-color: red;
 };  
 
 /* Estilos validaciones*/
@@ -1230,7 +1231,7 @@ button.submit-button {
   border: red solid 2px;
 };
 
-.input-mensaje-error {
+#input-mensaje-error {
   display: none;
 };
 
@@ -1282,9 +1283,10 @@ button.submit-button {
   background-color: #f7f8f8db;
   padding: 15px;
 }
-.checkbox {
+.checkbox:not(#keepSession) {
   display: flex;
   width: 100%;
+  padding: 0 20px 0 0;
 }
 .checkbox .opciones {
   margin: 20px 0 4px 0;
@@ -1296,11 +1298,13 @@ button.submit-button {
 .form-input.prod-descuento input[type="number" i]::placeholder {
   color: black;
 }
-.form-input.prod-descuento input[type="checkbox" i]{
+.form-input.prod-descuento input[type="checkbox" i],
+input#keepSession {
   height: 14px;
-  width: 12%;
-  padding: 0;
-  margin: 0;
+  /* width: 12%; */
+  /* padding: 0; */
+  margin: 0 10px 0 0;
+  align-self: center;
 }
 
 .datos-section {

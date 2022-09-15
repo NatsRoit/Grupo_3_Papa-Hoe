@@ -21,6 +21,7 @@ window.onload = function () {
   let prodImage5 = document.querySelector("#image5");
   let prodFins = document.querySelector("#fin_id");
   prodFins.disabled = true;
+  let previewProdImg = document.querySelector("#previewProdImg");
 
 
   // Los que no sé cómo resolver
@@ -307,8 +308,8 @@ return result;
   // Defino una variable para atrapar a cada uno de los botones que cargan la imagen
   for (let i = 0; i < prodImageAll.length; i++) {
     let inputImg = prodImageAll[i].querySelector("input");
-    inputImg.valid = false;
     let imgErrMsg = (prodImageAll[0].parentElement.parentElement).querySelector("#errMsg");
+    inputImg.valid = false;
     
   // Defino la función que se desencadenará al onfocus cada uno de esos botones"
   inputImg.addEventListener("focus", function (e) {
@@ -317,11 +318,11 @@ return result;
     imgContainer.classList.remove("valid-input");
   });
 
-  // Defino la función que se desencadenará al onblur/onchange el campo del input"
+  // Defino la función que se desencadenará al onblur el campo del input"
   inputImg.addEventListener("blur", setInvalidClass);
   function setInvalidClass(e) {
-    let imagenes = this.files;
     if (!hasFiles(prodImageAll)){
+      let imagenes = this.files;
         imgErrMsg.innerHTML = "Una imagen dice más que mil palabras... No olvides agregar al menos una!";
         for (const box of prodImageAll) {
           box.classList.remove("valid-input");
@@ -360,6 +361,10 @@ return result;
             let image = document.createElement("img");
             image.src = URL.createObjectURL(file);
             preview.appendChild(image);
+            console.log(inputImgp[0])
+            if (inputImg[0]){
+            previewProdImg.src = image.src
+          }
             cancelCross.style.display = "block"
 
             imgErrMsg.innerHTML = "";
@@ -429,8 +434,8 @@ let noErrors =
       && prodStock.valid
       && prodDescription.valid
       && prodFeatures.valid
-      && (prodImage1.value || prodImage2.value || prodImage3.value || prodImage4.value || prodImage5.value)
-      && (prodCategory.value == "1"? prodFins.valid : true);
+      && (prodImage1.valid || prodImage2.valid || prodImage3.valid || prodImage4.valid || prodImage5.valid)
+      && (prodCategory.value == "1"? prodFins.valid : prodFins.valid = true);
 
   
 let prueba = document.querySelector("a#prueba") 
@@ -457,6 +462,7 @@ prueba.addEventListener("click", (e)=>{
 
 
   form.addEventListener("submit", (e) => {
+    e.preventDefault();
     let formElements = document.querySelector(".formulario").elements;
     let isInvalid = [];
       for (let i = 0; i < formElements.length; i++) {
@@ -467,13 +473,12 @@ prueba.addEventListener("click", (e)=>{
         }
       };
       if (isInvalid.length > 0) {
-        e.preventDefault();
         for (let i = isInvalid.length -1; i >= 0; i--) {
           // window.scrollTo({top:0, behavior:'smooth'});
           isInvalid[i].focus();
         }
+      } else {
+        form.submit();
       }
   });
-  
-
 } // ETIQUETA DE CIERRE
