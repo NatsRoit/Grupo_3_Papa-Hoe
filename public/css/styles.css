@@ -22,10 +22,7 @@ ESCALA DE AZULES (del marino al arena)
 FAMILIAS TIPOGRÁFICAS
 font-family: "Quicksand", sans-serif;
   font-family: "Bebas Neue", cursive;
-
 */
-
-
 
 /*======================================================================
 --------------------------- CLASES GENERALES ------------------------*/
@@ -54,12 +51,6 @@ body {
   width: 100%;
   background-color: #f7f7f7;
 }
-
-/* .container{
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px
-} */
 
 main {
   width: 100%;
@@ -165,31 +156,25 @@ a.button-link {
   background-position: center center;
   transition: all 1ms;
 }
-
 a.button-link:visited {
   color: #001728;
 }
-
 a.button-link:hover {
   filter: opacity(90%);
   background-blend-mode: hard-light;
   font-weight: 600;
 }
-
 a.button-link:active {
   color: #335cb1;
   transform: translateY(1.5px);
   font-weight: 600;
   font-size: 15.5px;
 }
-
 /* .button-link a:active {
     background: element(scaleX/-1);
 } */
 
-/*------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ------*/
-
-
+/*---------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ---------------*/
 ul.breadcrumb {
   /* padding: 20px; */
   padding: 20px 0;
@@ -215,6 +200,97 @@ ul.breadcrumb li.active {
 }
 ul.breadcrumb li a:hover {
   color: #001728;
+}
+
+
+/*------------------------- INPUT's ONFOCUS ------------------------*/
+input:focus,
+input:focus-visible {
+  border: 2px solid #335cb1 !important;
+  outline: transparent !important;
+}
+input[type=email]:-internal-autofill-selected {
+  appearance: auto;
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+}
+
+
+/*----------------------- CUSTOM CHECKBOXES ------------------------*/
+
+/* Customize the label (the container) */
+label.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  font-weight: 400;
+  color: #293c49;
+  letter-spacing: .5px;
+  margin: 0;
+}
+
+/* Hide the browser's default checkbox */
+label.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20%;
+  border: #b3b1b3 solid 0.5px;
+}
+
+/* On mouse-over, add a grey background color */
+label.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+label.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+  border: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+label.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label.container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 
@@ -1102,16 +1178,6 @@ object-position: 0 0;
   padding: 5px 20px;
 }
 
-.formulario {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-}
-.formulario form{
-  width: 100%;
-}
-
 .form-input {
   display: flex;
   flex-wrap: wrap;
@@ -1133,8 +1199,10 @@ width: auto;
   font-size: 12px;
   font-weight: 400;
   color: #293c49;
+  letter-spacing: .5px;
 }
-.form-input input:not(#keepSession):not(#discount) {
+/* .form-input input:not(#keepSession):not(#discount) { */
+.form-input input {
   border-radius: 2px;
   height: 45px;
   margin: 4px 0 20px 0;
@@ -1283,7 +1351,16 @@ button.submit-button {
   background-color: #f7f8f8db;
   padding: 15px;
 }
-.checkbox:not(#keepSession) {
+.form-input.prod-descuento input[type="number" i]::placeholder {
+  color: black;
+}
+
+.checkbox {
+  display: flex;
+  width: 100%;
+  padding: 0 20px 0 0;
+}
+.checkbox {
   display: flex;
   width: 100%;
   padding: 0 20px 0 0;
@@ -1293,18 +1370,6 @@ button.submit-button {
   width: 50%;
   flex-grow: 1;
   line-height: 20pt;
-}
-
-.form-input.prod-descuento input[type="number" i]::placeholder {
-  color: black;
-}
-.form-input.prod-descuento input[type="checkbox" i],
-input#keepSession {
-  height: 14px;
-  /* width: 12%; */
-  /* padding: 0; */
-  margin: 0 10px 0 0;
-  align-self: center;
 }
 
 .datos-section {
@@ -1516,12 +1581,6 @@ button[class*="btn"] {
   cursor: pointer;
   padding: 0 6px;
 }
-button:focus,
-input:focus {
-  outline: 0;
-}
-
-
 
 .radio-dropdown {
   background-color: #f7f7f7;
@@ -1965,35 +2024,49 @@ select option[value=""] {
 .form-5col {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   width: 100%;
-  margin: 5px 0 30px 0;
+  margin: 5px 0 25px;
   position: relative;
 }
 
-.productCreate .form-5col div,
-.productCreate .form-5col input {
-  flex-direction: column;
-  width: 100%;
-  aspect-ratio: auto 1 / 1 !important;
-  overflow: hidden;
-
+.productCreate .prodImgMain {
+  width: 30%;
+  margin: 0 11px 0 0;
 }
-
-.productCreate .form-input .prodImg {
-  width: 19%;
+.productCreate .prodImgGallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  flex-direction: row;
+  justify-content: inherit;
+  align-content: space-between;
+}
+.productCreate .prodImgGallery .prodImg{
+  width: 24%;
+}
+.productCreate .prodImg {
   background-image: url(../assets/uploadFIle.png);
   background-position: top left;
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
   position: relative;
-  border-radius: 5px
+  border-radius: 5px;
+  background-color: rgba(0, 23, 40, 0.03);
+  aspect-ratio: auto 3 / 4 !important;
+  overflow: hidden;
 }
-
-.productCreate .form-input .prodImg:focus-within{
+.productCreate .prodImg:focus-within{
   border : 1.5px solid rgba(0, 23, 40, 0.2);
   border-radius: 5px;
+}
+p.prodImgCaption {
+  margin: 0 0 30px;
+  color: rgba(0, 23, 40, 0.4);
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0 0 60px;
+
 }
 .productCreate #priceCurrency {
   position: absolute;
@@ -2172,7 +2245,7 @@ img.detalles-design {
 
 span.errMsg {
   color: #ff5d48;
-  padding: 5px 20px 5px 0;
+  padding: 5px 10px 5px 0;
   display: inline-block;
   margin-left: 10px;
 }
@@ -2194,7 +2267,7 @@ span.errMsg {
 }
 .productCreate .opciones textarea.valid-input,
 .form-input input.valid-input {
-  background-image: url("/assets/check-mark.svg");
+  background-image: url("/assets/check-mark.svg"); 
   background-repeat: no-repeat;
   background-position: right .75rem top 12px;
   background-size: 20px 20px;
@@ -2492,7 +2565,7 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     .profileEdit,
     .profile {
       padding: 50px 5%;
-      max-width: 1200px;
+      max-width: 1220px;
     }
     
     .productCreate h2,
@@ -2576,7 +2649,7 @@ input.visually-hidden:is(:focus, :focus-within) + label {
                    Navegación en DESKTOP (ancho mínimo 1200 px)
 -------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------*/
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .main-header {
     height: 80px;
   }

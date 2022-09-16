@@ -5,7 +5,6 @@
 
     <body>
         <%- include("../partials/header") %>
-        <script src="/js/users.js"></script>
 
             <main>
                 <div class="login-register">
@@ -18,75 +17,61 @@
                         <div class="auth-error-message">
                             <p>Oops! Controlá tus datos</p>
                         </div>
-                        <% } %>
+                    <% } else { %>
+                        <div class="auth-error-message hidden">
+                            <p>Oops! Controlá tus datos</p>
+                        </div>
+                    <% } %>
 
-                    <div class="formulario-wrapper">
-                        <form class="formulario" id="formulario" action="/user/login" method="POST">
+                    <form id="formulario" action="/user/login" method="POST">
 
+                        <div class="form-input">
+                            <label class="form-label" for="email">Email</label>
+                            <% if (typeof errors != 'undefined' && errors.email) { %>
+                            <span class="under"><%= errors.email.msg %> </span>
+                            <% } else { %>
+                            <span class="errMsg" id="errMsg"></span>
+                            <% } %>
+                            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
+                        </div>
 
-                            <div class="form-input" id="form-input-email">
-                                <label class="form-label" for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
-                                    <span class="under"><%= errors.email.msg %> </span>
-                                    <% } %>
-                                </label>
-                                <div class="form-input" id="email-icono">
-                                    <input type="email" name="email" id="email" placeholder="Email" required>
-                                    <i class="form-validacion-estado fa-solid fa-circle-xmark"></i>
-                                </div>
-                                <p class="error-input" style="color:red"> Necesitamos que completes tu Email</p>
-                            </div>
+                        <div class="form-input" id="form-input-password">
+                            <label class="form-label" for="password">Contraseña</label>
+                            <% if (typeof errors != 'undefined' && errors.password) { %>
+                            <span class="under"><%= errors.password.msg %> </span>
+                            <% } else { %>
+                            <span class="errMsg" id="errMsg"></span>
+                            <% } %>
+                            <a href="#"> ¿Olvidaste tu contraseña?</a>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                        </div>
 
+                        <label class="container">Keep me signed in
+                            <input type="checkbox" name="keepSession" id="keepSession" value="keepSession">
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <div class="form-input" id="form-input-password">
-                                <label class="form-label" for="password">Contraseña <% if (typeof errors != 'undefined' && errors.password) { %>
-                                    <span class="under"><%= errors.password.msg %> </span>
-                                    <% } %>
-                                    <a href="#">¿Olvidaste tu contraseña?</a>
-                                </label>
-                                <div class="form-input" id="pasword-icono">
-                                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                                    <i class="fa-solid fa-circle-xmark"></i>
-                                </div>
-                                <p class="error-input" style="color:red"> No olvides completar tu contraseña</p>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="keepSession" id="keepSession" value="keepSession" >
-                                <label class="form-input checkbox" for="keepSession"> Keep me signed in</label>
-                            </div>
-                            <div class="submit-button">
-                                <button class="submit-button" type="submit">Ingresar</button>
-                            </div>
-                            <div class="input-mensaje-error">
-                                <p>
-                                    <i class="fa-solid fa-triangle-exclamation" style="color: red"></i>
-                                    <b style="color:red"> Oops! Controlá tus datos</b>
-                                </p>
-                            </div>
-                        </form>
+                        <!-- <div>
+                            <input type="checkbox" name="keepSession" id="keepSession" value="keepSession" >
+                            <label for="keepSession"> Keep me signed in</label>
+                        </div> -->
 
-
-                    </div>
+                        <div class="submit-button">
+                            <button class="submit-button" type="submit">Ingresar</button>
+                        </div>
+                    </form>
 
                     <div class="login-redirect">
                         <p><a href="/user/register">Crear cuenta</a></p>
                     </div>
-
-                    <!-- <div class="registrarse">
-                        <p>O ingresá con:</p>
-                        <div class="alternative-login">
-                            <i class="fa-brands fa-facebook"></i>
-                            <img id="google" src="/img/google_icon-icons.com_62736.svg" alt="Logo-Google">
-                        </div>
-                    </div> -->
-
-
-                    <!-- <div class="reCAPTCHA">
-                        <p> Protegido por reCAPTCHA | <a href="#">Privacidad</a> |  <a href="#">Condiciones</a>
-                        </p>
-                    </div> -->
                 </div>
             </main>
+
+        <!-- footer -->
         <%- include("../partials/footer") %>
+        <!-- /footer -->
+
+        <script src="/js/users.js"></script>
     </body>
 
 </html>
