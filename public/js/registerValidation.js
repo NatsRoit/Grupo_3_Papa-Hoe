@@ -137,11 +137,9 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION IMAGEN
   
-    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-   // var allowedSize = 1024;
-    if(!allowedExtensions.exec(imagen.value) || imagen.size>allowedSize ){        
-        errors.push('Las extenciones permitidas son .jpeg/.jpg/.png/.gif y no puede superar 1MB');
-        
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;    
+    if(!allowedExtensions.exec(imagen.value) ){        
+        errors.push('Las extenciones permitidas son .jpeg/.jpg/.png/.gif y no puede superar 1MB');      
         imagen.classList.add("is-invalid");
     }
     
@@ -150,6 +148,8 @@ formulario.addEventListener("submit", async (e) => {
       telefono.classList.remove("is-invalid");
     }
 
+  
+   
   // ERRORES
   let ulErrors = document.querySelector(".errores");
 
@@ -174,6 +174,7 @@ formulario.addEventListener("submit", async (e) => {
       timer: 1500,
       
     });
+
 
     // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
   }
