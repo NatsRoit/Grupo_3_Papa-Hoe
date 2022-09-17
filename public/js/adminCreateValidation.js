@@ -21,6 +21,7 @@ window.onload = function () {
   let prodImage5 = document.querySelector("#image5");
   let prodFins = document.querySelector("#fin_id");
   prodFins.disabled = true;
+  let previewProdImg = document.querySelector("#previewProdImg");
 
 
   // Los que no sé cómo resolver
@@ -41,8 +42,8 @@ window.onload = function () {
     prodName.classList.remove("invalid-input");
     prodName.classList.remove("valid-input");
     // prodName.previousElementSibling.innerHTML = "";
-
   });
+  
   prodName.addEventListener("blur", function () {
     if (prodName.value == "") {
       prodName.previousElementSibling.innerHTML = "No te olvides de dar un nombre al producto!";
@@ -69,7 +70,7 @@ window.onload = function () {
 
   prodCategory.addEventListener("blur", function () {
     if (prodCategory.value == "") {
-      prodCategory.previousElementSibling.innerHTML = "Selecciná una categoría";
+      prodCategory.previousElementSibling.innerHTML = "Seleccioná una categoría";
       prodCategory.classList.add("invalid-input");
     } else {
       prodCategory.previousElementSibling.innerHTML = "";
@@ -84,13 +85,13 @@ window.onload = function () {
   prodCategory.addEventListener("change", function () {
     prodSubcategory.innerHTML = "";
     if (prodCategory.value == "1") {
-      var optionArray = [ "|Surfboards", "1|Shortboards", "2|Mid-Boards", "3|Longboards" ];
+      var optionArray = [ "|Subcategoría", "1|Shortboards", "2|Mid-Boards", "3|Longboards" ];
     } else if (prodCategory.value == "2") {
-      var optionArray = ["|Accesorios", "4|Fins", "5|Leg Ropes", "6|Tractions"];
+      var optionArray = ["|Subcategoría", "4|Fins", "5|Leg Ropes", "6|Tractions"];
     } else if (prodCategory.value == "3") {
-      var optionArray = ["|Complementos", "7|Apparel", "8|Bags & Packs"];
+      var optionArray = ["|Subcategoría", "7|Apparel", "8|Bags & Packs"];
     } else if (prodCategory.value == "4") {
-      var optionArray = ["|Custom Board", "9|Custom Board"];
+      var optionArray = ["|Subcategoría", "9|Custom Board"];
     }
     for (let option in optionArray) {
       let clave_valor = optionArray[option].split("|");
@@ -121,8 +122,11 @@ window.onload = function () {
   });
 
   prodSubcategory.addEventListener("blur", function () {
-    if (prodSubcategory.value == "") {
-      prodSubcategory.previousElementSibling.innerHTML = "Selecciná la subcategoría";
+    if (prodSubcategory.value == "" && prodCategory.value == "") {
+      prodSubcategory.previousElementSibling.innerHTML = "Seleccioná <strong>categoría</strong> y subcategoría";
+      prodSubcategory.classList.add("invalid-input");
+    } else if (prodSubcategory.value == "") {
+      prodSubcategory.previousElementSibling.innerHTML = "Seleccioná la subcategoría";
       prodSubcategory.classList.add("invalid-input");
     } else {
       prodSubcategory.previousElementSibling.innerHTML = "";
@@ -163,7 +167,7 @@ window.onload = function () {
 
   prodBrand.addEventListener("blur", function () {
     if (prodBrand.value == "") {
-      prodBrand.previousElementSibling.innerHTML = "Selecciná una marca";
+      prodBrand.previousElementSibling.innerHTML = "Seleccioná una marca";
       prodBrand.classList.add("invalid-input");
     } else {
       prodBrand.previousElementSibling.innerHTML = "";
@@ -186,6 +190,12 @@ window.onload = function () {
     // prodPrice.parentElement.previousElementSibling.innerHTML = "";
   });
 
+  prodPrice.addEventListener("keydown", function (e){
+    if (e.key == "."){
+      e.preventDefault()
+    }
+  });
+
   prodPrice.addEventListener("input", function (){
     if (this.value !== "") {
       priceCurrency.value = newprodPrice(this.value);
@@ -194,6 +204,8 @@ window.onload = function () {
       this.classList.add("valid-input");
       priceCurrency.style.backgroundColor = "#fafdfd"
       priceCurrency.style.opacity= "100%"
+  } else {
+    priceCurrency.value = newprodPrice(0);
   }
 });
 
@@ -201,7 +213,7 @@ window.onload = function () {
     if (this.value == "") {
       this.parentElement.previousElementSibling.innerHTML = "No olvidés el precio!";
       this.classList.add("invalid-input");
-      priceCurrency.style.backgroundColor = "#fcebe8";
+      this.classList.remove("valid-input");
     } else if (prodPrice.value < 0) {
       this.parentElement.previousElementSibling.innerHTML = "Usá valores positivos";
       this.classList.remove("valid-input");
@@ -217,7 +229,7 @@ window.onload = function () {
 // FUNCIÓN Q TRANSFORMA EL VALOR INGRESADO, EN VALOR $ARS
 // no sé si quizás haya que comentarla pq no sé cómo pasará el valor a la db
 function newprodPrice(value) {
-  let valor =  value % 1 == 0? value.replace(".","").replace(",","").replace(`/\D/g`,"")*100: value * 100;
+  let valor =  value % 1 == 0 && value!=""? value.replace(".","").replace(",","").replace(`/\D/g`,"")*100: value * 100;
   const options = {
     style: "currency",
     currency: "ARS",
@@ -307,8 +319,8 @@ return result;
   // Defino una variable para atrapar a cada uno de los botones que cargan la imagen
   for (let i = 0; i < prodImageAll.length; i++) {
     let inputImg = prodImageAll[i].querySelector("input");
-    inputImg.valid = false;
     let imgErrMsg = (prodImageAll[0].parentElement.parentElement).querySelector("#errMsg");
+    inputImg.valid = false;
     
   // Defino la función que se desencadenará al onfocus cada uno de esos botones"
   inputImg.addEventListener("focus", function (e) {
@@ -317,11 +329,11 @@ return result;
     imgContainer.classList.remove("valid-input");
   });
 
-  // Defino la función que se desencadenará al onblur/onchange el campo del input"
+  // Defino la función que se desencadenará al onblur el campo del input"
   inputImg.addEventListener("blur", setInvalidClass);
   function setInvalidClass(e) {
-    let imagenes = this.files;
     if (!hasFiles(prodImageAll)){
+      let imagenes = this.files;
         imgErrMsg.innerHTML = "Una imagen dice más que mil palabras... No olvides agregar al menos una!";
         for (const box of prodImageAll) {
           box.classList.remove("valid-input");
@@ -360,6 +372,10 @@ return result;
             let image = document.createElement("img");
             image.src = URL.createObjectURL(file);
             preview.appendChild(image);
+            console.log(inputImgp[0])
+            if (inputImg[0]){
+            previewProdImg.src = image.src
+          }
             cancelCross.style.display = "block"
 
             imgErrMsg.innerHTML = "";
@@ -429,8 +445,8 @@ let noErrors =
       && prodStock.valid
       && prodDescription.valid
       && prodFeatures.valid
-      && (prodImage1.value || prodImage2.value || prodImage3.value || prodImage4.value || prodImage5.value)
-      && (prodCategory.value == "1"? prodFins.valid : true);
+      && (prodImage1.valid || prodImage2.valid || prodImage3.valid || prodImage4.valid || prodImage5.valid)
+      && (prodCategory.value == "1"? prodFins.valid : prodFins.valid = true);
 
   
 let prueba = document.querySelector("a#prueba") 
@@ -457,6 +473,7 @@ prueba.addEventListener("click", (e)=>{
 
 
   form.addEventListener("submit", (e) => {
+    e.preventDefault();
     let formElements = document.querySelector(".formulario").elements;
     let isInvalid = [];
       for (let i = 0; i < formElements.length; i++) {
@@ -467,13 +484,12 @@ prueba.addEventListener("click", (e)=>{
         }
       };
       if (isInvalid.length > 0) {
-        e.preventDefault();
         for (let i = isInvalid.length -1; i >= 0; i--) {
           // window.scrollTo({top:0, behavior:'smooth'});
           isInvalid[i].focus();
         }
+      } else {
+        form.submit();
       }
   });
-  
-
 } // ETIQUETA DE CIERRE

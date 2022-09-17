@@ -10,8 +10,8 @@ module.exports.validar = (method) => {
         case 'login': {
           return [
             body('email')
-            .notEmpty().withMessage('completar dirección de correo electrónico') // el campo email no puede estar vacío
-            .isEmail().withMessage('Agregar un email válido')// debe ser un email válido
+            .notEmpty().withMessage('¿Has olvidado tu email?') // el campo email no puede estar vacío
+            .isEmail().withMessage('Parece que ese email no es válido')// debe ser un email válido
             .custom( async (value) => {        // debe esxistir en la base de datos
                 await db.User.findOne({ where: {email: value }}).then(user => {
                       if (!user)
@@ -21,7 +21,7 @@ module.exports.validar = (method) => {
           
             //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
             body('password')
-            .notEmpty().withMessage('la contraseña no puede estar vacía')// obligatoria
+            .notEmpty().withMessage('La contraseña no puede estar vacía')// obligatoria
             .custom( async (value, {req,next}) => {    //debe coincidir con la que está en la base
                 await db.User.findOne({ where: {email: req.body.email }}).then(user => {
                   if(user){

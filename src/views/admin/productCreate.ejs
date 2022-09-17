@@ -24,7 +24,6 @@
                                         <label for="name">Nombre del Producto<sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <input type="text" name="name" id="nombreProd" placeholder="Ej: Rocker Pocker III">
-                                        <!-- <i class="fa-solid fa-circle-check"></i> -->
                                     </div>
 
                                     <div class="form-2col">
@@ -105,8 +104,8 @@
                                             <label for="price">Precio Unitario<sup>*</sup></label>
                                             <span class="errMsg" id="errMsg"></span>
                                             <div class="secretInput">
-                                                <input type="number" name="price" id="price" placeholder="1000,00" step=".5" min="0">
-                                                <output name="priceCurrency" for="price" id="priceCurrency"></output>
+                                                <input type="number" name="price" id="price" placeholder="1000,00" step=".50" min="0" pattern="[0-9]+([,][0-9]{1,2})?">
+                                                <!-- <output name="priceCurrency" for="price" id="priceCurrency"></output> -->
                                             </div>
 
                                         </div>
@@ -143,40 +142,45 @@
                                         <label for="prodImage">Imágenes<sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <div class="form-5col">
-                                            <div class="prodImg">
-                                                <label for="image1" class="labelImg"></label><br>
-                                                <input type="file" name="prodImage" id="image1" class="visually-hidden">
-                                                <div id="imgPreview">
-                                                    <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                            <div class="prodImgMain">
+                                                <div class="prodImg">
+                                                    <label for="image5" class="labelImg"></label><br>
+                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <div id="imgPreview">
+                                                        <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="prodImg">
-                                                <label for="image2" class="labelImg"></label><br>
-                                                <input type="file" name="prodImage" id="image2" class="visually-hidden">
-                                                <div id="imgPreview">
-                                                    <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                            <div class="prodImgGallery">
+                                                <div class="prodImg">
+                                                    <label for="image5" class="labelImg"></label><br>
+                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <div id="imgPreview">
+                                                        <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="prodImg">
-                                                <label for="image3" class="labelImg"></label><br>
-                                                <input type="file" name="prodImage" id="image3" class="visually-hidden">
-                                                <div id="imgPreview">
-                                                    <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                <div class="prodImg">
+                                                    <label for="image5" class="labelImg"></label><br>
+                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <div id="imgPreview">
+                                                        <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="prodImg">
-                                                <label for="image4"class="labelImg"></label><br>
-                                                <input type="file" name="prodImage" id="image4" class="visually-hidden">
-                                                <div id="imgPreview">
-                                                    <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                <div class="prodImg">
+                                                    <label for="image5" class="labelImg"></label><br>
+                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <div id="imgPreview">
+                                                        <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="prodImg">
-                                                <label for="image5" class="labelImg"></label><br>
-                                                <input type="file" name="prodImage" id="image5" class="visually-hidden">
-                                                <div id="imgPreview">
-                                                    <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                <div class="prodImg">
+                                                    <label for="image5" class="labelImg"></label><br>
+                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <div id="imgPreview">
+                                                        <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                                    </div>
                                                 </div>
+                                                <p class="prodImgCaption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ut ducimus nobis reprehenderit tempora sunt, temporibus nesciunt, eaque beatae quo doloremque harum molestias debitis commodi hic est ipsa repellendus. Dolorum!</p>
                                             </div>
                                         </div>
                                     </div>
@@ -224,10 +228,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div class="form-input prod-descuento">
-                                        <label><input type="checkbox" name="discount" id="isDiscounted">Producto en promoción</label>
-                                        <input type="number" name="discount" id="discount" min="0" max="100" placeholder="Querés aplicar un descuento?" required>
-                                    </div> -->
                                     <div class="form-input prod-descuento">
                                         <label for="discount">Producto en promoción</label>
                                         <input type="number" name="discount" id="discount" min="0" max="100" placeholder="Aplicar % descuento">
@@ -247,10 +247,13 @@
 
 
                     <div class="wrapper-Col-33" title="Así se verá tu producto publicado">
-                        <h2>Thumbnail</h2>
+                        <h2>Preview</h2>
                         <div class="img-slider">
-                            <img src="/images/usuarios/default-admin.jpg" alt="imagen de perfil">
+                            <img id="previewProdImg" src="/images/usuarios/default-admin.jpg" alt="Preview del producto">
                         </div>
+                            <div class="secretInput">
+                                <output name="priceCurrency" for="price" id="priceCurrency"></output>
+                            </div>
                         Espacio para botones (EN CONSTRUCCIÓN)
                     </div>
 
@@ -258,7 +261,7 @@
             </main>
 
             <%- include("../partials/footer") %>
-            <script src="/js/adminCreateValidation.js"></script>
+            <!-- <script src="/js/adminCreateValidation.js"></script> -->
             <script src="/js/multiselect-dropdown.js" ></script>
         </body>
 
