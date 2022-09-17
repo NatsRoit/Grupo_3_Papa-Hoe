@@ -79,8 +79,9 @@ module.exports.validar = (method) => {
             
             
                 body('avatar').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
-                      let file = req.file;
-                      if(file){
+
+                      return validateImage(req,false)
+                     /* if(file){
                         let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
                         let fileExtension = path.extname(file.originalname);
                           if (!acceptedExtensions.includes(fileExtension)){
@@ -92,11 +93,72 @@ module.exports.validar = (method) => {
                           filename : 'default-admin.jpg'
                         }
                         return true
-                    }
+                    }*/
                 })
 
             ]
         }
+
+        case 'create': {
+            return [
+              body('name')
+              .notEmpty().withMessage('El campo nombre no puede estar vacío')
+              .isLength({min:5}).withMessage('El nombre del producto debe tener al menos 5 caracteres'),   
+              body('category_id')
+              .notEmpty().withMessage('Agrega una categoría'),
+              body('subcategory_id')
+              .notEmpty().withMessage('Agrega una subcategoría'),
+              body('brand_id')
+              .notEmpty().withMessage('Agrega una marca'),
+              body('price')
+              .notEmpty().withMessage('Agrega el precio del producto'),
+              body('price')
+              .notEmpty().withMessage('Ingresa lel precio del producto'),
+              body('stock')
+              .notEmpty().withMessage('Ingresa la cantidad de unidades disponibles'),
+              body('description')
+              .notEmpty().withMessage('Ingresa la cantidad de unidades disponibles')
+              .isLength({min:20}).withMessage('Ingrese descripción de más de 5 caracteres'), 
+              body('image1').custom((value, {req}) =>{ // la imágen es obligatoria y si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,true)
+              }),
+              body('image2').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image3').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image4').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image5').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              })
+
+            ]
+         
+        }
+        
     }
 
+}
+
+function validateImage(req, isRequired) {
+
+  let file = req.file;
+
+  if(file){
+    let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
+    let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)){
+        throw new Error("Extensión de imagen no valida")
+      }
+
+  } else {
+    if(isRequired) throw new Error("Debes adjuntar una imagen")
+    req.file = { 
+      filename : '_default-product.png'
+    }
+    return true    
+}
 }
