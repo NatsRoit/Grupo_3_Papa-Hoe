@@ -30,9 +30,16 @@ router.get('/test',adminController.test);
 
 
 // CREATE NUEVO PRODUCTO
+<<<<<<< HEAD
 // router.get("/create",logueado, adminController.createView);
 router.get("/create", logueado, adminController.createView);
 router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);//validaciones.validar('create'), adminController.create);
+=======
+// router.get("/create", logueado, adminController.createView);
+router.get("/create", adminController.createView);
+// router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);
+router.post("/create", upload.array('prodImage', 5), adminController.create);
+>>>>>>> de6c6a71c2bf3f01caf7aba136e967ae8043406c
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);

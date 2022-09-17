@@ -21,7 +21,7 @@
                     <div class="wrapper-Col-66">
                         <h2>Datos Personales</h2>
                         <div class="register">
-                            <ul clss="errores"></ul>
+                            <ul class="errores"></ul>
                             <form class="formulario" action="/user/register" method="POST"
                                 enctype="multipart/form-data">
                                 <section class="datos-section">
@@ -31,42 +31,43 @@
                                             <label for="nombre">Nombre <% if (typeof errors != 'undefined' && errors.nombre) { %>
                                                 <span class="under"><%= errors.nombre.msg %> </span>
                                             <% } %></label>
-                                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                                            <input required type="text" name="nombre" id="nombre" placeholder="Nombre" >
+                                            
                                         </div>
                                         <div class="form-input">
                                             <label for="apellido">Apellido <% if (typeof errors != 'undefined' && errors.apellido) { %>
                                                 <span class="under"><%= errors.apellido.msg %> </span>
                                             <% } %></label>
-                                            <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-                                                required>
+                                            <input required type="text" name="apellido" id="apellido" placeholder="Apellido"
+                                                >
                                         </div>
                                     </div>
                                     <div class="form-input">
                                         <label for="usuario">Usuario <% if (typeof errors != 'undefined' && errors.usuario) { %>
                                             <span class="under"><%= errors.usuario.msg %> </span>
                                         <% } %></label>
-                                        <input type="text" name="usuario" id="usuario" placeholder="Elige un nombre de usuario"
-                                            required>
+                                        <input required type="text" name="usuario" id="usuario" placeholder="Elige un nombre de usuario"
+                                            >
                                     </div>
                                     <div class="form-input">
                                         <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
                                             <span class="under"><%= errors.email.msg %> </span>
                                         <% } %></label>
-                                        <input type="email" name="email" id="email" placeholder="Email" required>
+                                        <input required type="email" name="email" id="email" placeholder="Email" >
                                     </div>
                                     <div class="form-input">
                                         <label for="contraseña">Contraseña <% if (typeof errors != 'undefined' && errors.password) { %>
                                             <span class="under"><%= errors.password.msg %> </span>
                                         <% } %></label>
-                                        <input type="password" name="password" id="password" placeholder="Contraseña"
-                                            required>
+                                        <input required type="password" name="password" id="password" placeholder="Contraseña"
+                                            >
                                     </div>
                                     <div class="form-input">
                                         <label for="confirm_password">Confirmar contraseña <% if (typeof errors != 'undefined' && errors.confirm_password) { %>
                                             <span class="under"><%= errors.confirm_password.msg %> </span>
                                         <% } %></label>
-                                        <input type="password" name="confirm_password" id="confirm_password"
-                                            placeholder="Confirmar Contraseña" required>
+                                        <input required type="password" name="confirm_password" id="confirm_password"
+                                            placeholder="Confirmar Contraseña" >
                                     </div>
                                 </section>
                                 <section class="datos-section">
@@ -74,40 +75,40 @@
                                     <div class="form-2col">
                                         <div class="form-input">
                                             <label for="province">Provincia</label>
-                                            <input type="text" name="province" id="province" placeholder="Provincia"
-                                                required>
+                                            <input required type="text" name="province" id="province" placeholder="Provincia"
+                                                >
                                         </div>
                                         <div class="form-input">
                                             <label for="country">País</label>
-                                            <input type="text" name="country" id="country" placeholder="País" required>
+                                            <input required type="text" name="country" id="country" placeholder="País" >
                                         </div>
                                     </div>
                                     <div class="form-input">
                                         <label for="direccion">Dirección</label>
-                                        <input type="text" name="direccion" id="direccion" placeholder="Calle, Nº"
-                                            required>
+                                        <input required type="text" name="direccion" id="direccion" placeholder="Calle, Nº"
+                                            >
                                     </div>
                                     <div class="form-3col">
                                         <div class="form-input">
                                             <label for="departamento">Piso, departamento</label>
-                                            <input type="text" name="departamento" id="departamento"
+                                            <input required type="text" name="departamento" id="departamento"
                                                 placeholder="Piso, departamento">
                                         </div>
                                         <div class="form-input">
                                             <label for="localidad">Localidad</label>
-                                            <input type="text" name="localidad" id="localidad" placeholder="Localidad"
-                                                required>
+                                            <input required type="text" name="localidad" id="localidad" placeholder="Localidad"
+                                                >
                                         </div>
                                         <div class="form-input">
                                             <label for="codigoPostal">Código Postal</label>
-                                            <input type="text" name="codigoPostal" id="codigoPostal"
-                                                placeholder="Código Postal" required>
+                                            <input required type="text" name="codigoPostal" id="codigoPostal"
+                                                placeholder="Código Postal" >
                                         </div>
                                     </div>
                                     <div class="form-input">
                                         <label for="telefono">Teléfono</label>
-                                        <input type="text" name="telefono" id="telefono" placeholder="Teléfono"
-                                            required>
+                                        <input required type="text" name="telefono" id="telefono" placeholder="Teléfono"
+                                            >
                                     </div>
                                 </section>
                                 <div class="form-input custom-file">
@@ -116,6 +117,7 @@
                                         <span class="under"><%= errors.avatar.msg %> </span>
                                     <% } %></label>
                                     <input type="file" name="avatar" id="avatar">
+                                    <img id="imagenPrevisualizacion">
                                 </div>
                                 <div class="submit-button">
                                     <button class="submit-button" type="submit">Crear</button>

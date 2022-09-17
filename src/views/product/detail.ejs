@@ -23,7 +23,7 @@
                         <p>
                             <a href="/admin/create"> Crear Producto </a>|
                             <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
-                            <a href="/admin/delete/<%=producto.id%>"> Borrar Producto </a>
+                            <a href="/admin/delete/<%=producto.id%>" class="warningCancel"> Borrar Producto </a>
                         </p>
                         <% }%>
                 </div>
@@ -201,8 +201,9 @@
                         <% } %>
                 </section>
             </div>
-            </main>
-            <%- include("../partials/footer") %>
+        </main>
+        <!-- footer -->
+        <%- include("../partials/footer") %>
+        <!-- footer -->
     </body>
-
 </html>

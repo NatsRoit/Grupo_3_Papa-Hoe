@@ -22,10 +22,7 @@ ESCALA DE AZULES (del marino al arena)
 FAMILIAS TIPOGRÁFICAS
 font-family: "Quicksand", sans-serif;
   font-family: "Bebas Neue", cursive;
-
 */
-
-
 
 /*======================================================================
 --------------------------- CLASES GENERALES ------------------------*/
@@ -55,12 +52,6 @@ body {
   background-color: #f7f7f7;
 }
 
-/* .container{
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px
-} */
-
 main {
   width: 100%;
   background: #f7f7f7;
@@ -85,7 +76,7 @@ main h2 {
 
 main p {
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   color: #516169;
 }
@@ -165,31 +156,25 @@ a.button-link {
   background-position: center center;
   transition: all 1ms;
 }
-
 a.button-link:visited {
   color: #001728;
 }
-
 a.button-link:hover {
   filter: opacity(90%);
   background-blend-mode: hard-light;
   font-weight: 600;
 }
-
 a.button-link:active {
   color: #335cb1;
   transform: translateY(1.5px);
   font-weight: 600;
   font-size: 15.5px;
 }
-
 /* .button-link a:active {
     background: element(scaleX/-1);
 } */
 
-/*------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ------*/
-
-
+/*---------------- BREADCRUM (BARRA DE NAVEGACIÓN DINÁMICA) ---------------*/
 ul.breadcrumb {
   /* padding: 20px; */
   padding: 20px 0;
@@ -215,6 +200,97 @@ ul.breadcrumb li.active {
 }
 ul.breadcrumb li a:hover {
   color: #001728;
+}
+
+
+/*------------------------- INPUT's ONFOCUS ------------------------*/
+input:focus,
+input:focus-visible {
+  border: 2px solid #335cb1 !important;
+  outline: transparent !important;
+}
+input[type=email]:-internal-autofill-selected {
+  appearance: auto;
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+}
+
+
+/*----------------------- CUSTOM CHECKBOXES ------------------------*/
+
+/* Customize the label (the container) */
+label.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  font-weight: 400;
+  color: #293c49;
+  letter-spacing: .5px;
+  margin: 0;
+}
+
+/* Hide the browser's default checkbox */
+label.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20%;
+  border: #b3b1b3 solid 0.5px;
+}
+
+/* On mouse-over, add a grey background color */
+label.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+label.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+  border: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+label.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label.container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 
@@ -908,11 +984,11 @@ input[type="range"]::-moz-range-progress {
 }
 
 .left-wrapper .img-slider {
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   position: sticky;
   z-index: 80;
-  top: 80px;
+  top: 145px;
   text-align: center;
   /* padding: 20px; */
 }
@@ -1099,36 +1175,33 @@ object-position: 0 0;
 
 .under {
   color: #ff5d48;
-  padding-left: 20px;
-}
-
-.formulario {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-}
-.formulario form{
-  width: 100%;
+  padding: 5px 20px;
 }
 
 .form-input {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+/* NATS: SI ALGO ESTÁ ROTO, HABILITAR ESTO y LABEL: WIDTH 100%!!! */
+  /* justify-content: space-between; */
+  align-items: baseline;
   width: 100%;
   font-size: 14px;
-  font-weight: 500;
   text-align: left;
-  /* text-transform: uppercase; */
 }
+/* 
+.multiSelect input{
+height: 20px;
+width: auto;
+} */
 
 .form-input a {
   display: inline;
   font-size: 12px;
   font-weight: 400;
   color: #293c49;
+  letter-spacing: .5px;
 }
+/* .form-input input:not(#keepSession):not(#discount) { */
 .form-input input {
   border-radius: 2px;
   height: 45px;
@@ -1179,26 +1252,65 @@ button.submit-button {
   border-bottom: #001728 solid 1px;
 }
 
-.is-invalid {
-  display: inline;
+.errors {
   font-size: 12px;
   font-weight: 400;
   color: red;
 }
 
-.errores {
-  font-size: 12px;
-  font-weight: 400;
-  color: red;
+.login-register .error-input {
+  display: none;
+};
 
-}
+.login-register .error-input-activo {
+  display: block;
+};
+
+.login-register #email-icono,
+#password-icono {
+  position: relative;
+};
+
+.login-register .form-input i {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  z-index: 100;
+  opacity: 0;
+  background-color: red;
+};  
+
+/* Estilos validaciones*/
+.login-register .form-input-correcto .form-validacion-estado {
+  color: green;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto .form-label{
+  color: red;
+};
+
+.login-register .form-input-incorrecto .form-validacion-estado {
+  color: red;
+  opacity: 1;
+};
+
+.login-register .form-input-incorrecto input {
+  border: red solid 2px;
+};
+
+#input-mensaje-error {
+  display: none;
+};
+
+
 
 /*--------------------------------------------------------
     MAIN Register
 ------------------------------------------------------ */
 
 .register {
-  padding: 30px 0;
+  padding: 10px 0;
   width: 100%;
 }
 
@@ -1206,22 +1318,20 @@ button.submit-button {
 .productCreate .form-input input {
   border-style: none;
   background-blend-mode: multiply;
-  border-radius: 2px;
-  height: 45px;
-  margin: 4px 0 20px 0;
-  padding: 1px 10px;
-  width: 100%;
   background-color: rgba(0, 23, 40, 0.03);
-  /* border: #b3b1b3 solid 0.5px; */
+}
+.register .form-input input.is-invalid {
+  border:1px solid #42469d ;
 }
 
 .form-input.prod-descuento {
   flex-wrap: nowrap;
-  align-items: baseline;
-  background-color: #4884ef;
+  align-items: center;
+  background-color: #b3b1b3;
   padding: 0;
-  margin: 4px 0 20px 0;
+  margin: 40px 0 0px 0;
   border-radius: 2px;
+  height: 60px;
 }
 
 .form-input.prod-descuento label {
@@ -1231,20 +1341,29 @@ button.submit-button {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.5pt;
+  padding: 20px;
 }
-.form-input.prod-descuento input{
-  height: 60px;
-}
+
 .form-input.prod-descuento input[type="number" i]{
-  -webkit-appearance: initial;
-  background-color: transparent;
-  color: black;
-  width: 50%;
+  width: 48%;
+  height: 40px;
   margin: 0;
+  background-color: #f7f8f8db;
+  padding: 15px;
+}
+.form-input.prod-descuento input[type="number" i]::placeholder {
+  color: black;
+}
+
+.checkbox {
+  display: flex;
+  width: 100%;
+  padding: 0 20px 0 0;
 }
 .checkbox {
   display: flex;
   width: 100%;
+  padding: 0 20px 0 0;
 }
 .checkbox .opciones {
   margin: 20px 0 4px 0;
@@ -1253,19 +1372,8 @@ button.submit-button {
   line-height: 20pt;
 }
 
-.form-input.prod-descuento input[type="number" i]::placeholder {
-  color: black;
-}
-.form-input.prod-descuento input[type="checkbox" i]{
-  height: 14px;
-  width: 12%;
-  padding: 0;
-  margin: 0;
-}
-
 .datos-section {
   width: 100%;
-  margin: 0 0 20px 0;
 }
 .datos-section h4 {
   text-align: left;
@@ -1284,12 +1392,16 @@ button.submit-button {
 .form-1col {
   padding: 15px;
 }
-.form-1col p, label,
-.form-2col p, label,
+.form-1col p,
+.form-2col p,
 .form-3col p, label {
   margin-top: 0;
   line-height: initial;
   font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  /* width: 100%; */
+  padding: 5px 0;
 }
 /* .form-1col div {
   width: 100%;
@@ -1338,7 +1450,10 @@ input[type="file" i] {
   background-color: #001728;
 }
 
-
+.errores{
+  color:#42469d;
+  font-weight: bold;
+}
 /*
 --------------------------------------------------------
     MAIN ProductCart
@@ -1466,12 +1581,6 @@ button[class*="btn"] {
   cursor: pointer;
   padding: 0 6px;
 }
-button:focus,
-input:focus {
-  outline: 0;
-}
-
-
 
 .radio-dropdown {
   background-color: #f7f7f7;
@@ -1878,17 +1987,12 @@ object-position: 0 0;
 /* ---------- CREATE NEW PRODUCT -----------------------------*/
 
 .productCreate .opciones > div {
-  padding: 0 0 200px 0 ;
-  width: 100%;
+  /* padding: 0 0 200px 0 ; */
+  width: 100%;  
 }
-
 .productCreate .opciones textarea,
 .productCreate .opciones select {
-  /* -webkit-appearance: none; */
-  font-weight: 500;
-  /* font-size: 15px; */
-  /* font-family: "BebasNeue"; */
-  /* letter-spacing: 0.5pt; */
+  /* font-weight: 500; */
   color: #001728;
   padding: 10px;
   width: 100%;
@@ -1902,6 +2006,14 @@ object-position: 0 0;
   resize: none;
   height: auto;
   height: auto;
+  padding-right: 45px;
+}
+.productCreate .opciones select {
+  appearance: unset;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 16px;
 }
 .productCreate .opciones select:invalid,
 select option[value=""] {
@@ -1909,33 +2021,69 @@ select option[value=""] {
   font-weight: 400;
 }
 
-
 .form-5col {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   width: 100%;
+  margin: 5px 0 25px;
+  position: relative;
 }
 
-.productCreate .form-5col .form-input {
-  flex-direction: column;
-  width: 19%;
+.productCreate .prodImgMain {
+  width: 30%;
+  margin: 0 11px 0 0;
 }
-.productCreate .form-input input[type="file"] {
-  display: none;
-  width: 100%;
-  /* background-color: transparent; */
+.productCreate .prodImgGallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  flex-direction: row;
+  justify-content: inherit;
+  align-content: space-between;
 }
-
+.productCreate .prodImgGallery .prodImg{
+  width: 24%;
+}
 .productCreate .prodImg {
-  aspect-ratio: auto 1 / 1 !important; 
-  width: 100%;
-  display: inline-block;
-  cursor: pointer;
-  padding: 10px 2px;
-  background: no-repeat center/100% url(../assets/uploadFIle.png);
-  margin: 4px 0 20px 0;
+  background-image: url(../assets/uploadFIle.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(0, 23, 40, 0.03);
+  aspect-ratio: auto 3 / 4 !important;
+  overflow: hidden;
 }
+.productCreate .prodImg:focus-within{
+  border : 1.5px solid rgba(0, 23, 40, 0.2);
+  border-radius: 5px;
+}
+p.prodImgCaption {
+  margin: 0 0 30px;
+  color: rgba(0, 23, 40, 0.4);
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0 0 60px;
+
+}
+.productCreate #priceCurrency {
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  /* width: 85%; */
+  height: 38px;
+  padding: 10px;
+  /* background-color: #f7f8f8; */
+  /* color: #b3b1b3; */
+  opacity: 0%;
+}
+div.secretInput {
+  width: 100%;
+  position: relative;
+} 
+
 /* ------------------------------------------------------*/
 
 
@@ -1981,6 +2129,7 @@ footer li {
   overflow: hidden;
 }
 
+textarea::placeholder,
 input::placeholder {
   color: #b3b1b3;
 }
@@ -2079,6 +2228,93 @@ img.detalles-design {
   transform: rotate(170deg);
 }
 
+
+
+/* ................................ JAVASCRIPT ......................................
+----------------------------------------------------------------------------------------
+                              CLASSLIST.ADD CLASSES
+----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------  */
+
+.is-invalid {
+  display: inline;
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+}
+
+span.errMsg {
+  color: #ff5d48;
+  padding: 5px 10px 5px 0;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.form-input div.invalid-input,
+.form-input input.invalid-input,
+.productCreate .opciones textarea.invalid-input,
+.productCreate .opciones select.invalid-input {
+  background-color: #fad6d180;
+  border: 1px solid #f58172;
+}
+
+.form-input div.valid-input,
+.productCreate .opciones select.valid-input,
+.productCreate .opciones textarea.valid-input,
+.form-input input.valid-input {
+  background-color: #8cd8d50c;
+  border: 1px solid #8cd8d5;
+}
+.productCreate .opciones textarea.valid-input,
+.form-input input.valid-input {
+  background-image: url("/assets/check-mark.svg"); 
+  background-repeat: no-repeat;
+  background-position: right .75rem top 12px;
+  background-size: 20px 20px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+input.visually-hidden:is(:focus, :focus-within) + label {
+  outline: thin dotted;
+}
+.labelImg{
+  height: -webkit-fill-available;
+  border-radius: 2px;
+  width: 100%;
+  position: absolute;
+  z-index: 15;
+}
+
+#imgPreview {
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+}
+#imgPreview img {
+  max-width: fit-content;
+  height: 100%;
+}
+
+.cancelCross{
+  padding: 1px 4px;
+  position: absolute;
+  color: white;
+  top: 4px;
+  right: 4px;
+  margin: 0;
+  font-size: 10pt;
+  line-height: 10pt;
+  background-color: #001728;
+  border-radius: 50%;
+  z-index: 90;
+  display: none;
+}
 
 
 /* ................................ MEDIA QUERIES ......................................
@@ -2329,7 +2565,7 @@ img.detalles-design {
     .profileEdit,
     .profile {
       padding: 50px 5%;
-      max-width: 1200px;
+      max-width: 1220px;
     }
     
     .productCreate h2,
@@ -2413,7 +2649,7 @@ img.detalles-design {
                    Navegación en DESKTOP (ancho mínimo 1200 px)
 -------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------*/
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .main-header {
     height: 80px;
   }
