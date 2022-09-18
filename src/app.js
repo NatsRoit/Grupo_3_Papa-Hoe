@@ -16,6 +16,7 @@ const adminRoutes = require('./routes/admin');
 
 //API ROUTES
 const usersApiRoutes = require('./routes/apiUsers.js');
+const productApiRoutes = require('./routes/productApi');
 
 
 // TEMPLATE ENGINE SETUP
@@ -50,6 +51,8 @@ app.use('/admin', adminRoutes);
 
 //USO LAS RUTAS DE APIS 
 app.use('/api/users', usersApiRoutes);
+app.use('/api/product', productApiRoutes);
+
 
 app.use((req, res, next) => {
     res.status(404).render(path.resolve(__dirname, './views/not-found'));
