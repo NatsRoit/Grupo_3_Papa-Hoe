@@ -10,8 +10,8 @@ module.exports.validar = (method) => {
         case 'login': {
           return [
             body('email')
-            .notEmpty().withMessage('¿Has olvidado tu email?') // el campo email no puede estar vacío
-            .isEmail().withMessage('Parece que ese email no es válido')// debe ser un email válido
+            .notEmpty().withMessage('completar dirección de correo electrónico') // el campo email no puede estar vacío
+            .isEmail().withMessage('Agregar un email válido')// debe ser un email válido
             .custom( async (value) => {        // debe esxistir en la base de datos
                 await db.User.findOne({ where: {email: value }}).then(user => {
                       if (!user)
@@ -21,7 +21,7 @@ module.exports.validar = (method) => {
           
             //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
             body('password')
-            .notEmpty().withMessage('La contraseña no puede estar vacía')// obligatoria
+            .notEmpty().withMessage('la contraseña no puede estar vacía')// obligatoria
             .custom( async (value, {req,next}) => {    //debe coincidir con la que está en la base
                 await db.User.findOne({ where: {email: req.body.email }}).then(user => {
                   if(user){
@@ -76,25 +76,12 @@ module.exports.validar = (method) => {
                         return false   // Si retorno un false si se muestra el error
                     }    
                 }).withMessage('Las contraseñas deben ser iguales'),
-            
-            
+          
                 body('avatar').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
 
-                      return validateImage(req,false)
-                     /* if(file){
-                        let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
-                        let fileExtension = path.extname(file.originalname);
-                          if (!acceptedExtensions.includes(fileExtension)){
-                            throw new Error("Extensión de imagen no valida")
-                          }
-
-                      } else {
-                        req.file = { 
-                          filename : 'default-admin.jpg'
-                        }
-                        return true
-                    }*/
-                })
+                      return validateImage(req,true)
+            
+               })
 
             ]
         }
@@ -143,22 +130,25 @@ module.exports.validar = (method) => {
 
 }
 
+
 function validateImage(req, isRequired) {
 
   let file = req.file;
-
-  if(file){
-    let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
-    let fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)){
-        throw new Error("Extensión de imagen no valida")
-      }
-
-  } else {
-    if(isRequired) throw new Error("Debes adjuntar una imagen")
+  let acceptedExtensions = [".jpg", ".png", ".gif"]
+  
+  if (!file){
+        if(isRequired) throw new Error("Debes adjuntar una imagen")
     req.file = { 
-      filename : '_default-product.png'
+      filename : 'default-admin.jpg'
     }
-    return true    
-}
+      
+  }
+  else{
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)){
+          throw new Error("Extensión de imagen no valida")
+      }
+  }
+  
+  return true;
 }

@@ -64,8 +64,8 @@ formulario.addEventListener("submit", async (e) => {
   }
 
   //VALIDACION PASSWORD
-  if (password.value == "" || password.value.length < 8) {
-    errors.push("El campo password no puede estar vacío y tiene que tener mas de 8 caracteres");
+  if (password.value == "" || password.value.length < 7) {
+    errors.push("El campo password no puede estar vacío y tiene que tener al menos 8 caracteres");
     password.classList.add("is-invalid");
   } else {
     password.classList.add("form-input");
@@ -144,8 +144,8 @@ formulario.addEventListener("submit", async (e) => {
     }
     
     else{
-      telefono.classList.add("form-input");
-      telefono.classList.remove("is-invalid");
+      imagen.classList.add("form-input");
+      imagen.classList.remove("is-invalid");
     }
 
   
@@ -155,6 +155,8 @@ formulario.addEventListener("submit", async (e) => {
 
   // ulErrors.innerHTML = '';
   if (errors.length > 0) {
+    //e.preventDefault();
+
     ulErrors.innerHTML = "";
     for (let i = 0; i < errors.length; i++) {
       ulErrors.innerHTML += `<li > ${errors[i]} </li> `;
@@ -163,7 +165,7 @@ formulario.addEventListener("submit", async (e) => {
         icon: 'error',
         title: 'Oops...',
         text: 'Revisa los campos!',
-        footer: '<a href="">Why do I have this issue?</a>'
+       // footer: '<a href="">Why do I have this issue?</a>'
       })
   } else {
     ulErrors.innerHTML = "";
@@ -171,11 +173,11 @@ formulario.addEventListener("submit", async (e) => {
       icon: "success",
       title: "Te has registrado correctamente",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1000,
       
     });
 
-
+    formulario.submit();
     // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
   }
 });
