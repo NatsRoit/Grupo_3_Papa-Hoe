@@ -20,6 +20,7 @@ const upload = multer({ storage : multerDiskstorage });
 // MIDDLEWARES
 //verifica si el usuario está logueado, sino redirige a login
 const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
+const validaciones = require(path.resolve(__dirname, "../middlewares/validaciones"));
 
 
 let adminController = require(path.join(__dirname, '../controllers/adminController.js'));
@@ -29,10 +30,11 @@ router.get('/test',adminController.test);
 
 
 // CREATE NUEVO PRODUCTO
-// router.get("/create", logueado, adminController.createView);
-router.get("/create", adminController.createView);
-// router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);
-router.post("/create", upload.array('prodImage', 5), adminController.create);
+
+// router.get("/create",logueado, adminController.createView);
+router.get("/create", logueado, adminController.createView);
+router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);//validaciones.validar('create'), adminController.create);
+
 
 // UPDATE PRODUCTOS
 router.get("/edit/:id", logueado, adminController.editView);
