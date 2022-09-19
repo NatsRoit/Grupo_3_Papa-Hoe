@@ -39,7 +39,30 @@ const productApiController = {
                     data: product,
                 }
                 res.json(response)
+            })
+            .catch(e => {
+                let response = {
+                    info: {
+                        status: 404,
+                        url: 'api/product/detail',
+                        error: e
+                    },
+                }
+                res.json(response)
+            })
+        
+    },
+
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: { [Op.like]: "%" + req.query.keyword + "%"},
+            }
         })
+        .then (products => {
+            return res.json(products);
+        })
+
     },
 
 
