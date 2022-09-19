@@ -209,12 +209,6 @@ input:focus-visible {
   border: 2px solid #335cb1 !important;
   outline: transparent !important;
 }
-input[type=email]:-internal-autofill-selected {
-  appearance: auto;
-  background-color: rgb(255, 255, 255) !important;
-  background-image: none !important;
-}
-
 
 /*----------------------- CUSTOM CHECKBOXES ------------------------*/
 
@@ -1188,6 +1182,12 @@ object-position: 0 0;
   font-size: 14px;
   text-align: left;
 }
+
+
+.multiselect:focus-within {
+  border: 1.5px solid rgba(0, 23, 40, 0.2);
+  border-radius: 5px;
+}
 /* 
 .multiSelect input{
 height: 20px;
@@ -1210,6 +1210,19 @@ width: auto;
   width: 100%;
   /* background-color: rgba(255, 255, 255, 0.4); */
   border: #b3b1b3 solid 0.5px;
+}
+
+.form-input .pwd {
+  position: relative;
+  width: 100%;
+}
+.form-input #pass-eye {
+  /* content: url("/assets/eye-solid.svg"); */
+  z-index: 9999;
+	position: absolute;
+	top: 25%;
+	right: 3%;
+  opacity: 40%;
 }
 
 .form-input.nombre,
@@ -2065,7 +2078,6 @@ p.prodImgCaption {
   color: rgba(0, 23, 40, 0.4);
   font-size: 13px;
   line-height: 16px;
-  margin: 0 0 60px;
 
 }
 .productCreate #priceCurrency {
