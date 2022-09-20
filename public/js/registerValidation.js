@@ -1,4 +1,4 @@
-//window.onload = function(){
+window.onload = function(){
 
 //para ubicar el cursor en el campo nombre de una
 let formulario = document.querySelector(".formulario");
@@ -161,9 +161,9 @@ formulario.addEventListener("submit", async (e) => {
     }
     Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'No surfeaste la ola!',
         text: 'Revisa los campos!',
-        footer: '<a href="">Why do I have this issue?</a>'
+       
       })
   } else {
     ulErrors.innerHTML = "";
@@ -175,8 +175,8 @@ formulario.addEventListener("submit", async (e) => {
       
     });
 
-
-    // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
+    formulario.submit();
+    
   }
 });
-//}
+}
