@@ -1,16 +1,26 @@
 <header class="main-header">
     <div class="burger-menu">
         <div>
-            <span class="icon-bg">
-                <!-- <i class="fa-solid fa-square fa-stack-2x"></i>   -->
-                <i class="fa-solid fa-bars"></i>
+            <span class="icon-bg" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+                    <img src="/images/brand/BurguerMenu.svg" alt="">
+                <!-- <i class="fa-solid fa-bars"></i> -->
             </span>
         </div>
     </div>
+
     <a id="logo" href="/"><img id="logo-img" src="/images/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
     <nav class="main-navbar">
         <ul>
-            <li><a href="/product/category/all">Shop</a></li>
+            <div class="dropdown">
+                <li><a href="/product/category/all">Shop All</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/product/category/1">Surfboards</a></li>
+                        <li><a href="/product/category/2">Accesorios</a></li>
+                        <li><a href="/product/category/3">Complementos</a></li>
+                    </ul>
+                </li>
+            </div>
+
             <!-- <li><a href="/product/category/2">Accesorios</a></li> -->
             <li><a href="/product/boardBuilder">Board Builder</a></li>
             <li><a href="/about">About</a></li>
@@ -18,10 +28,9 @@
     </nav>
     <nav class="icons-navbar">
         <ul>
-            
-            <li><a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
             <!-- <li>
                 <div class="search-box">
+                    <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
                     <form>
                         <input type="text" placeholder="Buscar">
                         <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -30,14 +39,19 @@
             </li> -->
             <% if(locals.usuario) { %>  
                     <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                    <li><a href="/user/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i></a></li>
+                    <li><a href="/user/logout"><span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span></a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a></li> -->
-                  <% } else { %>
+                <% } else { %>
                     <li><a href="/user/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                    <% } %> 
-
-                    <li><a href="/product/cart"><span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span></a>
+                <% } %>           
+            <li>
+                <a href="/product/cart" class="cartBtn">
+                    <span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="badgeCant">3</span>
+                </a>
             </li>
+
         </ul>
     </nav>
 </header>
+<%- include("../partials/burguer-menu") %>
