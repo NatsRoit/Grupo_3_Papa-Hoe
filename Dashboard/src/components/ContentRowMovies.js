@@ -1,5 +1,5 @@
 import React from 'react';
-import SmallCard from './SmallCard';
+import FetchUsers from './SmallCard';
 
 let productInDataBase = {
     color:   "primary",
