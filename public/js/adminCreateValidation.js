@@ -43,7 +43,7 @@ window.onload = function () {
     prodName.classList.remove("valid-input");
     // prodName.previousElementSibling.innerHTML = "";
   });
-  
+
   prodName.addEventListener("blur", function () {
     if (prodName.value == "") {
       prodName.previousElementSibling.innerHTML = "No te olvides de dar un nombre al producto!";
@@ -425,6 +425,7 @@ function hasFiles(prodImageAll) {
   const fileTypes = [
     "image/gif",
     "image/jpeg",
+    "image/jpg",
     "image/png",
     "image/svg+xml",
     "image/tiff",
@@ -435,41 +436,48 @@ function hasFiles(prodImageAll) {
     return fileTypes.includes(file.type);
   }
 
+// COLORES
+let prodColorMask = document.querySelector(".multiselect-dropdown")
+prodColor.addEventListener("focus", (e)=> {
+  e = prodColorMask;
+})
+
 //------------------------------------------------------------
-let noErrors = 
-      prodName.valid
-      && prodCategory.valid
-      && prodSubcategory.valid 
-      && prodBrand.valid
-      && prodPrice.valid
-      && prodStock.valid
-      && prodDescription.valid
-      && prodFeatures.valid
-      && (prodImage1.valid || prodImage2.valid || prodImage3.valid || prodImage4.valid || prodImage5.valid)
-      && (prodCategory.value == "1"? prodFins.valid : prodFins.valid = true);
+// let noErrors = 
+//       prodName.valid
+//       && prodCategory.valid
+//       && prodSubcategory.valid 
+//       && prodBrand.valid
+//       && prodPrice.valid
+//       && prodStock.valid
+//       && prodDescription.valid
+//       && prodFeatures.valid
+//       && (prodImage1.valid || prodImage2.valid || prodImage3.valid || prodImage4.valid || prodImage5.valid)
+//       && (prodCategory.value == "1"? prodFins.valid : prodFins.valid = true);
 
   
-let prueba = document.querySelector("a#prueba") 
-prueba.addEventListener("click", (e)=>{
-    e.preventDefault();
+// let prueba = document.querySelector("a#prueba") 
+// prueba.addEventListener("click", (e)=>{
+//     e.preventDefault();
 
-    console.log(form.elements)
-    console.log(prodName.valid + " valor: " + prodName.value)
-    console.log(prodName.hasOwnProperty("valid"))
-    console.log(prodCategory.valid + " valor: " + prodCategory.value)
-    console.log(prodSubcategory.valid + " valor: " + prodSubcategory.value)
-    console.log(prodBrand.valid + " valor: " + prodBrand.value)
-    console.log(prodPrice.valid + " valor: " + prodPrice.value)
-    console.log(prodStock.valid + " valor: " + prodStock.value)
-    console.log(prodDescription.valid + " valor: " + prodDescription.value)
-    console.log(prodFeatures.valid + " valor: " + prodFeatures.value)
-  if (prodImage1.value && prodImage3.value){
-    console.log("imageVALUEEE 1: " + prodImage1.value)
-    console.log("imageVALUEEE 3: " + prodImage3.value)
-  }
-    console.log(noErrors)
-    console.log("----------------------")
-});
+//     console.log(form.elements)
+//     console.log(prodName.valid + " valor: " + prodName.value)
+//     console.log(prodName.hasOwnProperty("valid"))
+//     console.log(prodCategory.valid + " valor: " + prodCategory.value)
+//     console.log(prodSubcategory.valid + " valor: " + prodSubcategory.value)
+//     console.log(prodBrand.valid + " valor: " + prodBrand.value)
+//     console.log(prodPrice.valid + " valor: " + prodPrice.value)
+//     console.log(prodStock.valid + " valor: " + prodStock.value)
+//     console.log(prodDescription.valid + " valor: " + prodDescription.value)
+//     console.log(prodFeatures.valid + " valor: " + prodFeatures.value)
+//   if (prodImage1.value && prodImage3.value){
+//     console.log("imageVALUEEE 1: " + prodImage1.value)
+//     console.log("imageVALUEEE 3: " + prodImage3.value)
+//   }
+//     console.log(noErrors)
+//     console.log("----------------------")
+// });
+//------------------------------------------------------------
 
 
   form.addEventListener("submit", (e) => {

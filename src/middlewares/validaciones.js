@@ -10,8 +10,8 @@ module.exports.validar = (method) => {
         case 'login': {
           return [
             body('email')
-            .notEmpty().withMessage('¿Has olvidado tu email?') // el campo email no puede estar vacío
-            .isEmail().withMessage('Parece que ese email no es válido')// debe ser un email válido
+            .notEmpty().withMessage('completar dirección de correo electrónico') // el campo email no puede estar vacío
+            .isEmail().withMessage('Agregar un email válido')// debe ser un email válido
             .custom( async (value) => {        // debe esxistir en la base de datos
                 await db.User.findOne({ where: {email: value }}).then(user => {
                       if (!user)
@@ -21,7 +21,7 @@ module.exports.validar = (method) => {
           
             //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
             body('password')
-            .notEmpty().withMessage('La contraseña no puede estar vacía')// obligatoria
+            .notEmpty().withMessage('la contraseña no puede estar vacía')// obligatoria
             .custom( async (value, {req,next}) => {    //debe coincidir con la que está en la base
                 await db.User.findOne({ where: {email: req.body.email }}).then(user => {
                   if(user){
@@ -76,27 +76,79 @@ module.exports.validar = (method) => {
                         return false   // Si retorno un false si se muestra el error
                     }    
                 }).withMessage('Las contraseñas deben ser iguales'),
-            
-            
+          
                 body('avatar').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
-                      let file = req.file;
-                      if(file){
-                        let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
-                        let fileExtension = path.extname(file.originalname);
-                          if (!acceptedExtensions.includes(fileExtension)){
-                            throw new Error("Extensión de imagen no valida")
-                          }
 
-                      } else {
-                        req.file = { 
-                          filename : 'default-admin.jpg'
-                        }
-                        return true
-                    }
-                })
+                      return validateImage(req,true)
+            
+               })
 
             ]
         }
+
+        case 'create': {
+            return [
+              body('name')
+              .notEmpty().withMessage('El campo nombre no puede estar vacío')
+              .isLength({min:5}).withMessage('El nombre del producto debe tener al menos 5 caracteres'),   
+              body('category_id')
+              .notEmpty().withMessage('Agrega una categoría'),
+              body('subcategory_id')
+              .notEmpty().withMessage('Agrega una subcategoría'),
+              body('brand_id')
+              .notEmpty().withMessage('Agrega una marca'),
+              body('price')
+              .notEmpty().withMessage('Agrega el precio del producto'),
+              body('price')
+              .notEmpty().withMessage('Ingresa lel precio del producto'),
+              body('stock')
+              .notEmpty().withMessage('Ingresa la cantidad de unidades disponibles'),
+              body('description')
+              .notEmpty().withMessage('Ingresa la cantidad de unidades disponibles')
+              .isLength({min:20}).withMessage('Ingrese descripción de más de 5 caracteres'), 
+              body('image1').custom((value, {req}) =>{ // la imágen es obligatoria y si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,true)
+              }),
+              body('image2').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image3').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image4').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              }),
+              body('image5').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              })
+
+            ]
+         
+        }
+        
     }
 
+}
+
+
+function validateImage(req, isRequired) {
+
+  let file = req.file;
+  let acceptedExtensions = [".jpg", ".png", ".gif"]
+  
+  if (!file){
+        if(isRequired) throw new Error("Debes adjuntar una imagen")
+    req.file = { 
+      filename : 'default-admin.jpg'
+    }
+      
+  }
+  else{
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)){
+          throw new Error("Extensión de imagen no valida")
+      }
+  }
+  
+  return true;
 }
