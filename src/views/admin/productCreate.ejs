@@ -140,12 +140,12 @@
 
                                     <div class="form-input">
                                         <label for="prodImage">Imágenes<sup>*</sup></label>
-                                        <span class="errMsg" id="errMsg"></span>
+                                        <span class="errMsg" id="imgErrMsg"></span>
                                         <div class="form-5col">
                                             <div class="prodImgMain">
                                                 <div class="prodImg">
-                                                    <label for="image5" class="labelImg"></label><br>
-                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <label for="image1" class="labelImg"></label><br>
+                                                    <input type="file" name="image1" id="image1" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
@@ -153,34 +153,36 @@
                                             </div>
                                             <div class="prodImgGallery">
                                                 <div class="prodImg">
-                                                    <label for="image5" class="labelImg"></label><br>
-                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <label for="imageGallery1" class="labelImg"></label><br>
+                                                    <input type="file" name="imageGallery" id="imageGallery1" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="image5" class="labelImg"></label><br>
-                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <label for="imageGallery2" class="labelImg"></label><br>
+                                                    <input type="file" name="imageGallery" id="imageGallery2" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="image5" class="labelImg"></label><br>
-                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <label for="imageGallery3" class="labelImg"></label><br>
+                                                    <input type="file" name="imageGallery" id="imageGallery3" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="image5" class="labelImg"></label><br>
-                                                    <input type="file" name="prodImage" id="image5" class="visually-hidden">
+                                                    <label for="imageGallery4" class="labelImg"></label><br>
+                                                    <input type="file" name="imageGallery" id="imageGallery4" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
-                                                <p class="prodImgCaption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ut ducimus nobis reprehenderit tempora sunt, temporibus nesciunt, eaque beatae quo doloremque harum molestias debitis commodi hic est ipsa repellendus. Dolorum!</p>
+                                                <p class="prodImgCaption">ES NECESARIO AGREGAR AL MENOS UNA IMAGEN PRINCIPAL.<br>
+                                                    No olvides respetar las dimensiones indicadas!
+                                                    <!-- Procurá que tus imágenes sean descriptivas y que pongan en evidencia todos los detalles del producto.</p> -->
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +209,7 @@
                                     </div> -->
                                     
                                     <div class="checkbox">
-                                        <div class="opciones">
+                                        <div class="opciones" id="sizeGroup">
                                             <p><strong>Talles Disponibles</strong></p>
                                             <label for="talle_XS"><input type="checkbox" value="7" name="size_id[]" id="talle_XS"> XS</label> <br>
                                             <label for="talle_S"><input type="checkbox" value="8" name="size_id[]" id="talle_S"> S</label> <br>
@@ -217,7 +219,7 @@
                                             <label for="talle_XXL"><input type="checkbox" value="12" name="size_id[]" id="talle_XXL"> XXL</label> <br>
                                         </div>
 
-                                        <div class="opciones">
+                                        <div class="opciones" id="volGroup">
                                             <p><strong>Dimensiones / Volumen</strong></p>
                                             <label for="dimensions_id_1"><input type="checkbox" value="1" name="size_id[]" id="dimensions_id_1"> 5'0" x 19" x 2 1/16" -21.78L</label> <br>
                                             <label for="dimensions_id_2"><input type="checkbox" value="2" name="size_id[]" id="dimensions_id_2"> 5'7" x 19" x 2 7/16" - 29.86L</label> <br>
@@ -232,11 +234,7 @@
                                         <label for="discount">Producto en promoción</label>
                                         <input type="number" name="discount" id="discount" min="0" max="100" placeholder="Aplicar % descuento">
                                     </div>
-
                                 </section>
-
-                                <a href="#" id="prueba">SOLO PARA PROBAR CONSOLE.LOG</a>
-
 
                                 <div class="submit-button">
                                     <button class="submit-button" type="submit">Crear</button>
@@ -252,9 +250,11 @@
                             <img id="previewProdImg" src="/images/usuarios/default-admin.jpg" alt="Preview del producto">
                         </div>
                             <div class="secretInput">
+                                <output name="namePreview" for="name" id="namePreview"></output>
+                                <output name="brandPreview" for="brand_id" id="brandPreview"></output>
                                 <output name="priceCurrency" for="price" id="priceCurrency"></output>
                             </div>
-                        Espacio para botones (EN CONSTRUCCIÓN)
+                        (EN CONSTRUCCIÓN)
                     </div>
 
                 </section>

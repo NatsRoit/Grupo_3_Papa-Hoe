@@ -5,7 +5,6 @@ window.onload = function () {
   let prodSubcategory = document.querySelector("#subcategory_id");
   let prodBrand = document.querySelector("#brand_id");
   let prodPrice = document.querySelector("#price");
-  let priceCurrency = document.querySelector("#priceCurrency");
   let prodStock = document.querySelector("#stock");
   //checkbox!!!! Para if (is discounted)--------------
   let prodDiscount = document.querySelector("#isDiscounted");
@@ -15,10 +14,10 @@ window.onload = function () {
   let prodFeatures = document.querySelector("#features");
   let prodImageAll = document.querySelectorAll(".prodImg");
   let prodImage1 = document.querySelector("#image1");
-  let prodImage2 = document.querySelector("#image2");
-  let prodImage3 = document.querySelector("#image3");
-  let prodImage4 = document.querySelector("#image4");
-  let prodImage5 = document.querySelector("#image5");
+  let prodImage2 = document.querySelector("#imageGallery1");
+  let prodImage3 = document.querySelector("#imageGallery2");
+  let prodImage4 = document.querySelector("#imageGallery3");
+  let prodImage5 = document.querySelector("#imageGallery4");
   let prodFins = document.querySelector("#fin_id");
   prodFins.disabled = true;
   let previewProdImg = document.querySelector("#previewProdImg");
@@ -27,8 +26,12 @@ window.onload = function () {
   // Los que no sé cómo resolver
   let prodColor = document.querySelector("#color_id");
   let prodTalle = document.querySelector("#talle");
+  let sizeGroup = document.querySelector("#sizeGroup");
+  let volGroup = document.querySelector("#volGroup");
 
-  // let cancelCross = document.querySelectorAll(".cancelCross")
+  let namePreview = document.querySelector("#namePreview")
+  let brandPreview = document.querySelector("#brandPreview")
+  let priceCurrency = document.querySelector("#priceCurrency");
 
   //-------------------------------------------------------
 
@@ -56,6 +59,7 @@ window.onload = function () {
       prodName.previousElementSibling.innerHTML = "";
       prodName.classList.remove("invalid-input");
       prodName.classList.add("valid-input");
+      namePreview.innerHTML = "<h2>" + prodName.value + "</h2>"
       prodName.valid = true;
     }
   });
@@ -111,6 +115,15 @@ window.onload = function () {
       prodFins.value = "";
       (prodFins.parentElement).classList.add("visually-hidden");
     }
+
+    if (prodCategory.value == "1"){
+      sizeGroup.style.display = "none"
+      volGroup.style.display = "block"
+    } else {
+      sizeGroup.style.display = "block"
+      volGroup.style.display = "none"
+    }
+  
   });
 
   //VALIDACION SUBCATEGORÍA PRODUCTO
@@ -202,7 +215,7 @@ window.onload = function () {
       this.parentElement.previousElementSibling.innerHTML = "";
       this.classList.remove("invalid-input");
       this.classList.add("valid-input");
-      priceCurrency.style.backgroundColor = "#fafdfd"
+      // priceCurrency.style.backgroundColor = "#fafdfd"
       priceCurrency.style.opacity= "100%"
   } else {
     priceCurrency.value = newprodPrice(0);
@@ -319,7 +332,7 @@ return result;
   // Defino una variable para atrapar a cada uno de los botones que cargan la imagen
   for (let i = 0; i < prodImageAll.length; i++) {
     let inputImg = prodImageAll[i].querySelector("input");
-    let imgErrMsg = (prodImageAll[0].parentElement.parentElement).querySelector("#errMsg");
+    let imgErrMsg = document.querySelector("#imgErrMsg");
     inputImg.valid = false;
     
   // Defino la función que se desencadenará al onfocus cada uno de esos botones"
@@ -333,13 +346,13 @@ return result;
   inputImg.addEventListener("blur", setInvalidClass);
   function setInvalidClass(e) {
     if (!hasFiles(prodImageAll)){
-      let imagenes = this.files;
+      // let imagenes = this.files;
         imgErrMsg.innerHTML = "Una imagen dice más que mil palabras... No olvides agregar al menos una!";
         for (const box of prodImageAll) {
           box.classList.remove("valid-input");
           box.classList.add("invalid-input");
         }
-    }
+    } // DEBER'IA PONER AC'A UN ELSE__????
   }
 
     // Defino la función que se desencadenará al cambiar el value del input"file"
@@ -372,16 +385,16 @@ return result;
             let image = document.createElement("img");
             image.src = URL.createObjectURL(file);
             preview.appendChild(image);
-            console.log(inputImgp[0])
-            if (inputImg[0]){
-            previewProdImg.src = image.src
-          }
+            
             cancelCross.style.display = "block"
-
             imgErrMsg.innerHTML = "";
             for (const box of prodImageAll) {
               box.classList.remove("invalid-input");
               box.classList.add("valid-input");
+            }
+        // SI SE CARGÓ UNA IMAGEN PRINCIPAL, mostrarla como preview del producto
+            if (prodImageAll[0].lastElementChild.childElementCount > 1){
+              previewProdImg.src = prodImageAll[0].lastElementChild.lastChild.src
             }
         }
       }
@@ -436,49 +449,8 @@ function hasFiles(prodImageAll) {
     return fileTypes.includes(file.type);
   }
 
-// COLORES
-let prodColorMask = document.querySelector(".multiselect-dropdown")
-prodColor.addEventListener("focus", (e)=> {
-  e = prodColorMask;
-})
 
 //------------------------------------------------------------
-// let noErrors = 
-//       prodName.valid
-//       && prodCategory.valid
-//       && prodSubcategory.valid 
-//       && prodBrand.valid
-//       && prodPrice.valid
-//       && prodStock.valid
-//       && prodDescription.valid
-//       && prodFeatures.valid
-//       && (prodImage1.valid || prodImage2.valid || prodImage3.valid || prodImage4.valid || prodImage5.valid)
-//       && (prodCategory.value == "1"? prodFins.valid : prodFins.valid = true);
-
-  
-// let prueba = document.querySelector("a#prueba") 
-// prueba.addEventListener("click", (e)=>{
-//     e.preventDefault();
-
-//     console.log(form.elements)
-//     console.log(prodName.valid + " valor: " + prodName.value)
-//     console.log(prodName.hasOwnProperty("valid"))
-//     console.log(prodCategory.valid + " valor: " + prodCategory.value)
-//     console.log(prodSubcategory.valid + " valor: " + prodSubcategory.value)
-//     console.log(prodBrand.valid + " valor: " + prodBrand.value)
-//     console.log(prodPrice.valid + " valor: " + prodPrice.value)
-//     console.log(prodStock.valid + " valor: " + prodStock.value)
-//     console.log(prodDescription.valid + " valor: " + prodDescription.value)
-//     console.log(prodFeatures.valid + " valor: " + prodFeatures.value)
-//   if (prodImage1.value && prodImage3.value){
-//     console.log("imageVALUEEE 1: " + prodImage1.value)
-//     console.log("imageVALUEEE 3: " + prodImage3.value)
-//   }
-//     console.log(noErrors)
-//     console.log("----------------------")
-// });
-//------------------------------------------------------------
-
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
