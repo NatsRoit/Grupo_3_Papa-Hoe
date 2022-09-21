@@ -27,6 +27,7 @@ const upload = multer({ storage });*/
 
 // MIDDLEWARES
 const acceso = require(path.resolve(__dirname, "../middlewares/acceso"));
+const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
 //const validacionesLogin = require(path.resolve(__dirname, "../middlewares/validacionesLogin"));
 //const validacionesRegistro = require(path.resolve(__dirname, "../middlewares/validacionesRegistro"));
 const adminLog = require(path.resolve(__dirname, "../middlewares/adminLog"));
@@ -39,7 +40,7 @@ router.get("/profile/:id", acceso, userController.profile);
 
 //EDIT PROFILE
 router.get('/edit/:id', acceso, userController.editView);
-router.put('/edit/:id', upload.single('avatar'), userController.edit);// validacionesRegistro, userController.edit);
+router.put('/edit/:id', upload.single('avatar'),validaciones.validar('register'), userController.edit);// validacionesRegistro, userController.edit);
 
 // LOGIN
 router.get('/login',userController.loginView);

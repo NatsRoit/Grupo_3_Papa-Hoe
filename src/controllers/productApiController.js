@@ -12,7 +12,17 @@ const productApiController = {
                         total: products.length,
                         url: 'api/product/list'
                     },
-                    data: products
+                    data: products,
+                    include: [
+                        { association: "marca" },
+                        { association: "categoria", include: [{association: 'subcategorias'}],
+                        raw: true},
+                        { association: "subcategoria" },
+                        { association: "fin" },
+                        { association: "dimensiones" },
+                        { association: "colores" },
+                    ]
+
                 }
                 res.json(response)
             })
@@ -37,9 +47,52 @@ const productApiController = {
                         url: 'api/product/detail' + req.params.id
                     },
                     data: product,
+                    include: [
+                        { association: "marca" },
+                        { association: "categoria", include: [{association: 'subcategorias'}],
+                        raw: true},
+                        { association: "subcategoria" },
+                        { association: "fin" },
+                        { association: "dimensiones" },
+                        { association: "colores" },
+                    ]
+
                 }
                 res.json(response)
+            })
+            .catch(e => {
+                let response = {
+                    info: {
+                        status: 404,
+                        url: 'api/product/detail' + req.params.id,
+                        error: e
+                    },
+                }
+                res.json(response)
+            })
+        
+    },
+
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: { [Op.like]: "%" + req.query.keyword + "%"},
+            },
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}],
+                raw: true},
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ]
+
         })
+        .then (products => {
+            return res.json(products);
+        })
+
     },
 
 
