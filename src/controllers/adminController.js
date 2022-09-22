@@ -172,7 +172,7 @@ let adminController = {
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
-            image2: req.files.imageGallery[0] ? req.files.imageGallery[0].filename : req.body.oldImagen2,
+            // image2: req.files.imageGallery[0] ? req.files.imageGallery[0].filename : req.body.oldImagen2,
             // image3: req.files.imageGallery[1] ? req.files.imageGallery[1].filename : req.body.oldImagen3,
             // image4: req.files.imageGallery[2] ? req.files.imageGallery[2].filename : req.body.oldImagen4,
             // image5: req.files.imageGallery[3] ? req.files.imageGallery[3].filename : req.body.oldImagen5,
