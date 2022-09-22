@@ -37,7 +37,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.categoria.name%></a></li>
                     <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.subcategoria.name%></a></li>
-                    <li class="active"><%= producto.name%></li>
+                    <li class="breadCrumbLast"><%= producto.name%></li>
                 </ul>
                 <section class="main-container">
                     <div class="left-wrapper">
@@ -56,7 +56,8 @@
                         <div class="product-header">
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <p>$<%= producto.price%> ARS</p>
+                            <!-- <p>$<%= producto.price%> ARS</p> -->
+                            <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
                             <form class="product-detail-form" action="/product/detail" method="POST">

@@ -168,11 +168,7 @@ formulario.addEventListener("submit", async (e) => {
         icon: 'error',
         title: 'No surfeaste la ola!',
         text: 'Revisa los campos!',
-<<<<<<< HEAD
-       
-=======
        // footer: '<a href="">Why do I have this issue?</a>'
->>>>>>> e8690a0c30b3dca8e93bbb7136a43389a579422c
       })
   } else {
     ulErrors.innerHTML = "";
@@ -185,11 +181,7 @@ formulario.addEventListener("submit", async (e) => {
     });
 
     formulario.submit();
-<<<<<<< HEAD
-    
-=======
     // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
->>>>>>> e8690a0c30b3dca8e93bbb7136a43389a579422c
   }
 });
 }

@@ -38,6 +38,7 @@ window.onload = function () {
   let form = document.querySelector(".formulario");
   prodName.focus();
 
+
   //VALIDACIONES IN-LINE (muestra mensajes de error antes de llegar al submit)
   //VALIDACIÓN NOMBRE PRODUCTO
   prodName.valid = false;
@@ -45,7 +46,7 @@ window.onload = function () {
     prodName.classList.remove("invalid-input");
     prodName.classList.remove("valid-input");
     // prodName.previousElementSibling.innerHTML = "";
-  });
+  })
 
   prodName.addEventListener("blur", function () {
     if (prodName.value == "") {
@@ -115,16 +116,16 @@ window.onload = function () {
       prodFins.value = "";
       (prodFins.parentElement).classList.add("visually-hidden");
     }
-
-    if (prodCategory.value == "1"){
-      sizeGroup.style.display = "none"
-      volGroup.style.display = "block"
-    } else {
-      sizeGroup.style.display = "block"
-      volGroup.style.display = "none"
-    }
-  
   });
+
+    // if (prodCategory.value == "1"){
+    //   sizeGroup.style.display = "none"
+    //   volGroup.style.display = "block"
+    // } else {
+    //   sizeGroup.style.display = "block"
+    //   volGroup.style.display = "none"
+    // }
+  
 
   //VALIDACION SUBCATEGORÍA PRODUCTO
   prodSubcategory.valid = false;
@@ -151,7 +152,7 @@ window.onload = function () {
 
 
   //VALIDACION FIN SETUP (sólo para categoría: Surfboards)
-  prodFins.valid = false;
+  prodCategory.value == "1"? prodFins.valid = false : prodFins.valid = true;
   prodFins.addEventListener("focus", function () {
     prodFins.classList.remove("invalid-input");
     prodFins.classList.remove("valid-input");
@@ -334,7 +335,10 @@ return result;
     let inputImg = prodImageAll[i].querySelector("input");
     let imgErrMsg = document.querySelector("#imgErrMsg");
     inputImg.valid = false;
-    
+    console.log(inputImg);
+    console.log(inputImg.files);
+    console.log(inputImg.valid);
+
   // Defino la función que se desencadenará al onfocus cada uno de esos botones"
   inputImg.addEventListener("focus", function (e) {
     let imgContainer = this.parentElement;
@@ -391,6 +395,7 @@ return result;
             for (const box of prodImageAll) {
               box.classList.remove("invalid-input");
               box.classList.add("valid-input");
+              inputImg.valid = true;
             }
         // SI SE CARGÓ UNA IMAGEN PRINCIPAL, mostrarla como preview del producto
             if (prodImageAll[0].lastElementChild.childElementCount > 1){
@@ -451,6 +456,15 @@ function hasFiles(prodImageAll) {
 
 
 //------------------------------------------------------------
+let formElements = document.querySelector(".formulario").elements;
+
+console.log(prodImage1.value);
+console.log(prodImage2.value);
+for (let i = 0; i < formElements.length; i++) {
+  if (formElements[i].hasOwnProperty("valid") && formElements[i].value !== ""){
+    formElements[i].valid = true
+  }
+};
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -458,11 +472,17 @@ function hasFiles(prodImageAll) {
     let isInvalid = [];
       for (let i = 0; i < formElements.length; i++) {
         let formField = formElements[i]
+        if (formField === image1 ) { continue }
+        if (formField === imageGallery1 ) { continue }
+        if (formField === imageGallery2 ) { continue }
+        if (formField === imageGallery3 ) { continue }
+        if (formField === imageGallery4 ) { continue }
         if (formField.hasOwnProperty("valid") && !formField.valid) {
           isInvalid.push(formField);
           formField.classList.add("invalid-input");
         }
       };
+      console.log(isInvalid)
       if (isInvalid.length > 0) {
         for (let i = isInvalid.length -1; i >= 0; i--) {
           // window.scrollTo({top:0, behavior:'smooth'});

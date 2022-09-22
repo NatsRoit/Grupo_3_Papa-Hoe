@@ -2,7 +2,7 @@
     <div class="burger-menu">
         <div>
             <span class="icon-bg" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
-                    <img src="/images/brand/BurguerMenu.svg" alt="">
+                    <img src="/images/brand/BurgerMenu.svg" alt="">
                 <!-- <i class="fa-solid fa-bars"></i> -->
             </span>
         </div>
@@ -20,12 +20,11 @@
                     </ul>
                 </li>
             </div>
-
-            <!-- <li><a href="/product/category/2">Accesorios</a></li> -->
             <li><a href="/product/boardBuilder">Board Builder</a></li>
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
+
     <nav class="icons-navbar">
         <ul>
             <!-- <li>
@@ -37,6 +36,20 @@
                     </form>
                 </div>
             </li> -->
+
+
+            <div class="user-menu" id="usuario-icon">
+                <div>
+                    <span class="icon-bg" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
+            </div>
+
+
+
+
+
             <% if(locals.usuario) { %>  
                     <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
                     <li><a href="/user/logout"><span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span></a></li>
@@ -50,8 +63,9 @@
                     <span class="badgeCant">3</span>
                 </a>
             </li>
-
         </ul>
     </nav>
+
 </header>
-<%- include("../partials/burguer-menu") %>
+<%- include("../partials/burger-menu") %>
+<%- include("../partials/user-menu") %>

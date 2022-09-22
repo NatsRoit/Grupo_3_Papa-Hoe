@@ -17,18 +17,20 @@
                   <div class="wrapper-Col-66">
                     <h2>Editar producto</h2>
                     <div class="register">
-                      <form action="/admin/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                      <form class="formulario" action="/admin/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
                         <section class="datos-section">
 
                           <div class="form-input">
                               <label for="name">Nombre del Producto</label>
-                              <input type="text" name="name" id="name" placeholder="Ej: Rocker Pocker III" value="<%=producto.name%>" required>
+                              <span class="errMsg" id="errMsg"></span>
+                              <input type="text" name="name" id="nombreProd" placeholder="Ej: Rocker Pocker III" value="<%=producto.name%>" required>
                           </div>
 
                           <div class="form-2col">
                               <div class="form-input opciones">
                                   <label for="category_id">Categoría<sup>*</sup></label>
-                                  <select name="category_id" id="category_id" required>
+                                  <span class="errMsg" id="errMsg"></span>
+                                  <select name="category_id" id="category_id">
                                       <option value="<%=producto.categoria.id%>" selected><%=producto.categoria.name%></option>
                                       <% for (let i =0; i<category.length; i++) { %>
                                         <% if(category[i].id != producto.categoria.id){ %>
@@ -39,7 +41,8 @@
                               
                               <div class="form-input opciones">
                                   <label for="subcategory_id">Subcategoría<sup>*</sup></label>
-                                  <select name="subcategory_id" id="subcategory_id" required>
+                                  <span class="errMsg" id="errMsg"></span>
+                                  <select name="subcategory_id" id="subcategory_id">
                                     <option value="<%=producto.subcategoria.id%>" selected><%=producto.subcategoria.name%></option>
                                     <% for (let i =0; i<subcategory.length; i++) { %>
                                       <% if(subcategory[i].id != producto.subcategoria.id){ %>
@@ -49,7 +52,7 @@
                               </div>
                           </div>
 
-                          <div class="form-input opciones">
+                          <div class="form-input opciones visually-hidden">
                             <label for="fin_id">Fin Setup<sup>*</sup></label>
                             <span class="errMsg" id="errMsg"></span>
                             <select name="fin_id" id="fin_id">
@@ -66,7 +69,8 @@
 
                           <div class="form-input opciones">
                             <label for="brand_id">Marca<sup>*</sup></label>
-                            <select name="brand_id" id="brand_id" required>
+                            <span class="errMsg" id="errMsg"></span>
+                            <select name="brand_id" id="brand_id">
                               <option value="<%=producto.marca.id%>" selected><%=producto.marca.name%></option>
                               <% for (let i =0; i<brand.length; i++) { %>
                                 <% if(brand[i].name != producto.marca.name){ %>
@@ -81,134 +85,93 @@
                           <div class="form-2col">
                             <div class="form-input">
                                 <label for="price">Precio Unitario<sup>*</sup></label>
-                                <input type="number" name="price" id="price" placeholder="00.000,00" step=".50" min="0" pattern="[0-9]+([,][0-9]{1,2})?" value="<%=producto.price%>" required>
+                                <span class="errMsg" id="errMsg"></span>
+                                <div class="secretInput">
+                                  <input type="number" name="price" id="price" placeholder="00.000,00" min="0" step=".1" pattern="[0-9]+([,][0-9]{1,2})?" value="<%=producto.price%>">
+                              </div>
                             </div>
+
                             <div class="form-input">
                               <label for="stock">Stock<sup>*</sup></label>
-                              <input type="number" name="stock" id="stock" placeholder="Cantidad de unidades disponibles" value="<%=producto.stock%>" required>
+                              <span class="errMsg" id="errMsg"></span>
+                              <input type="number" name="stock" id="stock" placeholder="Cantidad de unidades disponibles" value="<%=producto.stock%>">
                             </div>
                           </div>
 
                           <div class="form-input opciones">
                               <label for="description">Descripción<sup>*</sup></label>
+                              <span class="errMsg" id="errMsg"></span>
                               <textarea name="description" id="description" rows="15"><%=producto.description%></textarea>
                           </div>
                           
                           <div class="form-input opciones">
                               <label for="features">Características<sup>*</sup></label>
+                              <span class="errMsg" id="errMsg"></span>
                               <textarea name="features" id="features" rows="8"><%=producto.features%></textarea>
                           </div>
-
-                        <!-- BOTON DE PRUEBA CONSOLE LOG -->
-                        <a href="#">Botón de Prueba</a>
 
                         <!-- Sección para cargar la/s imagen/es de Producto. La 1ra es obligatoria, las otras (un array de imágenes) no lo son. -->
                         <div class="form-input">
                           <label for="prodImage">Imágenes<sup>*</sup></label>
+                          <span class="errMsg" id="imgErrMsg"></span>
                           <div class="form-5col">
                             <div class="prodImgMain">
                               <div class="prodImg">
                                 <label for="image1" class="labelImg"></label><br>
-                                <input type="file" name="image1" id="image1">
+                                <input type="file" name="image1" id="image1" class="visually-hidden" value="<%= producto.image1%>">
                                 <input type="hidden" name="oldImagen1" value="<%= producto.image1%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                  <img src="/img/<%= producto.image1%>" alt="">
                                 </div>
                               </div>
                             </div>
                             <div class="prodImgGallery">
                               <div class="prodImg">
                                 <label for="imageGallery1" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery" id="imageGallery1">
+                                <input type="file" name="imageGallery1" id="imageGallery1" class="visually-hidden">
                                 <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                  <img src="/img/<%= producto.image2 ? producto.image2 : "" %>" alt="">
                                 </div>
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery2" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery" id="imageGallery2" class="visually-hidden">
+                                <input type="file" name="imageGallery2" id="imageGallery2" class="visually-hidden">
                                 <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                  <img src="/img/<%= producto.image3 ? producto.image3 : "" %>" alt="">
                                 </div>
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery3" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery" id="imageGallery3" class="visually-hidden">
+                                <input type="file" name="imageGallery3" id="imageGallery3" class="visually-hidden">
                                 <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                  <img src="/img/<%= producto.image4 ? producto.image4 : "" %>" alt="">
                                 </div>
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery4" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery" id="imageGallery4" class="visually-hidden">
+                                <input type="file" name="imageGallery4" id="imageGallery4" class="visually-hidden">
                                 <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
+                                  <img src="/img/<%= producto.image5 ? producto.image5 : "" %>" alt="">
                                 </div>
                               </div>
                               <p class="prodImgCaption">
                                 ES NECESARIO AGREGAR AL MENOS UNA IMAGEN PRINCIPAL.<br>
-                                No olvides respetar las dimensiones indicadas!
+                                Formatos aceptados: .jpg / .jpeg / .png / .gif / .webp <br>
+                                No olvides respetar las dimensiones indicadas (max 2mb)
                                 <!-- Procurá que tus imágenes sean descriptivas y que pongan en evidencia todos los detalles del producto.-->
                               </p> 
                             </div>
                           </div>
                         </div>
-
-
-<!-- 
-                              <div class="form-input">
-                                  <label class="prodImg" for="image2"
-                                  <% if(producto.image2){%>
-                                    style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image2%>)">
-                                  <% } else {%>
-                                    >
-                                  <% } %>
-                                      <input type="file" name="image2" id="image2">
-                                      <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
-                                    </label>
-                              </div>
-
-                              <div class="form-input">
-                                  <label class="prodImg" for="image3"
-                                    <% if(producto.image3){%>
-                                      style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image3%>)">
-                                    <% } else {%>
-                                      >
-                                    <% } %>
-                                      <input type="file" name="image3" id="image3">
-                                      <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
-                                    </label>
-                              </div>
-
-                              <div class="form-input">
-                                  <label class="prodImg" for="image4"
-                                  <% if(producto.image4){%>
-                                    style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image4%>)">
-                                  <% } else {%>
-                                    >
-                                  <% } %>
-                                      <input type="file" name="image4" id="image4">
-                                      <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
-                                    </label>
-                              </div>
-
-                              <div class="form-input">
-                                  <label class="prodImg" for="image5"
-                                  <% if(producto.image5){%>
-                                    style="background: no-repeat right top/ auto 100% url(/img/<%=producto.image5%>)">
-                                  <% } else {%>
-                                    >
-                                  <% } %>
-                                      <input type="file" name="image5" id="image5">
-                                      <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
-                                    </label>
-                              </div> -->
-
-
 
                           <!-- Sección para seleccionar el color/es. La clase "multiSelect"
                           activa un script que permite seleccionar los colores y crear etiquetas -->
@@ -224,16 +187,22 @@
                               </select>
                           </div>
 
+
+
                           <div class="checkbox">
-                            <div class="opciones">
-                              <h4>Talle</h4>
-                              <% for(let i=0; i<sizesId.length; i++){ %>
-                                <% if (productSizeId.includes(sizesId[i])) { %>
-                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked> <%=sizes[i].dimension%></label> <br>
-                              <% } else { %>
-                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size"> <%=sizes[i].dimension%></label> <br>
-                              <% }} %>
-                            </div>
+                              <div class="opciones" id="sizeGroup">
+                                <p><strong>Talles Disponibles</strong></p>
+                                <% for(let i=0; i<sizes.length; i++){ %>
+                                  <% if ((sizes.type !== "vol") && (productSizeId.includes(sizesId[i]))) { %>
+                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
+                                    <%=sizes[i].dimension%>
+                                  </label><br>
+                                <% } else { %>
+                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                    <%=sizes[i].dimension%>
+                                  </label> <br>
+                                <% }} %>
+                              </div>
                           </div>
 
                           <div class="form-input prod-descuento">
@@ -250,17 +219,23 @@
                   </div>
 
 
-                  <div class="wrapper-Col-33">
-                      <h2>(Thumbnail)</h2>
+                  <div class="wrapper-Col-33" title="Así se verá tu producto publicado">
+                      <h2>Preview</h2>
                       <div class="img-slider">
-                          <img src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
+                          <img id="previewProdImg" src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
                       </div>
-                      Espacio para botones (EN CONSTRUCCIÓN)
+                      <div class="secretInput">
+                        <output name="namePreview" for="name" id="namePreview"></output>
+                        <output name="brandPreview" for="brand_id" id="brandPreview"></output>
+                        <output name="priceCurrency" for="price" id="priceCurrency"></output>
+                    </div>
+                      (EN CONSTRUCCIÓN)
                   </div>
                 </section>
             </main>
 
             <%- include("../partials/footer") %>
+            <script src="/js/adminCreateValidation.js"></script>
             <script src="/js/multiselect-dropdown.js" ></script>
     </body>
 </html>

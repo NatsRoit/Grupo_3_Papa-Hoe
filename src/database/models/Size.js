@@ -10,6 +10,9 @@ module.exports = (sequelize, dataTypes) => {
         dimension: {
             type: dataTypes.STRING(255),
             allowNull: false
+        },
+        type: {
+            type: dataTypes.STRING(255),
         }
     };
 

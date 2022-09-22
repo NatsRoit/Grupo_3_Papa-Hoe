@@ -37,10 +37,18 @@ router.post("/create", upload.fields([
 
 
 // UPDATE PRODUCTOS
-router.get("/edit/:id", logueado, adminController.editView);
-router.put("/edit/:id", logueado, upload.fields([
+// router.get("/edit/:id", logueado, adminController.editView);
+// router.put("/edit/:id", logueado, upload.fields([
+router.get("/edit/:id", adminController.editView);
+router.put("/edit/:id", upload.fields([
   { name: 'image1', maxCount: 1 },
-  { name: 'imageGallery', maxCount: 4 }]), adminController.edit);
+  { name: 'imageGallery1', maxCount: 1 },
+  { name: 'imageGallery2', maxCount: 1 },
+  { name: 'imageGallery3', maxCount: 1 },
+  { name: 'imageGallery4', maxCount: 1 }]), adminController.edit);
+
+    
+
 
 
 // DELETE PRODUCTOS

@@ -195,7 +195,7 @@ ul.breadcrumb li + li:before {
   content: "> ";
   color: #b3b1b3;
 }
-ul.breadcrumb li.active {
+ul.breadcrumb li.breadCrumbLast {
   color: #001728;
 }
 ul.breadcrumb li a:hover {
