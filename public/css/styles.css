@@ -2590,7 +2590,7 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     width: 60%;
   }
   .login-register {
-    width: 60%;
+    width: 70%;
   }
   /* .register .login-register {
     width: 60%;
@@ -2837,7 +2837,7 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     width: 60%;
   }
   .login-register {
-    width: 40%;
+    width: 50%;
   }
   /* ------------------- SHOP  --------------------------------------*/
   

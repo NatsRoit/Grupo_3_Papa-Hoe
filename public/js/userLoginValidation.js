@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
     let passwordReg = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*[$@$!%*?&]))([^ ]){8,50}$/; // 8 caracteres: Al menos 1 MAY o 1 min, y 1 número 0 un caracter especial
 
     let form = document.querySelector("form");
-    form.email.focus();
+    // form.email.focus();
 
 // VALIDACIÓN EMAIL
 email.valid = false;
@@ -42,7 +42,6 @@ let errMsg = this.parentElement.querySelector("#errMsg");
 password.valid = false;
 password.addEventListener("focus", function () {
   let errMsg = this.parentElement.parentElement.querySelector("#errMsg");
-  console.log(password.parentElement.parentElement);
     password.classList.remove("invalid-input");
     password.classList.remove("valid-input");
     errMsg.innerHTML = "";
@@ -53,9 +52,13 @@ password.addEventListener("focus", function () {
 password.addEventListener("blur", function () {
 let errMsg = this.parentElement.parentElement.querySelector("#errMsg");
     if (password.value == "") {
-        errMsg.innerHTML = "Tenés que proporcionar una constraseña";
-        password.classList.add("invalid-input");
-    // } else if (!password.value.match(passwordReg)) {
+      errMsg.innerHTML = "Tenés que proporcionar una contraseña";
+      password.classList.add("invalid-input");
+    }
+    else if (password.value.length < 8) {
+      errMsg.innerHTML = "Recordá que la contraseña tiene al menos 8 caracteres";
+      password.classList.add("invalid-input");
+    // else if (!password.value.match(passwordReg)) {
     //     errMsg.innerHTML = "Parece que esa contraseña no es válida";
     //     password.classList.remove("valid-input");
     //     password.classList.add("invalid-input");
@@ -86,7 +89,6 @@ eye.addEventListener("click", function () {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("SE EJECUTA preventDefault")
     let formElements = document.querySelector("#formulario").elements;
     let isInvalid = [];
     for (let i = 0; i < formElements.length; i++) {
@@ -94,7 +96,7 @@ form.addEventListener("submit", (e) => {
       if (formField.hasOwnProperty("valid") && !formField.valid) {
         isInvalid.push(formField);
         console.log("hay campos con propiedad invalid")
-        //   formField.classList.add("invalid-input");
+          formField.classList.add("invalid-input");
       }
     };
     if (isInvalid.length > 0) {
