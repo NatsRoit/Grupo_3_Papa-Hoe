@@ -57,14 +57,9 @@ let adminController = {
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : "_default-product.png",
             image2: req.files.imageGallery[0] ? req.files.imageGallery[0].filename : null,
-            image2: req.files.imageGallery[1] ? req.files.imageGallery[1].filename : null,
-            image2: req.files.imageGallery[2] ? req.files.imageGallery[2].filename : null,
-            image2: req.files.imageGallery[3] ? req.files.imageGallery[3].filename : null,
-            // image1: req.files[0] ? req.files[0].filename : "_default-product.png",
-            // image2: req.files[1] ? req.files[1].filename : null,
-            // image3: req.files[2] ? req.files[2].filename : null,
-            // image4: req.files[3] ? req.files[3].filename : null,
-            // image5: req.files[4] ? req.files[4].filename : null,
+            image3: req.files.imageGallery[1] ? req.files.imageGallery[1].filename : null,
+            image4: req.files.imageGallery[2] ? req.files.imageGallery[2].filename : null,
+            image5: req.files.imageGallery[3] ? req.files.imageGallery[3].filename : null,
 
         })
         .then(function (nuevoProducto) {
@@ -177,10 +172,15 @@ let adminController = {
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
-            image2: req.files.image2 ? req.files.image2[0].filename : req.body.oldImagen2,
-            image3: req.files.image3 ? req.files.image3[0].filename : req.body.oldImagen3,
-            image4: req.files.image4 ? req.files.image4[0].filename : req.body.oldImagen4,
-            image5: req.files.image5 ? req.files.image5[0].filename : req.body.oldImagen5,
+            image2: req.files.imageGallery[0] ? req.files.imageGallery[0].filename : req.body.oldImagen2,
+            image3: req.files.imageGallery[1] ? req.files.imageGallery[1].filename : req.body.oldImagen3,
+            image4: req.files.imageGallery[2] ? req.files.imageGallery[2].filename : req.body.oldImagen4,
+            image5: req.files.imageGallery[3] ? req.files.imageGallery[3].filename : req.body.oldImagen5,
+            // image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
+            // image2: req.files.image2 ? req.files.image2[0].filename : req.body.oldImagen2,
+            // image3: req.files.image3 ? req.files.image3[0].filename : req.body.oldImagen3,
+            // image4: req.files.image4 ? req.files.image4[0].filename : req.body.oldImagen4,
+            // image5: req.files.image5 ? req.files.image5[0].filename : req.body.oldImagen5,
         },{
             where: {id: req.params.id}
         })
