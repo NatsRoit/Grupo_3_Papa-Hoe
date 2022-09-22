@@ -870,14 +870,27 @@ input[type="range"]::-moz-range-progress {
 .shop-filters .admin {
   background-color: #8cd8d5
 }
-
-.shop-filters p {
-  /* font-size: 12pt; */
+form.delete {
+  display: inline;
+}
+#borrarProducto {
+  background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.shop-filters button,
+.shop-filters a {
+  font-size: 12pt;
   color: #666;
+  letter-spacing: 0.25pt;
+}
+.shop-filters div {
   margin-right: 40px;
   margin-left: 40px;
   margin-top: 0px;
-  letter-spacing: 0.5pt;
 }
 .shop .titulo-seccion-main {
   /* color: #666; */
@@ -3136,10 +3149,12 @@ button:focus {
   flex-grow: 1;
   /* padding: 0 1.5rem; */
 }
-.accordion:after {
-  content: '\02795'; /* Unicode (+) */
-  font-size: 13px;
-  color: hsl(220, 14%, 80%);
+.accordion::after {
+  /*content: '\00ff0b';    Unicode para el signo (+) */
+  content: '\002B';
+  font-size: 16px;
+  font-weight: bolder;
+  color: hsl(220deg 14% 69%);
   float: right;
   margin-left: 5px;
 }
@@ -3147,7 +3162,7 @@ button:focus {
   font-weight: 800;
 }
 .active:after {
-  content: "\2796"; /* Unicode (-) */
+  content: "\2212";  /* Unicode (-) */
 }
 .drawer__content #panel {
   padding: 0 18px;

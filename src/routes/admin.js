@@ -30,10 +30,9 @@ router.get('/test',adminController.test);
 
 
 // CREATE NUEVO PRODUCTO
-
-// router.get("/create",logueado, adminController.createView);
 router.get("/create", logueado, adminController.createView);
-router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);//validaciones.validar('create'), adminController.create);
+router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);
+//validaciones.validar('create'), adminController.create);
 
 
 // UPDATE PRODUCTOS
@@ -45,8 +44,9 @@ router.put("/edit/:id", logueado, upload.fields([
   { name: 'image4', maxCount: 1 },
   { name: 'image5', maxCount: 1 }]), adminController.edit);
 
+  
 // DELETE PRODUCTOS
-router.get("/delete/:id", adminController.destroy);
+router.delete("/delete/:id", adminController.destroy);
 
 
 

@@ -13,19 +13,24 @@
 
             <main class="productDetail">
                 <div class="shop-filters">
-                    <p>
+                    <div>
                         <a href="/product/category/all"><strong> SHOP </strong></a> |
                         <a href="/product/category/1"> SURFBOARDS </a> |
                         <a href="/product/category/2"> ACCESORIOS </a> |
                         <a href="/product/category/3"> COMPLEMENTOS </a> |
-                    </p>
+                    </div>
+
                     <%if(locals.isAdmin){%>
-                        <p>
-                            <a href="/admin/create"> Crear Producto </a>|
-                            <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
-                            <a href="/admin/delete/<%=producto.id%>" class="warningCancel"> Borrar Producto </a>
-                        </p>
-                        <% }%>
+                    <div>
+                        <a href="/admin/create"> Crear Producto </a>|
+                        <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
+                        <!-- <a href="/admin/delete/<%=producto.id%>"> Borrar Producto </a> -->
+
+                        <form class="delete" action="/admin/delete/<%=producto.id%>?_method=DELETE" method="POST">
+                            <button type="submit" id="borrarProducto">Borrar Producto</button>
+                        </form>
+                    </div>
+                    <% }%>
                 </div>
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
