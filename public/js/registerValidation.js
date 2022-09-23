@@ -140,9 +140,9 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION IMAGEN
   
-    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;    
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif|.svg|.tiff|.webp)$/i;    
     if(!allowedExtensions.exec(imagen.value) ){        
-        errors.push('Las extenciones permitidas son .jpeg/.jpg/.png/.gif y no puede superar 1MB');      
+        errors.push('Las extensiones permitidas son .jpeg/.jpg/.png/.gif/.svg/.tiff/.webp y no puede superar 1MB');      
         imagen.classList.add("is-invalid");
     }
     

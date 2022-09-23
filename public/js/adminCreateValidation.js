@@ -290,8 +290,8 @@ return result;
     if (prodDescription.value == "") {
       prodDescription.previousElementSibling.innerHTML = "Una buena descripción ayuda a mejorar las ventas!";
       prodDescription.classList.add("invalid-input");
-    } else if (prodDescription.value.length > 1500) {
-      prodDescription.previousElementSibling.innerHTML = "Menos es más... Probá a decirlo usando como máximo 1500 caracteres!";
+    } else if (prodDescription.value.length > 1500 || prodDescription.value.length < 10) {
+      prodDescription.previousElementSibling.innerHTML = "Menos es más... Probá a decirlo usando como mínimo 10 caracteres y como máximo 1500 caracteres!";
       prodDescription.classList.remove("valid-input");
       prodDescription.classList.add("invalid-input");
     } else {
@@ -315,8 +315,8 @@ return result;
     if (prodFeatures.value == "") {
       prodFeatures.previousElementSibling.innerHTML = "No olvides detallar las características";
       prodFeatures.classList.add("invalid-input");
-    } else if (prodFeatures.value.length > 500) {
-      prodFeatures.previousElementSibling.innerHTML = "Menos es más... Probá a decirlo usando como máximo 500 caracteres!";
+    } else if (prodFeatures.value.length > 500 || prodFeatures.value.length < 10 ) {
+      prodFeatures.previousElementSibling.innerHTML = "Menos es más... Probá a decirlo usando como mínimo 10 caracteres y como máximo 500 caracteres!";
       prodFeatures.classList.remove("valid-input");
       prodFeatures.classList.add("invalid-input");
     } else {
