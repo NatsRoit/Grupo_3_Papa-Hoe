@@ -16,8 +16,20 @@
                         <li><a href="/product/category/2">accesorios</a></li>
                         <li><a href="/product/category/3">complementos</a></li>
                     </ul>
-                <li><a href="/product/boardBuilder">Board Builder</a></li>
-                <li><a href="/about">About</a></li>
+                <li>Board Builder</a></li>
+                    <ul id="panel">
+                        <li><a href="/product/boardBuilder">Board Builder</a></li>
+                        <li><a href="/tracker">Board Tracker</a></li>
+                    </ul>
+
+                <li class="accordion">About</li>
+                    <ul id="panel">
+                        <li><a href="/about">Papa Hoe</a></li>
+                        <li><a href="/about/#teamRiders">Team Riders</a></li>
+                        <li><a href="/faqs">FAQ's</a></li>
+                        <li><a href="/devoluciones">Envíos y Devoluciones</a></li>
+                        <li><a href="/politica-cancelacion">Política de Privacidad</a></li>
+                    </ul>
             </ul>
             <ul class="userMenu">
                 <% if(locals.usuario) { %>  
@@ -31,7 +43,7 @@
                 </ul>
                 <%if(locals.usuario && locals.isAdmin){%>
                     <ul class="adminMenu">
-                        <li><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                        <li><a href="http://localhost:3000/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
                     </ul>
                 <% } %> 
             <!-- <ul class="info-footer">

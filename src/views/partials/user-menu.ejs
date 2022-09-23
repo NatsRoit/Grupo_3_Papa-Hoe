@@ -1,4 +1,4 @@
-<section class="drawer drawer--left" id="drawer-name" data-drawer-target>
+<section class="drawer" id="user-name" data-drawer-target>
     <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
     <div class="drawer__wrapper">
         <div class="drawer__header">
@@ -10,7 +10,7 @@
         </div>
         <div class="drawer__content">
             <ul class="shopMenu">
-                <li class="accordion"><a href="/product/category/all">Shop All</a></li>
+                <li class="accordion"><a href="/product/category/all">Opciones de User</a></li>
                     <ul id="panel">
                         <li><a href="/product/category/1">surfboards</a></li>
                         <li><a href="/product/category/2">accesorios</a></li>
@@ -23,7 +23,7 @@
 
             <ul class="userMenu">
                 <% if(locals.usuario) { %>  
-                    <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i> Mi perfil</span></a></li>
+                    <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i> Opciones de Admin</span></a></li>
                     <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a></li> -->
                 <% } else { %>
