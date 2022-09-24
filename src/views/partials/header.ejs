@@ -20,11 +20,30 @@
                     </ul>
                 </li>
             </div>
-            <li><a href="/product/boardBuilder">Board Builder</a></li>
-            <li><a href="/about">About</a></li>
+
+            <div class="dropdown">
+                <li><a href="/product/boardBuilder">Board Builder</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/product/boardBuilder">Board Builder</a></li>
+                        <li><a href="/tracker">Board Tracker</a></li>
+                    </ul>
+                </li>
+            </div>
+            
+            <div class="dropdown">
+                <li><a href="/about">About</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/about/#teamRiders">Team Riders</a></li>
+                        <li><a href="/faqs">FAQ's</a></li>
+                        <li><a href="/devoluciones">Envíos y Devoluciones</a></li>
+                        <li><a href="/politica-cancelacion">Política de Privacidad</a></li>
+                        <li><a href="/politica-cancelacion">Contacto</a></li>
+                    </ul>
+                </li>
+            </div>
+
         </ul>
     </nav>
-
     <nav class="icons-navbar">
         <ul>
             <!-- <li>
@@ -38,34 +57,23 @@
             </li> -->
 
 
-            <div class="user-menu" id="usuario-icon">
-                <div>
-                    <span class="icon-bg" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
-                        <i class="fa-solid fa-user"></i>
-                    </span>
-                </div>
-            </div>
-
-
-
-
-
             <% if(locals.usuario) { %>  
-                    <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                    <li><a href="/user/logout"><span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span></a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a></li> -->
-                <% } else { %>
-                    <li><a href="/user/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-                <% } %>           
+            <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+            <li><a href="/user/logout"><span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span></a></li>
+                
+                
+            <% } else { %>
+            <li><a href="/user/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
+            <% } %>           
+            
             <li>
                 <a href="/product/cart" class="cartBtn">
                     <span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span>
                     <span class="badgeCant">3</span>
                 </a>
             </li>
+
         </ul>
     </nav>
-
 </header>
 <%- include("../partials/burger-menu") %>
-<%- include("../partials/user-menu") %>
