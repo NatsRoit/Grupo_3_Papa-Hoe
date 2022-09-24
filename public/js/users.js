@@ -7,8 +7,8 @@ window.addEventListener("load", function () {
     // email: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     let emailReg = /^(\w|\.|-)+?@(\w|-)+?\.\w{2,4}($|\.\w{2,4})$/gim;
     // let passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([^ ]){6,12}$/; // 6 a 12: digitos y números y al menos un caracter especial
-    let passwordReg = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*[$@$!%*?&]))([^ ]){8,50}$/; // 8 caracteres: Al menos 1 MAY o 1 min, y 1 número 0 un caracter especial
-
+   // let passwordReg = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*[$@$!%*?&]))([^ ]){8,50}$/; // 8 caracteres: Al menos 1 MAY o 1 min, y 1 número 0 un caracter especial
+    let passwordReg = /^{8,50}$/; // al menos 8 caracteres
     let form = document.querySelector("form");
     form.email.focus();
 
