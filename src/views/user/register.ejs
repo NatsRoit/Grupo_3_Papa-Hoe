@@ -34,9 +34,7 @@
                                         </div>
                                         <div class="form-input">
                                             <label for="apellido">Apellido  </label> <span class="errMsg" id="errMsg"></span>
-                                            
-                                            <input required type="text" name="apellido" id="apellido" placeholder="Apellido"
-                                                >
+                                            <input required type="text" name="apellido" id="apellido" placeholder="Apellido">
                                         </div>
                                     </div>
                                     <div class="form-input">
@@ -63,7 +61,7 @@
                                     <h4>Datos de Envío</h4>
                                     <div class="form-2col">
                                         <div class="form-input">
-                                            <label for="province">Provincia</label>
+                                            <label for="province">Provincia</label><span class="errMsg" id="errMsg"></span>
                                             <input required type="text" name="province" id="province" placeholder="Provincia"
                                                 >
                                         </div>
@@ -102,10 +100,8 @@
                                 </section>
                                 <div class="form-input custom-file">
                                     <label for="avatar">Elige una imagen de perfil 
-                                    <% if (locals.errors && errors.avatar) { %>
-                                        <span class="under"><%= errors.avatar.msg %> </span>
-                                    <% } %></label>
-                                    <input type="file" name="avatar" id="avatar">
+                                    </label><span class="errMsg" id="errMsg"></span>
+                                    <input required type="file" name="avatar" id="avatar">
                                     <img id="imagenPrevisualizacion">
                                 </div>
                                 <div class="submit-button">
@@ -127,8 +123,7 @@
             </main>
             <%- include("../partials/footer") %>
             <script src="/js/registerValidation.js"></script>
- <!-- sweet alert -->
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
     </body>
 
 </html>
