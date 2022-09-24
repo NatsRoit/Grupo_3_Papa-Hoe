@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import SmallCard from './SmallCard';
 
 const FetchUsers = async () => {
-    const res = await fetch (`http://localhost:3000/api/users/list`)
+    const res = await fetch (`http://localhost:3001/api/users/list`)
     const usersArray = res.json()
     console.log(FetchUsers());
     console.log(usersArray);

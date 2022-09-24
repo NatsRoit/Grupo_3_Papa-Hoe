@@ -21,51 +21,40 @@
                     <div class="wrapper-Col-66">
                         <h2>Datos Personales</h2>
                         <div class="register">
-                            <ul class="errores"></ul>
+                           
                             <form class="formulario" action="/user/register" method="POST"
                                 enctype="multipart/form-data">
                                 <section class="datos-section">
                                     <h4>Datos Personales</h4>
                                     <div class="form-2col">
                                         <div class="form-input">
-                                            <label for="nombre">Nombre <% if (typeof errors != 'undefined' && errors.nombre) { %>
-                                                <span class="under"><%= errors.nombre.msg %> </span>
-                                            <% } %></label>
+                                            <label for="nombre">Nombre  </label><span class="errMsg" id="errMsg"></span>
                                             <input required type="text" name="nombre" id="nombre" placeholder="Nombre" >
                                             
                                         </div>
                                         <div class="form-input">
-                                            <label for="apellido">Apellido <% if (typeof errors != 'undefined' && errors.apellido) { %>
-                                                <span class="under"><%= errors.apellido.msg %> </span>
-                                            <% } %></label>
+                                            <label for="apellido">Apellido  </label> <span class="errMsg" id="errMsg"></span>
+                                            
                                             <input required type="text" name="apellido" id="apellido" placeholder="Apellido"
                                                 >
                                         </div>
                                     </div>
                                     <div class="form-input">
-                                        <label for="usuario">Usuario <% if (typeof errors != 'undefined' && errors.usuario) { %>
-                                            <span class="under"><%= errors.usuario.msg %> </span>
-                                        <% } %></label>
+                                        <label for="usuario">Usuario </label><span class="errMsg" id="errMsg"></span>
                                         <input required type="text" name="usuario" id="usuario" placeholder="Elige un nombre de usuario"
                                             >
                                     </div>
                                     <div class="form-input">
-                                        <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
-                                            <span class="under"><%= errors.email.msg %> </span>
-                                        <% } %></label>
+                                        <label for="email">Email </label><span class="errMsg" id="errMsg"></span>
                                         <input required type="email" name="email" id="email" placeholder="Email" >
                                     </div>
                                     <div class="form-input">
-                                        <label for="contraseña">Contraseña <% if (typeof errors != 'undefined' && errors.password) { %>
-                                            <span class="under"><%= errors.password.msg %> </span>
-                                        <% } %></label>
+                                        <label for="contraseña">Contraseña </label><span class="errMsg" id="errMsg"></span>
                                         <input required type="password" name="password" id="password" placeholder="Contraseña"
                                             >
                                     </div>
                                     <div class="form-input">
-                                        <label for="confirm_password">Confirmar contraseña <% if (typeof errors != 'undefined' && errors.confirm_password) { %>
-                                            <span class="under"><%= errors.confirm_password.msg %> </span>
-                                        <% } %></label>
+                                        <label for="confirm_password">Confirmar contraseña</label><span class="errMsg" id="errMsg"></span>
                                         <input required type="password" name="confirm_password" id="confirm_password"
                                             placeholder="Confirmar Contraseña" >
                                     </div>

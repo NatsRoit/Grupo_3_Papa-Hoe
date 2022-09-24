@@ -11,35 +11,44 @@
 
         <main class="profileEdit">
             <h2>Mi perfil</h2>
-
             <section class="main-container column ">
-
                 <div class="wrapper-Col-66">
-                    <h2>Editar Perfil</h2>
+                    <h2>Editar Perfil</h2>                  
                     <div class="register">
+                        <ul class="errores"></ul>
                         <form class="formulario" action="/user/edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <section class="datos-section">
                                 <h4>Datos Personales</h4>
                                 <div class="form-2col">
                                     <div class="form-input">
-                                        <label for="nombre">Nombre</label>
+                                        <label for="nombre">Nombre
+                                            <% if (typeof errors != 'undefined' && errors.nombre) { %>
+                                                <span class="under"><%= errors.nombre.msg %> </span>
+                                            <% } %>
+                                        </label>
                                         <input type="text" name="nombre" id="nombre" placeholder="Nombre"
                                             value="<%=user.first_name%>" required>
                                     </div>
                                     <div class="form-input">
-                                        <label for="apellido">Apellido</label>
+                                        <label for="apellido">Apellido<% if (typeof errors != 'undefined' && errors.apellido) { %>
+                                            <span class="under"><%= errors.apellido.msg %> </span>
+                                        <% } %></label>
                                         <input type="text" name="apellido" id="apellido" placeholder="Apellido"
                                             value="<%=user.last_name%>" required>
                                     </div>
                                 </div>
 
                                 <div class="form-input">
-                                    <label for="usuario">Usuario</label>
+                                    <label for="usuario">Usuario<% if (typeof errors != 'undefined' && errors.usuario) { %>
+                                        <span class="under"><%= errors.usuario.msg %> </span>
+                                    <% } %></label>
                                     <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"
                                         value="<%=user.user_name%>" required>
                                 </div>
                                 <div class="form-input">
-                                    <label for="email">Email</label>
+                                    <label for="email">Email<% if (typeof errors != 'undefined' && errors.email) { %>
+                                        <span class="under"><%= errors.email.msg %> </span>
+                                    <% } %></label>
                                     <input type="email" name="email" id="email" placeholder="Email"
                                         value="<%=user.email%>" required>
                                 </div>
@@ -103,7 +112,9 @@
                                 <input type="hidden" name="oldImagen" value="<%= user.avatar%>">
                                 <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
                                 <input type="file" name="avatar" id="avatar">
-                                <label for="avatar">Elige una imagen de perfil</label>
+                                <label for="avatar">Elige una imagen de perfil<% if (locals.errors && errors.avatar) { %>
+                                    <span class="under"><%= errors.avatar.msg %> </span>
+                                <% } %></label>
                             </div>
 
                             <div class="submit-button">
@@ -123,7 +134,10 @@
 
                 </section>
             </main>
-            <%- include("../partials/footer") %>
+                  <%- include("../partials/footer") %>
+                   <script src="/js/registerValidation.js"></script>
+                       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </body>
 
 </html>
