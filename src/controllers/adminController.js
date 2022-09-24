@@ -8,12 +8,7 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/p
 
 let adminController = {
     test: function(req,res){
-        let prod = db.Category.findAll({
-                include: [{association: 'subcategorias'}]
-            });
-        let sub = db.Subcategory.findAll()
-
-        Promise.all([prod, sub])
+        db.Product.findByPk(125)
         .then(function(response){
             return res.send(response);
         })
@@ -55,11 +50,12 @@ let adminController = {
             brand_id: req.body.brand_id,
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
-            image1: req.files[0] ? req.files[0].filename : "_default-product.png",
-            image2: req.files[1] ? req.files[1].filename : null,
-            image3: req.files[2] ? req.files[2].filename : null,
-            image4: req.files[3] ? req.files[3].filename : null,
-            image5: req.files[4] ? req.files[4].filename : null,
+            image1: req.files.image1 ? req.files.image1[0].filename : "_default-product.png",
+            image2: req.files.imageGallery ? req.files.imageGallery[0].filename : null,
+            image3: req.files.imageGallery ? req.files.imageGallery[1].filename : null,
+            image4: req.files.imageGallery ? req.files.imageGallery[2].filename : null,
+            image5: req.files.imageGallery ? req.files.imageGallery[3].filename : null,
+
         })
         .then(function (nuevoProducto) {
             let responseProducto = db.Product.findOne({
@@ -129,8 +125,6 @@ let adminController = {
         let sizes = db.Size.findAll()
         Promise.all([producto, brand, category, subcategory, colors, fins, sizes])
         .then(function([producto, brand, category, subcategory, colors, fins, sizes]){
-            console.log(producto)
-            console.log(JSON.stringify(producto))
 
 // Hago un Array con los ID's de todos los "sizes" y otro Array con los ID's de los "sizes seleccionados" de este producto
 // porque no lograba resolver el tema de iterar sobre un array de Objetos literales, analizando sólo la propiedad "ID".
@@ -173,10 +167,10 @@ let adminController = {
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
-            image2: req.files.image2 ? req.files.image2[0].filename : req.body.oldImagen2,
-            image3: req.files.image3 ? req.files.image3[0].filename : req.body.oldImagen3,
-            image4: req.files.image4 ? req.files.image4[0].filename : req.body.oldImagen4,
-            image5: req.files.image5 ? req.files.image5[0].filename : req.body.oldImagen5,
+            image2: req.files.imageGallery1 ? req.files.imageGallery1[0].filename : req.body.oldImagen2,
+            image3: req.files.imageGallery2 ? req.files.imageGallery2[0].filename : req.body.oldImagen3,
+            image4: req.files.imageGallery3 ? req.files.imageGallery3[0].filename : req.body.oldImagen4,
+            image5: req.files.imageGallery4 ? req.files.imageGallery4[0].filename : req.body.oldImagen5,
         },{
             where: {id: req.params.id}
         })
@@ -225,9 +219,9 @@ let adminController = {
                 let newproductcolor =  db.Product_Color.bulkCreate (productcolor)
                 Promise.all([newproductsize, newproductcolor])
                 .then(response => {
-                    console.log(JSON.stringify(response))
                     if (response && productoEditado ){
                         // let currency = req.body.currency;
+                        console.log("-----------------------" + productoEditado.image1);
                         return res.redirect('/product/detail/' + req.params.id );
                     } else {
                         res.send ("algo salio mal")

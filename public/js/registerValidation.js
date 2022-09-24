@@ -1,4 +1,4 @@
-//window.onload = function(){
+window.onload = function(){
 
 //para ubicar el cursor en el campo nombre de una
 let formulario = document.querySelector(".formulario");
@@ -26,7 +26,7 @@ formulario.addEventListener("submit", async (e) => {
   //VALIDACION NOMBRE
   if (nombre.value == "" || nombre.value.length < 3) {
     errors.push(
-      "El campo nombre no puede estar vacio y debe tener mas de dos caracteres"
+      "El campo Nombre no puede estar vacío y debe tener más de dos caracteres"
     );
     nombre.classList.add("is-invalid");
   } else {
@@ -36,7 +36,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION APELLIDO
   if (apellido.value == "" || apellido.value.length < 2) {
-    errors.push("El campo nombre no puede estar vacio y debe tener mas de dos caracteres");
+    errors.push("El campo Nombre no puede estar vacío y debe tener más de dos caracteres");
     apellido.classList.add("is-invalid");
   } else {
     apellido.classList.add("form-input");
@@ -45,7 +45,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION USUARIO
   if (usuario.value == "" || usuario.value.length < 2) {
-    errors.push("El campo Usuario no puede estar vacio y debe tener mas de dos caracteres");
+    errors.push("El campo Usuario no puede estar vacío y debe tener más de dos caracteres");
     usuario.classList.add("is-invalid");
   } else {
     usuario.classList.add("form-input");
@@ -56,7 +56,7 @@ formulario.addEventListener("submit", async (e) => {
 
    if (!email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     email.classList.add("is-invalid");
-    errors.push("El email tiene que ser valido");
+    errors.push("El email tiene que ser válido");
   } else {
     
     email.classList.add("form-input");
@@ -64,8 +64,8 @@ formulario.addEventListener("submit", async (e) => {
   }
 
   //VALIDACION PASSWORD
-  if (password.value == "" || password.value.length < 7) {
-    errors.push("El campo password no puede estar vacío y tiene que tener al menos 8 caracteres");
+  if (password.value == "" || password.value.length < 8) {
+    errors.push("El campo Password no puede estar vacío y tiene que tener al menos 8 caracteres");
     password.classList.add("is-invalid");
   } else {
     password.classList.add("form-input");
@@ -73,8 +73,11 @@ formulario.addEventListener("submit", async (e) => {
   }
 
   //VALIDACION CONFIRMPASSWORD
-  if (confirmPassword.value == "" || password.value != confirmPassword.value) {
-    errors.push("Debes cofirmar la password");
+  if (confirmPassword.value == "") {
+    errors.push("Tenés que cofirmar tu password");
+    confirmPassword.classList.add("is-invalid");
+  } else if (password.value != confirmPassword.value) {
+    errors.push("Las contraseñas deben ser iguales");
     confirmPassword.classList.add("is-invalid");
   } else {
     confirmPassword.classList.add("form-input");
@@ -83,7 +86,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION PROVINCE
   if (province.value == "") {
-    errors.push("El campo provincia no puede estar vacio");
+    errors.push("El campo Provincia no puede estar vacío");
     province.classList.add("is-invalid");
   } else {
     province.classList.add("form-input");
@@ -92,7 +95,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION COUNTRY
   if (country.value == "") {
-    errors.push("El campo pais no puede estar vacio");
+    errors.push("El campo País no puede estar vacío");
     country.classList.add("is-invalid");
   } else {
     country.classList.add("form-input");
@@ -101,7 +104,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION DIRECCION
   if (direccion.value == "") {
-    errors.push("El campo direccion no puede estar vacio");
+    errors.push("El campo Dirección no puede estar vacío");
     direccion.classList.add("is-invalid");
   } else {
     direccion.classList.add("form-input");
@@ -110,7 +113,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION LOCALIDAD
   if (localidad.value == "") {
-    errors.push("El campo localidad no puede estar vacio");
+    errors.push("El campo localidad no puede estar vacío");
     localidad.classList.add("is-invalid");
   } else {
     localidad.classList.add("form-input");
@@ -119,7 +122,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION CP
   if (codigoPostal.value == "") {
-    errors.push("El campo codigo postal no puede estar vacio");
+    errors.push("El campo Código Postal no puede estar vacío");
     codigoPostal.classList.add("is-invalid");
   } else {
     codigoPostal.classList.add("form-input");
@@ -128,7 +131,7 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION TELEFONO
   if (telefono.value == "") {
-    errors.push("El campo telefono no puede estar vacio");
+    errors.push("El campo Teléfono no puede estar vacío");
     telefono.classList.add("is-invalid");
   } else {
     telefono.classList.add("form-input");
@@ -137,9 +140,9 @@ formulario.addEventListener("submit", async (e) => {
 
   //VALIDACION IMAGEN
   
-    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;    
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif|.svg|.tiff|.webp)$/i;    
     if(!allowedExtensions.exec(imagen.value) ){        
-        errors.push('Las extenciones permitidas son .jpeg/.jpg/.png/.gif y no puede superar 1MB');      
+        errors.push('Las extensiones permitidas son .jpeg/.jpg/.png/.gif/.svg/.tiff/.webp y no puede superar 1MB');      
         imagen.classList.add("is-invalid");
     }
     
@@ -163,7 +166,7 @@ formulario.addEventListener("submit", async (e) => {
     }
     Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'No surfeaste la ola!',
         text: 'Revisa los campos!',
        // footer: '<a href="">Why do I have this issue?</a>'
       })
@@ -181,4 +184,4 @@ formulario.addEventListener("submit", async (e) => {
     // NECESITAMOS DIRIGIR A LA API DE USERSconst fetchResponse = await fetch()
   }
 });
-//}
+}

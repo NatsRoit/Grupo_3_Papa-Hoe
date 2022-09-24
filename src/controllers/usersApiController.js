@@ -43,7 +43,6 @@ const usersApiController = {
                         { association: "active" },
                         { association: "role" },
                     ]
-    
                 }
                 res.json(response)
             })

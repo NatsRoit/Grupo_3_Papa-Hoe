@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/head") %>
+    <%- include("../partials/head", {title: 'PapaHoe || Detalle Del Producto'}) %>
 
     <body>
         <%- include("../partials/header") %>
@@ -13,25 +13,31 @@
 
             <main class="productDetail">
                 <div class="shop-filters">
-                    <p>
+                    <!-- <div>
                         <a href="/product/category/all"><strong> SHOP </strong></a> |
                         <a href="/product/category/1"> SURFBOARDS </a> |
                         <a href="/product/category/2"> ACCESORIOS </a> |
                         <a href="/product/category/3"> COMPLEMENTOS </a> |
-                    </p>
+                    </div> -->
+                    <span></span>
+
                     <%if(locals.isAdmin){%>
-                        <p>
-                            <a href="/admin/create"> Crear Producto </a>|
-                            <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
-                            <a href="/admin/delete/<%=producto.id%>" class="warningCancel"> Borrar Producto </a>
-                        </p>
-                        <% }%>
+                    <div>
+                        <a href="/admin/create"> Crear Producto </a>|
+                        <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
+                        <!-- <a href="/admin/delete/<%=producto.id%>"> Borrar Producto </a> -->
+
+                        <form class="delete" action="/admin/delete/<%=producto.id%>?_method=DELETE" method="POST">
+                            <button type="submit" id="borrarProducto">Borrar Producto</button>
+                        </form>
+                    </div>
+                    <% }%>
                 </div>
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
                     <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.categoria.name%></a></li>
                     <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.subcategoria.name%></a></li>
-                    <li class="active"><%= producto.name%></li>
+                    <li class="breadCrumbLast"><%= producto.name%></li>
                 </ul>
                 <section class="main-container">
                     <div class="left-wrapper">
@@ -50,7 +56,8 @@
                         <div class="product-header">
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <p>$<%= producto.price%> ARS</p>
+                            <!-- <p>$<%= producto.price%> ARS</p> -->
+                            <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
                             <form class="product-detail-form" action="/product/detail" method="POST">

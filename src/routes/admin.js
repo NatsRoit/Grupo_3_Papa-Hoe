@@ -30,23 +30,29 @@ router.get('/test',adminController.test);
 
 
 // CREATE NUEVO PRODUCTO
-
-// router.get("/create",logueado, adminController.createView);
 router.get("/create", logueado, adminController.createView);
-router.post("/create", logueado, upload.array('prodImage', 5), adminController.create);//validaciones.validar('create'), adminController.create);
+router.post("/create", upload.fields([
+  { name: 'image1', maxCount: 1 },
+  { name: 'imageGallery', maxCount: 4 }]), adminController.create);
 
 
 // UPDATE PRODUCTOS
-router.get("/edit/:id", logueado, adminController.editView);
-router.put("/edit/:id", logueado, upload.fields([
+// router.get("/edit/:id", logueado, adminController.editView);
+// router.put("/edit/:id", logueado, upload.fields([
+router.get("/edit/:id", adminController.editView);
+router.put("/edit/:id", upload.fields([
   { name: 'image1', maxCount: 1 },
-  { name: 'image2', maxCount: 1 },
-  { name: 'image3', maxCount: 1 },
-  { name: 'image4', maxCount: 1 },
-  { name: 'image5', maxCount: 1 }]), adminController.edit);
+  { name: 'imageGallery1', maxCount: 1 },
+  { name: 'imageGallery2', maxCount: 1 },
+  { name: 'imageGallery3', maxCount: 1 },
+  { name: 'imageGallery4', maxCount: 1 }]), adminController.edit);
+
+    
+
+
 
 // DELETE PRODUCTOS
-router.get("/delete/:id", adminController.destroy);
+router.delete("/delete/:id", adminController.destroy);
 
 
 

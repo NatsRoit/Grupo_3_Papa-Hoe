@@ -1,0 +1,45 @@
+<section class="drawer" id="user-name" data-drawer-target>
+    <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+    <div class="drawer__wrapper">
+        <div class="drawer__header">
+            <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
+                <!-- <ul class="drawer__title">
+                    <li>Mi Perfil</li>
+                    <li>Shop</li>
+                </ul> -->
+        </div>
+        <div class="drawer__content">
+            <ul class="shopMenu">
+                <li class="accordion"><a href="/product/category/all">Opciones de User</a></li>
+                    <ul id="panel">
+                        <li><a href="/product/category/1">surfboards</a></li>
+                        <li><a href="/product/category/2">accesorios</a></li>
+                        <li><a href="/product/category/3">complementos</a></li>
+                    </ul>
+                <li><a href="/product/boardBuilder">Board Builder</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+
+
+            <ul class="userMenu">
+                <% if(locals.usuario) { %>  
+                    <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i> Opciones de Admin</span></a></li>
+                    <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a></li> -->
+                <% } else { %>
+                    <li><a href="/user/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i> Login / Register</span></a></li>
+                <% } %> 
+                    <li><a href="/volumeCalculator"><i class="fa-solid fa-calculator"></i>Volume Calculator</a></li>
+            </ul>
+
+            <%if(locals.usuario && locals.isAdmin){%>
+                <ul class="adminMenu">
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                </ul>
+            <% } %> 
+
+        </div>
+    </div>
+</section>
+
+<script src="/js/burger-menu.js"></script>
