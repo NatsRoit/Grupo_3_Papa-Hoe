@@ -5,7 +5,7 @@ function LastProductInDb(){
         // Fetch PRODUCTS
         const [product,setProduct] = useState(["Cargando.."])
         async function fetchLastProducts() {       
-            const response = await fetch('http://localhost:3001/api/product/list');        
+            const response = await fetch('http://localhost:3001/api/products/list');        
             const productsArray = await response.json();            
             setProduct(productsArray.data)
         }

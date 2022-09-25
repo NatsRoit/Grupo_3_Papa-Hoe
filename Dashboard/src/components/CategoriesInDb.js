@@ -7,7 +7,7 @@ function GenresInDb(){
     // Fetch CATEGORIES
     const [categories,setCategories] = useState(["Cargando.."])
     async function fetchCategories() {       
-        const response = await fetch('http://localhost:3001/api/product/categories');        
+        const response = await fetch('http://localhost:3001/api/products/categories');        
         const categoriesArray = await response.json()
         setCategories(categoriesArray.data)
     }

@@ -102,7 +102,7 @@ const apiProductsController = {
                     info: {
                         status: 200,
                         total: categories.length,
-                        url: 'api/product/categories'
+                        url: 'api/products/categories'
                     },
                     data: categories
 
@@ -113,7 +113,7 @@ const apiProductsController = {
                 let response = {
                     info: {
                         status: 404,
-                        url: 'api/product/categories',
+                        url: 'api/products/categories',
                         error: e
                     },
                 }
