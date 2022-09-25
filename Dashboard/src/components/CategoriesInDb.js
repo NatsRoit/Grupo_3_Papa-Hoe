@@ -1,20 +1,26 @@
-import React from 'react';
-import Genre  from './Genre';
+import React,{ useState,useEffect } from "react";
+import Category  from './Categories';
 
-let genres = [
-    {genre: 'Acción'},
-    {genre: 'Animación'},
-    {genre: 'Aventura'},
-    {genre: 'Ciencia Ficción'},
-    {genre: 'Comedia'},
-    {genre: 'Documental'},
-    {genre: 'Drama'},
-    {genre: 'Fantasia'},
-    {genre: 'Infantiles'},
-    {genre: 'Musical'}
-]
 
 function GenresInDb(){
+
+    // Fetch CATEGORIES
+    const [categories,setCategories] = useState(["Cargando.."])
+    async function fetchCategories() {       
+        const response = await fetch('http://localhost:3001/api/product/categories');        
+        const categoriesArray = await response.json()
+        setCategories(categoriesArray.data)
+    }
+    useEffect(()=>{
+        fetchCategories()
+    },[])
+
+  
+    // categories.forEach(element => {
+    //     console.log(element.name);
+    // });
+
+
     return (
         <React.Fragment>
                 {/*<!-- Categories in DB -->*/}
@@ -26,8 +32,8 @@ function GenresInDb(){
                         <div className="card-body">
                             <div className="row">
                                 {
-                                    genres.map((genre,index)=>{
-                                        return  <Genre  {...genre}  key={index} />
+                                    categories.map((name,index)=>{
+                                        return  <Category  {...name}  key={index} />
                                     })
                                 }
                             </div>
