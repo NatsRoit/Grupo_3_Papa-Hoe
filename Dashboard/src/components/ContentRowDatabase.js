@@ -1,13 +1,6 @@
 import React,{ useState,useEffect } from "react";
 import SmallCard from './SmallCard';
 
-<<<<<<< HEAD
-const FetchUsers = async () => {
-    const res = await fetch (`http://localhost:3001/api/users/list`)
-    const usersArray = res.json()
-    console.log(FetchUsers());
-    console.log(usersArray);
-=======
 
 function ContentRowDatabase(){       
     
@@ -63,7 +56,6 @@ function ContentRowDatabase(){
     }
     
     let cardProps = [usersCard, productsCard, stockCard];
->>>>>>> ef3c6cbe29807ad9bb071347c88419ef64b5af56
     
 
 
