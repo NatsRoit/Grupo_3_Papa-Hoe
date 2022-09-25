@@ -117,19 +117,43 @@ var drawer = function () {
 };
 drawer();
 
+
+
+
 var acc = document.getElementsByClassName("accordion");
+var i;
 
 for (i = 0; i < acc.length; i++) {
-acc[i].addEventListener("mouseover", function(e) {
-  var panel = this.nextElementSibling;
-  this.classList.toggle("active");
-  if (!panel.style.maxHeight) {
-    e.preventDefault()
-    panel.style.maxHeight = panel.scrollHeight + 10 + "px";
-    panel.style.paddingBottom = "10px"
-  } else {
-    panel.style.maxHeight = null;
-    panel.style.paddingBottom = "0";
+  acc[i].addEventListener("click", function(e) {
+    // e.preventDefault()
+    var panel = this.nextElementSibling;
+    this.classList.toggle("active");
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      panel.style.paddingBottom = "0";
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 10 + "px";
+      panel.style.paddingBottom = "10px"
     }
-});
+  });
+
+
+
+
+// var acc = document.getElementsByClassName("accordion");
+// console.log(acc)
+
+// for (i = 0; i < acc.length; i++) {
+// acc[i].addEventListener("click", function(e) {
+//   var panel = this.nextElementSibling;
+//   this.classList.toggle("active");
+//   if (!panel.style.maxHeight) {
+//     // e.preventDefault()
+//     panel.style.maxHeight = panel.scrollHeight + 10 + "px";
+//     panel.style.paddingBottom = "10px"
+//   } else {
+//     panel.style.maxHeight = null;
+//     panel.style.paddingBottom = "0";
+//     }
+// });
 }

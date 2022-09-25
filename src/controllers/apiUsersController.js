@@ -30,6 +30,7 @@ const usersApiController = {
                 restart.json(response)
             })
     },
+
     'detail': (req, res) => {
         db.User.findByPk(req.params.id)
             .then(user => {
@@ -54,8 +55,8 @@ const usersApiController = {
                 }
                 res.json(response)
             })
-
         },
+
     'create': (req, res) =>{
         db.User.create({
             nombre: req.body.nombre,
@@ -78,7 +79,7 @@ const usersApiController = {
                 if(confirmacion){
                     response = {
                         info: {
-                            status: 200,
+                            status: 201,
                             total: confirmacion.length,
                             url: 'api/users/create'
                         },
@@ -96,6 +97,7 @@ const usersApiController = {
                 res.json(response)
             })
         },
+        
     'destroy': (req, res) => {
         let userId = req.params.id;
         db.User.destroy({where: {id: userId}})

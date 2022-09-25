@@ -15,8 +15,8 @@ const userRoutes = require('./routes/user');
 const adminRoutes = require('./routes/admin');
 
 //API ROUTES
-const usersApiRoutes = require('./routes/apiUsers.js');
-const productApiRoutes = require('./routes/productApi');
+const apiUsersRoutes = require('./routes/apiUsers.js');
+const apiProductsRoutes = require('./routes/apiProducts');
 
 
 // TEMPLATE ENGINE SETUP
@@ -50,8 +50,8 @@ app.use('/user', userRoutes);
 app.use('/admin', adminRoutes);
 
 //USO LAS RUTAS DE APIS 
-app.use('/api/users', usersApiRoutes);
-app.use('/api/product', productApiRoutes);
+app.use('/api/users', apiUsersRoutes);
+app.use('/api/products', apiProductsRoutes);
 
 
 app.use((req, res, next) => {

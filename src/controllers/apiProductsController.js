@@ -2,7 +2,7 @@ const { restart } = require('nodemon');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
-const productApiController = {
+const apiProductsController = {
     list: (req, res) =>{
         db.Product.findAll()
             .then(products => {
@@ -10,7 +10,7 @@ const productApiController = {
                     info: {
                         status: 200,
                         total: products.length,
-                        url: 'api/product/list'
+                        url: 'api/products/list'
                     },
                     data: products,
                     include: [
@@ -30,21 +30,21 @@ const productApiController = {
                 let response = {
                     info: {
                         status: 404,
-                        url: 'api/product/list',
+                        url: 'api/products/list',
                         error: e
                     },
                 }
                 res.json(response)
             })
     },
-     
+
     detail: (req, res) => {
         db.Product.findByPk(req.params.id)
             .then(product => {
                 let response = {
                     info: {
                         status: 200,
-                        url: 'api/product/detail' + req.params.id
+                        url: 'api/products/detail' + req.params.id
                     },
                     data: product,
                     include: [
@@ -56,15 +56,16 @@ const productApiController = {
                         { association: "dimensiones" },
                         { association: "colores" },
                     ]
-
                 }
+                if (data !== null){
                 res.json(response)
+            }
             })
             .catch(e => {
                 let response = {
                     info: {
                         status: 404,
-                        url: 'api/product/detail' + req.params.id,
+                        url: 'api/products/detail' + req.params.id,
                         error: e
                     },
                 }
@@ -100,4 +101,4 @@ const productApiController = {
 
 }
 
-module.exports = productApiController;
+module.exports = apiProductsController;

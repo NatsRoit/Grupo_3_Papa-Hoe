@@ -1,35 +1,32 @@
-<section class="drawer drawer--left" id="drawer-name" data-drawer-target>
+<section class="drawer drawer--left" id="burger-menu" data-drawer-target>
     <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
     <div class="drawer__wrapper">
         <div class="drawer__header">
             <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
-                <!-- <ul class="drawer__title">
-                    <li>Mi Perfil</li>
-                    <li>Shop</li>
-                </ul> -->
         </div>
         <div class="drawer__content">
             <ul class="shopMenu">
                 <li class="accordion"><a href="/product/category/all">Shop All</a></li>
-                    <ul id="panel">
-                        <li><a href="/product/category/1">surfboards</a></li>
-                        <li><a href="/product/category/2">accesorios</a></li>
-                        <li><a href="/product/category/3">complementos</a></li>
-                    </ul>
+                <ul id="panel">
+                    <li><a href="/product/category/1">surfboards</a></li>
+                    <li><a href="/product/category/2">accesorios</a></li>
+                    <li><a href="/product/category/3">complementos</a></li>
+                </ul>
+
                 <li>Board Builder</a></li>
-                    <ul id="panel">
-                        <li><a href="/product/boardBuilder">Board Builder</a></li>
-                        <li><a href="/tracker">Board Tracker</a></li>
-                    </ul>
+                <ul id="panel">
+                    <li><a href="/product/boardBuilder">Board Builder</a></li>
+                    <li><a href="/tracker">Board Tracker</a></li>
+                </ul>
 
                 <li class="accordion">About</li>
-                    <ul id="panel">
-                        <li><a href="/about">Papa Hoe</a></li>
-                        <li><a href="/about/#teamRiders">Team Riders</a></li>
-                        <li><a href="/faqs">FAQ's</a></li>
-                        <li><a href="/devoluciones">Envíos y Devoluciones</a></li>
-                        <li><a href="/politica-cancelacion">Política de Privacidad</a></li>
-                    </ul>
+                <ul id="panel">
+                    <li><a href="/about">Papa Hoe</a></li>
+                    <li><a href="/about/#teamRiders">Team Riders</a></li>
+                    <li><a href="/faqs">FAQ's</a></li>
+                    <li><a href="/devoluciones">Envíos y Devoluciones</a></li>
+                    <li><a href="/politica-cancelacion">Política de Privacidad</a></li>
+                </ul>
             </ul>
             <ul class="userMenu">
                 <% if(locals.usuario) { %>  
