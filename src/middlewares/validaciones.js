@@ -131,13 +131,9 @@ module.exports.validar = (method) => {
               body('image5').custom((value, {req}) =>{ // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
                 return validateImage(req,false)
               })
-
             ]
-         
         }
-        
     }
-
 }
 
 

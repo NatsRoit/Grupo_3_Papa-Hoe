@@ -12,14 +12,10 @@ let adminController = {
         .then(function(response){
             return res.send(response);
         })
-        .catch(err => { res.send(err);
+        .catch(err => {
+            res.send(error);
         })
     },
-
-    // index: (req,res) =>{
-    //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));
-    //     res.render(path.resolve(__dirname, '../views/admin/admin'), {productos});
-    // },
 
         
     createView: function(req, res) {
@@ -34,7 +30,8 @@ let adminController = {
             console.log(JSON.stringify(category))
             return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, size});
         })
-        .catch(err => { res.send(err);
+        .catch(err => {
+            res.send(error);
         })
     },
 
@@ -243,6 +240,18 @@ let adminController = {
         // fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
         // res.redirect('/product');
     });
+    },
+
+    admin: (req, res, next) => {
+        let productos = db.Product.findAll({
+            include: [ { association: "marca" }, { association: "categoria"}],
+        });
+        let categorias = db.Category.findAll()
+        Promise.all([productos, categorias])
+        .then(([productos, category]) => {
+            return res.render(path.resolve(__dirname, '../views/admin/adminPanel'),{productos, category});
+        })
+        // next();
     }
 }
 

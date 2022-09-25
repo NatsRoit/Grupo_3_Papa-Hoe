@@ -3,7 +3,7 @@ const fs = require('fs');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
-let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
+// let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
 
 const productController = {
@@ -27,24 +27,33 @@ const productController = {
         });
     },
 
-    index: function(req,res){
-        db.Product.findAll({
+    index: function(req, res, next){
+        let productos = db.Product.findAll({
             include: [ { association: "marca" }, { association: "categoria"}],
-            where : {category_id : req.params.cat != "all"? req.params.cat : [1,2,3]}
+            // where : {category_id : req.params.cat !== "all"? req.params.cat : req.params.cat !== null}
+        });
+        let categorias = db.Category.findAll()
+        Promise.all([productos, categorias])
+        .then(function([productos, categorias]){
+            let cat = req.params.cat;
+            if (cat == "all"){
+                prodList = productos;
+                cat = "Todos los productos"
+                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos:prodList, categoria:cat});
+            } else if (cat !== "all" && categorias.map(c => c.id).includes(Number(cat))){ 
+                prodList = productos.filter(prod => {return prod.category_id == req.params.cat})  
+                cat = categorias.find(c => c.id == cat);
+                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos:prodList, categoria:cat.name});
+            } else {
+                next();
+            }
         })
-        .then(function(productos){
-                if (req.params.cat == "all"){
-                    categoria = undefined
-                } else {
-                    categoria = req.params.cat;
-                }
-                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria});
-        })
-        .catch(err => { res.send(err);
+        .catch(error => {
+            res.send(error);
         })
     },
     
-    detail: function(req,res){
+    detail: function(req,res,next){
         let producto = 
         db.Product.findByPk(req.params.id, {
             include: [
@@ -68,17 +77,19 @@ const productController = {
             { var r = Math.floor(Math.random() * prodAll.length);
                 if(randomArr.indexOf(r) === -1) { 
                     randomArr.push(r);
-                    console.log(randomArr);
             }};
             // Pusheo esos 4 productos en un nuevo array (relatedProds) para pasarlo a la vista
             let relatedProds = [];
             for (let i = 0; i < randomArr.length; i++) {
                 relatedProds.push(prodAll[randomArr[i]])
             }
-            return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, relatedProds, size, fins, colors });
+            if (producto !== null){
+                return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, relatedProds, size, fins, colors });
+            } else {
+                next();
+            }
         })
-        .catch(err => { res.send(err);
-        })
+        .catch(error => res.send(error));
     },
 
     boardBuilder: function(req, res){

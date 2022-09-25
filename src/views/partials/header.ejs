@@ -1,7 +1,7 @@
 <header class="main-header">
     <div class="burger-menu">
         <div>
-            <span class="icon-bg" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+            <span class="icon-bg" data-drawer-trigger aria-controls="burger-menu" aria-expanded="false">
                     <img src="/images/brand/BurgerMenu.svg" alt="">
                 <!-- <i class="fa-solid fa-bars"></i> -->
             </span>
@@ -44,26 +44,34 @@
 
         </ul>
     </nav>
+
+
+    <!-- <li>
+        <div class="search-box">
+            <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
+            <form>
+                <input type="text" placeholder="Buscar">
+                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </li> -->
     <nav class="icons-navbar">
-        <ul>
-            <!-- <li>
-                <div class="search-box">
-                    <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
-                    <form>
-                        <input type="text" placeholder="Buscar">
-                        <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
+        <% if(!locals.usuario) { %>
+            <ul>
+                <li>
+                    <a href="/user/login">
+                        <span id="usuario-icon"><i class="fa-solid fa-user"></i></span>
+                    </a>
+                </li>
+            <% } else if (locals.usuario){ %>
+                <p style="color: white">Hola <%= locals.usuario.user_name %>!</p>
+                <div class="user-menu">
+                    <div>
+                        <span id="usuario-icon"data-drawer-trigger aria-controls="user-menu" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                    </div>
                 </div>
-            </li> -->
-
-
-            <% if(locals.usuario) { %>  
-            <li><a href="/user/profile/<%= locals.usuario.id%>"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
-            <li><a href="/user/logout"><span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span></a></li>
-                
-                
-            <% } else { %>
-            <li><a href="/user/login"><span id="usuario-icon"><i class="fa-solid fa-user"></i></span></a></li>
             <% } %>           
             
             <li>
@@ -72,8 +80,8 @@
                     <span class="badgeCant">3</span>
                 </a>
             </li>
-
         </ul>
     </nav>
 </header>
 <%- include("../partials/burger-menu") %>
+<%- include("../partials/user-menu") %>

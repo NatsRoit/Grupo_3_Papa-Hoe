@@ -27,6 +27,9 @@ let adminController = require(path.join(__dirname, '../controllers/adminControll
 
 // TEST
 router.get('/test',adminController.test);
+// PANEL DE CONTROL
+router.get("/", adminController.admin);
+// router.get("/", logueado, adminController.createView);
 
 
 // CREATE NUEVO PRODUCTO
@@ -46,10 +49,6 @@ router.put("/edit/:id", upload.fields([
   { name: 'imageGallery2', maxCount: 1 },
   { name: 'imageGallery3', maxCount: 1 },
   { name: 'imageGallery4', maxCount: 1 }]), adminController.edit);
-
-    
-
-
 
 // DELETE PRODUCTOS
 router.delete("/delete/:id", adminController.destroy);

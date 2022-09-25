@@ -191,8 +191,7 @@
                 <h1>También te puede interesar</h1>
                 <section class="contenedor-productos">
                         <% for (let i = 0; i < relatedProds.length; i++) { %>
-                        <div class="producto-shop">
-
+                        <div class="producto-shop related">
                             <a href="/product/detail/<%= relatedProds[i].id%>">
                                 <div class="imagen-producto">
                                     <div class="complementos-img">
@@ -201,9 +200,9 @@
                                     </div>
                                 </div>
                             </a>
-                            <div class="product-info">
+                            <!-- <div class="product-info">
                                 <h5><%= relatedProds[i].name %></h5>
-                            </div>
+                            </div> -->
                         </div>
                         <% } %>
                 </section>

@@ -20,15 +20,15 @@
                         <div class="history-items">
                 <!-- Acá tendremos que cambiar por valores dinámicos -->
                             <div class="img-slider">
-                                <img src="/img/B-cap-PapaHoe-VerdeAgua.png" alt="">
+                                <img src="/img/<%= productos[0].image1%>" alt="">
                             </div>
                             
                             <div class="prod-info-list">
-                                <p> <strong><%= productos[7].nombre%></strong> <br>
-                                $ <%= productos[7].precio%> ARS <br>
+                                <p><strong><%= productos[0].name%></strong> <br>
+                                $ <%= productos[0].price%> ARS <br>
                                 YYY / MM / DD</p>
                                 <div class="edit-buttons">
-                                    <a class="button-link azul-marino" href="/product/category/">view</a>
+                                    <a class="button-link azul-marino" href="/product/category/all">view</a>
                                     <a class="button-link rosa" href="/tracker">track</a>
                                 </div>
                             </div>
