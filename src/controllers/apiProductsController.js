@@ -95,9 +95,31 @@ const apiProductsController = {
         })
 
     },
+    categories: (req, res) =>{
+        db.Category.findAll()
+            .then(categories => {
+                let response = {
+                    info: {
+                        status: 200,
+                        total: categories.length,
+                        url: 'api/product/categories'
+                    },
+                    data: categories
 
-
-
+                }
+                res.json(response)
+            })
+            .catch(e => {
+                let response = {
+                    info: {
+                        status: 404,
+                        url: 'api/product/categories',
+                        error: e
+                    },
+                }
+                res.json(response)
+            })
+    }
 
 }
 
