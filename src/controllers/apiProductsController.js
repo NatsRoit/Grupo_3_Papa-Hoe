@@ -4,26 +4,38 @@ const Op = db.Sequelize.Op;
 
 const apiProductsController = {
     list: (req, res) =>{
-        db.Product.findAll()
+        db.Product.findAll({
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}],
+                raw: true},
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ], 
+        })
             .then(products => {
+                const reducer = (map, val) => {
+                    if(map[val] == null) {
+                        map[val] = 1;
+                    } else {
+                        ++map[val];
+                    }
+                    return map
+                    };
                 let response = {
                     info: {
                         status: 200,
                         total: products.length,
                         url: 'api/products/list'
                     },
-                    data: products,
-                    include: [
-                        { association: "marca" },
-                        { association: "categoria", include: [{association: 'subcategorias'}],
-                        raw: true},
-                        { association: "subcategoria" },
-                        { association: "fin" },
-                        { association: "dimensiones" },
-                        { association: "colores" },
-                    ]
-
+                    data: {
+                        count: products.length,
+                        countByCategory: products.map(el => el.categoria.name).reduce(reducer, {}),
+                        products,
                 }
+            }
                 res.json(response)
             })
             .catch(e => {

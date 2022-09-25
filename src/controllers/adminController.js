@@ -165,9 +165,9 @@ let adminController = {
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
             image2: req.files.imageGallery1 ? req.files.imageGallery1[0].filename : req.body.oldImagen2,
-            image3: req.files.imageGallery2 ? req.files.imageGallery2[0].filename : req.body.oldImagen3,
-            image4: req.files.imageGallery3 ? req.files.imageGallery3[0].filename : req.body.oldImagen4,
-            image5: req.files.imageGallery4 ? req.files.imageGallery4[0].filename : req.body.oldImagen5,
+            image3: req.files.imageGallery2 ? req.files.imageGallery2[1].filename : req.body.oldImagen3,
+            image4: req.files.imageGallery3 ? req.files.imageGallery3[2].filename : req.body.oldImagen4,
+            image5: req.files.imageGallery4 ? req.files.imageGallery4[3].filename : req.body.oldImagen5,
         },{
             where: {id: req.params.id}
         })
@@ -201,6 +201,7 @@ let adminController = {
                         isActive: 1
                     };
                     productsize.push(datasize);
+                    console.log("PRODUCTO SIZE<<<<<<<<<<<<<<<" + productsize)
                 };
                 
                 let productcolor = [];
@@ -212,8 +213,8 @@ let adminController = {
                     };
                     productcolor.push(datacolor);
                 }; 
-                let newproductsize =  db.Product_Size.bulkCreate (productsize);
-                let newproductcolor =  db.Product_Color.bulkCreate (productcolor)
+                let newproductsize =  db.Product_Size.bulkCreate(productsize);
+                let newproductcolor =  db.Product_Color.bulkCreate(productcolor)
                 Promise.all([newproductsize, newproductcolor])
                 .then(response => {
                     if (response && productoEditado ){
@@ -221,12 +222,12 @@ let adminController = {
                         console.log("-----------------------" + productoEditado.image1);
                         return res.redirect('/product/detail/' + req.params.id );
                     } else {
-                        res.send ("algo salio mal")
+                        next()
                     }
                 })
             })
         })
-    },
+    },  
 
     destroy: (req,res) =>{
         db.Product.destroy ({

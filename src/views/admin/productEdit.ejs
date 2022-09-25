@@ -193,7 +193,7 @@
                               <div class="opciones" id="sizeGroup">
                                 <p><strong>Talles Disponibles</strong></p>
                                 <% for(let i=0; i<sizes.length; i++){ %>
-                                  <% if ((sizes.type !== "vol") && (productSizeId.includes(sizesId[i]))) { %>
+                                  <% if (productSizeId.includes(sizesId[i])) { %>
                                   <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
                                     <%=sizes[i].dimension%>
                                   </label><br>

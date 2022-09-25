@@ -10,10 +10,8 @@ module.exports = (req,res,next) =>{
     res.locals.isAdmin = false;
     if(req.session.usuario){
         res.locals.usuario = req.session.usuario;
-        console.log(req.session + " MIDDLEWARE ACCESO PARA USUARIOS LOGUEADOS");
         if(req.session.usuario.role_id == 1){
             res.locals.isAdmin = true;
-            console.log(req.session + " MIDDLEWARE ACCESO PARA USUARIOS ADMIN");
         }
     // Cookies: Se guardan en el navegador, del lado del cliente
     } else if(req.cookies.email) {
