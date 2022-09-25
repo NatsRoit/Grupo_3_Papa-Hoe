@@ -13,7 +13,7 @@
             <main class="productCreate">
                 <span class="adm-table-header">
                     <h2 id="panelProd">Panel de Control</h2>
-                    <a>+ Nuevo Producto</a>
+                    <a href="/admin/create">+ Nuevo Producto</a>
                 </span>
 
                 <section class="main-container">
@@ -23,10 +23,11 @@
                                 <table class="adm-table">
                                     <thead class="adm-table-title">
                                     <tr>  
-                                        <th scope="col" title="Nombre del Producto">Nombre</th>
+                                        <th scope="col" title="Nombre del Producto">Producto</th>
+                                        <th scope="col" title="Nombre del Producto">Categoría</th>
                                         <th scope="col" title="Cantidad de productos en stock">Stock</th>
                                         <th scope="col" title="Precio Unitario">Precio</th>
-                                        <th scope="col" title="Descuento aplicado">- %</th>
+                                        <th scope="col" title="Aplica Descuento">%</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
@@ -36,9 +37,10 @@
                                     <% productos.forEach(product => { %>
                                     <tr>
                                         <td><%= product.name%> </td>
+                                        <td><%= product.categoria.name%> </td>
                                         <td><%= product.stock%> </td>
-                                        <td><%= product.price%> </td>
-                                        <td><%= product.discount%> </td>
+                                        <td>$ <%= product.price%> </td>
+                                        <td><%= product.discount != "0"? product.discount + "%" : ""%></td>
                                         <td id="adm-view"><a href="/product/detail/<%= product.id%> "><ion-icon name="eye-outline"></i></a></td>
                                         <!-- <i class="fa-regular fa-eye"></i></a></td> -->
                                         <td id="adm-edit"><a href="/admin/edit/<%= product.id%> "> <i class="fa-solid fa-pencil"></i></a></td>

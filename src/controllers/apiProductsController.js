@@ -4,38 +4,26 @@ const Op = db.Sequelize.Op;
 
 const apiProductsController = {
     list: (req, res) =>{
-        db.Product.findAll({
-            include: [
-                { association: "marca" },
-                { association: "categoria", include: [{association: 'subcategorias'}],
-                raw: true},
-                { association: "subcategoria" },
-                { association: "fin" },
-                { association: "dimensiones" },
-                { association: "colores" },
-            ], 
-        })
+        db.Product.findAll()
             .then(products => {
-                const reducer = (map, val) => {
-                    if(map[val] == null) {
-                        map[val] = 1;
-                    } else {
-                        ++map[val];
-                    }
-                    return map
-                    };
                 let response = {
                     info: {
                         status: 200,
                         total: products.length,
                         url: 'api/products/list'
                     },
-                    data: {
-                        count: products.length,
-                        countByCategory: products.map(el => el.categoria.name).reduce(reducer, {}),
-                        products,
+                    data: products,
+                    include: [
+                        { association: "marca" },
+                        { association: "categoria", include: [{association: 'subcategorias'}],
+                        raw: true},
+                        { association: "subcategoria" },
+                        { association: "fin" },
+                        { association: "dimensiones" },
+                        { association: "colores" },
+                    ]
+
                 }
-            }
                 res.json(response)
             })
             .catch(e => {
@@ -131,7 +119,54 @@ const apiProductsController = {
                 }
                 res.json(response)
             })
-    }
+    }, 
+
+    shop: (req, res) =>{
+        db.Product.findAll({
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}],
+                raw: true},
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ], 
+        })
+            .then(products => {
+                const reducer = (map, val) => {
+                    if(map[val] == null) {
+                        map[val] = 1;
+                    } else {
+                        ++map[val];
+                    }
+                    return map
+                    };
+                let response = {
+                    info: {
+                        status: 200,
+                        total: products.length,
+                        url: 'api/products/list'
+                    },
+                    data: {
+                        count: products.length,
+                        countByCategory: products.map(el => el.categoria.name).reduce(reducer, {}),
+                        products,
+                }
+            }
+                res.json(response)
+            })
+            .catch(e => {
+                let response = {
+                    info: {
+                        status: 404,
+                        url: 'api/products/list',
+                        error: e
+                    },
+                }
+                res.json(response)
+            })
+    },
 
 }
 
