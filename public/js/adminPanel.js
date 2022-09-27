@@ -37,7 +37,8 @@ function listProducts(PRODUCTS) {
             <td id="cat">${prod.categoria.name}</td>
             <td id="stock">${prod.stock}</td>
             <td id="price">${prod.price}</td>
-            <td id="discount">${prod.discount != 0? prod.discount : "prueba"}</td>
+            <td id="discount">${prod.discount != 0? prod.discount : "-"}</td>
+            <td id="active">${prod.active == true? "Activo" : "Deshabilitado"}</td>
             <td id="adm-view"><a href="/product/detail/${prod.id}"><i class="fa-regular fa-eye"></i></a></td>
             <td id="adm-edit"><a href="/admin/edit/${prod.id}"> <i class="fa-solid fa-pencil"></i></a></td>
             <td id="adm-delete"><a href="/admin/delete/${prod.id}"<i class="fa-solid fa-trash"></i></a></td>
