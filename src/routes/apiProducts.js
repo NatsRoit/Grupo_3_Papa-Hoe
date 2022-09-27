@@ -6,6 +6,7 @@ router.get('/list', apiProductsController.list);
 router.get('/detail/:id', apiProductsController.detail )
 router.get('/search', apiProductsController.search);
 router.get('/categories', apiProductsController.categories);
-router.get('/index', apiProductsController.shop);
+router.get('/index', apiProductsController.index);
+// router.get('/index/:id', apiProductsController.index);
 
 module.exports = router;

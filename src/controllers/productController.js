@@ -27,31 +27,46 @@ const productController = {
         });
     },
 
-    index: function(req, res, next){
-        let productos = db.Product.findAll({
+    indexAll: function(req, res, next) {
+        db.Product.findAll({
             include: [ { association: "marca" }, { association: "categoria"}],
-            // where : {category_id : req.params.cat !== "all"? req.params.cat : req.params.cat !== null}
-        });
-        let categorias = db.Category.findAll()
-        Promise.all([productos, categorias])
-        .then(function([productos, categorias]){
-            let cat = req.params.cat;
-            if (cat == "all"){
-                prodList = productos;
-                cat = "Todos los productos"
-                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos:prodList, categoria:cat});
-            } else if (cat !== "all" && categorias.map(c => c.id).includes(Number(cat))){ 
-                prodList = productos.filter(prod => {return prod.category_id == req.params.cat})  
-                cat = categorias.find(c => c.id == cat);
-                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos:prodList, categoria:cat.name});
+        })
+        .then(function (productos) {
+            if (productos.length > 0) {
+                return res.render(path.resolve(__dirname, '../views/product/shop'),{productos});
             } else {
                 next();
             }
-        })
-        .catch(error => {
-            res.send(error);
-        })
+        });
     },
+// POR AHORA NO LO USAMOS MÁS XQ TENEMOS LA BARRA DE BÚSQUEDA
+    // index: function(req, res, next){
+    //     !req.query.cat? req.query.cat = 0 : "";
+    //     let productos = db.Product.findAll({
+    //         include: [ { association: "marca" }, { association: "categoria"}],
+    //         where : {category_id : req.query.cat == "all"? {[Op.col]:"category_id"} : req.query.cat }
+    //     });
+    //     let categorias = db.Category.findAll()
+    //     Promise.all([productos, categorias])
+    //     .then(function([productos, categorias]){
+    //         if (productos.length > 0) {
+    //             let categoria;
+    //             if (req.query.cat == "all"){
+    //                 categoria = "Todos los productos"
+    //             } else { 
+    //                 categoria = categorias.find(c => c.id == req.query.cat);
+    //             }
+    //             return res.render(path.resolve(__dirname, '../views/product/shop'),{productos, categoria: categoria.name?categoria.name:categoria });
+    //         } else if (!req.query.cat){
+    //             next();
+    //         } else {
+    //             next();
+    //         }
+    //     })
+    //     .catch(error => {
+    //         res.send(error);
+    //     })
+    // },
     
     detail: function(req,res,next){
         let producto = 
