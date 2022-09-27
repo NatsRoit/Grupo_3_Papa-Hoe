@@ -20,6 +20,9 @@ const main = {
     politicaCancelacion: function(req,res){
         res.render(path.resolve(__dirname, '../views/main/politica-cancelacion'));
     },
+    contact: function(req,res){
+        res.render(path.resolve(__dirname, '../views/main/contact'));
+    },
     tracker: function(req,res){
         res.render(path.resolve(__dirname, '../views/main/tracker'));
     },

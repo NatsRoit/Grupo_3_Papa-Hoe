@@ -59,7 +59,7 @@
                             <div class="opciones">
                                 <div>
                                     <!-- <h5>Dimensiones</h5> -->
-                                    <select name="size" class="opciones-desplegable">
+                                    <select name="size" id="opcDim" class="opciones-desplegable">
                                         <option disabled selected>Dimensiones / Talle</option>
                                         <% if (producto.dimensiones){ %>
                                         <% for (let i=0; i<producto.dimensiones.length; i++) { %>
@@ -80,7 +80,7 @@
                                 <div>
                                 <%}%>
                                     <!-- <h5>Fin System</h5> -->
-                                        <select name="fins" class="opciones-desplegable">
+                                        <select name="fins" id="opcFin" class="opciones-desplegable">
                                         <option disabled selected>Fin Setup</option>
                                         <% if (producto.fin){ %>
                                         <option value="<%= producto.fin.id%>">
@@ -97,7 +97,7 @@
 
                                 <div>
                                     <!-- <h5>Color</h5> -->
-                                    <select name="colors" class="opciones-desplegable">
+                                    <select name="colors" id="opcCol" class="opciones-desplegable">
                                         <option disabled selected>Color</option>
                                         <% if (producto.colores){ %>
                                             <% for (let i =0; i<producto.colores.length; i++) { %>
@@ -118,7 +118,7 @@
                                     <div>
                                 <%}%>
                                 <!-- <h5>Acabado</h5> -->
-                                    <select name="" class="opciones-desplegable">
+                                    <select name="" id="opcAcab" class="opciones-desplegable">
                                         <option value="">Acabado</option>
                                         <option value="">opaco</option>
                                         <option value="">glossy</option>
@@ -141,43 +141,42 @@
                         <div class="product-summary">
                             <p><%= producto.nombre%></p>
                             <ul>
+<<<<<<< HEAD
                                 <li>Dimensiones: <span id="dimUser">hgfhgfhgfghfhfhfhgfhffh</span></li>
                                 <li>Fins</li>
                                 <li>Tecnologia</li>
                                 <li>Tail</li>
                                 <li>Finnish</li>
+=======
+                                <li>Dimensiones <span id="dimensiones"></span></li>
+                                <li>Fins <span id="fins"></span></li>
+                                <li>Color <span id="color"></span></li>
+                                <li>Acabado <span id="acabado"></span></li>
+>>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
                             </ul>
                             <hr>
-                            <p>CANTIDAD</p>
+                            <!-- <p>CANTIDAD</p> -->
                             <hr>
                             <p>TOTAL</p>
                         </div>
 
                         <div class="descripcion">
+
                             <div class="especificaciones">
-                                <h2>Especificaciones</h2>
-                                <p><%= producto.caracteristicas%></p>
+                                <h2>Descripción</h2>
+                                <p align="justify"><%= producto.description%></p>
                                 <br>
-                                <ul class="caracteristicas">
-                                    <li><strong>Habilidad: </strong>Principiante a Intermedio</li>
-                                    <li><strong>Tamaño de onda ideal: </strong>1-6 pies</li>
-                                    <li><strong>Tipo de ola:</strong>todas las condiciones</li>
-                                </ul>
                             </div>
+
                             <br>
+                            
                             <div class="features">
-                                <h2>Features</h2>
-                                <p><strong>Glassing </strong>— Standard ( 4 x 4 x 4)</p>
-                                <p><strong>Rocker — </strong>Flat entry rocker into a slight tail lift.</p>
-                                <p><strong>Concave — </strong>Slight Single into slight Double Concave</p>
-                                <p><strong>Tail — </strong>Round tail</p>
-                                <p><strong>Fins — </strong>Thruster, 3 Fin *FCS 2 or Futures</p>
+                                <h2>Características</h2>
+                                <p align="justify"><%= producto.features%></p>
                             </div>
+
                             <br>
-                            <div class="mas-informacion">
-                                <p><strong> Darren designed the Sandman with the wide point moved forward 2 inches and the deck rolled into a sleek medium low rail. This design provides easy paddling without losing the signature DHD performance. The rounded pin tail allows smooth rail to rail surfing, the slight single to double concave with a flat entry rocker generates the speed that you are looking for.</strong></p>
-                            </div>
-                            <img src="/assets/size.jpeg" alt="Sizes">
+
                         </div>
                     </div>
                 </section>
@@ -206,6 +205,10 @@
         <!-- footer -->
         <%- include("../partials/footer") %>
         <!-- footer -->
+<<<<<<< HEAD
         <script src="js/jhjgjhg.js"></script>
+=======
+        <script src="/js/detail.js"></script>
+>>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
     </body>
 </html>
