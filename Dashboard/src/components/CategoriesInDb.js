@@ -32,8 +32,8 @@ function CategoriesInDb(){
                         <div className="card-body">
                             <div className="row">
                                 {
-                                    categories.map((name,index)=>{
-                                        return  <Category  {...name}  key={index} />
+                                    categories.map((category,index)=>{
+                                        return  <Category  {...category}  key={index} />
                                     })
                                 }
                             </div>
