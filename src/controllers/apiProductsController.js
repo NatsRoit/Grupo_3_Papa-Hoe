@@ -74,27 +74,6 @@ const apiProductsController = {
         
     },
 
-    search: (req, res) => {
-        db.Product.findAll({
-            where: {
-                name: { [Op.like]: "%" + req.query.keyword + "%"},
-            },
-            include: [
-                { association: "marca" },
-                { association: "categoria", include: [{association: 'subcategorias'}],
-                raw: true},
-                { association: "subcategoria" },
-                { association: "fin" },
-                { association: "dimensiones" },
-                { association: "colores" },
-            ]
-
-        })
-        .then (products => {
-            return res.json(products);
-        })
-
-    },
     categories: (req, res) =>{
         db.Category.findAll()
             .then(categories => {
@@ -121,7 +100,29 @@ const apiProductsController = {
             })
     }, 
 
-    shop: (req, res) =>{
+
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: { [Op.like]: "%" + req.query.keyword + "%"},
+            },
+            include: [
+                { association: "marca" },
+                { association: "categoria", include: [{association: 'subcategorias'}],
+                raw: true},
+                { association: "subcategoria" },
+                { association: "fin" },
+                { association: "dimensiones" },
+                { association: "colores" },
+            ]
+        })
+        .then (products => {
+            return res.json(products);
+        })
+    },
+    
+    
+    index: (req, res) =>{
         db.Product.findAll({
             include: [
                 { association: "marca" },
@@ -143,24 +144,24 @@ const apiProductsController = {
                     return map
                     };
                 let response = {
-                    info: {
+                    meta: {
                         status: 200,
                         total: products.length,
-                        url: 'api/products/list'
+                        url: 'api/products/index'
                     },
                     data: {
                         count: products.length,
                         countByCategory: products.map(el => el.categoria.name).reduce(reducer, {}),
                         products,
+                    }
                 }
-            }
                 res.json(response)
             })
             .catch(e => {
                 let response = {
-                    info: {
+                    meta: {
                         status: 404,
-                        url: 'api/products/list',
+                        url: 'api/products/index',
                         error: e
                     },
                 }

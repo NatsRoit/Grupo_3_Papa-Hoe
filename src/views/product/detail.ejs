@@ -14,10 +14,10 @@
             <main class="productDetail">
                 <div class="shop-filters">
                     <!-- <div>
-                        <a href="/product/category/all"><strong> SHOP </strong></a> |
-                        <a href="/product/category/1"> SURFBOARDS </a> |
-                        <a href="/product/category/2"> ACCESORIOS </a> |
-                        <a href="/product/category/3"> COMPLEMENTOS </a> |
+                        <a href="/product/all"><strong> SHOP </strong></a> |
+                        <a href="/product/all?cat=surfboards"> SURFBOARDS </a> |
+                        <a href="/product/all?cat=accesorios"> ACCESORIOS </a> |
+                        <a href="/product/all?cat=complementos"> COMPLEMENTOS </a> |
                     </div> -->
                     <span></span>
 
@@ -35,8 +35,8 @@
                 </div>
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.categoria.name%></a></li>
-                    <li><a href="/product/category/<%= producto.categoria.id%>"><%= producto.subcategoria.name%></a></li>
+                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
+                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
                     <li class="breadCrumbLast"><%= producto.name%></li>
                 </ul>
                 <section class="main-container">
