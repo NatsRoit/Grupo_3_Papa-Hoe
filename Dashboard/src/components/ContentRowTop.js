@@ -12,22 +12,18 @@ function ContentRowTop(){
 						<h1 className="h3 mb-0 text-gray-800">Admin Dashboard</h1>
 					</div>
 				
-					{/*<!-- Content Row Movies-->*/}
 					<ContentRowDatabase />
-					{/*<!-- End movies in Data Base -->*/}
-					
+						
 	
-					{/*<!-- Content Row Last Movie in Data Base -->*/}
-					<div className="row">
-						{/*<!-- Last Movie in DB -->*/}
+
+					<div className="row">						
 
 						<LastProductInDb />
-						{/*<!-- End content row last movie in Data Base -->*/}
+						{/* last product */}
 
-						{/*<!-- Genres in DB -->*/}
+						{/*<!-- Categories in DB -->*/}
 						<CategoriesInDb />
-
-						{/*<!--End Genres In Db-->*/}		
+	
 					</div>
 				</div>
 				{/*<!--End Content Row Top-->*/}

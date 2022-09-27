@@ -39,20 +39,20 @@ function ContentRowDatabase(){
         color: "papahoeBlueTec",
         titulo: "Usuarios en Database",
         valor: users,
-        icono: "fa-solid fa-box-open",
+        icono: "fas fa-user",
     }  
     
     let productsCard = {
         color: "papahoePink",
         titulo: "Productos en Database",
         valor: products,
-        icono: "fas fa-user",
+        icono: "fa-solid fa-box-open",
     }    
     let stockCard = {
         color: "papahoeGreen",
-        titulo: "Custom Boards",
+        titulo: "Stock de Productos",
         valor: suma,
-        icono: "fa-solid fa-hammer",
+        icono: "fa-industry",
     }
     
     let cardProps = [usersCard, productsCard, stockCard];

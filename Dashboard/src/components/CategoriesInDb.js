@@ -2,7 +2,7 @@ import React,{ useState,useEffect } from "react";
 import Category  from './Categories';
 
 
-function GenresInDb(){
+function CategoriesInDb(){
 
     // Fetch CATEGORIES
     const [categories,setCategories] = useState(["Cargando.."])
@@ -32,8 +32,8 @@ function GenresInDb(){
                         <div className="card-body">
                             <div className="row">
                                 {
-                                    categories.map((name,index)=>{
-                                        return  <Category  {...name}  key={index} />
+                                    categories.map((category,index)=>{
+                                        return  <Category  {...category}  key={index} />
                                     })
                                 }
                             </div>
@@ -45,4 +45,4 @@ function GenresInDb(){
     )
 
 }
-export default GenresInDb;
+export default CategoriesInDb;
