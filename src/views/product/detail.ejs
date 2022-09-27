@@ -13,12 +13,12 @@
 
             <main class="productDetail">
                 <div class="shop-filters">
-                    <!-- <div>
-                        <a href="/product/all"><strong> SHOP </strong></a> |
-                        <a href="/product/all?cat=surfboards"> SURFBOARDS </a> |
-                        <a href="/product/all?cat=accesorios"> ACCESORIOS </a> |
-                        <a href="/product/all?cat=complementos"> COMPLEMENTOS </a> |
-                    </div> -->
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
+                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
+                        <li class="breadCrumbLast"><%= producto.name%></li>
+                    </ul>
                     <span></span>
 
                     <%if(locals.isAdmin){%>
@@ -33,12 +33,7 @@
                     </div>
                     <% }%>
                 </div>
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
-                    <li class="breadCrumbLast"><%= producto.name%></li>
-                </ul>
+
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
@@ -146,7 +141,7 @@
                         <div class="product-summary">
                             <p><%= producto.nombre%></p>
                             <ul>
-                                <li>Dimensiones</li>
+                                <li>Dimensiones: <span id="dimUser">hgfhgfhgfghfhfhfhgfhffh</span></li>
                                 <li>Fins</li>
                                 <li>Tecnologia</li>
                                 <li>Tail</li>
@@ -211,5 +206,6 @@
         <!-- footer -->
         <%- include("../partials/footer") %>
         <!-- footer -->
+        <script src="js/jhjgjhg.js"></script>
     </body>
 </html>

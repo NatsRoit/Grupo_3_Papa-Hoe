@@ -22,7 +22,6 @@ const apiProductsController = {
                         { association: "dimensiones" },
                         { association: "colores" },
                     ]
-
                 }
                 res.json(response)
             })
@@ -71,7 +70,6 @@ const apiProductsController = {
                 }
                 res.json(response)
             })
-        
     },
 
     categories: (req, res) =>{

@@ -30,6 +30,9 @@ router.get('/detail/:id',productController.detail);
 // BOARDBUILDER
 router.get('/boardBuilder',productController.boardBuilder);
 
+// SIZES TABLE
+router.get('/sizes',productController.sizes);
+
 // CHECKOUT
 router.get('/cart',productController.cart);
 router.get('/checkout',productController.checkoutView);

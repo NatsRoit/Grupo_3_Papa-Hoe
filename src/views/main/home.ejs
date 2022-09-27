@@ -8,21 +8,45 @@
 
             <!--- SLIDER HEADER --->
             <header class="slider">
-                <div class="overlay-text">
-                    <p>PapaHoe: nuestro <br> compromiso <br>con el océano.</p>
-                    <a class="button-link rosa" href="/#">leer más</a>
-                </div>
-                <div class="slider-controller">
-                    <button type="button" name="prev" id="prev"><i
-                            class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
-                    <button type="button" name="next" id="next"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- <div class="slider-controller">
+                    <button type="button" id="prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
+                    <button type="button" id="next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div> -->
+                <!-- <a class="carousel-control-prev" href="#SimpleCarouselExample" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#SimpleCarouselExample" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
                 <div class="slides">
-                    <img id="carrousel-image-1" src="images/stock/papa-hoe-header-photo1.jpg" alt="PapaHoe foto1">
-                    <!-- <img class="slider-image" src="images/stock/evert-van-duijn-J6Z9IifdDD0-unsplash.jpg" alt="PapaHoe foto2"> -->
+                    <div class="carrousel" >
+                        <div class="overlay-text">
+                            <p>PapaHoe: nuestro <br> compromiso <br>con el océano.</p>
+                            <a class="button-link rosa" href="/#">leer más</a>
+                        </div>
+                        <img src="images/stock/papa-hoe-header-photo1.jpg" alt="PapaHoe Surfboards">
+                    </div>
+                    <div class="carrousel">
+                        <div class="overlay-text">
+                            <p>Britt Merrick: <br> la competencia <br>del año.</p>
+                            <a class="button-link rosa" href="/#">leer más</a>
+                        </div>
+                        <img src="images/stock/mathieu-chirico-sFSZuKI2CvY-unsplash.jpg" alt="PapaHoe foto2">
+                    </div>
+                    <div class="carrousel">
+                        <img src="images/stock/papaHoe-new-release.jpg" alt="PapaHoe Surfboards">
+                    </div>
+                    <div class="carrousel">
+                        <div class="overlay-text">
+                            <p>Shaper o no Shaper: <br> esa es la <br>pregunta.</p>
+                            <a class="button-link rosa" href="/#">leer más</a>
+                        </div>
+                        <img src="images/stock/jeremy-bishop-E55BPtMqh2I-unsplash.jpg" alt="PapaHoe Surfboards">
+                    </div>
                 </div>
             </header>
-
 
             <!--- PRODUCTO DESTACADO --->
             <main class="main-home">
@@ -156,6 +180,7 @@
                 </div>
             </main>
             <%- include("../partials/footer") %>
+            <!-- <script src="/js/home"></script> -->
     </body>
 
 </html>
