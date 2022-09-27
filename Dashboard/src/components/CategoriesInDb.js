@@ -2,7 +2,7 @@ import React,{ useState,useEffect } from "react";
 import Category  from './Categories';
 
 
-function GenresInDb(){
+function CategoriesInDb(){
 
     // Fetch CATEGORIES
     const [categories,setCategories] = useState(["Cargando.."])
@@ -27,13 +27,13 @@ function GenresInDb(){
                 <div className="col-lg-6 mb-4">						
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                            <h6 className="m-0 font-weight-bold text-gray-800">Categorías & Subcategorías</h6>
+                            <h6 className="m-0 font-weight-bold text-gray-800">Categorías </h6>
                         </div>
                         <div className="card-body">
                             <div className="row">
                                 {
-                                    categories.map((name,index)=>{
-                                        return  <Category  {...name}  key={index} />
+                                    categories.map((category,index)=>{
+                                        return  <Category  {...category}  key={index} />
                                     })
                                 }
                             </div>
@@ -45,4 +45,4 @@ function GenresInDb(){
     )
 
 }
-export default GenresInDb;
+export default CategoriesInDb;

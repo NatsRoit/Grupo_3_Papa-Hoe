@@ -177,7 +177,7 @@ sup {
 }
 
 a {
-    color: #4e73df;
+    color: #000;
     text-decoration: none;
     background-color: transparent
 }
@@ -1300,7 +1300,7 @@ pre code {
 
     .col-lg-6 {
         flex: 0 0 50%;
-        max-width: 50%
+        max-width: 1000%
     }
 
     .col-lg-7 {

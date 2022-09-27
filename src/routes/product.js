@@ -22,9 +22,9 @@ let productController = require(path.join(__dirname, '../controllers/productCont
 
 // READ PRODUCTOS
 router.get('/test',productController.test);
-// router.get('/all',productController.indexAll);
-router.get('/category/:cat?',productController.index);
+router.get('/all',productController.indexAll);
 router.get('/detail/:id',productController.detail);
+// router.get('/category',productController.index);
 
 
 // BOARDBUILDER

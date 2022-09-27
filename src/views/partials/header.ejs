@@ -9,14 +9,16 @@
     </div>
 
     <a id="logo" href="/"><img id="logo-img" src="/images/brand/LOGO-PapaHoe-LogoWord-Negativo.png" alt="PapaHoe Logo"></a>
+    
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
     <nav class="main-navbar">
         <ul>
             <div class="dropdown">
-                <li><a href="/product/category/all">Shop All</a>
+                <li><a href="/product/all">Shop All</a>
                     <ul class="dropdown-content">
-                        <li><a href="/product/category/1">Surfboards</a></li>
-                        <li><a href="/product/category/2">Accesorios</a></li>
-                        <li><a href="/product/category/3">Complementos</a></li>
+                        <li><a href="/product/all?cat=surfboards">Surfboards</a></li>
+                        <li><a href="/product/all?cat=accesorios">Accesorios</a></li>
+                        <li><a href="/product/all?cat=complementos">Complementos</a></li>
                     </ul>
                 </li>
             </div>
@@ -37,34 +39,27 @@
                         <li><a href="/faqs">FAQ's</a></li>
                         <li><a href="/devoluciones">Envíos y Devoluciones</a></li>
                         <li><a href="/politica-cancelacion">Política de Privacidad</a></li>
-                        <li><a href="/politica-cancelacion">Contacto</a></li>
+                        <li><a href="/contact">Contacto</a></li>
                     </ul>
                 </li>
             </div>
-
         </ul>
     </nav>
 
-
-    <!-- <li>
-        <div class="search-box">
-            <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
-            <form>
-                <input type="text" placeholder="Buscar">
-                <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-    </li> -->
+    <!-- BARRA DE NAVEGACIÓN DE ÍCONOS -->
     <nav class="icons-navbar">
-        <% if(!locals.usuario) { %>
-            <ul>
+        <ul>
+            <p style="color: white">Hola <%= locals.usuario.user_name %>!</p>
+            <li>
+                <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
+            </li>
+            <% if(!locals.usuario) { %>
                 <li>
                     <a href="/user/login">
                         <span id="usuario-icon"><i class="fa-solid fa-user"></i></span>
                     </a>
                 </li>
             <% } else if (locals.usuario){ %>
-                <p style="color: white">Hola <%= locals.usuario.user_name %>!</p>
                 <div class="user-menu">
                     <div>
                         <span id="usuario-icon"data-drawer-trigger aria-controls="user-menu" aria-expanded="false">
@@ -73,7 +68,6 @@
                     </div>
                 </div>
             <% } %>           
-            
             <li>
                 <a href="/product/cart" class="cartBtn">
                     <span id="carrito-icon"><i class="fa-solid fa-cart-shopping"></i></span>
@@ -83,5 +77,17 @@
         </ul>
     </nav>
 </header>
+<div class="search-box hidden">    
+    <form action="/product/all" method="GET" id="searchForm">
+        <input type="text" name="keyword" placeholder="¿Qué estás buscando?" id="search-form-input">
+        <!-- <button class="magnifier" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+    </form>
+</div>
+
+<!-- MENÚS DE NAVEGACIÓN SECUNDARIOS -->
 <%- include("../partials/burger-menu") %>
 <%- include("../partials/user-menu") %>
+
+<!-- SCRIPT PARA BARRA DE BÚSQUEDA -->
+<script src="/js/displayShop.js"></script>
+

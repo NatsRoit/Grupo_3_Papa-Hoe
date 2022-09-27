@@ -234,7 +234,7 @@ let adminController = {
             where: { id: req.params.id }
         })
         .then(function (productoBorrado) {
-        res.redirect("/product/category/all")
+        res.redirect("/product/all")
         // const productDeleteId = req.params.id;
         // const productsFinal = productos.filter(product => product.id != productDeleteId);
         // let productsGuardar = JSON.stringify(productsFinal,null,2)
