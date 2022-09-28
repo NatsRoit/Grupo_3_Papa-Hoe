@@ -13,14 +13,12 @@
                 <div class="login-img">
                     <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                 </div>
-                <div>
-                   <%//  let isInvalid = [] %> 
-                   <%// if (isInvalid.length <0) { %>            
-                
-                  <%//} %>
-                </div>
+
+                <% if (sent) { %>     
                   <h3 class="form-rta">Te responderemos a la brevedad!!!</h3>
-                <form class="formulario" action="/" method="GET"
+                <% } %>
+
+                <form class="formulario" action="/contact" method="POST"
                                 enctype="multipart/form-data">
                     <div class="form-input">
                         <label for="email">Email </label><span class="errMsg" id="errMsg"></span>

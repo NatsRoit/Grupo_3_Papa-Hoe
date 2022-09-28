@@ -3466,6 +3466,8 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     color: white;
     padding: 20px;
     margin: 10px;
-    
+  }
 
+  @media screen and (max-width:768px){
+    .contact-form .colum{ width: 100%;}
   }
