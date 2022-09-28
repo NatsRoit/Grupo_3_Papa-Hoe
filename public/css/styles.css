@@ -3470,6 +3470,13 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     width: 50%;
   }
 
+  @media screen and (max-width:768px){
+    .contact-form .colum{
+      width: 100%;
+    }  
+  }
+  
+
   .form-rta {
     background-color:  #8cd8d5;
     color: white;
