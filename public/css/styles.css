@@ -3435,5 +3435,30 @@ input.visually-hidden:is(:focus, :focus-within) + label {
   }
   }
 
+  /* CONTACT FORM*/
 
+  .contact-form {
+    width: 95%;
+    min-height: 85vh;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex;
+  
+  }
+  .contact-form .colum{
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+  }
 
+  .form-rta {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    
+
+  }
