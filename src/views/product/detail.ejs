@@ -13,12 +13,12 @@
 
             <main class="productDetail">
                 <div class="shop-filters">
-                    <!-- <div>
-                        <a href="/product/all"><strong> SHOP </strong></a> |
-                        <a href="/product/all?cat=surfboards"> SURFBOARDS </a> |
-                        <a href="/product/all?cat=accesorios"> ACCESORIOS </a> |
-                        <a href="/product/all?cat=complementos"> COMPLEMENTOS </a> |
-                    </div> -->
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
+                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
+                        <li class="breadCrumbLast"><%= producto.name%></li>
+                    </ul>
                     <span></span>
 
                     <%if(locals.isAdmin){%>
@@ -33,12 +33,7 @@
                     </div>
                     <% }%>
                 </div>
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
-                    <li class="breadCrumbLast"><%= producto.name%></li>
-                </ul>
+
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
@@ -146,10 +141,18 @@
                         <div class="product-summary">
                             <p><%= producto.nombre%></p>
                             <ul>
+<<<<<<< HEAD
+                                <li>Dimensiones: <span id="dimUser">hgfhgfhgfghfhfhfhgfhffh</span></li>
+                                <li>Fins</li>
+                                <li>Tecnologia</li>
+                                <li>Tail</li>
+                                <li>Finnish</li>
+=======
                                 <li>Dimensiones <span id="dimensiones"></span></li>
                                 <li>Fins <span id="fins"></span></li>
                                 <li>Color <span id="color"></span></li>
                                 <li>Acabado <span id="acabado"></span></li>
+>>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
                             </ul>
                             <hr>
                             <!-- <p>CANTIDAD</p> -->
@@ -202,6 +205,10 @@
         <!-- footer -->
         <%- include("../partials/footer") %>
         <!-- footer -->
+<<<<<<< HEAD
+        <script src="js/jhjgjhg.js"></script>
+=======
         <script src="/js/detail.js"></script>
+>>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
     </body>
 </html>
