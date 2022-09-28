@@ -13,27 +13,29 @@
                 <div class="login-img">
                     <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
                 </div>
-                <div>
-                   <%//  let isInvalid = [] %> 
-                   <%// if (isInvalid.length <0) { %>            
                 
-                  <%//} %>
-                </div>
                   <h3 class="form-rta">Te responderemos a la brevedad!!!</h3>
+
+                <ul class="errores"></ul>
                 <form class="formulario" action="/" method="GET"
                                 enctype="multipart/form-data">
-                    <div class="form-input">
-                        <label for="email">Email </label><span class="errMsg" id="errMsg"></span>
-                        <input required type="email" name="email" id="email" placeholder="Email" >
-                    </div>      
-                    <div class="form-input">
-                        <label for="features">Dejanos tu mensaje</label>
-                        <span class="errMsg" id="errMsg"></span>
-                        <textarea class = "txt-contact" id="mensaje"></textarea>
-                    </div>            
-                    <div class="submit-button">
-                        <button class="submit-button" type="submit">Enviar</button>
-                    </div>
+
+                                <div class="form-input">
+                                    <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
+                                        <span class="under"><%= errors.email.msg %> </span>
+                                    <% } %></label>
+                                    <input required type="email" name="email" id="email" placeholder="Email" >
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="mensaje"></label>
+                                    <input required type="text" name="mensaje" id="mensaje" placeholder="Dejanos tu mensaje">
+                                        
+                                </div>
+                                <div class="submit-button">
+                                    <button class="submit-button" type="submit">Enviar</button>
+                                </div>
+                  
                 </form>   
             </section>
             
@@ -56,6 +58,7 @@
         </main>
         <%- include("../partials/footer") %>
         <script src="/js/contactFormValidation.js"></script>
+       
          
     </body>
 
