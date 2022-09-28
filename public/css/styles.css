@@ -914,8 +914,15 @@ header.slider {
   display: block;
   width: 100vw;
   line-height: 20px;
+  text-align: left
 }
 
+.producto-destacado .destacado-tabla h2 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
 /* ---------------- CATEGORÍAS PRODUCTOS ---------------------*/
 
 .categorias-home {
@@ -1177,6 +1184,15 @@ input[type="range"]::-moz-range-progress {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+
+
+.errores {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+
 }
 
 /*--------------------------------------------------
@@ -3437,5 +3453,56 @@ input.visually-hidden:is(:focus, :focus-within) + label {
   }
   }
 
+  /* CONTACT FORM*/
+
+  .contact-form {
+    width: 95%;
+    min-height: 85vh;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex;
+  
+  }
+  .contact-form .colum{
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+  }
+
+  @media screen and (max-width:768px){
+    .contact-form .colum{
+      width: 100%;
+    }  
+  }
+  
+
+  .form-rta {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    visibility: hidden;
+    
+  }
+
+  .form-rta-valid {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    
+  }
 
 
+  .team {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start;
+  }
+  
