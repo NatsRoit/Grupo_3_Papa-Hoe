@@ -43,7 +43,7 @@
                                   <label for="subcategory_id">Subcategoría<sup>*</sup></label>
                                   <span class="errMsg" id="errMsg"></span>
                                   <select name="subcategory_id" id="subcategory_id">
-                                    <option value="<%=producto.subcategoria.id%>" selected><%=producto.subcategoria.name%></option>
+                                    <option value="<%=producto.categoria.id%>" selected><%=producto.subcategoria.name%></option>
                                     <% for (let i =0; i<subcategory.length; i++) { %>
                                       <% if(subcategory[i].id != producto.subcategoria.id){ %>
                                     <option value="<%= subcategory[i].id%>"><%= subcategory[i].name%></option>
@@ -166,7 +166,7 @@
                               <p class="prodImgCaption">
                                 ES NECESARIO AGREGAR AL MENOS UNA IMAGEN PRINCIPAL.<br>
                                 Formatos aceptados: .jpg / .jpeg / .png / .gif / .webp <br>
-                                Usá preferiblemente imágenes con orientación vertical que no superen los 2mb.
+                                Usá preferiblemente imágenes con orientación vertical que no supere 1mb.
                                 <!-- Procurá que tus imágenes sean descriptivas y que pongan en evidencia todos los detalles del producto.-->
                               </p> 
                             </div>
@@ -192,16 +192,13 @@
                           <div class="checkbox">
                               <div class="opciones" id="sizeGroup">
                                 <p><strong>Talles Disponibles</strong></p>
-                                <% for(let i=0; i<sizes.length; i++){ %>
-                                  <% if (productSizeId.includes(sizesId[i])) { %>
-                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
-                                    <%=sizes[i].dimension%>
-                                  </label><br>
-                                <% } else { %>
-                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
-                                    <%=sizes[i].dimension%>
-                                  </label> <br>
-                                <% }} %>
+                                <% for(let i=0; i<dimensiones.length; i++) { %>
+                                  <% if (producto.colores.map(color => color.id == colors[i].id) { %>
+                                    <label for="size"><input type="checkbox" value="<%=colors[i].id%>" name="size_id[]" id="size" checked><%=colors[i].id%></label><br>
+                                    <% } else { %>
+                                      <label for="size"><input type="checkbox" value="<%=colors[i].id%>" name="size_id[]" id="size"><%=colors[i].id%></label> <br>
+                                    <% } %>
+                                  <% } %>
                               </div>
                           </div>
 
