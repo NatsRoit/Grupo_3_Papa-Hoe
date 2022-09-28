@@ -1184,6 +1184,15 @@ input[type="range"]::-moz-range-progress {
   left: 0;
 }
 
+
+
+.errores {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+
+}
+
 /*--------------------------------------------------
       MAIN: SHOP (surfboards y complementos)
 ----------------------------------------------------*/
@@ -3466,8 +3475,25 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     color: white;
     padding: 20px;
     margin: 10px;
+    visibility: hidden;
+    
   }
 
-  @media screen and (max-width:768px){
-    .contact-form .colum{ width: 100%;}
+  .form-rta-valid {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    
   }
+
+
+  .team {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start;
+  }
+  
