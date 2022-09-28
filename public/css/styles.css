@@ -912,8 +912,15 @@ header.slider {
   display: block;
   width: 100vw;
   line-height: 20px;
+  text-align: left
 }
 
+.producto-destacado .destacado-tabla h2 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
 /* ---------------- CATEGORÍAS PRODUCTOS ---------------------*/
 
 .categorias-home {
