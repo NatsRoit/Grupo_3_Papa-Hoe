@@ -210,6 +210,7 @@ input:focus,
 input:focus-visible {
   border: 2px solid #335cb1 !important;
   outline: transparent !important;
+  -webkit-appearance: none;
 }
 
 button:active {
@@ -1958,19 +1959,48 @@ text-align: right;
   margin-right: 30px;
   justify-self: center;
 }
-.quantity input {
+.quantity#cantDetail {
+    padding-bottom: 0;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    height: 45px;
+    border: 1px solid #fad6d1;
+    border-radius: 3px;
+    /* align-items: center; */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.quantity#cantDetail button {
+  background-color: #fad6d129;
+  height: 80%;
+  border-radius: 0px;
+  width: 30%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  align-self: center;
+  margin: 5px;
+  border-radius: 3px;
+}
+.quantity#cantDetail button:hover {
+  background-color: #fad6d1;
+}
+.quantity#cantDetail input {
   -webkit-appearance: none;
   border: none;
   /* border-radius: 5px; */
   text-align: center;
-  width: 45px;
   font-size: 16px;
   line-height: 30px;
   color: #43484d;
-  /* background-color: transparent; */
   font-weight: 600;
+    width: 100%;
+    background-color: transparent;
+    align-self: center;
 }
-
+.quantity#cantDetail input:hover {
+  -webkit-appearance: none;
+}
 button[class*="btn"] {
   width: 30px;
   height: 30px;

@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 // let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')));
         
-module.exports = (req,res,next) =>{
+module.exports = (req, res, next) => {
     // Variable locals (super global - vive en las vistas )
     res.locals.usuario = false;
     res.locals.isAdmin = false;

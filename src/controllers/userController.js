@@ -108,7 +108,7 @@ const userController = {
 
   editView: function (req, res) {
     db.User.findByPk(req.params.id).then((showUser) => {
-      res.render(path.resolve(__dirname, "../views/user/edit"), { user: showUser, });
+      res.render(path.resolve(__dirname, "../views/user/edit"), { user: showUser});
     });
   },
 
@@ -132,6 +132,7 @@ const userController = {
     req.body.avatar = user.avatar;
 
     db.User.update(user, { where: { id: req.params.id } }).then((user) => {
+      // res.locals.usuario = user;
       res.redirect("/user/profile/" + req.params.id);
     });
   },

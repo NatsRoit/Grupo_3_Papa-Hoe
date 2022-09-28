@@ -124,13 +124,23 @@
                                         <option value="">glossy</option>
                                     </select>
                                 </div>
-                                <!-- <div>
-                                    <h5>Cantidad</h5>
-                                    <div>
-                                        <span>-</span>
-                                        <input type=" number">
-                                        <span>+</span>
-                                    </div>
+                                <div class="quantity" id="cantDetail">
+                                    <button class="plus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input type="number" name="quantity" value="1">
+                                    <button class="minus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <!-- <div class="quantity">
+                                    <label for="cant">Cantidad
+                                        <div class="form-input">
+                                            <span>-</span>
+                                            <input type="number" class="">
+                                            <span>+</span>
+                                        </div>
+                                </label>
                                 </div> -->
                             </div>
                             <div>
@@ -141,18 +151,10 @@
                         <div class="product-summary">
                             <p><%= producto.nombre%></p>
                             <ul>
-<<<<<<< HEAD
-                                <li>Dimensiones: <span id="dimUser">hgfhgfhgfghfhfhfhgfhffh</span></li>
-                                <li>Fins</li>
-                                <li>Tecnologia</li>
-                                <li>Tail</li>
-                                <li>Finnish</li>
-=======
                                 <li>Dimensiones <span id="dimensiones"></span></li>
                                 <li>Fins <span id="fins"></span></li>
                                 <li>Color <span id="color"></span></li>
                                 <li>Acabado <span id="acabado"></span></li>
->>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
                             </ul>
                             <hr>
                             <!-- <p>CANTIDAD</p> -->
@@ -164,7 +166,7 @@
 
                             <div class="especificaciones">
                                 <h2>Descripción</h2>
-                                <p align="justify"><%= producto.description%></p>
+                                <p><%= producto.description%></p>
                                 <br>
                             </div>
 
@@ -172,7 +174,7 @@
                             
                             <div class="features">
                                 <h2>Características</h2>
-                                <p align="justify"><%= producto.features%></p>
+                                <p><%= producto.features%></p>
                             </div>
 
                             <br>
@@ -205,10 +207,6 @@
         <!-- footer -->
         <%- include("../partials/footer") %>
         <!-- footer -->
-<<<<<<< HEAD
-        <script src="js/jhjgjhg.js"></script>
-=======
         <script src="/js/detail.js"></script>
->>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
     </body>
 </html>
