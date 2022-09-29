@@ -69,15 +69,8 @@ window.onload = function(){
               // window.scrollTo({top:0, behavior:'smooth'});
               isInvalid[i].focus();
             }              
-          } else {
-            Swal.fire({
-              icon: "success",
-              title: "Te has registrado correctamente",
-              showConfirmButton: false,
-              timer: 1500,
-              
-            });
-            formulario.submit();          
-          }
+         
+                    
+          }formulario.submit();  
       });
     }

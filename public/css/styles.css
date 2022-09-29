@@ -210,6 +210,7 @@ input:focus,
 input:focus-visible {
   border: 2px solid #335cb1 !important;
   outline: transparent !important;
+  -webkit-appearance: none;
 }
 
 button:active {
@@ -725,11 +726,13 @@ color: hsl(220, 14%, 90%);
 }
 #searchForm input{
   text-align: right;
-  font-size: 20px;
+  font-size: 50px;
   font-weight: 100;
+  color: white;
 }
 #searchForm input::placeholder{
-  font-size: 20px;
+  color: #ffffff73;
+  font-size: 50px;
   font-weight: 100;
   /* color: gray; */
   text-align: right;
@@ -757,7 +760,7 @@ color: hsl(220, 14%, 90%);
 }
 
 #lupa-icon {
-  
+/* comento algo */
 }
 
 .search-box input:focus {
@@ -911,8 +914,15 @@ header.slider {
   display: block;
   width: 100vw;
   line-height: 20px;
+  text-align: left
 }
 
+.producto-destacado .destacado-tabla h2 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
 /* ---------------- CATEGORÍAS PRODUCTOS ---------------------*/
 
 .categorias-home {
@@ -1174,6 +1184,15 @@ input[type="range"]::-moz-range-progress {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+
+
+.errores {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+
 }
 
 /*--------------------------------------------------
@@ -1958,19 +1977,48 @@ text-align: right;
   margin-right: 30px;
   justify-self: center;
 }
-.quantity input {
+.quantity#cantDetail {
+    padding-bottom: 0;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    height: 45px;
+    border: 1px solid #fad6d1;
+    border-radius: 3px;
+    /* align-items: center; */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.quantity#cantDetail button {
+  background-color: #fad6d129;
+  height: 80%;
+  border-radius: 0px;
+  width: 30%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  align-self: center;
+  margin: 5px;
+  border-radius: 3px;
+}
+.quantity#cantDetail button:hover {
+  background-color: #fad6d1;
+}
+.quantity#cantDetail input {
   -webkit-appearance: none;
   border: none;
   /* border-radius: 5px; */
   text-align: center;
-  width: 45px;
   font-size: 16px;
   line-height: 30px;
   color: #43484d;
-  /* background-color: transparent; */
   font-weight: 600;
+    width: 100%;
+    background-color: transparent;
+    align-self: center;
 }
-
+.quantity#cantDetail input:hover {
+  -webkit-appearance: none;
+}
 button[class*="btn"] {
   width: 30px;
   height: 30px;
@@ -3405,5 +3453,58 @@ input.visually-hidden:is(:focus, :focus-within) + label {
   }
   }
 
+  /* CONTACT FORM*/
+
+  .contact-form {
+    width: 95%;
+    min-height: 85vh;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex;
+  
+  }
+  .contact-form .colum{
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+  }
+  .contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+  }
+  @media screen and (max-width:768px){
+    .contact-form .colum{
+      width: 100%;
+    }  
+  }
+  
+
+  .form-rta {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;    
+  }
+
+  .form-rta-valid {
+    background-color:  #8cd8d5;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    
+  }
 
 
+  .team {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start;
+  }
+  

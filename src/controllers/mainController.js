@@ -21,8 +21,13 @@ const main = {
         res.render(path.resolve(__dirname, '../views/main/politica-cancelacion'));
     },
     contact: function(req,res){
-        res.render(path.resolve(__dirname, '../views/main/contact'));
+        let sent = false;
+        res.render(path.resolve(__dirname, '../views/main/contact'),{sent});
     },
+    contactSent: function(req,res){
+        let sent = true;
+        res.render(path.resolve(__dirname, '../views/main/contact'), {sent});
+    },    
     tracker: function(req,res){
         res.render(path.resolve(__dirname, '../views/main/tracker'));
     },

@@ -15,8 +15,9 @@
                 <div class="shop-filters">
                     <ul class="breadcrumb">
                         <li><a href="/">Home</a></li>
+                        <li><a href="/product/all">Shop All</a></li>
                         <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
-                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
+                        <li><a href="/product/all?cat=<%= producto.subcategoria.name%>"><%= producto.subcategoria.name%></a></li>
                         <li class="breadCrumbLast"><%= producto.name%></li>
                     </ul>
                     <span></span>
@@ -124,6 +125,7 @@
                                         <option value="">glossy</option>
                                     </select>
                                 </div>
+<<<<<<< HEAD
                                 <div>
                                     <h5>Cantidad</h5>
                                     <div>
@@ -136,6 +138,26 @@
                                         </span>
                                     </div>
                                 </div> 
+=======
+                                <div class="quantity" id="cantDetail">
+                                    <button class="plus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input type="number" name="quantity" value="1">
+                                    <button class="minus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <!-- <div class="quantity">
+                                    <label for="cant">Cantidad
+                                        <div class="form-input">
+                                            <span>-</span>
+                                            <input type="number" class="">
+                                            <span>+</span>
+                                        </div>
+                                </label>
+                                </div> -->
+>>>>>>> f8a8b5be5cc710b036d44be4e28b1bc063f35528
                             </div>
                             <div>
                                 <input class="boton" value="Agregar al Carrito" type="submit">
