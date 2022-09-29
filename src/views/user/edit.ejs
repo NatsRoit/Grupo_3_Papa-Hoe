@@ -17,6 +17,7 @@
                 <div class="wrapper-Col-66">
                     <h2>Editar Perfil</h2>
                     <div class="register">
+                        <ul class="errores"></ul>
                         <form class="formulario" action="/user/edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <section class="datos-section">
                                 <h4>Datos Personales</h4>
@@ -125,7 +126,9 @@
                     
             </main>
             <%- include("../partials/footer") %>
-            <script src="/js/registerValidation.js"></script>
+            <script src="/js/editValidation.js"></script>
+             <!-- sweet alert -->
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 
 </html>

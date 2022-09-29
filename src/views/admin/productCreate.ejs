@@ -22,14 +22,18 @@
                                 <section class="datos-section">
 
                                     <div class="form-input">
-                                        <label for="name">Nombre del Producto<sup>*</sup></label>
+                                        <label for="name">Nombre del Producto <% if (typeof errors != 'undefined' && errors.name) { %>
+                                                <span class="under"><%= errors.name.msg %> </span>
+                                            <% } %><sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <input type="text" name="name" id="nombreProd" placeholder="Ej: Rocker Pocker III">
                                     </div>
 
                                     <div class="form-2col">
                                         <div class="form-input opciones">
-                                            <label for="category_id">Categoría<sup>*</sup></label>
+                                            <label for="category_id">Categoría <% if (typeof errors != 'undefined' && errors.category_id) { %>
+                                                <span class="under"><%= errors.category_id.msg %> </span>
+                                            <% } %><sup>*</sup></label>
                                             <span class="errMsg" id="errMsg"></span>
                                             <select name="category_id" id="category_id">
                                                 <option value="" disabled selected hidden>Categoría</option>
@@ -42,7 +46,9 @@
                                         </div>
                                         
                                         <div class="form-input opciones">
-                                            <label for="subcategory_id">Subcategoría<sup>*</sup></label>
+                                            <label for="subcategory_id">Subcategoría <% if (typeof errors != 'undefined' && errors.subcategory_id) { %>
+                                                <span class="under"><%= errors.subcategory_id.msg %> </span>
+                                            <% } %><sup>*</sup></label>
                                             <span class="errMsg" id="errMsg"></span>
                                             <select name="subcategory_id" id="subcategory_id">
                                                 <option value="" disabled selected hidden>Subcategoría</option>
@@ -88,7 +94,9 @@
                                     </div>
 
                                     <div class="form-input opciones">
-                                        <label for="brand_id">Marca<sup>*</sup></label>
+                                        <label for="brand_id">Marca <% if (typeof errors != 'undefined' && errors.brand_id) { %>
+                                            <span class="under"><%= errors.brand_id.msg %> </span>
+                                        <% } %><sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <select name="brand_id" id="brand_id">
                                             <option value="" disabled selected hidden>Marca</option>
@@ -102,7 +110,9 @@
 
                                     <div class="form-2col">
                                         <div class="form-input">
-                                            <label for="price">Precio Unitario<sup>*</sup></label>
+                                            <label for="price">Precio Unitario <% if (typeof errors != 'undefined' && errors.price) { %>
+                                                <span class="under"><%= errors.price.msg %> </span>
+                                            <% } %><sup>*</sup></label>
                                             <span class="errMsg" id="errMsg"></span>
                                             <div class="secretInput">
                                                 <input type="number" name="price" id="price" placeholder="00.000,00" min="0" pattern="[0-9]+([,][0-9]{1,2})?">
@@ -120,20 +130,26 @@
                                             </select>
                                         </div> -->
                                         <div class="form-input">
-                                            <label for="stock">Stock<sup>*</sup></label>
+                                            <label for="stock">Stock <% if (typeof errors != 'undefined' && errors.stock) { %>
+                                                <span class="under"><%= errors.stock.msg %> </span>
+                                            <% } %><sup>*</sup></label>
                                             <span class="errMsg" id="errMsg"></span>
                                             <input type="number" name="stock" id="stock" min="0" placeholder="Cantidad de unidades disponibles">
                                         </div>
                                     </div>
                                     
                                     <div class="form-input opciones">
-                                        <label for="description">Descripción<sup>*</sup></label>
+                                        <label for="description">Descripción <% if (typeof errors != 'undefined' && errors.description) { %>
+                                            <span class="under"><%= errors.description.msg %> </span>
+                                        <% } %><sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <textarea name="description" id="description" rows="15" placeholder="Describí con detalle y creatividad los principales beneficios del producto."></textarea>
                                     </div>
                                     
                                     <div class="form-input opciones">
-                                        <label for="features">Características<sup>*</sup></label>
+                                        <label for="features">Características <% if (typeof errors != 'undefined' && errors.features) { %>
+                                            <span class="under"><%= errors.features.msg %> </span>
+                                        <% } %><sup>*</sup></label>
                                         <span class="errMsg" id="errMsg"></span>
                                         <textarea name="features" id="features" rows="8" placeholder="Enumerá las principales caracterísitcas del producto."></textarea>
                                     </div>
@@ -144,7 +160,10 @@
                                         <div class="form-5col">
                                             <div class="prodImgMain">
                                                 <div class="prodImg">
-                                                    <label for="image1" class="labelImg"></label><br>
+                                                    <label for="image1" class="labelImg"> 
+                                                        <% if (locals.errors && errors.image1) { %>
+                                                            <span class="under"><%= errors.image1.msg %> </span>
+                                                        <% } %></label><br>
                                                     <input type="file" name="image1" id="image1" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
@@ -153,7 +172,7 @@
                                             </div>
                                             <div class="prodImgGallery">
                                                 <div class="prodImg">
-                                                    <label for="imageGallery1" class="labelImg"></label><br>
+                                                    <label for="imageGallery1"  class="labelImg"></label><br>
                                                     <input type="file" name="imageGallery" id="imageGallery1" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>

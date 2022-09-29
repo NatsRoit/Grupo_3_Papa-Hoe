@@ -32,19 +32,20 @@ const logueado = require(path.resolve(__dirname, "../middlewares/logueado"));
 //const validacionesRegistro = require(path.resolve(__dirname, "../middlewares/validacionesRegistro"));
 const adminLog = require(path.resolve(__dirname, "../middlewares/adminLog"));
 const validaciones = require(path.resolve(__dirname, "../middlewares/validaciones"));
+const auth = require(path.resolve(__dirname, "../middlewares/auth"));
 
 let userController = require(path.join(__dirname, '../controllers/userController.js'));
 
 // USER PROFILE
-router.get("/profile/:id", acceso, userController.profile);
+router.get("/profile/:id",logueado, auth.auth, userController.profile);
 
 //EDIT PROFILE
-router.get('/edit/:id', acceso, userController.editView);
-router.put('/edit/:id', upload.single('avatar'),validaciones.validar('register'), userController.edit);// validacionesRegistro, userController.edit);
+router.get('/edit/:id',logueado,auth.auth, userController.editView);
+router.put('/edit/:id', upload.single('avatar'), acceso, userController.edit);// validacionesRegistro, userController.edit);
 
 // LOGIN
 router.get('/login',userController.loginView);
-router.post('/login', validaciones.validar('login'), acceso, userController.login);//  userController.login);
+router.post('/login', validaciones.validar('login'),  userController.login);//  userController.login);
 
 // REGISTER
 router.get('/register',userController.registerView);

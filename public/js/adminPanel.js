@@ -21,7 +21,7 @@ async function fetchProdShop() {
 async function ready() {
   const PRODUCTS = await fetchProdShop();
   listProducts(PRODUCTS)
-  console.log(PRODUCTS);
+ // console.log(PRODUCTS);
 }
 
 

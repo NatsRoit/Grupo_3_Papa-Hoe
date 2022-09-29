@@ -43,7 +43,7 @@
                                   <label for="subcategory_id">Subcategoría<sup>*</sup></label>
                                   <span class="errMsg" id="errMsg"></span>
                                   <select name="subcategory_id" id="subcategory_id">
-                                    <option value="<%=producto.categoria.id%>" selected><%=producto.subcategoria.name%></option>
+                                    <option value="<%=producto.subcategoria.id%>" selected><%=producto.subcategoria.name%></option>
                                     <% for (let i =0; i<subcategory.length; i++) { %>
                                       <% if(subcategory[i].id != producto.subcategoria.id){ %>
                                     <option value="<%= subcategory[i].id%>"><%= subcategory[i].name%></option>
@@ -232,7 +232,7 @@
             </main>
 
             <%- include("../partials/footer") %>
-            <script src="/js/adminCreateValidation.js"></script>
+            <script src="/js/adminEditValidation.js"></script>
             <script src="/js/multiselect-dropdown.js" ></script>
     </body>
 </html>
