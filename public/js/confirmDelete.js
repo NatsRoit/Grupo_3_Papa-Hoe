@@ -19,7 +19,7 @@ function waitForElm(selector) {
 }
 
 
-waitForElm('#adm-delete a').then((elm) => {
+waitForElm('#adm-delete').then((elm) => {
 
     let deleteButton = document.querySelectorAll("#adm-delete form");
 
@@ -40,12 +40,12 @@ waitForElm('#adm-delete a').then((elm) => {
                 if (result.isConfirmed) {
                   element.submit();
                 }
-              })            
-              console.log('clicked' + element.href); 
+              })           
+                
         });
     });
 
-    console.log(deleteButton);
+    // console.log(deleteButton);
 
 });
 

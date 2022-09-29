@@ -36,7 +36,7 @@ router.get("/", adminController.admin);
 router.get("/create", logueado, adminController.createView);
 router.post("/create", upload.fields([
   { name: 'image1', maxCount: 1 },
-  { name: 'imageGallery', maxCount: 4 }]), validaciones.validar('create'), adminController.create);
+  { name: 'imageGallery', maxCount: 4 }]), /*validaciones.validar('create'),*/ adminController.create);
 
 
 // UPDATE PRODUCTOS
