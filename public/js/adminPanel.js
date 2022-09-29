@@ -41,7 +41,10 @@ function listProducts(PRODUCTS) {
             <td id="active">${prod.active == true? "Activo" : "Deshabilitado"}</td>
             <td id="adm-view"><a href="/product/detail/${prod.id}"><i class="fa-regular fa-eye"></i></a></td>
             <td id="adm-edit"><a href="/admin/edit/${prod.id}"> <i class="fa-solid fa-pencil"></i></a></td>
-            <td id="adm-delete"><a href="/admin/delete/${prod.id}"<i class="fa-solid fa-trash"></i></a></td>
+            <td id="adm-delete">
+            <form class="delete" action="/admin/delete/${prod.id}?_method=DELETE" method="POST">
+              <button type="submit" id="borrarProducto"><i class="fa-solid fa-trash"></i></button>
+            </form>    
         </tr>
         `;
     }
