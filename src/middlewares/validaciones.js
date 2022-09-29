@@ -82,10 +82,63 @@ module.exports.validar = (method) => {
                 }).withMessage('Oops! Parece que las contraseñas no coinciden'),
 
                 body('avatar').custom((value, {req}) => { // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
-                  return validateImage(req,true)
+                  return validateImage(req,false)
                 })
             ]
         }
+
+        case 'edit': {
+          return [
+              body('nombre')
+              .notEmpty().withMessage('El campo Nombre no puede estar vacío')
+              .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+              body('apellido')
+              .notEmpty().withMessage('El campo Apellido no puede estar vacío')
+              .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+              
+              body('usuario')
+              .notEmpty().withMessage('El campo Usuario no puede estar vacío')
+              .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+             /* .custom( async (value, {req}) => {  ///Nombre de usuario no puede estar repetido en la base de datos
+                await db.User.findOne({ where: {user_name: req.body.usuario }}).then(user => {
+                      if (user)
+                      throw new Error('Ese nombre ya ha sido registrado. Probá con otro!');
+                });
+              }),*/
+
+              body('email')
+              .notEmpty().withMessage('El campo Email no puede estar vacío') // el campo email no puede estar vacío
+              .isEmail().withMessage('Parece que ese email no es válido'),// debe ser un email válido
+              /*.custom( async (value, {req}) => {    //no puede repetirse con los email ya registrados en la base de datos
+                await db.User.findOne({ where: {email: req.body.email }}).then(user => {
+                      if (user)
+                      throw new Error('Ese email ya ha sido registrado. Probá con otro!');
+                });
+              }),*/
+
+            /* body('password')
+              .notEmpty().withMessage('El campo Contraseña no puede estar vacío') // obligatoria
+              .isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'), //mínimo 8 caracteres        */   
+              
+              
+             /* body('confirm_password')
+              .notEmpty().withMessage('Por favor, confirmá tu contraseña')        
+              //Aquí valido si las contraseñas son iguales o no
+              //El ( value ) viene a ser el valor que viaje en el name del del input del campo 
+              //El valor { req } corresponde a lo que viene desde el formulario
+              .custom((value, {req}) =>{
+                  if(req.body.password == value ){
+                      return true    // Si yo retorno un true  no se muestra el error     
+                  }else{
+                      return false   // Si retorno un false si se muestra el error
+                  }    
+              }).withMessage('Oops! Parece que las contraseñas no coinciden'),*/
+
+              body('avatar').custom((value, {req}) => { // la imágen es opcional, pero si se carga tiene que ser jpg, jpeg, png ó gif
+                return validateImage(req,false)
+              })
+          ]
+      }
 
         case 'create': {
             return [
@@ -96,8 +149,8 @@ module.exports.validar = (method) => {
               body('category_id')
               .notEmpty().withMessage('Agregá una categoría'),
 
-              body('subcategory_id')
-              .notEmpty().withMessage('Agregá una subcategoría'),
+            /*  body('subcategory_id')
+              .notEmpty().withMessage('Agregá una subcategoría'),*/
 
               body('brand_id')
               .notEmpty().withMessage('Agregá una marca'),

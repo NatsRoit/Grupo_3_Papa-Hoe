@@ -28,21 +28,21 @@ let lupaIcon = document.getElementById("lupa-icon")
 let searchBox = document.querySelector("div.search-box")
 
 const PRODUCTS = await fetchProducts();
-console.log(PRODUCTS);
+//console.log(PRODUCTS);
 
 let urlObject = new URLSearchParams(location.search)
 let keywordValue = urlObject.get("keyword")
 let catValue = urlObject.get("cat")
 //-------------------------------------------
-console.log(location.search);
+/*console.log(location.search);
 console.log(urlObject.has("keyword"));
 console.log(keywordValue);
-console.log(catValue);
+console.log(catValue);*/
 //-------------------------------------------
     if (location.href.includes("product/all") && location.search == "") {
         displayProducts(PRODUCTS);
         title.innerHTML = "Todos los productos"
-        console.log(PRODUCTS);
+        //console.log(PRODUCTS);
     } else if (urlObject.has('keyword')) {
         filterProducts(keywordValue, PRODUCTS)
     } else if (urlObject.has('cat')) {
@@ -56,7 +56,7 @@ console.log(catValue);
 
 
     lupaIcon.addEventListener("click", (e) => {
-        console.log(e.target);
+       // console.log(e.target);
         // let searchForm = document.getElementById("searchForm");
         searchBox.classList.toggle("hidden")
     });
