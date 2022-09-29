@@ -41,3 +41,14 @@
     HACER MÁS: reuniones cortas para terminar de organizarnos. Enfocarnos en lo obligatorio.
 
     HACER MENOS: centrarnos en tareas no pedidas u opcionales. 
+
+Sprint 8 (Cierre de proyecto)
+
+    LO QUE ESTÁ BIEN: fuimos equipo desde el momento cero, con TODO lo que esa palabra implica. Encontramos un ritmo de trabajo que siempre tuvo en cuenta nuestras fortalezas y debilidades individuales pero que nos permitió complementarnos siempre; calmarnos unos a otros en momentos de crisis; darnos aliento y apoyo cuando alguno lo necesitó. Festejamos los éxitos de cada uno, dimensionando las limitaciones que cada uno tenía, pero sin desmerecer ese éxito en sí. Siempre hubo compañerismo cuando las cosas no salían y tratamos de sacarlas entre todos, más allá que las tareas se hubiesen dividido para su ejecución.
+    Siempre hubo mucho respeto, diversidad de opiniones y muy buen clima grupal.
+    En momentos de crisis, siempre alguien tomó la batuta para analizar dónde estábamos parados y ver cómo seguir para reorganizarnos y encauzarnos en los objetivos a cumplir.
+
+    HACER MENOS: nos encandilamos rápido con funcionalidades o estética que nos parece buenísima, pero que nos lleva a perder el foco de lograr el MVP. Se nos suelen alargar las reuniones porque nos distraemos y nos vamos de tema, pero esto no termina de ser algo negativo, porque implica también que hay muy buena onda entre todos y eso fue un punto muy importante y nos ayudó mucho en los momentos de crisis.
+
+    A MEJORAR: una vez terminados los sprints, deberíamos resolver primero las correcciones y cosas incompletas del anterior, en vez de avanzar con los temas nuevos. O por lo menos, dividirnos y que unos resuelvan lo antiguo y otros empiecen con lo nuevo.
+
