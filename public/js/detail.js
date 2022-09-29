@@ -24,42 +24,43 @@ async function ready() {
 const PRODUCTS = await fetchProducts();
 console.log(PRODUCTS);
 
+
 //Dimensiones / Talles
 let selDim = document.querySelector('#opcDim')
-console.log (selDim)
+//console.log (selDim)
 let dimensiones = document.querySelector ('#dimensiones')
-console.log (dimensiones)
+//console.log (dimensiones)
 
 selDim.addEventListener ('change', function () {
 let dimensionElegida = selDim.options[selDim.selectedIndex];
-console.log (dimensionElegida.text)
+//console.log (dimensionElegida.text)
 
 dimensiones.innerHTML = dimensionElegida.text
 })
 
 // Fins
 let selFins = document.querySelector('#opcFin') 
-console.log (selFins)
+//console.log (selFins)
 let fins = document.querySelector ('#fins')
-console.log (fins)
+//console.log (fins)
 
 selFins.addEventListener ('change', function () {
 let finElegida = selFins.options[selFins.selectedIndex];
-console.log (finElegida.text)
+//console.log (finElegida.text)
 
 fins.innerHTML = finElegida.text
 })
 
 //Colores
 let selColor = document.querySelector('#opcCol') 
-console.log (selColor)
+//console.log (selColor)
 let color = document.querySelector ('#color')
-console.log (color)
+//console.log (color)
 
 
 selColor.addEventListener ('change', function () {
 let colorElegido = selColor.options[selColor.selectedIndex];
-console.log (colorElegido.text)
+//console.log (colorElegido.text)
 
 color.innerHTML = colorElegido.text
 })
@@ -67,13 +68,13 @@ color.innerHTML = colorElegido.text
 //Acabado
 
 let selAcabado = document.querySelector('#opcAcab') 
-console.log (selAcabado)
+//console.log (selAcabado)
 let acabado = document.querySelector ('#acabado')
-console.log (acabado)
+//console.log (acabado)
 
 selAcabado.addEventListener ('change', function () {
 let acabadoElegido = selAcabado.options[selAcabado.selectedIndex];
-console.log (acabadoElegido.text)
+//console.log (acabadoElegido.text)
 
 acabado.innerHTML = acabadoElegido.text
 })

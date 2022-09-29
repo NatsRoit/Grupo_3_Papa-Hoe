@@ -19,12 +19,12 @@ function waitForElm(selector) {
 }
 
 
-waitForElm('#adm-delete a').then((elm) => {
+waitForElm('#adm-delete').then((elm) => {
 
-    let deleteButton = document.querySelectorAll("#adm-delete a");
+    let deleteButton = document.querySelectorAll("#adm-delete form");
 
     deleteButton.forEach(element => {
-        element.addEventListener("click", (e) => {
+        element.addEventListener("submit", (e) => {
             e.preventDefault();
 
             Swal.fire({
@@ -38,14 +38,14 @@ waitForElm('#adm-delete a').then((elm) => {
               }).then((result) => {
                 
                 if (result.isConfirmed) {
-                  window.location.href = element.href;
+                  element.submit();
                 }
-              })            
-              console.log('clicked' + element.href); 
+              })           
+                
         });
     });
 
-    console.log(deleteButton);
+    // console.log(deleteButton);
 
 });
 

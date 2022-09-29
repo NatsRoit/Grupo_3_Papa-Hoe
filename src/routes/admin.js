@@ -36,19 +36,19 @@ router.get("/", adminController.admin);
 router.get("/create", logueado, adminController.createView);
 router.post("/create", upload.fields([
   { name: 'image1', maxCount: 1 },
-  { name: 'imageGallery', maxCount: 4 }]), adminController.create);
+  { name: 'imageGallery', maxCount: 4 }]), /*validaciones.validar('create'),*/ adminController.create);
 
 
 // UPDATE PRODUCTOS
 // router.get("/edit/:id", logueado, adminController.editView);
 // router.put("/edit/:id", logueado, upload.fields([
-router.get("/edit/:id", adminController.editView);
+router.get("/edit/:id",  adminController.editView);
 router.put("/edit/:id", upload.fields([
   { name: 'image1', maxCount: 1 },
   { name: 'imageGallery1', maxCount: 1 },
   { name: 'imageGallery2', maxCount: 1 },
   { name: 'imageGallery3', maxCount: 1 },
-  { name: 'imageGallery4', maxCount: 1 }]), adminController.edit);
+  { name: 'imageGallery4', maxCount: 1 }]),  adminController.edit);
 
 // DELETE PRODUCTOS
 router.delete("/delete/:id", adminController.destroy);

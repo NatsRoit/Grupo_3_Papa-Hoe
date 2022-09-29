@@ -52,8 +52,9 @@ const userController = {
     if (errors.isEmpty()) {
       db.User.findOne({ where: { email: req.body.email } }).then(
         (usuarioLogueado) => {
-          delete usuarioLogueado.password;
-          req.session.usuario = usuarioLogueado;
+          delete usuarioLogueado.dataValues.password;
+          req.session.usuario = usuarioLogueado.dataValues;
+          console.log(req.session.usuario)
           if (req.body.keepSession) {
             res.cookie("keepSession", usuarioLogueado.email, {
               maxAge: 1000 * 60 * 60 * 24,
@@ -112,29 +113,31 @@ const userController = {
     });
   },
 
-  edit: (req, res) => {
+  edit: (req,res) => {
     let user = {
       first_name: req.body.nombre,
       last_name: req.body.apellido,
       email: req.body.email,
       //password: bcrypt.hashSync(req.body.password, 10),
-      user_name: req.body.usuario,
-      address: req.body.direccion,
-      floor_apt: req.body.departamento,
-      city: req.body.ciudad,
+      user_name: req.body.usuario,      
+      address: req.body.direccion, 
+      floor_apt: req.body.departamento,    
+      city: req.body.ciudad, 
       zip_code: req.body.codigoPostal,
-      province: req.body.province,
+      province: req.body.province, 
       country: req.body.country,
       phone_number: req.body.telefono,
-      avatar: req.file ? req.file.filename : req.body.oldImagen,
-    };
+      avatar: req.file ? req.file.filename : req.body.oldImagen
+    }
 
-    req.body.avatar = user.avatar;
+    req.body.avatar = user.avatar
+    res.locals.usuario.user_name = user.user_name;
+    db.User.update(user, {where:{id: req.params.id}})
+    .then(user => {
+      console.log("ATENCIONNNNNNNNNNN! Acá va mi usuario editado" + JSON.stringify(user))
+      res.redirect('/user/profile/' + req.params.id);
+    })
 
-    db.User.update(user, { where: { id: req.params.id } }).then((user) => {
-      // res.locals.usuario = user;
-      res.redirect("/user/profile/" + req.params.id);
-    });
   },
 
   logout: (req, res) => {

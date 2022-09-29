@@ -2071,18 +2071,13 @@ text-align: right;
   margin-right: 30px;
   justify-self: center;
 }
-.quantity#cantDetail {
-    padding-bottom: 0;
-    display: flex;
-    width: 100%;
-    flex-grow: 1;
-    margin-bottom: 20px;
-    height: 45px;
-    border: 1px solid #fad6d1;
-    border-radius: 3px;
-    /* align-items: center; */
-    background-color: rgba(255, 255, 255, 0.5);
+.quant-imput{
+  text-align: center;
+  height: 45px;
+  border: 1px solid #fad6d1;
+  background-color: rgba(255, 255, 255, 0.5);
 }
+
 .quantity#cantDetail button {
   background-color: #fad6d129;
   height: 80%;

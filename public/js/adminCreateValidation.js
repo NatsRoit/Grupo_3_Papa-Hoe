@@ -335,9 +335,9 @@ return result;
     let inputImg = prodImageAll[i].querySelector("input");
     let imgErrMsg = document.querySelector("#imgErrMsg");
     inputImg.valid = false;
-    console.log(inputImg);
-    console.log(inputImg.files);
-    console.log(inputImg.valid);
+   // console.log(inputImg);
+   // console.log(inputImg.files);
+   // console.log(inputImg.valid);
 
   // Defino la función que se desencadenará al onfocus cada uno de esos botones"
   inputImg.addEventListener("focus", function (e) {
@@ -458,8 +458,8 @@ function hasFiles(prodImageAll) {
 //------------------------------------------------------------
 let formElements = document.querySelector(".formulario").elements;
 
-console.log(prodImage1.value);
-console.log(prodImage2.value);
+//console.log(prodImage1.value);
+//console.log(prodImage2.value);
 for (let i = 0; i < formElements.length; i++) {
   if (formElements[i].hasOwnProperty("valid") && formElements[i].value !== ""){
     formElements[i].valid = true
@@ -482,7 +482,7 @@ for (let i = 0; i < formElements.length; i++) {
           formField.classList.add("invalid-input");
         }
       };
-      console.log(isInvalid)
+     // console.log(isInvalid)
       if (isInvalid.length > 0) {
         for (let i = isInvalid.length -1; i >= 0; i--) {
           // window.scrollTo({top:0, behavior:'smooth'});

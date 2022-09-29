@@ -42,11 +42,10 @@ async function ready() {
     console.log(catValue);
     //-------------------------------------------
 
-
     if (location.href.includes("product/all") && location.search == "") {
         displayProducts(PRODUCTS);
         title.innerHTML = "Todos los productos"
-        console.log(PRODUCTS);
+        //console.log(PRODUCTS);
     } else if (urlObject.has('keyword')) {
         filterProducts(keywordValue, PRODUCTS)
     } else if (urlObject.has('cat')) {

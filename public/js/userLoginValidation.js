@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
   let oops = document.querySelector(".auth-error-message");
 
     let emailReg = /^(\w|\.|-)+?@(\w|-)+?\.\w{2,4}($|\.\w{2,4})$/gim;
-    let passwordReg = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*[$@$!%*?&]))([^ ]){8,50}$/; // 8 caracteres: Al menos 1 MAY o 1 min, y 1 número 0 un caracter especial
+    let passwordReg = /{8,50}$/; // 8 caracteres: Al menos 1 MAY o 1 min, y 1 número 0 un caracter especial
 
     let form = document.querySelector("form");
     // form.email.focus();
@@ -21,7 +21,7 @@ email.addEventListener("focus", function () {
 
 email.addEventListener("blur", function () {
 let errMsg = this.parentElement.querySelector("#errMsg");
-    console.log(email.value.match(emailReg))
+   // console.log(email.value.match(emailReg))
     if (email.value == "") {
         errMsg.innerHTML = "Tenés que proporcionar un email";
         email.classList.add("invalid-input");
@@ -95,13 +95,13 @@ form.addEventListener("submit", (e) => {
       let formField = formElements[i]
       if (formField.hasOwnProperty("valid") && !formField.valid) {
         isInvalid.push(formField);
-        console.log("hay campos con propiedad invalid")
+       // console.log("hay campos con propiedad invalid")
           formField.classList.add("invalid-input");
       }
     };
     if (isInvalid.length > 0) {
-        console.log("HAY hay campos con propiedad invalid???")
-        console.log(isInvalid)
+     //   console.log("HAY hay campos con propiedad invalid???")
+     //   console.log(isInvalid)
         for (let i = isInvalid.length -1; i >= 0; i--) {
           isInvalid[i].focus();
           oops.classList.remove("hidden")

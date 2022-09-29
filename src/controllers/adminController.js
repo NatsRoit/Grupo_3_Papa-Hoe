@@ -3,6 +3,8 @@ const fs = require('fs');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
+const { validationResult } = require("express-validator");
+
 
 let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/productos.json')));
 
@@ -27,7 +29,7 @@ let adminController = {
         let size = db.Size.findAll()
         Promise.all([brand, category, subcategory, colors, fins, size])
         .then(function([brand, category, subcategory, colors, fins, size ]){
-            console.log(JSON.stringify(category))
+          // console.log(JSON.stringify(category))
             return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, size});
         })
         .catch(err => {
@@ -36,6 +38,9 @@ let adminController = {
     },
 
     create: (req,res) => {
+        let errors = validationResult(req);
+        console.log(errors)
+        if (errors.isEmpty()) {
         db.Product.create({
             name: req.body.name,
             price: req.body.price,
@@ -98,6 +103,19 @@ let adminController = {
                     })
                 })
             })
+            } else {
+                let brand = db.Brand.findAll();
+                let category = db.Category.findAll({include: [{association: 'subcategorias'}]});
+                let subcategory = db.Subcategory.findAll();
+                let colors = db.Color.findAll();
+                let fins = db.Fin.findAll();
+                let size = db.Size.findAll()
+                Promise.all([brand, category, subcategory, colors, fins, size])
+                .then(function([brand, category, subcategory, colors, fins, size ]){
+                  // console.log(JSON.stringify(category))
+                    return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, size,  errors: errors.mapped() });
+                })
+            }
         },
 
 
@@ -202,7 +220,7 @@ let adminController = {
                         isActive: 1
                     };
                     productsize.push(datasize);
-                    console.log("PRODUCTO SIZE<<<<<<<<<<<<<<<" + productsize)
+                  //  console.log("PRODUCTO SIZE<<<<<<<<<<<<<<<" + productsize)
                 };
                 
                 let productcolor = [];
@@ -220,7 +238,7 @@ let adminController = {
                 .then(response => {
                     if (response && productoEditado ){
                         // let currency = req.body.currency;
-                        console.log("-----------------------" + productoEditado.image1);
+                      //  console.log("-----------------------" + productoEditado.image1);
                         return res.redirect('/product/detail/' + req.params.id );
                     } else {
                         next()
@@ -235,7 +253,7 @@ let adminController = {
             where: { id: req.params.id }
         })
         .then(function (productoBorrado) {
-        res.redirect("/product/all")
+        res.redirect("/admin")
         // const productDeleteId = req.params.id;
         // const productsFinal = productos.filter(product => product.id != productDeleteId);
         // let productsGuardar = JSON.stringify(productsFinal,null,2)
