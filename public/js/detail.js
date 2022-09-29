@@ -19,12 +19,10 @@ async function fetchProducts() {
     return info.data.products;
 }
 
-
 async function ready() {
 
 const PRODUCTS = await fetchProducts();
 //console.log(PRODUCTS);
-
 
 //Dimensiones / Talles
 let selDim = document.querySelector('#opcDim')
@@ -66,6 +64,8 @@ let colorElegido = selColor.options[selColor.selectedIndex];
 color.innerHTML = colorElegido.text
 })
 
+//Acabado
+
 let selAcabado = document.querySelector('#opcAcab') 
 //console.log (selAcabado)
 let acabado = document.querySelector ('#acabado')
@@ -78,14 +78,62 @@ let acabadoElegido = selAcabado.options[selAcabado.selectedIndex];
 acabado.innerHTML = acabadoElegido.text
 })
 
+// Cantidad
+let contador = document.getElementById("contador");
+console.log (contador)
 
-/*fetch ('api/products/index')
-.then (response => response.json())
-.then (informacion => {
-    console.log(informacion.data)
-})
-*/
+let sumar = document.getElementById("mas");
+console.log (sumar)
+let restar = document.getElementById("menos");
+console.log (restar)
+let importe = document.getElementById("importe");
+console.log (importe)
 
 
+function calcular() {
+    let pr = parseFloat(importe.innerHTML)
+    console.log(pr)
+    let cant = contador.value;
+    console.log(cant)
+    // var isValid = /^[1-9][0-9]*$/.test(value);
 
-}
+    // if (!isValid) {
+    //   contador.value = prevValue;
+    // } else {
+    //   prevValue = value;
+    // }
+
+   return pr * cant
+   console.log(total)
+//    .toFixed(2);
+  }
+
+
+sumar.addEventListener("click", function() {
+    contador.value = Number(contador.value) + 1;
+    let totalQ = document.querySelector("#totalCantidad")
+    totalQ.innerHTML =  contador.value;
+    });
+
+sumar.addEventListener("click", function() {
+    contador.value = Number(contador.value) + 1;
+    let totalPrint = document.querySelector("#totalPrecio")
+    // console.log(calcular())
+    totalPrint.innerHTML =  calcular();
+    });
+
+restar.addEventListener("click", function() {
+    contador.value = Number(contador.value) - 1;
+    let totalPrint = document.querySelector("#totalPrecio")
+    totalPrint.innerHTML =  calcular();
+    }); 
+
+sumar.addEventListener("keyup", function() {
+    contador.value = Number(contador.value) + 1;
+    let totalPrint = document.querySelector("#totalPrecio")
+    // console.log(calcular())
+    totalPrint.innerHTML = calcular();
+    });
+
+
+};

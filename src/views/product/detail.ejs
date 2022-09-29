@@ -13,12 +13,13 @@
 
             <main class="productDetail">
                 <div class="shop-filters">
-                    <!-- <div>
-                        <a href="/product/all"><strong> SHOP </strong></a> |
-                        <a href="/product/all?cat=surfboards"> SURFBOARDS </a> |
-                        <a href="/product/all?cat=accesorios"> ACCESORIOS </a> |
-                        <a href="/product/all?cat=complementos"> COMPLEMENTOS </a> |
-                    </div> -->
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/product/all">Shop All</a></li>
+                        <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
+                        <li><a href="/product/all?cat=<%= producto.subcategoria.name%>"><%= producto.subcategoria.name%></a></li>
+                        <li class="breadCrumbLast"><%= producto.name%></li>
+                    </ul>
                     <span></span>
 
                     <%if(locals.isAdmin){%>
@@ -33,12 +34,7 @@
                     </div>
                     <% }%>
                 </div>
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.categoria.name%></a></li>
-                    <li><a href="/product/all?cat=<%= producto.categoria.name%>"><%= producto.subcategoria.name%></a></li>
-                    <li class="breadCrumbLast"><%= producto.name%></li>
-                </ul>
+
                 <section class="main-container">
                     <div class="left-wrapper">
                         <div class="img-slider">
@@ -56,7 +52,7 @@
                         <div class="product-header">
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <!-- <p>$<%= producto.price%> ARS</p> -->
+                            <p id="importe" ><%= producto.price%></p>                            
                             <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
@@ -129,14 +125,39 @@
                                         <option value="">glossy</option>
                                     </select>
                                 </div>
-                                <!-- <div>
+<<<<<<< HEAD
+                                <div>
                                     <h5>Cantidad</h5>
                                     <div>
-                                        <span>-</span>
-                                        <input type=" number">
-                                        <span>+</span>
+                                        <span class="">
+                                            <button  id="menos" type="button">-</button>
+                                        </span>
+                                        <input id="contador" type= number>
+                                        <span class="">
+                                            <button id="mas" type="button">+</button>
+                                        </span>
                                     </div>
+                                </div> 
+=======
+                                <div class="quantity" id="cantDetail">
+                                    <button class="plus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input type="number" name="quantity" value="1">
+                                    <button class="minus-btn" type="button" name="button">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <!-- <div class="quantity">
+                                    <label for="cant">Cantidad
+                                        <div class="form-input">
+                                            <span>-</span>
+                                            <input type="number" class="">
+                                            <span>+</span>
+                                        </div>
+                                </label>
                                 </div> -->
+>>>>>>> f8a8b5be5cc710b036d44be4e28b1bc063f35528
                             </div>
                             <div>
                                 <input class="boton" value="Agregar al Carrito" type="submit">
@@ -152,16 +173,16 @@
                                 <li>Acabado <span id="acabado"></span></li>
                             </ul>
                             <hr>
-                            <!-- <p>CANTIDAD</p> -->
+                            <p>CANTIDAD <span id="totalCantidad"></span></p>
                             <hr>
-                            <p>TOTAL</p>
+                            <p>TOTAL <span id="totalPrecio"></span></p>                        
                         </div>
 
                         <div class="descripcion">
 
                             <div class="especificaciones">
                                 <h2>Descripción</h2>
-                                <p align="justify"><%= producto.description%></p>
+                                <p><%= producto.description%></p>
                                 <br>
                             </div>
 
@@ -169,7 +190,7 @@
                             
                             <div class="features">
                                 <h2>Características</h2>
-                                <p align="justify"><%= producto.features%></p>
+                                <p><%= producto.features%></p>
                             </div>
 
                             <br>

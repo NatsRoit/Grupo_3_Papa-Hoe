@@ -121,6 +121,9 @@ const productController = {
     },
     checkout: function(req,res){
         res.render(path.resolve(__dirname, '../views/product/checkout'));
+    },
+    sizes: function(req,res){
+        res.render(path.resolve(__dirname, '../views/product/sizes'));
     }
 };
 

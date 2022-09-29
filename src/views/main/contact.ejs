@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head", {title: 'PapaHoe || Contact Us'}) %>
+
+    <body>
+        <%- include("../partials/header") %>
+        <main>       
+            <div class="contact-form">
+                
+                <section class="colum">  
+                <h2>Contact US</h2>
+                <div class="login-img">
+                    <img src="/images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="LaLinea">
+                </div>
+
+                <% if (sent) { %>     
+                  <h3 class="form-rta">Te responderemos a la brevedad!!!</h3>
+                <% } %>
+
+                <form class="formulario" action="/contact" method="POST"
+                                enctype="multipart/form-data">
+
+                                <div class="form-input">
+                                    <label for="email">Email <% if (typeof errors != 'undefined' && errors.email) { %>
+                                        <span class="under"><%= errors.email.msg %> </span>
+                                    <% } %></label>
+                                    <input required type="email" name="email" id="email" placeholder="Email" >
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="mensaje"></label>
+                                    <textarea required name="mensaje" id="mensaje" placeholder="Dejanos tu mensaje"></textarea>
+                                        
+                                </div>
+                                <div class="submit-button">
+                                    <button class="submit-button" type="submit">Enviar</button>
+                                </div>
+                  
+                </form>   
+            </section>
+            
+            <section class="colum">                           
+            <h2>Servicio al Cliente</h2>                 
+                    <li><a href="mailto:info@papahoe.com">info@papahoe.com </a> </li> <br>
+                    <li>ARG +54 11 4395 859<br>MEX +52 00 4395 859</li>
+                    <li><br>
+                <h4>Surfboard Factory</h4>
+                    <p>Calle Cualca 27 <br>
+                      Villa Gesell, Argentina</p>
+                    </li> <br>
+                    <li>
+                        <h4>DF Showroom</h4>
+                        <p>San Tlatelolco 123 <br>
+                            Colonia Roma, DF</p>
+                    </li>
+                </section>
+                    
+        </main>
+        <%- include("../partials/footer") %>
+        <script src="/js/contactFormValidation.js"></script>
+       
+         
+    </body>
+
+</html>

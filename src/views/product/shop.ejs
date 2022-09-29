@@ -12,8 +12,21 @@
         </header>
 
         <main class="shop">
-            <!-- <div class="shop-filters">
-                <div class="search-box">
+            <div class="shop-filters">
+                <div id="open-filters">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/product/all">Shop All</a></li>
+                    </ul>
+                    
+                </div>
+                <div id="open-filters">
+                    <span class="iconButton filter-blue">
+                        <p>filtrar / ordenar</p>
+                        <img src="/assets/sort_filter.svg" alt="">
+                    </span>
+                </div>
+                <!-- <div class="search-box">
                     <a href="#"><span id="lupa-icon"><i class="fa-solid fa-magnifying-glass"></i></span></a>
                     <form action="/product/all" method="GET" id="searchForm">
                         <input type="text" name="keyword" placeholder="Buscar" id="search-form-input">
@@ -21,18 +34,13 @@
                     </form>
                 </div> -->
     
-            <!-- <p>
-                <a href="/product/all"> <strong> SHOP </strong></a> |
-                <a href="/product/all?cat=surfboards"> SURFBOARDS </a> |
-                <a href="/product/all?cat=accesorios"> ACCESORIOS </a> |
-                <a href="/product/all?cat=complementos"> COMPLEMENTOS </a> |
-            </p> -->
                 <span></span>
                 <%if(locals.isAdmin){%>
-                    <p>
-                        EN CONSTRUCCIÓN! Opciones User admin --->
-                        <a href="/admin/create"> <strong>Crear Producto </strong></a>
-                    </p>
+                    <div>
+                        <p>
+                            <a href="/admin/create"> <strong>Crear Producto </strong></a>
+                        </p>
+                    </div>
                     <% }%>
             </div>
 
