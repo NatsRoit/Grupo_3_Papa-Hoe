@@ -51,7 +51,7 @@
                         <div class="product-header">
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <!-- <p>$<%= producto.price%> ARS</p> -->
+                            <p id="importe" ><%= producto.price%></p>                            
                             <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
@@ -124,14 +124,18 @@
                                         <option value="">glossy</option>
                                     </select>
                                 </div>
-                                <!-- <div>
+                                <div>
                                     <h5>Cantidad</h5>
                                     <div>
-                                        <span>-</span>
-                                        <input type=" number">
-                                        <span>+</span>
+                                        <span class="">
+                                            <button  id="menos" type="button">-</button>
+                                        </span>
+                                        <input id="contador" type= number>
+                                        <span class="">
+                                            <button id="mas" type="button">+</button>
+                                        </span>
                                     </div>
-                                </div> -->
+                                </div> 
                             </div>
                             <div>
                                 <input class="boton" value="Agregar al Carrito" type="submit">
@@ -141,30 +145,22 @@
                         <div class="product-summary">
                             <p><%= producto.nombre%></p>
                             <ul>
-<<<<<<< HEAD
-                                <li>Dimensiones: <span id="dimUser">hgfhgfhgfghfhfhfhgfhffh</span></li>
-                                <li>Fins</li>
-                                <li>Tecnologia</li>
-                                <li>Tail</li>
-                                <li>Finnish</li>
-=======
                                 <li>Dimensiones <span id="dimensiones"></span></li>
                                 <li>Fins <span id="fins"></span></li>
                                 <li>Color <span id="color"></span></li>
                                 <li>Acabado <span id="acabado"></span></li>
->>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
                             </ul>
                             <hr>
-                            <!-- <p>CANTIDAD</p> -->
+                            <p>CANTIDAD <span id="totalCantidad"></span></p>
                             <hr>
-                            <p>TOTAL</p>
+                            <p>TOTAL <span id="totalPrecio"></span></p>                        
                         </div>
 
                         <div class="descripcion">
 
                             <div class="especificaciones">
                                 <h2>Descripción</h2>
-                                <p align="justify"><%= producto.description%></p>
+                                <p><%= producto.description%></p>
                                 <br>
                             </div>
 
@@ -172,7 +168,7 @@
                             
                             <div class="features">
                                 <h2>Características</h2>
-                                <p align="justify"><%= producto.features%></p>
+                                <p><%= producto.features%></p>
                             </div>
 
                             <br>
@@ -205,10 +201,6 @@
         <!-- footer -->
         <%- include("../partials/footer") %>
         <!-- footer -->
-<<<<<<< HEAD
-        <script src="js/jhjgjhg.js"></script>
-=======
         <script src="/js/detail.js"></script>
->>>>>>> 0a4e6e59f829cd2edd3b8edd71ef2470dcd7fdab
     </body>
 </html>
