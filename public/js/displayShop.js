@@ -31,9 +31,10 @@ async function ready() {
     const PRODUCTS = await fetchProducts();
     console.log(PRODUCTS);
 
-    let urlObject = new URLSearchParams(location.search)
-    let keywordValue = urlObject.get("keyword")
-    let catValue = urlObject.get("cat")
+    // El Objeto urlObject trae consigo la propiedad .get q me permitirá obtener el valor del queryString
+    let urlObject = new URLSearchParams(location.search);
+    let keywordValue = urlObject.get("keyword");
+    let catValue = urlObject.get("cat")? urlObject.get("cat").replace(/\s/g,'').toLowerCase() : null;
     //-------------------------------------------
     console.log(location.search);
     console.log(urlObject.has("keyword"));
@@ -58,7 +59,7 @@ async function ready() {
     };
 
 
-    lupaIcon.addEventListener("click", (e) => {
+    lupaIcon.addEventListener("click", function(e) {
         console.log(e.target);
         // let searchForm = document.getElementById("searchForm");
         searchBox.classList.toggle("hidden")
@@ -76,7 +77,7 @@ function displayProducts(array) {
   container.innerHTML = ``;
   for (let i = 0; i < array.length; i++) {
     const prod = array[i];
-    if (prod.active) {
+    if (prod.active && prod.stock > 0) {
     container.innerHTML += `
             <div class="producto-shop">
                 <a href="/product/detail/${prod.id}">
@@ -97,7 +98,7 @@ function displayProducts(array) {
                     </div>
                 </a>
             </div>`
-    } else {
+    } else if (prod.active && prod.stock <= 0){
         container.innerHTML += `
             <div class="producto-shop">
                 <a href="/product/detail/${prod.id}">
@@ -117,7 +118,9 @@ function displayProducts(array) {
                     </div>
                 </a>
             </div>`
-    }
+        } else {
+            container.innerHTML += ``
+        }
   }
 }
 
@@ -149,7 +152,7 @@ function filterProducts(query, PRODUCTS) {
             span.innerHTML = "x";
             title.style.display = "flex";
             title.style.justifyContent = "space-between";
-            span.style.margin = "0 30px";
+            span.style.margin = "0 100px 0 30px";
             span.style.fontSize = "50px";
             span.addEventListener("click", function(e){
                 title.innerHTML = ``

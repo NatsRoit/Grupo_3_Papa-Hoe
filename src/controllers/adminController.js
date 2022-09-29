@@ -158,6 +158,7 @@ let adminController = {
             discount: req.body.discount,
             description: req.body.description,
             features: req.body.features,
+            active: req.body.activo,
             stock: req.body.stock,
             fin_id: req.body.fin_id,
             brand_id: req.body.brand_id,
@@ -240,6 +241,14 @@ let adminController = {
         // let productsGuardar = JSON.stringify(productsFinal,null,2)
         // fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'),productsGuardar);
         // res.redirect('/product');
+    });
+    },
+    destroyTrucho: (req,res) =>{
+        db.Product.destroy ({
+            where: { id: req.params.id }
+        })
+        .then(function (productoBorrado) {
+        res.redirect("/admin")
     });
     },
 

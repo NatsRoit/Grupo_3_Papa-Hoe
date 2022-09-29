@@ -11,6 +11,14 @@
                 alt="PapaHoe foto1">
         </header>
 
+        <%if(locals.isAdmin){%>
+            <div class="adminOpt">
+                <div id="createProduct">
+                    <a href="/admin/create"><i class="fa-solid fa-plus"></i> </a>
+                </div>
+            </div>
+            <% }%>
+
         <main class="shop">
             <div class="shop-filters">
                 <div id="open-filters">

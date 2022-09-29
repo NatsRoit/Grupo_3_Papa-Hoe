@@ -11,6 +11,23 @@
                 <img id="carrousel-image-1" src="/images/stock/guille-unsplash.jpg" alt="PapaHoe foto1">
             </header>
 
+            <%if(locals.isAdmin){%>
+                <div class="adminOpt">
+                    <div id="createProduct">
+                        <a href="/admin/create"><i class="fa-solid fa-plus"></i> </a>
+                    </div>
+                    <div id="editProduct">
+                        <a href="/admin/edit/<%=producto.id%>"><i class="fa-solid fa-pencil"></i></a>
+                    </div>
+                    <div id="deleteProduct">
+                        <form class="delete" action="/admin/delete/<%=producto.id%>?_method=DELETE" method="POST">
+                            <button type="submit" id="borrarProducto"><i class="fa-solid fa-trash"></i></button>
+                        </form>                        
+                    </div>
+                </div>
+                <% }%>
+    
+
             <main class="productDetail">
                 <div class="shop-filters">
                     <ul class="breadcrumb">
@@ -21,22 +38,15 @@
                         <li class="breadCrumbLast"><%= producto.name%></li>
                     </ul>
                     <span></span>
-
-                    <%if(locals.isAdmin){%>
-                    <div>
-                        <a href="/admin/create"> Crear Producto </a>|
-                        <a href="/admin/edit/<%=producto.id%>"> Editar Producto </a> |
-                        <!-- <a href="/admin/delete/<%=producto.id%>"> Borrar Producto </a> -->
-
-                        <form class="delete" action="/admin/delete/<%=producto.id%>?_method=DELETE" method="POST">
-                            <button type="submit" id="borrarProducto">Borrar Producto</button>
-                        </form>
-                    </div>
-                    <% }%>
                 </div>
 
                 <section class="main-container">
                     <div class="left-wrapper">
+                        <%if(locals.isAdmin && !producto.active){%>
+                            <div class="avisoProdActivo">
+                                <p>Producto no Activo</p>
+                            </div>
+                        <% }%>
                         <div class="img-slider">
                             <img src="/img/<%= producto.image1 ? producto.image1 : 'default-product.png' %>"
                                 alt="<%= producto.name %>">
@@ -50,9 +60,10 @@
 
                     <div class="right-wrapper">
                         <div class="product-header">
+
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <!-- <p>$<%= producto.price%> ARS</p> -->
+                            <p id="importe" ><%= producto.price%></p>
                             <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
@@ -125,6 +136,27 @@
                                         <option value="">glossy</option>
                                     </select>
                                 </div>
+
+
+
+                                <div>
+                                    <h5>Cantidad</h5>
+                                    <div>
+                                        <span class="">
+                                            <button  id="menos" type="button">-</button>
+                                        </span>
+                                        <input id="contador" type="number" min="0">
+                                        <span class="">
+                                            <button id="mas" type="button">+</button>
+                                        </span>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div>
+
+
+<!-- 
+
                                 <div class="quantity" id="cantDetail">
                                     <button class="plus-btn" type="button" name="button">
                                         <i class="fa-solid fa-minus"></i>
@@ -133,7 +165,7 @@
                                     <button class="minus-btn" type="button" name="button">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
-                                </div>
+                                </div> -->
                                 <!-- <div class="quantity">
                                     <label for="cant">Cantidad
                                         <div class="form-input">
@@ -158,9 +190,9 @@
                                 <li>Acabado <span id="acabado"></span></li>
                             </ul>
                             <hr>
-                            <!-- <p>CANTIDAD</p> -->
+                            <p>CANTIDAD <span id="totalCantidad"></span></p>
                             <hr>
-                            <p>TOTAL</p>
+                            <p>TOTAL <span id="totalPrecio"></span></p>
                         </div>
 
                         <div class="descripcion">

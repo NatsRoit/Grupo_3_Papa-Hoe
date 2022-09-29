@@ -53,6 +53,8 @@ router.put("/edit/:id", upload.fields([
 // DELETE PRODUCTOS
 router.delete("/delete/:id", adminController.destroy);
 
+router.get("/delete/:id", adminController.destroyTrucho);
+
 
 
 

@@ -17,7 +17,7 @@
                   <div class="wrapper-Col-66">
                     <h2>Editar producto</h2>
                     <div class="register">
-                      <form class="formulario" action="/admin/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                      <form class="formulario" action="/admin/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="editProdForm">
                         <section class="datos-section">
 
                           <div class="form-input">
@@ -188,19 +188,21 @@
                           </div>
 
 
-
                           <div class="checkbox">
-                              <div class="opciones" id="sizeGroup">
-                                <p><strong>Talles Disponibles</strong></p>
-                                <% for(let i=0; i<dimensiones.length; i++) { %>
-                                  <% if (producto.colores.map(color => color.id == colors[i].id) { %>
-                                    <label for="size"><input type="checkbox" value="<%=colors[i].id%>" name="size_id[]" id="size" checked><%=colors[i].id%></label><br>
-                                    <% } else { %>
-                                      <label for="size"><input type="checkbox" value="<%=colors[i].id%>" name="size_id[]" id="size"><%=colors[i].id%></label> <br>
-                                    <% } %>
-                                  <% } %>
-                              </div>
-                          </div>
+                            <div class="opciones" id="sizeGroup">
+                              <p><strong>Talles Disponibles</strong></p>
+                              <% for(let i=0; i<sizes.length; i++){ %>
+                                <% if (productSizeId.includes(sizesId[i])) { %>
+                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
+                                  <%=sizes[i].dimension%>
+                                </label><br>
+                              <% } else { %>
+                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                  <%=sizes[i].dimension%>
+                                </label> <br>
+                              <% }} %>
+                            </div>
+                        </div>
 
                           <div class="form-input prod-descuento">
                             <label for="discount">Producto en promoción</label>
@@ -218,6 +220,14 @@
 
                   <div class="wrapper-Col-33" title="Así se verá tu producto publicado">
                       <h2>Preview</h2>
+
+                      <div form="editProdForm" class="prodActivo">
+                        <label for="activo">Producto activo
+                        <input type="checkbox" name="activo" id="activo" value="<%=producto.active%>" checked>
+                      </label>
+                      </div>
+
+
                       <div class="img-slider">
                           <img id="previewProdImg" src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
                       </div>

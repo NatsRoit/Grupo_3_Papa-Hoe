@@ -23,7 +23,14 @@ FAMILIAS TIPOGRÁFICAS
 font-family: "Quicksand", sans-serif;
   font-family: "Bebas Neue", cursive;
 */
-
+:root {
+  --green: #1cc88a;
+  --red: #e74a3b;
+  --papahoeBlue: #001728;
+  --papahoeBlueTec: #335cb1;
+  --papahoePink: #fad6d1;
+  --papahoeGreen: #8cd8d5;
+}
 /*======================================================================
 --------------------------- CLASES GENERALES ------------------------*/
 * {
@@ -37,11 +44,20 @@ font-family: "Quicksand", sans-serif;
 #hola {
   color: white
 } 
-
 .hidden {
   display: none !important;
 }
 
+.prodActive::after{
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f00c';
+  color: var(--green)
+}
+.red.prodActive::after{
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f00d';
+  color: var(--red);
+}
 img {
   max-width: 100%;
 }
@@ -102,6 +118,62 @@ main li {
   background: url(../images/stock/not-found.jpeg) center no-repeat, url(../images/stock/not-found.jpeg) center no-repeat;
   background-size: cover;
 }
+/*----------------------------------------------------------------- */
+.avisoProdActivo p {
+  color: white;
+}
+.avisoProdActivo {
+  position: sticky;
+  top: 140px;
+  right: 40px;
+  display: block;
+  background-color: red;
+  border-radius: 0 0 5px 5px;
+  /* height: 60px; */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  z-index: 90;
+}
+.adminOpt {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 145px;
+  right: 0px;
+  color: white;
+  text-align: center;
+  /* margin: auto; */
+  z-index: 100;
+  align-items: flex-end;
+}
+
+#createProduct,
+#editProduct,
+#deleteProduct {
+  padding: 20px 0;
+  margin: 4px 0;
+  background-color: #8cd8d5;
+  border-radius: 5px 0 0 5px;
+  color: rgba(0, 0, 0, 0.55);
+  transition: all 2ms;
+}
+#createProduct a,
+#editProduct a,
+#deleteProduct form {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+#createProduct >:hover,
+#editProduct >:hover,
+#deleteProduct >:hover {
+  color: #000;
+  padding: 20px 60px 20px 20px;
+  transition: padding .5s;
+}
+
 /*----------------------------------------------------------------- */
 
 .section-header {
@@ -206,12 +278,12 @@ ul.breadcrumb li a:hover {
 
 
 /*------------------------- INPUT's ONFOCUS ------------------------*/
-input:focus,
-input:focus-visible {
+
+/* input:focus-visible {
   border: 2px solid #335cb1 !important;
   outline: transparent !important;
   -webkit-appearance: none;
-}
+} */
 
 button:active {
   outline: none;
@@ -453,6 +525,10 @@ label.container .checkmark:after {
 }
 .drawer__content li:hover {
   padding: 17px 20px 17px 45px;
+  font-weight: 600;
+}
+.drawer__content #linkdisabled li:hover {
+  padding: 17px 20px 17px 35px;
   font-weight: 600;
 }
 .drawer__content i {
@@ -706,11 +782,11 @@ color: hsl(220, 14%, 90%);
 }
 .search-box {
   position: fixed;
-  top: 70px;
-  z-index: 99;
+  top: 80px;
+  z-index: 200;
   width: 100vw;
-  /* background-color: #fad6d1d9; */
   background-color: #00172871;
+  backdrop-filter: blur(6px);
 }
 
 #searchForm {
@@ -759,9 +835,9 @@ color: hsl(220, 14%, 90%);
   width: 70%;
 }
 
-#lupa-icon {
-/* comento algo */
-}
+/* #lupa-icon {
+comento algo
+} */
 
 .search-box input:focus {
   outline: none !important;
@@ -1774,11 +1850,21 @@ button.submit-button {
 .form-input.prod-descuento input[type="number" i]::placeholder {
   color: black;
 }
-
-.checkbox {
+.prodActivo {
   display: flex;
+  justify-content: center;
   width: 100%;
   padding: 0 20px 0 0;
+  background-color: rgba(128, 128, 128, 0.432);
+  color: gray;
+  border-radius: 5px;
+  padding: 5px;
+}
+.prodActivo.activado {
+  background-color: pink;
+}
+.prodActivo input {
+  display: none;
 }
 .checkbox {
   display: flex;
@@ -1791,6 +1877,14 @@ button.submit-button {
   flex-grow: 1;
   line-height: 20pt;
 }
+.checkbox .prodActivo {
+  margin: 20px 0 4px 0;
+  width: 50%;
+  flex-grow: 1;
+  line-height: 20pt;
+}
+
+
 
 .datos-section {
   width: 100%;
@@ -2514,6 +2608,25 @@ div.secretInput {
 } 
 
 /* -------------------  ADMIN PANEL --------------------------*/
+#admactive a,
+#adm-view a,
+#adm-edit a,
+#adm-delete a{
+color: inherit;
+}
+#admactive a:hover,
+#adm-view a:hover,
+#adm-edit a:hover,
+#adm-delete a:hover{
+color: var(--papahoeBlueTec);
+}
+#admactive i:hover,
+#adm-view i:hover,
+#adm-edit i:hover,
+#adm-delete i:hover{
+transform: translateY(1px);
+}
+
 .adm-table-header {
   display: flex;
   justify-content: space-between;
@@ -2533,17 +2646,16 @@ div.secretInput {
   letter-spacing: .5px;
   background-color: #4884ef;
   color: #f4f5ec;
-  /* width: 100%; */
-
-  /* AZUL TÉCNICO: #335cb1 
-Azul Técnico clarito: #4884ef
-Verde agua: #8cd8d5 */
 }
 .adm-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px 10px;
-  
+}
+.adm-table.header {
+  position: sticky;
+  z-index: 99;
+  top: 60px;
 }
 .adm-table td,
 .adm-table th {
@@ -2555,7 +2667,8 @@ Verde agua: #8cd8d5 */
 .adm-table-title {
   text-align: left;
   line-height: 40px;
-  background-color: hsl(208, 10%, 97%);
+  background-color: hsl(208deg 10% 97% / 91%);
+  backdrop-filter: blur(3px);
 }
 .adm-table tr {
   line-height: 30px;
@@ -2809,6 +2922,10 @@ input.visually-hidden:is(:focus, :focus-within) + label {
 -------------------------------------------------------------------------------------  */
 
 @media (min-width: 768px) {
+  .adm-table.header {
+    top: 75px;
+}
+
   a.button-link {
     font-size: 20px;
   }
@@ -3208,7 +3325,7 @@ input.visually-hidden:is(:focus, :focus-within) + label {
     padding: 5px;
   }
   .search-box {
-    top: 70px;
+    top: 80px;
   }
   #searchForm {
       padding: 20px 30px;

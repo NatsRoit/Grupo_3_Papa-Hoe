@@ -9,4 +9,6 @@ router.get('/categories', apiProductsController.categories);
 router.get('/index', apiProductsController.index);
 // router.get('/index/:id', apiProductsController.index);
 
+router.patch('/edit/:id', apiProductsController.edit);
+
 module.exports = router;

@@ -167,6 +167,46 @@ const apiProductsController = {
             })
     },
 
+    edit: (req, res) =>{
+        let productId = req.params.id;
+        db.Product.update(
+            {
+                active: req.body.active,
+            },
+            {
+                where: {id: productId}
+            })
+            .then(confirmacion => {
+            let response;
+            if(confirmacion){
+                response = {
+                    meta: {
+                        status: 201,
+                        message: "Producto actualizado",
+                        url: 'api/products/edit'
+                    },
+                    data: confirmacion
+                }
+            } else {
+                response = {
+                    info: {
+                        status: 500 ,
+                        url: 'api/products/edit'
+                    },
+                    data: confirmacion 
+                }
+            }
+            res.json(response)
+        })
+        .catch(error => res.send(error))
+    },
+
+
+
+
+
+
+
 }
 
 module.exports = apiProductsController;
