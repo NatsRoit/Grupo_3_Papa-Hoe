@@ -63,7 +63,7 @@
 
                             <h2><%= producto.marca.name%></h2>
                             <h1><%= producto.name%></h1>
-                            <p id="importe" ><%= producto.price%></p>
+                            <p id="importe" hidden><%= producto.price%></p>
                             <p><%= new Intl.NumberFormat(["es-AR", "es"], {style: "currency", currency: "ARS"}).format(producto.price)%> ARS</p>
                         </div>
 
@@ -190,7 +190,7 @@
                                 <li>Acabado <span id="acabado"></span></li>
                             </ul>
                             <hr>
-                            <p>CANTIDAD <span id="totalCantidad"></span></p>
+                            <p>CANTIDAD <span id="totalCantidad" ></span></p>
                             <hr>
                             <p>TOTAL <span id="totalPrecio"></span></p>
                         </div>

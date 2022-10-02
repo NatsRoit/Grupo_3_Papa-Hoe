@@ -100,6 +100,7 @@ function listProducts(PRODUCTS) {
             <td id="prodId" >${prod.id}</td>
             <td id="name">${prod.name}</td>
             <td id="cat">${prod.categoria.name}</td>
+            <td id="subcat">${prod.subcategoria.name}</td>
             <td id="stock">${prod.stock}</td>
             <td id="price">${prod.price}</td>
             <td id="discount">${prod.discount != 0? prod.discount : "-"}</td>

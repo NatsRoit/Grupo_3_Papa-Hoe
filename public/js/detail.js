@@ -110,14 +110,10 @@ function calcular() {
   }
 
 
-sumar.addEventListener("click", function() {
+  sumar.addEventListener("click", function() {
     contador.value = Number(contador.value) + 1;
     let totalQ = document.querySelector("#totalCantidad")
     totalQ.innerHTML =  contador.value;
-    });
-
-sumar.addEventListener("click", function() {
-    contador.value = Number(contador.value) + 1;
     let totalPrint = document.querySelector("#totalPrecio")
     // console.log(calcular())
     totalPrint.innerHTML =  calcular();
@@ -125,16 +121,13 @@ sumar.addEventListener("click", function() {
 
 restar.addEventListener("click", function() {
     contador.value = Number(contador.value) - 1;
-    let totalPrint = document.querySelector("#totalPrecio")
-    totalPrint.innerHTML =  calcular();
-    }); 
-
-sumar.addEventListener("keyup", function() {
-    contador.value = Number(contador.value) + 1;
+    let totalQ = document.querySelector("#totalCantidad")
+    totalQ.innerHTML =  contador.value;
     let totalPrint = document.querySelector("#totalPrecio")
     // console.log(calcular())
-    totalPrint.innerHTML = calcular();
-    });
+    totalPrint.innerHTML =  calcular();
+
+    }); 
 
 
 };
