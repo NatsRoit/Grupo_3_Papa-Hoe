@@ -34,7 +34,8 @@ function ListadoProductos(){
 												<th>Precio</th>
 												<th>Stock</th>
 												<th>Publicado</th>
-                                                <th></th>
+                                                <th>Activo</th>
+                                                <th>Ver Producto</th>
 											</tr>
 										</thead>  
                                         <tbody>                                                               

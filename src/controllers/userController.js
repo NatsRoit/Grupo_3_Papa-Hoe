@@ -133,7 +133,16 @@ const userController = {
     }
 
     req.body.avatar = user.avatar
-    res.locals.usuario.user_name = user.user_name;
+
+    if(req.session.usuario){
+      let userlogged = req.session.usuario ;
+      //console.log('req.params.id' + req.params.id);
+      if(userlogged.id == req.params.id){ 
+        res.locals.usuario.user_name = user.user_name;
+      }}
+
+
+   
     db.User.update(user, {where:{id: req.params.id}})
     .then(user => {
       console.log("ATENCIONNNNNNNNNNN! Acá va mi usuario editado" + JSON.stringify(user))
