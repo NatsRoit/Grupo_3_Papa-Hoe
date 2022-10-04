@@ -1,18 +1,18 @@
 import React from 'react';
-import foto from '../assets/images/default-admin.jpg';
+import foto from '../assets/images/LOGO-PapaHoe-LogoWord-Negativo.png';
 
 function TopBar(){
     return(
         <React.Fragment>
-				{/*<!-- Topbar -->*/}
-				<nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-					{/*<!-- Sidebar Toggle (Topbar) -->*/}
-					<button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-						<i className="fa fa-bars"></i>
-					</button>
-
-					{/*<!-- Topbar Navbar -->*/}
+			
+				<div className='topBar'>
+				<nav className="navbar">
+			
+                    <div className='leftBar'>
+                        <img className="logo" src={foto} alt="Papa Hoe Logo"/>
+						<h3> Admin Dashboard</h3>
+                    </div>
+					
 					<ul className="navbar-nav ml-auto">
 
 						{/*<!-- Nav Item - Alerts -->*/}
@@ -20,7 +20,7 @@ function TopBar(){
 							<a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
 								<i className="fas fa-bell fa-fw"></i>
 								{/*<!-- Counter - Alerts -->*/}
-								<span className="badge badge-danger badge-counter">17</span>
+								<span className="badge badge-danger badge-counter">1</span>
 							</a>
 						</li>
 
@@ -37,16 +37,27 @@ function TopBar(){
 
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
-							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Bienvenido!</span>
-								<img className="img-profile rounded-circle" src={foto} alt="AdminProfile Foto de Perfil" width="60"/>
-							</a>
+							<div className='userAdmin'>				
+								<span >Bienvenido!</span> 
+								<span className='user'>Usuario Admin</span> 
+							
+								
+							</div>
 						</li>
+						
+						
+			
 
 					</ul>
+           
+				
+				
+						
+					
 
 				</nav>
-				{/*<!-- End of Topbar -->*/}
+				</div>
+			
 
         </React.Fragment>
     )
