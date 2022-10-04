@@ -50,20 +50,41 @@ async function ready() {
         filterProducts(keywordValue, PRODUCTS)
     } else if (urlObject.has('cat')) {
         let prodsByCat = PRODUCTS.filter(prod => prod.categoria.name.replace(/\s/g,'').toLowerCase() == catValue || prod.subcategoria.name.replace(/\s/g,'').toLowerCase() == catValue)
-        title.innerHTML = `${catValue}`
+        title.innerHTML = 'Shop: ' + `${catValue}`
         displayProducts(prodsByCat);
         // let queryCat = cat.categoria.name
         // filterProducts(queryCat, PRODUCTS)
     } else {
     };
 
+    if (location.href.includes("product/all") && urlObject.has('cat')) {
+        let breadcrumb = document.querySelector(".breadcrumb");
+        let productoShop = document.querySelectorAll(".producto-shop a")[0].href
+        let productoShopNum = productoShop.substring(productoShop.lastIndexOf("/") + 1)
+        // let categoria = PRODUCTS[productoShopNum].categoria.name
+        // let subcategoria = PRODUCTS[productoShopNum].subcategoria.name
+        let categoria = catValue
+        console.log(PRODUCTS[productoShopNum]);
+        console.log(subcategoria);
+        console.log(categoria);
+        console.log(catValue);
+        console.log(subcategoria.toLowerCase());
+
+        if (catValue == "surfboards" || catValue == "complementos" || catValue == "accesorios") {
+            breadcrumb.innerHTML += `
+            <li><a href="/product/all?cat=${catValue}">${catValue}</a></li>`
+        } else {
+            breadcrumb.innerHTML += `
+            <li><a href="/product/all?cat=${categoria}">${categoria}</a></li>
+            <li><a href="/product/all?cat=${catValue}">${catValue}</a></li>`
+        }
+    }
 
     lupaIcon.addEventListener("click", function(e) {
         console.log(e.target);
         // let searchForm = document.getElementById("searchForm");
         searchBox.classList.toggle("hidden")
     });
-
 
 }
 
@@ -81,6 +102,10 @@ function displayProducts(array) {
             <div class="producto-shop">
                 <a href="/product/detail/${prod.id}">
                     <div class="imagen-producto">
+                        <div ${prod.discount != 0? "class='enOferta'": ""} >
+                            <span>${prod.discount != 0? prod.discount + "%" : "" }</span>
+                            <p>${prod.discount != 0? "OFF" : "" }</p>
+                        </div>
                         <div class="complementos-img">
                             <img src="/img/${prod.image1}" alt="${prod.name}">
                         </div>
@@ -92,8 +117,8 @@ function displayProducts(array) {
                         <p>${prod.marca.name}</p>
                     </div>
                     <div class="info-producto">
-                        <p class="precio">$ ${prod.price}</p>
-                        <p class="descuento">${ prod.discount != 0? prod.discount + "% off" : "<p></p>" }</p>
+                        <p ${ prod.discount == 0? 'class="precio"':'class="precio precioOld"'}> ${parseFloat(prod.price).toLocaleString(["es-AR", "es"], {style: "currency", currency: "ARS"})} </p>
+                        <p class="precio" style="font-weight:bold; color:#335cb1">${ prod.discount == 0? "" : parseFloat(prod.price - (prod.price * prod.discount)/100).toLocaleString(["es-AR", "es"], {style: "currency", currency: "ARS"})}</p>
                     </div>
                 </a>
             </div>`
@@ -117,9 +142,9 @@ function displayProducts(array) {
                     </div>
                 </a>
             </div>`
-        } else {
-            container.innerHTML += ``
-        }
+    } else {
+        container.innerHTML += ``
+    }
   }
 }
 

@@ -172,28 +172,28 @@
                                             </div>
                                             <div class="prodImgGallery">
                                                 <div class="prodImg">
-                                                    <label for="imageGallery1"  class="labelImg"></label><br>
+                                                    <label for="imageGallery" class="labelImg"></label><br>
                                                     <input type="file" name="imageGallery" id="imageGallery1" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="imageGallery2" class="labelImg"></label><br>
+                                                    <label for="imageGallery" class="labelImg"></label><br>
                                                     <input type="file" name="imageGallery" id="imageGallery2" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="imageGallery3" class="labelImg"></label><br>
+                                                    <label for="imageGallery" class="labelImg"></label><br>
                                                     <input type="file" name="imageGallery" id="imageGallery3" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                                     </div>
                                                 </div>
                                                 <div class="prodImg">
-                                                    <label for="imageGallery4" class="labelImg"></label><br>
+                                                    <label for="imageGallery" class="labelImg"></label><br>
                                                     <input type="file" name="imageGallery" id="imageGallery4" class="visually-hidden">
                                                     <div id="imgPreview">
                                                         <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
@@ -202,7 +202,7 @@
                                                 <p class="prodImgCaption">
                                                     ES NECESARIO AGREGAR AL MENOS UNA IMAGEN PRINCIPAL.<br>
                                                     Formatos aceptados: .jpg / .jpeg / .png / .gif / .webp <br>
-                                                    Usá preferiblemente imágenes con orientación vertical que no superen los 2mb.
+                                                    Usá preferiblemente imágenes con orientación vertical que no supere 1mb.
                                                     <!-- Procurá que tus imágenes sean descriptivas y que pongan en evidencia todos los detalles del producto.</p> -->
                                                 </p> 
                                             </div>
@@ -230,25 +230,32 @@
                                         </select>
                                     </div> -->
                                     
-                                    <div class="checkbox">
-                                        <div class="opciones" id="sizeGroup">
-                                            <p><strong>Talles Disponibles</strong></p>
-                                            <label for="talle_XS"><input type="checkbox" value="7" name="size_id[]" id="talle_XS"> XS / extra small</label> <br>
-                                            <label for="talle_S"><input type="checkbox" value="8" name="size_id[]" id="talle_S"> S / small</label> <br>
-                                            <label for="talle_M"><input type="checkbox" value="9" name="size_id[]" id="talle_M"> M / medium</label> <br>
-                                            <label for="talle_L"><input type="checkbox" value="10" name="size_id[]" id="talle_L"> L / large</label> <br>
-                                            <label for="talle_XL"><input type="checkbox" value="11" name="size_id[]" id="talle_XL"> XL / extra large</label> <br>
-                                            <label for="talle_XXL"><input type="checkbox" value="12" name="size_id[]" id="talle_XXL"> XXL / extra extra large</label> <br>
+
+                                    <div class="form-2col">
+                                        <div class="checkbox">
+                                            <div class="opciones" id="sizeGroup">
+                                                <p><strong>Talles Disponibles</strong></p>
+                                                <% for(let i=0; i<sizes.length; i++){ %>
+                                                    <% if (sizes[i].type == "talle") { %>
+                                                        <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                                        <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                                        </label> <br>
+                                                    <% } %>
+                                                <% } %>
+                                            </div>
                                         </div>
 
-                                        <div class="opciones" id="volGroup">
-                                            <p><strong>Dimensiones / Volumen</strong></p>
-                                            <label for="dimensions_id_1"><input type="checkbox" value="1" name="size_id[]" id="dimensions_id_1"> 5'0" x 19" x 2 1/16" -21.78L</label> <br>
-                                            <label for="dimensions_id_2"><input type="checkbox" value="2" name="size_id[]" id="dimensions_id_2"> 5'7" x 19" x 2 7/16" - 29.86L</label> <br>
-                                            <label for="dimensions_id_3"><input type="checkbox" value="3" name="size_id[]" id="dimensions_id_3"> 5'10" x 20" x 2 5/8" - 33.73L</label> <br>
-                                            <label for="dimensions_id_4"><input type="checkbox" value="4" name="size_id[]" id="dimensions_id_4"> 6'1" x 20" x 2 3/4" - 37.71L</label> <br>
-                                            <label for="dimensions_id_5"><input type="checkbox" value="5" name="size_id[]" id="dimensions_id_5"> 6'4" x 21" x 3 1/2" - 43.2L</label> <br>
-                                            <label for="dimensions_id_6"><input type="checkbox" value="6" name="size_id[]" id="dimensions_id_6"> 6'10" x 22" x 3 1/4" - 53.95L</label> <br>
+                                        <div class="checkbox">
+                                            <div class="opciones" id="volGroup">
+                                                <p><strong>Dimensiones Disponibles</strong></p>
+                                                <% for(let i=0; i<sizes.length; i++){ %>
+                                                    <% if (sizes[i].type == "vol") { %>
+                                                        <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                                        <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                                        </label> <br>
+                                                    <% } %>
+                                                <% } %>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -268,9 +275,17 @@
 
                     <div class="wrapper-Col-33" title="Así se verá tu producto publicado">
                         <h2>Preview</h2>
+
+                        <div class="prodActivo activado">
+                            <label for="activo"> PUBLICAR
+                                <input form="editProdForm" type="checkbox" name="activo" id="activo" value="on" checked>
+                            </label>
+                        </div>
+
                         <div class="img-slider">
                             <img id="previewProdImg" src="/img/_default-product.png" alt="Preview del producto">
                         </div>
+
                         <div class="secretInput">
                             <output name="namePreview" for="name" id="namePreview"></output>
                             <output name="brandPreview" for="brand_id" id="brandPreview"></output>

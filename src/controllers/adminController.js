@@ -28,9 +28,9 @@ let adminController = {
         let fins = db.Fin.findAll();
         let size = db.Size.findAll()
         Promise.all([brand, category, subcategory, colors, fins, size])
-        .then(function([brand, category, subcategory, colors, fins, size ]){
+        .then(function([brand, category, subcategory, colors, fins, sizes ]){
           // console.log(JSON.stringify(category))
-            return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, size});
+            return res.render(path.resolve(__dirname, '../views/admin/productCreate'),{brand, category, subcategory, colors, fins, sizes});
         })
         .catch(err => {
             res.send(error);
@@ -57,7 +57,7 @@ let adminController = {
             image3: req.files.imageGallery ? req.files.imageGallery[1].filename : null,
             image4: req.files.imageGallery ? req.files.imageGallery[2].filename : null,
             image5: req.files.imageGallery ? req.files.imageGallery[3].filename : null,
-
+            active: req.body.activo,
         })
         .then(function (nuevoProducto) {
             let responseProducto = db.Product.findOne({
@@ -140,36 +140,13 @@ let adminController = {
         let sizes = db.Size.findAll()
         Promise.all([producto, brand, category, subcategory, colors, fins, sizes])
         .then(function([producto, brand, category, subcategory, colors, fins, sizes]){
-
-// Hago un Array con los ID's de todos los "sizes" y otro Array con los ID's de los "sizes seleccionados" de este producto
-// porque no lograba resolver el tema de iterar sobre un array de Objetos literales, analizando sólo la propiedad "ID".
-// Luego mando a la vista estos dos Arrays que contienen sólo números y los itero para mostrar los talles seleccionados en los Input type="select" 
-            let sizesId = []
-            sizes.forEach(function(item){
-                sizesId.push(item.id)
-            });
-
-            let productSizeId = []
-            producto.dimensiones.forEach(function(item){
-                productSizeId.push(item.id)
-            });
-
-// Repito lo mismo para los colores:
-            let colorsId = []
-            colors.forEach(function(item){
-                colorsId.push(item.id)
-            });
-
-            let productColorsId = []
-            producto.colores.forEach(function(item){
-                productColorsId.push(item.id)
-            });
-
-            res.render (path.resolve(__dirname,'../views/admin/productEdit'), {producto, brand, category, subcategory, colors, fins, sizes, sizesId, productSizeId, colorsId, productColorsId})
+            res.render (path.resolve(__dirname,'../views/admin/productEdit'), {producto, brand, category, subcategory, colors, fins, sizes})
         })
     },
 
     edit: (req,res) => {
+        // console.log(req.files['avatar'][0])
+        // console.log(req.files['imageGallery'])
         db.Product.update({
             name: req.body.name,
             price: req.body.price,
@@ -183,10 +160,11 @@ let adminController = {
             subcategory_id: req.body.subcategory_id,
             category_id: req.body.category_id,
             image1: req.files.image1 ? req.files.image1[0].filename : req.body.oldImagen1,
-            image2: req.files.imageGallery1 ? req.files.imageGallery1[0].filename : req.body.oldImagen2,
-            image3: req.files.imageGallery2 ? req.files.imageGallery2[1].filename : req.body.oldImagen3,
-            image4: req.files.imageGallery3 ? req.files.imageGallery3[2].filename : req.body.oldImagen4,
-            image5: req.files.imageGallery4 ? req.files.imageGallery4[3].filename : req.body.oldImagen5,
+            image2: req.files.imageGallery? req.files.imageGallery[0].filename : req.body.oldImagen2,
+            image3: req.files.imageGallery && req.files.imageGallery.length >1? req.files.imageGallery[1].filename : req.body.oldImagen3,
+            image4: req.files.imageGallery && req.files.imageGallery.length >2? req.files.imageGallery[2].filename : req.body.oldImagen4,
+            image5: req.files.imageGallery && req.files.imageGallery.length >3? req.files.imageGallery[3].filename : req.body.oldImagen5,
+            active: req.body.activo? true : false,
         },{
             where: {id: req.params.id}
         })
@@ -211,7 +189,7 @@ let adminController = {
                 );
 
             Promise.all([responseProducto, responseDimensiones, responseColores, emptyColors, emptySizes])
-            .then(([producto, dimensiones, colores, emptyColors, emptySizes]) => {
+            .then(([producto, dimensiones, colores]) => {
                 let productsize = [];
                 for (let i=0; i<dimensiones.length; i++){
                     let datasize = {
@@ -220,8 +198,8 @@ let adminController = {
                         isActive: 1
                     };
                     productsize.push(datasize);
-                  //  console.log("PRODUCTO SIZE<<<<<<<<<<<<<<<" + productsize)
                 };
+                // console.log("PRODUCTO SIZE<<<<<<<<<<<<<<<" + productsize)
                 
                 let productcolor = [];
                 for (let i=0; i<colores.length; i++){
@@ -238,7 +216,8 @@ let adminController = {
                 .then(response => {
                     if (response && productoEditado ){
                         // let currency = req.body.currency;
-                      //  console.log("-----------------------" + productoEditado.image1);
+                       console.log("-----------------------" + productoEditado.image1);
+                       console.log("----------------------PROD EDITADO :" + productoEditado);
                         return res.redirect('/product/detail/' + req.params.id );
                     } else {
                         next()

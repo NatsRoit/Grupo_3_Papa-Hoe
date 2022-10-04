@@ -20,8 +20,7 @@ window.onload = function () {
     let prodImage5 = document.querySelector("#imageGallery4");
     let prodFins = document.querySelector("#fin_id");
     prodFins.disabled = true;
-    let previewProdImg = document.querySelector("#previewProdImg");
-  
+    let previewProdImg = document.querySelector("#previewProdImg");  
   
     // Los que no sé cómo resolver
     let prodColor = document.querySelector("#color_id");
@@ -60,7 +59,7 @@ window.onload = function () {
         prodName.previousElementSibling.innerHTML = "";
         prodName.classList.remove("invalid-input");
         prodName.classList.add("valid-input");
-        namePreview.innerHTML = "<h2>" + prodName.value + "</h2>"
+        // namePreview.innerHTML = "<h2>" + prodName.value + "</h2>"
         prodName.valid = true;
       }
     });
@@ -195,9 +194,9 @@ window.onload = function () {
     //VALIDACION PRECIO PRODUCTO
     //Truco para seleccionar el verdadero input
     prodPrice.valid = false;
-    priceCurrency.addEventListener("click", ()=> {
-      prodPrice.focus();
-    })
+    // priceCurrency.addEventListener("click", ()=> {
+    //   prodPrice.focus();
+    // })
     prodPrice.addEventListener("focus", function () {
       prodPrice.classList.remove("invalid-input");
       prodPrice.classList.remove("valid-input");
@@ -212,7 +211,7 @@ window.onload = function () {
   
     prodPrice.addEventListener("input", function (){
       if (this.value !== "") {
-        priceCurrency.value = newprodPrice(this.value);
+        // priceCurrency.value = newprodPrice(this.value);
         this.parentElement.previousElementSibling.innerHTML = "";
         this.classList.remove("invalid-input");
         this.classList.add("valid-input");
@@ -454,6 +453,15 @@ window.onload = function () {
       return fileTypes.includes(file.type);
     }
   
+  // FUNCIONES PARA "PRODUCTO ACTIVO"
+  let prodActivo = document.querySelector(".prodActivo"); // div
+  let prodActivoInput = prodActivo.querySelector("input"); // input
+
+  prodActivoInput.addEventListener("click", toggleActivo)
+  function toggleActivo(e) { 
+    prodActivo.classList.toggle("activado")
+  }
+    
   
   //------------------------------------------------------------
   let formElements = document.querySelector(".formulario").elements;

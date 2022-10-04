@@ -7,6 +7,6 @@ const apiUsersController = require('../controllers/apiUsersController');
 router.get('/list', apiUsersController.list)
 router.get('/detail/:id', apiUsersController.detail)
 router.post('/create', apiUsersController.create)
-router.get('/delete/:id', apiUsersController.destroy)
+// router.get('/delete/:id', apiUsersController.destroy)
 
 module.exports = router;

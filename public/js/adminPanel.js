@@ -94,10 +94,9 @@ function listProducts(PRODUCTS) {
     
     for (let i = 0; i < PRODUCTS.length; i++) {
         const prod = PRODUCTS[i]
-        // <td id="prodId" class="hidden">${prod.id}</td>
         container.innerHTML += `
         <tr>
-            <td id="prodId" >${prod.id}</td>
+            <td id="prodId" class="hidden" >${prod.id}</td>
             <td id="name">${prod.name}</td>
             <td id="cat">${prod.categoria.name}</td>
             <td id="stock">${prod.stock}</td>
@@ -107,9 +106,10 @@ function listProducts(PRODUCTS) {
             <td id="adm-view"><a href="/product/detail/${prod.id}"><i class="fa-regular fa-eye"></i></a></td>
             <td id="adm-edit"><a href="/admin/edit/${prod.id}"> <i class="fa-solid fa-pencil"></i></a></td>
             <td id="adm-delete">
-            <form class="delete" action="/admin/delete/${prod.id}?_method=DELETE" method="POST">
-              <button type="submit" id="borrarProducto"><i class="fa-solid fa-trash"></i></button>
-            </form>    
+              <form class="delete" action="/admin/delete/${prod.id}?_method=DELETE" method="POST">
+                <button type="submit" id="borrarProducto"><i class="fa-solid fa-trash"></i></button>
+              </form>
+            </td>
         </tr>
         `;
     }

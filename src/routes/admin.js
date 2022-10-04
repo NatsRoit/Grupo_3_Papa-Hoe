@@ -34,9 +34,21 @@ router.get("/", adminController.admin);
 
 // CREATE NUEVO PRODUCTO
 router.get("/create", logueado, adminController.createView);
-router.post("/create", upload.fields([
-  { name: 'image1', maxCount: 1 },
-  { name: 'imageGallery', maxCount: 4 }]), /*validaciones.validar('create'),*/ adminController.create);
+
+const fotosCreateArray = upload.fields([{ name: 'image1', maxCount: 1 }, { name: 'imageGallery', maxCount: 4 }])
+router.post("/create", fotosCreateArray, /*validaciones.validar('create'),*/ adminController.create);
+
+// NO BORRAR!!!!!!
+// // CREATE NUEVO PRODUCTO
+// router.post("/create", uploadProducts.fields([
+//   { name: 'image1', maxCount: 1 },
+//   { name: 'imageGallery1', maxCount: 1 },
+//   { name: 'imageGallery2', maxCount: 1 },
+//   { name: 'imageGallery3', maxCount: 1 },
+//   { name: 'imageGallery4', maxCount: 1 },
+// ]), adminController.create);
+
+
 
 
 // UPDATE PRODUCTOS
@@ -45,14 +57,23 @@ router.post("/create", upload.fields([
 router.get("/edit/:id",  adminController.editView);
 router.put("/edit/:id", upload.fields([
   { name: 'image1', maxCount: 1 },
-  { name: 'imageGallery1', maxCount: 1 },
-  { name: 'imageGallery2', maxCount: 1 },
-  { name: 'imageGallery3', maxCount: 1 },
-  { name: 'imageGallery4', maxCount: 1 }]),  adminController.edit);
+  { name: 'imageGallery', maxCount: 4 }]), adminController.edit);
+
+
+// NO BORRAR!!!!!!
+// router.put("/edit/:id", upload.fields([
+//   { name: 'image1', maxCount: 1 },
+//   { name: 'imageGallery1', maxCount: 1 },
+//   { name: 'imageGallery2', maxCount: 1 },
+//   { name: 'imageGallery3', maxCount: 1 },
+//   { name: 'imageGallery4', maxCount: 1 }]),  adminController.edit);
+
+
+
+
 
 // DELETE PRODUCTOS
 router.delete("/delete/:id", adminController.destroy);
-
 router.get("/delete/:id", adminController.destroyTrucho);
 
 

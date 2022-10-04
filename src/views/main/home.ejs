@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/head", {title: 'PapaHoe Surfshop'}) %>
+<%- include("../partials/head", {title: 'PapaHoe Surfshop' }) %>
 
     <body>
         <%- include("../partials/header") %>
@@ -21,7 +21,7 @@
                     <span class="sr-only">Next</span>
                 </a> -->
                 <div class="slides">
-                    <div class="carrousel" >
+                    <div class="carrousel">
                         <div class="overlay-text">
                             <p>PapaHoe: nuestro <br> compromiso <br>con el océano.</p>
                             <a class="button-link rosa" href="/#">leer más</a>
@@ -63,14 +63,14 @@
                             laoreet dolore magna aliquam. </p>
                     </div>
                     <div class="destacado-tabla">
-                        <h2>Características</h2>
-                        <ul>
-                            <li> Una tabla que te da máxima velocidad y sustentación para complementar su juego aéreo.  </li>
-                            <li>                                
-                            </li> Una cola de squash estrecha para el control combinada con un poco de volumen delantero adicional y rieles más bajos lo convierte en un excelente planeo en condiciones más completas. 
-                            <li> Recomendamos esta tabla solo para surfistas intermedios y avanzados.</li>
-                        </ul>
-                       
+                        <p>CARACTERÍSTICAS</p>
+                        <p>
+                            Una tabla que te da máxima velocidad y sustentación para complementar su juego aéreo.
+                            Una cola de squash estrecha para el control combinada con un poco de volumen delantero
+                            adicional y rieles más bajos lo convierte en un excelente planeo en condiciones más
+                            completas.
+                            Recomendamos esta tabla solo para surfistas intermedios y avanzados.
+                        </p>
                     </div>
                 </div>
 
@@ -100,13 +100,14 @@
                         <p>Dejáte llevar por la corriente y echale un vistazo a nuestras últimas colecciones o comenzá a
                             diseñar tu tabla personalizada.</p>
 
-                        <a class="button-link" id="explora" href="product/category?cat=all">explorá</a>
+                        <a class="button-link" id="explora" href="product/all">explorá</a>
                         <a class="button-link" id="crea" href="product/boardBuilder">creá</a>
                     </div>
                     <div class="contenedor-linea">
                         <img id="la-linea" src="images/brand/PapaHoe-ELEMENTS-Lalinea.png" alt="">
                     </div>
                     <div class="imagen-model-finder">
+                        <img src="images/stock/papaHoe-BoardBuilder-Cover2.png" alt="">
                         <!-- <img src="images/stock/surfboard-construction.jpg" alt=""> -->
                     </div>
                 </div>
@@ -116,40 +117,50 @@
                     <div class="title-calculator">
                         <h1>Volume Calculator</h1>
                         <h2>¿QUÉ TAMAÑO DE TABLA DEBO COMPRAR?</h2>
-                        <p>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</p>
+                        <p><strong>Descubrí cuál es la talla de tu tabla en función de tu perfil de surfista.</strong></p>
+                        <p>El cálculo del volumen de una tabla de surf se calcula a partir de su longitud, anchura y
+                            grosor, pero no sólo, de hecho cada tabla tiene una forma diferente, una nariz y una cola
+                            más o menos gruesa, rocker y cóncava o convexa. Dos tablas de surf con las mismas
+                            dimensiones pueden tener un volumen completamente diferente debido a estos parámetros que se
+                            utilizan en el cálculo del volumen.</p>
+
+                        <p>Más volumen te aportará un remo fácil, un surf rápido, arrancarás en más olas y con menos
+                            esfuerzo.</p>
                     </div>
                     <div class="form-calculator">
                         <form action="/volumeCalculator" method="GET">
                             <div class="volume-container">
-                                <label for="peso">Peso</label>
-                                <datalist id="peso-marks">
-                                    <option value="0" label="20">20</option>
-                                    <option value="10"></option>
-                                    <option value="20"></option>
-                                    <option value="30" label="50">50</option>
-                                    <option value="40"></option>
-                                    <option value="50"></option>
-                                    <option value="60" label="80">80</option>
-                                </datalist>
-                                <input type="range" min="0" max="150" value="50" step="5" id="peso" list="peso-marks"
-                                    name="peso">
+                                <label for="peso">Peso: </label>
+                                <output> 50 kg.</output>
+                                <input class="volumeRange" id="peso" type="range" min="20" max="110" value="50" step="1" list="peso-marks" name="peso"
+                                oninput="this.previousElementSibling.innerHTML = this.value + ' kg.'">
                             </div>
                             <div class="volume-container">
-                                <label for="altura">Altura</label><br>
-                                <input id="altura" type="range" min="1" max="10" value="0" step="0.5" list="tickmarks"
-                                    name="altura">
-                                <datalist id="tickmarks">
-                                </datalist>
+                                <label for="altura">Altura: </label>
+                                <output></output>
+                                <input class="volumeRange" id="altura" type="range" min="130" max="210" value="0" step="1" list="tickmarks" name="altura"
+                                oninput="this.previousElementSibling.innerHTML = this.value + ' cm.'">
                             </div>
                             <div class="volume-container">
-                                <label for="edad">Edad</label><br>
-                                <input id="edad" type="range" min="10" max="70" value="0" step="1" list="tickmarks"
-                                    name="edad">
-                                <datalist id="tickmarks">
+                                <label for="edad">Edad: </label>
+                                <output></output>
+                                <input class="volumeRange" id="edad" type="range" min="1" max="100" value="0" step="1" list="tickmarks" name="edad"
+                                oninput="this.previousElementSibling.innerHTML = this.value + ' años'">
+                            </div>
+                            <div class="volume-container">
+                                <label for="experiencia">Experiencia: </label>
+                                <output></output>
+                                <input class="volumeRange" id="experiencia" type="range" min="0" max="4" value="0" step="1" name="experiencia" list="expmark">
+                                <datalist id="expmark">
+                                    <option value="0" label="QuisieraEmpezar">QuisieraEmpezar</option>
+                                    <option value="1" label="Beginner">Beginner</option>
+                                    <option value="2" label="Intermedio">Intermedio</option>
+                                    <option value="3" label="Avanzado">Avanzado</option>
+                                    <option value="4" label="Experto">Experto</option>
+                                </datalist>
+                            </div>
 
-                                </datalist>
-                            </div>
-                            <div class="volume-container">
+                            <!-- <div class="volume-container hidden">
                                 <label for="entrenamiento">Entreno</label><br>
                                 <select name="entrenamiento" id="entrenamiento">
                                     <option value="bajo">Mmmhhh</option>
@@ -157,7 +168,7 @@
                                     <option value="alto">Bastante</option>
                                 </select>
                             </div>
-                            <div class="volume-container">
+                            <div class="volume-container  hidden">
                                 <label for="frecuencia">Frecuencia</label><br>
                                 <select name="frecuencia" id="frecuencia">
                                     <option value="nunca">3/5 veces por semana</option>
@@ -165,26 +176,17 @@
                                     <option value="semanalmente">1/2 veces por mes</option>
                                     <option value="diariamente">1/2 veces por año</option>
                                 </select>
-                            </div>
-                            <div class="volume-container">
-                                <label for="experiencia">experiencia</label><br>
-                                <select name="experiencia" id="experiencia">
-                                    <option value="beginner">Beginner</option>
-                                    <option value="intermedio">Intermedio</option>
-                                    <option value="avanzado">Avanzado</option>
-                                    <option value="experto">Experto</option>
-                                </select>
-                            </div>
-                            <div>
-                                <button type="submit">Calculá mi talla</button>
-                            </div>
+                            </div> -->
+
+                            <button type="submit" class="boton" id="calcularVol" >Calculá mi talla</button>
                         </form>
                     </div>
-
                 </div>
             </main>
             <%- include("../partials/footer") %>
-            <!-- <script src="/js/home"></script> -->
+        <script src="/js/home.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/volumeCalculator.js"></script>
     </body>
 
 </html>

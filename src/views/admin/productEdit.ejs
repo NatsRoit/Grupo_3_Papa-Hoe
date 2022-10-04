@@ -129,8 +129,8 @@
                             <div class="prodImgGallery">
                               <div class="prodImg">
                                 <label for="imageGallery1" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery1" id="imageGallery1" class="visually-hidden">
-                                <input type="hidden" name="oldImagen2" value="<%= producto.image2%>">
+                                <input type="file" name="imageGallery" id="imageGallery1" class="visually-hidden">
+                                <input type="hidden" name="oldImagen2" value="<%= producto.image2? producto.image2 : ""%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                   <img src="/img/<%= producto.image2 ? producto.image2 : "" %>" alt="">
@@ -138,8 +138,8 @@
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery2" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery2" id="imageGallery2" class="visually-hidden">
-                                <input type="hidden" name="oldImagen3" value="<%= producto.image3%>">
+                                <input type="file" name="imageGallery" id="imageGallery2" class="visually-hidden">
+                                <input type="hidden" name="oldImagen3" value="<%= producto.image3? producto.image3 : ""%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                   <img src="/img/<%= producto.image3 ? producto.image3 : "" %>" alt="">
@@ -147,8 +147,8 @@
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery3" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery3" id="imageGallery3" class="visually-hidden">
-                                <input type="hidden" name="oldImagen4" value="<%= producto.image4%>">
+                                <input type="file" name="imageGallery" id="imageGallery3" class="visually-hidden">
+                                <input type="hidden" name="oldImagen4" value="<%= producto.image4? producto.image4 : ""%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                   <img src="/img/<%= producto.image4 ? producto.image4 : "" %>" alt="">
@@ -156,8 +156,8 @@
                               </div>
                               <div class="prodImg">
                                 <label for="imageGallery4" class="labelImg"></label><br>
-                                <input type="file" name="imageGallery4" id="imageGallery4" class="visually-hidden">
-                                <input type="hidden" name="oldImagen5" value="<%= producto.image5%>">
+                                <input type="file" name="imageGallery" id="imageGallery4" class="visually-hidden">
+                                <input type="hidden" name="oldImagen5" value="<%= producto.image5? producto.image5 : ""%>">
                                 <div id="imgPreview">
                                   <p class="cancelCross"><i class="fa-solid fa-xmark"></i></p>
                                   <img src="/img/<%= producto.image5 ? producto.image5 : "" %>" alt="">
@@ -179,7 +179,7 @@
                             <label for="color">Variantes de Color</label>
                               <select multiple name="color_id[]" id="color_id">
                                   <% for (let i =0; i<colors.length; i++) { %>
-                                    <% if (productColorsId.includes(colorsId[i])) { %>
+                                    <% if (producto.colores.map(el => el.id).includes(colors[i].id)) { %>
                                       <option value="<%=colors[i].id%>" selected><%=colors[i].name%></option>
                                       <% } else { %>
                                       <option value="<%=colors[i].id%>"> <%=colors[i].name%> </option>
@@ -187,21 +187,41 @@
                               </select>
                           </div>
 
-
-                          <div class="checkbox">
+                          <div class="form-2col">
+                            <div class="checkbox">
                             <div class="opciones" id="sizeGroup">
                               <p><strong>Talles Disponibles</strong></p>
                               <% for(let i=0; i<sizes.length; i++){ %>
-                                <% if (productSizeId.includes(sizesId[i])) { %>
-                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
-                                  <%=sizes[i].dimension%>
-                                </label><br>
-                              <% } else { %>
-                                <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
-                                  <%=sizes[i].dimension%>
-                                </label> <br>
-                              <% }} %>
+                                <% if (sizes[i].type == "talle") { %>
+                                  <% if (producto.dimensiones.map(el => el.id).includes(sizes[i].id)) { %>
+                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
+                                    <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                  </label><br>
+                                <% } else { %>
+                                  <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                    <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                  </label> <br>
+                                <% }} %>
+                              <% } %>
                             </div>
+                          </div>
+                          <div class="checkbox">
+                            <div class="opciones" id="volGroup">
+                              <p><strong>Dimensiones Disponibles</strong></p>
+                                <% for(let i=0; i<sizes.length; i++){ %>
+                                  <% if (sizes[i].type == "vol") { %>
+                                    <% if (producto.dimensiones.map(el => el.id).includes(sizes[i].id)) { %>
+                                    <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size" checked>
+                                      <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                    </label><br>
+                                  <% } else { %>
+                                    <label for="size"><input type="checkbox" value="<%=sizes[i].id%>" name="size_id[]" id="size">
+                                      <strong><%=sizes[i].dimension %></strong> <span style="color: gray">( <%=sizes[i].text %> )</span>
+                                    </label> <br>
+                                  <% }} %>                                 
+                                <% } %>
+                              </div>
+                          </div>
                         </div>
 
                           <div class="form-input prod-descuento">
@@ -219,23 +239,30 @@
 
 
                   <div class="wrapper-Col-33" title="Así se verá tu producto publicado">
-                      <h2>Preview</h2>
+                      <!-- <h2>Preview</h2> -->
 
-                      <div form="editProdForm" class="prodActivo">
-                        <label for="activo">Producto activo
-                        <input type="checkbox" name="activo" id="activo" value="<%=producto.active%>" checked>
-                      </label>
-                      </div>
-
-
-                      <div class="img-slider">
-                          <img id="previewProdImg" src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
-                      </div>
-                      <div class="secretInput">
-                        <output name="namePreview" for="name" id="namePreview"></output>
-                        <output name="brandPreview" for="brand_id" id="brandPreview"></output>
-                        <output name="priceCurrency" for="price" id="priceCurrency"></output>
+                    <div class="img-slider">
+                        <img id="previewProdImg" src="/img/<%=producto.image1%>" alt="<%=producto.name%>">
                     </div>
+
+                    <% if (producto.active) { %>
+                      <div class="prodActivo activado">
+                        <label for="activo"> PUBLICAR
+                          <input form="editProdForm" type="checkbox" name="activo" id="activo" value="on" checked>
+                      <% } else { %>
+                      <div class="prodActivo">
+                        <label for="activo"> PUBLICAR
+                          <input form="editProdForm" type="checkbox" name="activo" id="activo" value="false">
+                      <% } %>
+                        </label>
+                    </div>
+
+                    <!-- <div class="secretInput">
+                      <output name="namePreview" for="name" id="namePreview"></output>
+                      <output name="brandPreview" for="brand_id" id="brandPreview"></output>
+                      <output name="priceCurrency" for="price" id="priceCurrency"></output>
+                    </div> -->
+
                       (EN CONSTRUCCIÓN)
                   </div>
                 </section>

@@ -13,6 +13,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         type: {
             type: dataTypes.STRING(255),
+        },
+        text: {
+            type: dataTypes.STRING(255),
         }
     };
 

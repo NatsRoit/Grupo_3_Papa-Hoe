@@ -454,6 +454,16 @@ function hasFiles(prodImageAll) {
     return fileTypes.includes(file.type);
   }
 
+    
+  // FUNCIONES PARA "PRODUCTO ACTIVO"
+  let prodActivo = document.querySelector(".prodActivo"); // div
+  let prodActivoInput = prodActivo.querySelector("input"); // div
+
+  prodActivoInput.addEventListener("click", toggleActivo)
+  function toggleActivo(e) { 
+    prodActivo.classList.toggle("activado")
+  }
+    
 
 //------------------------------------------------------------
 let formElements = document.querySelector(".formulario").elements;

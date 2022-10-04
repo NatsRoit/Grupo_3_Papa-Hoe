@@ -88,18 +88,28 @@ const productController = {
         .then(function([producto, prodAll, size, fins, colors ]){
             // Creo una función para seleccionar en modo aleatorio 4 productos del total de productos (prodAll).
             let randomArr = [];
-            while(randomArr.length < 4)
+            while(randomArr.length < 5)
             { var r = Math.floor(Math.random() * prodAll.length);
                 if(randomArr.indexOf(r) === -1) { 
                     randomArr.push(r);
             }};
-            // Pusheo esos 4 productos en un nuevo array (relatedProds) para pasarlo a la vista
+            // Pusheo esos 5 productos en un nuevo array (relatedProds) para pasarlo a la vista
             let relatedProds = [];
             for (let i = 0; i < randomArr.length; i++) {
                 relatedProds.push(prodAll[randomArr[i]])
             }
+
+            // Hago un array con las imágenes de la imgGallery para poder recorrerlo
+            let imgGallery = [producto.image1, producto.image2, producto.image3, producto.image4, producto.image5]
+            // for (let el in producto) {
+            //     el.test("image")
+            //     imageGallery.push(el)
+            //     console.log("-------------------------- IMAGEGALLERY:" + imageGallery)
+            // }
+
+
             if (producto !== null){
-                return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, relatedProds, size, fins, colors });
+                return res.render(path.resolve(__dirname, '../views/product/detail'),{producto, relatedProds, size, fins, colors, imgGallery });
             } else {
                 next();
             }

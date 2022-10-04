@@ -107,6 +107,8 @@ const userController = {
     }
   },
 
+
+  
   editView: function (req, res) {
     db.User.findByPk(req.params.id).then((showUser) => {
       res.render(path.resolve(__dirname, "../views/user/edit"), { user: showUser});
