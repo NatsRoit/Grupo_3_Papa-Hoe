@@ -397,7 +397,6 @@ h4,
 h5,
 h6 {
     margin-bottom: .5rem;
-    font-weight: 400;
     line-height: 1.2
 }
 
@@ -413,9 +412,10 @@ h2 {
 
 .h3,
 h3 {
-    font-size: 1.75rem
+   font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    
 }
-
 .h4,
 h4 {
     font-size: 1.5rem
@@ -4774,48 +4774,44 @@ justify-content: center;
 
 .card-body {
     flex: 1 1 auto;
-    padding: 1.25rem
+    padding: 1.25rem;
+    transition: all 300ms; 
+    text-align: center;
 }
+
+
 
 .card-body > h2 {
     font-size: 25px;
+   
 }
 
+.card-body > h2:hover {
+    font-size: 25px;
+    transform: scale(1.25), 1.25;
+}
+   
 .card-title {
     margin-bottom: .75rem
 }
 
-.card-subtitle {
-    margin-top: -.375rem;
-    margin-bottom: 0
-}
 
-.card-text:last-child {
-    margin-bottom: 0
-}
 
-.card-link:hover {
-    text-decoration: none
-}
 
-.card-link+.card-link {
-    margin-left: 1.25rem
-}
+
+
+
 
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: #f8f9fc;
-    border-bottom: 1px solid #e3e6f0
+    border-bottom: 1px solid #e3e6f0;
+    text-align: center;
 }
 
-.card-header:first-child {
-    border-radius: calc(.35rem - 1px) calc(.35rem - 1px) 0 0
-}
 
-.card-header+.list-group .list-group-item:first-child {
-    border-top: 0
-}
+
 
 .card-footer {
     padding: .75rem 1.25rem;
@@ -8090,6 +8086,7 @@ button.bg-dark:hover {
     display: block;
     width: 15%; 
     padding: 10px 8px;
+    width: 50%;
 }
 
 .w-auto {
@@ -8372,10 +8369,7 @@ button.bg-dark:hover {
     padding: 1rem !important
 }
 
-.pt-3,
-.py-3 {
-    padding-top: 1rem !important
-}
+
 
 .pr-3,
 .px-3 {
@@ -10608,17 +10602,9 @@ a.text-dark:hover {
         page-break-inside: avoid
     }
 
-    h2,
-    h3,
-    p {
-        orphans: 3;
-        widows: 3
-    }
+ 
 
-    h2,
-    h3 {
-        page-break-after: avoid
-    }
+   
 
     @page {
         size: a3

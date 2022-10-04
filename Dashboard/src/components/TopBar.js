@@ -9,8 +9,8 @@ function TopBar(){
 				<nav className="navbar">
 			
                     <div className='leftBar'>
-                        <img className="logo" src={foto} alt="Papa Hoe Logo"/>
-						<h3> Admin Dashboard</h3>
+                        <a href='http://localhost:3001/' target="_blanc"><img className="logo" src={foto} alt="Papa Hoe Logo" /></a>
+						<h3>Admin Dashboard</h3>
                     </div>
 					
 					<ul className="navbar-nav ml-auto">
