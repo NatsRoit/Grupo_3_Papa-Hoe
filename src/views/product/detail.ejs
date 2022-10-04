@@ -66,8 +66,9 @@
                             <div>
                                 <h2><%= producto.marca.name%></h2>
                                 <h1><%= producto.name%></h1>
+
                                 <p id="prodPrice" class="hidden"><%= producto.price%></p>
-                                <p id="prodPricePrint"><%= producto.price %></p>
+                            <span class="precioDiscount"> <%= producto.discount != 0? parseFloat(producto.price - ((producto.price * producto.discount)/100)).toLocaleString(["es-AR", "es"], {style: "currency", currency: "ARS"}): "" %></span><p <%= producto.discount != 0? "style= text-decoration:line-through" : "" %> id="prodPricePrint"><%= producto.price %>
                             </div>
                             
                             <% if(producto.categoria.id != 1){%>

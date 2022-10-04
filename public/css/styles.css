@@ -1473,6 +1473,12 @@ form.delete {
 .precioOld {
   text-decoration: line-through red;
 }
+.precioDiscount {
+  display: initial;
+  font-size: 30px;
+  color: var(--papahoeBlueTec);
+  font-weight: 500;
+}
 
 .producto-shop.related {
   flex-basis: 19%;
